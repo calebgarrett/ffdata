@@ -1,6 +1,9 @@
-# ffdata — single-file setup. This one file IS the whole data pump: the first
+# ffdata v2 — single-file setup. This one file IS the whole data pump: the first
 # step writes the four pull scripts into pull/, the next runs them and commits
 # the results under data/. Nothing else needs uploading.
+# v2 (2026-09-23): Sleeper stats for LAST week as well as this week (the usage the
+# breakout scan runs on), three orderings unioned; ESPN pull hardened (browser
+# user-agent, retries, explicit season params).
 name: pull market and stats data
 on:
   schedule:
@@ -125,18 +128,30 @@ jobs:
 
           usage: python3 espn_pull.py OUT.csv [--week N]
           """
-          import csv, json, sys, urllib.request, urllib.parse
+          import csv, json, sys, time, urllib.request, urllib.parse
 
           URL = 'https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard'
+          UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36'
+
+          def fetch(params):
+              last = None
+              for attempt in range(5):
+                  try:
+                      req = urllib.request.Request(URL + '?' + urllib.parse.urlencode(params), headers={'User-Agent': UA, 'Accept': 'application/json'})
+                      with urllib.request.urlopen(req, timeout=30) as r:
+                          return json.loads(r.read().decode())
+                  except Exception as e:
+                      last = e; time.sleep(2.0 * (attempt + 1))
+              raise SystemExit(f'ESPN scoreboard unreachable after 5 tries: {last!r}')
           FIELDS = ['event_id', 'away', 'home', 'kickoff', 'spread_team', 'spread', 'over_under',
                     'over_odds', 'under_odds', 'away_ml', 'home_ml', 'status', 'away_score', 'home_score']
 
           def main():
               if len(sys.argv) < 2: raise SystemExit(__doc__)
-              params = {'seasontype': '2'}
+              params = {'seasontype': '2', 'dates': '2026'}
               if '--week' in sys.argv: params['week'] = sys.argv[sys.argv.index('--week') + 1]
-              req = urllib.request.Request(URL + '?' + urllib.parse.urlencode(params), headers={'User-Agent': 'ff-espn-pull/1'})
-              j = json.loads(urllib.request.urlopen(req, timeout=30).read().decode())
+              j = fetch(params)
+              if not j.get('events'): j = fetch({})          # second shape: ESPN's own current-week default
               rows = []
               for ev in j.get('events', []):
                   comp = ev['competitions'][0]
@@ -247,21 +262,32 @@ jobs:
                   w.writeheader(); w.writerows(off_rows)
               with open(f'{out}/sleeper_idp_wk{week}.csv', 'w', newline='') as fh:
                   w = csv.DictWriter(fh, fieldnames=['player', 'team', 'pos', 'opp'] + IDP_FIELDS); w.writeheader(); w.writerows(idp_rows)
-              # ---- stats (usage + actuals), one file per position
+              # ---- stats (usage + actuals), one file per position, for LAST week (the
+              #      usage the breakout scan runs on) and this week (actuals once games start)
               n_stats = 0
-              for pos in OFF:
-                  objs = get(f'/stats/nfl/{season}/{week}', season_type='regular', **{'position[]': pos, 'order_by': 'pts_ppr'})
-                  rows = []
-                  for o in objs:
-                      st = o.get('stats') or {}
-                      if not st: continue
-                      p = o.get('player') or {}
-                      rows.append(dict(player_id=o.get('player_id', ''), first_name=p.get('first_name', ''), last_name=p.get('last_name', ''),
-                                       team=o.get('team') or '', pos=p.get('position') or pos, **{f: g(st, f) for f in STAT_FIELDS}))
-                  with open(f'{out}/stats_wk{week}_{pos}.csv', 'w', newline='') as fh:
-                      w = csv.DictWriter(fh, fieldnames=['player_id', 'first_name', 'last_name', 'team', 'pos'] + STAT_FIELDS)
-                      w.writeheader(); w.writerows(rows)
-                  n_stats += len(rows); time.sleep(0.2)
+              for wk in sorted({max(1, week - 1), week}):
+                  for pos in OFF:
+                      rows = []
+                      # Sleeper caps a response at ~100 objects; three orderings union to the
+                      # full set of players who touched the field (low-snap, real-target WRs
+                      # were hidden behind the pts_ppr cut on 09-17)
+                      seen = set()
+                      for ob in ('pts_ppr', 'off_snp', 'rec_tgt'):
+                          objs = get(f'/stats/nfl/{season}/{wk}', season_type='regular', **{'position[]': pos, 'order_by': ob})
+                          for o in objs:
+                              st = o.get('stats') or {}
+                              pid = o.get('player_id', '')
+                              if not st or pid in seen: continue
+                              seen.add(pid)
+                              p = o.get('player') or {}
+                              rows.append(dict(player_id=pid, first_name=p.get('first_name', ''), last_name=p.get('last_name', ''),
+                                               team=o.get('team') or '', pos=p.get('position') or pos, **{f: g(st, f) for f in STAT_FIELDS}))
+                          time.sleep(0.2)
+                          if pos in ('K', 'DEF'): break
+                      with open(f'{out}/stats_wk{wk}_{pos}.csv', 'w', newline='') as fh:
+                          w = csv.DictWriter(fh, fieldnames=['player_id', 'first_name', 'last_name', 'team', 'pos'] + STAT_FIELDS)
+                          w.writeheader(); w.writerows(rows)
+                      n_stats += len(rows)
               # ---- trending
               tr = []
               for kind in ('add', 'drop'):
@@ -311,9 +337,9 @@ jobs:
                       files.append(p)
               # ---- Sleeper stats/projections are already per position; large ones get split in halves
               for p in sorted(glob.glob(os.path.join(data, 'sleeper', '*.csv'))):
-                  if os.path.getsize(p) <= 9000:
+                  if os.path.getsize(p) <= 6000:
                       files.append(p); continue
-                  rows = list(csv.DictReader(open(p))); n = max(1, len(rows) // (os.path.getsize(p) // 9000 + 1))
+                  rows = list(csv.DictReader(open(p))); n = max(1, len(rows) // (os.path.getsize(p) // 6000 + 1))
                   base = p[:-4]
                   for i in range(0, len(rows), n):
                       q = f'{base}_part{i // n + 1}.csv'
