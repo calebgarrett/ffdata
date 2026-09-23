@@ -7,18 +7,30 @@ never estimated. Standard library only.
 
 usage: python3 espn_pull.py OUT.csv [--week N]
 """
-import csv, json, sys, urllib.request, urllib.parse
+import csv, json, sys, time, urllib.request, urllib.parse
 
 URL = 'https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard'
+UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36'
+
+def fetch(params):
+    last = None
+    for attempt in range(5):
+        try:
+            req = urllib.request.Request(URL + '?' + urllib.parse.urlencode(params), headers={'User-Agent': UA, 'Accept': 'application/json'})
+            with urllib.request.urlopen(req, timeout=30) as r:
+                return json.loads(r.read().decode())
+        except Exception as e:
+            last = e; time.sleep(2.0 * (attempt + 1))
+    raise SystemExit(f'ESPN scoreboard unreachable after 5 tries: {last!r}')
 FIELDS = ['event_id', 'away', 'home', 'kickoff', 'spread_team', 'spread', 'over_under',
           'over_odds', 'under_odds', 'away_ml', 'home_ml', 'status', 'away_score', 'home_score']
 
 def main():
     if len(sys.argv) < 2: raise SystemExit(__doc__)
-    params = {'seasontype': '2'}
+    params = {'seasontype': '2', 'dates': '2026'}
     if '--week' in sys.argv: params['week'] = sys.argv[sys.argv.index('--week') + 1]
-    req = urllib.request.Request(URL + '?' + urllib.parse.urlencode(params), headers={'User-Agent': 'ff-espn-pull/1'})
-    j = json.loads(urllib.request.urlopen(req, timeout=30).read().decode())
+    j = fetch(params)
+    if not j.get('events'): j = fetch({})          # second shape: ESPN's own current-week default
     rows = []
     for ev in j.get('events', []):
         comp = ev['competitions'][0]

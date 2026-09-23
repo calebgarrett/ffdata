@@ -81,21 +81,32 @@ def main():
         w.writeheader(); w.writerows(off_rows)
     with open(f'{out}/sleeper_idp_wk{week}.csv', 'w', newline='') as fh:
         w = csv.DictWriter(fh, fieldnames=['player', 'team', 'pos', 'opp'] + IDP_FIELDS); w.writeheader(); w.writerows(idp_rows)
-    # ---- stats (usage + actuals), one file per position
+    # ---- stats (usage + actuals), one file per position, for LAST week (the
+    #      usage the breakout scan runs on) and this week (actuals once games start)
     n_stats = 0
-    for pos in OFF:
-        objs = get(f'/stats/nfl/{season}/{week}', season_type='regular', **{'position[]': pos, 'order_by': 'pts_ppr'})
-        rows = []
-        for o in objs:
-            st = o.get('stats') or {}
-            if not st: continue
-            p = o.get('player') or {}
-            rows.append(dict(player_id=o.get('player_id', ''), first_name=p.get('first_name', ''), last_name=p.get('last_name', ''),
-                             team=o.get('team') or '', pos=p.get('position') or pos, **{f: g(st, f) for f in STAT_FIELDS}))
-        with open(f'{out}/stats_wk{week}_{pos}.csv', 'w', newline='') as fh:
-            w = csv.DictWriter(fh, fieldnames=['player_id', 'first_name', 'last_name', 'team', 'pos'] + STAT_FIELDS)
-            w.writeheader(); w.writerows(rows)
-        n_stats += len(rows); time.sleep(0.2)
+    for wk in sorted({max(1, week - 1), week}):
+        for pos in OFF:
+            rows = []
+            # Sleeper caps a response at ~100 objects; three orderings union to the
+            # full set of players who touched the field (low-snap, real-target WRs
+            # were hidden behind the pts_ppr cut on 09-17)
+            seen = set()
+            for ob in ('pts_ppr', 'off_snp', 'rec_tgt'):
+                objs = get(f'/stats/nfl/{season}/{wk}', season_type='regular', **{'position[]': pos, 'order_by': ob})
+                for o in objs:
+                    st = o.get('stats') or {}
+                    pid = o.get('player_id', '')
+                    if not st or pid in seen: continue
+                    seen.add(pid)
+                    p = o.get('player') or {}
+                    rows.append(dict(player_id=pid, first_name=p.get('first_name', ''), last_name=p.get('last_name', ''),
+                                     team=o.get('team') or '', pos=p.get('position') or pos, **{f: g(st, f) for f in STAT_FIELDS}))
+                time.sleep(0.2)
+                if pos in ('K', 'DEF'): break
+            with open(f'{out}/stats_wk{wk}_{pos}.csv', 'w', newline='') as fh:
+                w = csv.DictWriter(fh, fieldnames=['player_id', 'first_name', 'last_name', 'team', 'pos'] + STAT_FIELDS)
+                w.writeheader(); w.writerows(rows)
+            n_stats += len(rows)
     # ---- trending
     tr = []
     for kind in ('add', 'drop'):

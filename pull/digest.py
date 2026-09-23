@@ -28,9 +28,9 @@ def main():
             files.append(p)
     # ---- Sleeper stats/projections are already per position; large ones get split in halves
     for p in sorted(glob.glob(os.path.join(data, 'sleeper', '*.csv'))):
-        if os.path.getsize(p) <= 9000:
+        if os.path.getsize(p) <= 6000:
             files.append(p); continue
-        rows = list(csv.DictReader(open(p))); n = max(1, len(rows) // (os.path.getsize(p) // 9000 + 1))
+        rows = list(csv.DictReader(open(p))); n = max(1, len(rows) // (os.path.getsize(p) // 6000 + 1))
         base = p[:-4]
         for i in range(0, len(rows), n):
             q = f'{base}_part{i // n + 1}.csv'
