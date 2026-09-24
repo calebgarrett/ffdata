@@ -1,9 +1,8 @@
-# ffdata v4 — single-file setup. This one file IS the whole data pump: the first
+# ffdata v5 — single-file setup. This one file IS the whole data pump: the first
 # step writes the pull scripts into pull/, the next runs them and commits the
 # results under data/. Nothing else needs uploading.
-# v4 (2026-09-24): Yahoo league pages (every roster, tags, transactions, the
-# week's matchup) pulled with the rest, so rosters refresh without a pasted link.
-# First pass saves raw HTML for the parser; v5 turns it into CSVs.
+# v5 (2026-09-24): Yahoo pages parsed into CSVs — every roster with tags, the
+# week's matchup with scores, the transactions log — for both leagues, each run.
 name: pull market and stats data
 on:
   schedule:
@@ -339,22 +338,171 @@ jobs:
           if __name__ == '__main__':
               main()
           PYEOF
+          cat > pull/yahoo_parse.py <<'PYEOF'
+          #!/usr/bin/env python3
+          """Parse the logged-out Yahoo Fantasy pages the pump fetches into CSVs.
+          Standard library only (regex over a whitespace-collapsed page; the only nested
+          tables are inside data-tooltip attributes, which are stripped first).
+
+            parse_team(html)         -> (owner, record, [row...])   row: slot,player,pid,nfl,pos,status,game,bye,fan_pts,proj_pts
+            parse_matchup(html)      -> [dict(side, owner, team_id, record, total, proj, rows=[...])]
+            parse_transactions(html) -> [dict(ts, team, team_id, player, pid, nfl, pos, status, kind, action)]
+          """
+          import re, html as H
+
+          def _clean(h):
+              h = re.sub(r'data-tooltip="[^"]*"', '', h)
+              return re.sub(r'\s+', ' ', h)
+
+          def _text(s):
+              return H.unescape(re.sub(r'<[^>]+>', ' ', s)).replace('\xa0', ' ').strip()
+
+          def _rows(table):
+              body = table[table.find('<tbody'):] if '<tbody' in table else table
+              return re.findall(r'<tr[^>]*>.*?</tr>', body)
+
+          def _player_row(r):
+              """One roster/matchup row -> dict or None (skips empty slots and footers)."""
+              slot = re.search(r'data-pos="([^"]+)"', r)
+              name = re.search(r'class="Nowrap name F-link playernote"[^>]*title="([^"]+)"', r)
+              if not slot: return None
+              if not name:
+                  return dict(slot=slot.group(1), player='', pid='', nfl='', pos='', status='', game='', bye='', fan_pts='', proj_pts='')
+              pid = re.search(r'data-ys-playerid="(\d+)"', r)
+              tp = re.search(r'<span class="Fz-xxs">([A-Za-z]{2,3}) - ([A-Z,]+)</span>', r)
+              st = re.search(r'class="ysf-player-status[^"]*"><span[^>]*>([A-Za-z\-]+)</span>', r)
+              gm = re.search(r'class="ysf-game-status[^"]*">(.*?)</span>\s*<span class="tooltip|class="ysf-game-status[^"]*">(.*?)</div>', r)
+              game = _text(gm.group(1) or gm.group(2)) if gm else ''
+              game = re.sub(r'\s+', ' ', game).strip()
+              # cells after the player cell: bye, fan pts, proj pts (matchup rows have no bye)
+              cells = [_text(c) for c in re.findall(r'<td[^>]*>(.*?)</td>', r)]
+              nums = []
+              for c in cells:
+                  if re.fullmatch(r'-?\d+(\.\d+)?|–|-|\d+%', c): nums.append(c)
+              return dict(slot=slot.group(1), player=H.unescape(name.group(1)), pid=pid.group(1) if pid else '',
+                          nfl=tp.group(1).upper() if tp else '', pos=tp.group(2) if tp else '',
+                          status=st.group(1) if st else '', game=game, _nums=nums)
+
+          def parse_team(h):
+              h = _clean(h)
+              owner = re.search(r'<title>[^<]*? - (.*?) \| Fantasy Football', h)
+              owner = H.unescape(owner.group(1)).strip() if owner else ''
+              rec = re.search(r'<span class="Fw-b Fz-xxl">(\d+-\d+-\d+)</span><em[^>]*>(\d+)<sup>', h)
+              record = rec.group(1) if rec else ''
+              rank = rec.group(2) if rec else ''
+              pf = re.search(r'Place</em></div><div><span class="Fw-b Fz-xxl">([\d.]+)</span>', h)
+              record = record + (f' PF {pf.group(1)}' if pf else '')
+              out = []
+              for tid in ('statTable0', 'statTable1', 'statTable2', 'statTable3', 'statTable4'):
+                  i = h.find(f'id="{tid}"')
+                  if i < 0: continue
+                  j = h.find('</table>', i)
+                  for r in _rows(h[i:j]):
+                      p = _player_row(r)
+                      if not p: continue
+                      nums = p.pop('_nums', [])
+                      # team page order: bye, fan pts, proj pts, %start, %ros
+                      p['bye'] = nums[0] if nums else ''
+                      p['fan_pts'] = nums[1] if len(nums) > 1 else ''
+                      p['proj_pts'] = nums[2] if len(nums) > 2 else ''
+                      out.append(p)
+              return owner, record, rank, out
+
+          def _player_block(seg):
+              """Fields for one player from the segment of a row that belongs to him."""
+              pid = re.search(r'data-ys-playerid="(\d+)"', seg)
+              tp = re.search(r'<span class="Fz-xxs">([A-Za-z]{2,3}) - ([A-Z,]+)</span>', seg)
+              st = re.search(r'class="ysf-player-status[^"]*"><span[^>]*>([A-Za-z\-]+)</span>', seg)
+              gm = re.search(r'class="ysf-game-status[^"]*">(.*?)</div>', seg)
+              game = re.sub(r'\s+', ' ', _text(gm.group(1))).strip() if gm else ''
+              return dict(pid=pid.group(1) if pid else '', nfl=tp.group(1).upper() if tp else '', pos=tp.group(2) if tp else '',
+                          status=st.group(1) if st else '', game=game)
+
+          def parse_matchup(h):
+              """The matchup page lists both lineups side by side: each starter row is
+              [my player | proj | fan | slot | slot | slot | fan | proj | their player]."""
+              h = _clean(h)
+              teams = []
+              for m in re.finditer(r'<a class="F-link" href="https://football\.fantasysports\.yahoo\.com/f1/\d+/(\d+)">([^<]+)</a>.*?<div>(\d+-\d+-\d+) \| (\d+)(?:st|nd|rd|th)</div>', h):
+                  teams.append(dict(team_id=m.group(1), owner=H.unescape(m.group(2)), record=m.group(3), rank=m.group(4), rows=[]))
+              if len(teams) < 2: return teams
+              scores = re.findall(r"<td class='Fz-xxl Ta-(?:end|start) P(?:end|start)-lg'>([\d.]+)</td>", h)
+              projs = re.findall(r"<td class='F-shade Ta-(?:end|start) P(?:end|start)-lg Fz-med Ptop-med'>([\d.]+)</td>", h)
+              for k, t in enumerate(teams[:2]):
+                  t['side'] = 'me' if k == 0 else 'opp'
+                  t['total'] = scores[k] if len(scores) > k else ''
+                  t['proj'] = projs[k] if len(projs) > k else ''
+              for tid in ('statTable1', 'statTable2', 'statTable3'):
+                  i = h.find(f'id="{tid}"')
+                  if i < 0: continue
+                  j = h.find('</table>', i)
+                  for r in _rows(h[i:j]):
+                      slots = re.findall(r'data-pos="([^"]+)"', r)
+                      if not slots: continue
+                      slot = slots[0]
+                      names = [(m.start(), H.unescape(m.group(1))) for m in re.finditer(r'class="Nowrap name F-link playernote"[^>]*title="([^"]+)"', r)]
+                      cells = [_text(c) for c in re.findall(r'<td[^>]*>(.*?)</td>', r)]
+                      nums = [c for c in cells if re.fullmatch(r'-?\d+(\.\d+)?|–|-', c)]
+                      # which side each name is on: before or after the middle slot cell
+                      mid = r.find('data-pos="', r.find('data-pos="') + 1)
+                      for pos_, nm in names:
+                          side = 0 if pos_ < mid else 1
+                          nxt = min([p for p, _ in names if p > pos_] + [len(r)])
+                          blk = _player_block(r[pos_:nxt])
+                          if side == 0: proj, fan = (nums[0] if nums else ''), (nums[1] if len(nums) > 1 else '')
+                          else:         fan, proj = (nums[-2] if len(nums) > 1 else ''), (nums[-1] if nums else '')
+                          teams[side]['rows'].append(dict(slot=slot, player=nm, fan_pts=fan, proj_pts=proj, bye='', **blk))
+              return teams[:2]
+
+          def parse_transactions(h):
+              h = _clean(h)
+              out = []
+              for r in re.findall(r'<tr[^>]*>.*?</tr>', h):
+                  if 'Tst-team-name' not in r: continue
+                  team = re.search(r'class="Tst-team-name" href="[^"]*/f1/\d+/(\d+)">([^<]+)</a>', r)
+                  ts = re.search(r'class="Block F-timestamp[^"]*">([^<]+)</span>', r)
+                  if not team: continue
+                  for blk in re.findall(r'<div class="Pbot-xs">(.*?)</div>', r):
+                      nm = re.search(r'players/(\d+)" target="sports">([^<]+)</a>', blk)
+                      tp = re.search(r'class="F-position Fz-xxs">([A-Za-z]{2,3}) - ([A-Z,]+)</span>', blk)
+                      st = re.search(r'class="F-injury[^"]*"[^>]*>([A-Za-z\-]+)</span>', blk)
+                      kind = re.search(r'<h6[^>]*>([^<]*)</h6>', blk)
+                      if not nm: continue
+                      kind = _text(kind.group(1)) if kind else ''
+                      action = 'drop' if kind.lower().startswith('to ') else 'add' if kind else ''
+                      out.append(dict(ts=_text(ts.group(1)) if ts else '', team=H.unescape(team.group(2)), team_id=team.group(1),
+                                      player=H.unescape(nm.group(2)), pid=nm.group(1), nfl=tp.group(1).upper() if tp else '',
+                                      pos=tp.group(2) if tp else '', status=st.group(1) if st else '', kind=kind, action=action))
+              return out
+
+          if __name__ == '__main__':
+              import sys, json
+              kind, path = sys.argv[1], sys.argv[2]
+              h = open(path).read()
+              res = {'team': parse_team, 'matchup': parse_matchup, 'transactions': parse_transactions}[kind](h)
+              print(json.dumps(res, indent=1)[:6000])
+          PYEOF
           cat > pull/yahoo_pull.py <<'PYEOF'
           #!/usr/bin/env python3
-          """Pull the two Yahoo leagues' public pages so every roster, tag, transaction
-          and matchup score refreshes with the pump instead of a pasted link.
+          """Pull the two Yahoo leagues' public pages and parse them into CSVs, so every
+          roster, injury tag, transaction and matchup score refreshes with the pump.
 
-          Logged-out Yahoo serves a league's team pages, transactions and matchups when
-          the league is viewable (both of these are). A unique query string defeats
-          Yahoo's stale cache. Nothing is parsed here on the first pass: the raw HTML of
-          one team page, one matchup page and one transactions page per league is saved
-          so the parser can be written against the real markup; the rest are fetched to
-          confirm reachability and summarised (status, bytes, a title) in reach.txt.
+          Logged-out Yahoo serves a viewable league's team pages, transactions and
+          matchups; a unique query string defeats its stale cache. Parsing lives in
+          yahoo_parse.py (same directory).
+
+          Writes under OUT_DIR:
+            {LG}_rosters.csv          every team: team_id,owner,record,rank,slot,player,pid,nfl,pos,status,game,bye,fan_pts,proj_pts
+            {LG}_matchup_wk{W}.csv    my matchup: side,team_id,owner,record,rank,total,proj,slot,player,pid,nfl,pos,status,game,fan_pts,proj_pts
+            {LG}_transactions.csv     ts,team,team_id,player,pid,nfl,pos,status,kind,action
+            pulled.txt                ISO time of this pull and a per-page status line
+            raw/*.html                only with --all (large)
 
           usage: python3 yahoo_pull.py OUT_DIR [--week N] [--all]
-            --all   save the raw HTML of EVERY page (large; only when asked)
           """
-          import os, re, sys, time, datetime as dt, urllib.request, urllib.parse, urllib.error
+          import os, re, sys, csv, time, glob, datetime as dt, urllib.request, urllib.error
+          sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+          import yahoo_parse as Y
 
           LEAGUES = {'BSB': dict(id=156919, teams=12, mine=7),
                      'HH':  dict(id=824489, teams=10, mine=6)}
@@ -377,33 +525,60 @@ jobs:
                           return r.status, r.read().decode('utf-8', 'replace')
                   except urllib.error.HTTPError as e:
                       return e.code, ''
-                  except Exception as e:
-                      time.sleep(2.0 * (attempt + 1)); last = e
+                  except Exception:
+                      time.sleep(2.0 * (attempt + 1))
               return 0, ''
 
-          def title_of(html):
-              m = re.search(r'<title>(.*?)</title>', html, re.S)
-              return re.sub(r'\s+', ' ', m.group(1)).strip()[:120] if m else ''
+          def write(path, rows, fields):
+              with open(path, 'w', newline='') as fh:
+                  w = csv.DictWriter(fh, fieldnames=fields, extrasaction='ignore'); w.writeheader(); w.writerows(rows)
 
           def main():
               if len(sys.argv) < 2: raise SystemExit(__doc__)
-              out = sys.argv[1]; os.makedirs(os.path.join(out, 'raw'), exist_ok=True)
+              out = sys.argv[1]; os.makedirs(out, exist_ok=True)
               week = int(sys.argv[sys.argv.index('--week') + 1]) if '--week' in sys.argv else nfl_week()
               save_all = '--all' in sys.argv
-              lines = [f'# yahoo reach check {dt.datetime.now(dt.timezone.utc).isoformat(timespec="minutes")} week {week}']
+              if not save_all:
+                  for f in glob.glob(os.path.join(out, 'raw', '*.html')): os.remove(f)
+              stamp = dt.datetime.now(dt.timezone.utc).isoformat(timespec='seconds')
+              status = [f'# yahoo pull {stamp} week {week}']
+              R_FIELDS = ['team_id', 'owner', 'record', 'rank', 'slot', 'player', 'pid', 'nfl', 'pos', 'status', 'game', 'bye', 'fan_pts', 'proj_pts', 'pulled_at']
+              M_FIELDS = ['side', 'team_id', 'owner', 'record', 'rank', 'total', 'proj', 'slot', 'player', 'pid', 'nfl', 'pos', 'status', 'game', 'fan_pts', 'proj_pts', 'pulled_at']
+              T_FIELDS = ['ts', 'team', 'team_id', 'player', 'pid', 'nfl', 'pos', 'status', 'kind', 'action', 'pulled_at']
+              bad = 0
               for lg, cfg in LEAGUES.items():
-                  pages = [(f'{lg}_team{t}', f'{BASE}/{cfg["id"]}/{t}') for t in range(1, cfg['teams'] + 1)]
-                  pages += [(f'{lg}_matchup_wk{week}', f'{BASE}/{cfg["id"]}/matchup?week={week}&mid1={cfg["mine"]}'),
-                            (f'{lg}_transactions', f'{BASE}/{cfg["id"]}/transactions')]
-                  for name, url in pages:
-                      status, html = get(url)
-                      lines.append(f'{name}\t{status}\t{len(html)}\t{title_of(html)}')
-                      keep = save_all or name in (f'{lg}_team{cfg["mine"]}', f'{lg}_matchup_wk{week}', f'{lg}_transactions')
-                      if keep and html:
-                          with open(os.path.join(out, 'raw', name + '.html'), 'w') as fh: fh.write(html)
+                  rosters = []
+                  for t in range(1, cfg['teams'] + 1):
+                      st, html = get(f'{BASE}/{cfg["id"]}/{t}')
+                      owner, record, rank, rows = Y.parse_team(html) if html else ('', '', '', [])
+                      status.append(f'{lg}_team{t}\t{st}\t{len(html)}\t{owner}\t{len(rows)} rows')
+                      if not rows: bad += 1
+                      for r in rows:
+                          rosters.append(dict(r, team_id=str(t), owner=owner, record=record, rank=rank, pulled_at=stamp))
+                      if save_all and html:
+                          os.makedirs(os.path.join(out, 'raw'), exist_ok=True)
+                          open(os.path.join(out, 'raw', f'{lg}_team{t}.html'), 'w').write(html)
                       time.sleep(0.6)
-              with open(os.path.join(out, 'reach.txt'), 'w') as fh: fh.write('\n'.join(lines) + '\n')
-              print('\n'.join(lines))
+                  write(os.path.join(out, f'{lg}_rosters.csv'), rosters, R_FIELDS)
+                  st, html = get(f'{BASE}/{cfg["id"]}/matchup?week={week}&mid1={cfg["mine"]}')
+                  teams = Y.parse_matchup(html) if html else []
+                  mrows = []
+                  for tm in teams:
+                      for r in tm['rows']:
+                          mrows.append(dict(r, side=tm['side'], team_id=tm['team_id'], owner=tm['owner'], record=tm['record'],
+                                            rank=tm['rank'], total=tm['total'], proj=tm['proj'], pulled_at=stamp))
+                  status.append(f'{lg}_matchup_wk{week}\t{st}\t{len(html)}\t' + ' vs '.join(t['owner'] for t in teams) + f'\t{len(mrows)} rows')
+                  if mrows: write(os.path.join(out, f'{lg}_matchup_wk{week}.csv'), mrows, M_FIELDS)
+                  else: bad += 1
+                  time.sleep(0.6)
+                  st, html = get(f'{BASE}/{cfg["id"]}/transactions')
+                  trs = Y.parse_transactions(html) if html else []
+                  status.append(f'{lg}_transactions\t{st}\t{len(html)}\t{len(trs)} rows')
+                  if trs: write(os.path.join(out, f'{lg}_transactions.csv'), [dict(x, pulled_at=stamp) for x in trs], T_FIELDS)
+                  time.sleep(0.6)
+              with open(os.path.join(out, 'pulled.txt'), 'w') as fh: fh.write('\n'.join(status) + '\n')
+              print('\n'.join(status))
+              if bad: print(f'PARTIAL — {bad} page(s) gave no rows'); sys.exit(2)
 
           if __name__ == '__main__':
               main()
@@ -468,6 +643,7 @@ jobs:
           python3 pull/espn_pull.py data/espn_games.csv || echo "espn partial/failed (exit $?)"
           python3 pull/sleeper_pull.py data/sleeper || echo "sleeper partial/failed (exit $?)"
           python3 pull/yahoo_pull.py data/yahoo || echo "yahoo partial/failed (exit $?)"
+          rm -rf data/yahoo/raw
           python3 pull/digest.py data "${GITHUB_REPOSITORY}" "${GITHUB_REF_NAME}"
           cp data/kalshi.csv "data/archive/kalshi_$(date -u +%Y-%m-%dT%H%MZ).csv" 2>/dev/null || true
           find data/archive -name 'kalshi_*.csv' -mtime +21 -delete
