@@ -27,6 +27,7 @@ def main():
                 for r in rows: w.writerow([r['ticker'], r['yes_bid'], r['yes_ask'], r['last_price'], r['volume']])
             files.append(p)
     # ---- Sleeper stats/projections are already per position; large ones get split in halves
+    for f in glob.glob(os.path.join(data, 'sleeper', '*_part*.csv')): os.remove(f)      # never re-split a part
     for p in sorted(glob.glob(os.path.join(data, 'sleeper', '*.csv'))):
         if os.path.getsize(p) <= 6000:
             files.append(p); continue

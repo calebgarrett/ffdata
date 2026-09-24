@@ -12,16 +12,29 @@ import csv, json, sys, time, urllib.request, urllib.parse
 URL = 'https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard'
 UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36'
 
+ALT = ['https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard',
+       'https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard',
+       'https://cdn.espn.com/core/nfl/scoreboard?xhr=1']
+ERRORS = []
+
 def fetch(params):
-    last = None
-    for attempt in range(5):
-        try:
-            req = urllib.request.Request(URL + '?' + urllib.parse.urlencode(params), headers={'User-Agent': UA, 'Accept': 'application/json'})
-            with urllib.request.urlopen(req, timeout=30) as r:
-                return json.loads(r.read().decode())
-        except Exception as e:
-            last = e; time.sleep(2.0 * (attempt + 1))
-    raise SystemExit(f'ESPN scoreboard unreachable after 5 tries: {last!r}')
+    for base in ALT:
+        for attempt in range(3):
+            try:
+                sep = '&' if '?' in base else '?'
+                req = urllib.request.Request(base + (sep + urllib.parse.urlencode(params) if params else ''),
+                                             headers={'User-Agent': UA, 'Accept': 'application/json', 'Accept-Language': 'en-US,en;q=0.9'})
+                with urllib.request.urlopen(req, timeout=30) as r:
+                    j = json.loads(r.read().decode())
+                # the cdn shape nests the scoreboard under content.sbData
+                if 'events' not in j and isinstance(j.get('content'), dict):
+                    j = j['content'].get('sbData') or j['content']
+                if j.get('events'): return j
+                ERRORS.append(f'{base}: 200 but no events')
+                break
+            except Exception as e:
+                ERRORS.append(f'{base}: {e!r}'); time.sleep(2.0 * (attempt + 1))
+    return {}
 FIELDS = ['event_id', 'away', 'home', 'kickoff', 'spread_team', 'spread', 'over_under',
           'over_odds', 'under_odds', 'away_ml', 'home_ml', 'status', 'away_score', 'home_score']
 
@@ -31,6 +44,9 @@ def main():
     if '--week' in sys.argv: params['week'] = sys.argv[sys.argv.index('--week') + 1]
     j = fetch(params)
     if not j.get('events'): j = fetch({})          # second shape: ESPN's own current-week default
+    if not j.get('events'):
+        with open(sys.argv[1] + '.error.txt', 'w') as fh: fh.write('\n'.join(ERRORS) + '\n')
+        print('ESPN: no events from any endpoint; errors written beside the output'); sys.exit(2)
     rows = []
     for ev in j.get('events', []):
         comp = ev['competitions'][0]

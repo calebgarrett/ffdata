@@ -18,7 +18,11 @@ import csv, json, sys, time, urllib.request, urllib.parse, urllib.error, datetim
 
 BASE = 'https://api.elections.kalshi.com/trade-api/v2'
 SERIES = ['KXNFLREC', 'KXNFLRECYDS', 'KXNFLRSHYDS', 'KXNFLPASSYDS', 'KXNFLPASSTDS', 'KXNFLTD',
-          'KXNFLRRYDS', 'KXNFLINT']
+          'KXNFLRRYDS', 'KXNFLINT',
+          # game lines (winner / spread / total): tickers guessed; an unknown series
+          # returns no events and costs one call. The series dump beside the output
+          # shows the real names.
+          'KXNFLGAME', 'KXNFLSPREAD', 'KXNFLTOTAL', 'KXNFLPTS', 'KXNFLMARGIN', 'KXNFLTEAMPTS']
 FIELDS = ['event', 'series', 'ticker', 'title', 'yes_bid', 'yes_ask', 'last_price', 'volume', 'open_interest',
           'status', 'close_time', 'pulled_at']
 PAUSE = 0.12          # seconds between calls; Kalshi's public limit is generous but not infinite
@@ -63,6 +67,16 @@ def main():
     series = SERIES
     if '--series' in sys.argv: series = sys.argv[sys.argv.index('--series') + 1].split(',')
     stamp = dt.datetime.now(dt.timezone.utc).isoformat(timespec='seconds')
+    # every series Kalshi lists whose ticker mentions NFL -> beside the output, once per run
+    try:
+        names = []
+        for cat in ('Sports', 'Football', 'NFL'):
+            for sr in paged('/series', 'series', category=cat, limit=200):
+                t = sr.get('ticker', '')
+                if 'NFL' in t.upper(): names.append(f"{t}\t{sr.get('title', '')}\t{sr.get('frequency', '')}")
+        with open(out_path + '.series.txt', 'w') as fh: fh.write('\n'.join(sorted(set(names))) + '\n')
+    except Exception as e:
+        with open(out_path + '.series.txt', 'w') as fh: fh.write(f'series listing failed: {e!r}\n')
     rows, per_series = [], {}
     for s in series:
         evs = events_for(s)
