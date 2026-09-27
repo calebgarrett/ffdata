@@ -3,6 +3,7 @@
 # results under data/. Nothing else needs uploading.
 # v5 (2026-09-24): Yahoo pages parsed into CSVs — every roster with tags, the
 # week's matchup with scores, the transactions log — for both leagues, each run.
+# v6.1 (2026-09-27): schedule minutes moved off :00/:30 (GitHub dropped three runs).
 # v6 (2026-09-26): the ENGINE runs here too. After each pull the lineup engine
 # (engine/, unpacked once from engine.tar.gz) recomputes every call and writes
 # the Lineup Card to docs/index.html, which GitHub Pages serves. Pulls now track
@@ -12,13 +13,14 @@ name: pull market and stats data
 on:
   schedule:
     # All times UTC (ET + 4 in September–October; after Nov 1 the same lines run an hour earlier ET).
-    - cron: '0 11 * * *'          # 7:00 am ET daily — rosters, practice reports, Kalshi's next-day ladders
-    - cron: '0 23 * * 4'          # Thu 7:00 pm ET — pregame lines and inactives for TNF
-    - cron: '45 3 * * 5,2'        # Fri/Tue 11:45 pm-ish ET — box scores after Thursday and Monday night
-    - cron: '30 15 * * 0'         # Sun 11:30 am ET — inactives, an hour before the 1:00 lock
-    - cron: '30 16-23 * * 0'      # Sun 12:30–7:30 pm ET, every 30 min (with the line below)
-    - cron: '0 17-23 * * 0'
-    - cron: '0,30 0-4 * * 1'      # Sun 8:00 pm – Mon 12:30 am ET — the late game and SNF, every 30 min
+    # Minutes are off the hour and half-hour on purpose: GitHub delays or drops scheduled runs
+    # that land on :00/:30 under load (09-27: three Sunday-afternoon runs never fired).
+    - cron: '7 11 * * *'          # 7:07 am ET daily — rosters, practice reports, Kalshi's next-day ladders, standings
+    - cron: '7 23 * * 4'          # Thu 7:07 pm ET — pregame lines and inactives for TNF
+    - cron: '52 3 * * 5,2'        # Fri/Tue 11:52 pm ET — box scores after Thursday and Monday night
+    - cron: '37 15 * * 0'         # Sun 11:37 am ET — inactives, before the 1:00 lock
+    - cron: '7,37 16-23 * * 0'    # Sun 12:07 pm – 7:37 pm ET, every 30 min
+    - cron: '7,37 0-4 * * 1'      # Sun 8:07 pm – Mon 12:37 am ET — the late game and SNF
   workflow_dispatch: {}
 permissions:
   contents: write
