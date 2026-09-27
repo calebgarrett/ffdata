@@ -1,14 +1,24 @@
-# ffdata v5 — single-file setup. This one file IS the whole data pump: the first
+# ffdata v6 — single-file setup. This one file IS the whole data pump: the first
 # step writes the pull scripts into pull/, the next runs them and commits the
 # results under data/. Nothing else needs uploading.
 # v5 (2026-09-24): Yahoo pages parsed into CSVs — every roster with tags, the
 # week's matchup with scores, the transactions log — for both leagues, each run.
+# v6 (2026-09-26): the ENGINE runs here too. After each pull the lineup engine
+# (engine/, unpacked once from engine.tar.gz) recomputes every call and writes
+# the Lineup Card to docs/index.html, which GitHub Pages serves. Pulls now track
+# the game week: every 30 min on Sunday afternoon and evening (live scores and
+# win odds), after the Thursday and Monday night games, and each morning at 7 ET.
 name: pull market and stats data
 on:
   schedule:
-    # UTC. 11:00 = 7 am ET. Tue/Thu/Sat/Sun mornings, plus Sunday 15:30 UTC (11:30 am ET, after inactives).
-    - cron: '0 11 * * 0,2,4,6'
-    - cron: '30 15 * * 0'
+    # All times UTC (ET + 4 in September–October; after Nov 1 the same lines run an hour earlier ET).
+    - cron: '0 11 * * *'          # 7:00 am ET daily — rosters, practice reports, Kalshi's next-day ladders
+    - cron: '0 23 * * 4'          # Thu 7:00 pm ET — pregame lines and inactives for TNF
+    - cron: '45 3 * * 5,2'        # Fri/Tue 11:45 pm-ish ET — box scores after Thursday and Monday night
+    - cron: '30 15 * * 0'         # Sun 11:30 am ET — inactives, an hour before the 1:00 lock
+    - cron: '30 16-23 * * 0'      # Sun 12:30–7:30 pm ET, every 30 min (with the line below)
+    - cron: '0 17-23 * * 0'
+    - cron: '0,30 0-4 * * 1'      # Sun 8:00 pm – Mon 12:30 am ET — the late game and SNF, every 30 min
   workflow_dispatch: {}
 permissions:
   contents: write
@@ -22,6 +32,19 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: '3.12' }
+      - name: engine — unpack once, install numpy/scipy
+        run: |
+          pip install -q numpy scipy
+          if [ -f engine.tar.gz ]; then
+            rm -rf engine && mkdir -p engine && tar xzf engine.tar.gz -C engine
+            git rm -q --cached engine.tar.gz 2>/dev/null || true
+            rm -f engine.tar.gz
+            echo "engine unpacked from engine.tar.gz"
+          fi
+          # the engine's paths are fixed at /home/claude/…; point them at this checkout
+          sudo mkdir -p /home/claude
+          sudo ln -sfn "$GITHUB_WORKSPACE/engine" /home/claude/bsb2
+          sudo ln -sfn "$GITHUB_WORKSPACE" /home/claude/ffdata_repo
       - name: write the pull scripts
         run: |
           mkdir -p pull data/sleeper data/archive data/yahoo
@@ -647,11 +670,38 @@ jobs:
           python3 pull/digest.py data "${GITHUB_REPOSITORY}" "${GITHUB_REF_NAME}"
           cp data/kalshi.csv "data/archive/kalshi_$(date -u +%Y-%m-%dT%H%MZ).csv" 2>/dev/null || true
           find data/archive -name 'kalshi_*.csv' -mtime +21 -delete
+      - name: engine — load the pull, run every call, write the card
+        env:
+          FFDATA_IN_ACTION: '1'
+        run: |
+          set +e
+          if [ ! -f engine/ff.py ]; then echo "no engine in this repo yet (upload engine.tar.gz once)"; exit 0; fi
+          mkdir -p docs && touch docs/.nojekyll
+          python3 /home/claude/bsb2/ffdata_load.py > docs/load.txt 2>&1; echo "load exit $?" >> docs/load.txt
+          python3 /home/claude/bsb2/ff.py run > docs/run.txt 2>&1; rc=$?
+          echo "run exit $rc" >> docs/run.txt
+          if [ "$rc" = "0" ] && [ -s /home/claude/bsb2/lineup-card.html ]; then
+            python3 - <<'PY'
+          body = open('/home/claude/bsb2/lineup-card.html').read()
+          head = ('<!doctype html><html lang="en"><head><meta charset="utf-8">'
+                  '<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">'
+                  '<meta http-equiv="Cache-Control" content="no-cache">'
+                  '<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}</style></head><body>')
+          open('docs/index.html', 'w').write(head + body + '</body></html>')
+          PY
+            date -u +%Y-%m-%dT%H:%MZ > docs/card_stamp.txt
+            echo "card written to docs/index.html"
+          else
+            echo "engine refused (exit $rc) — docs/index.html left as it was; see docs/run.txt"
+          fi
+          rm -f engine/data/kalshi.csv.fits.pkl
+          find engine -name __pycache__ -type d -exec rm -rf {} + 2>/dev/null || true
       - name: commit
         run: |
           git config user.name ffdata-bot
           git config user.email ffdata-bot@users.noreply.github.com
-          git add -A pull data
+          git add -A pull data engine docs
+          git rm -q --cached engine.tar.gz 2>/dev/null || true
           git commit -m "pull $(date -u +%Y-%m-%dT%H:%MZ)" || echo "nothing changed"
           for i in 1 2 3 4 5; do
             git pull --rebase --autostash -X theirs origin "${GITHUB_REF_NAME}" || true
