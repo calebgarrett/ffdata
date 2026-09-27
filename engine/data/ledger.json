@@ -162,10 +162,11 @@
   ],
   "verdict": "WARN",
   "week": 2,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": true,
   "resolves_at": "2026-09-20T13:00-04:00",
-  "reverses": null
+  "reverses": null,
+  "superseded_by": "6a1b94d2"
  },
  {
   "id": "58fc87a4",
@@ -2442,10 +2443,11 @@
   ],
   "verdict": "BLOCK",
   "week": 3,
-  "status": "blocked",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": null,
-  "reverses": null
+  "reverses": null,
+  "superseded_by": "5d253659"
  },
  {
   "id": "91e89db3",
@@ -4838,5 +4840,137 @@
   "provisional": false,
   "resolves_at": null,
   "reverses": null
+ },
+ {
+  "id": "6a1b94d2",
+  "ts": "2026-09-27T14:22-04:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "DeMario Douglas",
+  "call": "start DeMario Douglas at W/R/T",
+  "detail": "over Isaiah Likely +7.36",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 3,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": "2026-09-27T13:00-04:00",
+  "reverses": "880be3f2"
+ },
+ {
+  "id": "43d8d829",
+  "ts": "2026-09-27T14:22-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Sam Darnold",
+  "call": "add Sam Darnold (QB) over Matthew Stafford",
+  "detail": "+6.45/wk",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 3,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "6fe5d3e7",
+  "ts": "2026-09-27T14:22-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Antonio Williams",
+  "call": "drop DeMario Douglas -> add Antonio Williams",
+  "detail": "+6.3 season",
+  "evidence": [
+   "kalshi",
+   "sleeper",
+   "usage"
+  ],
+  "verdict": "BLOCK",
+  "week": 3,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "f9db11ec",
+  "ts": "2026-09-27T14:22-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Malaki Starks",
+  "call": "add Malaki Starks (DB) over Kam Curl",
+  "detail": "+4.97/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 3,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "9a43a9d0",
+  "ts": "2026-09-27T14:22-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Nick Emmanwori",
+  "call": "add Nick Emmanwori (DB) over Kam Curl",
+  "detail": "+3.59/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 3,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "076b8157",
+  "ts": "2026-09-27T14:22-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Jalen Thompson",
+  "call": "add Jalen Thompson (DB) over Kam Curl",
+  "detail": "+3.00/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 3,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "5d253659",
+  "ts": "2026-09-27T14:22-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "DeMario Douglas",
+  "call": "drop Rome Odunze -> add DeMario Douglas",
+  "detail": "+8.1 week",
+  "evidence": [
+   "kalshi",
+   "sleeper",
+   "usage"
+  ],
+  "verdict": "BLOCK",
+  "week": 3,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "74b5e9a7"
  }
 ]
