@@ -40,6 +40,11 @@ def cmd_check(quiet=False):
     if not quiet:
         for l in last2[-6:]: print('  ' + l)
         if not ok2: print(r2.stdout[-2000:])
+    elif not (ok and ok2):
+        # quiet mode (ff.py run): still name what failed, so a refused run in the
+        # pump's log says why (09-27: the Action refused with no detail on file)
+        for l in [x for x in r.stdout.splitlines() + r2.stdout.splitlines() if x.startswith('[FAIL]') or 'Traceback' in x or 'Error' in x][:12]: print('  ' + l)
+        for l in last + last2[-1:]: print('  ' + l)
     return ok and ok2
 
 # ----------------------------------------------------------------- status

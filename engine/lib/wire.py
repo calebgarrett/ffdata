@@ -225,7 +225,22 @@ class Wire:
             # healthy, and the drop must stand on that alone (Pierce 09-23: D-tagged
             # AND the lowest-valued bench player either way).
             g.add('G13-injury', G.WARN, f'tagged {row["designation"]} — why and for how long is NOT on record; the tag counts for nothing here, the drop stands on his season value alone')
+        # Caleb, 2026-09-27: "QBs are too valuable in superflex though compared to a
+        # flyer WR." In a league with a QB-eligible flex, every QB up to one past the
+        # QB-eligible slots is depth that starts on bye weeks and prices in trade;
+        # he is never the spot for a non-QB add. A fourth QB is fair game.
+        if _fam(row['pos']) == 'QB' and not dead and k not in self.drop_ok:
+            qb_slots = self.superflex_qb_slots()
+            if qb_slots >= 2:
+                n_qb = sum(1 for r in self.state.mine if _fam(r['pos']) == 'QB' and r['slot'] != 'IR' and r['designation'] not in ('IR','IR-R','O','NA','PUP','PUP-R','SUSP','CEL'))
+                if n_qb <= qb_slots + 1:
+                    g.add('G14-superflex', G.BLOCK, f'superflex: {n_qb} QBs for {qb_slots} QB-eligible slots — QB{n_qb} is bye-week and trade depth, not a spot for a non-QB add (Caleb 09-27)')
         return g
+
+    def superflex_qb_slots(self):
+        """Number of slots a QB can fill in this league (2+ means superflex)."""
+        cfg = self.state.cfg
+        return sum(1 for s_ in cfg.slots if 'QB' in cfg.accepts.get(s_, set()))
 
     def dead_spot(self, row):
         """A roster spot worth zero: a long-term designation AND a registry entry

@@ -86,6 +86,8 @@ def _usage_tier(r):
             return lvl, f"{r['snap_share']:.0%} snaps, {r['tgt_share']:.0%} targets, {r['air_share']:.0%} air yds"
     return None, ''
 
+MARKET_FLOOR = {'rec_yd': 35.0, 'rush_yd': 40.0, 'pass_yd': 200.0}   # starter-level market lines
+
 def _market(proj, k, pos):
     """Market vs projection for next week. -> dict(ladder, ratio, text, ahead)"""
     field, series = {'WR': ('rec_yd', 'KXNFLRECYDS'), 'TE': ('rec_yd', 'KXNFLRECYDS'),
@@ -96,16 +98,20 @@ def _market(proj, k, pos):
     try: sv = float(s.get(field) or 0)
     except ValueError: sv = 0.0
     dk = (proj.props.get(k) or {}).get(field)
+    # 'the market agrees' means the market prices a STARTER'S line, not merely a line
+    # above Sleeper's: 26 receiving yards priced 15% over a 23 projection is a WR4
+    # (Treadwell 09-27, proposed over the second DEF). Floors are starter-level medians.
+    floor = MARKET_FLOOR[field]
     if f and f['sse'] < 0.05:
         if sv <= 0:
-            return dict(ladder=True, ratio=None, ahead=True,
-                        text=f"Kalshi {label} {f['mean']:.0f} — no Sleeper line at all (the market sees a starter the projections do not)")
+            return dict(ladder=True, ratio=None, ahead=f['mean'] >= floor, level=f['mean'],
+                        text=f"Kalshi {label} {f['mean']:.0f} — no Sleeper line at all (the market sees a starter the projections do not)" + ('' if f['mean'] >= floor else f'; a part-time line, under the {floor:.0f} starter floor'))
         ratio = f['mean'] / sv
-        return dict(ladder=True, ratio=ratio, ahead=ratio >= 1.15,
-                    text=f"Kalshi {label} {f['mean']:.0f} vs Sleeper {sv:.0f} ({(ratio-1):+.0%})")
+        return dict(ladder=True, ratio=ratio, ahead=ratio >= 1.15 and f['mean'] >= floor, level=f['mean'],
+                    text=f"Kalshi {label} {f['mean']:.0f} vs Sleeper {sv:.0f} ({(ratio-1):+.0%})" + ('' if f['mean'] >= floor else f' — a part-time line, under the {floor:.0f} starter floor'))
     if dk:
         ratio = (dk / sv) if sv > 0 else None
-        return dict(ladder=True, ratio=ratio, ahead=(ratio or 9) >= 1.15,
+        return dict(ladder=True, ratio=ratio, ahead=(ratio or 9) >= 1.15 and dk >= floor, level=dk,
                     text=f"DK {label} line {dk:.1f} vs Sleeper {sv:.0f}" + ('' if sv > 0 else ' (no Sleeper line)'))
     return dict(ladder=False, ratio=None, ahead=False,
                 text='no market line yet' + (f' (Sleeper {label} {sv:.0f})' if sv > 0 else ', and no Sleeper line either'))
@@ -172,9 +178,19 @@ def _drop_candidates(state, lineup, w, use):
                (f'cheapest clean drop on season value; {r["designation"]} tag not counted' + (f' ({usage_txt.split(" — ")[0].lower()} usage last week)' if usage_txt else '')) if tagged and r['key'] not in w.drop_ok and fam not in ('DEF', 'K') else w.drop_ok[r['key']]['call'][:60] if r['key'] in w.drop_ok
                else (f'spare {fam} — the lower season value of your two ({w.season.get(r["key"], {}).get("pts") or 0:.0f} vs {max((w.season.get(x["key"], {}).get("pts") or 0) for x in rows if _fam(x["pos"]) == fam and x["key"] != r["key"]):.0f})' + (' — he is in the slot now, so the other one starts' if r['slot'] != 'BN' else '')) if fam in ('DEF', 'K')
                else ('lowest-valued bench player' + (f' ({usage_txt.split(" — ")[0].lower()} usage last week)' if usage_txt else ', no usage row')))
-        out.append(dict(row=r, tier=tier, val=val, why=why, gate=g))
+        out.append(dict(row=r, tier=tier, val=val, why=why, gate=g, vor=_vor(w, r['key'], fam)))
     out.sort(key=lambda x: (x['tier'], x['val']))
     return out
+
+def _vor(w, k, fam):
+    """Season value over the wire's best replacement at the position family, or None."""
+    sea = w.season.get(k, {}).get('pts') if w.season else None
+    if sea is None: return None
+    rep = w.replacement(fam)
+    rs = (rep or {}).get('season')
+    if rs is None:
+        rs = max(((v.get('season') or 0) for v in w.by_fam.get(fam, [])), default=0.0)
+    return sea - (rs or 0.0)
 
 def _mechanics(league, tier=None):
     if league == 'HH':
@@ -199,6 +215,15 @@ def _bid_txt(league, tier, x, prof):
     from . import fab as F
     b = (F.model().get('bands') or {}).get(tier)
     return f" — bid ${b['bid']} ({b['why']})" if b else ''
+
+def _worth_less(d, x):
+    """Is the drop candidate worth less than the add, each measured as season value over
+    the wire's replacement at his own position? Falls back to week points when a season
+    number is missing on either side."""
+    dv, xv = d.get('vor'), x.get('vor')
+    if dv is not None and xv is not None: return dv <= xv
+    dw, xw = d['row'].get('pts') or 0.0, x.get('week_pts') or 0.0
+    return dw <= xw
 
 def _mech(league, tier, x, waived, prof=None):
     if waived and x['key'] in waived:
@@ -262,6 +287,13 @@ def _move(x, league, drops, kick, depth, dropped=None, dropped_where=None, waive
         if d is None:
             return dict(verb='WAIT', when='no clean drop left', drop=None,
                         why='the rest of the bench is a hold, a handcuff, starter-level usage in its own right, or has no depth-chart check on record — adding him means cutting one of those')
+        # the only clean drop left can still be worth more than the add: a 384-point
+        # QB3 in a superflex league is not the spot for a WR with a 48-yard line
+        # (Stafford for Mitchell, 09-27). Compare value over replacement at each
+        # one's own position; a dead spot, registry drop_ok or spare DEF/K is exempt.
+        if d['tier'] == 3 and not _worth_less(d, x):
+            return dict(verb='WAIT', when='no drop worth less than him', drop=None,
+                        why=f"the only clean drop is {dn}, and his value over the wire at his position is higher than {x['name']}'s at his — adding him would cost more than it buys")
         dwk = d['row'].get('pts')
         cmp = (f' He projects {x["week_pts"]:.1f} this week vs {dn} {dwk:.1f} — the add is for the role, not this week.'
                if x['week_pts'] is not None and dwk and x['week_pts'] < dwk else '')
@@ -369,7 +401,7 @@ def scan(state, proj, season=None, week_usage=None, lineup=None):
                         snap=r['snap_share'], tgt=r['tgt_share'], air=r['air_share'], touch=r['touch_share'],
                         rz=r['rec_rz_tgt'], pts_wk1=r['pts_ppr'], market=mk['text'], ladder=mk['ladder'], ratio=mk['ratio'],
                         ahead=mk['ahead'], prank=prank, undrafted=undrafted, crowd=crowd,
-                        week_pts=pts, boom=boom, season=(season.get(k) or {}).get('pts'),
+                        week_pts=pts, boom=boom, season=(season.get(k) or {}).get('pts'), vor=_vor(w, k, _fam(r['pos'])),
                         gate=gate, in_pool=bool(cand), ready=proj.market_ready(r['tm']),
                         verified=verified, registry=w.verified.get(k, {}).get('why', '')))
     order = {'A': 0, 'B': 1, 'C': 2, 'W': 3}
