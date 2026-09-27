@@ -124,6 +124,39 @@ class Projections:
             for i in (2, 3):
                 a, b = team(code[:i]), team(code[i:])
                 if a in ABBR and b in ABBR: self.ready |= {a, b}; break
+        # ---- LIVE GUARD (09-27): once a game kicks off, Kalshi's ladders are in-game
+        # markets — they track what has already happened (Treadwell 135 rec yds at
+        # 2:20 pm, LaPorta 'cut 20%'). They are not projections and never feed a
+        # line, a tier or a line-movement flag. The pregame Sleeper number stands
+        # for the unplayed share until Yahoo's final replaces it.
+        now = C.now()
+        kicked_codes = set()
+        for code in game_series:
+            for i in (2, 3):
+                a, b = team(code[:i]), team(code[i:])
+                if a in ABBR and b in ABBR:
+                    k = self.kick.get(a) or self.kick.get(b)
+                    if k and k <= now: kicked_codes.add(code)
+                    break
+        self.live_events = set()
+        if kicked_codes and os.path.exists(D + 'kalshi.csv'):
+            live_keys = set()
+            for r in csv.DictReader(open(D + 'kalshi.csv')):
+                if r['event'] not in self.in_week_events: continue
+                if r['event'].split('-', 1)[1][7:] in kicked_codes:
+                    self.live_events.add(r['event'])
+                    t = r['title']
+                    if ':' in t: live_keys.add((key(t.split(':', 1)[0].strip()), r['series']))
+            self.kal_live_dropped = len([1 for kk in self.kal if kk in live_keys])
+            self.kal = {kk: v for kk, v in self.kal.items() if kk not in live_keys}
+            self.in_week_events = self.in_week_events - self.live_events
+            # a game in progress is neither ready nor unready: its players are locked
+            for code in kicked_codes:
+                for i in (2, 3):
+                    a, b = team(code[:i]), team(code[i:])
+                    if a in ABBR and b in ABBR: self.ready -= {a, b}; break
+        else:
+            self.kal_live_dropped = 0
 
     # ------------------------------------------------------------ per player
     def market_ready(self, tm):

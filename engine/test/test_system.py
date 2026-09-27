@@ -480,6 +480,16 @@ if _qb_b:
 _hh_scan = BK.scan(h, P, season=None, lineup=LU.solve(h, P))
 case('HH scan never names a QB as the drop for a non-QB add', all(not (x['move'].get('drop') and h.row_of(x['move']['drop']) and h.row_of(x['move']['drop'])['pos'] == 'QB' and x['pos'] != 'QB') for x in _hh_scan['rows']))
 
+# 39. Live guard (09-27, 2:20 pm): Kalshi ladders for a game in progress are the box
+#     score, not a projection — no line, tier or movement flag may use them; and a
+#     lineup change may not involve a player whose game has kicked off.
+_kicked_teams = {tm for tm, k in P.kick.items() if k and k <= C.now()}
+_off_team = {k: N.team(r['team']) for k, r in P.off.items()}
+case('live guard: no Kalshi ladder survives for a player whose game has kicked off', not any(_off_team.get(k) in _kicked_teams for (k, s_) in P.kal), str([k for (k, s_) in P.kal if _off_team.get(k) in _kicked_teams][:3]))
+case('live guard: no lineup change involves a locked player (BSB and HH)', all(c['start'].get('phase') != 'locked' and (not c['sit'] or c['sit'].get('phase') != 'locked') for c in LU.solve(b, P)['changes'] + LU.solve(h, P)['changes']))
+_stm2 = _STM.scan(P, {'BSB': b, 'HH': h}, W_NOW)
+case('live guard: no line-movement flag for a player whose game has kicked off', all(m['owners'][0][4] not in _kicked_teams for m in _stm2['moves']))
+
 print('=' * 88)
 n = total
 print(f'{n - bad}/{n} behaved as required.' + ('  SYSTEM IS SOUND.' if bad == 0 else f'  {bad} FAILURES — do not ship.'))

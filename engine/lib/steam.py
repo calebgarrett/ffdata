@@ -80,9 +80,14 @@ def scan(proj, states, week):
     for lg, st in states.items():
         for r in st.rows:
             who.setdefault(r['key'], []).append((lg, r['owner'], r['slot'], r['player'], r['tm']))
-    # ---- movement since the week's first pull
+    kicked = set()
+    for tm, kk in proj.kick.items():
+        if kk and kk <= C.now(): kicked.add(tm)
+    # ---- movement since the week's first pull (pregame only: an in-game ladder
+    # tracks the box score, not the market's opinion)
     for k, series in now:
         if k not in who or (k, series) not in base: continue
+        if who[k][0][4] in kicked: continue
         a, b = base[(k, series)], now[(k, series)]
         if a <= 0: continue
         pct = (b - a) / a
@@ -92,9 +97,6 @@ def scan(proj, states, week):
                                  owners=who[k], mine=[(lg, slot) for lg, own, slot, _, _ in who[k] if own == states[lg].me]))
     res['moves'].sort(key=lambda m: -abs(m['pct']))
     # ---- ladders that vanished since the previous pull, games not yet kicked off
-    kicked = set()
-    for tm, kk in proj.kick.items():
-        if kk and kk <= C.now(): kicked.add(tm)
     had = defaultdict(set); have = defaultdict(set)
     for (k, s) in prev: had[k].add(s)
     for (k, s) in now: have[k].add(s)

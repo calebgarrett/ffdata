@@ -69,6 +69,9 @@ def solve(state, proj, actuals=None):
             perms.append(s); continue
         if o and o['key'] in real_in:
             if o.get('final') or o.get('live') or (c and (c.get('final') or c.get('live'))): continue   # locked either way
+            # Yahoo locks a player at his kickoff: a swap involving anyone whose game has
+            # started is not a move that can be made (Douglas for Likely at 2:20 pm, 09-27)
+            if o.get('phase') == 'locked' or (c and c.get('phase') == 'locked'): continue
             # who does he displace? the starter in real_out with the same slot-family, else any
             out = c if (c and c['key'] in unclaimed) else next((x for x in cur.values() if x and x['key'] in unclaimed), None)
             if out: unclaimed.discard(out['key'])

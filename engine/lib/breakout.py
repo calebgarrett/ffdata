@@ -226,6 +226,9 @@ def _worth_less(d, x):
     return dw <= xw
 
 def _mech(league, tier, x, waived, prof=None):
+    if x.get('kicked'):
+        return ('his game has already kicked off — Yahoo locks an unrostered player at kickoff, so he is a Wednesday waiver claim in BSB'
+                if league == 'BSB' else 'his game has already kicked off — addable again when it ends (1 of 7 weekly acquisitions)') + _bid_txt(league, tier, x, prof)
     if waived and x['key'] in waived:
         return f'ON WAIVERS (dropped {waived[x["key"]]}) — a claim, not a free-agent add: in by Tue night, runs Wed ~5am; he cannot play for you this week' + _bid_txt(league, tier, x, prof)
     if league == 'HH': return _mechanics(league, tier)
@@ -402,6 +405,7 @@ def scan(state, proj, season=None, week_usage=None, lineup=None):
                         rz=r['rec_rz_tgt'], pts_wk1=r['pts_ppr'], market=mk['text'], ladder=mk['ladder'], ratio=mk['ratio'],
                         ahead=mk['ahead'], prank=prank, undrafted=undrafted, crowd=crowd,
                         week_pts=pts, boom=boom, season=(season.get(k) or {}).get('pts'), vor=_vor(w, k, _fam(r['pos'])),
+                        kicked=bool(proj.kickoff(r['tm']) and proj.kickoff(r['tm']) <= C.now()),
                         gate=gate, in_pool=bool(cand), ready=proj.market_ready(r['tm']),
                         verified=verified, registry=w.verified.get(k, {}).get('why', '')))
     order = {'A': 0, 'B': 1, 'C': 2, 'W': 3}

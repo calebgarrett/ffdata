@@ -658,7 +658,14 @@ def _assemble(out, run):
     A += clock
     A.append(f'<div class="decide"><div class="sech"><h2>Decide</h2><span class="n">{len(decide)} open</span></div>')
     if decide: A.append('<div class="dcards">'); A += decide; A.append('</div>')
-    else: A.append('<div class="calm">Nothing needs a decision right now.</div>')
+    else:
+        # say what was checked, not just that it came up empty (Caleb 09-27)
+        nxt = []
+        for lg, R in run['leagues'].items():
+            ks = sorted({run['proj'].kickoff(r['tm']) for r in R['state'].starters() if run['proj'].kickoff(r['tm']) and run['proj'].kickoff(r['tm']) > C.now()})
+            if ks: nxt.append(f'{lg} {C.stamp(ks[0]).replace(" ET", "")}')
+        A.append('<div class="calm"><div>Nothing needs a decision right now — both lineups are set as the engine would set them, and no add or drop clears the gate in either league.'
+                 + (f'<div style="font-size:14px;font-weight:500;margin-top:4px;opacity:.85">Next lock: {esc(" · ".join(nxt))}. The card re-checks on every pull.</div>' if nxt else '') + '</div></div>')
     A.append('</div>')
     A.append('<div class="decide"><div class="sech"><h2>Outlook</h2><span class="n">both leagues</span></div>'); A += ol; A.append('</div>')
     def sec(title_, items, sub=''):
