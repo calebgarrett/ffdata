@@ -3,6 +3,7 @@
 # results under data/. Nothing else needs uploading.
 # v5 (2026-09-24): Yahoo pages parsed into CSVs — every roster with tags, the
 # week's matchup with scores, the transactions log — for both leagues, each run.
+# v6.2 (2026-09-27): schedule is a single '*/30 * * * *' — the tailored crons never fired.
 # v6.1 (2026-09-27): schedule minutes moved off :00/:30 (GitHub dropped three runs).
 # v6 (2026-09-26): the ENGINE runs here too. After each pull the lineup engine
 # (engine/, unpacked once from engine.tar.gz) recomputes every call and writes
@@ -12,15 +13,12 @@
 name: pull market and stats data
 on:
   schedule:
-    # All times UTC (ET + 4 in September–October; after Nov 1 the same lines run an hour earlier ET).
-    # Minutes are off the hour and half-hour on purpose: GitHub delays or drops scheduled runs
-    # that land on :00/:30 under load (09-27: three Sunday-afternoon runs never fired).
-    - cron: '7 11 * * *'          # 7:07 am ET daily — rosters, practice reports, Kalshi's next-day ladders, standings
-    - cron: '7 23 * * 4'          # Thu 7:07 pm ET — pregame lines and inactives for TNF
-    - cron: '52 3 * * 5,2'        # Fri/Tue 11:52 pm ET — box scores after Thursday and Monday night
-    - cron: '37 15 * * 0'         # Sun 11:37 am ET — inactives, before the 1:00 lock
-    - cron: '7,37 16-23 * * 0'    # Sun 12:07 pm – 7:37 pm ET, every 30 min
-    - cron: '7,37 0-4 * * 1'      # Sun 8:07 pm – Mon 12:37 am ET — the late game and SNF
+    # Every 30 minutes, all week, the plainest schedule GitHub accepts. The tailored
+    # game-week schedule (v6/v6.1) never fired once — GitHub registered the manual
+    # runs but not one cron — so this is the fallback: one line, no ranges, no lists.
+    # Public-repo minutes are free; the pump is idempotent; the Kalshi archive is
+    # throttled to one copy per two hours so the repo does not bloat.
+    - cron: '*/30 * * * *'
   workflow_dispatch: {}
 permissions:
   contents: write
@@ -670,8 +668,23 @@ jobs:
           python3 pull/yahoo_pull.py data/yahoo || echo "yahoo partial/failed (exit $?)"
           rm -rf data/yahoo/raw
           python3 pull/digest.py data "${GITHUB_REPOSITORY}" "${GITHUB_REF_NAME}"
-          cp data/kalshi.csv "data/archive/kalshi_$(date -u +%Y-%m-%dT%H%MZ).csv" 2>/dev/null || true
-          find data/archive -name 'kalshi_*.csv' -mtime +21 -delete
+          # archive at most one Kalshi copy per two hours (line movement needs pulls hours
+          # apart, not minutes); judged by the stamp in the file NAME — a checkout resets mtimes
+          python3 - <<'PY'
+          import glob, os, re, shutil, datetime as dt
+          now = dt.datetime.now(dt.timezone.utc)
+          names = sorted(glob.glob('data/archive/kalshi_*.csv'))
+          last = None
+          if names:
+              m = re.search(r'kalshi_(\d{4}-\d{2}-\d{2}T\d{4})Z', names[-1])
+              if m: last = dt.datetime.strptime(m.group(1), '%Y-%m-%dT%H%M').replace(tzinfo=dt.timezone.utc)
+          if os.path.exists('data/kalshi.csv') and (last is None or (now - last).total_seconds() >= 110 * 60):
+              shutil.copy('data/kalshi.csv', now.strftime('data/archive/kalshi_%Y-%m-%dT%H%MZ.csv')); print('archived')
+          cutoff = now - dt.timedelta(days=21)
+          for n in names:
+              m = re.search(r'kalshi_(\d{4}-\d{2}-\d{2}T\d{4})Z', n)
+              if m and dt.datetime.strptime(m.group(1), '%Y-%m-%dT%H%M').replace(tzinfo=dt.timezone.utc) < cutoff: os.remove(n)
+          PY
       - name: engine — load the pull, run every call, write the card
         env:
           FFDATA_IN_ACTION: '1'
