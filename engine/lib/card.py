@@ -245,7 +245,7 @@ def render(run):
             g = x.get('gate')
             warns = [msg for gg, st, msg in (g.checks if g else []) if st == 'WARN']
             out.append(f'<div class="act{" prov" if warns else ""}"><span class="lg">{lg} — breakout add, tier {esc(x["tier"])}{" — check first" if warns else ""}</span>'
-                       f'<div class="mv">Add {esc(x["name"])} <small style="font-weight:400;color:var(--muted)">{esc(x["pos"])} {esc(x["tm"])}</small> · drop {esc(m["drop"])}</div>'
+                       f'<div class="mv">Add {esc(x["name"])} <small style="font-weight:400;color:var(--muted)">{esc(x["pos"])} {esc(x["tm"])}</small> · ' + ('into the open roster spot' if str(m["drop"]).startswith('an open') else f'drop {esc(m["drop"])}') + '</div>'
                        f'<div class="why"><b>When:</b> {esc(m["when"])}.<br><b>Why:</b> {esc(m["why"])}'
                        + (''.join(f'<br><b>Check:</b> {esc(w_)}' for w_ in warns) if warns else '')
                        + f'<br><span style="color:var(--faint)">{esc(x["usage"])} · {esc(x["market"])}</span></div></div>')
@@ -253,6 +253,10 @@ def render(run):
         for f in R['flags']:
             if 'holds a roster spot' in f and 'HOLD' in f: continue
             if any(f.startswith(p) for p in dropping): continue     # already a claim above
+            if 'IR MOVE' in f:
+                head, rest = f.split(': IR MOVE — ', 1)
+                out.append(f'<div class="act"><span class="lg">{lg} — move to IR</span><div class="mv">{esc(head)}</div><div class="why">{esc(rest)}</div></div>')
+                continue
             if 'NEXT MAN UP' in f:
                 head, rest = f.split(' — NEXT MAN UP ', 1)
                 out.append(f'<div class="act"><span class="lg">{lg} — next man up</span><div class="mv">{esc(head)}</div>'

@@ -144,6 +144,20 @@ def _drop_candidates(state, lineup, w, use):
     fams = defaultdict(int)
     for r in rows:
         if r['slot'] != 'IR': fams[_fam(r['pos'])] += 1
+    # an OPEN roster spot costs nobody: it is the first 'drop' (09-28: Burns to IR
+    # in HH frees a bench spot, and the add that follows needs no cut)
+    cfg = state.cfg
+    active = sum(1 for r in state.mine if r['slot'] != 'IR')
+    size = len(cfg.slots) + cfg.bench
+    open_spots = max(0, size - active)
+    out = []
+    for i in range(open_spots):
+        out.append(dict(row=dict(player='an open roster spot', key=f'__open{i}', pos='', slot='BN', pts=0.0, designation='none', elig=set()),
+                        tier=-1, val=0.0, why='open roster spot — no drop needed', gate=None, vor=-999.0))
+    # a player the registry says to move to IR (not drop) is not the spot while an
+    # IR slot is free — the IR move itself frees the spot (Burns, torn ACL, 09-28)
+    ir_free = cfg.ir_slots - sum(1 for r in state.mine if r['slot'] == 'IR')
+    ir_bound = {k for k, v in w.drop_ok.items() if v.get('ir') and ir_free > 0}
     # two DEFs (or Ks): the spare is the one worth less on the SEASON, whether he is
     # starting or benched (Vikings 09-24: #5 season DEF on the bench behind the #21
     # 49ers in the slot — the 49ers are the spare, and the Vikings start)
@@ -153,10 +167,10 @@ def _drop_candidates(state, lineup, w, use):
         if len(pair) >= 2:
             pair.sort(key=lambda r: (w.season.get(r['key'], {}).get('pts') or 0, r.get('pts') or 0))
             spare[fam] = pair[0]['key']
-    out = []
     for r in rows:
         fam = _fam(r['pos'])
         if r['key'] in w.hold: continue
+        if r['key'] in ir_bound: continue
         if fam in ('DEF', 'K'):
             if spare.get(fam) != r['key']: continue
         elif r['slot'] != 'BN': continue

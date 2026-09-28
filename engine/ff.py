@@ -173,6 +173,7 @@ def build(week=None):
         # (Oluokun Q in the D slot, 09-18). Name the best eligible bench player.
         for r in lu['rows']:
             if r['slot'] in ('BN', 'IR') or r['designation'] != 'Q': continue
+            if r.get('kick') and r['kick'] <= C.now(): continue          # his game is played; the Q question is over
             cands = [b for b in lu['rows'] if b['slot'] == 'BN' and b['designation'] not in UNUSABLE
                      and b['designation'] != 'Q' and (b['elig'] & st.cfg.accepts[r['slot']]) and b.get('pts') is not None]
             best = max(cands, key=lambda b: b['pts']) if cands else None
@@ -180,7 +181,21 @@ def build(week=None):
             R['flags'].append(f'{r["player"]} is Q at {r["slot"]} — ' +
                               (f'if he is out, {best["player"]} ({best["pts"]:.1f}) takes the slot; decide before {when}' if best
                                else f'no healthy bench player can fill {r["slot"]}; decide before {when}'))
-        dead = [r for r in st.mine if r['designation'] in UNUSABLE and r['slot'] != 'IR']
+        # registry says IR, not drop (a season-ending injury in a league with IR slots)
+        ir_free = st.cfg.ir_slots - len(st.ir())
+        for r in st.mine:
+            d = w.drop_ok.get(r['key'])
+            if not d or not d.get('ir') or r['slot'] == 'IR': continue
+            fill = None
+            if r['slot'] not in ('BN', 'IR'):
+                cands = [b for b in lu['rows'] if b['slot'] == 'BN' and b['designation'] not in UNUSABLE and b['designation'] != 'Q'
+                         and (b['elig'] & st.cfg.accepts[r['slot']]) and b.get('pts') is not None]
+                fill = max(cands, key=lambda b: b['pts']) if cands else None
+            R['flags'].append(f'{r["player"]} at {r["slot"]}: IR MOVE — {d["why"][:90]} — ' +
+                              (f'{ir_free} IR slot(s) free: move him to IR as soon as Yahoo tags him O or IR (tag now: {r["designation"]}); that frees a roster spot without losing him' if ir_free > 0
+                               else 'no IR slot free — he is a drop only when the spot is needed') +
+                              (f'; {fill["player"]} ({fill["pts"]:.1f}) takes {r["slot"]}' if fill else ''))
+        dead = [r for r in st.mine if r['designation'] in UNUSABLE and r['slot'] != 'IR' and not (w.drop_ok.get(r['key']) or {}).get('ir')]
         for r in dead:
             h = w.hold.get(r['key'])
             d = w.drop_ok.get(r['key'])
