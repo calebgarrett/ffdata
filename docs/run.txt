@@ -1,24 +1,24 @@
 
 ================================================================================================
-BSB · OVERKILL · WEEK 3 LINEUP   current 147.40 → optimal 164.60
+BSB · OVERKILL · WEEK 3 LINEUP   current 155.53 → optimal 160.73
 ================================================================================================
-  state 2026-09-29T00:57 (0h)   0 real change(s), 4 permutation(s) ignored
+  state 2026-09-29T06:48 (0h)   0 real change(s), 4 permutation(s) ignored
 
   LINEUP IS OPTIMAL — nobody on the bench outscores a starter.
 
 ================================================================================================
-HH · Tecmo Bowlers · WEEK 3 LINEUP   current 295.28 → optimal 318.01
+HH · Tecmo Bowlers · WEEK 3 LINEUP   current 297.04 → optimal 317.42
 ================================================================================================
-  state 2026-09-29T00:57 (0h)   0 real change(s), 6 permutation(s) ignored
+  state 2026-09-29T06:48 (0h)   0 real change(s), 6 permutation(s) ignored
 
   LINEUP IS OPTIMAL — nobody on the bench outscores a starter.
 
 ================================================================================================
-BSB · WIRE   pool 7318 · phantoms removed 2 · near-misses kept 258
+BSB · WIRE   pool 7322 · phantoms removed 2 · near-misses kept 268
 ================================================================================================
   PHANTOM removed: devin smith == devonta smith ("devin"/"devonta" share 3 leading chars, ratio 0.67)
   PHANTOM removed: danthony jones == dan jones ("danthony"/"dan" share 3 leading chars, ratio 0.55)
-  ** 2 DEFs rostered (49ers, Vikings) for one DEF slot — the spare is 49ers (85 season vs Vikings 122); Vikings is on the bench this week only on the matchup (12.0 vs 0.0), not on quality
+  ** 2 DEFs rostered (49ers, Vikings) for one DEF slot — the spare is 49ers (85 season vs Vikings 122); Vikings is on the bench this week only on the matchup (7.0 vs 8.1), not on quality
   ** Josh Jacobs [CEL] holds a roster spot — HOLD: HOLD. A top-10 RB whose likely return lands before the week 15-17 playoff run. C
 
   best available (✓ = week-1 usage verified; sorted usage-first):
@@ -27,18 +27,18 @@ BSB · WIRE   pool 7318 · phantoms removed 2 · near-misses kept 258
     WR  Malachi Fields NYG 6.1/76 ✓ | Antonio Williams WAS 4.4/84 ✓ | De'Zhaun Stribling SF 0.0/138
     TE  Pat Freiermuth PIT 8.8/134 | Greg Dulcich MIA 6.9/125 | Cade Otton TB 7.2/123
     K   Jake Bates DET 10.0/146 | Daniel Carlson NO 9.5/142 | Wil Lutz DEN 9.1/156
-    DEF Kansas City Chiefs KC 9.1/112 | Carolina Panthers CAR 7.9/80 | Detroit Lions DET 7.6/102
+    DEF Kansas City Chiefs KC 9.1/112 | Seattle Seahawks SEA 8.8/137 | Green Bay Packers GB 8.4/105
 
   ROSTER CONSTRUCTION (bench spots vs the wire, usage-gated):
 
     DROP DeMario Douglas → ADD Antonio Williams   +6.3 (season)   ledger blocked
-       WARN  ADD: add Antonio Williams
+       PASS  ADD: add Antonio Williams
          ok G1-owner     unrostered, checked against every roster in the league
          ok G2-desig     designation read, clear
          ok G4-horizon   horizon=season, correct for a add at WR
          ok G5-sources   3 independent families: ['fftoday', 'rotowire', 'usage']  (['fftoday', 'sleeper', 'usage'])
          ok G6-magnitude 83.8 within WR season bounds
-         !! G8-fresh     inputs pulled 2026-09-28 (1d old)
+         ok G8-fresh     inputs pulled 2026-09-29 (0d old)
          ok G9-reversal  no conflicting prior call on record
          ok G12-state    checked against live state: state 0h old, within the 30h limit for add_drop
          ok G10-mech     legal under BSB rules
@@ -48,20 +48,20 @@ BSB · WIRE   pool 7318 · phantoms removed 2 · near-misses kept 258
          ok G4-horizon   horizon=season, correct for a drop at WR
          XX G5-sources   SINGLE SOURCE: ['rotowire'] (['sleeper'])
          ok G6-magnitude 77.45 within WR season bounds
-         !! G8-fresh     inputs pulled 2026-09-28 (1d old)
+         ok G8-fresh     inputs pulled 2026-09-29 (0d old)
          ok G9-reversal  no conflicting prior call on record
          ok G12-state    checked against live state: state 0h old, within the 30h limit for add_drop
          ok G10-mech     legal under BSB rules
          ok G11-role-registry usage verified — 41 snaps (61%), 33 ROUTES = 79% route share, highest on the team. 7 targets, 5 catches, 22.6% target share.
 
   WEEK 4 STREAMING — DEF by opponent implied total (low = good), K by own total (high = good)
-    DEF:  Vikings * 18.0 · Chicago Bears 18.5 · Kansas City Chie 19.0 · Baltimore Ravens 19.5 · New Orleans Sain 21.5 · Cleveland Browns 21.5
+    DEF:  Vikings * 18.0 · Chicago Bears 18.5 · Kansas City Chie 19.0 · Baltimore Ravens 19.5 · Seattle Seahawks 21.2 · New Orleans Sain 21.5
          best of yours Vikings 18.0  vs  best free Chicago Bears 18.5  → yours is better by 0.5
     K:  Dominic Zvada 26.2 · Drew Stevens 26.0 · Will Reichard 25.5 · Jake Bates 25.2 · Harrison Mevis 24.5 · Spencer Shrader 24.5
          best of yours Jason Myers 24.2  vs  best free Dominic Zvada 26.2  → FA is better by 2.0
 
 ================================================================================================
-HH · WIRE   pool 7299 · phantoms removed 2 · near-misses kept 308
+HH · WIRE   pool 7303 · phantoms removed 2 · near-misses kept 308
 ================================================================================================
   PHANTOM removed: devin smith == devonta smith ("devin"/"devonta" share 3 leading chars, ratio 0.67)
   PHANTOM removed: danthony jones == dan jones ("danthony"/"dan" share 3 leading chars, ratio 0.55)
@@ -83,8 +83,8 @@ HH · WIRE   pool 7299 · phantoms removed 2 · near-misses kept 308
   nothing on the wire clears the gate. Hold.
 
   WEEK 4 STREAMING — DEF by opponent implied total (low = good), K by own total (high = good)
-    DEF:  Chicago Bears 18.5 · Chiefs * 19.0 · Pittsburgh Steel 19.0 · New York Giants 19.2 · New Orleans Sain 21.5 · Cleveland Browns 21.5
-         best of yours Chiefs 19.0  vs  best free Chicago Bears 18.5  → FA is better by 0.5
+    DEF:  Minnesota Viking 18.0 · Chicago Bears 18.5 · Chiefs * 19.0 · Pittsburgh Steel 19.0 · New York Giants 19.2 · New Orleans Sain 21.5
+         best of yours Chiefs 19.0  vs  best free Minnesota Vikings 18.0  → FA is better by 1.0
     K:  Cairo Santos 27.0 · Tyler Bass 26.2 · Dominic Zvada 26.2 · Drew Stevens 26.0 · Jake Bates 25.2 · Harrison Butker * 24.5
          best of yours Harrison Butker 24.5  vs  best free Cairo Santos 27.0  → FA is better by 2.5
 
@@ -156,88 +156,67 @@ HH · SEASON   December environment (wk 15-17), IDP judged on OPPONENT
 ========================================================================================
 BREAKOUTS — role before price
 ========================================================================================
-BREAKOUT SCAN — BSB — week 2 usage pulled Mon 09-28 20:58 ET
+BREAKOUT SCAN — BSB — week 2 usage pulled Tue 09-29 02:49 ET
   T player                pos tm    snap   tgt   air   tch   wk1   pre  crowd    nxt boom  market
   A Malachi Fields        WR  NYG    81%   19%   29%    0%   5.0    90      0    6.1  15%  no market line yet (Sleeper receiving yds 31)
       -> NONE: no move — you dropped him  [you dropped him in HH on 2026-09-24; the usage behind this row predates that and is not re-proposed until a ne]
-      gate WARN: G8-fresh inputs pulled 2026-09-28 (1d old)
       registry: Reported as settling in as the Giants' No. 2 behind Malik Nabers.
   B Laquon Treadwell      WR  IND    74%   10%   45%    0%   9.1   und      0    4.1  16%  no market line yet (Sleeper receiving yds 23)
       -> BLOCKED: no move  [gate: SINGLE SOURCE: ['rotowire'] (['sleeper'])]
-      gate BLOCK: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper']); G8-fresh inputs pulled 2026-09-28 (1d old)
+      gate BLOCK: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])
   B Cade Otton            TE  TB     89%   18%   16%    0%   8.8    25      0    7.2  14%  no market line yet (Sleeper receiving yds 31)
       -> WAIT: no drop worth less than him  [two straight weeks of starter usage (wk1: 98% snaps, 18% targets, 0% air yds), but the only clean spot is the ]
-      gate WARN: G8-fresh inputs pulled 2026-09-28 (1d old)
   B Darnell Mooney        WR  NYG    72%    9%   36%    0%   6.8    98      0    4.9  11%  no market line yet (Sleeper receiving yds 27)
       -> WAIT: next usage pull (Tuesday) — add then if the snaps hold or the market moves toward him  [one game of starter usage; no market confirmation yet and the spot would cost a real player]
-      gate WARN: G8-fresh inputs pulled 2026-09-28 (1d old)
   B Ted Hurst             WR  TB     74%   21%   18%    0%   4.7   120      0    5.5  15%  no market line yet (Sleeper receiving yds 27)
       -> WAIT: no drop worth less than him  [two straight weeks of starter usage (wk1: 75% snaps, 11% targets, 42% air yds), but the only clean spot is the]
-      gate WARN: G8-fresh inputs pulled 2026-09-28 (1d old)
   B Jonah Coleman         RB  DEN    40%   10%    0%   46%  14.8    62      0    0.0  n/a  no market line yet, and no Sleeper line either
       -> WAIT: next usage pull (Tuesday) — add then if the snaps hold or the market moves toward him  [one game of starter usage; no market confirmation yet and the spot would cost a real player]
-      gate WARN: G8-fresh inputs pulled 2026-09-28 (1d old)
   B Will Shipley          RB  PHI    51%    5%    0%   30%   4.9    76      0    2.7  20%  no market line yet (Sleeper rushing yds 7)
       -> WAIT: next usage pull (Tuesday) — add then if the snaps hold or the market moves toward him  [one game of starter usage; no market confirmation yet and the spot would cost a real player]
-      gate WARN: G8-fresh inputs pulled 2026-09-28 (1d old)
-  C Roman Wilson          WR  PIT    79%   15%   10%    0%   7.8   126 220347    5.6  17%  no market line yet (Sleeper receiving yds 25)
+  C Roman Wilson          WR  PIT    79%   15%   10%    0%   7.8   126 271791    5.6  17%  no market line yet (Sleeper receiving yds 25)
       -> NONE: no move  [the crowd is chasing a box score the snap count does not back]
-      gate WARN: G8-fresh inputs pulled 2026-09-28 (1d old)
-  C Isaiah Williams       WR  NYJ    82%   15%    2%    0%  10.8   111 201258    8.9  13%  no market line yet (Sleeper receiving yds 36)
+  C Isaiah Williams       WR  NYJ    82%   15%    2%    0%  10.8   111 189882    8.9  13%  no market line yet (Sleeper receiving yds 36)
       -> NONE: no move  [the crowd is chasing a box score the snap count does not back]
-      gate WARN: G8-fresh inputs pulled 2026-09-28 (1d old)
   W Keon Coleman          WR  BUF    74%   19%   30%    0%  12.3   101      0    4.0  27%  DK receiving yds line 13.3 vs Sleeper 33
       -> NONE: watch next pull  [74% snaps, 19% targets, 30% air yds — but the market prices him BELOW the projection]
-      gate WARN: G8-fresh inputs pulled 2026-09-28 (1d old); G11-role-registry PROTECTED STATUS LIFTED. He was held as a real WR3 role; Week 1 says the role is not real. Droppab
+      gate WARN: G11-role-registry PROTECTED STATUS LIFTED. He was held as a real WR3 role; Week 1 says the role is not real. Droppable.
   W Tyquan Thornton       WR  KC     59%    9%   51%    0%  12.6    93      0    6.8  19%  no market line yet (Sleeper receiving yds 33)
       -> NONE: watch next pull  [59% snaps, 9% targets, 51% air yds]
-      gate WARN: G8-fresh inputs pulled 2026-09-28 (1d old)
   W Tre' Harris           WR  LAC    82%   11%   20%    0%   6.3    80      0    7.3  11%  no market line yet (Sleeper receiving yds 36)
       -> NONE: watch next pull  [82% snaps, 11% targets, 20% air yds]
-      gate WARN: G8-fresh inputs pulled 2026-09-28 (1d old)
   SUMMARY: No move this week. Starter-level usage exists on the wire but nothing clears both the add gate and a clean drop; re-check after the next usage pull.
   tiers: A=1 B=6 C=2 W=12   pre=preseason rank at position ('und' = not in the season blend)
   note: 'starter ahead is out' is not a feed yet: verified injuries live in roles.json add_yes/why
 
-BREAKOUT SCAN — HH — week 2 usage pulled Mon 09-28 20:58 ET
+BREAKOUT SCAN — HH — week 2 usage pulled Tue 09-29 02:49 ET
   T player                pos tm    snap   tgt   air   tch   wk1   pre  crowd    nxt boom  market
   A Malachi Fields        WR  NYG    81%   19%   29%    0%   5.0    90      0    5.8  13%  no market line yet (Sleeper receiving yds 31)
       -> NONE: no move — you dropped him  [you dropped him in HH on 2026-09-24; the usage behind this row predates that and is not re-proposed until a ne]
-      gate WARN: G8-fresh inputs pulled 2026-09-28 (1d old)
       registry: Reported as settling in as the Giants' No. 2 behind Malik Nabers.
   B Rashod Bateman        WR  BAL    93%   29%   48%    0%  21.8    60      0   10.7  16%  no market line yet (Sleeper receiving yds 53)
       -> WAIT: next usage pull (Tuesday) — add then if the snaps hold or the market moves toward him  [one game of starter usage; no market confirmation yet and the spot would cost a real player]
-      gate WARN: G8-fresh inputs pulled 2026-09-28 (1d old)
   B Denzel Boston         WR  CLE    93%   23%   52%    0%  20.5    65      0    9.7  18%  no market line yet (Sleeper receiving yds 46)
       -> WAIT: no clean drop left  [two straight weeks of starter usage (wk1: 92% snaps, 18% targets, 83% air yds), but the rest of the bench is a]
-      gate WARN: G8-fresh inputs pulled 2026-09-28 (1d old)
   B Adonai Mitchell       WR  NYJ    82%   29%   39%    0%  12.3    68      0    0.0  n/a  no market line yet, and no Sleeper line either
-      -> NONE: no move for this roster  [you already carry 4 WRs for 2 slot(s) and he projects below your weakest (Jameson Williams 8.1 vs 0.0). Only a]
-      gate WARN: G8-fresh inputs pulled 2026-09-28 (1d old)
-  B Matthew Golden        WR  GB     86%   21%   41%    0%   9.8    50 101535   11.1  14%  no market line yet (Sleeper receiving yds 52)
+      -> NONE: no move for this roster  [you already carry 4 WRs for 2 slot(s) and he projects below your weakest (Rome Odunze 6.8 vs 0.0). Only a trad]
+  B Matthew Golden        WR  GB     86%   21%   41%    0%   9.8    50 119581   11.1  14%  no market line yet (Sleeper receiving yds 52)
       -> WAIT: no clean drop left  [two straight weeks of starter usage (wk1: 82% snaps, 29% targets, 28% air yds), but the rest of the bench is a]
-      gate WARN: G8-fresh inputs pulled 2026-09-28 (1d old)
   B Hunter Henry          TE  NE     91%   23%   15%    0%   7.0    15      0   10.3  15%  no market line yet (Sleeper receiving yds 45)
       -> WAIT: no clean drop left  [two straight weeks of starter usage (wk1: 76% snaps, 9% targets, 21% air yds), but the rest of the bench is a ]
-      gate WARN: G8-fresh inputs pulled 2026-09-28 (1d old)
   B Laquon Treadwell      WR  IND    74%   10%   45%    0%   9.1   und      0    3.8  15%  no market line yet (Sleeper receiving yds 23)
       -> BLOCKED: no move  [gate: SINGLE SOURCE: ['rotowire'] (['sleeper'])]
-      gate BLOCK: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper']); G8-fresh inputs pulled 2026-09-28 (1d old)
+      gate BLOCK: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])
   B Woody Marks           RB  HOU    48%   11%    3%   64%   8.5    45      0    7.7  18%  no market line yet (Sleeper rushing yds 34)
       -> WAIT: no clean drop left  [two straight weeks of starter usage (wk1: 51% snaps, 30% of RB touches), but the rest of the bench is a hold, ]
-      gate WARN: G8-fresh inputs pulled 2026-09-28 (1d old)
   B Cade Otton            TE  TB     89%   18%   16%    0%   8.8    25      0    6.8  12%  no market line yet (Sleeper receiving yds 31)
       -> WAIT: no clean drop left  [two straight weeks of starter usage (wk1: 98% snaps, 18% targets, 0% air yds), but the rest of the bench is a ]
-      gate WARN: G8-fresh inputs pulled 2026-09-28 (1d old)
-  B Malik Washington      WR  MIA    73%   22%   27%    0%   8.7    64 361600    9.7  14%  no market line yet (Sleeper receiving yds 41)
+  B Malik Washington      WR  MIA    73%   22%   27%    0%   8.7    64 360136    9.7  14%  no market line yet (Sleeper receiving yds 41)
       -> WAIT: no clean drop left  [two straight weeks of starter usage (wk1: 98% snaps, 30% targets, 25% air yds), but the rest of the bench is a]
-      gate WARN: G8-fresh inputs pulled 2026-09-28 (1d old)
   B Darnell Mooney        WR  NYG    72%    9%   36%    0%   6.8    98      0    4.5  10%  no market line yet (Sleeper receiving yds 27)
-      -> NONE: no move for this roster  [you already carry 4 WRs for 2 slot(s) and he projects below your weakest (Jameson Williams 8.1 vs 4.5). Only a]
-      gate WARN: G8-fresh inputs pulled 2026-09-28 (1d old)
+      -> NONE: no move for this roster  [you already carry 4 WRs for 2 slot(s) and he projects below your weakest (Rome Odunze 6.8 vs 4.5). Only a trad]
   B Ted Hurst             WR  TB     74%   21%   18%    0%   4.7   120      0    5.1  14%  no market line yet (Sleeper receiving yds 27)
-      -> NONE: no move for this roster  [you already carry 4 WRs for 2 slot(s) and he projects below your weakest (Jameson Williams 8.1 vs 5.1). Only a]
-      gate WARN: G8-fresh inputs pulled 2026-09-28 (1d old)
+      -> NONE: no move for this roster  [you already carry 4 WRs for 2 slot(s) and he projects below your weakest (Rome Odunze 6.8 vs 5.1). Only a trad]
   SUMMARY: No move this week. Starter-level usage exists on the wire but nothing clears both the add gate and a clean drop; re-check after the next usage pull.
   tiers: A=1 B=22 C=5 W=34   pre=preseason rank at position ('und' = not in the season blend)
   note: 'starter ahead is out' is not a feed yet: verified injuries live in roles.json add_yes/why
@@ -246,96 +225,95 @@ BREAKOUT SCAN — HH — week 2 usage pulled Mon 09-28 20:58 ET
 ========================================================================================
 WIN PROBABILITY and FAB
 ========================================================================================
-WIN PROBABILITY — BSB — vs Rayland and vs the league median  (6000 samples; 20 players sampled from Kalshi ladders, 101 from assumed spreads)
-  current lineup: 147.4 ± 0.0   P(beat opp) 100%   P(beat median) 94%
-  mean-optimal                                  164.6  opp 100%  med 100%  Δ +0.056
-  -> mean-optimal: +5.6% combined win probability over the current lineup
+WIN PROBABILITY — BSB — vs Rayland and vs the league median  (6000 samples; 19 players sampled from Kalshi ladders, 102 from assumed spreads)
+  current lineup: 155.6 ± 6.0   P(beat opp) 100%   P(beat median) 98%
+  mean-optimal                                  160.8  opp 100%  med 99%  Δ +0.010
+  Vikings for 49ers at DEF                      154.3  opp 100%  med 98%  Δ -0.003
+  -> current lineup is within noise of the best: no change
   note: same-game correlation modelled for QB/RB/WR/TE (game sd 0.15, team sd 0.25); DEF, K and IDP independent; treat a 2-3 point probability edge as noise
-  note: 34 finished players carry their actual score; other teams' finished players still use projections in the median
+  note: 36 finished players carry their actual score; other teams' finished players still use projections in the median
 
-WIN PROBABILITY — HH — vs Grey Poop On Bijan Mustard  (6000 samples; 33 players sampled from Kalshi ladders, 112 from assumed spreads)
-  current lineup: 295.1 ± 8.1   P(beat opp) 93%   P(beat median) n/a
-  mean-optimal                                  317.8  opp 100%  med n/a  Δ +0.067
-  -> mean-optimal: +6.7% combined win probability over the current lineup
+WIN PROBABILITY — HH — vs Grey Poop On Bijan Mustard  (6000 samples; 31 players sampled from Kalshi ladders, 113 from assumed spreads)
+  current lineup: 297.1 ± 8.9   P(beat opp) 73%   P(beat median) n/a
+  mean-optimal                                  317.5  opp 99%  med n/a  Δ +0.261
+  Texans for Chiefs at DEF                      293.8  opp 64%  med n/a  Δ -0.090
+  -> mean-optimal: +26.1% combined win probability over the current lineup
   note: same-game correlation modelled for QB/RB/WR/TE (game sd 0.15, team sd 0.25); DEF, K and IDP independent; treat a 2-3 point probability edge as noise
-  note: 47 finished players carry their actual score; other teams' finished players still use projections in the median
+  note: 49 finished players carry their actual score; other teams' finished players still use projections in the median
 
 FAB LADDER — 22 winning bids across 5 run(s): $0, $0, $0, $0, $1, $1, $2, $2, $2, $3, $3, $3, $4, $5, $5, $6, $6, $7, $7, $7, $11, $25
   bands: Tier B $1 · Tier A $12 · contested $26   (median winning bid $3; whale Short Bus $25)
   spent / remaining: FWU $39/61, Short Bus $25/75, Deadites $7/93, Ex-Presidents $7/93, OVERKILL $7/93, Regulators $5/95, Sycawhores $5/95, Phish Phanatics $4/96, Rayland $1/99
 
 STEAM — what the market learned between pulls
-  baseline Wed 3:23 PM ET · previous pull Mon 4:44 PM ET · threshold 15%
+  baseline Wed 3:23 PM ET · previous pull Mon 8:58 PM ET · threshold 15%
   no rostered player's ladder moved more than the threshold
 
 NEXT MAN UP — BSB (depth charts from week-2 usage, two pulls blended)
 
 NEXT MAN UP — HH (depth charts from week-2 usage, two pulls blended)
 
-PLAYOFF LEVERAGE — BSB: P(playoffs) 50% · win this week 57% / lose 38% → this game is worth +19% · +5 pts/week of roster strength → 73%
-  top-3 seed: 14% · win 18% / lose 9% → +9% · +5/wk → 33%
+PLAYOFF LEVERAGE — BSB: P(playoffs) 71% · win this week 76% / lose 59% → this game is worth +17% · +5 pts/week of roster strength → 88%
+  top-3 seed: 31% · win 36% / lose 19% → +18% · +5/wk → 55%
   4000 seasons from week 3 through 14; 6 of 12 qualify. Opponents after this week are drawn at random (the league schedule is not on file); BSB divisions are not modelled; the vs-median result is. Strength = each roster's optimal lineup on individual per-week values, byes zeroed by week.
   playoffs  top-3  team                        wins    PF     strength
-       95%    76%  Short Bus                   4.0    308.4   133.7/wk
-       80%    46%  Deadites                    3.0    267.2   127.6/wk
-       80%    41%  FWU                         4.0    321.7   129.2/wk
-       74%    35%  Bad News Bears              1.0    261.1   133.1/wk
-       71%    33%  Ain’t No Waller-Back Girl   2.0    232.4   131.2/wk
-       70%    31%  Phish Phanatics             3.0    281.9   126.6/wk
-       61%    23%  65 SOUTH                    2.0    271.2   128.1/wk
-       50%    14%  OVERKILL                    2.0    274.8   126.5/wk
-        8%     1%  Rayland                     0.0    236.0   121.6/wk
-        7%     1%  Ex-Presidents               1.0    212.5   118.1/wk
+       89%    60%  Short Bus                   6.0    308.4   126.3/wk
+       85%    54%  Ain’t No Waller-Back Girl   4.0    232.4   131.2/wk
+       85%    52%  Phish Phanatics             5.0    281.9   126.6/wk
+       80%    42%  Bad News Bears              2.0    261.1   133.1/wk
+       71%    31%  OVERKILL                    4.0    274.8   126.5/wk
+       59%    21%  FWU                         6.0    321.7   121.7/wk
+       56%    19%  65 SOUTH                    2.0    271.2   128.1/wk
+       50%    17%  Deadites                    4.0    267.2   120.0/wk
+       20%     4%  Ex-Presidents               1.0    212.5   124.0/wk
         4%     0%  Regulators                  2.0    348.2   115.8/wk
-        0%     0%  Sycawhores                  0.0    202.2   108.1/wk
+        1%     0%  Rayland                     0.0    236.0   114.4/wk
+        0%     0%  Sycawhores                  0.0    202.2   103.5/wk
 
 PLAYOFF LEVERAGE — HH: P(playoffs) 100% · win this week 100% / lose 100% → this game is worth +0% · +5 pts/week of roster strength → 100%
-  top-4 seed: 91% · win 94% / lose 85% → +10% · +5/wk → 94%
+  top-4 seed: 97% · win 98% / lose 94% → +4% · +5/wk → 98%
   4000 seasons from week 3 through 14; 8 of 10 qualify. Opponents after this week are drawn at random (the league schedule is not on file). Strength = each roster's optimal lineup on individual per-week values, byes zeroed by week.
   playoffs  top-4  team                        wins    PF     strength
-      100%    87%  Maker's Mark                2.0    610.5   300.3/wk
-      100%    91%  Tecmo Bowlers               2.0    572.3   300.3/wk
-      100%    90%  The STRIB Club              1.0    586.7   303.6/wk
-      100%    76%  JETS                        1.0    543.1   297.8/wk
-      100%    22%  Grey Poop On Bijan Mustard  1.0    524.5   284.5/wk
-       99%    27%  T-rex                       0.0    516.3   287.7/wk
-       98%     8%  My Team is on IR            1.0    545.2   269.7/wk
-       64%     0%  Eatin Pigskins              1.0    509.8   241.3/wk
-       39%     0%  Pound the Rock              1.0    567.5   229.9/wk
+      100%    73%  JETS                        2.0    543.1   288.8/wk
+      100%    86%  Maker's Mark                2.0    610.5   300.3/wk
+      100%    97%  Tecmo Bowlers               3.0    572.3   300.3/wk
+      100%    96%  The STRIB Club              2.0    586.7   303.9/wk
+      100%    24%  T-rex                       1.0    516.3   278.5/wk
+      100%    18%  Grey Poop On Bijan Mustard  1.0    524.5   284.5/wk
+       98%     6%  My Team is on IR            1.0    545.2   269.7/wk
+       88%     0%  Eatin Pigskins              2.0    509.8   241.3/wk
+       14%     0%  Pound the Rock              1.0    567.5   220.8/wk
         0%     0%  Fumbling Idiot              0.0    320.8   194.4/wk
 
 RIVALS — BSB: 71 logged transactions (Sep 2 → Sep 27)
-  FWU                      adds 10 (claims 7, FA 3, last 7d 2)  FAB $39/61 left, max $11, median $6           streams DEF: no  thin at: none
-  Short Bus                adds  3 (claims 1, FA 2, last 7d 0)  FAB $25/75 left, max $25, median $25          streams DEF: no  thin at: DEF (weakest starter 3.3 vs league median 6.8)
+  FWU                      adds 10 (claims 7, FA 3, last 7d 2)  FAB $39/61 left, max $11, median $6           streams DEF: no  thin at: DEF (weakest starter 0.0 vs league median 3.6)
+  Short Bus                adds  3 (claims 1, FA 2, last 7d 0)  FAB $25/75 left, max $25, median $25          streams DEF: no  thin at: DEF (weakest starter -0.6 vs league median 3.6)
   OVERKILL                 adds  6 (claims 3, FA 3, last 7d 0)  FAB $7/93 left, max $5, median $2             streams DEF: no  thin at: RB (weakest starter 10.1 vs league median 12.7)
-  Deadites                 adds  4 (claims 2, FA 2, last 7d 2)  FAB $7/93 left, max $7, median $4             streams DEF: no  thin at: none
-  Ex-Presidents            adds  3 (claims 1, FA 2, last 7d 2)  FAB $7/93 left, max $7, median $7             streams DEF: no  thin at: DEF (weakest starter 1.0 vs league median 6.8)
-  Regulators               adds  6 (claims 4, FA 2, last 7d 3)  FAB $5/95 left, max $3, median $1             streams DEF: no  thin at: DEF (weakest starter 1.9 vs league median 6.8)
-  Sycawhores               adds  4 (claims 1, FA 3, last 7d 1)  FAB $5/95 left, max $5, median $5             streams DEF: no  thin at: RB (weakest starter 10.0 vs league median 12.7)
+  Deadites                 adds  4 (claims 2, FA 2, last 7d 2)  FAB $7/93 left, max $7, median $4             streams DEF: no  thin at: DEF (weakest starter 0.7 vs league median 3.6)
+  Ex-Presidents            adds  3 (claims 1, FA 2, last 7d 2)  FAB $7/93 left, max $7, median $7             streams DEF: no  thin at: none
+  Regulators               adds  6 (claims 4, FA 2, last 7d 3)  FAB $5/95 left, max $3, median $1             streams DEF: no  thin at: DEF (weakest starter 1.9 vs league median 3.6)
+  Sycawhores               adds  4 (claims 1, FA 3, last 7d 1)  FAB $5/95 left, max $5, median $5             streams DEF: no  thin at: DEF (weakest starter 1.6 vs league median 3.6), RB (weakest starter 10.0 vs league median 12.7)
   Phish Phanatics          adds  7 (claims 2, FA 5, last 7d 2)  FAB $4/96 left, max $3, median $2             streams DEF: no  thin at: TE (weakest starter 7.6 vs league median 10.4)
-  Rayland                  adds  1 (claims 1, FA 0, last 7d 0)  FAB $1/99 left, max $1, median $1             streams DEF: no  thin at: RB (a starter is out)
-  65 SOUTH                 adds  1 (claims 0, FA 1, last 7d 1)  FAB $0/100 left                               streams DEF: no  thin at: DEF (weakest starter 5.4 vs league median 6.8)
+  Rayland                  adds  1 (claims 1, FA 0, last 7d 0)  FAB $1/99 left, max $1, median $1             streams DEF: no  thin at: DEF (weakest starter 0.9 vs league median 3.6), RB (a starter is out)
+  65 SOUTH                 adds  1 (claims 0, FA 1, last 7d 1)  FAB $0/100 left                               streams DEF: no  thin at: none
   Bad News Bears           adds  1 (claims 0, FA 1, last 7d 1)  FAB $0/100 left                               streams DEF: no  thin at: none
   Ain’t No Waller-Back Gir adds  0 (claims 0, FA 0, last 7d 0)  FAB $0/100 left                               streams DEF: no  thin at: none
 
-RIVALS — HH: 72 logged transactions (Sep 17 → Sep 28)
+RIVALS — HH: 73 logged transactions (Sep 17 → Sep 28)
   JETS                     adds  8 (claims 0, FA 8, last 7d 6)                                                streams DEF: no  thin at: none
   T-rex                    adds  8 (claims 1, FA 7, last 7d 6)                                                streams DEF: no  thin at: none
   The STRIB Club           adds  6 (claims 1, FA 5, last 7d 4)                                                streams DEF: no  thin at: none
   Tecmo Bowlers            adds  5 (claims 0, FA 5, last 7d 3)                                                streams DEF: no  thin at: LB (a starter is out)
-  Grey Poop On Bijan Musta adds  4 (claims 0, FA 4, last 7d 4)                                                streams DEF: no  thin at: WR (weakest starter 11.0 vs league median 14.1)
-  Eatin Pigskins           adds  3 (claims 0, FA 3, last 7d 3)                                                streams DEF: no  thin at: DEF (weakest starter 15.8 vs league median 24.5), RB (a starter is out), TE (weakest starter 9.0 vs league median 11.5), DB (a starter is out)
-  My Team is on IR         adds  2 (claims 0, FA 2, last 7d 1)                                                streams DEF: no  thin at: DEF (weakest starter 16.9 vs league median 24.5)
-  Pound the Rock           adds  0 (claims 0, FA 0, last 7d 0)                                                streams DEF: no  thin at: LB (a starter is out), WR (weakest starter 1.4 vs league median 14.1)
-  Maker's Mark             adds  0 (claims 0, FA 0, last 7d 0)                                                streams DEF: no  thin at: RB (a starter is out), TE (weakest starter 9.1 vs league median 11.5)
-  Fumbling Idiot           adds  0 (claims 0, FA 0, last 7d 0)                                                streams DEF: no  thin at: LB (a starter is out), DEF (weakest starter 16.3 vs league median 24.5), DB (a starter is out), DL (a starter is out), WR (a starter is out)
+  Grey Poop On Bijan Musta adds  4 (claims 0, FA 4, last 7d 4)                                                streams DEF: no  thin at: WR (weakest starter 11.0 vs league median 14.4)
+  Eatin Pigskins           adds  3 (claims 0, FA 3, last 7d 3)                                                streams DEF: no  thin at: DB (a starter is out), RB (a starter is out), TE (weakest starter 9.0 vs league median 11.5)
+  My Team is on IR         adds  2 (claims 0, FA 2, last 7d 1)                                                streams DEF: no  thin at: none
+  Maker's Mark             adds  1 (claims 0, FA 1, last 7d 1)                                                streams DEF: no  thin at: RB (a starter is out), TE (weakest starter 9.1 vs league median 11.5)
+  Pound the Rock           adds  0 (claims 0, FA 0, last 7d 0)                                                streams DEF: no  thin at: LB (a starter is out)
+  Fumbling Idiot           adds  0 (claims 0, FA 0, last 7d 0)                                                streams DEF: no  thin at: DL (a starter is out), LB (a starter is out), DB (a starter is out), WR (a starter is out)
 
 CALIBRATION — projection error vs Yahoo actuals (pregame numbers, league scoring)
-  weeks: BSB wk3, HH wk2, HH wk3 · 109 scored player-weeks
+  weeks: BSB wk3, HH wk2, HH wk3 · 107 scored player-weeks
   league pos  source      n    MAE   bias
-  BSB    DEF  engine      3   6.58  +3.25
-  BSB    DEF  sleeper     3   6.58  +3.25
-  BSB    DEF  yahoo       2   5.99  +0.56
   BSB    K    engine      2   1.89  +1.26
   BSB    K    sleeper     2   1.89  +1.26
   BSB    QB   engine      3   6.41  -6.41
@@ -346,15 +324,13 @@ CALIBRATION — projection error vs Yahoo actuals (pregame numbers, league scori
   BSB    RB   yahoo       1   2.76  +2.76
   BSB    TE   engine      3   4.54  +3.03
   BSB    TE   sleeper     3   4.54  +3.03
-  BSB    WR   engine     12   5.35  -0.39
-  BSB    WR   sleeper    12   5.35  -0.39
+  BSB    WR   engine     14   4.70  -0.22
+  BSB    WR   sleeper    14   4.70  -0.22
   BSB    WR   yahoo       4   3.56  +3.56
-  HH     DB   engine     15   6.79  -0.89
-  HH     DB   sleeper     9   6.03  +0.46
+  HH     DB   engine     16   6.45  -0.93
+  HH     DB   sleeper    10   5.57  +0.27
   HH     DB   yahoo       4   7.45  +7.45
-  HH     DEF  engine      6   6.12  -0.27
-  HH     DEF  sleeper     3   3.44  -0.03
-  HH     DEF  yahoo       1   1.74  +1.74
+  HH     DEF  engine      3   8.80  -0.51
   HH     DL   engine      1  20.51 -20.51
   HH     DL   sleeper     1  20.51 -20.51
   HH     K    engine      4   6.76  +6.76
@@ -372,15 +348,15 @@ CALIBRATION — projection error vs Yahoo actuals (pregame numbers, league scori
   HH     TE   engine      7   3.78  -1.70
   HH     TE   sleeper     4   2.30  +0.94
   HH     TE   yahoo       2   0.81  -0.81
-  HH     WR   engine     14   6.06  +2.39
-  HH     WR   sleeper     7   7.10  +1.87
+  HH     WR   engine     15   5.79  +2.36
+  HH     WR   sleeper     8   6.46  +1.89
   HH     WR   yahoo       3   7.42  +2.17
-  BSB    ALL  engine     30   5.15  +0.52
-  BSB    ALL  sleeper    30   5.15  +0.52
-  BSB    ALL  yahoo       9   5.19  +0.04
-  HH     ALL  engine     79   6.72  +0.25
-  HH     ALL  sleeper    42   6.85  +0.09
-  HH     ALL  yahoo      18   7.03  -0.57
+  BSB    ALL  engine     29   4.70  +0.25
+  BSB    ALL  sleeper    29   4.70  +0.25
+  BSB    ALL  yahoo       7   4.96  -0.11
+  HH     ALL  engine     78   6.72  +0.26
+  HH     ALL  sleeper    41   6.85  +0.11
+  HH     ALL  yahoo      17   7.34  -0.71
 
-  card written: /home/claude/bsb2/lineup-card.html (66098 bytes)
+  card written: /home/claude/bsb2/lineup-card.html (65595 bytes)
 run exit 0
