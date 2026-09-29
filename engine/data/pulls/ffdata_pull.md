@@ -1,22 +1,22 @@
-# ffdata pull loaded Mon Sep 28, 4:44 pm ET — repo head: 2026-09-28T14:29:01Z pull 2026-09-28T14:29Z (in-action, no pull)
+# ffdata pull loaded Mon Sep 28, 8:58 pm ET — repo head: 2026-09-28T20:44:30Z pull 2026-09-28T20:44Z (in-action, no pull)
 week 3
-kalshi.csv: 1248 markets, 63 events, pulled 2026-09-28T20:42:47+00:00
-kalshi_archive: 1 new pull(s) copied, 23 on disk
-espn_games.csv: 16 games for week 3 — 1 with ESPN lines from the pump, 15 schedule-only from lines_wk3_9.csv; Kalshi spread/total ladders supply the lines inside the engine
+kalshi.csv: 1301 markets, 63 events, pulled 2026-09-29T00:56:32+00:00
+kalshi_archive: 1 new pull(s) copied, 24 on disk
+espn_games.csv: 16 games for week 3 — 0 with ESPN lines from the pump, 16 schedule-only from lines_wk3_9.csv; Kalshi spread/total ladders supply the lines inside the engine
 sleeper_off_wk3.csv: 3305 rows
 sleeper_idp_wk3.csv: 4604 rows
 trending_adds.csv: 40 adds / 40 drops (48h)
 usage_wk2_QB.csv: 84 rows
-usage_wk3_QB.csv: 79 rows
+usage_wk3_QB.csv: 85 rows
 usage_wk2_RB.csv: 179 rows
-usage_wk3_RB.csv: 164 rows
+usage_wk3_RB.csv: 176 rows
 usage_wk2_WR.csv: 280 rows
-usage_wk3_WR.csv: 266 rows
+usage_wk3_WR.csv: 282 rows
 usage_wk2_TE.csv: 165 rows
-usage_wk3_TE.csv: 154 rows
-BSB rosters: 216 players on 12 teams, pulled 2026-09-28T20:43:38+00:00 -> new snapshot
+usage_wk3_TE.csv: 166 rows
+BSB rosters: 216 players on 12 teams, pulled 2026-09-29T00:57:30+00:00 -> new snapshot
 BSB matchup wk3: vs Rayland; 34 final rows, 0 in progress; totals me 147.40 opp 107.25
 BSB transactions: 0 new of 36 on the page; log now 71 rows
-HH rosters: 235 players on 10 teams, pulled 2026-09-28T20:43:38+00:00 -> new snapshot
+HH rosters: 235 players on 10 teams, pulled 2026-09-29T00:57:30+00:00 -> new snapshot
 HH matchup wk3: vs Grey Poop On Bijan Mustard; 47 final rows, 0 in progress; totals me 276.73 opp 284.77
-HH transactions: 3 new of 40 on the page; log now 72 rows
+HH transactions: 0 new of 40 on the page; log now 72 rows
