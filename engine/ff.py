@@ -53,13 +53,13 @@ def cmd_status(run=None):
     wd = C.bsb_waiver_deadline()
     h = (wd - C.now()).total_seconds() / 3600
     if 0 < h < 30: print(f'  BSB waivers process {C.stamp(wd)} — {h:.1f}h from now')
-    P = Projections(C.nfl_week())
+    P = Projections(C.data_week())
     # ---- market freshness: the question "are we tracking Vegas?" must have a
     # numeric answer every time, not a feeling.
     print('\n  MARKETS ON DISK')
     for fn, what in (('kalshi.csv', 'Kalshi ladders'), ('espn_games.csv', 'Vegas game lines'),
                      ('espn_props.csv', 'DraftKings props'), ('lines_wk10_18.csv', 'look-ahead lines'),
-                     (f'sleeper_off_wk{C.nfl_week()}.csv', 'Sleeper offense'), (f'sleeper_idp_wk{C.nfl_week()}.csv', 'Sleeper IDP')):
+                     (f'sleeper_off_wk{C.data_week()}.csv', 'Sleeper offense'), (f'sleeper_idp_wk{C.data_week()}.csv', 'Sleeper IDP')):
         pth = D + fn
         if not os.path.exists(pth): print(f'     {what:18s} MISSING'); continue
         age = (C.now().timestamp() - os.path.getmtime(pth)) / 3600
@@ -92,7 +92,7 @@ def cmd_status(run=None):
 # ----------------------------------------------------------------- week
 def build(week=None):
     """Assemble the whole run for both leagues. Returns the run dict."""
-    week = week or C.nfl_week()
+    week = week or C.data_week()
     P = Projections(week); WNd = WN.Windows()
     sea = json.load(open(D + 'season_blend.json')) if os.path.exists(D + 'season_blend.json') else {}
     sea_blend = sea
@@ -241,9 +241,12 @@ def build(week=None):
             if not b or b['edge'] is None or b['edge'] < thresh or not b['best_fa']: continue
             fa = b['best_fa']; cand = next(c for c in w.by_fam[fam] if c['key'] == fa['key'])
             # what it costs: a second DEF/K is the natural drop; else name the spot
-            spare = [r for r in st.mine if W._fam(r['pos']) in ('DEF', 'K') and r['slot'] == 'BN'
-                     and r['key'] not in w.hold]
-            drop = spare[0] if spare else None
+            # the spare is the one worth LESS on the season, starter or not (Vikings
+            # 09-29: the 49ers were in the slot and the card proposed dropping the
+            # Vikings, the better defense, for a week-5 stream)
+            pair = [r for r in st.mine if W._fam(r['pos']) == fam and r['slot'] != 'IR' and r['key'] not in w.hold]
+            pair.sort(key=lambda r: ((sea_blend.get(r['key']) or {}).get('pts') or 0, r.get('pts') or 0))
+            drop = pair[0] if len(pair) >= 2 else None
             ga = G.check('add', f'add {fa["name"]} ({fam}, week {week+1} stream)', player=fa['name'],
                          designation='none', sources=['vegas', 'sleeper'], pos=fam, value=cand['week'] or 0,
                          horizon='weekly', market_ready=True, roster_keys=st.roster_keys,
@@ -304,7 +307,13 @@ def build(week=None):
     from lib import playoff as PO
     for lg, R in run['leagues'].items():
         try:
-            R['playoff'] = PO.evaluate(R['state'], P, week, opp=WP.matchup(lg, week), season=sea_blend if lg == 'BSB' else None, windows=WNd)
+            # once this week's matchup is final the records already carry it: the
+            # simulation starts NEXT week and there is no 'this game' to lever (09-29)
+            acts = R.get('actuals') or {}
+            over = bool(acts) and all(a['final'] for a in acts.values()) and all(a['final'] for k, a in acts.items() if a['owner'] == R['state'].me) \
+                   and sum(1 for a in acts.values() if a['owner'] == R['state'].me) >= len(R['state'].starters()) - 1
+            R['playoff'] = PO.evaluate(R['state'], P, week + 1 if over else week, opp=None if over else WP.matchup(lg, week), season=sea_blend if lg == 'BSB' else None, windows=WNd)
+            if over: R['playoff']['over'] = True
         except Exception as e:
             R['playoff'] = None; R['flags'].append(f'playoff simulation failed: {e!r}')
     # next man up: who inherits each starter's role, and whether he is on the wire —

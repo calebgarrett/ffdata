@@ -187,7 +187,9 @@ def render(run):
         if h is None: return 'missing'
         return f'{h:.0f}h' if h < 48 else f'{h/24:.0f}d'
     up = _U.pulled_at(week - 1)
-    inputs = [('rosters', f"BSB {B['state'].age_h:.0f}h · HH {H['state'].age_h:.0f}h"),
+    _rec = {lg: getattr(R['state'], 'reconciled', []) for lg, R in (('BSB', B), ('HH', H))}
+    _rec_txt = '; '.join(f"{lg}: {', '.join(v)}" for lg, v in _rec.items() if v)
+    inputs = [('rosters', f"BSB {B['state'].age_h:.0f}h · HH {H['state'].age_h:.0f}h" + (f" — team pages corrected from the transactions log ({_rec_txt})" if _rec_txt else '')),
               ('Kalshi ladders', _fmt_age(_age(D_ + 'kalshi.csv')) + f' · {len(run["proj"].ready)}/32 teams priced'),
               ('game lines', (f'Kalshi spreads/totals {len(run["proj"].kal_games)}/{max(len(run["proj"].games), 1)} games · ' + _fmt_age(_age(D_ + 'kalshi.csv'))) if getattr(run['proj'], 'kal_games', None) else _fmt_age(_age(D_ + 'espn_games.csv'))),
               (f'week-{week-1} usage', (f'{(C.now() - up).total_seconds()/3600:.0f}h' if up else 'missing')),
@@ -202,9 +204,12 @@ def render(run):
     # ---- clock strip
     wd = C.bsb_waiver_deadline(); hrs = (wd - C.now()).total_seconds() / 3600
     claims = [c for c in B['calls'] if c['kind'] == 'swap' and c['ledger']['status'] == 'proposed']
+    # the week-ahead stream is a claim too when the player sits on waivers (09-29)
+    from . import breakout as _BKc
+    n_claims = len(claims) + sum(1 for c in B.get('stream_calls', []) if c['ledger']['status'] == 'proposed' and _BKc._kicked('BSB', run['proj'].kickoff(c['add']['tm'])))
     if 0 < hrs < 48:
         out.append(f'<div class="clock"><div class="hd">BSB waivers process {esc(C.stamp(wd))} — {hrs:.0f} hours from now</div>'
-                   f'<p>{len(claims)} claim{"s" if len(claims) != 1 else ""} below. Acquisitions are uncapped in BSB. Heritage House has a 7-per-week cap.</p></div>')
+                   f'<p>{n_claims} claim{"s" if n_claims != 1 else ""} below. Acquisitions are uncapped in BSB. Heritage House has a 7-per-week cap.</p></div>')
 
     # ---- actions
     out.append('<div class="acts">')
@@ -225,18 +230,27 @@ def render(run):
             if not row: continue
             out.append(f'<div class="act hold"><span class="lg">{lg} — hold</span><div class="mv">{esc(row["player"])} stays</div>'
                        f'<div class="why">{esc(hreg["call"])}<br><span style="color:var(--faint)">{esc(hreg.get("why","")[:260])}</span></div></div>')
+    def _stream_mech(lg, a):
+        from . import breakout as _BK
+        if lg == 'HH': return 'Free agent, immediate; 1 of 7 weekly acquisitions.'
+        if _BK._kicked('BSB', run['proj'].kickoff(a['tm'])):
+            return f'He is on waivers until the Wednesday run — a claim, in by tonight; $1 is the number (an unpriced stream nobody else is bidding on).'
+        return 'Waivers have run, so the pool is first-come; this is worth taking today rather than Tuesday.'
     # (do-not-add names are enforced silently by gate G11; Caleb 09-17: no
     #  updates about things he should not do)
     for lg, R in (('BSB', B), ('HH', H)):
         for c in R.get('stream_calls', []):
             if c['ledger']['status'] not in ('proposed',): continue
             b, a, d = c['board'], c['add'], c['drop']
-            out.append(f'<div class="act"><span class="lg">{lg} — week {week+1} stream, free now</span>'
+            _other_def = next((r['player'] for r in R['state'].mine if W._fam(r['pos']) == c['fam'] and r['slot'] != 'IR' and d and r['key'] != d['key']), None)
+            _mech_txt = _stream_mech(lg, a)
+            out.append(f'<div class="act"><span class="lg">{lg} — week {week+1} stream, {"claim tonight" if "waivers" in _mech_txt else "free now"}</span>'
                        f'<div class="mv">Add {esc(a["name"])} <span style="color:var(--muted);font-weight:400">{esc(c["fam"])}, {esc(a["tm"])}</span>'
                        + (f' → drop {esc(d["player"])}' if d else '') + '</div>'
                        f'<div class="why">Week {week+1} {"opponent" if c["fam"]=="DEF" else "own-team"} implied total: <b>{esc(a["tm"])} {b["best_fa"]["val"]:.1f}</b> vs your best {esc(b["best_mine"]["name"])} {b["best_mine"]["val"]:.1f} — a <b>{b["edge"]:.1f}-point</b> edge on a posted line. '
-                       + (f'Dropping {esc(d["player"])} also clears the second-{esc(W._fam(d["pos"]))} spot. ' if d else '')
-                       + f'Waivers have run, so the pool is first-come; this is worth taking today rather than Tuesday.<br><span style="color:var(--faint)">gate {c["gate_add"].verdict}' + (f'/{c["gate_drop"].verdict}' if c['gate_drop'] else '') + '</span></div></div>')
+                       + (f'Dropping {esc(d["player"])} also clears the second-{esc(W._fam(d["pos"]))} spot. ' if d and W._fam(d["pos"]) != c["fam"] else '')
+                       + (f'Dropping {esc(d["player"])} means {esc(_other_def)} is your {esc(c["fam"])} this week. ' if d and _other_def else '')
+                       + _mech_txt + f'<br><span style="color:var(--faint)">gate {c["gate_add"].verdict}' + (f'/{c["gate_drop"].verdict}' if c['gate_drop'] else '') + '</span></div></div>')
         # breakout adds get a tile at the top: this is the one call on the card
         # that is about next month, not this week
         for x in (R.get('breakout') or {}).get('rows', []):
@@ -245,7 +259,7 @@ def render(run):
             g = x.get('gate')
             warns = [msg for gg, st, msg in (g.checks if g else []) if st == 'WARN']
             out.append(f'<div class="act{" prov" if warns else ""}"><span class="lg">{lg} — breakout add, tier {esc(x["tier"])}{" — check first" if warns else ""}</span>'
-                       f'<div class="mv">Add {esc(x["name"])} <small style="font-weight:400;color:var(--muted)">{esc(x["pos"])} {esc(x["tm"])}</small> · ' + ('into the open roster spot' if str(m["drop"]).startswith('an open') else f'drop {esc(m["drop"])}') + '</div>'
+                       f'<div class="mv">Add {esc(x["name"])} <small style="font-weight:400;color:var(--muted)">{esc(x["pos"])} {esc(x["tm"])}</small> · ' + ('into the open roster spot' if str(m["drop"]).startswith('an open') else f'into {esc(m["drop"])}' if str(m["drop"]).startswith('the spot') else f'drop {esc(m["drop"])}') + '</div>'
                        f'<div class="why"><b>When:</b> {esc(m["when"])}.<br><b>Why:</b> {esc(m["why"])}'
                        + (''.join(f'<br><b>Check:</b> {esc(w_)}' for w_ in warns) if warns else '')
                        + f'<br><span style="color:var(--faint)">{esc(x["usage"])} · {esc(x["market"])}</span></div></div>')
@@ -602,6 +616,17 @@ def _assemble(out, run):
         return t.replace('<div class="act', '<div class="dcard act', 1)
     decide = [dcard(t) for t in decide]
     # ---- outlook: one stat card per league
+    def _final_score(lg, week, me, opp, st):
+        """(my total, opp total) once every starter on both sides has a final; else None."""
+        import csv as _csv, os as _os
+        p = f'/home/claude/bsb2/data/actuals/{lg}_wk{week}.csv'
+        if not opp or not _os.path.exists(p): return None
+        rows = [r for r in _csv.DictReader(open(p)) if r['slot'] not in ('BN', 'IR')]
+        mine = [r for r in rows if r['owner'] == me]; theirs = [r for r in rows if r['owner'] == opp]
+        if not mine or not theirs: return None
+        if any(r.get('final', '1') != '1' for r in mine + theirs): return None
+        if len(mine) < len(st.starters()) - 1: return None       # a starter without a final: not over
+        return sum(float(r['pts']) for r in mine), sum(float(r['pts']) for r in theirs)
     ol = ['<div class="outlook">']
     for lg, R in run['leagues'].items():
         st, lu, w = R['state'], R['lineup'], R.get('win') or {}
@@ -625,28 +650,36 @@ def _assemble(out, run):
         rank = (esc(str(rec.get('rank', ''))) + _ord(rec.get('rank', ''))) if rec and rec.get('rank') else '—'
         pf = f'{float(recs[1]):.0f}' if len(recs) > 1 else '—'
         meters = []
-        if c.get('p_opp') is not None:
+        # the matchup is OVER when every starter on both sides carries a final: the
+        # tile shows the result, not a 100% 'projection' of a game already played
+        # (Tue 09-29: '156 projected · 100% to beat Rayland' the morning after 147.40-114.65)
+        fin = _final_score(lg, run['week'], st.me, w.get('opp'), st)
+        if fin:
+            mine_t, opp_t = fin
+            res = 'WON' if mine_t > opp_t else 'LOST' if mine_t < opp_t else 'TIED'
+            meters.append(f'<div class="row"><span class="rowhd">Final</span><b>{res}</b> {mine_t:.2f} – {opp_t:.2f} vs {esc(w.get("opp") or "?")}' + (f' · league median {c["p_med"]:.0%}' if False else '') + '</div>')
+        elif c.get('p_opp') is not None:
             meters.append(f'<div class="meter"><div class="lab"><span>to beat {esc(w.get("opp") or "?")}</span><b>{c["p_opp"]:.0%}</b></div><div class="bar"><i style="width:{c["p_opp"]*100:.0f}%"></i><u></u></div></div>')
         elif w:
             meters.append(f'<div class="meter na"><div class="lab"><span>to beat {esc(w.get("opp") or "?")}</span><b>n/a</b></div></div>')
-        if c.get('p_med') is not None:
+        if c.get('p_med') is not None and not fin:
             meters.append(f'<div class="meter"><div class="lab"><span>to beat the league median</span><b>{c["p_med"]:.0%}</b></div><div class="bar"><i style="width:{c["p_med"]*100:.0f}%"></i><u></u></div></div>')
         po = R.get('playoff')
         if po:
             trivial = po['mine'] >= 0.995 and po.get('p_loss', 1) >= 0.99
             if trivial:   # 8 of 10 qualify in HH: the seed is the number that moves
                 meters.append(f'<div class="meter"><div class="lab"><span>top-{po["top_k"]} seed</span><b>{po["mine_top"]:.0%}</b></div><div class="bar"><i style="width:{po["mine_top"]*100:.0f}%"></i><u></u></div></div>')
-                if po.get('top_leverage') is not None:
+                if po.get('top_leverage') is not None and not po.get('over'):
                     meters.append(f'<div class="row"><span class="rowhd">This game</span>win → <b>{po["top_win"]:.0%}</b> · lose → <b>{po["top_loss"]:.0%}</b> for the seed; the playoffs themselves are {po["mine"]:.0%} either way</div>')
             else:
                 meters.append(f'<div class="meter"><div class="lab"><span>to make the playoffs</span><b>{po["mine"]:.0%}</b></div><div class="bar"><i style="width:{po["mine"]*100:.0f}%"></i><u></u></div></div>')
-                if po.get('leverage') is not None:
+                if po.get('leverage') is not None and not po.get('over'):
                     meters.append(f'<div class="row"><span class="rowhd">This game</span>win → <b>{po["p_win"]:.0%}</b> · lose → <b>{po["p_loss"]:.0%}</b> to make the playoffs ({po["leverage"]:+.0%} riding on it)</div>')
         ol.append(f'<div class="ol"><div class="hd"><div class="team"><small>{esc(lg)}</small>{esc(st.me)}</div><div class="vs">week {run["week"]} vs<br><b>{esc(w.get("opp") or "?")}</b></div></div>'
                   f'<div class="stats"><div class="stat"><div class="v">{record}</div><div class="k">record</div></div>'
                   f'<div class="stat"><div class="v">{rank}</div><div class="k">place</div></div>'
                   f'<div class="stat"><div class="v">{pf}</div><div class="k">points for</div></div>'
-                  f'<div class="stat"><div class="v">{lu["total_cur"]:.0f}</div><div class="k">projected</div></div></div>'
+                  + (f'<div class="stat"><div class="v">{fin[0]:.1f}</div><div class="k">final</div></div></div>' if fin else f'<div class="stat"><div class="v">{lu["total_cur"]:.0f}</div><div class="k">projected</div></div></div>')
                   + ''.join(meters)
                   + f'<div class="row"><span class="rowhd">Next lock</span>{lock}</div>'
                   + (f'<div class="row"><span class="rowhd">Watching</span>{" · ".join(watching)}</div>' if watching else '') + '</div>')

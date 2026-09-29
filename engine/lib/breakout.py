@@ -158,6 +158,16 @@ def _drop_candidates(state, lineup, w, use):
     # IR slot is free — the IR move itself frees the spot (Burns, torn ACL, 09-28)
     ir_free = cfg.ir_slots - sum(1 for r in state.mine if r['slot'] == 'IR')
     ir_bound = {k for k, v in w.drop_ok.items() if v.get('ir') and ir_free > 0}
+    # ... and the spot he frees is counted NOW, so the card says 'move him to IR,
+    # then add X into the spot' instead of naming a healthy bench player as the
+    # drop while the IR move is still pending (09-29: 'Boston over Henderson' with
+    # Burns still sitting at DL with a torn ACL)
+    n_ir = 0
+    for r in state.mine:
+        if r['key'] in ir_bound and r['slot'] != 'IR' and n_ir < ir_free:
+            n_ir += 1
+            out.append(dict(row=dict(player=f"the spot {r['player']} frees (IR move first)", key=f'__ir{n_ir}', pos='', slot='BN', pts=0.0, designation='none', elig=set()),
+                            tier=-1, val=0.0, why=f"{r['player']} moves to IR ({(w.drop_ok.get(r['key']) or {}).get('why', '')[:60]}) — his spot takes the add, no cut needed", gate=None, vor=-999.0))
     # two DEFs (or Ks): the spare is the one worth less on the SEASON, whether he is
     # starting or benched (Vikings 09-24: #5 season DEF on the bench behind the #21
     # 49ers in the slot — the 49ers are the spare, and the Vikings start)
@@ -239,6 +249,26 @@ def _worth_less(d, x):
     dw, xw = d['row'].get('pts') or 0.0, x.get('week_pts') or 0.0
     return dw <= xw
 
+GAME_H = 4.0     # an NFL game is over four hours after kickoff
+
+def _kicked(league, kick):
+    """Does 'his game has kicked off' change the mechanics right now?
+    BSB: yes from kickoff until the Wednesday waiver run — Yahoo moves an unrostered
+    player to waivers once his game starts, and he stays there until the run.
+    HH (no waivers): only while the game is in progress; he is a plain free agent
+    again when it ends (09-29: every add read 'addable again when it ends' the
+    morning after the week, against last week's kickoffs)."""
+    now = C.now()
+    if league == 'BSB':
+        # Tue 7 am -> Wed 6 am: last week's games are all played and the run has not
+        # happened, so every unrostered player who played is a claim, whatever this
+        # week's kickoff says (the Jets DEF, Tue 09-29: 'free now' was wrong)
+        run = C.bsb_waiver_deadline()
+        if now < run: return True
+        return bool(kick and kick <= now)
+    if not kick or kick > now: return False
+    return now < kick + C.dt.timedelta(hours=GAME_H)
+
 def _mech(league, tier, x, waived, prof=None):
     if x.get('kicked'):
         return ('his game has already kicked off — Yahoo locks an unrostered player at kickoff, so he is a Wednesday waiver claim in BSB'
@@ -276,14 +306,15 @@ def _on_waivers(league, path='/home/claude/bsb2/data/bsb_transactions.csv'):
         if t >= last_run: out[key(r['player'])] = f'{t:%a %-I:%M %p}'
     return out
 
-def _move(x, league, drops, kick, depth, dropped=None, dropped_where=None, waived=None, prof=None):
+def _move(x, league, drops, kick, depth, dropped=None, dropped_where=None, waived=None, prof=None, gap=False):
     """The if-and-when. -> dict(verb, when, drop, why). verb: ADD | ADD-DEAD | WAIT | NONE | BLOCKED"""
     g = x['gate']
     if dropped and x['key'] in dropped:
         where = (dropped_where or {}).get(x['key'], league)
         return dict(verb='NONE', when='no move — you dropped him', drop=None,
                     why=f'you dropped him in {where} on {dropped[x["key"]]}; the usage behind this row predates that and is not re-proposed until a newer usage pull says otherwise')
-    lock = f' — locks {kick:%a %-I:%M %p} ET' if kick else ''
+    # a kickoff already behind us is last week's game (Tuesday gap): no lock to quote
+    lock = f' — locks {kick:%a %-I:%M %p} ET' if kick and kick > C.now() else ''
     d = drops[0] if drops else None
     dn = d['row']['player'] if d else None
     if g is not None and g.verdict == 'BLOCK':
@@ -339,6 +370,13 @@ def _move(x, league, drops, kick, depth, dropped=None, dropped_where=None, waive
             if d is None:
                 return dict(verb='WAIT', when='no clean drop left', drop=None,
                             why=f'two straight weeks of starter usage ({x["held"]}), but the rest of the bench is a hold, a handcuff, starter-level usage in its own right, or has no depth-chart check on record')
+            # Tuesday gap (09-29): the week has rolled but this week's projections and
+            # lines are not on disk yet, so every number on this row is LAST week's. An
+            # unpriced add that costs a real player waits for the new week's pull; one
+            # that goes into an open spot costs nothing and does not.
+            if gap and d['tier'] >= 1 and not str(d['row']['key']).startswith('__'):
+                return dict(verb='WAIT', when=f"this week's projections and lines (the week-{C.nfl_week()} pull, due today)", drop=None,
+                            why=f'two straight weeks of starter usage ({x["held"]}), but the numbers this row is ranked on are last week\'s — cutting {dn} for him is decided on this week\'s lines, not those')
             return dict(verb='ADD', when=_mech(league, 'B', x, waived, prof) + lock, drop=dn,
                         why=f'starter usage two weeks running ({x["held"]}) and the market has not priced him yet — the cheap window. {dn} is the spot: {d["why"]}')
         return dict(verb='WAIT', when='next usage pull (Tuesday) — add then if the snaps hold or the market moves toward him', drop=None,
@@ -352,7 +390,12 @@ def scan(state, proj, season=None, week_usage=None, lineup=None):
     """-> dict(rows=[...ranked...], pulled=usage pull time, week=usage week, notes=[...],
                summary=str, drops=[...])"""
     league = state.league
+    # the usage week is the last COMPLETED week: once a week's games are over its
+    # stats are the scan's input even while the engine still runs on that week's
+    # projections (Tuesday morning, 09-29: week 3 done, week-4 files not yet pulled)
+    from . import clock as _C
     wk = week_usage or (proj.week - 1)
+    if not week_usage and U.load(proj.week) and (C.nfl_week() > proj.week): wk = proj.week
     use = U.load(wk); notes = []
     if not use:
         # fall back to the newest usage on disk, and SAY how stale it is; a scan on
@@ -419,7 +462,7 @@ def scan(state, proj, season=None, week_usage=None, lineup=None):
                         rz=r['rec_rz_tgt'], pts_wk1=r['pts_ppr'], market=mk['text'], ladder=mk['ladder'], ratio=mk['ratio'],
                         ahead=mk['ahead'], prank=prank, undrafted=undrafted, crowd=crowd,
                         week_pts=pts, boom=boom, season=(season.get(k) or {}).get('pts'), vor=_vor(w, k, _fam(r['pos'])),
-                        kicked=bool(proj.kickoff(r['tm']) and proj.kickoff(r['tm']) <= C.now()),
+                        kicked=_kicked(state.league, proj.kickoff(r['tm'])),
                         gate=gate, in_pool=bool(cand), ready=proj.market_ready(r['tm']),
                         verified=verified, registry=w.verified.get(k, {}).get('why', '')))
     order = {'A': 0, 'B': 1, 'C': 2, 'W': 3}
@@ -439,12 +482,16 @@ def scan(state, proj, season=None, week_usage=None, lineup=None):
             from . import rivals as RV
             prof = RV.profiles(state, proj)
         except Exception: prof = None
-    for x in out:
-        x['move'] = _move(x, league, remaining, proj.kickoff(x['tm']), _depth(state, lineup, x['pos']), dropped, dropped_where, waived, prof)
+    gap = C.nfl_week() > proj.week          # the week rolled; this week's pull is not in yet
+    # the spots are handed out in VALUE order (tier, then this week's number), not in
+    # display order: 09-29 the open spot went to Cade Otton (6.9, sorted first as
+    # undrafted) while Carnell Tate (10.2) sat behind him with 'no drop worth less'
+    for x in sorted(out, key=lambda x: (order[x['tier']], -(x['week_pts'] or 0.0))):
+        x['move'] = _move(x, league, remaining, proj.kickoff(x['tm']), _depth(state, lineup, x['pos']), dropped, dropped_where, waived, prof, gap=gap)
         if x['move']['verb'] in ('ADD', 'ADD-DEAD') and remaining: remaining.pop(0)
     acts = [x for x in out if x['move']['verb'] in ('ADD', 'ADD-DEAD')]
     if acts:
-        summary = (f"{len(acts)} to act on: " + '; '.join(f"{x['name']} over {x['move']['drop']}" for x in acts)
+        summary = (f"{len(acts)} to act on: " + '; '.join((f"{x['name']} into {x['move']['drop']}" if str(x['move']['drop']).startswith(('an open', 'the spot')) else f"{x['name']} over {x['move']['drop']}") for x in acts)
                    + f". {_mechanics(league)}.")
     elif any(x['tier'] in ('A', 'B') for x in out):
         summary = ("No move this week. Starter-level usage exists on the wire but nothing clears both the add gate "
@@ -471,7 +518,7 @@ def fmt(res, league, top=14):
         L.append(f"  {x['tier']} {x['name'][:22]:22}{x['pos']:4}{x['tm']:4} {x['snap']:5.0%} {x['tgt']:5.0%} {x['air']:5.0%} "
                  f"{tch:5.0%} {x['pts_wk1']:5.1f}  {pre:>4} {(x['crowd'] or 0):6d}  {nxt} {bm}  {x['market']}")
         m = x['move']
-        L.append(f"      -> {m['verb']}: {m['when']}" + (f"; drop {m['drop']}" if m['drop'] else '') + f"  [{m['why'][:110]}]")
+        L.append(f"      -> {m['verb']}: {m['when']}" + ((f"; into {m['drop']}" if str(m['drop']).startswith(('an open', 'the spot')) else f"; drop {m['drop']}") if m['drop'] else '') + f"  [{m['why'][:110]}]")
         g = x['gate']
         if g is not None and g.verdict != 'PASS':
             L.append(f"      gate {g.verdict}: " + '; '.join(f'{gg} {m}' for gg, s_, m in g.checks if s_ != 'PASS')[:160])

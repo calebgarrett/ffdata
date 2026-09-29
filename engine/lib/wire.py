@@ -187,6 +187,12 @@ class Wire:
         if sb.get('ff') is not None: src.append('fftoday')
         if sb.get('rw') is not None: src.append('sleeper')
         if cand['verified']: src.append('usage')
+        # the weekly usage pull is an independent observation of the role (snaps,
+        # targets), not a projection: when it is what put him on the scan it is a
+        # second source family. Without it every add between the week's last kickoff
+        # and Thursday's ladders is 'single source' by construction (Mon 09-28: every
+        # Tier-B row BLOCKED with an open roster spot to fill).
+        if usage and 'usage' not in src and any(t in usage for t in ('snaps', 'targets', 'touches', 'started')): src.append('usage')
         return G.check('add', f'add {cand["name"]}', player=cand['name'],
                        designation='none' if cand['key'] not in self.blocked else 'IR',
                        sources=src, pos=cand['fam'], value=v, horizon=horizon,

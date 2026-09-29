@@ -159,8 +159,9 @@ def evaluate(state, proj, week, opp=None, season=None, windows=None):
     return base
 
 def fmt(res, league):
+    g = 'next week\'s game (opponent not on file)' if res.get('over') else 'this game'
     L = [f"PLAYOFF LEVERAGE — {league}: P(playoffs) {res['mine']:.0%}"
-         + (f" · win this week {res['p_win']:.0%} / lose {res['p_loss']:.0%} → this game is worth {res['leverage']:+.0%}" if res.get('leverage') is not None else '')
+         + (f" · win {res['p_win']:.0%} / lose {res['p_loss']:.0%} → {g} is worth {res['leverage']:+.0%}" if res.get('leverage') is not None else '')
          + f" · +5 pts/week of roster strength → {res['p_plus5']:.0%}"]
     L.append(f"  top-{res['top_k']} seed: {res['mine_top']:.0%}" + (f" · win {res['top_win']:.0%} / lose {res['top_loss']:.0%} → {res['top_leverage']:+.0%}" if res.get('top_leverage') is not None else '') + f" · +5/wk → {res['top_plus5']:.0%}")
     L.append('  ' + res['note'])

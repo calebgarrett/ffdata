@@ -39,6 +39,7 @@ class State:
         self.others_pulled = others_pulled or pulled
         self.records = {}
         self.source = source
+        self.reconciled = []
         self.rows = rows
         for r in rows:
             r['key'] = key(r['player'])
@@ -121,13 +122,64 @@ def _elig(pos_string, league):
 def _snap_dir(league):
     d = os.path.join(ROOT, 'state', league); os.makedirs(d, exist_ok=True); return d
 
-def latest(league):
-    """Newest snapshot for the league, or None."""
+def _log_path(league):
+    return os.path.join(ROOT, 'bsb_transactions.csv' if league == 'BSB' else 'hh_transactions.csv')
+
+def reconcile(league, rows, log_rows=None):
+    """Apply the league's transaction log to the roster rows, oldest first.
+
+    Yahoo's logged-out team pages stop reflecting adds and drops once a player's
+    game has locked for the week: on Tue 09-29 at 2:48 am the pages still showed
+    Jalen Coker on The STRIB Club (dropped Mon 11:31 am) and no Matthew Golden on
+    Maker's Mark (added Mon 9:44 pm), so the engine proposed Golden as a free
+    agent 11 hours after he was gone. The transactions page is not frozen, so
+    it is the truth for the gap. Rules, in log order:
+      Add  by T of P: P on no roster -> P joins T's bench. P already on a roster
+                      (T's or another's) -> the page is trusted (a trade is not
+                      in the add/drop log).
+      Drop by T of P: P on T -> P leaves. Otherwise nothing.
+    Only the log since the start of the PREVIOUS NFL week is replayed: the pages
+    can lag at most from a week's first kickoff to its rollover, and the merged
+    log is complete over that span but not before it (BSB 09-02..09-16 adds whose
+    drops predate the log would otherwise resurrect four players).
+    -> (rows, changes) where changes is the NET list of 'owner +Player' / 'owner -Player'."""
+    if log_rows is None:
+        p = _log_path(league)
+        log_rows = [r for r in csv.DictReader(open(p))] if os.path.exists(p) else []
+    since = (C.week_start(max(1, C.nfl_week() - 1))).strftime('%Y-%m-%d %H:%M')
+    log = sorted((r for r in log_rows if (r.get('datetime') or '') >= since and r.get('action') in ('Add', 'Drop')), key=lambda r: r['datetime'])
+    orig = [dict(r) for r in rows]
+    rows = [dict(r) for r in rows]
+    changes = []
+    for t in log:
+        k = key(t['player']); owner = t['team']
+        holders = [r for r in rows if key(r['player']) == k]
+        if t['action'] == 'Add':
+            if holders: continue
+            rows.append(dict(owner=owner, manager=owner, slot='BN', player=t['player'], pos=t.get('pos') or '', nfl=t.get('nfl') or '', designation='none'))
+            changes.append(f"{owner} +{t['player']}")
+        else:
+            mine = [r for r in holders if r['owner'] == owner]
+            if not mine: continue
+            rows = [r for r in rows if not (key(r['player']) == k and r['owner'] == owner)]
+            changes.append(f"{owner} -{t['player']}")
+    # report the NET difference from the page, not the replay
+    before = {(r['owner'], key(r['player'])): r['player'] for r in orig}
+    after = {(r['owner'], key(r['player'])): r['player'] for r in rows}
+    net = [f'{o} +{after[(o, k)]}' for (o, k) in after if (o, k) not in before] + \
+          [f'{o} -{before[(o, k)]}' for (o, k) in before if (o, k) not in after]
+    return rows, net
+
+def latest(league, reconciled=True):
+    """Newest snapshot for the league, or None. The transaction log is applied on
+    top of it unless `reconciled=False` (see reconcile)."""
     fs = sorted(glob.glob(os.path.join(_snap_dir(league), '*.json')))
     if not fs: return None
     j = json.load(open(fs[-1]))
-    st = State(league, j['rows'], j['pulled'], source=os.path.basename(fs[-1]), others_pulled=j.get('others_pulled'))
+    rows, changes = reconcile(league, j['rows']) if reconciled else (j['rows'], [])
+    st = State(league, rows, j['pulled'], source=os.path.basename(fs[-1]), others_pulled=j.get('others_pulled'))
     st.records = j.get('records') or {}
+    st.reconciled = changes
     return st
 
 def recently_dropped(league, days=7, snaps=None):
@@ -147,6 +199,21 @@ def recently_dropped(league, days=7, snaps=None):
         if t < cutoff: continue
         for r in json.load(open(f))['rows']:
             if r['owner'] == cfg.name and key(r['player']) not in now_mine: out[key(r['player'])] = stamp[:10]
+    for k, d in _my_log_moves(league, 'Drop', cutoff, snaps is None).items(): out.setdefault(k, d)
+    return out
+
+def _my_log_moves(league, action, cutoff, use_log=True):
+    """Caleb's own Adds/Drops from the transaction log since `cutoff` -> {key: date}.
+    The team pages lag the log once games lock (see reconcile); the log does not."""
+    if not use_log: return {}
+    p = _log_path(league)
+    if not os.path.exists(p): return {}
+    out = {}
+    for r in csv.DictReader(open(p)):
+        if r.get('team') != ALL[league].name or r.get('action') != action: continue
+        try: t = C.dt.datetime.strptime(r['datetime'], '%Y-%m-%d %H:%M').replace(tzinfo=C.ET)
+        except Exception: continue
+        if t >= cutoff: out[key(r['player'])] = r['datetime'][:10]
     return out
 
 def recently_added(league, days=7, snaps=None):
@@ -166,6 +233,7 @@ def recently_added(league, days=7, snaps=None):
         if t < cutoff: continue
         then = {key(r['player']) for r in json.load(open(f))['rows'] if r['owner'] == cfg.name}
         for k in now_mine - then: out[k] = stamp[:10]
+    for k, d in _my_log_moves(league, 'Add', cutoff, snaps is None).items(): out.setdefault(k, d)
     return out
 
 def recently_dropped_anywhere(days=7):

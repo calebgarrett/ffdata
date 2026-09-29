@@ -28,6 +28,19 @@ def nfl_week(t=None):
     if t < WEEK1_TUESDAY: return 0
     return 1 + (t - WEEK1_TUESDAY).days // 7
 
+def data_week():
+    """The NFL week the engine should RUN for: the calendar week once its Sleeper
+    projections are on disk, else the previous week (Tuesday morning, 09-29: the
+    calendar rolled to week 4 at 7 am, the pump had pulled at 2:49 am with week-3
+    files, and every projection test failed on files that did not exist yet).
+    The card then keeps showing the finished week's finals until week N's data lands."""
+    import os
+    w = nfl_week()
+    D = '/home/claude/bsb2/data/'
+    if os.path.exists(D + f'sleeper_off_wk{w}.csv'): return w
+    if w > 1 and os.path.exists(D + f'sleeper_off_wk{w - 1}.csv'): return w - 1
+    return w
+
 def week_start(w):
     return WEEK1_TUESDAY + dt.timedelta(weeks=w - 1)
 

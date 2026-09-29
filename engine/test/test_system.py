@@ -74,7 +74,7 @@ case('phantom audit removes only Gainwell', {a for a, *_ in ph} == {'kenneth gai
 # 5. Projections: unknown is not zero; market and projection merge into one line.
 #    Week-generic since 09-23 (the pump replaces the disk every pull): the fixtures
 #    are found on the current week's data, not hard-coded to week 2.
-W_NOW = C.nfl_week()
+W_NOW = C.data_week()   # the week whose projections are on disk (Tuesday-morning gap, 09-29)
 P = Projections(W_NOW)
 rid = P.line('Calvin Ridley', 'WR', 'TEN')
 _ok = rid['unknown'] or rid.get('partial') or (SC.points(rid, 'BSB') or 0) > 0 or rid['sources'] == ['yahoo']
@@ -255,7 +255,10 @@ case('a long-term tag WITH a registry entry (Dell IR-R, drop_ok) is still a dead
 from lib import trade as T, fab as F
 _tb = T.scan(b, P)
 case('trade: SELL rows are mine, BUY rows are theirs', all(x['owner'] == b.me for x in _tb['sell']) and all(x['owner'] != b.me for x in _tb['buy']))
-case('trade: this week\'s gap file is written for persistence', os.path.exists(f'/home/claude/bsb2/data/gaps/BSB_wk{P.week}.csv'))
+# (09-29, Tue midday: the week rolled but Kalshi's player ladders had not posted — the scan
+#  returns 'too few priced players' and writes nothing; that is the correct behaviour, not a failure)
+case('trade: this week\'s gap file is written for persistence (when ten or more players are priced)',
+     os.path.exists(f'/home/claude/bsb2/data/gaps/BSB_wk{P.week}.csv') or _tb['n'] < 10, f"n={_tb['n']}")
 _fm = F.model()
 case('FAB: bands rise B < A < contested and the whale is read off the log',
      _fm['n'] > 0 and _fm['bands']['B']['bid'] < _fm['bands']['A']['bid'] < _fm['bands']['contested']['bid'] and _fm['whale'] == max(_fm['bids']))
@@ -489,6 +492,72 @@ case('live guard: no Kalshi ladder survives for a player whose game has kicked o
 case('live guard: no lineup change involves a locked player (BSB and HH)', all(c['start'].get('phase') != 'locked' and (not c['sit'] or c['sit'].get('phase') != 'locked') for c in LU.solve(b, P)['changes'] + LU.solve(h, P)['changes']))
 _stm2 = _STM.scan(P, {'BSB': b, 'HH': h}, W_NOW)
 case('live guard: no line-movement flag for a player whose game has kicked off', all(m['owners'][0][4] not in _kicked_teams for m in _stm2['moves']))
+
+# 40. Stale team pages (09-29, 2:48 am): Yahoo's logged-out team pages stop showing
+#     adds and drops once a player's game has locked; the transactions log does not.
+#     Golden was proposed as a free agent 11 hours after Maker's Mark added him.
+_rows40 = [dict(owner='A', manager='A', slot='BN', player='Old Guy', pos='WR', nfl='CAR', designation='none'),
+           dict(owner='B', manager='B', slot='WR', player='Kept Man', pos='WR', nfl='DET', designation='none')]
+_d40 = C.now().strftime('%Y-%m-%d %H:%M')
+_log40 = [dict(datetime=_d40, team='A', action='Add', player='New Guy', pos='WR', nfl='GB'),
+          dict(datetime=_d40, team='A', action='Drop', player='Old Guy', pos='WR', nfl='CAR'),
+          dict(datetime=_d40, team='C', action='Add', player='Kept Man', pos='WR', nfl='DET'),
+          dict(datetime='2026-09-02 03:23', team='A', action='Add', player='Ancient Add', pos='QB', nfl='SEA')]
+_r40, _c40 = S.reconcile('HH', _rows40, _log40)
+_own40 = {N.key(r['player']): r['owner'] for r in _r40}
+case('stale page: a logged add the page lacks joins that team\'s bench', _own40.get('new guy') == 'A', str(_own40))
+case('stale page: a logged drop the page still shows is removed', 'old guy' not in _own40, str(_own40))
+case('stale page: an add of a player the page has elsewhere trusts the page (trades are not in the log)', _own40.get('kept man') == 'B')
+case('stale page: the replay starts at the previous NFL week, so an old add with no logged drop stays out', 'ancient add' not in _own40)
+case('stale page: the change list is the net difference', sorted(_c40) == ['A +New Guy', 'A -Old Guy'], str(_c40))
+_hl = S.latest('HH')
+case('live HH state: no player the log shows added by another team since last Tuesday is a free agent',
+     all(_hl.owner_of(t['player']) for t in __import__('csv').DictReader(open('/home/claude/bsb2/data/hh_transactions.csv'))
+         if t['action'] == 'Add' and t['datetime'] >= C.week_start(max(1, C.nfl_week() - 1)).strftime('%Y-%m-%d %H:%M')
+         and not any(u['action'] == 'Drop' and u['player'] == t['player'] and u['datetime'] > t['datetime'] for u in __import__('csv').DictReader(open('/home/claude/bsb2/data/hh_transactions.csv')))))
+
+# 41. Tuesday morning after the week (09-29): every HH add read "his game has already
+#     kicked off — addable again when it ends" against last week's kickoffs. In HH a
+#     kickoff matters only while the game is on; in BSB it matters until Wednesday's run.
+_h1 = C.now() - C.dt.timedelta(hours=1); _h30 = C.now() - C.dt.timedelta(hours=30); _f2 = C.now() + C.dt.timedelta(hours=2)
+case('HH: a game one hour old is in progress', BK._kicked('HH', _h1) is True)
+case('HH: a game 30 hours old is over — plain free agent', BK._kicked('HH', _h30) is False)
+case('HH: a game two hours ahead has not kicked', BK._kicked('HH', _f2) is False)
+case('BSB: a game 30 hours old is still a waiver claim if the Wednesday run has not passed',
+     BK._kicked('BSB', _h30) is (_h30 < (C.bsb_waiver_deadline() if C.bsb_waiver_deadline() > C.now() else C.bsb_waiver_deadline() + C.dt.timedelta(days=7))))
+
+# 42. A pending IR move IS the open spot (09-29): with Burns tagged O, registry ir=True
+#     and a free IR slot, the first HH add goes into the spot he frees — never over a
+#     healthy bench player.
+_h42 = S.latest('HH')
+_w42 = WR.Wire(_h42, P)
+_burns = _h42.row_of('Brian Burns')
+if _burns and _burns['slot'] != 'IR' and (_w42.drop_ok.get('brian burns') or {}).get('ir') and len(_h42.ir()) < _h42.cfg.ir_slots:
+    _dc42 = BK._drop_candidates(_h42, LU.solve(_h42, P), _w42, U.load(W_NOW) or {})
+    case('pending IR move: the first drop candidate is the spot Burns frees', bool(_dc42) and _dc42[0]['row']['key'].startswith('__ir'), str([d['row']['player'] for d in _dc42[:2]]))
+    case('pending IR move: Burns himself is never a drop candidate', all(d['row']['key'] != 'brian burns' for d in _dc42))
+
+# 43. Tuesday gap (09-29): with the week rolled and no week-N pull yet, an unpriced
+#     (Tier B) add that costs a real player WAITS for this week's lines; one that goes
+#     into an open spot still goes.
+_xb = dict(name='Flyer', key='flyer', tier='B', held='wk2: 90% snaps', week_pts=9.0, ahead=False, gate=None, tm='TEN', pos='WR')
+_dreal = dict(row=dict(player='Bench Guy', key='bench guy', pos='RB', slot='BN', pts=4.0, designation='none', elig=set()), tier=3, val=1.0, why='lowest-valued bench player', gate=None, vor=-3.0)
+_dopen = dict(row=dict(player='an open roster spot', key='__open0', pos='', slot='BN', pts=0.0, designation='none', elig=set()), tier=-1, val=0.0, why='open roster spot — no drop needed', gate=None, vor=-999.0)
+_dep = (4, 2, 4.0, 'Bench Guy')
+case('gap: Tier-B add over a real player WAITS for the new week', BK._move(dict(_xb), 'HH', [_dreal], None, _dep, gap=True)['verb'] == 'WAIT')
+case('gap: Tier-B add into an open spot still goes', BK._move(dict(_xb), 'HH', [_dopen], None, _dep, gap=True)['verb'] == 'ADD')
+case('no gap: the same add over a real player goes', BK._move(dict(_xb), 'HH', [_dreal], None, _dep, gap=False)['verb'] == 'ADD')
+
+# 44. Spots go to the best candidate, not the first row (09-29): among the ADDs in a
+#     scan, nobody who took a spot projects below a same-tier player who was told
+#     'no drop worth less than him' or 'no clean drop left'.
+for _lg44, _st44 in (('HH', h), ('BSB', b)):
+    _sc44 = BK.scan(_st44, P, season=None, lineup=LU.solve(_st44, P))
+    _adds44 = [x for x in _sc44['rows'] if x['move']['verb'] in ('ADD', 'ADD-DEAD')]
+    _starved44 = [x for x in _sc44['rows'] if x['move']['when'] in ('no drop worth less than him', 'no clean drop left')]
+    case(f'{_lg44}: no add took a spot ahead of a same-tier player who projects higher and was left without one',
+         all(not ((a['tier'] == s_['tier']) and ((s_['week_pts'] or 0) > (a['week_pts'] or 0) + 1e-9)) for a in _adds44 for s_ in _starved44),
+         str([(a['name'], a['week_pts']) for a in _adds44][:3]) + ' vs ' + str([(s_['name'], s_['week_pts']) for s_ in _starved44][:3]))
 
 print('=' * 88)
 n = total

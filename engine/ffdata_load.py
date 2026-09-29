@@ -59,9 +59,19 @@ def rows(path):
     return list(csv.DictReader(open(path))) if os.path.exists(path) else []
 
 def main():
-    week = int(sys.argv[sys.argv.index('--week') + 1]) if '--week' in sys.argv else C.nfl_week()
     head = sync()
     src = os.path.join(CLONE, 'data')
+    # the week is the PUMP's week (what the files on disk describe), not the calendar's:
+    # on Tuesday morning the calendar rolls at 7 am while the newest pull may be from
+    # 2:49 am with week-3 files (09-29). Building week-4 games and matchups from a
+    # week-3 pull emptied the schedule and broke every DEF line.
+    week = int(sys.argv[sys.argv.index('--week') + 1]) if '--week' in sys.argv else None
+    if week is None:
+        try:
+            first = open(os.path.join(src, 'yahoo', 'pulled.txt')).readline()
+            m = re.search(r'week (\d+)', first); week = int(m.group(1)) if m else None
+        except Exception: week = None
+    if week is None: week = C.nfl_week()
     log = [f'# ffdata pull loaded {C.stamp()} — repo head: {head}', f'week {week}']
     os.makedirs(D + 'pulls', exist_ok=True)
 
