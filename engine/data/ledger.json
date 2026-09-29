@@ -6003,10 +6003,11 @@
   ],
   "verdict": "WARN",
   "week": 4,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": true,
   "resolves_at": "2026-10-04T20:20-04:00",
-  "reverses": null
+  "reverses": null,
+  "superseded_by": "b89b0411"
  },
  {
   "id": "f0d5877f",
@@ -6041,10 +6042,11 @@
   ],
   "verdict": "WARN",
   "week": 4,
-  "status": "proposed",
+  "status": "executed",
   "provisional": false,
   "resolves_at": null,
-  "reverses": null
+  "reverses": null,
+  "status_ts": "2026-09-29T19:10-04:00"
  },
  {
   "id": "011ad55f",
@@ -6061,6 +6063,99 @@
   "verdict": "PASS",
   "week": 4,
   "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "abc64b4a",
+  "ts": "2026-09-29T19:10-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Antonio Williams",
+  "call": "drop DeMario Douglas -> add Antonio Williams",
+  "detail": "+6.3 season",
+  "evidence": [
+   "kalshi",
+   "sleeper",
+   "usage"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "b89b0411",
+  "ts": "2026-09-29T19:10-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Jameson Williams",
+  "call": "start Jameson Williams at W/R/T",
+  "detail": "over Travis Kelce +0.72",
+  "evidence": [
+   "props",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 4,
+  "status": "proposed",
+  "provisional": true,
+  "resolves_at": "2026-10-04T20:20-04:00",
+  "reverses": "89c59bc5"
+ },
+ {
+  "id": "39b4258c",
+  "ts": "2026-09-29T19:10-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Malaki Starks",
+  "call": "add Malaki Starks (DB) over Kam Curl",
+  "detail": "+4.51/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "17c1176e",
+  "ts": "2026-09-29T19:10-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Nick Emmanwori",
+  "call": "add Nick Emmanwori (DB) over Kam Curl",
+  "detail": "+3.63/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "4420fc9a",
+  "ts": "2026-09-29T19:10-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Devin Lloyd",
+  "call": "add Devin Lloyd (LB) over Carson Schwesinger",
+  "detail": "+3.28/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
   "provisional": false,
   "resolves_at": null,
   "reverses": null
