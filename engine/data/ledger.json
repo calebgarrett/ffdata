@@ -5835,10 +5835,11 @@
   ],
   "verdict": "WARN",
   "week": 4,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": true,
   "resolves_at": "2026-10-04T16:05-04:00",
-  "reverses": "143c4cd1"
+  "reverses": "143c4cd1",
+  "superseded_by": "a1e793bb"
  },
  {
   "id": "366b0467",
@@ -5928,6 +5929,138 @@
   "verdict": "BLOCK",
   "week": 4,
   "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "a1e793bb",
+  "ts": "2026-09-29T15:20-04:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Jauan Jennings",
+  "call": "start Jauan Jennings at WR3",
+  "detail": "over Malik Washington +0.25",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 4,
+  "status": "proposed",
+  "provisional": true,
+  "resolves_at": "2026-10-04T16:05-04:00",
+  "reverses": "150830e8"
+ },
+ {
+  "id": "4f36750d",
+  "ts": "2026-09-29T15:20-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Sam Darnold",
+  "call": "add Sam Darnold (QB) over Matthew Stafford",
+  "detail": "+2.42/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 4,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "7ba15ef8",
+  "ts": "2026-09-29T15:20-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Antonio Williams",
+  "call": "drop DeMario Douglas -> add Antonio Williams",
+  "detail": "+6.3 season",
+  "evidence": [
+   "kalshi",
+   "sleeper",
+   "usage"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "89c59bc5",
+  "ts": "2026-09-29T15:20-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Jameson Williams",
+  "call": "start Jameson Williams at W/R",
+  "detail": "over Travis Kelce +0.72",
+  "evidence": [
+   "props",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 4,
+  "status": "proposed",
+  "provisional": true,
+  "resolves_at": "2026-10-04T20:20-04:00",
+  "reverses": null
+ },
+ {
+  "id": "f0d5877f",
+  "ts": "2026-09-29T15:20-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Chicago Bears",
+  "call": "add Chicago Bears (DEF) over Kansas City",
+  "detail": "+9.88/wk",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 4,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "0c51f882",
+  "ts": "2026-09-29T15:20-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Kansas City Chiefs",
+  "call": "add Kansas City Chiefs (DEF) over Kansas City",
+  "detail": "+9.29/wk",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 4,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "011ad55f",
+  "ts": "2026-09-29T15:20-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Cleveland Browns",
+  "call": "add Cleveland Browns (DEF) over Kansas City",
+  "detail": "+8.73/wk",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "PASS",
+  "week": 4,
+  "status": "proposed",
   "provisional": false,
   "resolves_at": null,
   "reverses": null
