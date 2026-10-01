@@ -152,8 +152,11 @@ if _add:
 
 # 13. The 49ers were ALREADY in the DEF slot when the card said "swap them in".
 #     A start call on a player who is already starting must not come back PASS.
-CASES.append(('start 49ers when they are already starting', G.check(
-    'start','start 49ers DEF',player='49ers',designation='none',
+#     (whichever DEF is in the slot NOW — 10-01: the Vikings replaced the 49ers and the
+#      literal name made the case fail on the runner)
+_cur_def = next((r['player'] for r in BSB.starters() if r['pos'] == 'DEF'), '49ers')
+CASES.append((f'start {_cur_def} when they are already starting', G.check(
+    'start',f'start {_cur_def} DEF',player=_cur_def,designation='none',
     sources=['vegas','sleeper'],pos='DEF',value=10.16,horizon='weekly',
     market_ready=True,pulled=TODAY,state=BSB)))
 

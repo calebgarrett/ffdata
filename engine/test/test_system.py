@@ -46,8 +46,9 @@ case('state knows its age', S.load('BSB').age_h is not None and S.load('BSB').ag
 # 3. Ledger: already-set detection and dedupe (in-memory, do not pollute the real ledger)
 import tempfile, os
 real = L.PATH; L.PATH = os.path.join(tempfile.mkdtemp(), 'ledger.json')
-e = L.propose('BSB', 'start', '49ers', 'start 49ers DEF', state=b)
-case('ledger files a start of an already-starting player as already_set', e['status'] == 'already_set')
+_cur_def = next((r['player'] for r in b.starters() if r['pos'] == 'DEF'), '49ers')     # whoever is in the slot now (10-01)
+e = L.propose('BSB', 'start', _cur_def, f'start {_cur_def} DEF', state=b)
+case('ledger files a start of an already-starting player as already_set', e['status'] == 'already_set', _cur_def)
 # pick a name guaranteed unrostered in the LIVE snapshot, so the test does not
 # rot when a real claim lands (it did: Hutchinson was claimed 2026-09-16 05:08)
 _fa = next(n for n in ('Antonio Williams', 'Tre Harris', 'Samaje Perine', 'Zzz Nobody') if b.owner_of(n) is None)
