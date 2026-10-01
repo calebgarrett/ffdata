@@ -559,6 +559,34 @@ for _lg44, _st44 in (('HH', h), ('BSB', b)):
          all(not ((a['tier'] == s_['tier']) and ((s_['week_pts'] or 0) > (a['week_pts'] or 0) + 1e-9)) for a in _adds44 for s_ in _starved44),
          str([(a['name'], a['week_pts']) for a in _adds44][:3]) + ' vs ' + str([(s_['name'], s_['week_pts']) for s_ in _starved44][:3]))
 
+# 45. An OUT starter is a hole, not a provisional call (Burns, 09-29: the card showed
+#     'START' on a torn ACL and filed Watt-over-Burns under 'not a move until the market
+#     posts'). Every change that benches a starter Yahoo tags O/IR/PUP/SUSP/NA is FIRM,
+#     and the roster table never puts a START pill on him.
+_S_UN = {'IR', 'IR-R', 'O', 'NA', 'PUP', 'PUP-R', 'SUSP', 'CEL'}
+for _lg45, _st45 in (('HH', h), ('BSB', b)):
+    _lu45 = LU.solve(_st45, P)
+    _outs45 = [c for c in _lu45['changes'] if c['sit'] and c['sit'].get('designation') in _S_UN]
+    case(f'{_lg45}: replacing an OUT starter is never provisional', all(not c['provisional'] for c in _outs45), str([(c['slot'], c['sit']['player'], c['provisional']) for c in _outs45]))
+    _tagged45 = [r for r in _st45.starters() if r['designation'] in _S_UN and (P.kickoff(r['tm']) or C.now()) >= C.now()]
+    if _tagged45:
+        case(f'{_lg45}: an OUT starter with a bench replacement is benched in the optimal lineup',
+             all(r['key'] not in {x['key'] for x in _lu45['optimal'].values() if x} for r in _tagged45 if any(bn['pos'] == r['pos'] for bn in _st45.bench())), str([r['player'] for r in _tagged45]))
+import re as _re45
+# the card on disk is judged only when it was written by the current card module (else it is the run before the fix)
+_cp45 = '/home/claude/bsb2/lineup-card.html'
+_card45 = open(_cp45).read() if os.path.exists(_cp45) and os.path.getmtime(_cp45) >= os.path.getmtime('/home/claude/bsb2/lib/card.py') else ''
+_bad45 = [m.group(1) for m in _re45.finditer(r'<td class="name">([^<]+)<small>[^<]*</small></td><td class="pts">[^<]*</td><td class="st"><span class="pill p-start">START</span>', _card45)
+          if any(r['player'] == m.group(1) and r['designation'] in _S_UN for r in list(h.starters()) + list(b.starters()))]
+case('card: no START pill on a starter Yahoo tags OUT', not _bad45, str(_bad45))
+
+# 46. Freshness is judged in Eastern time (09-30, 8 pm ET: the container's UTC date had
+#     rolled, every input read "1d old", and both HH adds slid from Decide to provisional).
+from lib import gate as G
+_g46 = G.check('add', 'freshness probe', player='Probe', designation='none', sources=['sleeper', 'rotowire'], pos='WR', value=5.0,
+               horizon='weekly', market_ready=True, roster_keys=set(), pool_keys={'probe'}, pool_meta={}, pulled=C.today().isoformat(), league='HH', state=h)
+case('G8: inputs pulled today (ET) are 0d old whatever the UTC date', any(n_ == 'G8-fresh' and s_ == 'PASS' for n_, s_, _ in _g46.checks), str([(n_, s_, m_) for n_, s_, m_ in _g46.checks if n_ == 'G8-fresh']))
+
 print('=' * 88)
 n = total
 print(f'{n - bad}/{n} behaved as required.' + ('  SYSTEM IS SOUND.' if bad == 0 else f'  {bad} FAILURES — do not ship.'))

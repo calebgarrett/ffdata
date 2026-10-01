@@ -244,7 +244,8 @@ def render(run):
             b, a, d = c['board'], c['add'], c['drop']
             _other_def = next((r['player'] for r in R['state'].mine if W._fam(r['pos']) == c['fam'] and r['slot'] != 'IR' and d and r['key'] != d['key']), None)
             _mech_txt = _stream_mech(lg, a)
-            out.append(f'<div class="act"><span class="lg">{lg} — week {week+1} stream, {"claim tonight" if "waivers" in _mech_txt else "free now"}</span>'
+            _blk = 'BLOCK' in (c['gate_add'].verdict, c['gate_drop'].verdict if c['gate_drop'] else '')
+            out.append(f'<div class="act{" no" if _blk else ""}"><span class="lg">{lg} — week {week+1} stream, {"claim tonight" if "waivers" in _mech_txt else "free now"}{" — BLOCKED" if _blk else ""}</span>'
                        f'<div class="mv">Add {esc(a["name"])} <span style="color:var(--muted);font-weight:400">{esc(c["fam"])}, {esc(a["tm"])}</span>'
                        + (f' → drop {esc(d["player"])}' if d else '') + '</div>'
                        f'<div class="why">Week {week+1} {"opponent" if c["fam"]=="DEF" else "own-team"} implied total: <b>{esc(a["tm"])} {b["best_fa"]["val"]:.1f}</b> vs your best {esc(b["best_mine"]["name"])} {b["best_mine"]["val"]:.1f} — a <b>{b["edge"]:.1f}-point</b> edge on a posted line. '
@@ -339,7 +340,8 @@ def render(run):
             if r['line'].get('prov'):
                 k0 = next(iter(r['line']['prov'].values()))
                 small += (' · ' if small else '') + esc(k0[:70])
-            tag = pill('LOCK ' + (C.stamp(kick).split(',')[0] if kick else ''), 'lock') if ph in ('alert', 'decide') else \
+            tag = pill(r['designation'], 'out') if r['designation'] in S_UNUSABLE else \
+                  pill('LOCK ' + (C.stamp(kick).split(',')[0] if kick else ''), 'lock') if ph in ('alert', 'decide') else \
                   pill('UNKNOWN', 'q') if r['pts'] is None else \
                   pill(r['designation'], 'q') if r['designation'] in ('Q', 'D') else pill('START', 'start')
             out.append(f'<tr><td class="slot">{esc(s)}</td><td class="name">{esc(r["player"])}<small>{small}</small></td><td class="pts">{fmt(r["pts"])}</td><td class="st">{tag}</td></tr>')

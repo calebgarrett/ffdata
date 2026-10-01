@@ -70,6 +70,21 @@ class Result:
         return '\n'.join(out)
 
 
+def _waiver_run_at(wd):
+    """When this week's BSB waiver run actually happened, from the log's 'Waiver'
+    adds on that Wednesday, or None if none is logged yet."""
+    import csv as _csv, os as _os, datetime as _dt
+    from . import clock as _C
+    p = '/home/claude/bsb2/data/bsb_transactions.csv'
+    if not _os.path.exists(p): return None
+    day = wd.date(); ts = []
+    for row in _csv.DictReader(open(p)):
+        if row.get('action') != 'Add' or (row.get('note') or '').strip().lower() != 'waiver': continue
+        try: t = _dt.datetime.strptime(row['datetime'], '%Y-%m-%d %H:%M').replace(tzinfo=_C.ET)
+        except Exception: continue
+        if t.date() == day: ts.append(t)
+    return max(ts) if ts else None
+
 def check(kind, subject, *, player=None, designation='__UNREAD__', sources=(),
           pos=None, value=None, horizon=None, market_ready=None,
           role=None, handcuff_for=None, pool_keys=None, roster_keys=None, pool_meta=None,
@@ -99,11 +114,15 @@ def check(kind, subject, *, player=None, designation='__UNREAD__', sources=(),
         if state is not None and getattr(state, 'others_pulled', None):
             from . import clock as _C
             import datetime as _dt
-            op = _dt.datetime.fromisoformat(state.others_pulled.replace('Z', '+00:00'))
+            op = _dt.datetime.fromisoformat(state.others_pulled.replace('Z', '+00:00')).astimezone(_C.ET)
             age = _C.age_hours(state.others_pulled) or 0
             wd = _C.bsb_waiver_deadline()
-            if league == 'BSB' and op < wd <= _C.now():
-                r.add('G1-owner', BLOCK, f'league rosters last read {op:%a %m-%d %-I:%M %p} ET, BEFORE the waiver run at {wd:%a %-I:%M %p} — who is free is UNVERIFIED; read every roster (or the transactions page) first')
+            # the run's ACTUAL time is on the transactions log (09-30: it ran at 4:12
+            # am, the 4:57 am pull was after it, and the 6:00 assumption blocked
+            # every add all morning); the assumed 6:00 is the fallback
+            wr = _waiver_run_at(wd) or wd
+            if league == 'BSB' and op < wr <= _C.now():
+                r.add('G1-owner', BLOCK, f'league rosters last read {op:%a %m-%d %-I:%M %p} ET, BEFORE the waiver run at {wr:%a %-I:%M %p} — who is free is UNVERIFIED; read every roster (or the transactions page) first')
             elif age > 24:
                 r.add('G1-owner', WARN, f'league rosters last read {op:%a %m-%d %-I:%M %p} ET ({age:.0f}h ago) — availability is as of then; confirm on Yahoo before adding')
 
@@ -193,7 +212,9 @@ def check(kind, subject, *, player=None, designation='__UNREAD__', sources=(),
 
     # ---- G8 freshness
     if pulled:
-        age = (dt.date.today() - dt.date.fromisoformat(pulled[:10])).days
+        from . import clock as _C
+        # ET, not the container's UTC: at 8 pm ET on the 30th the inputs are not a day old (09-30)
+        age = (_C.today() - dt.date.fromisoformat(pulled[:10])).days
         r.add('G8-fresh', OK if age == 0 else (WARN if age <= 1 else BLOCK),
               f'inputs pulled {pulled[:10]} ({age}d old)')
     else:

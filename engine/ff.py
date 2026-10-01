@@ -435,8 +435,17 @@ def cmd_card(run, publish=False):
     from lib import card as CARD
     html = CARD.render(run)
     p = '/home/claude/bsb2/lineup-card.html'
+    # the sanity read: the card is checked as a manager would read it; a trip
+    # refuses the card (the last one stands) and prints why (09-29, Burns)
+    from lib import sanity as SAN
+    bad = SAN.check(run, html)
+    if bad:
+        print('\n  CARD REFUSED — sanity read failed:')
+        for b_ in bad: print(f'    [FAIL] {b_}')
+        open('/home/claude/bsb2/data/out_sanity.txt', 'w').write('\n'.join(bad) + '\n')
+        return None
     open(p, 'w').write(html)
-    print(f'\n  card written: {p} ({len(html)} bytes)')
+    print(f'\n  card written: {p} ({len(html)} bytes) — sanity read clean')
     return p
 
 def cmd_decline(lg, kind, player):

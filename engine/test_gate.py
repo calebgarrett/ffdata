@@ -12,7 +12,7 @@ from lib.names import key
 from lib import state as ST
 BSB=ST.load('BSB')
 D='/home/claude/bsb2/data/'
-TODAY=dt.date.today().isoformat()
+TODAY = C.today().isoformat()   # Eastern, like the gate (09-30)
 ROSTER={r['key'] for r in BSB.rows}   # live snapshot, not the legacy csv
 # the contaminated pool as it actually was: FFToday spelling, no injury field
 POOL_BAD={'kenneth gainwell','jordyn tyson','ty johnson','germie bernard'}
