@@ -78,6 +78,20 @@ def check(run, page):
                 reg = (w.drop_ok.get(r['key']) or {})
                 if reg.get('ir') and r['designation'] in ('IR', 'O') and free_ir > 0 and f'move to IR</span><div class="mv">{_html.escape(r["player"])}' not in page:
                     bad.append(f'{lg}: {r["player"]} is verified season-ending with a free IR slot and no IR tile on the card')
+    # 10. a proposed DEF add never matches a rostered defense's NFL team (names aside)
+    for lg, R in run['leagues'].items():
+        st = R['state']
+        owned = {r['tm'] for r in st.rows if (r.get('pos') or '').upper() == 'DEF' and r['tm']}
+        names = []
+        wu = R.get('week_upgrade')
+        if wu and wu['call']['item']['fam'] == 'DEF': names.append((wu['call']['item']['add']['name'], wu['call']['item']['add'].get('tm')))
+        for c in R.get('stream_calls', []):
+            if c['fam'] == 'DEF' and c['ledger']['status'] == 'proposed': names.append((c['add']['name'], c['add'].get('tm')))
+        for c in R.get('calls', []):
+            if c['kind'] == 'swap' and c['ledger']['status'] == 'proposed' and c['item']['add'].get('fam') == 'DEF': names.append((c['item']['add']['name'], c['item']['add'].get('tm')))
+        for nm, tm in names:
+            k = key(nm); code = k[4:] if k.startswith('DST:') else (tm or '')
+            if code and code in owned: bad.append(f'{lg}: proposes adding the {nm} defense, which is rostered (team {code})')
     # 9. no Decide tile carries a BLOCK verdict without saying so in its label
     i = page.find('class="dcards"'); j = page.find('<div class="decide">', i + 1)
     for t in re.findall(r'<div class="dcard[^"]*">.*?</div></div>', page[i:j] if i >= 0 else '', flags=re.S):

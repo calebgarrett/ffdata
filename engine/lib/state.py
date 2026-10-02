@@ -44,6 +44,9 @@ class State:
         for r in rows:
             r['key'] = key(r['player'])
             r['tm'] = team(r.get('nfl') or r.get('tm') or '')
+            # a defense is keyed by its NFL team code whatever Yahoo printed for it
+            # ('Minnesota', 'Vikings', 'Minnesota Vikings' — 10-01)
+            if (r.get('pos') or '').upper() == 'DEF' and r['tm']: r['key'] = f'DST:{r["tm"]}'
             r['elig'] = _elig(r.get('pos', ''), league)
         self.by_owner = defaultdict(list)
         for r in rows: self.by_owner[r['owner']].append(r)

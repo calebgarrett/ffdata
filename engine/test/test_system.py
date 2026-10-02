@@ -588,6 +588,24 @@ _g46 = G.check('add', 'freshness probe', player='Probe', designation='none', sou
                horizon='weekly', market_ready=True, roster_keys=set(), pool_keys={'probe'}, pool_meta={}, pulled=C.today().isoformat(), league='HH', state=h)
 case('G8: inputs pulled today (ET) are 0d old whatever the UTC date', any(n_ == 'G8-fresh' and s_ == 'PASS' for n_, s_, _ in _g46.checks), str([(n_, s_, m_) for n_, s_, m_ in _g46.checks if n_ == 'G8-fresh']))
 
+# 47. One open spot, two claimants (10-01): when this week's DEF/K stream is promised the
+#     open spot, the breakout scan must not hand the same spot to a long-term add.
+_open47 = len(h.cfg.slots) + h.cfg.bench - sum(1 for r in h.mine if r['slot'] != 'IR')
+if _open47 >= 1:
+    _sc47 = BK.scan(h, P, season=None, lineup=LU.solve(h, P), reserve_open=_open47)
+    case('reserved open spot: no breakout add is placed into "an open roster spot"',
+         all(not str(x['move'].get('drop') or '').startswith('an open') for x in _sc47['rows']),
+         str([(x['name'], x['move'].get('drop')) for x in _sc47['rows'] if str(x['move'].get('drop') or '').startswith('an open')]))
+
+# 48. Yahoo names a defense by city on some renders (10-01: 'Minnesota' on T-rex's
+#     roster keyed as a person, and the Vikings DEF was offered as a free agent).
+case('key: a city-named defense is the team defense', N.key('Minnesota') == 'DST:MIN' and N.key('Kansas City') == 'DST:KC' and N.key('Green Bay') == 'DST:GB')
+case('key: an ambiguous city is not guessed', not N.key('New York').startswith('DST:') and not N.key('Los Angeles').startswith('DST:'))
+_st48 = S.State('HH', [dict(owner='X', manager='X', slot='DEF', player='New York', pos='DEF', nfl='NYJ', designation='none'),
+                      dict(owner='Y', manager='Y', slot='DEF', player='Minnesota', pos='DEF', nfl='MIN', designation='none')], '2026-10-01T15:00-04:00')
+case('state: a defense is keyed by its team code whatever Yahoo printed', _st48.owner_of('Jets') == 'X' and _st48.owner_of('Minnesota Vikings') == 'Y' and _st48.owner_of('New York Jets') == 'X')
+case('live HH: every rostered defense keys as DST:<team>', all(r['key'] == f"DST:{r['tm']}" for r in h.rows if r['pos'] == 'DEF'), str([(r['player'], r['key']) for r in h.rows if r['pos'] == 'DEF' and r['key'] != f"DST:{r['tm']}"]))
+
 print('=' * 88)
 n = total
 print(f'{n - bad}/{n} behaved as required.' + ('  SYSTEM IS SOUND.' if bad == 0 else f'  {bad} FAILURES — do not ship.'))

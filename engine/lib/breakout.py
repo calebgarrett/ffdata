@@ -135,7 +135,7 @@ def _usage_role(r, use):
     detail = rule or f"{u['snap_share']:.0%} of snaps"
     return f"{tag} — {detail}", lvl
 
-def _drop_candidates(state, lineup, w, use):
+def _drop_candidates(state, lineup, w, use, reserve_open=0):
     """Bench players a breakout could take the spot of, cheapest first: dead spots
     (IR/exempt with no IR slot), then registry drop_ok, then a spare DEF/K, then
     the lowest-valued bench player. Anything the drop gate BLOCKs (holds,
@@ -149,7 +149,7 @@ def _drop_candidates(state, lineup, w, use):
     cfg = state.cfg
     active = sum(1 for r in state.mine if r['slot'] != 'IR')
     size = len(cfg.slots) + cfg.bench
-    open_spots = max(0, size - active)
+    open_spots = max(0, size - active - reserve_open)      # a spot already promised to this week's DEF/K stream is not open
     out = []
     for i in range(open_spots):
         out.append(dict(row=dict(player='an open roster spot', key=f'__open{i}', pos='', slot='BN', pts=0.0, designation='none', elig=set()),
@@ -386,7 +386,7 @@ def _move(x, league, drops, kick, depth, dropped=None, dropped_where=None, waive
                     why='the crowd is chasing a box score the snap count does not back')
     return dict(verb='NONE', when='watch next pull', drop=None, why=x['usage'])
 
-def scan(state, proj, season=None, week_usage=None, lineup=None):
+def scan(state, proj, season=None, week_usage=None, lineup=None, reserve_open=0):
     """-> dict(rows=[...ranked...], pulled=usage pull time, week=usage week, notes=[...],
                summary=str, drops=[...])"""
     league = state.league
@@ -467,7 +467,7 @@ def scan(state, proj, season=None, week_usage=None, lineup=None):
                         verified=verified, registry=w.verified.get(k, {}).get('why', '')))
     order = {'A': 0, 'B': 1, 'C': 2, 'W': 3}
     out.sort(key=lambda x: (order[x['tier']], not x['undrafted'], -(x['snap'] + x['tgt'] + x['air'] + x['touch'])))
-    drops = _drop_candidates(state, lineup, w, use)
+    drops = _drop_candidates(state, lineup, w, use, reserve_open)
     # a claim plan, not a cross product: each ADD consumes its drop, so two
     # Tier-A rows never point at the same bench player (Black/Wentz 09-17)
     added = ST.recently_added(league)

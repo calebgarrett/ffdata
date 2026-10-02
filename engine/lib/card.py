@@ -252,6 +252,18 @@ def render(run):
                        + (f'Dropping {esc(d["player"])} also clears the second-{esc(W._fam(d["pos"]))} spot. ' if d and W._fam(d["pos"]) != c["fam"] else '')
                        + (f'Dropping {esc(d["player"])} means {esc(_other_def)} is your {esc(c["fam"])} this week. ' if d and _other_def else '')
                        + _mech_txt + f'<br><span style="color:var(--faint)">gate {c["gate_add"].verdict}' + (f'/{c["gate_drop"].verdict}' if c['gate_drop'] else '') + '</span></div></div>')
+        # THIS week's DEF/K off the wire when it costs nothing — decided in ff.py (10-01)
+        wu = R.get('week_upgrade')
+        if wu:
+            c = wu['call']; u = c['item']; over = u['over']
+            cost = 'into the open roster spot' if wu['open'] else f'drop {esc(wu["drop"]["player"])}'
+            mech = 'free agent — immediate, 1 of 7 weekly acquisitions' if lg == 'HH' else 'free agent, first-come until kickoff'
+            kick_ = run['proj'].kickoff(u['add']['tm'])
+            out.append(f'<div class="act{" prov" if c["gate"].verdict == "WARN" else ""}"><span class="lg">{lg} — this week\'s {esc(u["fam"])}{" — check first" if c["gate"].verdict == "WARN" else ""}</span>'
+                       f'<div class="mv">Add {esc(u["add"]["name"])} <small style="font-weight:400;color:var(--muted)">{esc(u["fam"])}</small> · {cost} · start over {esc(over["player"])}</div>'
+                       f'<div class="why"><b>{u["gain"]:+.1f}</b> this week ({u["add"]["week"]:.1f} vs {over["pts"]:.1f}) on {esc(", ".join(u["add"]["line"]["sources"]))}. {mech}; locks {esc(C.stamp(kick_)) if kick_ else "at kickoff"}.'
+                       + (' A one-week stream: the spot goes back to the long-term add after the game.' if wu['open'] else '')
+                       + ''.join(f'<br><b>Check:</b> {esc(m_)}' for gg, st__, m_ in c['gate'].checks if st__ == 'WARN') + '</div></div>')
         # breakout adds get a tile at the top: this is the one call on the card
         # that is about next month, not this week
         for x in (R.get('breakout') or {}).get('rows', []):

@@ -125,6 +125,21 @@ def build(week=None):
                           detail=f'{u["gain"]:+.2f}/wk', evidence=u['add']['line']['sources'],
                           verdict=g.verdict, state=st)
             R['calls'].append(dict(kind='upgrade', item=u, gate=g, ledger=e))
+        # THIS week's DEF/K off the wire when it costs nothing: an open spot or a
+        # spare DEF/K that is not a hold (Vikings +12.2 over the Chiefs, HH 10-01).
+        # Decided here, once, so the breakout scan does not hand the same open spot
+        # to a long-term add in the same breath.
+        R['week_upgrade'] = None
+        open_ = len(st.cfg.slots) + st.cfg.bench - sum(1 for r in st.mine if r['slot'] != 'IR')
+        for c in R['calls']:
+            if c['kind'] != 'upgrade' or c['ledger']['status'] != 'proposed': continue
+            u = c['item']; over = u['over']
+            if u['fam'] not in ('DEF', 'K') or u['gain'] < 4.0 or c['gate'].verdict == 'BLOCK': continue
+            if over.get('final') or over.get('live') or over.get('phase') == 'locked': continue
+            spare = [r for r in st.mine if W._fam(r['pos']) == u['fam'] and r['slot'] == 'BN' and r['key'] not in w.hold and r['key'] != over['key']]
+            if open_ <= 0 and not spare: continue
+            R['week_upgrade'] = dict(call=c, open=open_ > 0, drop=None if open_ > 0 else spare[0])
+            break
         for b in w.bench_board(lu)[:4]:
             ga = w.gate_add(b['add']); gd = w.gate_drop(b['drop'])
             e = L.propose(lg, 'add', b['add']['name'], f'drop {b["drop"]["player"]} -> add {b["add"]["name"]}',
@@ -269,7 +284,7 @@ def build(week=None):
             R['stream_calls'].append(dict(fam=fam, board=b, add=cand, drop=drop, gate_add=ga, gate_drop=gd, ledger=e))
         # ---- breakout scan: last completed week's usage vs next week's price
         from lib import breakout as BK
-        R['breakout'] = BK.scan(st, P, season=sea_blend, lineup=lu)
+        R['breakout'] = BK.scan(st, P, season=sea_blend, lineup=lu, reserve_open=1 if (R.get('week_upgrade') or {}).get('open') else 0)
         # ---- win probability: the lineup that wins two results, not the highest mean
         from lib import winprob as WP
         R['win'] = WP.evaluate(st, P, lu, lg, actuals=act)

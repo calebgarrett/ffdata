@@ -51,6 +51,14 @@ DST_FULL = {
  'TEN':'tennessee titans','WAS':'washington commanders'}
 NICK2ABBR = {v.split()[-1]:k for k,v in DST_FULL.items()}
 NICK2ABBR.update({'49ers':'SF','football team':'WAS'})
+# Yahoo's team pages name a defense by CITY on some renders ('Minnesota', 'Kansas
+# City', 'Green Bay' — 10-01: T-rex's Vikings keyed as 'minnesota', not DST:MIN, and
+# the engine offered them as a free agent). Unambiguous cities map here; the two
+# 'Los Angeles' and two 'New York' defenses need the team code (see state.State).
+CITY2ABBR = {' '.join(v.split()[:-1]): k for k, v in DST_FULL.items()}
+for amb in ('los angeles', 'new york'): CITY2ABBR.pop(amb, None)
+CITY2ABBR.update({'ny jets': 'NYJ', 'ny giants': 'NYG', 'la rams': 'LAR', 'la chargers': 'LAC',
+                  'n y jets': 'NYJ', 'n y giants': 'NYG', 'l a rams': 'LAR', 'l a chargers': 'LAC'})
 
 def team(t):
     t=(t or '').strip().upper()
@@ -67,6 +75,7 @@ def key(name):
     # team defense written any of several ways
     if n in DST_FULL.values(): return 'DST:'+[k for k,v in DST_FULL.items() if v==n][0]
     if n in NICK2ABBR: return 'DST:'+NICK2ABBR[n]
+    if n in CITY2ABBR: return 'DST:'+CITY2ABBR[n]
     p=n.split()
     if not p: return ''
     p[0]=FIRST.get(p[0],p[0])
