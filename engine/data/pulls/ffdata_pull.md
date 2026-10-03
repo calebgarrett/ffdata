@@ -1,7 +1,7 @@
-# ffdata pull loaded Sat Oct 3, 3:23 pm ET — repo head: 2026-10-03T16:11:10Z pull 2026-10-03T16:11Z (in-action, no pull)
+# ffdata pull loaded Sat Oct 3, 6:25 pm ET — repo head: 2026-10-03T19:24:58Z pull 2026-10-03T19:24Z (in-action, no pull)
 week 4
-kalshi.csv: 5246 markets, 169 events, pulled 2026-10-03T19:21:34+00:00
-kalshi_archive: 1 new pull(s) copied, 47 on disk
+kalshi.csv: 5316 markets, 169 events, pulled 2026-10-03T22:23:42+00:00
+kalshi_archive: 1 new pull(s) copied, 48 on disk
 espn_games.csv: 16 games for week 4 — 0 with ESPN lines from the pump, 16 schedule-only from lines_wk3_9.csv; Kalshi spread/total ladders supply the lines inside the engine
 sleeper_off_wk4.csv: 3306 rows
 sleeper_idp_wk4.csv: 4603 rows
@@ -10,9 +10,9 @@ usage_wk3_QB.csv: 85 rows
 usage_wk3_RB.csv: 177 rows
 usage_wk3_WR.csv: 282 rows
 usage_wk3_TE.csv: 166 rows
-BSB rosters: 216 players on 12 teams, pulled 2026-10-03T19:22:39+00:00 -> new snapshot
+BSB rosters: 216 players on 12 teams, pulled 2026-10-03T22:24:50+00:00 -> new snapshot
 BSB matchup wk4: vs FWU; 0 final rows, 0 in progress; totals me 0.00 opp 0.00
 BSB transactions: 0 new of 34 on the page; log now 93 rows
-HH rosters: 237 players on 10 teams, pulled 2026-10-03T19:22:39+00:00 -> new snapshot
+HH rosters: 237 players on 10 teams, pulled 2026-10-03T22:24:50+00:00 -> new snapshot
 HH matchup wk4: vs JETS; 5 final rows, 0 in progress; totals me 65.25 opp 0.00
 HH transactions: 0 new of 38 on the page; log now 86 rows
