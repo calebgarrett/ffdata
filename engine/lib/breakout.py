@@ -42,13 +42,14 @@ pattern) is the strongest single signal and is NOT yet a feed. It lives in the
 role registry (data/roles.json) as verified beat reporting. Pull the injury
 report on request and write it there.
 """
+from . import paths as _paths
 import csv, os
 from collections import defaultdict
 from . import score as SC, usage as U, state as ST, clock as C
 from .names import key, team
 from .wire import Wire, _fam, TAGGED as WR_TAGGED
 
-D = '/home/claude/bsb2/data/'
+D = _paths.data('')
 
 # one-game starter thresholds (share of team). Deliberately demanding: a
 # season-changer is on the field for most of the game, not a red-zone cameo.
@@ -263,8 +264,8 @@ def _kicked(league, kick):
         # Tue 7 am -> Wed 6 am: last week's games are all played and the run has not
         # happened, so every unrostered player who played is a claim, whatever this
         # week's kickoff says (the Jets DEF, Tue 09-29: 'free now' was wrong)
-        run = C.bsb_waiver_deadline()
-        if now < run: return True
+        from . import rules as _RU
+        if _RU.bsb_claims_open(now): return True
         return bool(kick and kick <= now)
     if not kick or kick > now: return False
     return now < kick + C.dt.timedelta(hours=GAME_H)
@@ -281,14 +282,15 @@ def _mech(league, tier, x, waived, prof=None):
 def _depth(state, lineup, fam):
     """(rostered count in this family, slots this family can fill, weakest rostered week pts, his name)"""
     rows = [r for r in (lineup['rows'] if lineup else state.mine)
-            if r['slot'] != 'IR' and _fam(r['pos']) == fam and r['designation'] not in ('IR','IR-R','O','NA','PUP','PUP-R','SUSP','CEL')]
+            if r['slot'] != 'IR' and _fam(r['pos']) == fam and r['designation'] not in ST.UNUSABLE]
     # dedicated slots only: a flex is not a reason to carry a third TE (Otton 09-23)
     dedicated = [sl for sl in state.cfg.fam_slots.get(fam, ()) if sl not in ('W/R/T', 'W/R')]
     slots = len(dedicated) or len(state.cfg.fam_slots.get(fam, ()))
     weak = min(rows, key=lambda r: r.get('pts') or 0) if rows else None
     return len(rows), slots, (weak.get('pts') if weak else None), (weak['player'] if weak else None)
 
-def _on_waivers(league, path='/home/claude/bsb2/data/bsb_transactions.csv'):
+def _on_waivers(league, path=None):
+    path = path or _paths.data('bsb_transactions.csv')
     """BSB: players dropped 'To Waivers' since the last Wednesday run -> {key: 'Sat 4:05 am'}.
     A dropped player sits on waivers until the Wednesday run (Fields: dropped Fri 09-18,
     claimed Wed 09-23 for $3), so he is a CLAIM this week, never a free-agent add."""
@@ -296,13 +298,13 @@ def _on_waivers(league, path='/home/claude/bsb2/data/bsb_transactions.csv'):
     import csv as _csv, os as _os
     p = path
     if not _os.path.exists(p): return {}
-    last_run = C.bsb_waiver_deadline()
-    if last_run > C.now(): last_run -= C.dt.timedelta(days=7)
+    from . import rules as _RU, ts as _T
+    last_run = _RU.last_waiver_run(log_path=p)
     out = {}
     for r in _csv.DictReader(open(p)):
         if r.get('action') != 'Drop' or 'waiver' not in (r.get('note') or '').lower(): continue
-        try: t = C.dt.datetime.strptime(r['datetime'], '%Y-%m-%d %H:%M').replace(tzinfo=C.ET)
-        except Exception: continue
+        t = _T.try_ts(r.get('datetime'), 'yahoo_log')
+        if t is None: continue
         if t >= last_run: out[key(r['player'])] = f'{t:%a %-I:%M %p}'
     return out
 

@@ -31,6 +31,7 @@ correlation of roughly 0.25-0.35 (QB with his WR1 the highest) and opposing
 offences about 0.1, in line with what the box scores show. DEF, K and IDP are
 left independent — a stated gap, smaller than the one this closes.
 """
+from . import paths as _paths
 import json, os
 import numpy as np
 from . import score as SC
@@ -45,7 +46,7 @@ SERIES = {'rec': 'KXNFLREC', 'rec_yd': 'KXNFLRECYDS', 'rush_yd': 'KXNFLRSHYDS',
 COEF = {'BSB': dict(rec=1.0, rec_yd=0.1, rush_yd=0.1, pass_yd=0.05, pass_td=6.0, rush_td=6.0, rec_td=6.0),
         'HH':  dict(rec=0.9, rec_yd=1/12, rush_yd=1/20, pass_yd=1/50, pass_td=5.0, rush_td=5.0, rec_td=5.0)}
 COUNTS = ('rec', 'pass_td', 'rush_td', 'rec_td')
-MATCHUPS = '/home/claude/bsb2/data/matchups.json'
+MATCHUPS = _paths.data('matchups.json')
 
 def _sample_ladder(f, field, n, rng):
     lad = sorted(f['ladder'])                     # [(strike, P(X>=strike)), ...]

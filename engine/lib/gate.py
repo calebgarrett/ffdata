@@ -26,6 +26,7 @@ Each gate encodes a REAL failure that already cost something:
  G9 REVERSAL    Six reversals inside one session, each discovered by Caleb.
  G10 MECHANICS  Planned a start-then-drop inside one scoring week.
 """
+from . import paths as _paths
 import json, os, datetime as dt
 from .names import key, audit_phantoms
 from . import scoring as S
@@ -44,13 +45,16 @@ FAMILIES = {'kalshi':'market','vegas':'market','props':'market',
             'usage':'usage','snapcount':'usage','beat':'usage'}
 
 # Verified role registry, loaded once. See data/roles.json.
-ROLES_PATH = '/home/claude/bsb2/data/roles.json'
+# One loader (lib/rules.py): add_yes entries older than 14 days are demoted to
+# _demoted_add_yes. A parse error returns {} here so the import never crashes; the
+# input contract (C16) has already refused the run before any decision reads it.
+ROLES_PATH = _paths.data('roles.json')
 def _roles():
-    try: return json.load(open(ROLES_PATH))
-    except Exception: return {}
+    from . import rules as _RU
+    return _RU.load_roles(ROLES_PATH)
 ROLES = _roles()
 
-LOG = '/home/claude/bsb2/data/decisions.json'
+LOG = _paths.data('decisions.json')
 
 class Result:
     def __init__(self, kind, subject):
@@ -70,20 +74,6 @@ class Result:
         return '\n'.join(out)
 
 
-def _waiver_run_at(wd):
-    """When this week's BSB waiver run actually happened, from the log's 'Waiver'
-    adds on that Wednesday, or None if none is logged yet."""
-    import csv as _csv, os as _os, datetime as _dt
-    from . import clock as _C
-    p = '/home/claude/bsb2/data/bsb_transactions.csv'
-    if not _os.path.exists(p): return None
-    day = wd.date(); ts = []
-    for row in _csv.DictReader(open(p)):
-        if row.get('action') != 'Add' or (row.get('note') or '').strip().lower() != 'waiver': continue
-        try: t = _dt.datetime.strptime(row['datetime'], '%Y-%m-%d %H:%M').replace(tzinfo=_C.ET)
-        except Exception: continue
-        if t.date() == day: ts.append(t)
-    return max(ts) if ts else None
 
 def check(kind, subject, *, player=None, designation='__UNREAD__', sources=(),
           pos=None, value=None, horizon=None, market_ready=None,
@@ -112,15 +102,13 @@ def check(kind, subject, *, player=None, designation='__UNREAD__', sources=(),
         # waiver league, a read older than the last waiver run cannot say who is
         # free (Fields 09-23). In a free-agent league, an old read is a warning.
         if state is not None and getattr(state, 'others_pulled', None):
-            from . import clock as _C
-            import datetime as _dt
-            op = _dt.datetime.fromisoformat(state.others_pulled.replace('Z', '+00:00')).astimezone(_C.ET)
+            from . import clock as _C, ts as _T, rules as _RU
+            op = _T.parse_ts(state.others_pulled, 'state')
             age = _C.age_hours(state.others_pulled) or 0
-            wd = _C.bsb_waiver_deadline()
             # the run's ACTUAL time is on the transactions log (09-30: it ran at 4:12
             # am, the 4:57 am pull was after it, and the 6:00 assumption blocked
-            # every add all morning); the assumed 6:00 is the fallback
-            wr = _waiver_run_at(wd) or wd
+            # every add all morning); the assumed 6:00 is the fallback — rules.waiver_run_at
+            wr = _RU.waiver_run_at()
             if league == 'BSB' and op < wr <= _C.now():
                 r.add('G1-owner', BLOCK, f'league rosters last read {op:%a %m-%d %-I:%M %p} ET, BEFORE the waiver run at {wr:%a %-I:%M %p} — who is free is UNVERIFIED; read every roster (or the transactions page) first')
             elif age > 24:
@@ -211,10 +199,26 @@ def check(kind, subject, *, player=None, designation='__UNREAD__', sources=(),
             r.add('G7-ready', OK, 'player market is posted for this game')
 
     # ---- G8 freshness
-    if pulled:
+    # Inside ff.build() the input contract has run and the manifest carries the real
+    # as-of of every input (content stamps, not the caller's date — every caller used
+    # to pass today's date, which made this a tautology). Outside a run (the gate
+    # regression, ad-hoc calls) the caller's `pulled` date is all there is.
+    from . import contract as _CT
+    _cr = _CT.RESULT
+    if _cr is not None and kind in ('add', 'drop', 'start', 'sit', 'trade', 'hold'):
+        if kind in ('add', 'drop'):
+            why = _cr.add_drop_reason(league)
+            r.add('G8-fresh', BLOCK if why else OK, (f'add/drop inputs DEGRADED — {why}' if why else f'inputs per the manifest: {_cr.ages_txt()}'))
+        elif kind in ('start', 'sit'):
+            why = _cr.lineup_reason()
+            r.add('G8-fresh', WARN if why else OK, (f'lineup inputs DEGRADED — {why}; call is PROVISIONAL' if why else f'inputs per the manifest: {_cr.ages_txt()}'))
+        else:
+            r.add('G8-fresh', OK, f'inputs per the manifest: {_cr.ages_txt()}')
+    elif pulled:
         from . import clock as _C
         # ET, not the container's UTC: at 8 pm ET on the 30th the inputs are not a day old (09-30)
-        age = (_C.today() - dt.date.fromisoformat(pulled[:10])).days
+        from . import ts as _T
+        age = (_C.today() - _T.parse_ts(pulled[:10], 'date').date()).days
         r.add('G8-fresh', OK if age == 0 else (WARN if age <= 1 else BLOCK),
               f'inputs pulled {pulled[:10]} ({age}d old)')
     else:
@@ -297,6 +301,13 @@ def check(kind, subject, *, player=None, designation='__UNREAD__', sources=(),
                 # 2-of-3 against Sleeper's stats feed, not beat reporting, but an
                 # observation of the field all the same.
                 r.add('G11-role-registry', OK, f'snap count observed (week pull) — {usage}')
+            elif pk in ROLES.get('_demoted_add_yes', {}):
+                # verified once, but long enough ago that it is history, not a role
+                # (rules.demote_add_yes: 14 days). Said out loud, not counted.
+                d = ROLES['_demoted_add_yes'][pk]
+                sev = WARN if kind in ('add', 'drop') else OK
+                r.add('G11-role-registry', sev,
+                      f"registry usage verified {d.get('as_of')} ({d.get('demoted')}) — DEMOTED after {14} days; re-verify before counting it")
             else:
                 sev = WARN if kind in ('add', 'drop') else OK
                 r.add('G11-role-registry', sev,

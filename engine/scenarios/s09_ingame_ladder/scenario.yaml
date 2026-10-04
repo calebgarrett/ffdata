@@ -1,0 +1,23 @@
+id: s09_ingame_ladder
+title: in-game Kalshi ladder for a kicked-off game -> dropped from projections, no lineup change, no C8 refuse
+doctrine: 'Live guard 09-27: an in-game market is a box score, not a projection (C8)'
+now: 2026-10-04T09:00-04:00
+week: 4
+base: _base
+mutations:
+- op: clock_past_kickoff
+  team: NYG
+  minutes: 40
+expect:
+  sanity: pass
+  refused: []
+  actions_exclude:
+  - league: BSB
+    kind: start
+    start: Isaiah Likely
+  - league: BSB
+    kind: start
+    sit: Isaiah Likely
+  lineup:
+    BSB:
+      W/R/T: Isaiah Likely

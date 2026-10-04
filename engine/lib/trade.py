@@ -17,13 +17,14 @@ that persist. Ratios are judged against the league-wide median that week, not
 against 1.0: in week 2 Kalshi ran below Sleeper almost everywhere, and what
 matters is who is far from the pack.
 """
+from . import paths as _paths
 import csv, os
 from collections import defaultdict
 from statistics import median
 from . import score as SC
 from .names import key
 
-D = '/home/claude/bsb2/data/gaps/'
+D = _paths.data('gaps', '')
 FIELD = {'WR': ('rec_yd', 'KXNFLRECYDS'), 'TE': ('rec_yd', 'KXNFLRECYDS'),
          'RB': ('rush_yd', 'KXNFLRSHYDS'), 'QB': ('pass_yd', 'KXNFLPASSYDS')}
 SELL, BUY = 0.85, 1.15      # relative to the week's median ratio

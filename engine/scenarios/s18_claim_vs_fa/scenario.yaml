@@ -1,0 +1,24 @@
+id: s18_claim_vs_fa
+title: BSB player dropped To Waivers since the run -> a CLAIM (Wednesday, bid), never a free-agent add
+doctrine: ''
+now: 2026-10-04T09:00-04:00
+week: 4
+base: _base
+mutations:
+- op: txn
+  league: BSB
+  team: FWU
+  action: Drop
+  player: <waived>
+  note: To Waivers
+expect:
+  actions_include:
+  - league: BSB
+    kind: breakout
+    add: <waived>
+    when_contains: claim
+  plan_include:
+  - league: BSB
+    kind: add
+    txn_contains: claim
+status: stub

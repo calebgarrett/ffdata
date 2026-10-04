@@ -10,11 +10,12 @@ literal: the ladder of winning bids so far, who paid them, and what is left.
 Nothing here predicts a bid. It reports the ladder and names the bands a bid
 has to clear, and it says how many claims the ladder rests on.
 """
+from . import paths as _paths
 import csv, os
 from collections import defaultdict
 from statistics import median
 
-D = '/home/claude/bsb2/data/'
+D = _paths.data('')
 BUDGET = 100
 
 def load():

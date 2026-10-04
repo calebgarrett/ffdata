@@ -18,12 +18,13 @@ What this layer refuses to do:
   - mix a market number into a projection without saying so in `prov`.
   - pretend a Sunday market exists on a Tuesday. `market_ready` is per game.
 """
+from . import paths as _paths
 import csv, os
 from collections import defaultdict
 from . import market as M, clock as C
 from .names import key, team
 
-D = '/home/claude/bsb2/data/'
+D = _paths.data('')
 
 def _f(v):
     try: return float(v)
@@ -64,7 +65,8 @@ class Projections:
             import datetime as _dt
             for r in csv.DictReader(open(D + 'kalshi.csv')):
                 try:
-                    d = _dt.datetime.strptime(r['event'].split('-', 1)[1][:7], '%y%b%d').replace(tzinfo=w0.tzinfo)
+                    from . import ts as _T
+                    d = _T.kalshi_event_date(r['event'])
                 except Exception: continue
                 if w0 <= d + _dt.timedelta(hours=12) < w1 + _dt.timedelta(hours=12):
                     nm = r['title'].split(':', 1)[0].strip() if ':' in r['title'] else ''
@@ -76,28 +78,45 @@ class Projections:
         # props, every game, a distribution not a number. They override the
         # ESPN/look-ahead figures; the schedule (kickoffs) still comes from those.
         from .names import DST_FULL as _DF
-        self.kal_games = {}
+        from . import contract as _CT
+        _ovr = _CT.kick_override()          # C9: Yahoo's kickoff where the schedule disagrees (empty outside a run)
+        _now = C.now()
+        self.kal_games = {}; self.kal_games_live_dropped = []
         if os.path.exists(D + 'kalshi.csv'):
             kg = M.load_kalshi_games(D + 'kalshi.csv', set(_DF))
             tails = {e.split('-', 1)[1] for e in in_week_events}
             for (a, h), g in kg.items():
                 if g['tail'] not in tails: continue               # not this week's game
+                # LIVE GUARD for game lines (C8, 10-04): once a game kicks off its spread and
+                # total ladders are in-game markets; the pregame line stands, as it does for
+                # player props below
+                _k = _ovr.get(a) or _ovr.get(h) or C.parse_kick((self.games.get((a, h)) or {}).get('kickoff'))
+                if _k is not None and _k <= _now: self.kal_games_live_dropped.append(f'{a}@{h}'); continue
                 self.kal_games[(a, h)] = g
                 if (a, h) in self.games:
                     self.games[(a, h)].update(total=g['total'], spread=g['spread'], fav=g['fav'], implied=g['implied'], src='kalshi')
                 else:
                     self.games[(a, h)] = dict(g, kickoff=None, event_id='')
             self.ctx = M.team_context(self.games) if self.games else {}
-        # DraftKings/ESPN props carry no date: the file is this week's only if it
-        # was written after the week began.
-        if self.props and os.path.getmtime(D + 'espn_props.csv') < w0.timestamp(): self.props = {}
+        # DraftKings/ESPN props carry no date. A git checkout resets every mtime,
+        # so the old mtime test passed week-2 props through on the runner (10-04).
+        # The file is this week's only if its event ids are this week's games.
+        if self.props and _CT.dropped('espn_props.csv'):
+            self.props = {}; self.props_dropped = ['input contract C10/C15']      # the contract refused the file
+        if self.props:
+            wk_events = {g.get('event_id') for g in self.games.values() if g.get('event_id')}
+            try:
+                import csv as _csv
+                ev = {r.get('event_id') for r in _csv.DictReader(open(D + 'espn_props.csv'))}
+            except Exception: ev = set()
+            if not ev or not wk_events or not (ev & wk_events): self.props = {}; self.props_dropped = sorted(ev)[:3]
         # ---- Yahoo projections copied off the matchup page: a points-only,
         # league-scored, single-source fallback for players no market or Sleeper
         # line covers this week. Labelled 'yahoo'; the gate treats it as one family.
         self.yahoo = {}
         for lg in ('BSB', 'HH'):
             p = D + f'yahoo_{lg}_wk{W}.csv'
-            if not os.path.exists(p): continue
+            if not os.path.exists(p) or _CT.dropped(f'yahoo_{lg}_wk{W}.csv'): continue     # the contract dropped it (C15)
             for r in csv.DictReader(open(p)):
                 try: self.yahoo.setdefault(key(r['player']), {})[lg] = float(r['pts'])
                 except (TypeError, ValueError): pass
@@ -106,6 +125,7 @@ class Projections:
         for (a, h), g in self.games.items():
             k = C.parse_kick(g.get('kickoff'))
             self.kick[a] = k; self.kick[h] = k
+        self.kick.update(_ovr)              # C9: when the schedule and Yahoo's game text disagree, Yahoo's time
         # Kalshi event tickers look like KXNFLREC-26SEP17DETBUF: series, then a
         # date, then the two team codes run together. A game is market-READY when
         # it carries the full prop suite (>=4 series), not just anytime-TD.
@@ -131,7 +151,9 @@ class Projections:
         # for the unplayed share until Yahoo's final replaces it.
         now = C.now()
         kicked_codes = set()
-        for code in game_series:
+        # every in-week game, not only those with player props: a game whose only
+        # markets left are its spread/total ladders is still in progress (C8)
+        for code in set(game_series) | {e.split('-', 1)[1][7:] for e in self.in_week_events}:
             for i in (2, 3):
                 a, b = team(code[:i]), team(code[i:])
                 if a in ABBR and b in ABBR:
@@ -231,7 +253,12 @@ class Projections:
             tot = stat['rush_td'] + stat['rec_td']
             prov['td'] = f"KALSHI P(anytime TD)={td['mean']:.2f} vs sleeper E[TD]={tot:.2f}"
             if tot > 0:
-                sc = td['mean'] / tot; stat['rush_td'] *= sc; stat['rec_td'] *= sc
+                # the ladder prices P(at least one TD); the expectation under a Poisson
+                # count is -ln(1-P), not P (10-04: scaling to P biased TDs by -0.04/player)
+                import math as _m
+                p_td = min(max(td['mean'], 0.0), 0.95)
+                lam = -_m.log(1.0 - p_td)
+                sc = lam / tot; stat['rush_td'] *= sc; stat['rec_td'] *= sc
             else:
                 # No base line to scale. A TD price with nothing else is a THIN
                 # signal, not a projection: score the touchdown, flag the line,

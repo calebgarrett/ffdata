@@ -14,12 +14,16 @@ failure looked like that one).
   6. No Decide tile names a lineup change involving a locked or final player.
   7. The masthead week is the engine's data week.
   8. A 'move to IR' tile exists for every starter tagged IR/O with a verified season-ending entry while an IR slot is free.
+ 11. The planner's moves, applied in order to a copy of the roster, keep it legal at every
+     step (roster <= slots + bench, IR <= IR slots with an eligible tag, every drop/IR/start
+     is on the roster, no add is owned), each spot is used once, the HH acquisition and BSB
+     FAB budgets hold, and — with FF_PLANNER=1 — every move has a tile on the card.
 """
 import re, html as _html
 from . import state as ST, clock as C
 from .names import key
 
-UNUSABLE = {'IR', 'IR-R', 'O', 'NA', 'PUP', 'PUP-R', 'SUSP', 'CEL'}
+from .rules import UNUSABLE, locked as _locked
 
 def _text(h):
     return _html.unescape(re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', ' ', h)))
@@ -68,7 +72,7 @@ def check(run, page):
             if c['kind'] == 'start' and c['ledger']['status'] == 'proposed' and not c['change']['provisional']:
                 ch = c['change']
                 for p in (ch['start'], ch['sit']):
-                    if p and (p.get('final') or p.get('live') or p.get('phase') == 'locked'):
+                    if p and _locked(p):
                         bad.append(f'{lg}: decided lineup change involves {p["player"]}, whose game has kicked off')
         # 8. IR move tile for a verified season-ending starter
         w = R.get('wire')
@@ -101,4 +105,71 @@ def check(run, page):
     # 7. masthead week
     m = re.search(r'NFL Week (\d+)', page)
     if m and int(m.group(1)) != run['week']: bad.append(f'masthead says week {m.group(1)}, engine week is {run["week"]}')
+    # 11. the plan, simulated — it refuses the card only when the plan IS the card
+    # (FF_PLANNER=1); in shadow mode ff.shadow_plan reports it in data/plan_diff.txt
+    import os
+    if os.environ.get('FF_PLANNER') == '1':
+        bad += check_plan(run, page)
+    return bad
+
+def check_plan(run, page=None):
+    """Apply each league's Plan.moves in order to a copy of the state. -> failures."""
+    import os
+    from . import plan as PL
+    from .facts import IR_TAGS
+    bad = []
+    plans = run.get('plans') or {}
+    tiles_on = os.environ.get('FF_PLANNER') == '1' and page is not None
+    dec = ''
+    if tiles_on:
+        i = page.find('<h2>Decide'); j = page.find('<h2>Outlook')
+        dec = _html.unescape(page[i:j] if i >= 0 and j > i else '')
+        allp = _html.unescape(page)
+    for lg, p in plans.items():
+        if not isinstance(p, PL.Plan): continue                 # shadow mode: a planner failure is reported in plan_diff
+        R = run['leagues'][lg]; st = R['state']; cfg = st.cfg
+        active = {r['key']: r for r in st.mine if r['slot'] != 'IR'}
+        ir = {r['key']: r for r in st.mine if r['slot'] == 'IR'}
+        size = len(cfg.slots) + cfg.bench
+        spots, adds_now, adds_next, fab = set(), 0, 0, 0
+        for mv in p.moves:
+            sid = mv.get('spot_id')
+            if sid and mv['kind'] == 'add':
+                if sid in spots: bad.append(f'{lg}: plan uses spot {sid} twice')
+                spots.add(sid)
+            if mv['provisional'] and mv['kind'] == 'ir': continue        # ASK: not applied
+            for t in mv['txns']:
+                k = t['key']; op = t['op']
+                if op == 'ir':
+                    if k not in active: bad.append(f'{lg}: plan moves {t["player"]} to IR but he is not on the active roster'); continue
+                    if active[k].get('designation') not in IR_TAGS: bad.append(f'{lg}: plan moves {t["player"]} to IR with tag {active[k].get("designation")} (not IR-eligible on the firm plan)')
+                    ir[k] = active.pop(k)
+                    if len(ir) > cfg.ir_slots: bad.append(f'{lg}: plan puts {len(ir)} players on IR, {cfg.ir_slots} slots')
+                elif op == 'drop':
+                    if k not in active: bad.append(f'{lg}: plan drops {t["player"]}, who is not on the active roster')
+                    active.pop(k, None)
+                elif op in ('add', 'claim'):
+                    o = st.owner_of(k)
+                    if k in active or k in ir: bad.append(f'{lg}: plan adds {t["player"]}, who is already yours')
+                    elif o: bad.append(f'{lg}: plan adds {t["player"]}, who is on {o}\'s roster')
+                    active[k] = dict(key=k, player=t['player'], designation='none')
+                    if mv.get('eff') == 'W+1': adds_next += 1
+                    else: adds_now += 1
+                    if op == 'claim': fab += t.get('bid') or 0
+                elif op in ('start', 'bench'):
+                    if k not in active: bad.append(f'{lg}: plan lineup move names {t["player"]}, who is not on the roster after the moves')
+            if len(active) > size: bad.append(f'{lg}: after "{mv["id"]}" the active roster is {len(active)} > {size}')
+        b = p.budgets or {}
+        if lg == 'HH' and b.get('acq_left') is not None and adds_now > b['acq_left']:
+            bad.append(f'{lg}: plan makes {adds_now} adds this week, {b["acq_left"]} acquisitions left')
+        if lg == 'HH' and cfg.acq_cap is not None and adds_next > cfg.acq_cap:
+            bad.append(f'{lg}: plan makes {adds_next} adds next week, cap {cfg.acq_cap}')
+        if lg == 'BSB' and b.get('fab_left') is not None and fab > b['fab_left']:
+            bad.append(f'{lg}: plan bids ${fab}, ${b["fab_left"]} FAB left')
+        if tiles_on:
+            for mv in p.moves:
+                who = mv.get('add_name') or mv.get('ir_name') or mv.get('start')
+                where = allp if mv['provisional'] else dec
+                if who and who not in where:
+                    bad.append(f'{lg}: plan move "{mv["id"]}" has no tile on the card' + ('' if mv['provisional'] else ' (Decide)'))
     return bad

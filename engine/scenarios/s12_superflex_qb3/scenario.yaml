@@ -1,0 +1,66 @@
+id: s12_superflex_qb3
+title: HH superflex QB3 is the only cheap drop -> never dropped for a WR
+doctrine: 'G14 (Caleb 09-27): QBs are too valuable in superflex compared to a flyer WR'
+now: 2026-10-04T09:00-04:00
+week: 4
+base: _base
+mutations:
+- op: roles
+  list: hold
+  player: Rome Odunze
+  entry:
+    team: CHI
+    pos: WR
+    why: scenario fixture hold
+    call: HOLD
+- op: roles
+  list: hold
+  player: Jameson Williams
+  entry:
+    team: DET
+    pos: WR
+    why: scenario fixture hold
+    call: HOLD
+- op: roles
+  list: hold
+  player: Malik Washington
+  entry:
+    team: MIA
+    pos: WR
+    why: scenario fixture hold
+    call: HOLD
+- op: roles
+  list: hold
+  player: Denzel Boston
+  entry:
+    team: CLE
+    pos: WR
+    why: scenario fixture hold
+    call: HOLD
+- op: roles
+  list: hold
+  player: Alontae Taylor
+  entry:
+    team: TEN
+    pos: CB
+    why: scenario fixture hold
+    call: HOLD
+- op: roles
+  list: add_yes
+  player: Jakobi Meyers
+  entry:
+    team: LV
+    pos: WR
+    priority: 1
+    why: 'scenario fixture: WR1 role verified'
+    src: scenario
+    date: '2026-10-03'
+    usage_wk1: 'scenario fixture: starter snaps (see usage rows)'
+expect:
+  sanity: pass
+  actions_exclude:
+  - league: HH
+    drop: Matthew Stafford
+  plan_exclude:
+  - league: HH
+    drop: Matthew Stafford

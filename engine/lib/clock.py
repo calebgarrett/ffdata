@@ -18,6 +18,13 @@ ET = ZoneInfo('America/New_York')
 WEEK1_TUESDAY = dt.datetime(2026, 9, 8, 7, 0, tzinfo=ET)
 
 def now():
+    """Now, in ET. FF_NOW (env, ISO; naive = ET) pins the clock — the scenario
+    harness uses it so a fixture decides as of its own moment, not the container's."""
+    import os
+    pin = os.environ.get('FF_NOW')
+    if pin:
+        from . import ts as T          # one parser; 'legacy' = any ISO, naive = ET
+        return T.parse_ts(pin, 'legacy', now=dt.datetime.now(ET)).astimezone(ET)
     return dt.datetime.now(ET)
 
 def today():
@@ -36,7 +43,8 @@ def data_week():
     The card then keeps showing the finished week's finals until week N's data lands."""
     import os
     w = nfl_week()
-    D = '/home/claude/bsb2/data/'
+    from . import paths as _paths
+    D = _paths.data('')
     if os.path.exists(D + f'sleeper_off_wk{w}.csv'): return w
     if w > 1 and os.path.exists(D + f'sleeper_off_wk{w - 1}.csv'): return w - 1
     return w
@@ -55,13 +63,8 @@ def iso(t=None):
 def parse_kick(s):
     """ESPN/Sleeper kickoffs arrive as ISO UTC ('2026-09-18T00:15Z'). -> aware ET."""
     if not s: return None
-    s = s.replace('Z', '+00:00')
-    try:
-        t = dt.datetime.fromisoformat(s)
-    except ValueError:
-        return None
-    if t.tzinfo is None: t = t.replace(tzinfo=dt.timezone.utc)
-    return t.astimezone(ET)
+    from . import ts as T          # one parser (lib/ts.py); a kickoff must carry its zone
+    return T.try_ts(s, 'espn')
 
 def hours_until(kick):
     if kick is None: return None
@@ -91,10 +94,7 @@ def bsb_waiver_deadline(w=None):
 def age_hours(iso_s):
     """Age of an ISO timestamp (any zone) in hours, or None."""
     if not iso_s: return None
-    try:
-        t = dt.datetime.fromisoformat(iso_s.replace('Z', '+00:00'))
-    except ValueError:
-        try:  t = dt.datetime.fromisoformat(iso_s[:10]).replace(tzinfo=ET)
-        except ValueError: return None
-    if t.tzinfo is None: t = t.replace(tzinfo=ET)
+    from . import ts as T          # one parser; 'legacy' keeps this function's naive-is-ET contract
+    t = T.try_ts(iso_s, 'legacy')
+    if t is None: return None
     return (now() - t).total_seconds() / 3600

@@ -13,20 +13,20 @@ Snapshots live in data/state/<LEAGUE>/<iso>.json. The newest is loaded. The
 Yahoo pull that writes a snapshot is a separate concern (sources/yahoo.py); this
 module only reads and reasons.
 """
+from . import paths as _paths
 import os, json, csv, glob
 from collections import defaultdict
-from . import clock as C
+from . import clock as C, ts as T
 from .names import key, team
 from .leagues import ALL
 
-ROOT = '/home/claude/bsb2/data'
+ROOT = _paths.data()
 
 # How old a snapshot may be for each purpose before the answer is not trustworthy.
 # Irreversible things get the short leash.
 STALE_H = {'status': 48, 'lineup': 18, 'add_drop': 30, 'trade': 72, 'season': 24*7}
 
-UNUSABLE = {'IR','IR-R','O','NA','PUP','PUP-R','SUSP','CEL'}
-RISKY    = {'Q','D'}
+from .rules import UNUSABLE, RISKY      # one vocabulary: lib/rules.py
 
 
 class State:
@@ -128,7 +128,7 @@ def _snap_dir(league):
 def _log_path(league):
     return os.path.join(ROOT, 'bsb_transactions.csv' if league == 'BSB' else 'hh_transactions.csv')
 
-def reconcile(league, rows, log_rows=None):
+def reconcile(league, rows, log_rows=None, now=None):
     """Apply the league's transaction log to the roster rows, oldest first.
 
     Yahoo's logged-out team pages stop reflecting adds and drops once a player's
@@ -149,7 +149,7 @@ def reconcile(league, rows, log_rows=None):
     if log_rows is None:
         p = _log_path(league)
         log_rows = [r for r in csv.DictReader(open(p))] if os.path.exists(p) else []
-    since = (C.week_start(max(1, C.nfl_week() - 1))).strftime('%Y-%m-%d %H:%M')
+    since = (C.week_start(max(1, C.nfl_week(now) - 1))).strftime('%Y-%m-%d %H:%M')   # now=None: the real clock
     log = sorted((r for r in log_rows if (r.get('datetime') or '') >= since and r.get('action') in ('Add', 'Drop')), key=lambda r: r['datetime'])
     orig = [dict(r) for r in rows]
     rows = [dict(r) for r in rows]
@@ -197,8 +197,8 @@ def recently_dropped(league, days=7, snaps=None):
     out = {}
     for f in fs[:-1]:
         stamp = os.path.basename(f)[:-5]
-        try: t = C.dt.datetime.strptime(stamp, '%Y-%m-%dT%H%M').replace(tzinfo=C.now().tzinfo)
-        except Exception: continue
+        t = T.try_ts(stamp, 'snapshot')
+        if t is None: continue
         if t < cutoff: continue
         for r in json.load(open(f))['rows']:
             if r['owner'] == cfg.name and key(r['player']) not in now_mine: out[key(r['player'])] = stamp[:10]
@@ -214,8 +214,8 @@ def _my_log_moves(league, action, cutoff, use_log=True):
     out = {}
     for r in csv.DictReader(open(p)):
         if r.get('team') != ALL[league].name or r.get('action') != action: continue
-        try: t = C.dt.datetime.strptime(r['datetime'], '%Y-%m-%d %H:%M').replace(tzinfo=C.ET)
-        except Exception: continue
+        t = T.try_ts(r.get('datetime'), 'yahoo_log')
+        if t is None: continue
         if t >= cutoff: out[key(r['player'])] = r['datetime'][:10]
     return out
 
@@ -231,8 +231,8 @@ def recently_added(league, days=7, snaps=None):
     out = {}
     for f in fs[:-1]:
         stamp = os.path.basename(f)[:-5]
-        try: t = C.dt.datetime.strptime(stamp, '%Y-%m-%dT%H%M').replace(tzinfo=C.now().tzinfo)
-        except Exception: continue
+        t = T.try_ts(stamp, 'snapshot')
+        if t is None: continue
         if t < cutoff: continue
         then = {key(r['player']) for r in json.load(open(f))['rows'] if r['owner'] == cfg.name}
         for k in now_mine - then: out[k] = stamp[:10]

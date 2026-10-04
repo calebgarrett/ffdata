@@ -1,0 +1,19 @@
+id: s23_ladder_but_yahoo_out
+title: 'Kalshi ladder present but Yahoo tags the starter O -> the tag governs: he is benched, firm'
+doctrine: ''
+now: 2026-10-04T09:00-04:00
+week: 4
+base: _base
+mutations:
+- op: tag
+  league: BSB
+  player: <starter>
+  tag: O
+- op: kalshi
+  content: <ladder for him>
+expect:
+  actions_include:
+  - kind: start
+    sit: <starter>
+    provisional: false
+status: stub

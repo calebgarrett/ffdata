@@ -1,0 +1,12 @@
+id: s21_same_name_both_leagues
+title: same player rostered by me in one league, free in the other -> offered only where free
+doctrine: ''
+now: 2026-10-04T09:00-04:00
+week: 4
+base: _base
+mutations: []
+expect:
+  actions_exclude:
+  - league: HH
+    add: <name>
+status: stub

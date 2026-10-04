@@ -1,0 +1,18 @@
+id: s19_q_starter_contingency
+title: Q starter -> a named contingency flag within 36h of his lock, no lineup change
+doctrine: ''
+now: 2026-10-04T09:00-04:00
+week: 4
+base: _base
+mutations:
+- op: tag
+  league: BSB
+  player: <starter>
+  tag: Q
+expect:
+  card_contains:
+  - is Q at
+  actions_exclude:
+  - kind: start
+    sit: <Q starter>
+status: stub

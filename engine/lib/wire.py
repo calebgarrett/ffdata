@@ -13,24 +13,26 @@ means two things MUST run before the pool is used, every time:
 Ranking rule: a player with VERIFIED usage sorts ahead of a higher projection
 with none. A snap count is an observation; a projection is a forecast.
 """
+from . import paths as _paths
 import json, os
 from collections import defaultdict
 from . import score as SC, clock as C, gate as G
 from .names import key, team, audit_phantoms
 
-D = '/home/claude/bsb2/data/'
+D = _paths.data('')
 
 def roles():
-    try: return json.load(open(D + 'roles.json'))
-    except Exception: return {}
+    # one loader (lib/rules.py): stale add_yes demoted; a parse error is the contract's
+    # C16 REFUSE before any decision, so {} here never reaches a call
+    from . import rules as _RU
+    return _RU.load_roles(D + 'roles.json')
 
 def _fam(pos):
     p = (pos or '').upper().split(',')[0].strip()
     return {'DE':'DL','DT':'DL','NT':'DL','DL':'DL','LB':'LB','OLB':'LB','ILB':'LB','MLB':'LB',
             'CB':'DB','S':'DB','FS':'DB','SS':'DB','DB':'DB'}.get(p, p)
 
-TAGGED = {'O','Q','D','IR','IR-R','NA','PUP','PUP-R','SUSP','CEL'}
-LONG_TERM = {'IR','IR-R','NA','PUP','PUP-R','SUSP','CEL'}
+from .rules import TAGGED, LONG_TERM, UNUSABLE, locked as _locked
 
 class Wire:
     def __init__(self, state, proj, season=None):
@@ -95,7 +97,7 @@ class Wire:
         for fam, slots in self.state.cfg.fam_slots.items():
             holders = [cur[s] for s in slots if cur.get(s) and cur[s].get('pts') is not None
                        and _fam(cur[s]['pos']) == fam
-                       and not (cur[s].get('final') or cur[s].get('live') or cur[s].get('phase') == 'locked')]   # already played: not a slot to fill (Lloyd/Perine 09-26)
+                       and not _locked(cur[s])]   # already played: not a slot to fill (Lloyd/Perine 09-26)
             if not holders or not self.by_fam.get(fam): continue
             worst = min(holders, key=lambda x: x['pts'])
             for cand in self.best(fam, 3):
@@ -173,7 +175,7 @@ class Wire:
         return out
 
     # ------------------------------------------------------------ gate
-    def gate_add(self, cand, horizon='season', usage=None):
+    def gate_add(self, cand, horizon='season', usage=None, extra_sources=()):
         # value is judged against the horizon's bounds. A player with no season
         # number is NOT a weekly number stretched to a season (Wentz 09-17: 15.65
         # weekly read against [60,600] season bounds -> false G6 block); G6 is
@@ -182,7 +184,7 @@ class Wire:
         # sources = everything that produced a number for him: the weekly line,
         # the season blend's named feeds, and verified usage. A player below
         # Sleeper's weekly cut but on FFToday's season table is not "no source".
-        src = list(cand['line']['sources'])
+        src = list(cand['line']['sources']) + list(extra_sources)
         sb = self.season.get(cand['key'], {})
         if sb.get('ff') is not None: src.append('fftoday')
         if sb.get('rw') is not None: src.append('sleeper')
@@ -201,7 +203,7 @@ class Wire:
                        pulled=C.today().isoformat(), league=self.league, state=self.state,
                        usage=usage)
 
-    def gate_drop(self, row, horizon='season', usage=None):
+    def gate_drop(self, row, horizon='season', usage=None, extra_sources=()):
         k = row['key']
         h = self.hold.get(k); d = self.drop_ok.get(k)
         role = (d['why'] if d else (h['why'] if h else None))
@@ -215,7 +217,7 @@ class Wire:
         if dead: v = 0.0
         # sources: whatever actually priced him (the weekly line names its own
         # families -- vegas+sleeper for a DEF), plus the registry if it speaks
-        src = list((row.get('line') or {}).get('sources') or ['sleeper'])
+        src = list((row.get('line') or {}).get('sources') or ['sleeper']) + list(extra_sources)
         if d or h or usage: src.append('usage')
         g = G.check('drop', f'drop {row["player"]}', player=row['player'],
                     designation=row['designation'], sources=src,
@@ -238,7 +240,7 @@ class Wire:
         if _fam(row['pos']) == 'QB' and not dead and k not in self.drop_ok:
             qb_slots = self.superflex_qb_slots()
             if qb_slots >= 2:
-                n_qb = sum(1 for r in self.state.mine if _fam(r['pos']) == 'QB' and r['slot'] != 'IR' and r['designation'] not in ('IR','IR-R','O','NA','PUP','PUP-R','SUSP','CEL'))
+                n_qb = sum(1 for r in self.state.mine if _fam(r['pos']) == 'QB' and r['slot'] != 'IR' and r['designation'] not in UNUSABLE)
                 if n_qb <= qb_slots + 1:
                     g.add('G14-superflex', G.BLOCK, f'superflex: {n_qb} QBs for {qb_slots} QB-eligible slots — QB{n_qb} is bye-week and trade depth, not a spot for a non-QB add (Caleb 09-27)')
         return g

@@ -1,0 +1,35 @@
+id: s03_hh_ir_starter
+title: HH starter IR-tagged with a verified season-ending entry, free IR slot -> IR move, slot refilled
+doctrine: 'RUNBOOK: registry says IR, not drop; sanity 8 requires the IR tile while a slot is free'
+now: 2026-10-04T09:00-04:00
+week: 4
+base: _base
+mutations:
+- op: tag
+  league: HH
+  player: Kam Curl
+  tag: IR
+- op: roles
+  list: drop_ok
+  player: Kam Curl
+  entry:
+    team: LAR
+    pos: S
+    ir: true
+    why: 'scenario fixture: torn ACL, out for the season (verified)'
+    call: IR
+    date: '2026-10-03'
+expect:
+  sanity: pass
+  actions_include:
+  - league: HH
+    kind: ir
+    subject: Kam Curl
+  lineup:
+    HH:
+      S:
+        not: Kam Curl
+  plan_include:
+  - league: HH
+    kind: ir
+    ir: Kam Curl

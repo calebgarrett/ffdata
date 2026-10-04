@@ -60,5 +60,4 @@ SLOT_ACCEPTS={'QB':{'QB'},'RB1':{'RB'},'RB2':{'RB'},'WR1':{'WR'},'WR2':{'WR'},
 SLOT_BASE={'RB1':'RB','RB2':'RB','WR1':'WR','WR2':'WR','WR3':'WR'}
 
 # cannot be started; with NO IR slot in BSB these occupy a roster spot for nothing
-UNUSABLE={'IR','IR-R','O','NA','PUP','PUP-R','SUSP','CEL'}
-RISKY={'Q','D'}   # startable but need a named contingency
+from .rules import UNUSABLE, RISKY   # one vocabulary (lib/rules.py); RISKY = startable but needs a named contingency

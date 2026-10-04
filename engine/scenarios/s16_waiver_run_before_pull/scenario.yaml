@@ -1,0 +1,16 @@
+id: s16_waiver_run_before_pull
+title: BSB add on a league read from BEFORE the Wednesday waiver run -> G1 BLOCK
+doctrine: ''
+now: 2026-10-07T12:00-04:00
+week: 4
+base: _base
+mutations:
+- op: others_pulled
+  league: BSB
+  hours: 60
+expect:
+  blocked_include:
+  - league: BSB
+    subject: <candidate>
+    gate: G1
+status: stub

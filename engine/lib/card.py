@@ -5,6 +5,7 @@ Caleb to swap in a defense that was already starting.
 Layout (unchanged from the card he has been reading all season):
   clock strip -> actions -> two league panels (lineup + decisions) -> wire -> byes -> foot
 """
+from . import paths as _paths
 import html
 from . import clock as C, lineup as LU, wire as W
 
@@ -180,29 +181,36 @@ def render(run):
     # new player, right?" — only if the inputs moved. This says whether they did.
     import os as _os
     from lib import usage as _U
-    D_ = '/home/claude/bsb2/data/'
-    def _age(pth):
-        return (C.now().timestamp() - _os.path.getmtime(pth)) / 3600 if _os.path.exists(pth) else None
+    # ages come from the input contract's manifest (file content: pulled_at columns,
+    # the pump's stamps), never from mtimes — a git checkout resets every mtime
+    _CR = run.get('contract')
+    def _age(name):
+        if _CR is None or name not in _CR.manifest: return 'missing'
+        return _CR.age_h(name)
     def _fmt_age(h):
-        if h is None: return 'missing'
+        if h == 'missing': return 'missing'
+        if h is None: return 'as-of unknown'
         return f'{h:.0f}h' if h < 48 else f'{h/24:.0f}d'
     up = _U.pulled_at(week - 1)
     _rec = {lg: getattr(R['state'], 'reconciled', []) for lg, R in (('BSB', B), ('HH', H))}
     _rec_txt = '; '.join(f"{lg}: {', '.join(v)}" for lg, v in _rec.items() if v)
     inputs = [('rosters', f"BSB {B['state'].age_h:.0f}h · HH {H['state'].age_h:.0f}h" + (f" — team pages corrected from the transactions log ({_rec_txt})" if _rec_txt else '')),
-              ('Kalshi ladders', _fmt_age(_age(D_ + 'kalshi.csv')) + f' · {len(run["proj"].ready)}/32 teams priced'),
-              ('game lines', (f'Kalshi spreads/totals {len(run["proj"].kal_games)}/{max(len(run["proj"].games), 1)} games · ' + _fmt_age(_age(D_ + 'kalshi.csv'))) if getattr(run['proj'], 'kal_games', None) else _fmt_age(_age(D_ + 'espn_games.csv'))),
+              ('Kalshi ladders', _fmt_age(_age('kalshi')) + f' · {len(run["proj"].ready)}/32 teams priced'),
+              ('game lines', (f'Kalshi spreads/totals {len(run["proj"].kal_games)}/{max(len(run["proj"].games), 1)} games · ' + _fmt_age(_age('kalshi'))) if getattr(run['proj'], 'kal_games', None) else _fmt_age(_age('espn_games'))),
               (f'week-{week-1} usage', (f'{(C.now() - up).total_seconds()/3600:.0f}h' if up else 'missing')),
-              ('trending adds', _fmt_age(_age(D_ + 'trending_adds.csv'))),
-              ('BSB claim log', _fmt_age(_age(D_ + 'bsb_transactions.csv'))),
+              ('trending adds', _fmt_age(_age('trending'))),
+              ('BSB claim log', _fmt_age(_age('transactions_BSB'))),
               ('actuals', ' · '.join(f'{lg} {sum(1 for a in (R.get("actuals") or {}).values() if a["final"])} final, {sum(1 for a in (R.get("actuals") or {}).values() if not a["final"])} live' + (f' ({(C.now() - R["actuals_at"]).total_seconds()/3600:.0f}h)' if R.get('actuals_at') else '') for lg, R in (('BSB', B), ('HH', H))))]
+    # the input contract, one line: every code that fired (lib/contract.py), or clean
+    inputs.append(('input contract', _CR.codes_line() if _CR is not None else 'not run'))
     out.append('<div class="wire" style="margin-bottom:12px"><div class="hd" style="border:0;padding:9px 14px"><h3>Inputs this card was computed from</h3>'
                '<div class="note">' + ' · '.join(f'<b>{esc(k)}</b> {esc(v)}' for k, v in inputs) +
                '<br>This page does not recompute when you reload it. It changes when the inputs above are re-pulled and the engine is re-run — say "are we good?" and that is what happens. '
                'The pool, the breakout scan and the FAB bands cannot show a new player until the rosters, the usage pull or the market on this strip are newer than the last run.</div></div></div>')
 
     # ---- clock strip
-    wd = C.bsb_waiver_deadline(); hrs = (wd - C.now()).total_seconds() / 3600
+    from . import rules as _RUc
+    wd = _RUc.waiver_run_at(); hrs = (wd - C.now()).total_seconds() / 3600
     claims = [c for c in B['calls'] if c['kind'] == 'swap' and c['ledger']['status'] == 'proposed']
     # the week-ahead stream is a claim too when the player sits on waivers (09-29)
     from . import breakout as _BKc
@@ -245,12 +253,15 @@ def render(run):
             _other_def = next((r['player'] for r in R['state'].mine if W._fam(r['pos']) == c['fam'] and r['slot'] != 'IR' and d and r['key'] != d['key']), None)
             _mech_txt = _stream_mech(lg, a)
             _blk = 'BLOCK' in (c['gate_add'].verdict, c['gate_drop'].verdict if c['gate_drop'] else '')
-            out.append(f'<div class="act{" no" if _blk else ""}"><span class="lg">{lg} — week {week+1} stream, {"claim tonight" if "waivers" in _mech_txt else "free now"}{" — BLOCKED" if _blk else ""}</span>'
+            out.append(f'<div class="act{" no" if _blk else ""}"><span class="lg">{lg} — week {week+1} {"bye cover" if c.get("hole") else "stream"}, {"Tuesday" if c.get("swap_after") else ("claim tonight" if "waivers" in _mech_txt else "free now")}{" — BLOCKED" if _blk else ""}</span>'
                        f'<div class="mv">Add {esc(a["name"])} <span style="color:var(--muted);font-weight:400">{esc(c["fam"])}, {esc(a["tm"])}</span>'
-                       + (f' → drop {esc(d["player"])}' if d else '') + '</div>'
-                       f'<div class="why">Week {week+1} {"opponent" if c["fam"]=="DEF" else "own-team"} implied total: <b>{esc(a["tm"])} {b["best_fa"]["val"]:.1f}</b> vs your best {esc(b["best_mine"]["name"])} {b["best_mine"]["val"]:.1f} — a <b>{b["edge"]:.1f}-point</b> edge on a posted line. '
-                       + (f'Dropping {esc(d["player"])} also clears the second-{esc(W._fam(d["pos"]))} spot. ' if d and W._fam(d["pos"]) != c["fam"] else '')
-                       + (f'Dropping {esc(d["player"])} means {esc(_other_def)} is your {esc(c["fam"])} this week. ' if d and _other_def else '')
+                       + (f' → drop {esc(d["player"])}' if d else '') + (' (Tuesday)' if c.get('swap_after') else '') + '</div>'
+                       + (f'<div class="why">Week {week+1}: <b>{esc(b["best_mine"]["name"].replace(" (bye)", ""))}</b> is on bye, so the slot is empty without a move. {esc(a["tm"])} {b["best_fa"]["val"]:.1f} is the best free {esc(c["fam"])} on posted lines ({"opponent" if c["fam"]=="DEF" else "own-team"} implied total). ' if c.get('hole') else
+                          f'<div class="why">Week {week+1} {"opponent" if c["fam"]=="DEF" else "own-team"} implied total: <b>{esc(a["tm"])} {b["best_fa"]["val"]:.1f}</b> vs your best {esc(b["best_mine"]["name"])} {b["best_mine"]["val"]:.1f} — a <b>{b["edge"]:.1f}-point</b> edge on a posted line. ')
+                       + (f'Dropping {esc(d["player"])} also clears the second-{esc(W._fam(d["pos"]))} spot. ' if d and W._fam(d["pos"]) in ('DEF', 'K') and W._fam(d["pos"]) != c["fam"] else '')
+                       + (f'Dropping {esc(d["player"])} means {esc(_other_def)} is your {esc(c["fam"])} this week. ' if d and _other_def and W._fam(d["pos"]) == c["fam"] else '')
+                       + ((f'No clean drop on the bench, so the swap is {esc(d["player"])} himself — Tuesday, once the week rolls: he plays for you this week and Yahoo locks a started player until then. ' if c.get('swap_after') else '')
+                          + (f'If {esc(a["name"])} is gone by then: {esc(", ".join(c["alternates"]))}. ' if c.get('hole') and c.get('alternates') else '') if c.get('hole') else '')
                        + _mech_txt + f'<br><span style="color:var(--faint)">gate {c["gate_add"].verdict}' + (f'/{c["gate_drop"].verdict}' if c['gate_drop'] else '') + '</span></div></div>')
         # THIS week's DEF/K off the wire when it costs nothing — decided in ff.py (10-01)
         wu = R.get('week_upgrade')
@@ -605,7 +616,8 @@ def _assemble(out, run):
             if m:
                 try:
                     import datetime as _dt
-                    k = _dt.datetime.strptime(m.group(1) + f' {C.now().year}', '%a %b %d, %I:%M %p %Y').replace(tzinfo=C.ET)
+                    from . import ts as _T
+                    k = _T.parse_ts(m.group(1), 'card')
                     soon = (k - C.now()).total_seconds() <= 36 * 3600
                 except ValueError: soon = True
             (decide if soon or 'WITHDREW' in t or 'market cut' in t else holds).append(t)
@@ -628,12 +640,20 @@ def _assemble(out, run):
                     f'<div class="delta">{gain:+.1f}<small>points</small></div>'
                     f'<div class="lock">{pill("locks " + lock.replace(" ET",""), "lock")}<span>set it in Yahoo before then</span></div></div>')
         return t.replace('<div class="act', '<div class="dcard act', 1)
+    _planner = planner_on(run)
+    if _planner:
+        # FF_PLANNER=1: the plan's moves are the ONLY Decide tiles; the live decision
+        # tiles they replace are dropped, structure warnings (Q contingency, withdrawn
+        # markets, market cuts) stay readable under provisional calls
+        _pt = plan_tiles(run)
+        watch = watch + [t for t in decide if t.startswith('<div class="act wait">')] + _pt['watch']
+        decide = list(_pt['decide'])
     decide = [dcard(t) for t in decide]
     # ---- outlook: one stat card per league
     def _final_score(lg, week, me, opp, st):
         """(my total, opp total) once every starter on both sides has a final; else None."""
         import csv as _csv, os as _os
-        p = f'/home/claude/bsb2/data/actuals/{lg}_wk{week}.csv'
+        p = _paths.data('actuals', f'{lg}_wk{week}.csv')
         if not opp or not _os.path.exists(p): return None
         rows = [r for r in _csv.DictReader(open(p)) if r['slot'] not in ('BN', 'IR')]
         mine = [r for r in rows if r['owner'] == me]; theirs = [r for r in rows if r['owner'] == opp]
@@ -721,25 +741,100 @@ def _assemble(out, run):
     A.append('<div class="decide"><div class="sech"><h2>Outlook</h2><span class="n">both leagues</span></div>'); A += ol; A.append('</div>')
     def sec(title_, items, sub=''):
         return [f'<details class="sec"><summary><span class="st">{esc(title_)}' + (f'<small>{esc(sub)}</small>' if sub else '') + '</span></summary>'] + items + ['</details>']
+    if _planner:
+        A += sec('Considered — not moves', ['<div class="acts" style="padding:10px 12px">'] + _pt['considered'] + ['</div>'],
+                 f'{len(_pt["considered"])} candidates the planner rejected, each with the rule that binds')
     A += sec('Lineups and gate output', leagues, 'both rosters, every call with its checks')
     if watch or holds: A += sec('Provisional calls and holds', ['<div class="acts" style="padding:10px 12px">'] + watch + holds + ['</div>'], f'{len(watch)} provisional · {len(holds)} holds')
     for w in wires: A += sec(title(w), w)
     cal = run.get('calib')
     calh = []
     if cal and cal.get('rows'):
-        calh.append('<div class="wire" style="margin:0"><div class="hd"><h3>Calibration — each source\'s pregame error vs Yahoo actuals</h3><div class="note">'
+        calh.append('<div class="wire" style="margin:0"><div class="hd"><h3>Calibration — each source\'s pregame error vs actuals, paired (rows where engine, Sleeper and Yahoo all have a number)</h3><div class="note">'
                     + esc(cal['note']) + ' Weeks scored: ' + esc(', '.join(f'{lg} wk{w}' for lg, w in cal['weeks'])) + f' · {cal["n_total"]} player-weeks.</div></div>')
         calh.append('<table class="wtab"><thead><tr><th>League</th><th>Pos</th><th>Source</th><th>n</th><th>Mean abs error</th><th>Bias</th></tr></thead><tbody>')
         for r in cal['rows']:
             calh.append(f'<tr{" style=font-weight:700" if r["pos"] == "ALL" else ""}><td>{r["league"]}</td><td>{r["pos"]}</td><td>{r["source"]}</td><td>{r["n"]}</td><td>{r["mae"]:.2f}</td><td>{r["bias"]:+.2f}</td></tr>')
         calh.append('</tbody></table></div>')
+    # the Tuesday edge report (lib/edge.py, 10-04): collapsed, and never allowed to fail the render
+    try:
+        if run.get('edge'):
+            from . import edge as _EDGE
+            _eh = _EDGE.html(run['edge'])
+            _ev = ((run['edge'].get('sections') or {}).get('lineup') or {}).get('engine_vs_yahoo') or {}
+            A += sec('Edge report — is any of this working?', _eh,
+                     f"engine vs Yahoo autopilot {_ev['total']:+.1f} over {_ev['n']} league-week(s) · breakout precision · calls · rivals" if _ev.get('n') else 'lineup edge, breakout precision, calls by kind, calibration, rivals')
+    except Exception:
+        pass
     A += sec('Inputs and how this page is made', inputs + calh + foot)
     A.append('</div>')
     return '\n'.join(A)
+
+# ----------------------------------------------------------------- the planner's tiles
+def planner_on(run):
+    """FF_PLANNER=1 and a Plan for every league: Plan.moves are the ONLY Decide tiles."""
+    import os as _os
+    if _os.environ.get('FF_PLANNER') != '1': return False
+    plans = run.get('plans') or {}
+    from . import plan as _PL
+    return bool(plans) and all(isinstance(plans.get(lg), _PL.Plan) for lg in run['leagues'])
+
+_SRC_LABEL = (('hole', 'bye/hole cover'), ('nextup', 'next man up'), ('breakout', 'breakout add'),
+              ('stream', 'stream'), ('upgrade', 'weekly upgrade'), ('registry', 'registry add'))
+
+def plan_tiles(run):
+    """Plan.moves -> tile HTML with today's classes ('act' tiles with lg / mv / why;
+    'act prov' for provisional calls; IR tiles keep 'move to IR'; a firm lineup change
+    keeps the 'lineup — decided' shape the Decide cards are built from), plus the
+    collapsed 'considered' section: every rejected candidate with the binding reason.
+    -> dict(decide=[...], watch=[...], considered=[...])"""
+    from . import plan as _PL
+    dec, wat, con = [], [], []
+    for lg, p in run['plans'].items():
+        for m in p.moves:
+            if m['kind'] == 'lineup':
+                if not m['provisional']:
+                    from . import ts as _T          # one parser (lib/ts.py); the plan writes ISO with a zone
+                    k_ = _T.try_ts(m['deadline'], 'plan') if m.get('deadline') else None
+                    dec.append(f'<div class="act"><span class="lg">{lg} lineup — decided</span><div class="mv">{esc(m["slot"])}: {esc(m["start"])} over {esc(m["sit"] or "empty")}</div>'
+                               f'<div class="why">{m["gain"]:+.2f} · locks {esc(C.stamp(k_)) if k_ else "at kickoff"}</div></div>')
+                else:
+                    wat.append(f'<div class="act prov"><span class="lg">{lg} lineup — provisional</span><div class="mv">{esc(m["slot"])}: {esc(m["start"])} over {esc(m["sit"] or "empty")} ({m["gain"]:+.2f})</div>'
+                               f'<div class="why">{esc("; ".join(m["reasons"]))}. Not a move until the market posts or the status clears.</div></div>')
+                continue
+            if m['kind'] == 'ir':
+                cls = ' prov' if m['provisional'] else ''
+                wh = '' if not m['provisional'] else ' <b>ASK FIRST.</b>'
+                t = (f'<div class="act{cls}"><span class="lg">{lg} — move to IR</span><div class="mv">{esc(m["ir_name"])} at {esc(m.get("ir_slot") or "")}</div>'
+                     f'<div class="why"><b>When:</b> {esc(m["when"])}.{wh} {esc(" ".join(m["reasons"]))}</div></div>')
+                (wat if m['provisional'] else dec).append(t); continue
+            # an add (with its drop / IR move and the lineup change it causes)
+            kind = next((lab for src, lab in _SRC_LABEL if src in m['srcs']), 'add')
+            if kind == 'breakout add' and m.get('tier'): kind += f', tier {m["tier"]}'
+            g = (m.get('gates') or {})
+            warns = [c['msg'] for side in ('add', 'drop') for c in ((g.get(side) or {}).get('checks') or []) if c['status'] == 'WARN']
+            claim = next((t for t in m['txns'] if t['op'] == 'claim'), None)
+            irt = next((t for t in m['txns'] if t['op'] == 'ir'), None)
+            head = (f'Claim {esc(m["add_name"])} (${claim.get("bid")})' if claim else f'Add {esc(m["add_name"])}') + f' <small style="font-weight:400;color:var(--muted)">{esc(m["fam"])} {esc(m["tm"])}</small> · '
+            head += ('into the open roster spot' if m['spot_kind'] == 'open' else
+                     f'into the spot {esc(irt["player"])} frees (IR move first)' if irt else f'drop {esc(m["drop_name"])}')
+            if m.get('lineup'): head += f' · start at {esc(m["lineup"]["slot"])} over {esc(m["lineup"]["over"])}'
+            when = esc(m['when'])
+            lab = f'{lg} — {kind}, {when}' + (' — check first' if warns else '')
+            why = (f'<b>When:</b> {when}' + (f' ({esc(m["timing_why"])})' if m.get('timing_why') else '') + '.<br>'
+                   + f'<b>Why:</b> {esc("; ".join(m["reasons"]))}<br>'
+                   + f'<b>Value:</b> {esc(_PL.fmt_terms(m["value_terms"]))}'
+                   + ''.join(f'<br><b>Check:</b> {esc(w_)}' for w_ in warns)
+                   + f'<br><span style="color:var(--faint)">gate {esc((g.get("add") or {}).get("verdict", "n/a"))}' + (f'/{esc((g.get("drop") or {}).get("verdict"))}' if g.get('drop') else '') + '</span>')
+            dec.append(f'<div class="act"><span class="lg">{lab}</span><div class="mv">{head}</div><div class="why">{why}</div></div>')
+        for r in p.rejected:
+            con.append(f'<div class="act hold"><span class="lg">{lg} — considered</span><div class="mv">{esc(r["name"])}</div>'
+                       f'<div class="why">{esc(r["reason"])}' + (f'<br><span style="color:var(--faint)">{esc(" · ".join(r["reasons"])[:300])}</span>' if r.get('reasons') else '') + '</div></div>')
+    return dict(decide=dec, watch=wat, considered=con)
 
 def _ord(n):
     try: n = int(n)
     except (TypeError, ValueError): return ''
     return 'th' if 10 <= n % 100 <= 20 else {1: 'st', 2: 'nd', 3: 'rd'}.get(n % 10, 'th')
 
-S_UNUSABLE = {'IR','IR-R','O','NA','PUP','PUP-R','SUSP','CEL'}
+from .rules import UNUSABLE as S_UNUSABLE

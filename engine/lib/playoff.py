@@ -27,7 +27,7 @@ from scipy.optimize import linear_sum_assignment
 from . import score as SC, windows as WN
 from .leagues import ALL
 
-UNUSABLE = {'IR', 'IR-R', 'O', 'NA', 'PUP', 'PUP-R', 'SUSP', 'CEL'}
+from .rules import UNUSABLE
 REG_SEASON_END = 14
 N = 4000
 CV = {'BSB': 0.15, 'HH': 0.10}     # weekly sd / mean, from the lineup sampler (122±18.5, 280±27)

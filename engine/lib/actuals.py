@@ -13,10 +13,11 @@ Only teams whose matchup page was read carry actuals; other teams' finished
 players still run on projections in the league-median simulation, which is a
 stated approximation until all six matchup pages are read.
 """
+from . import paths as _paths
 import csv, os
 from .names import key, team
 
-D = '/home/claude/bsb2/data/actuals/'
+D = _paths.data('actuals', '')
 
 def load(league, week):
     p = D + f'{league}_wk{week}.csv'
@@ -38,8 +39,13 @@ def blend(a, proj_pts):
     return a['pts'] + (proj_pts or 0.0) * (1.0 - a['frac'])
 
 def pulled_at(league, week):
-    import datetime as dt
-    from . import clock as C
+    """When the matchup page behind this file was read: its pulled_at column (the
+    loader writes it), else the loader's as-of record; None when the file carries
+    no stamp — unknown, never the file's mtime (a git checkout resets every mtime)."""
+    from . import ts as T
     p = D + f'{league}_wk{week}.csv'
     if not os.path.exists(p): return None
-    return dt.datetime.fromtimestamp(os.path.getmtime(p), tz=dt.timezone.utc).astimezone(C.ET)
+    st = [t for t in (T.try_ts(r.get('pulled_at'), 'pump') for r in csv.DictReader(open(p)) if r.get('pulled_at')) if t]
+    if st: return max(st)
+    from . import contract as CT
+    return CT.file_as_of(f'actuals/{league}_wk{week}.csv', root=os.path.dirname(os.path.dirname(D.rstrip('/'))))[0]

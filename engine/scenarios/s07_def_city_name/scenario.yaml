@@ -1,0 +1,21 @@
+id: s07_def_city_name
+title: a rival DEF named by its city -> never offered as a free agent
+doctrine: C6 defenses keyed by team; G1 ownership
+now: 2026-10-04T09:00-04:00
+week: 4
+base: _base
+mutations:
+- op: rename_def
+  league: BSB
+  player: Broncos
+  to: Denver
+expect:
+  sanity: pass
+  actions_exclude:
+  - add: Broncos
+  - add: Denver
+  - add: Denver Broncos
+  plan_exclude:
+  - add: Broncos
+  - add: Denver
+  - add: Denver Broncos

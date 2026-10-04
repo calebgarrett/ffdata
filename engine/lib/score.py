@@ -62,3 +62,70 @@ def in_bounds(pts, fam, league, horizon='weekly'):
     cfg = ALL[league]
     lo, hi = (cfg.week_bounds if horizon == 'weekly' else cfg.season_bounds).get(fam, (-1e9, 1e9))
     return lo <= pts <= hi
+
+# ------------------------------------------------------------------ realized points
+# (outcome ledger, 10-04) The same two rule books applied to what HAPPENED: a Sleeper
+# stat line (data/sleeper/stats_wk{W}_{POS}.csv in the pump, or the engine's usage
+# copies) -> league points. Projections integrate a bonus or a tier over a spread;
+# an actual reads the tier the game landed in. What Sleeper's stats feed does not
+# carry is stated, not invented: HH long-play bonuses (40+ comp/rec/run) and the HH
+# DEF's TFL / 3-and-out / 4th-down-stop / yards-allowed terms stay at the draft
+# model's modeled per-game rates; IDP is not in the stats pull at all (None).
+# lib/outcomes.fidelity() measures this scorer against Yahoo's exact matchup-page
+# points every week, so the error of the stand-in is a printed number.
+FG_BAND_MID_BSB = {'fgm_0_19': 18.0, 'fgm_20_29': 25.0, 'fgm_30_39': 35.0, 'fgm_40_49': 45.0, 'fgm_50p': 53.0}
+
+def _sf(r, k):
+    try: return float(r.get(k) or 0)
+    except (TypeError, ValueError): return 0.0
+
+def actual(row, pos, league):
+    """Realized league points from one Sleeper stat row. -> float, or None when the
+    position is not scorable from the stats pull (IDP, or BSB IDP which does not exist)."""
+    p = (pos or '').upper()
+    f = lambda k: _sf(row, k)
+    two = f('pass_2pt') + f('rush_2pt') + f('rec_2pt')
+    if league == 'BSB':
+        if p == 'DEF':
+            v = f('sack') + f('int') * 2 + f('fum_rec') * 2 + f('def_td') * 6 + f('safe') * 4 + f('blk_kick') * 3
+            pa = f('pts_allow')
+            v += next(pts for lo, hi, pts in B.PA_TIERS if lo <= pa <= hi)
+            return v
+        if p == 'K':
+            bands = sum(f(b) for b in FG_BAND_MID_BSB)
+            yds = sum(f(b) * m for b, m in FG_BAND_MID_BSB.items()) if bands >= f('fgm') and f('fgm') else f('fgm') * B.FG_YDS_PER_MADE
+            return yds / 10 + f('xpm') - max(f('xpa') - f('xpm'), 0)
+        if p in ('QB', 'RB', 'WR', 'TE'):
+            return B.offense(pass_yd=f('pass_yd'), pass_td=f('pass_td'), pass_int=f('pass_int'), rush_yd=f('rush_yd'),
+                             rush_td=f('rush_td'), rec=f('rec'), rec_yd=f('rec_yd'), rec_td=f('rec_td'),
+                             fum_lost=f('fum_lost'), two_pt=two)
+        return None
+    # HH
+    if p == 'DEF':
+        base = (H.AVG_TFL_G * H.DST_TFL + H.AVG_3AND0_G * H.DST_3AND0 + H.AVG_4TH_STOP_G * H.DST_4TH_STOP
+                + H.YDS_TIER_AVG_G)
+        pa = f('pts_allow')
+        tier = next(pts for lo, hi, pts in H.PA_TIERS if lo <= pa <= hi)
+        return (f('sack') * H.DST_SACK + f('int') * H.DST_INT + f('fum_rec') * H.DST_FR + f('def_td') * H.DST_TD
+                + f('safe') * H.DST_SAFETY + f('blk_kick') * H.DST_BLOCK + tier + base)
+    if p == 'K':
+        bands = {'fgm_0_19': (0, 19), 'fgm_20_29': (20, 29), 'fgm_30_39': (30, 39), 'fgm_40_49': (40, 49), 'fgm_50p': (50, 99)}
+        if sum(f(b) for b in bands) >= f('fgm'):
+            fg = sum(f(b) * (H.FG_PTS[rng] + H.FG_MID[rng] / 25.0) for b, rng in bands.items())
+        else:
+            fg = f('fgm') * H.PTS_PER_MADE_FG
+        return fg + f('xpm') * H.XP_MADE
+    if p in ('QB', 'RB', 'WR', 'TE'):
+        att, cmp_ = f('pass_att'), f('pass_cmp')
+        py, ry, recy = f('pass_yd'), f('rush_yd'), f('rec_yd')
+        ra, rec = f('rush_att'), f('rec')
+        bonus = lambda y, kind: sum(pts for thr, pts in H.TIERS[kind] if y >= thr)
+        return (att * H.PASS_ATT + cmp_ * H.COMP + max(att - cmp_, 0) * H.INCOMP
+                + py / H.PASS_YD_PER_PT + f('pass_td') * H.PASS_TD + f('pass_int') * H.INTCEPT + f('pass_sack') * H.QB_SACK
+                + ra * H.RUSH_ATT + ry / H.RUSH_YD_PER_PT + f('rush_td') * H.RUSH_TD
+                + rec * H.REC + recy / H.REC_YD_PER_PT + f('rec_td') * H.REC_TD
+                + (f('rush_fd') + f('rec_fd')) * H.FIRST_DOWN
+                + py * H.LONG_COMP_RATE * H.LONG_COMP + ra * H.LONG_RUN_RATE * H.LONG_RUN + recy * H.LONG_REC_RATE * H.LONG_REC
+                + f('fum_lost') * H.FUM + two * 2
+                + bonus(py, 'pass') + bonus(ry, 'rush') + bonus(recy, 'rec'))
+    return None

@@ -1,0 +1,16 @@
+id: s17_waiver_run_after_pull
+title: BSB league read AFTER the Wednesday run -> the add is offered (no G1 block)
+doctrine: ''
+now: 2026-10-07T12:00-04:00
+week: 4
+base: _base
+mutations: []
+expect:
+  actions_include:
+  - league: BSB
+    kind: breakout
+    add: <candidate>
+    verb_in:
+    - ADD
+    - ADD-DEAD
+status: stub

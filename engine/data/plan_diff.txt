@@ -1,0 +1,55 @@
+PLAN DIFF — week 4 — Sun Oct 4, 12:41 pm ET  (shadow mode: the card still shows the live calls; FF_PLANNER=1 renders the plan)
+objective: J = 1.0*dS_W + 0.8*dS_W1 + 0.3*dS_rest(mean of weeks W+2..17) + 0.1*d_bench_boom - acq ({'HH': 1.0, 'BSB': 0.0}) - 0.1*bid - 0.5*txns; ship at J >= 3.0
+
+== BSB ================================================================================
+  card Decide calls vs the plan:
+    (the card has no Decide call in this league)
+  budgets: {"acq_used": 0, "acq_left": null, "acq_reset": null, "acq_reset_verified": null, "fab_left": 93, "ir_free": 0, "open_spots": 0}
+  final lineup week 4: 134.7 pts (optimal before moves 134.7) · P(beat opp) 38% · P(beat median) 52%
+  considered and rejected (5):
+    - Kaleb Johnson: best spot DeMario Douglas: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
+    - Brycen Tremayne: J -0.42 < 3.0 at its best spot (DeMario Douglas) — J -0.42 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.3x+0.13 (rest, mean of wks 6-17) + 0.1x+0.39 (bench boom) - 0.00 acq - 0.00 FAB($0) - 0.50 churn
+    - Cade Otton: sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 6.8 under your weakest 10.4
+    - Konata Mumpfield: sits behind everyone: you carry 8 WRs for 3 slot(s) and he projects 2.3 under your weakest 7.1
+    - Tyler Higbee: sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 8.3 under your weakest 10.4
+  not a clean drop: James Cook III (starter-level usage in his own right (67% snaps, 86% of RB touches)); MarShawn Lloyd (starter-level usage in his own right (23% snaps, 47% of RB touches)); Jaxon Smith-Njigba (starter-level usage in his own right (87% snaps, 30% targets, 57% air ); Drake London (starter-level usage in his own right (93% snaps, 40% targets, 80% air ); Malik Washington (starter-level usage in his own right (86% snaps, 28% targets, 11% air ); Sam LaPorta (starter-level usage in his own right (92% snaps, 12% targets, 21% air ); Isaiah Likely (starter-level usage in his own right (84% snaps, 23% targets, 11% air ); Josh Jacobs (registry HOLD — HOLD. A top-10 RB whose likely return lands before the); Ray Davis (registry HOLD — HOLD, downgraded. James Cook is the single best asset ); Jets (you added him 2026-10-01 (<= 7 days) — your decision, not the spot)
+  UNVERIFIED mechanics: A benched player whose game is over cannot be dropped before the week rolls
+
+== HH ================================================================================
+  card Decide calls vs the plan:
+    CARD ONLY bye cover: add Jake Bates (K), drop Harrison Butker (Tuesday)
+              planner: its best spot (Harrison Butker) went to Chris Boswell at higher value
+    PLAN ONLY [add] add Chris Boswell ; drop Harrison Butker  [Tuesday (week-lock)]
+              J +9.56 = 1.0x+0.00 (wk W) + 0.8x+14.56 (W+1) + 0.3x-1.93 (rest, mean of wks 6-17) + 0.1x+0.00 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn
+              - week-5 hole at K (Harrison Butker on bye); Chris Boswell 14.6 is the best free K on week-5 values
+              - week-5 K stream: Chris Boswell 14.6 vs your best 0.0 (W projection x own implied total 25.0/21.5)
+              - the spot: Harrison Butker — the only K
+    PLAN ONLY PROVISIONAL [lineup] start Jameson Williams at W/R/T ; bench Travis Kelce  [before kickoff Sun Oct 4, 8:20 pm ET]
+              - +0.00 this week
+              - inside the 1.5-pt noise band
+  budgets: {"acq_used": 2, "acq_left": 5, "acq_reset": "2026-09-29T07:00-04:00", "acq_reset_verified": false, "fab_left": null, "ir_free": 1, "open_spots": 0}
+  final lineup week 4: 318.8 pts (optimal before moves 318.8) · P(beat opp) 65%
+  considered and rejected (19):
+    - Jake Bates: its best spot (Harrison Butker) went to Chris Boswell at higher value
+    - Harrison Mevis: its best spot (Harrison Butker) went to Chris Boswell at higher value
+    - Cleveland Browns: J -1.25 < 3.0 at its best spot (Chiefs) — J -1.25 = 1.0x+0.00 (wk W) + 0.8x+0.49 (W+1) + 0.3x-0.49 (rest, mean of wks 6-17) + 0.1x+0.00 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn
+    - New York Jets: J -1.38 < 3.0 at its best spot (Chiefs) — J -1.38 = 1.0x+0.00 (wk W) + 0.8x+0.50 (W+1) + 0.3x-0.94 (rest, mean of wks 6-17) + 0.1x+0.00 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn
+    - Kaleb Johnson: best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
+    - Jakobi Meyers: best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
+    - KC Concepcion: best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
+    - Mack Hollins: best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
+    - Carnell Tate: best spot Chiefs: Tier B (unpriced) never takes the spare DEF — Tier A only
+    - Brenton Strange: sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 8.9 under your weakest 11.7
+    - Brycen Tremayne: sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 7.3 under your weakest 7.5
+    - Cade Otton: sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 6.5 under your weakest 11.7
+    - Cam Bynum: gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])
+    - Chris Bell: sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 7.1 under your weakest 7.5
+    - Keenan Allen: sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 0.0 under your weakest 7.5
+    - Konata Mumpfield: sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 2.1 under your weakest 7.5
+    - Malaki Starks: gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])
+    - Nick Emmanwori: gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])
+    - Tyler Higbee: sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 7.8 under your weakest 11.7
+  not a clean drop: Dak Prescott (gate: G6-magnitude 37.31651000003675 below QB season bounds [60,600] —); Jaylen Warren (his game is final / live — finished and live players never move); Ja'Marr Chase (starter-level usage in his own right (100% snaps, 32% targets, 34% air); Trey McBride (starter-level usage in his own right (91% snaps, 21% targets, 32% air ); Drake London (starter-level usage in his own right (93% snaps, 40% targets, 80% air ); Travis Kelce (starter-level usage in his own right (79% snaps, 8% targets, 27% air y); Jared Goff (gate: G6-magnitude 37.809878016278596 below QB season bounds [60,600] ); Rome Odunze (starter-level usage in his own right (85% snaps, 18% targets, 33% air ); Matthew Stafford (gate: G6-magnitude 33.177763138490185 below QB season bounds [60,600] ); Jameson Williams (starter-level usage in his own right (82% snaps, 12% targets, 34% air ); Malik Washington (you added him 2026-10-01 (<= 7 days) — your decision, not the spot); Denzel Boston (you added him 2026-10-02 (<= 7 days) — your decision, not the spot); Texans (registry HOLD — HOLD in Heritage House. A 7-acquisition league rations); Foyesade Oluokun (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Budda Baker (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); T.J. Watt (his game is final / live — finished and live players never move); Carson Schwesinger (his game is final / live — finished and live players never move); Cooper DeJean (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Kam Curl (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Nick Cross (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Alontae Taylor (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR)
+  UNVERIFIED mechanics: 7 acquisitions per week, counted from the most recent Tuesday 07:00 ET | A player dropped To Waivers sits on waivers 1 day | An O tag is IR-eligible | A benched player whose game is over cannot be dropped before the week rolls
+
+plan simulation (sanity check 11): clean — legal at every step, each spot once, budgets held

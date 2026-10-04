@@ -6,12 +6,13 @@ number that matters is the OPPONENT's implied total (a tackle needs an opposing
 play), so both are returned. Look-ahead lines are real prices posted at low
 limits: use the ORDERING, never a one-point gap.
 """
+from . import paths as _paths
 import csv, os
 from collections import defaultdict
 import numpy as np
 from .names import team
 
-D = '/home/claude/bsb2/data/'
+D = _paths.data('')
 NEAR, QUAL, PLAY = tuple(range(3, 10)), tuple(range(10, 15)), (15, 16, 17)
 
 def load():

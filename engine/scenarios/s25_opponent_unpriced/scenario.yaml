@@ -1,0 +1,14 @@
+id: s25_opponent_unpriced
+title: opponent starter no source prices -> P(beat opponent) refused, never overstated
+doctrine: ''
+now: 2026-10-04T09:00-04:00
+week: 4
+base: _base
+mutations:
+- op: sleeper
+  player: <opp starter>
+  pts: 0
+expect:
+  card_contains:
+  - unpriced
+status: stub

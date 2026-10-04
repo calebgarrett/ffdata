@@ -20,7 +20,7 @@ from . import usage as U, clock as C
 from .names import key
 
 OFF = ('QB', 'RB', 'WR', 'TE')
-OUT_TAGS = {'O', 'D', 'IR', 'IR-R', 'PUP', 'PUP-R', 'SUSP', 'NA', 'CEL'}
+from .rules import OUT_TAGS
 
 def _score(r):
     # RBs are ordered on touches, everyone else on snaps; the newest week counts double

@@ -1,0 +1,48 @@
+id: s01_bsb_tierA_clean_drop
+title: BSB full roster + Tier-A add -> paired with a clean drop, never a hold/handcuff
+doctrine: 'RUNBOOK: Tier A = usage says starter and the market/registry agrees; a hold (Jacobs CEL) and a handcuff
+  (Davis, G3) are never the drop'
+now: 2026-10-04T09:00-04:00
+week: 4
+base: _base
+mutations:
+- op: sleeper_add
+  player: Kaleb Johnson
+  pos: RB
+  nfl: PIT
+  pts: 14.0
+- op: roles
+  list: add_yes
+  player: Kaleb Johnson
+  entry:
+    team: PIT
+    pos: RB
+    priority: 1
+    designation: none published
+    why: 'scenario fixture: lead back, starter usage two straight weeks (verified)'
+    src: scenario
+    date: '2026-10-03'
+    usage_wk1: 'scenario fixture: starter snaps (see usage rows)'
+expect:
+  sanity: pass
+  actions_include:
+  - league: BSB
+    kind: breakout
+    add: Kaleb Johnson
+    verb_in:
+    - ADD
+    - ADD-DEAD
+    drop_not_in:
+    - Josh Jacobs
+    - Ray Davis
+    - null
+  actions_exclude:
+  - league: BSB
+    drop: Josh Jacobs
+  - league: BSB
+    drop: Ray Davis
+  plan_exclude:
+  - league: BSB
+    drop: Josh Jacobs
+  - league: BSB
+    drop: Ray Davis

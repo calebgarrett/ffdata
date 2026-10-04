@@ -1,0 +1,15 @@
+id: s22_empty_slot
+title: an empty starting slot -> a fill call (bench or wire), firm
+doctrine: ''
+now: 2026-10-04T09:00-04:00
+week: 4
+base: _base
+mutations:
+- op: remove_player
+  league: BSB
+  player: <starter>
+expect:
+  actions_include:
+  - kind: start
+    sit: null
+status: stub

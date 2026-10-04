@@ -18,6 +18,7 @@ bid, the floor is the number — the flat Tier-A band was overpaying.
 
 Everything here is observed. Nothing infers intent from a name.
 """
+from . import paths as _paths
 import csv, os, datetime as dt
 from collections import defaultdict
 from statistics import median
@@ -25,16 +26,17 @@ from . import clock as C, score as SC, fab as F
 from .wire import _fam
 from .names import key
 
-D = '/home/claude/bsb2/data/'
-UNUSABLE = {'IR', 'IR-R', 'O', 'NA', 'PUP', 'PUP-R', 'SUSP', 'CEL'}
+D = _paths.data('')
+from .rules import UNUSABLE
+from . import ts as T
 
 def _log(league):
     p = D + ('bsb_transactions.csv' if league == 'BSB' else 'hh_transactions.csv')
     if not os.path.exists(p): return []
     out = []
     for r in csv.DictReader(open(p)):
-        try: t = dt.datetime.strptime(r['datetime'], '%Y-%m-%d %H:%M').replace(tzinfo=C.ET)
-        except Exception: continue
+        t = T.try_ts(r.get('datetime'), 'yahoo_log')
+        if t is None: continue
         out.append(dict(r, t=t))
     return out
 

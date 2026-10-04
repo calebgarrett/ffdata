@@ -524,8 +524,11 @@ _h1 = C.now() - C.dt.timedelta(hours=1); _h30 = C.now() - C.dt.timedelta(hours=3
 case('HH: a game one hour old is in progress', BK._kicked('HH', _h1) is True)
 case('HH: a game 30 hours old is over — plain free agent', BK._kicked('HH', _h30) is False)
 case('HH: a game two hours ahead has not kicked', BK._kicked('HH', _f2) is False)
+# the run time is ONE notion (lib/rules.waiver_run_at: the log's actual time, else Wed 06:00)
+from lib import rules as _RU41
+_wr41 = _RU41.waiver_run_at()
 case('BSB: a game 30 hours old is still a waiver claim if the Wednesday run has not passed',
-     BK._kicked('BSB', _h30) is (_h30 < (C.bsb_waiver_deadline() if C.bsb_waiver_deadline() > C.now() else C.bsb_waiver_deadline() + C.dt.timedelta(days=7))))
+     BK._kicked('BSB', _h30) is (_h30 < (_wr41 if _wr41 > C.now() else _wr41 + C.dt.timedelta(days=7))))
 
 # 42. A pending IR move IS the open spot (09-29): with Burns tagged O, registry ir=True
 #     and a free IR slot, the first HH add goes into the spot he frees — never over a
@@ -605,6 +608,35 @@ _st48 = S.State('HH', [dict(owner='X', manager='X', slot='DEF', player='New York
                       dict(owner='Y', manager='Y', slot='DEF', player='Minnesota', pos='DEF', nfl='MIN', designation='none')], '2026-10-01T15:00-04:00')
 case('state: a defense is keyed by its team code whatever Yahoo printed', _st48.owner_of('Jets') == 'X' and _st48.owner_of('Minnesota Vikings') == 'Y' and _st48.owner_of('New York Jets') == 'X')
 case('live HH: every rostered defense keys as DST:<team>', all(r['key'] == f"DST:{r['tm']}" for r in h.rows if r['pos'] == 'DEF'), str([(r['player'], r['key']) for r in h.rows if r['pos'] == 'DEF' and r['key'] != f"DST:{r['tm']}"]))
+
+# 49. A bye HOLE next week (every one of my DEF/K on bye) is a required cover, not an
+#     edge to weigh (10-02: Butker on bye week 5, Jake Bates free, no call on the card).
+import ff as _ff
+_run49 = _ff.build()
+for _lg49, _R49 in _run49['leagues'].items():
+    for _fam49, _b49 in (_R49.get('stream') or {}).items():
+        if _b49 and _b49['best_fa'] and _b49['best_mine'] is None and _b49.get('byes'):
+            _has = any(c.get('hole') and c['fam'] == _fam49 for c in _R49.get('stream_calls', []))
+            _no_drop = (not any(d['tier'] >= 1 and not str(d['row']['key']).startswith('__') for d in (_R49['breakout'] or {}).get('drops', []))
+                        and not any(WR._fam(r['pos']) == _fam49 and r['slot'] == 'BN' for r in _R49['state'].mine))
+            case(f'{_lg49}: a week-{_run49["week"]+1} {_fam49} bye hole produces a cover call (or there is no clean drop)', _has or _no_drop)
+# the drop named by a bye cover is never also named by a breakout add on the same card
+for _lg49, _R49 in _run49['leagues'].items():
+    _dr = {c['drop']['player'] for c in _R49.get('stream_calls', []) if c.get('drop')}
+    case(f'{_lg49}: a drop spent on bye cover is not re-spent by a breakout add',
+         all(x['move'].get('drop') not in _dr for x in (_R49['breakout'] or {}).get('rows', []) if x['move']['verb'] in ('ADD', 'ADD-DEAD')))
+
+# 50. The lock is part of the assignment (10-03): a locked bench player never appears in
+#     the optimal lineup, a locked starter keeps his slot, and the optimal total never
+#     counts points the rules do not allow.
+from lib import actuals as _AC50
+for _lg50, _st50 in (('HH', h), ('BSB', b)):
+    _lu50 = LU.solve(_st50, P, actuals=_AC50.load(_lg50, W_NOW))
+    _cur50 = {r['key']: s for s, r in _st50.current_lineup().items() if r}
+    _lk = lambda r: bool(r.get('final') or r.get('live') or r.get('phase') == 'locked')
+    case(f'{_lg50}: no locked bench player is in the optimal lineup', all(not (_lk(r) and r['key'] not in _cur50) for r in _lu50['optimal'].values() if r))
+    case(f'{_lg50}: every locked starter keeps his slot in the optimal lineup', all((_lu50['optimal'].get(s) or {}).get('key') == r['key'] for s, r in _st50.current_lineup().items() if r and _lk(r)))
+    case(f'{_lg50}: the optimal total is reachable (no change involves a locked player)', all(not _lk(c['start']) and not (c['sit'] and _lk(c['sit'])) for c in _lu50['changes']))
 
 print('=' * 88)
 n = total

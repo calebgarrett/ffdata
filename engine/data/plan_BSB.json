@@ -1,0 +1,245 @@
+{
+ "budgets": {
+  "acq_left": null,
+  "acq_reset": null,
+  "acq_reset_verified": null,
+  "acq_used": 0,
+  "fab_left": 93,
+  "ir_free": 0,
+  "open_spots": 0
+ },
+ "excluded": [
+  {
+   "player": "James Cook III",
+   "reason": "starter-level usage in his own right (67% snaps, 86% of RB touches)"
+  },
+  {
+   "player": "MarShawn Lloyd",
+   "reason": "starter-level usage in his own right (23% snaps, 47% of RB touches)"
+  },
+  {
+   "player": "Jaxon Smith-Njigba",
+   "reason": "starter-level usage in his own right (87% snaps, 30% targets, 57% air yds)"
+  },
+  {
+   "player": "Drake London",
+   "reason": "starter-level usage in his own right (93% snaps, 40% targets, 80% air yds)"
+  },
+  {
+   "player": "Malik Washington",
+   "reason": "starter-level usage in his own right (86% snaps, 28% targets, 11% air yds)"
+  },
+  {
+   "player": "Sam LaPorta",
+   "reason": "starter-level usage in his own right (92% snaps, 12% targets, 21% air yds)"
+  },
+  {
+   "player": "Isaiah Likely",
+   "reason": "starter-level usage in his own right (84% snaps, 23% targets, 11% air yds)"
+  },
+  {
+   "player": "Josh Jacobs",
+   "reason": "registry HOLD \u2014 HOLD. A top-10 RB whose likely return lands before the week 15-17 playoff run. C"
+  },
+  {
+   "player": "Ray Davis",
+   "reason": "registry HOLD \u2014 HOLD, downgraded. James Cook is the single best asset on this roster (+188 over "
+  },
+  {
+   "player": "Jets",
+   "reason": "you added him 2026-10-01 (<= 7 days) \u2014 your decision, not the spot"
+  }
+ ],
+ "league": "BSB",
+ "lineup_after": {
+  "keys": {
+   "DEF": "DST:MIN",
+   "K": "jason myers",
+   "QB": "matt stafford",
+   "RB1": "marshawn lloyd",
+   "RB2": "james cook",
+   "TE": "sam laporta",
+   "W/R/T": "isaiah likely",
+   "WR1": "jaxon smith njigba",
+   "WR2": "drake london",
+   "WR3": "malik washington"
+  },
+  "optimal_before_moves": 134.74,
+  "slots": {
+   "DEF": "Vikings",
+   "K": "Jason Myers",
+   "QB": "Matthew Stafford",
+   "RB1": "MarShawn Lloyd",
+   "RB2": "James Cook III",
+   "TE": "Sam LaPorta",
+   "W/R/T": "Isaiah Likely",
+   "WR1": "Jaxon Smith-Njigba",
+   "WR2": "Drake London",
+   "WR3": "Malik Washington"
+  },
+  "total": 134.74
+ },
+ "made": "2026-10-04T12:41-04:00",
+ "mechanics": [
+  {
+   "rule": "A never-rostered free agent is free until his game kicks off",
+   "text": "RUNBOOK next-man-up; Fields/Jets cases",
+   "verified": true
+  },
+  {
+   "rule": "A player whose game has kicked off this week is on waivers until the Wednesday run; claim by Tue 11:59 pm, bid from lib/fab + lib/rivals bid_for",
+   "text": "RUNBOOK 09-27 live guard; rules.waiver_run_at (the log's actual run time, else Wed 06:00)",
+   "verified": true
+  },
+  {
+   "rule": "A player dropped To Waivers is a claim until the run",
+   "text": "breakout._on_waivers (Fields 09-18 -> 09-23)",
+   "verified": true
+  },
+  {
+   "rule": "Tue 07:00 -> Wed run: every unrostered player who played last week is a claim",
+   "text": "rules.bsb_claims_open (Jets DEF 09-29)",
+   "verified": true
+  },
+  {
+   "rule": "A started player is locked until the week rolls; finished/live players never move",
+   "text": "Burns 09-28",
+   "verified": true
+  },
+  {
+   "rule": "A benched player whose game is over cannot be dropped before the week rolls",
+   "text": "not verified on Yahoo \u2014 treated as week-locked (the conservative reading)",
+   "verified": false
+  },
+  {
+   "rule": "No IR slot; FAB $100, no acquisition cap",
+   "text": "leagues.BSB",
+   "verified": true
+  }
+ ],
+ "moves": [],
+ "notes": [],
+ "rejected": [
+  {
+   "J": -0.421,
+   "key": "brycen tremayne",
+   "name": "Brycen Tremayne",
+   "reason": "J -0.42 < 3.0 at its best spot (DeMario Douglas) \u2014 J -0.42 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.3x+0.13 (rest, mean of wks 6-17) + 0.1x+0.39 (bench boom) - 0.00 acq - 0.00 FAB($0) - 0.50 churn",
+   "reasons": [
+    "breakout tier A: 81% snaps, 12% targets, 38% air yds; Kalshi receiving yds 38 vs Sleeper 32 (+17%)"
+   ]
+  },
+  {
+   "J": null,
+   "key": "cade otton",
+   "name": "Cade Otton",
+   "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 6.8 under your weakest 10.4",
+   "reasons": [
+    "breakout tier B: 94% snaps, 16% targets, 14% air yds; Kalshi receiving yds 29 vs Sleeper 33 (-13%) \u2014 a part-time line, under the 35 starter floor; held (wk2: 89% snaps, 18% targets, 16% air yds)"
+   ]
+  },
+  {
+   "J": 0.394,
+   "key": "kaleb johnson",
+   "name": "Kaleb Johnson",
+   "reason": "best spot DeMario Douglas: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
+   "reasons": [
+    "breakout tier B: 36% snaps, 47% of RB touches; Kalshi rushing yds 34 vs Sleeper 21 (+62%) \u2014 a part-time line, under the 40 starter floor"
+   ]
+  },
+  {
+   "J": null,
+   "key": "konata mumpfield",
+   "name": "Konata Mumpfield",
+   "reason": "sits behind everyone: you carry 8 WRs for 3 slot(s) and he projects 2.3 under your weakest 7.1",
+   "reasons": [
+    "breakout tier B: 73% snaps, 15% targets, 29% air yds; no market line yet (Sleeper receiving yds 10)"
+   ]
+  },
+  {
+   "J": null,
+   "key": "tyler higbee",
+   "name": "Tyler Higbee",
+   "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 8.3 under your weakest 10.4",
+   "reasons": [
+    "breakout tier B: 71% snaps, 20% targets, 17% air yds; Kalshi receiving yds 34 vs Sleeper 32 (+7%) \u2014 a part-time line, under the 35 starter floor"
+   ]
+  }
+ ],
+ "spots": [
+  {
+   "id": "drop:DST:MIN",
+   "kind": "swap",
+   "label": "Vikings",
+   "taken_by": null,
+   "tier": 2
+  },
+  {
+   "id": "drop:jason myers",
+   "kind": "swap",
+   "label": "Jason Myers",
+   "taken_by": null,
+   "tier": 2
+  },
+  {
+   "id": "drop:demario douglas",
+   "kind": "drop",
+   "label": "DeMario Douglas",
+   "taken_by": null,
+   "tier": 3
+  },
+  {
+   "id": "drop:jauan jennings",
+   "kind": "drop",
+   "label": "Jauan Jennings",
+   "taken_by": null,
+   "tier": 3
+  },
+  {
+   "id": "drop:makai lemon",
+   "kind": "drop",
+   "label": "Makai Lemon",
+   "taken_by": null,
+   "tier": 3
+  },
+  {
+   "id": "drop:matt stafford",
+   "kind": "drop",
+   "label": "Matthew Stafford",
+   "taken_by": null,
+   "tier": 3
+  },
+  {
+   "id": "drop:ryan flournoy",
+   "kind": "drop",
+   "label": "Ryan Flournoy",
+   "taken_by": null,
+   "tier": 3
+  },
+  {
+   "id": "drop:xavier hutchinson",
+   "kind": "drop",
+   "label": "Xavier Hutchinson",
+   "taken_by": null,
+   "tier": 3
+  }
+ ],
+ "week": 4,
+ "weights": {
+  "K_ACQ": 0.0,
+  "K_CHURN": 0.5,
+  "K_FAB": 0.1,
+  "REST_NORM": "mean",
+  "SHIP_J": 3.0,
+  "W_BOOM": 0.1,
+  "W_NEXT": 0.8,
+  "W_NOW": 1.0,
+  "W_REST": 0.3
+ },
+ "winprob": {
+  "mean": 135.14380963813957,
+  "note": "sampled on the planner's final lineup",
+  "p_med": 0.5213333333333333,
+  "p_opp": 0.3815
+ }
+}

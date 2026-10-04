@@ -16,7 +16,7 @@ Yahoo's own eligibility. Then three things the old per-league scripts got wrong:
 import numpy as np
 from scipy.optimize import linear_sum_assignment
 from . import clock as C, score as SC
-from .state import UNUSABLE
+from .rules import UNUSABLE, locked
 
 NOISE = 1.5    # inside this many points, two players are the same player
 
@@ -45,10 +45,21 @@ def solve(state, proj, actuals=None):
             # unplayed share of the projection. Either way the slot is locked.
             r['pts'] = AC.blend(a, r['pts']); r['phase'] = 'final' if a['final'] else 'live'
         rows.append(r)
-    R = [r for r in rows if r['designation'] not in UNUSABLE and r['pts'] is not None]
+    # Yahoo's lock is part of the problem, not a filter on the answer: a player
+    # whose game has kicked off stays exactly where he is — a locked starter keeps
+    # his slot, a locked bench player cannot enter (10-03: Boston scored 17.6 on
+    # Thursday from the bench and the 'optimal' total counted him at W/R)
+    _locked = locked
+    cur_slot = {r['key']: s for s, r in state.current_lineup().items() if r}
+    R = [r for r in rows if r['designation'] not in UNUSABLE and r['pts'] is not None and not (_locked(r) and r['key'] not in cur_slot)]
+    # an OUT starter who is locked also keeps his slot (nothing can replace him now)
+    R += [r for r in rows if r['designation'] in UNUSABLE and _locked(r) and r['key'] in cur_slot and r not in R]
     Cm = np.full((len(R), len(slots)), 1e6)
     for i, r in enumerate(R):
         for j, s in enumerate(slots):
+            if _locked(r) and r['key'] in cur_slot:
+                if s == cur_slot[r['key']]: Cm[i, j] = -(r['pts'] or 0.0) - 1e3     # pinned
+                continue
             if r['elig'] & cfg.accepts[s]: Cm[i, j] = -r['pts']
     ri, ci = linear_sum_assignment(Cm)
     opt = {s: None for s in slots}
@@ -68,10 +79,10 @@ def solve(state, proj, actuals=None):
         if (not o or o['key'] in cur_set) and (not c or c['key'] in opt_set):
             perms.append(s); continue
         if o and o['key'] in real_in:
-            if o.get('final') or o.get('live') or (c and (c.get('final') or c.get('live'))): continue   # locked either way
-            # Yahoo locks a player at his kickoff: a swap involving anyone whose game has
-            # started is not a move that can be made (Douglas for Likely at 2:20 pm, 09-27)
-            if o.get('phase') == 'locked' or (c and c.get('phase') == 'locked'): continue
+            # locked either way (final, live, or past kickoff): Yahoo locks a player at his
+            # kickoff, so a swap involving anyone whose game has started is not a move that
+            # can be made (Douglas for Likely at 2:20 pm, 09-27). One predicate: rules.locked.
+            if _locked(o) or (c and _locked(c)): continue
             # who does he displace? the starter in real_out with the same slot-family, else any
             out = c if (c and c['key'] in unclaimed) else next((x for x in cur.values() if x and x['key'] in unclaimed), None)
             if out: unclaimed.discard(out['key'])
@@ -89,7 +100,40 @@ def solve(state, proj, actuals=None):
                                 reason=(f"{out['player']} is {out['designation']} — the slot scores nothing until he is replaced" if sit_out else
                                         f"{out['player']} is {out['designation']} and projected 0.00 — the source assumes he is OUT; if he is active he keeps the slot" if q_zero else ''),
                                 phase=o['phase'], kick=o['kick']))
-    tot = lambda d: sum((r['pts'] or 0) for r in d.values() if r)
+    tot = lambda d: sum((r['pts'] or 0) for r in d.values() if r)      # the pin bonus is not in r['pts'], so totals are honest
     return dict(optimal=opt, current=cur, changes=changes, perms=perms,
                 total_cur=tot(cur), total_opt=tot(opt), rows=rows,
                 unknown=[r for r in rows if r['pts'] is None and r['designation'] not in UNUSABLE])
+
+def optimal_points(rows, cfg, values, locks=None):
+    """PURE optimal lineup: no state, no projections, no mutation (the planner's
+    objective evaluates hundreds of hypothetical rosters with it).
+
+      rows    [{'key', 'elig'}, ...] — the active roster (IR slots already excluded)
+      cfg     the league config (slots, accepts)
+      values  {key: points} — None or a missing key means he cannot start this week
+              (unusable designation, unknown projection, on waivers until later)
+      locks   {key: slot} — Yahoo's lock: a key pinned to a starting slot keeps it
+              (his value counts as given, 0 if None); a key locked to 'BN' (or to any
+              non-starting place) cannot enter the lineup.
+    -> (total, {slot: key or None})"""
+    locks = locks or {}
+    slots = list(cfg.slots)
+    out = {s: None for s in slots}
+    total = 0.0
+    free_slots = list(slots)
+    for k, s in locks.items():
+        if s in out and out[s] is None:
+            out[s] = k; total += float(values.get(k) or 0.0); free_slots.remove(s)
+    R = [r for r in rows if r['key'] not in locks and values.get(r['key']) is not None]
+    if not R or not free_slots: return total, out
+    Cm = np.full((len(R), len(free_slots)), 1e6)
+    for i, r in enumerate(R):
+        v = float(values[r['key']])
+        for j, s in enumerate(free_slots):
+            if r['elig'] & cfg.accepts[s]: Cm[i, j] = -v
+    ri, ci = linear_sum_assignment(Cm)
+    for i, j in zip(ri, ci):
+        if Cm[i, j] < 1e5:
+            out[free_slots[j]] = R[i]["key"]; total += float(-Cm[i, j])
+    return total, out

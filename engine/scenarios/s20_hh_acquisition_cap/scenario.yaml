@@ -1,0 +1,23 @@
+id: s20_hh_acquisition_cap
+title: HH with 7 adds in the last 7 days -> no add proposed (cap), planner budget holds
+doctrine: ''
+now: 2026-10-04T09:00-04:00
+week: 4
+base: _base
+mutations:
+- op: txn
+  league: HH
+  team: Tecmo Bowlers
+  player: <7 adds>
+expect:
+  counts:
+  - league: HH
+    kind: breakout
+    verb_in:
+    - ADD
+    - ADD-DEAD
+    eq: 0
+  plan_exclude:
+  - league: HH
+    kind: add
+status: stub

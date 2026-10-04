@@ -1,0 +1,68 @@
+id: s02_one_spot_two_candidates
+title: one open BSB spot + two verified candidates -> exactly one takes it; no spot reused
+doctrine: 'planner: each spot used once (sanity 11); the breakout scan pops a spot per ADD'
+now: 2026-10-04T09:00-04:00
+week: 4
+base: _base
+mutations:
+- op: sleeper_add
+  player: Kaleb Johnson
+  pos: RB
+  nfl: PIT
+  pts: 14.0
+- op: roles
+  list: add_yes
+  player: Kaleb Johnson
+  entry:
+    team: PIT
+    pos: RB
+    priority: 1
+    designation: none published
+    why: 'scenario fixture: lead back, starter usage two straight weeks (verified)'
+    src: scenario
+    date: '2026-10-03'
+    usage_wk1: 'scenario fixture: starter snaps (see usage rows)'
+- op: remove_player
+  league: BSB
+  player: Makai Lemon
+- op: sleeper_add
+  player: Zane Quillon
+  pos: WR
+  nfl: PIT
+  pts: 13.5
+- op: usage
+  player: Zane Quillon
+  pos: WR
+  nfl: PIT
+  snaps: 60
+  team_snaps: 64
+  targets: 9
+  both: true
+- op: roles
+  list: add_yes
+  player: Zane Quillon
+  entry:
+    team: PIT
+    pos: WR
+    priority: 2
+    why: 'scenario fixture: WR2 role, verified'
+    src: scenario
+    date: '2026-10-03'
+    usage_wk1: 'scenario fixture: starter snaps (see usage rows)'
+expect:
+  sanity: pass
+  counts:
+  - league: BSB
+    kind: breakout
+    verb_in:
+    - ADD
+    - ADD-DEAD
+    drop_contains: open
+    max: 1
+  actions_include:
+  - league: BSB
+    kind: breakout
+    verb_in:
+    - ADD
+    - ADD-DEAD
+    drop_contains: open

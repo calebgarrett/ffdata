@@ -1,0 +1,19 @@
+id: s05_hh_k_bye_kk_swap
+title: HH K on bye next week, no clean drop -> K-for-K swap on Tuesday
+doctrine: 'a bye HOLE is an empty slot: best free K in, the bye K himself out once his game is played'
+now: 2026-10-04T09:00-04:00
+week: 4
+base: _base
+mutations: []
+expect:
+  sanity: pass
+  actions_include:
+  - league: HH
+    kind: bye_cover
+    drop: Harrison Butker
+    when_contains: Tuesday
+  plan_include:
+  - league: HH
+    kind: add
+    drop: Harrison Butker
+    when_contains: Tuesday

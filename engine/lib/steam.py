@@ -16,20 +16,21 @@ projection site:
 
 Only rostered players in the two leagues are reported; the rest is noise.
 """
+from . import paths as _paths
 import csv, glob, os, re, datetime as dt
 from collections import defaultdict
-from . import market as M, clock as C
+from . import market as M, clock as C, ts as T
 from .names import key
 
-ARCH = '/home/claude/bsb2/data/kalshi_archive/'
-CUR = '/home/claude/bsb2/data/kalshi.csv'
+ARCH = _paths.data('kalshi_archive', '')
+CUR = _paths.data('kalshi.csv')
 THRESH = 0.15
 YARDS = {'KXNFLRECYDS': 'rec yds', 'KXNFLRSHYDS': 'rush yds', 'KXNFLPASSYDS': 'pass yds'}
 COUNTS = {'KXNFLREC': 'rec', 'KXNFLPASSTDS': 'pass TD'}
 
 def _stamp(path):
-    m = re.search(r'kalshi_(\d{4}-\d{2}-\d{2}T\d{4})Z', path)
-    return dt.datetime.strptime(m.group(1), '%Y-%m-%dT%H%M').replace(tzinfo=dt.timezone.utc) if m else None
+    m = re.search(r'kalshi_(\d{4}-\d{2}-\d{2}T\d{4}Z)', path)
+    return T.try_ts(m.group(1), 'archive') if m else None
 
 def pulls(week):
     """Archived pulls that belong to this NFL week, oldest first: [(time, path)]."""
@@ -68,7 +69,7 @@ def scan(proj, states, week):
     # 'previous' = the newest archived pull that is older than the current file
     cur_t = None
     try:
-        cur_t = dt.datetime.fromisoformat(next(csv.DictReader(open(CUR)))['pulled_at'].replace('Z', '+00:00'))
+        cur_t = T.parse_ts(next(csv.DictReader(open(CUR)))['pulled_at'], 'kalshi')
     except Exception: pass
     older = [(t, p) for t, p in ps if cur_t is None or t < cur_t - dt.timedelta(minutes=1)]
     prev_t, prev_p = older[-1] if older else (None, None)

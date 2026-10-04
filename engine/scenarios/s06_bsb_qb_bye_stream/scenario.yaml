@@ -1,0 +1,20 @@
+id: s06_bsb_qb_bye_stream
+title: BSB QB on bye next week -> a stream call (QB cover) for week 5
+doctrine: 'Week-11-style bye in BSB is a week-before calendar item: stream the hole, do not carry a spot for it'
+now: 2026-10-04T09:00-04:00
+week: 4
+base: _base
+mutations:
+- op: bye
+  team: LAR
+  week: 5
+expect:
+  sanity: pass
+  actions_include:
+  - league: BSB
+    kind_in:
+    - stream
+    - bye_cover
+    fam: QB
+known_failure: 'ENGINE GAP: the current paths stream only DEF/K (stream_board / stream_holes); a BSB QB on bye next
+  week gets no stream/bye-cover call. The shadow planner does cover it (add Baker Mayfield, drop Ryan Flournoy).'

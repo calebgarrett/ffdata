@@ -1,0 +1,13 @@
+id: s14_missing_team_page
+title: one owner absent from the BSB pages -> contract C4 REFUSE
+doctrine: 'C4: a missing team page turns its whole roster into free agents'
+now: 2026-10-04T09:00-04:00
+week: 4
+base: _base
+mutations:
+- op: drop_owner
+  league: BSB
+  owner: Regulators
+expect:
+  refused:
+  - C4

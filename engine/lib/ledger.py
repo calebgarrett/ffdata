@@ -15,19 +15,28 @@ Statuses:
   superseded   replaced by a later call, which is named
   expired      the window closed (game locked, waivers ran)
 """
+from . import paths as _paths
 import os, json, uuid
 from . import clock as C
 
-PATH = '/home/claude/bsb2/data/ledger.json'
+PATH = _paths.data('ledger.json')
 OPEN = ('proposed',)
 
 def _load():
+    """The ledger, or [] when there is none yet. A ledger that does not parse is NOT
+    an empty ledger: swallowing it into [] meant the next _save wrote a one-entry
+    file over every call on record. It raises; the input contract (C16) refuses the
+    run before anything is proposed."""
     if os.path.exists(PATH):
-        try: return json.load(open(PATH))
-        except Exception: return []
+        try: L = json.load(open(PATH))
+        except Exception as e: raise ValueError(f'{PATH} does not parse ({e}) — refusing to treat it as empty')
+        if not isinstance(L, list): raise ValueError(f'{PATH} is not a list of entries')
+        return L
     return []
 
-def _save(L): json.dump(L, open(PATH, 'w'), indent=1)
+def _save(L):
+    from .rules import atomic_write_json          # tmp + rename: a crash never leaves half a ledger
+    atomic_write_json(PATH, L, indent=1)
 
 def all_entries(): return _load()
 
@@ -48,11 +57,14 @@ def propose(league, kind, subject, call, *, detail='', evidence=(), verdict='PAS
     given and the call is ALREADY TRUE in it, the entry is filed as already_set
     and nothing is surfaced -- that is the whole point."""
     L = _load()
-    for e in L:
-        if (e['status'] in OPEN and e['league'] == league and e['kind'] == kind
-                and e['subject'] == subject and e['call'] == call):
-            return e
     status = 'proposed' if verdict != 'BLOCK' else 'blocked'   # a blocked call is never an open item
+    wk = week or C.nfl_week()
+    for e in L:
+        if (e['league'] == league and e['kind'] == kind and e['subject'] == subject and e['call'] == call
+                and (e['status'] in OPEN or (status == 'blocked' and e['status'] == 'blocked' and e.get('week') == wk))):
+            # an identical open call, or the same BLOCKED call in the same week: one row
+            # (10-04 scenario s15: blocked upgrades appended a row on every run)
+            return e
     if state is not None:
         if kind == 'start' and state.is_starting(subject): status = 'already_set'
         if kind == 'sit'   and not state.is_starting(subject) and state.slot_of(subject): status = 'already_set'
@@ -70,7 +82,7 @@ def propose(league, kind, subject, call, *, detail='', evidence=(), verdict='PAS
         p['status'] = 'superseded'
     e = dict(id=uuid.uuid4().hex[:8], ts=C.iso(), league=league, kind=kind, subject=subject,
              call=call, detail=detail, evidence=list(evidence), verdict=verdict,
-             week=week or C.nfl_week(), status=status, provisional=bool(provisional),
+             week=wk, status=status, provisional=bool(provisional),
              resolves_at=resolves_at, reverses=reverses)
     if reverses: p['superseded_by'] = e['id']
     L.append(e); _save(L)
@@ -96,15 +108,19 @@ def reconcile(state):
         new = None
         if e['kind'] == 'add'   and state.owner_of(e['subject']) == state.me: new = 'executed'
         if e['kind'] == 'drop'  and state.owner_of(e['subject']) != state.me: new = 'executed'
-        if e['kind'] == 'start' and state.is_starting(e['subject']): new = 'executed'
-        if e['kind'] == 'sit'   and state.slot_of(e['subject']) in ('BN', 'IR'): new = 'executed'
-        if e['kind'] in ('add', 'drop') and e.get('week') and e['week'] < C.nfl_week(): new = 'expired'
+        same_week = (not e.get('week')) or e['week'] == C.data_week()
+        if e['kind'] == 'start' and same_week and state.is_starting(e['subject']): new = 'executed'
+        if e['kind'] == 'sit'   and same_week and state.slot_of(e['subject']) in ('BN', 'IR'): new = 'executed'
+        # a call from an earlier week is over, whatever the roster looks like now
+        # (10-04: week-2 'start Kelce' was marked executed in week 4)
+        if e.get('week') and e['week'] < C.data_week(): new = 'expired'
         if new:
             e['status'] = new; e['status_ts'] = C.iso(); out.append((e, new))
     _save(L)
     return out
 
-def migrate_decisions_json(path='/home/claude/bsb2/data/decisions.json'):
+def migrate_decisions_json(path=None):
+    path = path or _paths.data('decisions.json')
     """Bring the old start/sit log across once, deduplicated."""
     if not os.path.exists(path): return 0
     old = json.load(open(path)); L = _load(); seen = {(e['kind'], e['subject'], e['call']) for e in L}

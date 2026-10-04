@@ -1,0 +1,31 @@
+id: s11_out_starter_firm
+title: OUT starter with a healthy bench player -> firm lineup change, no START pill
+doctrine: 'RUNBOOK 09-29: an OUT starter is a hole, firm whatever the market; a tag is never a drop reason'
+now: 2026-10-04T09:00-04:00
+week: 4
+base: _base
+mutations:
+- op: tag
+  league: BSB
+  player: Drake London
+  tag: O
+expect:
+  sanity: pass
+  actions_include:
+  - league: BSB
+    kind: start
+    sit: Drake London
+    provisional: false
+  lineup:
+    BSB:
+      WR1:
+        not: Drake London
+      WR2:
+        not: Drake London
+      WR3:
+        not: Drake London
+      W/R/T:
+        not: Drake London
+  actions_exclude:
+  - league: BSB
+    drop: Drake London

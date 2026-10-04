@@ -162,10 +162,11 @@
   ],
   "verdict": "WARN",
   "week": 2,
-  "status": "proposed",
+  "status": "expired",
   "provisional": true,
   "resolves_at": "2026-09-20T13:00-04:00",
-  "reverses": null
+  "reverses": null,
+  "status_ts": "2026-10-04T08:29-04:00"
  },
  {
   "id": "58fc87a4",
@@ -1046,10 +1047,11 @@
   ],
   "verdict": "WARN",
   "week": 3,
-  "status": "proposed",
+  "status": "expired",
   "provisional": false,
   "resolves_at": null,
-  "reverses": null
+  "reverses": null,
+  "status_ts": "2026-10-04T08:29-04:00"
  },
  {
   "id": "794e9442",
@@ -1082,10 +1084,11 @@
   ],
   "verdict": "WARN",
   "week": 3,
-  "status": "proposed",
+  "status": "expired",
   "provisional": true,
   "resolves_at": null,
-  "reverses": null
+  "reverses": null,
+  "status_ts": "2026-10-04T08:29-04:00"
  },
  {
   "id": "542eab7c",
@@ -6814,8 +6817,8 @@
   "reverses": null
  },
  {
-  "id": "ad083647",
-  "ts": "2026-10-02T17:24-04:00",
+  "id": "3a780d96",
+  "ts": "2026-10-02T17:26-04:00",
   "league": "BSB",
   "kind": "add",
   "subject": "Antonio Williams",
@@ -6834,81 +6837,913 @@
   "reverses": null
  },
  {
-  "id": "c8407985",
-  "ts": "2026-10-02T17:24-04:00",
+  "id": "7470e5a9",
+  "ts": "2026-10-02T17:26-04:00",
   "league": "HH",
-  "kind": "start",
-  "subject": "Jameson Williams",
-  "call": "start Jameson Williams at W/R/T",
-  "detail": "over Travis Kelce +0.03",
+  "kind": "add",
+  "subject": "Malaki Starks",
+  "call": "add Malaki Starks (DB) over Kam Curl",
+  "detail": "+4.46/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "533d244c",
+  "ts": "2026-10-02T17:26-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Nick Emmanwori",
+  "call": "add Nick Emmanwori (DB) over Kam Curl",
+  "detail": "+3.68/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "e9c06ad3",
+  "ts": "2026-10-02T17:26-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Cam Bynum",
+  "call": "add Cam Bynum (DB) over Kam Curl",
+  "detail": "+3.04/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "0f4800a8",
+  "ts": "2026-10-02T17:32-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Antonio Williams",
+  "call": "drop DeMario Douglas -> add Antonio Williams",
+  "detail": "+6.3 season",
   "evidence": [
    "kalshi",
+   "sleeper",
+   "usage"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "b1f61c5b",
+  "ts": "2026-10-02T17:32-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Malaki Starks",
+  "call": "add Malaki Starks (DB) over Kam Curl",
+  "detail": "+4.46/wk",
+  "evidence": [
    "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "0bbaa67e",
+  "ts": "2026-10-02T17:32-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Nick Emmanwori",
+  "call": "add Nick Emmanwori (DB) over Kam Curl",
+  "detail": "+3.68/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "fbc7a492",
+  "ts": "2026-10-02T17:32-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Cam Bynum",
+  "call": "add Cam Bynum (DB) over Kam Curl",
+  "detail": "+3.04/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "0021d395",
+  "ts": "2026-10-02T17:32-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Antonio Williams",
+  "call": "drop DeMario Douglas -> add Antonio Williams",
+  "detail": "+6.3 season",
+  "evidence": [
+   "kalshi",
+   "sleeper",
+   "usage"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "8cffbcb1",
+  "ts": "2026-10-02T17:32-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Malaki Starks",
+  "call": "add Malaki Starks (DB) over Kam Curl",
+  "detail": "+4.46/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "21402047",
+  "ts": "2026-10-02T17:32-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Nick Emmanwori",
+  "call": "add Nick Emmanwori (DB) over Kam Curl",
+  "detail": "+3.68/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "2ce3f424",
+  "ts": "2026-10-02T17:32-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Cam Bynum",
+  "call": "add Cam Bynum (DB) over Kam Curl",
+  "detail": "+3.04/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "5f60391f",
+  "ts": "2026-10-02T17:32-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Antonio Williams",
+  "call": "drop DeMario Douglas -> add Antonio Williams",
+  "detail": "+6.3 season",
+  "evidence": [
+   "kalshi",
+   "sleeper",
+   "usage"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "4e33b8f0",
+  "ts": "2026-10-02T17:32-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Malaki Starks",
+  "call": "add Malaki Starks (DB) over Kam Curl",
+  "detail": "+4.46/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "9cb5e8d0",
+  "ts": "2026-10-02T17:32-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Nick Emmanwori",
+  "call": "add Nick Emmanwori (DB) over Kam Curl",
+  "detail": "+3.68/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "e81ce48f",
+  "ts": "2026-10-02T17:32-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Cam Bynum",
+  "call": "add Cam Bynum (DB) over Kam Curl",
+  "detail": "+3.04/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "454c0c3b",
+  "ts": "2026-10-02T17:33-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Antonio Williams",
+  "call": "drop DeMario Douglas -> add Antonio Williams",
+  "detail": "+6.3 season",
+  "evidence": [
+   "kalshi",
+   "sleeper",
+   "usage"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "954f3054",
+  "ts": "2026-10-02T17:33-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Malaki Starks",
+  "call": "add Malaki Starks (DB) over Kam Curl",
+  "detail": "+4.46/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "9d638297",
+  "ts": "2026-10-02T17:33-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Nick Emmanwori",
+  "call": "add Nick Emmanwori (DB) over Kam Curl",
+  "detail": "+3.68/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "a25ac709",
+  "ts": "2026-10-02T17:33-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Cam Bynum",
+  "call": "add Cam Bynum (DB) over Kam Curl",
+  "detail": "+3.04/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "f4ece983",
+  "ts": "2026-10-02T17:33-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Jake Bates",
+  "call": "bye cover: Jake Bates for week 5, drop TreVeyon Henderson",
+  "detail": "K: Harrison Butker on bye week 5; DET 28.5 is the best free K on posted lines",
+  "evidence": [
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 4,
+  "status": "superseded",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null,
+  "superseded_by": "0abf0cd5"
+ },
+ {
+  "id": "1c240399",
+  "ts": "2026-10-02T17:34-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Antonio Williams",
+  "call": "drop DeMario Douglas -> add Antonio Williams",
+  "detail": "+6.3 season",
+  "evidence": [
+   "kalshi",
+   "sleeper",
+   "usage"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "19c91de3",
+  "ts": "2026-10-02T17:34-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Malaki Starks",
+  "call": "add Malaki Starks (DB) over Kam Curl",
+  "detail": "+4.46/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "a97a8fed",
+  "ts": "2026-10-02T17:34-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Nick Emmanwori",
+  "call": "add Nick Emmanwori (DB) over Kam Curl",
+  "detail": "+3.68/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "2fb4cf64",
+  "ts": "2026-10-02T17:34-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Cam Bynum",
+  "call": "add Cam Bynum (DB) over Kam Curl",
+  "detail": "+3.04/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "046cdb2f",
+  "ts": "2026-10-02T17:35-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Antonio Williams",
+  "call": "drop DeMario Douglas -> add Antonio Williams",
+  "detail": "+6.3 season",
+  "evidence": [
+   "kalshi",
+   "sleeper",
+   "usage"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "2ab3891e",
+  "ts": "2026-10-02T17:35-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Malaki Starks",
+  "call": "add Malaki Starks (DB) over Kam Curl",
+  "detail": "+4.46/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "1573326e",
+  "ts": "2026-10-02T17:35-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Nick Emmanwori",
+  "call": "add Nick Emmanwori (DB) over Kam Curl",
+  "detail": "+3.68/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "1d16ab97",
+  "ts": "2026-10-02T17:35-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Cam Bynum",
+  "call": "add Cam Bynum (DB) over Kam Curl",
+  "detail": "+3.04/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "f646b7f3",
+  "ts": "2026-10-02T17:35-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Antonio Williams",
+  "call": "drop DeMario Douglas -> add Antonio Williams",
+  "detail": "+6.3 season",
+  "evidence": [
+   "kalshi",
+   "sleeper",
+   "usage"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "6c6d622b",
+  "ts": "2026-10-02T17:35-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Malaki Starks",
+  "call": "add Malaki Starks (DB) over Kam Curl",
+  "detail": "+4.46/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "631b5b10",
+  "ts": "2026-10-02T17:35-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Nick Emmanwori",
+  "call": "add Nick Emmanwori (DB) over Kam Curl",
+  "detail": "+3.68/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "077c8f30",
+  "ts": "2026-10-02T17:35-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Cam Bynum",
+  "call": "add Cam Bynum (DB) over Kam Curl",
+  "detail": "+3.04/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "80a9cff7",
+  "ts": "2026-10-02T17:36-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Antonio Williams",
+  "call": "drop DeMario Douglas -> add Antonio Williams",
+  "detail": "+6.3 season",
+  "evidence": [
+   "kalshi",
+   "sleeper",
+   "usage"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "ad1099d9",
+  "ts": "2026-10-02T17:36-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Malaki Starks",
+  "call": "add Malaki Starks (DB) over Kam Curl",
+  "detail": "+4.46/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "94e8d5a5",
+  "ts": "2026-10-02T17:36-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Nick Emmanwori",
+  "call": "add Nick Emmanwori (DB) over Kam Curl",
+  "detail": "+3.68/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "98c6510d",
+  "ts": "2026-10-02T17:36-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Cam Bynum",
+  "call": "add Cam Bynum (DB) over Kam Curl",
+  "detail": "+3.04/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "8e9dc27e",
+  "ts": "2026-10-02T17:59-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Antonio Williams",
+  "call": "drop DeMario Douglas -> add Antonio Williams",
+  "detail": "+6.3 season",
+  "evidence": [
+   "kalshi",
+   "sleeper",
+   "usage"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "3d560a55",
+  "ts": "2026-10-02T17:59-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Malaki Starks",
+  "call": "add Malaki Starks (DB) over Kam Curl",
+  "detail": "+4.46/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "1fe2a932",
+  "ts": "2026-10-02T17:59-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Nick Emmanwori",
+  "call": "add Nick Emmanwori (DB) over Kam Curl",
+  "detail": "+3.68/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "a766dcfb",
+  "ts": "2026-10-02T17:59-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Cam Bynum",
+  "call": "add Cam Bynum (DB) over Kam Curl",
+  "detail": "+3.04/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "95eb5d9e",
+  "ts": "2026-10-02T17:59-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Antonio Williams",
+  "call": "drop DeMario Douglas -> add Antonio Williams",
+  "detail": "+6.3 season",
+  "evidence": [
+   "kalshi",
+   "sleeper",
+   "usage"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "8eb723bf",
+  "ts": "2026-10-02T17:59-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Malaki Starks",
+  "call": "add Malaki Starks (DB) over Kam Curl",
+  "detail": "+4.46/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "1e7e8591",
+  "ts": "2026-10-02T17:59-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Nick Emmanwori",
+  "call": "add Nick Emmanwori (DB) over Kam Curl",
+  "detail": "+3.68/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "bc20f835",
+  "ts": "2026-10-02T17:59-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Cam Bynum",
+  "call": "add Cam Bynum (DB) over Kam Curl",
+  "detail": "+3.04/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "96e86b0c",
+  "ts": "2026-10-02T18:00-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Antonio Williams",
+  "call": "drop DeMario Douglas -> add Antonio Williams",
+  "detail": "+6.3 season",
+  "evidence": [
+   "kalshi",
+   "sleeper",
+   "usage"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "19c6dce4",
+  "ts": "2026-10-02T18:00-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Malaki Starks",
+  "call": "add Malaki Starks (DB) over Kam Curl",
+  "detail": "+4.46/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "ee173f03",
+  "ts": "2026-10-02T18:00-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Nick Emmanwori",
+  "call": "add Nick Emmanwori (DB) over Kam Curl",
+  "detail": "+3.68/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "cb80b21e",
+  "ts": "2026-10-02T18:00-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Cam Bynum",
+  "call": "add Cam Bynum (DB) over Kam Curl",
+  "detail": "+3.04/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "0abf0cd5",
+  "ts": "2026-10-02T18:00-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Jake Bates",
+  "call": "bye cover: Jake Bates for week 5, drop Harrison Butker",
+  "detail": "K: Harrison Butker on bye week 5; DET 28.5 is the best free K on posted lines",
+  "evidence": [
+   "vegas"
   ],
   "verdict": "PASS",
   "week": 4,
   "status": "proposed",
-  "provisional": true,
-  "resolves_at": "2026-10-04T20:20-04:00",
-  "reverses": null
- },
- {
-  "id": "0396f2bb",
-  "ts": "2026-10-02T17:24-04:00",
-  "league": "HH",
-  "kind": "add",
-  "subject": "Malaki Starks",
-  "call": "add Malaki Starks (DB) over Kam Curl",
-  "detail": "+4.46/wk",
-  "evidence": [
-   "sleeper"
-  ],
-  "verdict": "BLOCK",
-  "week": 4,
-  "status": "blocked",
   "provisional": false,
   "resolves_at": null,
-  "reverses": null
+  "reverses": "f4ece983"
  },
  {
-  "id": "8aab603c",
-  "ts": "2026-10-02T17:24-04:00",
-  "league": "HH",
-  "kind": "add",
-  "subject": "Nick Emmanwori",
-  "call": "add Nick Emmanwori (DB) over Kam Curl",
-  "detail": "+3.68/wk",
-  "evidence": [
-   "sleeper"
-  ],
-  "verdict": "BLOCK",
-  "week": 4,
-  "status": "blocked",
-  "provisional": false,
-  "resolves_at": null,
-  "reverses": null
- },
- {
-  "id": "9d36f4cb",
-  "ts": "2026-10-02T17:24-04:00",
-  "league": "HH",
-  "kind": "add",
-  "subject": "Cam Bynum",
-  "call": "add Cam Bynum (DB) over Kam Curl",
-  "detail": "+3.04/wk",
-  "evidence": [
-   "sleeper"
-  ],
-  "verdict": "BLOCK",
-  "week": 4,
-  "status": "blocked",
-  "provisional": false,
-  "resolves_at": null,
-  "reverses": null
- },
- {
-  "id": "ec0e066b",
-  "ts": "2026-10-02T20:25-04:00",
+  "id": "f6088ca4",
+  "ts": "2026-10-02T18:00-04:00",
   "league": "BSB",
   "kind": "add",
   "subject": "Antonio Williams",
@@ -6927,8 +7762,8 @@
   "reverses": null
  },
  {
-  "id": "9c8b2468",
-  "ts": "2026-10-02T20:25-04:00",
+  "id": "68c1c069",
+  "ts": "2026-10-02T18:00-04:00",
   "league": "HH",
   "kind": "add",
   "subject": "Malaki Starks",
@@ -6945,8 +7780,8 @@
   "reverses": null
  },
  {
-  "id": "1748294e",
-  "ts": "2026-10-02T20:25-04:00",
+  "id": "cd1313e7",
+  "ts": "2026-10-02T18:00-04:00",
   "league": "HH",
   "kind": "add",
   "subject": "Nick Emmanwori",
@@ -6963,8 +7798,8 @@
   "reverses": null
  },
  {
-  "id": "f7e381fd",
-  "ts": "2026-10-02T20:25-04:00",
+  "id": "f7bb0765",
+  "ts": "2026-10-02T18:00-04:00",
   "league": "HH",
   "kind": "add",
   "subject": "Cam Bynum",
@@ -6981,8 +7816,8 @@
   "reverses": null
  },
  {
-  "id": "59e2c782",
-  "ts": "2026-10-03T01:43-04:00",
+  "id": "08db5236",
+  "ts": "2026-10-02T18:01-04:00",
   "league": "BSB",
   "kind": "add",
   "subject": "Antonio Williams",
@@ -7001,8 +7836,8 @@
   "reverses": null
  },
  {
-  "id": "9d1cdc0c",
-  "ts": "2026-10-03T01:43-04:00",
+  "id": "b2a6ed7d",
+  "ts": "2026-10-02T18:01-04:00",
   "league": "HH",
   "kind": "add",
   "subject": "Malaki Starks",
@@ -7019,8 +7854,8 @@
   "reverses": null
  },
  {
-  "id": "ea978182",
-  "ts": "2026-10-03T01:43-04:00",
+  "id": "91b832eb",
+  "ts": "2026-10-02T18:01-04:00",
   "league": "HH",
   "kind": "add",
   "subject": "Nick Emmanwori",
@@ -7037,8 +7872,8 @@
   "reverses": null
  },
  {
-  "id": "b90ee19b",
-  "ts": "2026-10-03T01:43-04:00",
+  "id": "d9e7c33d",
+  "ts": "2026-10-02T18:01-04:00",
   "league": "HH",
   "kind": "add",
   "subject": "Cam Bynum",
@@ -7055,8 +7890,8 @@
   "reverses": null
  },
  {
-  "id": "ee45bb64",
-  "ts": "2026-10-03T07:34-04:00",
+  "id": "4623ed61",
+  "ts": "2026-10-02T18:01-04:00",
   "league": "BSB",
   "kind": "add",
   "subject": "Antonio Williams",
@@ -7075,8 +7910,8 @@
   "reverses": null
  },
  {
-  "id": "1af12057",
-  "ts": "2026-10-03T07:34-04:00",
+  "id": "69be6ce7",
+  "ts": "2026-10-02T18:01-04:00",
   "league": "HH",
   "kind": "add",
   "subject": "Malaki Starks",
@@ -7093,8 +7928,8 @@
   "reverses": null
  },
  {
-  "id": "ccaccd40",
-  "ts": "2026-10-03T07:34-04:00",
+  "id": "102aa9d2",
+  "ts": "2026-10-02T18:01-04:00",
   "league": "HH",
   "kind": "add",
   "subject": "Nick Emmanwori",
@@ -7111,8 +7946,156 @@
   "reverses": null
  },
  {
-  "id": "e3e8da56",
-  "ts": "2026-10-03T07:34-04:00",
+  "id": "66a43c51",
+  "ts": "2026-10-02T18:01-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Cam Bynum",
+  "call": "add Cam Bynum (DB) over Kam Curl",
+  "detail": "+3.04/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "9f77531b",
+  "ts": "2026-10-02T18:02-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Antonio Williams",
+  "call": "drop DeMario Douglas -> add Antonio Williams",
+  "detail": "+6.3 season",
+  "evidence": [
+   "kalshi",
+   "sleeper",
+   "usage"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "d778ea6f",
+  "ts": "2026-10-02T18:02-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Malaki Starks",
+  "call": "add Malaki Starks (DB) over Kam Curl",
+  "detail": "+4.46/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "fc93c18d",
+  "ts": "2026-10-02T18:02-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Nick Emmanwori",
+  "call": "add Nick Emmanwori (DB) over Kam Curl",
+  "detail": "+3.68/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "025fda6d",
+  "ts": "2026-10-02T18:02-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Cam Bynum",
+  "call": "add Cam Bynum (DB) over Kam Curl",
+  "detail": "+3.04/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "4b88d128",
+  "ts": "2026-10-03T09:57-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Antonio Williams",
+  "call": "drop DeMario Douglas -> add Antonio Williams",
+  "detail": "+6.3 season",
+  "evidence": [
+   "kalshi",
+   "sleeper",
+   "usage"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "1f51636a",
+  "ts": "2026-10-03T09:57-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Malaki Starks",
+  "call": "add Malaki Starks (DB) over Kam Curl",
+  "detail": "+4.46/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "4a625486",
+  "ts": "2026-10-03T09:57-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Nick Emmanwori",
+  "call": "add Nick Emmanwori (DB) over Kam Curl",
+  "detail": "+3.68/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "5354b4d0",
+  "ts": "2026-10-03T09:57-04:00",
   "league": "HH",
   "kind": "add",
   "subject": "Cam Bynum",
@@ -7129,8 +8112,8 @@
   "reverses": null
  },
  {
-  "id": "d5a908b0",
-  "ts": "2026-10-03T12:11-04:00",
+  "id": "6c775761",
+  "ts": "2026-10-03T09:57-04:00",
   "league": "BSB",
   "kind": "add",
   "subject": "Antonio Williams",
@@ -7149,8 +8132,8 @@
   "reverses": null
  },
  {
-  "id": "0680974d",
-  "ts": "2026-10-03T12:11-04:00",
+  "id": "47d41268",
+  "ts": "2026-10-03T09:57-04:00",
   "league": "HH",
   "kind": "add",
   "subject": "Malaki Starks",
@@ -7167,8 +8150,8 @@
   "reverses": null
  },
  {
-  "id": "8f74aed3",
-  "ts": "2026-10-03T12:11-04:00",
+  "id": "301cba7c",
+  "ts": "2026-10-03T09:57-04:00",
   "league": "HH",
   "kind": "add",
   "subject": "Nick Emmanwori",
@@ -7185,8 +8168,304 @@
   "reverses": null
  },
  {
-  "id": "42325ed5",
-  "ts": "2026-10-03T12:11-04:00",
+  "id": "afba0865",
+  "ts": "2026-10-03T09:57-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Cam Bynum",
+  "call": "add Cam Bynum (DB) over Kam Curl",
+  "detail": "+3.10/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "ef96b01e",
+  "ts": "2026-10-03T09:59-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Antonio Williams",
+  "call": "drop DeMario Douglas -> add Antonio Williams",
+  "detail": "+6.3 season",
+  "evidence": [
+   "kalshi",
+   "sleeper",
+   "usage"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "377a36fc",
+  "ts": "2026-10-03T09:59-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Malaki Starks",
+  "call": "add Malaki Starks (DB) over Kam Curl",
+  "detail": "+4.46/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "21ae5824",
+  "ts": "2026-10-03T09:59-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Nick Emmanwori",
+  "call": "add Nick Emmanwori (DB) over Kam Curl",
+  "detail": "+3.68/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "c336aecc",
+  "ts": "2026-10-03T09:59-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Cam Bynum",
+  "call": "add Cam Bynum (DB) over Kam Curl",
+  "detail": "+3.10/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "42af1e82",
+  "ts": "2026-10-03T10:00-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Antonio Williams",
+  "call": "drop DeMario Douglas -> add Antonio Williams",
+  "detail": "+6.3 season",
+  "evidence": [
+   "kalshi",
+   "sleeper",
+   "usage"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "275bc42e",
+  "ts": "2026-10-03T10:00-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Malaki Starks",
+  "call": "add Malaki Starks (DB) over Kam Curl",
+  "detail": "+4.46/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "d287104a",
+  "ts": "2026-10-03T10:00-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Nick Emmanwori",
+  "call": "add Nick Emmanwori (DB) over Kam Curl",
+  "detail": "+3.68/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "0d996e16",
+  "ts": "2026-10-03T10:00-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Cam Bynum",
+  "call": "add Cam Bynum (DB) over Kam Curl",
+  "detail": "+3.10/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "fad41651",
+  "ts": "2026-10-03T10:00-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Antonio Williams",
+  "call": "drop DeMario Douglas -> add Antonio Williams",
+  "detail": "+6.3 season",
+  "evidence": [
+   "kalshi",
+   "sleeper",
+   "usage"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "76c87ec4",
+  "ts": "2026-10-03T10:00-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Malaki Starks",
+  "call": "add Malaki Starks (DB) over Kam Curl",
+  "detail": "+4.46/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "790fe0c8",
+  "ts": "2026-10-03T10:00-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Nick Emmanwori",
+  "call": "add Nick Emmanwori (DB) over Kam Curl",
+  "detail": "+3.68/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "50edb902",
+  "ts": "2026-10-03T10:00-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Cam Bynum",
+  "call": "add Cam Bynum (DB) over Kam Curl",
+  "detail": "+3.10/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "4238c162",
+  "ts": "2026-10-04T07:50-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Antonio Williams",
+  "call": "drop DeMario Douglas -> add Antonio Williams",
+  "detail": "+6.3 season",
+  "evidence": [
+   "kalshi",
+   "sleeper",
+   "usage"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "901dae5b",
+  "ts": "2026-10-04T07:50-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Malaki Starks",
+  "call": "add Malaki Starks (DB) over Kam Curl",
+  "detail": "+4.46/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "8ddb05de",
+  "ts": "2026-10-04T07:50-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Nick Emmanwori",
+  "call": "add Nick Emmanwori (DB) over Kam Curl",
+  "detail": "+3.68/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "abdcd5a9",
+  "ts": "2026-10-04T07:50-04:00",
   "league": "HH",
   "kind": "add",
   "subject": "Cam Bynum",
@@ -7203,8 +8482,8 @@
   "reverses": null
  },
  {
-  "id": "b2de04d8",
-  "ts": "2026-10-03T15:24-04:00",
+  "id": "301e29d3",
+  "ts": "2026-10-04T07:50-04:00",
   "league": "BSB",
   "kind": "add",
   "subject": "Antonio Williams",
@@ -7223,8 +8502,8 @@
   "reverses": null
  },
  {
-  "id": "5aad50ab",
-  "ts": "2026-10-03T15:24-04:00",
+  "id": "74f8343e",
+  "ts": "2026-10-04T07:50-04:00",
   "league": "HH",
   "kind": "add",
   "subject": "Malaki Starks",
@@ -7241,8 +8520,8 @@
   "reverses": null
  },
  {
-  "id": "1d0c939e",
-  "ts": "2026-10-03T15:24-04:00",
+  "id": "639a9160",
+  "ts": "2026-10-04T07:50-04:00",
   "league": "HH",
   "kind": "add",
   "subject": "Nick Emmanwori",
@@ -7259,8 +8538,8 @@
   "reverses": null
  },
  {
-  "id": "5a318a83",
-  "ts": "2026-10-03T15:24-04:00",
+  "id": "a761ce90",
+  "ts": "2026-10-04T07:50-04:00",
   "league": "HH",
   "kind": "add",
   "subject": "Cam Bynum",
@@ -7277,8 +8556,8 @@
   "reverses": null
  },
  {
-  "id": "5811cded",
-  "ts": "2026-10-03T18:26-04:00",
+  "id": "669e9e29",
+  "ts": "2026-10-04T08:29-04:00",
   "league": "BSB",
   "kind": "add",
   "subject": "Antonio Williams",
@@ -7297,27 +8576,8 @@
   "reverses": null
  },
  {
-  "id": "0938296b",
-  "ts": "2026-10-03T18:26-04:00",
-  "league": "HH",
-  "kind": "add",
-  "subject": "Elijah Arroyo",
-  "call": "add Elijah Arroyo (TE) over Travis Kelce",
-  "detail": "+10.54/wk",
-  "evidence": [
-   "kalshi",
-   "sleeper"
-  ],
-  "verdict": "WARN",
-  "week": 4,
-  "status": "proposed",
-  "provisional": false,
-  "resolves_at": null,
-  "reverses": null
- },
- {
-  "id": "41958122",
-  "ts": "2026-10-03T18:26-04:00",
+  "id": "359150de",
+  "ts": "2026-10-04T08:29-04:00",
   "league": "HH",
   "kind": "add",
   "subject": "Malaki Starks",
@@ -7334,8 +8594,8 @@
   "reverses": null
  },
  {
-  "id": "5f169f27",
-  "ts": "2026-10-03T18:26-04:00",
+  "id": "63dff215",
+  "ts": "2026-10-04T08:29-04:00",
   "league": "HH",
   "kind": "add",
   "subject": "Nick Emmanwori",
@@ -7352,64 +8612,8 @@
   "reverses": null
  },
  {
-  "id": "6787200d",
-  "ts": "2026-10-03T21:59-04:00",
-  "league": "BSB",
-  "kind": "add",
-  "subject": "Antonio Williams",
-  "call": "drop DeMario Douglas -> add Antonio Williams",
-  "detail": "+6.3 season",
-  "evidence": [
-   "kalshi",
-   "sleeper",
-   "usage"
-  ],
-  "verdict": "BLOCK",
-  "week": 4,
-  "status": "blocked",
-  "provisional": false,
-  "resolves_at": null,
-  "reverses": null
- },
- {
-  "id": "6c9c1c9f",
-  "ts": "2026-10-03T21:59-04:00",
-  "league": "HH",
-  "kind": "add",
-  "subject": "Malaki Starks",
-  "call": "add Malaki Starks (DB) over Kam Curl",
-  "detail": "+4.46/wk",
-  "evidence": [
-   "sleeper"
-  ],
-  "verdict": "BLOCK",
-  "week": 4,
-  "status": "blocked",
-  "provisional": false,
-  "resolves_at": null,
-  "reverses": null
- },
- {
-  "id": "a8cbbb74",
-  "ts": "2026-10-03T21:59-04:00",
-  "league": "HH",
-  "kind": "add",
-  "subject": "Nick Emmanwori",
-  "call": "add Nick Emmanwori (DB) over Kam Curl",
-  "detail": "+3.68/wk",
-  "evidence": [
-   "sleeper"
-  ],
-  "verdict": "BLOCK",
-  "week": 4,
-  "status": "blocked",
-  "provisional": false,
-  "resolves_at": null,
-  "reverses": null
- },
- {
-  "id": "3e9c1ede",
-  "ts": "2026-10-03T21:59-04:00",
+  "id": "9d8ec3e2",
+  "ts": "2026-10-04T08:29-04:00",
   "league": "HH",
   "kind": "add",
   "subject": "Cam Bynum",
@@ -7426,8 +8630,8 @@
   "reverses": null
  },
  {
-  "id": "c048d5c8",
-  "ts": "2026-10-04T04:23-04:00",
+  "id": "8f77b150",
+  "ts": "2026-10-04T08:29-04:00",
   "league": "BSB",
   "kind": "add",
   "subject": "Antonio Williams",
@@ -7446,8 +8650,8 @@
   "reverses": null
  },
  {
-  "id": "9a909bdd",
-  "ts": "2026-10-04T04:23-04:00",
+  "id": "892fa140",
+  "ts": "2026-10-04T08:29-04:00",
   "league": "HH",
   "kind": "add",
   "subject": "Malaki Starks",
@@ -7464,8 +8668,8 @@
   "reverses": null
  },
  {
-  "id": "1bfa7499",
-  "ts": "2026-10-04T04:23-04:00",
+  "id": "c8793545",
+  "ts": "2026-10-04T08:29-04:00",
   "league": "HH",
   "kind": "add",
   "subject": "Nick Emmanwori",
@@ -7482,8 +8686,8 @@
   "reverses": null
  },
  {
-  "id": "fe30fd44",
-  "ts": "2026-10-04T04:23-04:00",
+  "id": "2d3796aa",
+  "ts": "2026-10-04T08:29-04:00",
   "league": "HH",
   "kind": "add",
   "subject": "Cam Bynum",
@@ -7500,8 +8704,82 @@
   "reverses": null
  },
  {
-  "id": "b16cf79d",
-  "ts": "2026-10-04T10:22-04:00",
+  "id": "68063a54",
+  "ts": "2026-10-04T08:30-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Antonio Williams",
+  "call": "drop DeMario Douglas -> add Antonio Williams",
+  "detail": "+6.3 season",
+  "evidence": [
+   "kalshi",
+   "sleeper",
+   "usage"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "f4f8a0e0",
+  "ts": "2026-10-04T08:30-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Malaki Starks",
+  "call": "add Malaki Starks (DB) over Kam Curl",
+  "detail": "+4.46/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "d175ff4b",
+  "ts": "2026-10-04T08:30-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Nick Emmanwori",
+  "call": "add Nick Emmanwori (DB) over Kam Curl",
+  "detail": "+3.68/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "0bd76262",
+  "ts": "2026-10-04T08:30-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Cam Bynum",
+  "call": "add Cam Bynum (DB) over Kam Curl",
+  "detail": "+2.96/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "5058867a",
+  "ts": "2026-10-04T11:01-04:00",
   "league": "BSB",
   "kind": "add",
   "subject": "Antonio Williams",
@@ -7519,8 +8797,8 @@
   "reverses": null
  },
  {
-  "id": "98aee54c",
-  "ts": "2026-10-04T10:22-04:00",
+  "id": "afe4e651",
+  "ts": "2026-10-04T11:01-04:00",
   "league": "HH",
   "kind": "add",
   "subject": "Malaki Starks",
@@ -7537,8 +8815,8 @@
   "reverses": null
  },
  {
-  "id": "809b7a05",
-  "ts": "2026-10-04T10:22-04:00",
+  "id": "51424be4",
+  "ts": "2026-10-04T11:01-04:00",
   "league": "HH",
   "kind": "add",
   "subject": "Nick Emmanwori",
@@ -7555,8 +8833,8 @@
   "reverses": null
  },
  {
-  "id": "9b7998e5",
-  "ts": "2026-10-04T10:22-04:00",
+  "id": "ecf7cb39",
+  "ts": "2026-10-04T11:01-04:00",
   "league": "HH",
   "kind": "add",
   "subject": "Cam Bynum",
@@ -7573,8 +8851,8 @@
   "reverses": null
  },
  {
-  "id": "fbea4240",
-  "ts": "2026-10-04T12:03-04:00",
+  "id": "bceeb62c",
+  "ts": "2026-10-04T11:02-04:00",
   "league": "BSB",
   "kind": "add",
   "subject": "Antonio Williams",
@@ -7592,8 +8870,81 @@
   "reverses": null
  },
  {
-  "id": "b3350fe2",
-  "ts": "2026-10-04T12:03-04:00",
+  "id": "242e14c4",
+  "ts": "2026-10-04T11:02-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Malaki Starks",
+  "call": "add Malaki Starks (DB) over Kam Curl",
+  "detail": "+4.46/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "baceaca1",
+  "ts": "2026-10-04T11:02-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Nick Emmanwori",
+  "call": "add Nick Emmanwori (DB) over Kam Curl",
+  "detail": "+3.68/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "0fc0173c",
+  "ts": "2026-10-04T11:02-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Cam Bynum",
+  "call": "add Cam Bynum (DB) over Kam Curl",
+  "detail": "+3.04/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "67ef0c62",
+  "ts": "2026-10-04T12:09-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Antonio Williams",
+  "call": "drop DeMario Douglas -> add Antonio Williams",
+  "detail": "+6.3 season",
+  "evidence": [
+   "sleeper",
+   "usage"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "ef4a3b2a",
+  "ts": "2026-10-04T12:09-04:00",
   "league": "HH",
   "kind": "add",
   "subject": "Malaki Starks",
@@ -7610,8 +8961,8 @@
   "reverses": null
  },
  {
-  "id": "ac9ce1ad",
-  "ts": "2026-10-04T12:03-04:00",
+  "id": "68c55e98",
+  "ts": "2026-10-04T12:09-04:00",
   "league": "HH",
   "kind": "add",
   "subject": "Nick Emmanwori",
@@ -7628,8 +8979,8 @@
   "reverses": null
  },
  {
-  "id": "d5926044",
-  "ts": "2026-10-04T12:03-04:00",
+  "id": "d8f6ddf0",
+  "ts": "2026-10-04T12:09-04:00",
   "league": "HH",
   "kind": "add",
   "subject": "Cam Bynum",
@@ -7643,6 +8994,98 @@
   "status": "blocked",
   "provisional": false,
   "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "3d08c7ea",
+  "ts": "2026-10-04T12:09-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Antonio Williams",
+  "call": "drop DeMario Douglas -> add Antonio Williams",
+  "detail": "+6.3 season",
+  "evidence": [
+   "sleeper",
+   "usage"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "661671ae",
+  "ts": "2026-10-04T12:09-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Malaki Starks",
+  "call": "add Malaki Starks (DB) over Kam Curl",
+  "detail": "+4.41/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "45a357c0",
+  "ts": "2026-10-04T12:09-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Nick Emmanwori",
+  "call": "add Nick Emmanwori (DB) over Kam Curl",
+  "detail": "+3.63/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "1d5df012",
+  "ts": "2026-10-04T12:09-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Cam Bynum",
+  "call": "add Cam Bynum (DB) over Kam Curl",
+  "detail": "+2.99/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 4,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "6179400e",
+  "ts": "2026-10-04T12:41-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Jameson Williams",
+  "call": "start Jameson Williams at W/R/T",
+  "detail": "over Travis Kelce +0.00",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "PASS",
+  "week": 4,
+  "status": "proposed",
+  "provisional": true,
+  "resolves_at": "2026-10-04T20:20-04:00",
   "reverses": null
  }
 ]

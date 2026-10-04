@@ -14,11 +14,12 @@ SHARES of the team, which is the only form that compares across offenses.
 Doctrine (Caleb, 09-16): "Don't over value certain offenses. Individual points
 matter." A share is per-player. Nothing here haircuts a player for his team.
 """
+from . import paths as _paths
 import csv, os
 from collections import defaultdict
 from .names import key, team
 
-D = '/home/claude/bsb2/data/'
+D = _paths.data('')
 POS = ('QB', 'RB', 'WR', 'TE')
 
 def _f(v):
@@ -65,9 +66,11 @@ def load(week):
     return rows
 
 def pulled_at(week):
-    """Newest mtime among the position files, as a datetime in ET, or None."""
-    from . import clock as C
-    import datetime as dt
-    ts = [os.path.getmtime(D + f'usage_wk{week}_{p}.csv') for p in POS if os.path.exists(D + f'usage_wk{week}_{p}.csv')]
-    if not ts: return None
-    return dt.datetime.fromtimestamp(max(ts), tz=dt.timezone.utc).astimezone(C.ET)
+    """When the week's usage pull was made, from the loader's as-of record (the pump's
+    history for each position file) -> newest, ET; None when no file is on disk or any
+    file's as-of is unknown. Never the file's mtime (a checkout resets every mtime)."""
+    from . import contract as CT
+    root = os.path.dirname(D.rstrip('/'))
+    ts = [CT.file_as_of(f'usage_wk{week}_{p}.csv', root=root)[0] for p in POS if os.path.exists(D + f'usage_wk{week}_{p}.csv')]
+    if not ts or any(t is None for t in ts): return None
+    return max(ts)

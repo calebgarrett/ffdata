@@ -1,0 +1,12 @@
+id: s24_tuesday_rollover
+title: Tuesday 07:00 rollover before week-5 Sleeper files land -> data week stays 4, no C1 refuse
+doctrine: ''
+now: 2026-10-06T08:00-04:00
+week: 4
+base: _base
+mutations: []
+expect:
+  refused: []
+  card_contains:
+  - week 4
+status: stub

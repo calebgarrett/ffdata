@@ -1,0 +1,26 @@
+id: s04_started_drop_tuesday
+title: a player whose game has started, proposed as a drop -> Tuesday timing, never now
+doctrine: 'Yahoo locks a started player for the WEEK (Caleb 09-28): the swap is Tuesday'
+now: 2026-10-04T09:00-04:00
+week: 4
+base: _base
+mutations:
+- op: clock_past_kickoff
+  team: KC
+  minutes: 30
+expect:
+  sanity: pass
+  actions_exclude:
+  - league: HH
+    kind: bye_cover
+    drop: Harrison Butker
+    when: now
+  actions_include:
+  - league: HH
+    kind: bye_cover
+    drop: Harrison Butker
+    when_contains: Tuesday
+  plan_exclude:
+  - league: HH
+    drop: Harrison Butker
+    when: now

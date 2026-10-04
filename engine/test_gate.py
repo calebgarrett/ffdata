@@ -130,7 +130,18 @@ CASES.append(('CONTROL start a benched player with a posted market (should PASS)
 import json as _json
 _R=_json.load(open(D+'roles.json'))
 _drop=next((r for r in BSB.bench() if r['key'] in _R['drop_ok']), None)
-_add=next((n for n in ('Antonio Williams','Malachi Fields','T.J. Hockenson') if BSB.owner_of(n) is None), None)
+# A registry add_yes entry older than 14 days is demoted (lib/rules.py, contract C16):
+# week-1 usage is not evidence in week 4. The control's premise is a free agent with
+# OBSERVED usage, so it takes a still-fresh add_yes entry when one is free, else the
+# player's row in the newest weekly usage pull (the other form G11 accepts).
+from lib import rules as _RU, usage as _U
+_fresh=[k for k in _RU.load_roles(D+'roles.json').get('add_yes',{}) if not k.startswith('_')]
+_add=next((n for n in _fresh+['Antonio Williams','Malachi Fields','T.J. Hockenson'] if BSB.owner_of(n) is None), None)
+_use=None
+if _add and key(_add) not in _fresh:
+    for _w in range(C.nfl_week(), 0, -1):
+        _row=_U.load(_w).get(key(_add))
+        if _row: _use=f"{_row['snap_share']:.0%} of snaps, {_row['tgt_share']:.0%} target share, week {_w} usage pull"; break
 if _drop:
     CASES.append((f'CONTROL drop a drop_ok bench player ({_drop["player"]}) (should PASS)', G.check(
         'drop',f'drop {_drop["player"]}',player=_drop['player'],designation=_drop['designation'],
@@ -141,7 +152,7 @@ if _add:
     CASES.append((f'CONTROL add a usage-verified free agent ({_add}) with a fresh league read (should PASS)', G.check(
         'add',f'add {_add}',player=_add,designation='none',
         sources=['fftoday','usage'],pos='WR',value=78.0,horizon='season',
-        roster_keys={r['key'] for r in BSB.rows},pulled=TODAY,state=_fresh)))
+        roster_keys={r['key'] for r in BSB.rows},pulled=TODAY,state=_fresh,usage=_use)))
     # 14. Fields 09-23: 'unrostered, checked against every roster' — against a league read
     #     three days old, from BEFORE Wednesday's waiver run. He had been claimed.
     _stale = _copy.copy(BSB); _stale.others_pulled = (C.bsb_waiver_deadline() - C.dt.timedelta(days=3)).isoformat(timespec='minutes')
