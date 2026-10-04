@@ -56,30 +56,30 @@
    "DEF": "DST:MIN",
    "K": "jason myers",
    "QB": "matt stafford",
-   "RB1": "marshawn lloyd",
-   "RB2": "james cook",
+   "RB1": "james cook",
+   "RB2": "marshawn lloyd",
    "TE": "sam laporta",
    "W/R/T": "isaiah likely",
    "WR1": "jaxon smith njigba",
    "WR2": "drake london",
    "WR3": "malik washington"
   },
-  "optimal_before_moves": 134.74,
+  "optimal_before_moves": 138.63,
   "slots": {
    "DEF": "Vikings",
    "K": "Jason Myers",
    "QB": "Matthew Stafford",
-   "RB1": "MarShawn Lloyd",
-   "RB2": "James Cook III",
+   "RB1": "James Cook III",
+   "RB2": "MarShawn Lloyd",
    "TE": "Sam LaPorta",
    "W/R/T": "Isaiah Likely",
    "WR1": "Jaxon Smith-Njigba",
    "WR2": "Drake London",
    "WR3": "Malik Washington"
   },
-  "total": 134.74
+  "total": 138.63
  },
- "made": "2026-10-04T12:41-04:00",
+ "made": "2026-10-04T14:23-04:00",
  "mechanics": [
   {
    "rule": "A never-rostered free agent is free until his game kicks off",
@@ -121,37 +121,37 @@
  "notes": [],
  "rejected": [
   {
-   "J": -0.421,
+   "J": -0.445,
    "key": "brycen tremayne",
    "name": "Brycen Tremayne",
-   "reason": "J -0.42 < 3.0 at its best spot (DeMario Douglas) \u2014 J -0.42 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.3x+0.13 (rest, mean of wks 6-17) + 0.1x+0.39 (bench boom) - 0.00 acq - 0.00 FAB($0) - 0.50 churn",
+   "reason": "J -0.45 < 3.0 at its best spot (Jauan Jennings) \u2014 J -0.45 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.3x+0.14 (rest, mean of wks 6-17) + 0.1x+0.14 (bench boom) - 0.00 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
-    "breakout tier A: 81% snaps, 12% targets, 38% air yds; Kalshi receiving yds 38 vs Sleeper 32 (+17%)"
+    "breakout tier A: 81% snaps, 12% targets, 38% air yds; Kalshi receiving yds 38 vs Sleeper 32 (+19%)"
    ]
   },
   {
    "J": null,
    "key": "cade otton",
    "name": "Cade Otton",
-   "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 6.8 under your weakest 10.4",
+   "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 7.5 under your weakest 11.3",
    "reasons": [
-    "breakout tier B: 94% snaps, 16% targets, 14% air yds; Kalshi receiving yds 29 vs Sleeper 33 (-13%) \u2014 a part-time line, under the 35 starter floor; held (wk2: 89% snaps, 18% targets, 16% air yds)"
+    "breakout tier B: 94% snaps, 16% targets, 14% air yds; no market line yet (Sleeper receiving yds 33); held (wk2: 89% snaps, 18% targets, 16% air yds)"
    ]
   },
   {
-   "J": 0.394,
+   "J": -0.501,
    "key": "kaleb johnson",
    "name": "Kaleb Johnson",
    "reason": "best spot DeMario Douglas: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
-    "breakout tier B: 36% snaps, 47% of RB touches; Kalshi rushing yds 34 vs Sleeper 21 (+62%) \u2014 a part-time line, under the 40 starter floor"
+    "breakout tier B: 36% snaps, 47% of RB touches; no market line yet (Sleeper rushing yds 21)"
    ]
   },
   {
    "J": null,
    "key": "konata mumpfield",
    "name": "Konata Mumpfield",
-   "reason": "sits behind everyone: you carry 8 WRs for 3 slot(s) and he projects 2.3 under your weakest 7.1",
+   "reason": "sits behind everyone: you carry 8 WRs for 3 slot(s) and he projects 2.3 under your weakest 5.7",
    "reasons": [
     "breakout tier B: 73% snaps, 15% targets, 29% air yds; no market line yet (Sleeper receiving yds 10)"
    ]
@@ -160,9 +160,9 @@
    "J": null,
    "key": "tyler higbee",
    "name": "Tyler Higbee",
-   "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 8.3 under your weakest 10.4",
+   "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 8.1 under your weakest 11.3",
    "reasons": [
-    "breakout tier B: 71% snaps, 20% targets, 17% air yds; Kalshi receiving yds 34 vs Sleeper 32 (+7%) \u2014 a part-time line, under the 35 starter floor"
+    "breakout tier B: 71% snaps, 20% targets, 17% air yds; no market line yet (Sleeper receiving yds 32)"
    ]
   }
  ],
@@ -237,9 +237,9 @@
   "W_REST": 0.3
  },
  "winprob": {
-  "mean": 135.14380963813957,
-  "note": "sampled on the planner's final lineup",
-  "p_med": 0.5213333333333333,
-  "p_opp": 0.3815
+  "mean": 138.50072151452542,
+  "note": "final lineup = current lineup (the engine's own number)",
+  "p_med": 0.5365,
+  "p_opp": 0.42083333333333334
  }
 }
