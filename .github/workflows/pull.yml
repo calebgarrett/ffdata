@@ -34,7 +34,7 @@ jobs:
         with: { python-version: '3.12' }
       - name: engine — unpack once, install numpy/scipy
         run: |
-          pip install -q numpy scipy
+          pip install -q numpy scipy pyyaml
           if [ -f engine.tar.gz ]; then
             rm -rf engine && mkdir -p engine && tar xzf engine.tar.gz -C engine
             git rm -q --cached engine.tar.gz 2>/dev/null || true
