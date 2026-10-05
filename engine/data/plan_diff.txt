@@ -1,15 +1,14 @@
-PLAN DIFF — week 4 — Sun Oct 4, 5:54 pm ET  (shadow mode: the card still shows the live calls; FF_PLANNER=1 renders the plan)
+PLAN DIFF — week 4 — Sun Oct 4, 8:44 pm ET  (shadow mode: the card still shows the live calls; FF_PLANNER=1 renders the plan)
 objective: J = 1.0*dS_W + 0.8*dS_W1 + 0.3*dS_rest(mean of weeks W+2..17) + 0.1*d_bench_boom - acq ({'HH': 1.0, 'BSB': 0.0}) - 0.1*bid - 0.5*txns; ship at J >= 3.0
 
 == BSB ================================================================================
   card Decide calls vs the plan:
-    CARD ONLY breakout A: add Brycen Tremayne drop DeMario Douglas
-              planner: J -1.97 < 3.0 at its best spot (DeMario Douglas) — J -1.97 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.3x+0.16 (rest, mean of wks 6-17) + 0.1x+0.85 (bench boom) - 0.00 acq - 1.60 FAB($16) - 0.50 churn
+    (the card has no Decide call in this league)
   budgets: {"acq_used": 0, "acq_left": null, "acq_reset": null, "acq_reset_verified": null, "fab_left": 93, "ir_free": 0, "open_spots": 0}
-  final lineup week 4: 137.5 pts (optimal before moves 137.5) · P(beat opp) 58% · P(beat median) 58%
+  final lineup week 4: 137.3 pts (optimal before moves 137.3) · P(beat opp) 59% · P(beat median) 60%
   considered and rejected (5):
+    - Brycen Tremayne: best spot DeMario Douglas: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
     - Kaleb Johnson: best spot DeMario Douglas: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
-    - Brycen Tremayne: J -1.97 < 3.0 at its best spot (DeMario Douglas) — J -1.97 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.3x+0.16 (rest, mean of wks 6-17) + 0.1x+0.85 (bench boom) - 0.00 acq - 1.60 FAB($16) - 0.50 churn
     - Cade Otton: sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 7.5 under your weakest 11.3
     - Konata Mumpfield: sits behind everyone: you carry 8 WRs for 3 slot(s) and he projects 2.3 under your weakest 5.7
     - Tyler Higbee: sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 8.1 under your weakest 11.3
@@ -26,7 +25,7 @@ objective: J = 1.0*dS_W + 0.8*dS_W1 + 0.3*dS_rest(mean of weeks W+2..17) + 0.1*d
               - week-5 K stream: Chris Boswell 14.6 vs your best 0.0 (W projection x own implied total 25.0/21.5)
               - the spot: Harrison Butker — the only K
   budgets: {"acq_used": 2, "acq_left": 5, "acq_reset": "2026-09-29T07:00-04:00", "acq_reset_verified": false, "fab_left": null, "ir_free": 1, "open_spots": 0}
-  final lineup week 4: 300.0 pts (optimal before moves 300.0) · P(beat opp) 49%
+  final lineup week 4: 300.4 pts (optimal before moves 300.4) · P(beat opp) 49%
   considered and rejected (19):
     - Jake Bates: its best spot (Harrison Butker) went to Chris Boswell at higher value
     - Harrison Mevis: its best spot (Harrison Butker) went to Chris Boswell at higher value
@@ -36,7 +35,7 @@ objective: J = 1.0*dS_W + 0.8*dS_W1 + 0.3*dS_rest(mean of weeks W+2..17) + 0.1*d
     - Kaleb Johnson: best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
     - KC Concepcion: best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
     - Pat Bryant: best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
-    - Brycen Tremayne: J -1.99 < 3.0 at its best spot (Chiefs) — J -1.99 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.3x-2.00 (rest, mean of wks 6-17) + 0.1x+1.08 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn
+    - Brycen Tremayne: best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
     - Jakobi Meyers: best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
     - Rashod Bateman: best spot Chiefs: Tier B (unpriced) never takes the spare DEF — Tier A only
     - Carnell Tate: best spot Chiefs: Tier B (unpriced) never takes the spare DEF — Tier A only
@@ -47,7 +46,7 @@ objective: J = 1.0*dS_W + 0.8*dS_W1 + 0.3*dS_rest(mean of weeks W+2..17) + 0.1*d
     - Brenton Strange: sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 9.5 under your weakest 11.6
     - Cade Otton: sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 7.1 under your weakest 11.6
     - Tyler Higbee: sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 7.6 under your weakest 11.6
-  not a clean drop: Dak Prescott (gate: G6-magnitude 37.74047996615965 below QB season bounds [60,600] —); Jaylen Warren (his game is final / live — finished and live players never move); Ja'Marr Chase (starter-level usage in his own right (100% snaps, 32% targets, 34% air); Trey McBride (starter-level usage in his own right (91% snaps, 21% targets, 32% air ); Drake London (starter-level usage in his own right (93% snaps, 40% targets, 80% air ); Travis Kelce (starter-level usage in his own right (79% snaps, 8% targets, 27% air y); Jared Goff (gate: G6-magnitude 37.86288658782074 below QB season bounds [60,600] —); Rome Odunze (starter-level usage in his own right (85% snaps, 18% targets, 33% air ); Matthew Stafford (gate: G6-magnitude 33.554075138483135 below QB season bounds [60,600] ); Jameson Williams (starter-level usage in his own right (82% snaps, 12% targets, 34% air ); Malik Washington (you added him 2026-10-01 (<= 7 days) — your decision, not the spot); Denzel Boston (you added him 2026-10-02 (<= 7 days) — your decision, not the spot); Texans (registry HOLD — HOLD in Heritage House. A 7-acquisition league rations); Foyesade Oluokun (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Budda Baker (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); T.J. Watt (his game is final / live — finished and live players never move); Carson Schwesinger (his game is final / live — finished and live players never move); Cooper DeJean (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Kam Curl (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Nick Cross (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Alontae Taylor (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR)
+  not a clean drop: Dak Prescott (gate: G6-magnitude 37.74047996615965 below QB season bounds [60,600] —); Jaylen Warren (his game is final / live — finished and live players never move); Ja'Marr Chase (starter-level usage in his own right (100% snaps, 32% targets, 34% air); Trey McBride (starter-level usage in his own right (91% snaps, 21% targets, 32% air ); Drake London (starter-level usage in his own right (93% snaps, 40% targets, 80% air ); Travis Kelce (starter-level usage in his own right (79% snaps, 8% targets, 27% air y); Jared Goff (gate: G6-magnitude 38.482787356618054 below QB season bounds [60,600] ); Rome Odunze (starter-level usage in his own right (85% snaps, 18% targets, 33% air ); Matthew Stafford (gate: G6-magnitude 33.554075138483135 below QB season bounds [60,600] ); Jameson Williams (starter-level usage in his own right (82% snaps, 12% targets, 34% air ); Malik Washington (you added him 2026-10-01 (<= 7 days) — your decision, not the spot); Denzel Boston (you added him 2026-10-02 (<= 7 days) — your decision, not the spot); Texans (registry HOLD — HOLD in Heritage House. A 7-acquisition league rations); Foyesade Oluokun (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Budda Baker (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); T.J. Watt (his game is final / live — finished and live players never move); Carson Schwesinger (his game is final / live — finished and live players never move); Cooper DeJean (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Kam Curl (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Nick Cross (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Alontae Taylor (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR)
   UNVERIFIED mechanics: 7 acquisitions per week, counted from the most recent Tuesday 07:00 ET | A player dropped To Waivers sits on waivers 1 day | An O tag is IR-eligible | A benched player whose game is over cannot be dropped before the week rolls
 
 plan simulation (sanity check 11): clean — legal at every step, each spot once, budgets held

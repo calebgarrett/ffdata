@@ -9,7 +9,6 @@
   "refused": []
  },
  "decide": [
-  "BSB \u2014 breakout add, tier A Add Brycen Tremayne WR CAR \u00b7 drop DeMario Douglas When: free agent until his game kicks off; after that a waiver claim, in by Tue night (runs Wed ~5am) \u2014 bid $16: clears what the likely field would pay. Field of 8",
   "HH \u2014 week 5 bye cover, Tuesday Add Jake Bates K, DET \u2192 drop Harrison Butker (Tuesday) Week 5: Harrison Butker is on bye, so the slot is empty without a move. DET 28.5 is the best free K on posted lines (own-team implied total). No clean dro"
  ],
  "fast": false,
@@ -18,8 +17,8 @@
    "actions": [
     {
      "add": "Brycen Tremayne",
-     "bid": 16,
-     "drop": "DeMario Douglas",
+     "bid": null,
+     "drop": null,
      "gates": [],
      "kind": "breakout",
      "provisional": false,
@@ -28,11 +27,11 @@
      "start": null,
      "status": null,
      "subject": "Brycen Tremayne",
-     "tier": "A",
-     "verb": "ADD",
+     "tier": "B",
+     "verb": "WAIT",
      "verdict": "PASS",
-     "when": "free agent until his game kicks off; after that a waiver claim, in by Tue night (runs Wed ~5am) \u2014 bid $16: clears what the likely field would pay. Field of 8, led by Short Bus (bids on anything good; $75 left, priced at $15 from one $25 claim), FWU (bids on anything good; $19 left, priced at $6 from 9 claims), Ex-Presidents (bids on anything good; $93 left, priced at $4 from one $7 claim), Deadites (bids on anything good; $93 left, priced at $3 from 2 claims) \u2014 locks Sun 8:20 PM ET",
-     "why": "usage says starter and the market agrees. DeMario Douglas is the spot: lowest-valued bench player (part-time usage last week)."
+     "when": "next usage pull (Tuesday) \u2014 add then if the snaps hold or the market moves toward him",
+     "why": "one game of starter usage; no market confirmation yet and the spot would cost a real player"
     },
     {
      "add": "Cade Otton",
@@ -155,7 +154,7 @@
     "rejected": [
      {
       "name": "Brycen Tremayne",
-      "reason": "J -1.97 < 3.0 at its best spot (DeMario Douglas) \u2014 J -1.97 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.3x+0.16 (rest, mean of wks 6-17) + 0.1x+0.85 (bench boom) - 0.00 acq - 1.60 FAB($16) - 0.50 churn"
+      "reason": "best spot DeMario Douglas: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
      },
      {
       "name": "Cade Otton",
@@ -194,24 +193,6 @@
      "subject": "Jake Bates",
      "verdict": "PASS",
      "when": "Tuesday 2026-10-06T07:00-04:00"
-    },
-    {
-     "add": "Brycen Tremayne",
-     "bid": null,
-     "drop": null,
-     "gates": [],
-     "kind": "breakout",
-     "provisional": false,
-     "sit": null,
-     "slot": null,
-     "start": null,
-     "status": null,
-     "subject": "Brycen Tremayne",
-     "tier": "A",
-     "verb": "WAIT",
-     "verdict": "PASS",
-     "when": "no clean drop left",
-     "why": "the rest of the bench is a hold, a handcuff, starter-level usage in its own right, or has no depth-chart check on record \u2014 adding him means cutting one of those"
     },
     {
      "add": "Ollie Gordon",
@@ -261,6 +242,24 @@
      "start": null,
      "status": null,
      "subject": "Keenan Allen",
+     "tier": "B",
+     "verb": "WAIT",
+     "verdict": "PASS",
+     "when": "next usage pull (Tuesday) \u2014 add then if the snaps hold or the market moves toward him",
+     "why": "one game of starter usage; no market confirmation yet and the spot would cost a real player"
+    },
+    {
+     "add": "Brycen Tremayne",
+     "bid": null,
+     "drop": null,
+     "gates": [],
+     "kind": "breakout",
+     "provisional": false,
+     "sit": null,
+     "slot": null,
+     "start": null,
+     "status": null,
+     "subject": "Brycen Tremayne",
      "tier": "B",
      "verb": "WAIT",
      "verdict": "PASS",
@@ -562,7 +561,7 @@
      },
      {
       "name": "Brycen Tremayne",
-      "reason": "J -1.99 < 3.0 at its best spot (Chiefs) \u2014 J -1.99 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.3x-2.00 (rest, mean of wks 6-17) + 0.1x+1.08 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn"
+      "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
      },
      {
       "name": "Cade Otton",
@@ -629,6 +628,6 @@
    "pulled": "2026-10-04T16:01:26+00:00"
   }
  },
- "now": "2026-10-04T17:54-04:00",
+ "now": "2026-10-04T20:44-04:00",
  "week": 4
 }

@@ -35,7 +35,7 @@
   },
   {
    "player": "Jared Goff",
-   "reason": "gate: G6-magnitude 37.86288658782074 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex: 3 QBs for 2 QB-eligible slots \u2014 QB3 is by"
+   "reason": "gate: G6-magnitude 38.482787356618054 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex: 3 QBs for 2 QB-eligible slots \u2014 QB3 is b"
   },
   {
    "player": "Rome Odunze",
@@ -113,7 +113,7 @@
    "W/R/T": "travis kelce",
    "WR": "jamarr chase"
   },
-  "optimal_before_moves": 299.99,
+  "optimal_before_moves": 300.41,
   "slots": {
    "CB": "Cooper DeJean",
    "D": "Foyesade Oluokun",
@@ -131,9 +131,9 @@
    "W/R/T": "Travis Kelce",
    "WR": "Ja'Marr Chase"
   },
-  "total": 299.99
+  "total": 300.41
  },
- "made": "2026-10-04T17:54-04:00",
+ "made": "2026-10-04T20:45-04:00",
  "mechanics": [
   {
    "rule": "Free agents are immediate unless his game is in progress",
@@ -297,12 +297,12 @@
    ]
   },
   {
-   "J": -1.991,
+   "J": -1.989,
    "key": "brycen tremayne",
    "name": "Brycen Tremayne",
-   "reason": "J -1.99 < 3.0 at its best spot (Chiefs) \u2014 J -1.99 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.3x-2.00 (rest, mean of wks 6-17) + 0.1x+1.08 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
+   "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
-    "breakout tier A: 81% snaps, 12% targets, 38% air yds; Kalshi receiving yds 38 vs Sleeper 32 (+17%)"
+    "breakout tier B: 81% snaps, 12% targets, 38% air yds; no market line yet (Sleeper receiving yds 32)"
    ]
   },
   {
@@ -338,17 +338,17 @@
    "name": "Harrison Mevis",
    "reason": "its best spot (Harrison Butker) went to Chris Boswell at higher value",
    "reasons": [
-    "week-5 hole at K (Harrison Butker on bye); Harrison Mevis 13.7 is the best free K on week-5 values",
-    "week-5 K stream: Harrison Mevis 13.7 vs your best 0.0 (W projection x own implied total 28.2/24.5)"
+    "week-5 hole at K (Harrison Butker on bye); Harrison Mevis 13.7 is the best free K on week-5 values"
    ]
   },
   {
-   "J": 8.857,
+   "J": 9.045,
    "key": "jake bates",
    "name": "Jake Bates",
    "reason": "its best spot (Harrison Butker) went to Chris Boswell at higher value",
    "reasons": [
-    "week-5 hole at K (Harrison Butker on bye); Jake Bates 13.6 is the best free K on week-5 values"
+    "week-5 hole at K (Harrison Butker on bye); Jake Bates 13.8 is the best free K on week-5 values",
+    "week-5 K stream: Jake Bates 13.8 vs your best 0.0 (W projection x own implied total 28.5/25.2)"
    ]
   },
   {
@@ -471,9 +471,9 @@
   "W_REST": 0.3
  },
  "winprob": {
-  "mean": 299.7116260766873,
+  "mean": 299.89633747452257,
   "note": "final lineup = current lineup (the engine's own number)",
   "p_med": null,
-  "p_opp": 0.493
+  "p_opp": 0.487
  }
 }
