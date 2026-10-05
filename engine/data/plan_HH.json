@@ -11,7 +11,7 @@
  "excluded": [
   {
    "player": "Dak Prescott",
-   "reason": "gate: G6-magnitude 37.74047996615965 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex: 3 QBs for 2 QB-eligible slots \u2014 QB3 is by"
+   "reason": "his game is final / live \u2014 finished and live players never move"
   },
   {
    "player": "Jaylen Warren",
@@ -19,11 +19,11 @@
   },
   {
    "player": "Ja'Marr Chase",
-   "reason": "starter-level usage in his own right (100% snaps, 32% targets, 34% air yds)"
+   "reason": "his game is final / live \u2014 finished and live players never move"
   },
   {
    "player": "Trey McBride",
-   "reason": "starter-level usage in his own right (91% snaps, 21% targets, 32% air yds)"
+   "reason": "his game is final / live \u2014 finished and live players never move"
   },
   {
    "player": "Drake London",
@@ -31,23 +31,23 @@
   },
   {
    "player": "Travis Kelce",
-   "reason": "starter-level usage in his own right (79% snaps, 8% targets, 27% air yds)"
+   "reason": "his game is final / live \u2014 finished and live players never move"
   },
   {
    "player": "Jared Goff",
-   "reason": "gate: G6-magnitude 38.482787356618054 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex: 3 QBs for 2 QB-eligible slots \u2014 QB3 is b"
+   "reason": "his game is final / live \u2014 finished and live players never move"
   },
   {
    "player": "Rome Odunze",
-   "reason": "starter-level usage in his own right (85% snaps, 18% targets, 33% air yds)"
+   "reason": "his game is final / live \u2014 finished and live players never move"
   },
   {
    "player": "Matthew Stafford",
-   "reason": "gate: G6-magnitude 33.554075138483135 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex: 3 QBs for 2 QB-eligible slots \u2014 QB3 is b"
+   "reason": "his game is final / live \u2014 finished and live players never move"
   },
   {
    "player": "Jameson Williams",
-   "reason": "starter-level usage in his own right (82% snaps, 12% targets, 34% air yds)"
+   "reason": "his game is final / live \u2014 finished and live players never move"
   },
   {
    "player": "Malik Washington",
@@ -58,16 +58,24 @@
    "reason": "you added him 2026-10-02 (<= 7 days) \u2014 your decision, not the spot"
   },
   {
+   "player": "Harrison Butker",
+   "reason": "his game is final / live \u2014 finished and live players never move"
+  },
+  {
+   "player": "Chiefs",
+   "reason": "his game is final / live \u2014 finished and live players never move"
+  },
+  {
    "player": "Texans",
    "reason": "registry HOLD \u2014 HOLD in Heritage House. A 7-acquisition league rations streaming, and Tecmo Bowl"
   },
   {
    "player": "Foyesade Oluokun",
-   "reason": "gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])"
+   "reason": "his game is final / live \u2014 finished and live players never move"
   },
   {
    "player": "Budda Baker",
-   "reason": "gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])"
+   "reason": "his game is final / live \u2014 finished and live players never move"
   },
   {
    "player": "T.J. Watt",
@@ -79,19 +87,19 @@
   },
   {
    "player": "Cooper DeJean",
-   "reason": "gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])"
+   "reason": "his game is final / live \u2014 finished and live players never move"
   },
   {
    "player": "Kam Curl",
-   "reason": "gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])"
+   "reason": "his game is final / live \u2014 finished and live players never move"
   },
   {
    "player": "Nick Cross",
-   "reason": "gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])"
+   "reason": "his game is final / live \u2014 finished and live players never move"
   },
   {
    "player": "Alontae Taylor",
-   "reason": "gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])"
+   "reason": "his game is final / live \u2014 finished and live players never move"
   }
  ],
  "league": "HH",
@@ -113,7 +121,7 @@
    "W/R/T": "travis kelce",
    "WR": "jamarr chase"
   },
-  "optimal_before_moves": 300.41,
+  "optimal_before_moves": 317.1,
   "slots": {
    "CB": "Cooper DeJean",
    "D": "Foyesade Oluokun",
@@ -131,9 +139,9 @@
    "W/R/T": "Travis Kelce",
    "WR": "Ja'Marr Chase"
   },
-  "total": 300.41
+  "total": 317.1
  },
- "made": "2026-10-04T20:45-04:00",
+ "made": "2026-10-05T02:52-04:00",
  "mechanics": [
   {
    "rule": "Free agents are immediate unless his game is in progress",
@@ -171,118 +179,23 @@
    "verified": false
   }
  ],
- "moves": [
-  {
-   "J": 9.565,
-   "add_key": "chris boswell",
-   "add_name": "Chris Boswell",
-   "at": "2026-10-06T07:00-04:00",
-   "deadline": null,
-   "drop_name": "Harrison Butker",
-   "eff": "W+1",
-   "fam": "K",
-   "gates": {
-    "add": {
-     "checks": [
-      {
-       "gate": "G7-ready",
-       "msg": "NO player market posted for this game yet \u2014 call is PROVISIONAL, re-run when lines post",
-       "status": "WARN"
-      }
-     ],
-     "verdict": "WARN"
-    },
-    "drop": {
-     "checks": [
-      {
-       "gate": "G7-ready",
-       "msg": "market coverage for this game not established",
-       "status": "WARN"
-      }
-     ],
-     "verdict": "WARN"
-    }
-   },
-   "id": "HH:chris boswell",
-   "kind": "add",
-   "league": "HH",
-   "provisional": false,
-   "reasons": [
-    "week-5 hole at K (Harrison Butker on bye); Chris Boswell 14.6 is the best free K on week-5 values",
-    "week-5 K stream: Chris Boswell 14.6 vs your best 0.0 (W projection x own implied total 25.0/21.5)",
-    "the spot: Harrison Butker \u2014 the only K"
-   ],
-   "spot_id": "drop:harrison butker",
-   "spot_kind": "swap",
-   "spot_label": "Harrison Butker",
-   "srcs": [
-    "hole",
-    "stream"
-   ],
-   "tier": null,
-   "timing_why": "Harrison Butker has played or kicked off this week \u2014 Yahoo locks him until the week rolls",
-   "tm": "PIT",
-   "txns": [
-    {
-     "key": "chris boswell",
-     "op": "add",
-     "player": "Chris Boswell"
-    },
-    {
-     "key": "harrison butker",
-     "op": "drop",
-     "player": "Harrison Butker"
-    }
-   ],
-   "value_terms": {
-    "J": 9.565,
-    "acq": 1,
-    "bid": 0,
-    "dS_W": 0.0,
-    "dS_W1": 14.556,
-    "dS_rest": -1.934,
-    "d_boom": 0.0,
-    "pen_acq": 1.0,
-    "pen_churn": 0.5,
-    "pen_fab": 0.0,
-    "rest_weeks": "6-17",
-    "txn": 1
-   },
-   "values": {
-    "add": {
-     "boom": null,
-     "ros": 11.73356233076776,
-     "ros_src": "season blend / 17 x HH/BSB K ratio 1.40 (approximation)",
-     "w": 12.518238,
-     "w1": 14.55609069767442,
-     "w1_src": "W projection x own implied total 25.0/21.5"
-    },
-    "drop": {
-     "ros": 12.689386228498844,
-     "ros_src": "season blend / 17 x HH/BSB K ratio 1.40 (approximation)",
-     "w": 13.128754,
-     "w1": 0.0
-    }
-   },
-   "when": "Tuesday (week-lock)"
-  }
- ],
+ "moves": [],
  "notes": [],
  "rejected": [
   {
-   "J": -1.258,
-   "key": "DST:CLE",
-   "name": "Cleveland Browns",
-   "reason": "J -1.26 < 3.0 at its best spot (Chiefs) \u2014 J -1.26 = 1.0x+0.00 (wk W) + 0.8x+0.49 (W+1) + 0.3x-0.50 (rest, mean of wks 6-17) + 0.1x+0.00 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
+   "J": null,
+   "key": "DST:DET",
+   "name": "Detroit Lions",
+   "reason": "no roster spot exists",
    "reasons": [
-    "week-5 DEF stream: Cleveland Browns 25.0 vs your best 24.5 (W line re-scored on the week-5 opponent implied total 20.5)"
+    "week-5 DEF stream: Detroit Lions 24.6 vs your best 24.5 (W line re-scored on the week-5 opponent implied total 20.0)"
    ]
   },
   {
-   "J": -1.388,
+   "J": null,
    "key": "DST:NYJ",
    "name": "New York Jets",
-   "reason": "J -1.39 < 3.0 at its best spot (Chiefs) \u2014 J -1.39 = 1.0x+0.00 (wk W) + 0.8x+0.50 (W+1) + 0.3x-0.97 (rest, mean of wks 6-17) + 0.1x+0.00 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
+   "reason": "you dropped him in BSB on 2026-10-04 (<= 7 days, either league)",
    "reasons": [
     "week-5 DEF stream: New York Jets 25.0 vs your best 24.5 (W line re-scored on the week-5 opponent implied total 19.0)"
    ]
@@ -291,16 +204,16 @@
    "J": null,
    "key": "brenton strange",
    "name": "Brenton Strange",
-   "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 9.5 under your weakest 11.6",
+   "reason": "no roster spot exists",
    "reasons": [
     "breakout tier B: 77% snaps, 17% targets, 5% air yds; no market line yet (Sleeper receiving yds 44)"
    ]
   },
   {
-   "J": -1.989,
+   "J": null,
    "key": "brycen tremayne",
    "name": "Brycen Tremayne",
-   "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
+   "reason": "no roster spot exists",
    "reasons": [
     "breakout tier B: 81% snaps, 12% targets, 38% air yds; no market line yet (Sleeper receiving yds 32)"
    ]
@@ -309,125 +222,135 @@
    "J": null,
    "key": "cade otton",
    "name": "Cade Otton",
-   "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 7.1 under your weakest 11.6",
+   "reason": "no roster spot exists",
    "reasons": [
     "breakout tier B: 94% snaps, 16% targets, 14% air yds; no market line yet (Sleeper receiving yds 33); held (wk2: 89% snaps, 18% targets, 16% air yds)"
    ]
   },
   {
-   "J": -2.024,
+   "J": null,
    "key": "carnell tate",
    "name": "Carnell Tate",
-   "reason": "best spot Chiefs: Tier B (unpriced) never takes the spare DEF \u2014 Tier A only",
+   "reason": "no roster spot exists",
    "reasons": [
     "breakout tier B: 88% snaps, 25% targets, 47% air yds; no market line yet (Sleeper receiving yds 48); held (wk2: 75% snaps, 25% targets, 29% air yds)"
    ]
   },
   {
-   "J": -2.039,
+   "J": null,
    "key": "chris bell",
    "name": "Chris Bell",
-   "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
+   "reason": "no roster spot exists",
    "reasons": [
     "breakout tier B: 71% snaps, 22% targets, 35% air yds; no market line yet (Sleeper receiving yds 33)"
    ]
   },
   {
-   "J": 8.785,
+   "J": null,
+   "key": "chris boswell",
+   "name": "Chris Boswell",
+   "reason": "no roster spot exists",
+   "reasons": [
+    "week-5 hole at K (Harrison Butker on bye); Chris Boswell 14.6 is the best free K on week-5 values",
+    "week-5 K stream: Chris Boswell 14.6 vs your best 0.0 (W projection x own implied total 25.0/21.5)"
+   ]
+  },
+  {
+   "J": null,
    "key": "harrison mevis",
    "name": "Harrison Mevis",
-   "reason": "its best spot (Harrison Butker) went to Chris Boswell at higher value",
+   "reason": "no roster spot exists",
    "reasons": [
     "week-5 hole at K (Harrison Butker on bye); Harrison Mevis 13.7 is the best free K on week-5 values"
    ]
   },
   {
-   "J": 9.045,
+   "J": null,
    "key": "jake bates",
    "name": "Jake Bates",
-   "reason": "its best spot (Harrison Butker) went to Chris Boswell at higher value",
+   "reason": "no roster spot exists",
    "reasons": [
     "week-5 hole at K (Harrison Butker on bye); Jake Bates 13.8 is the best free K on week-5 values",
     "week-5 K stream: Jake Bates 13.8 vs your best 0.0 (W projection x own implied total 28.5/25.2)"
    ]
   },
   {
-   "J": -1.992,
+   "J": null,
    "key": "jakobi meyers",
    "name": "Jakobi Meyers",
-   "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
+   "reason": "no roster spot exists",
    "reasons": [
     "breakout tier B: 81% snaps, 28% targets, 49% air yds; no market line yet (Sleeper receiving yds 49)"
    ]
   },
   {
-   "J": -1.837,
+   "J": null,
    "key": "kaleb johnson",
    "name": "Kaleb Johnson",
-   "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
+   "reason": "no roster spot exists",
    "reasons": [
     "breakout tier B: 36% snaps, 47% of RB touches; no market line yet (Sleeper rushing yds 21)"
    ]
   },
   {
-   "J": -1.964,
+   "J": null,
    "key": "kc concepcion",
    "name": "KC Concepcion",
-   "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
+   "reason": "no roster spot exists",
    "reasons": [
     "breakout tier B: 86% snaps, 29% targets, 14% air yds; no market line yet (Sleeper receiving yds 38)"
    ]
   },
   {
-   "J": -2.099,
+   "J": null,
    "key": "keenan allen",
    "name": "Keenan Allen",
-   "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
+   "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 0.0 under your weakest 5.2",
    "reasons": [
     "breakout tier B: 73% snaps, 25% targets, 34% air yds; no market line yet, and no Sleeper line either"
    ]
   },
   {
-   "J": -2.054,
+   "J": null,
    "key": "konata mumpfield",
    "name": "Konata Mumpfield",
-   "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
+   "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 2.1 under your weakest 5.2",
    "reasons": [
     "breakout tier B: 73% snaps, 15% targets, 29% air yds; no market line yet (Sleeper receiving yds 10)"
    ]
   },
   {
-   "J": -2.029,
+   "J": null,
    "key": "mack hollins",
    "name": "Mack Hollins",
-   "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
+   "reason": "no roster spot exists",
    "reasons": [
     "breakout tier B: 76% snaps, 29% targets, 41% air yds; no market line yet (Sleeper receiving yds 45)"
    ]
   },
   {
-   "J": -1.716,
+   "J": null,
    "key": "ollie gordon",
    "name": "Ollie Gordon",
-   "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
+   "reason": "no roster spot exists",
    "reasons": [
     "breakout tier B: 84% snaps, 83% of RB touches; no market line yet (Sleeper rushing yds 39)"
    ]
   },
   {
-   "J": -1.974,
+   "J": null,
    "key": "pat bryant",
    "name": "Pat Bryant",
-   "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
+   "reason": "no roster spot exists",
    "reasons": [
     "breakout tier B: 70% snaps, 6% targets, 25% air yds; no market line yet (Sleeper receiving yds 32)"
    ]
   },
   {
-   "J": -2.004,
+   "J": null,
    "key": "rashod bateman",
    "name": "Rashod Bateman",
-   "reason": "best spot Chiefs: Tier B (unpriced) never takes the spare DEF \u2014 Tier A only",
+   "reason": "no roster spot exists",
    "reasons": [
     "breakout tier B: 88% snaps, 15% targets, 25% air yds; no market line yet (Sleeper receiving yds 41); held (wk2: 93% snaps, 29% targets, 48% air yds)"
    ]
@@ -436,28 +359,13 @@
    "J": null,
    "key": "tyler higbee",
    "name": "Tyler Higbee",
-   "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 7.6 under your weakest 11.6",
+   "reason": "no roster spot exists",
    "reasons": [
     "breakout tier B: 71% snaps, 20% targets, 17% air yds; no market line yet (Sleeper receiving yds 32)"
    ]
   }
  ],
- "spots": [
-  {
-   "id": "drop:DST:KC",
-   "kind": "spare",
-   "label": "Chiefs",
-   "taken_by": null,
-   "tier": 2
-  },
-  {
-   "id": "drop:harrison butker",
-   "kind": "swap",
-   "label": "Harrison Butker",
-   "taken_by": "Chris Boswell",
-   "tier": 2
-  }
- ],
+ "spots": [],
  "week": 4,
  "weights": {
   "K_ACQ": 1.0,
@@ -471,9 +379,9 @@
   "W_REST": 0.3
  },
  "winprob": {
-  "mean": 299.89633747452257,
+  "mean": 317.2348514879705,
   "note": "final lineup = current lineup (the engine's own number)",
   "p_med": null,
-  "p_opp": 0.487
+  "p_opp": 1.0
  }
 }
