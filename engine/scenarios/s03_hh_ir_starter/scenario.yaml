@@ -30,6 +30,7 @@ expect:
       S:
         not: Kam Curl
   plan_include:
+  # the IR move may stand alone (kind: ir) or be folded into the add that takes the
+  # freed spot (txn 'Kam Curl -> IR') — either way the plan moves him to IR
   - league: HH
-    kind: ir
-    ir: Kam Curl
+    txn_contains: Kam Curl -> IR

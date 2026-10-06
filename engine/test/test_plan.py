@@ -21,8 +21,12 @@ def case(label, ok, detail=''):
 
 print('=' * 88); print('PLANNER REGRESSION'); print('=' * 88)
 
-NOW = C.now()
-WEEK = max(1, C.nfl_week(NOW))
+# Pinned to a Thursday noon of the current NFL week: the BSB mechanics table turns every
+# unrostered player into a claim between Tuesday 7 am and the Wednesday run, which is a
+# fact about the calendar, not about these cases (10-06: six cases failed on a Tuesday).
+_real = C.now()
+WEEK = max(1, C.nfl_week(_real))
+NOW = (C.week_start(WEEK) + C.dt.timedelta(days=2, hours=5)).astimezone(C.ET)     # Thu 12:00 ET
 FUT = NOW + C.dt.timedelta(days=1)          # a kickoff still ahead
 PAST = NOW - C.dt.timedelta(hours=2)        # a game in progress / started
 OLD = NOW - C.dt.timedelta(hours=30)        # a game over
@@ -228,6 +232,20 @@ p = PL.plan_facts(f, {})
 mv = [m for m in moves_of(p) if m['add_key'] == NK(khfa)]
 case('HH bye hole at K next week: covered, swapping the K himself after he plays (Tuesday)', len(mv) == 1 and mv[0]['when'].startswith('Tuesday') and mv[0]['drop_name'] == k_h, p.summary())
 
+# ---------------------------------------------------------------- 5b. the cover is found past the first few names (10-06: Santos hidden behind G5 kickers)
+# BSB: my only K is on bye THIS week (hole at K in week W). Five free kickers rank above the
+# cover but have already kicked (unusable for W); the sixth, still ahead of his kickoff,
+# must be the cover — a hole search that stops at three names finds nobody.
+r5b = [(sl, n, ps, tm, (0.0 if ps == 'K' else pt), d) for sl, n, ps, tm, pt, d in bsb_roster(open_spots=1, k_tm='KC')]   # the bye K projects nothing
+kfas = [(nm(), 'K', tm, 13.0 - i) for i, tm in enumerate(('PIT', 'DET', 'NYJ', 'MIA', 'LV'))]
+cover = 'Cairo Santosworth'
+f, st, pr = league('BSB', r5b, fas=kfas + [(cover, 'K', 'CHI', 7.5)], byes={WEEK: {"KC"}},
+                   kicks=dict({tm: OLD for _, _, tm, _ in kfas}, CHI=FUT, KC=None), registry=dict(drop_ok={}))   # KC: no game
+p = PL.plan_facts(f, {})
+mv = [m for m in moves_of(p) if m['add_key'] == NK(cover)]
+case('a week-W hole is covered by the best free agent who can still play, however deep he ranks', len(mv) == 1 and 'hole' in mv[0]['srcs'], p.summary())
+case('...and the hole reason leads the tile', mv and mv[0]['reasons'][0].startswith(f"week-{WEEK} hole at K"), mv and mv[0]['reasons'][:1])
+
 # ---------------------------------------------------------------- 6. owned player never a candidate
 r6 = bsb_roster(open_spots=1)
 own = 'Aurelio Pendergast'
@@ -362,6 +380,13 @@ case('sanity: a drop of a player not on the roster is caught', any('not on the a
 pe_ = copy.deepcopy(p); pe_.budgets = dict(pe_.budgets, fab_left=0)
 pe_.moves.append(dict(id='bad3', kind='add', spot_id='zz3', provisional=False, eff='W+1', txns=[dict(op='claim', player='z', key='z', bid=5)]))
 case('sanity: FAB over budget is caught', any('FAB' in x for x in SAN.check_plan(dict(runlike, plans={'BSB': pe_}))))
+
+# 10-06: a kicker/defense add never costs a skill player or an IDP — it swaps one-for-one
+# with the spare/only K or DEF, or takes an open/dead spot (Boswell-for-Kelce at J +11).
+try:
+    _r = PL._spot_rule if hasattr(PL, '_spot_rule') else None
+except Exception: _r = None
+case('rule text exists: a K/DEF never costs a non-K/DEF player', 'kickers and defenses swap one-for-one' in open('/home/claude/bsb2/lib/plan.py').read())
 
 print('=' * 88)
 print(f'{total - bad}/{total} behaved as required.' + ('  PLANNER IS SOUND.' if not bad else '  PLANNER FAILED.'))

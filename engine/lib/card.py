@@ -8,6 +8,7 @@ Layout (unchanged from the card he has been reading all season):
 from . import paths as _paths
 import html
 from . import clock as C, lineup as LU, wire as W
+from .names import key
 
 def esc(x): return html.escape(str(x) if x is not None else '')
 
@@ -659,7 +660,12 @@ def _assemble(out, run):
         mine = [r for r in rows if r['owner'] == me]; theirs = [r for r in rows if r['owner'] == opp]
         if not mine or not theirs: return None
         if any(r.get('final', '1') != '1' for r in mine + theirs): return None
-        if len(mine) < len(st.starters()) - 1: return None       # a starter without a final: not over
+        # every starter of mine with a game this week must carry a final (10-05: the
+        # tile said WON with London still to play Monday night under a one-short tolerance)
+        have = {key(r['player']) for r in mine}
+        for r in st.starters():
+            if r['designation'] in S_UNUSABLE: continue
+            if r['key'] not in have: return None
         return sum(float(r['pts']) for r in mine), sum(float(r['pts']) for r in theirs)
     ol = ['<div class="outlook">']
     for lg, R in run['leagues'].items():
@@ -774,7 +780,9 @@ def _assemble(out, run):
 def planner_on(run):
     """FF_PLANNER=1 and a Plan for every league: Plan.moves are the ONLY Decide tiles."""
     import os as _os
-    if _os.environ.get('FF_PLANNER') != '1': return False
+    # ON by default since Tue 10-06 (week 5): the planner is the single source of Decide
+    # tiles; FF_PLANNER=0 falls back to the per-path tiles for comparison
+    if _os.environ.get('FF_PLANNER', '1') == '0': return False
     plans = run.get('plans') or {}
     from . import plan as _PL
     return bool(plans) and all(isinstance(plans.get(lg), _PL.Plan) for lg in run['leagues'])
@@ -809,6 +817,11 @@ def plan_tiles(run):
                      f'<div class="why"><b>When:</b> {esc(m["when"])}.{wh} {esc(" ".join(m["reasons"]))}</div></div>')
                 (wat if m['provisional'] else dec).append(t); continue
             # an add (with its drop / IR move and the lineup change it causes)
+            # — an IR move folded into the add still gets its own 'move to IR' tile
+            for t_ in m.get('txns', []):
+                if t_.get('op') == 'ir':
+                    dec.append(f'<div class="act"><span class="lg">{lg} — move to IR</span><div class="mv">{esc(t_["player"])}</div>'
+                               f'<div class="why"><b>When:</b> {esc(m["when"])}. His spot takes the add below.</div></div>')
             kind = next((lab for src, lab in _SRC_LABEL if src in m['srcs']), 'add')
             if kind == 'breakout add' and m.get('tier'): kind += f', tier {m["tier"]}'
             g = (m.get('gates') or {})

@@ -152,8 +152,8 @@ class Result:
         rs = list(self._roster_lineup)
         if kick is None:
             if self._feed_now: rs += self._feed
-        elif C.lineup_phase(kick) in ('decide', 'alert'):
-            rs += self._feed
+        elif kick is not None and dt.timedelta(0) < (kick - self.now) <= dt.timedelta(hours=C.LINEUP_HORIZON_H):
+            rs += self._feed          # the run's own clock, not the wall clock
         return '; '.join(rs) if rs else None
     @property
     def degrade_lineup(self):
@@ -694,7 +694,9 @@ def c3(c):
         if not st: continue
         for r in st.starters():
             k = sched.get(r['tm'])
-            if k and C.lineup_phase(k) in ('decide', 'alert') and k - c.now > dt.timedelta(0):
+            # judged against the contract's own clock (c.now), not the wall clock —
+            # a pinned test or a replay must see the same window the run did
+            if k and dt.timedelta(0) < (k - c.now) <= dt.timedelta(hours=C.LINEUP_HORIZON_H):
                 near.append(f"{lg} {r['player']}")
     c.flags['feed'] = feed
     c.flags['feed_now'] = bool(near)
@@ -762,7 +764,15 @@ def c5(c):
                                  evidence=dict(duplicates=dup, reconciled=st.reconciled)))
         over = {o: len(rs) for o, rs in st.by_owner.items() if len(rs) > mx}
         if over:
-            out.append(Violation('C5', REFUSE, f'{lg}: team(s) over the {mx}-player maximum after reconcile: {over}', evidence=dict(reconciled=st.reconciled)))
+            # MY roster over the max is a broken read of my own team: refuse. ANOTHER
+            # team one over is almost always the pump missing a drop the page has not
+            # shown yet (10-05: STRIB added Hill; the DEF he dropped is not on the log
+            # because the pump's parser skips DEF transactions) — the player he kept
+            # or cut is uncertain, which degrades add/drop, but my decisions stand.
+            mine = {o: n for o, n in over.items() if o == st.me}
+            others = {o: n for o, n in over.items() if o != st.me}
+            if mine: out.append(Violation('C5', REFUSE, f'{lg}: my roster is over the {mx}-player maximum after reconcile: {mine}', evidence=dict(reconciled=st.reconciled)))
+            if others: out.append(Violation('C5', DEGRADE, f'{lg}: other team(s) over the {mx}-player maximum after reconcile — a drop the pump has not seen: {others}', evidence=dict(reconciled=st.reconciled)))
     return out
 
 def c6(c):
@@ -993,7 +1003,12 @@ def columns_violations(rel, fields, rows, spec):
             blank = (v in YAHOO_BLANK) if col in dash else (v == '')
             if blank: continue
             if not _num(v): badv.append(f'line {i} {col}={v!r}')
-        if badv: out.append(f'{rel}: {len(badv)} non-numeric value(s) in {col}: ' + '; '.join(badv[:3]))
+        if badv:
+            # Yahoo's DISPLAY points columns (fan_pts/proj_pts, the 'dash' list) are secondary
+            # on a roster/matchup page: during games Yahoo shifts a percentage into them
+            # (10-04: 58 rows). That blanks the field; it does not refuse the rosters.
+            soft = col in dash and col in ('fan_pts', 'proj_pts')
+            out.append(('SOFT:' if soft else '') + f'{rel}: {len(badv)} non-numeric value(s) in {col}: ' + '; '.join(badv[:3]))
     for col in POINTS_COLS:
         if col in fields and col not in num + dash:
             pc = [i for i, r in enumerate(rows, 2) if '%' in (r.get(col) or '')]
@@ -1016,6 +1031,7 @@ def c15(c):
         fields, rows = c.csv(rel)
         if rows is None: continue
         for m in columns_violations(rel, fields, rows, spec):
+            if m.startswith('SOFT:'): out.append(Violation('C15', DEGRADE, m[5:] + ' — field blanked')); continue
             # a points-only FALLBACK source (props, Yahoo's projections off the team pages)
             # is dropped, not the run: Yahoo's Sunday pages put a percentage in the
             # points column (10-04, 14 rows) and the run must still decide
@@ -1108,7 +1124,9 @@ def check_pump_file(kind, path, league=None, week=None, now=None):
             'transactions': SPEC['yahoo/{LG}_transactions.csv'], 'kalshi': SPEC['kalshi.csv'],
             'sleeper_off': SPEC['sleeper_off_wk{W}.csv'], 'sleeper_idp': SPEC['sleeper_idp_wk{W}.csv'],
             'espn': (('event_id', 'away', 'home', 'kickoff'), (), ())}[kind]
-    for m in columns_violations(nm, fields, rows, spec): out.append(Violation('C15', REFUSE, m))
+    for m in columns_violations(nm, fields, rows, spec):
+        if m.startswith('SOFT:'): out.append(Violation('C15', DEGRADE, m[5:] + ' — field blanked')); continue
+        out.append(Violation('C15', REFUSE, m))
     if any('missing required column' in v.msg for v in out): return out
     stamps = sorted({r.get('pulled_at') for r in rows if r.get('pulled_at')}) if 'pulled_at' in fields else []
     for s in stamps:

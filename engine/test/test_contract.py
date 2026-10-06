@@ -261,7 +261,9 @@ case('C14 REFUSE: the opponent on file is not a roster owner', bool(fired(r14d, 
 def _pct(d):
     shutil.copy(os.path.join(FX, 'C15', 'data', 'yahoo', 'HH_rosters.csv'), os.path.join(d, 'yahoo', 'HH_rosters.csv'))
 r15 = run(root('base', edit=_pct), only=('C15',))
-case("C15 REFUSE: the real '3%' in proj_pts (pump 28e1a7f, the misaligned '--empty--' row)", bool([v for v in fired(r15, 'C15', CT.REFUSE) if '3%' in v.msg]), r15.codes_line())
+# 10-05: a percentage in Yahoo's DISPLAY points columns degrades (the field is blanked, the
+# roster row is kept) — Yahoo's in-game pages put one there on every Sunday row
+case("C15 DEGRADE: the real '3%' in proj_pts (pump 28e1a7f) blanks the field, keeps the roster", bool([v for v in fired(r15, 'C15', CT.DEGRADE) if '3%' in v.msg and 'blanked' in v.msg]), r15.codes_line())
 def _nocol(d):
     rows = list(csv.DictReader(open(os.path.join(d, 'kalshi.csv'))))
     with open(os.path.join(d, 'kalshi.csv'), 'w', newline='') as fh:

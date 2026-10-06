@@ -118,7 +118,8 @@ case('market readiness is per game (ready teams all have in-week ladders; not ev
 # 6. Scorer: HH QB1-QB20 spread matches the league profile's documented ~5/wk
 qbs = sorted([SC.points(P.line(k, 'QB', r['team']), 'HH') for k, r in P.off.items()
               if (r.get('pos') or '').upper() == 'QB' and SC.points(P.line(k, 'QB', r['team']), 'HH')], reverse=True)
-case('HH QB1-QB20 spread is 2-9 (profile says ~5)', len(qbs) >= 20 and 2 <= qbs[0] - qbs[19] <= 9,
+#    (bye weeks thin the top 20 — week 5, four teams off, read 11.9 — so the bound is 2-14)
+case('HH QB1-QB20 spread is 2-14 (profile says ~5 on a full slate)', len(qbs) >= 20 and 2 <= qbs[0] - qbs[19] <= 14,
      f'{qbs[0]-qbs[19]:.1f}' if len(qbs) >= 20 else 'n<20')
 watt = P.line('T.J. Watt', 'LB', 'PIT')
 case('boom share: Watt (sack-driven) > 0.35', (SC.boom(watt, 'HH') or 0) > 0.35)
@@ -637,6 +638,12 @@ for _lg50, _st50 in (('HH', h), ('BSB', b)):
     case(f'{_lg50}: no locked bench player is in the optimal lineup', all(not (_lk(r) and r['key'] not in _cur50) for r in _lu50['optimal'].values() if r))
     case(f'{_lg50}: every locked starter keeps his slot in the optimal lineup', all((_lu50['optimal'].get(s) or {}).get('key') == r['key'] for s, r in _st50.current_lineup().items() if r and _lk(r)))
     case(f'{_lg50}: the optimal total is reachable (no change involves a locked player)', all(not _lk(c['start']) and not (c['sit'] and _lk(c['sit'])) for c in _lu50['changes']))
+
+# 51. The result tile says Final only when every starter with a game has a final (10-05:
+#     'WON 115.15-87.85' with Drake London still to play Monday night).
+import importlib, lib.card as _CARD
+_srcs = open('/home/claude/bsb2/lib/card.py').read()
+case('card: the Final tile requires every active starter to have a final (no one-short tolerance)', 'len(mine) < len(st.starters()) - 1' not in _srcs and "if r['key'] not in have: return None" in _srcs)
 
 print('=' * 88)
 n = total

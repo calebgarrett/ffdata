@@ -27,7 +27,7 @@ THE OBJECTIVE, per (candidate, spot) pair — every term is printed on every mov
   dS_W1    the same for week W+1 (byes and long-term tags zeroed)
   dS_REST  the MEAN over weeks W+2..17 of dS_t on rest-of-season per-week values with
            each week's byes zeroed — i.e. the sum divided by the number of rest weeks,
-           one week-equivalent (REST_NORM = 'mean'). With W_REST = 0.3 the whole rest of
+           one week-equivalent (REST_NORM = 'mean'). With W_REST = 0.8 (10-06; 0.3 let a season-long starter look cheaper than a one-week kicker) the whole rest of
            the season counts as 0.3 of an average week.
   dBOOM    bench upside: sum over active players NOT in the W+1 optimal lineup of
            boom share x rest-of-season per-week value, after minus before
@@ -70,7 +70,7 @@ from . import clock as C, rules as RU, lineup as LU
 from .facts import Facts, Fact, IR_TAGS
 
 # ------------------------------------------------------------------ weights (read these)
-W_NOW, W_NEXT, W_REST, W_BOOM = 1.0, 0.8, 0.3, 0.1
+W_NOW, W_NEXT, W_REST, W_BOOM = 1.0, 0.8, 0.8, 0.1
 K_ACQ = {'HH': 1.0, 'BSB': 0.0}
 K_FAB = 0.1                       # per dollar (bid / 10)
 K_CHURN = 0.5                     # per Yahoo transaction
@@ -320,15 +320,21 @@ def produce(facts, ev):
         rows, vals, locks = _week_inputs(f, [], t)
         tot, asg = LU.optimal_points(rows, f.cfg, vals, locks)
         for s, k in sorted(asg.items()):
-            if t == W and k is not None: continue                         # week W: only an EMPTY slot is a hole
-            if k is not None and (vals.get(k) or 0) > 0: continue
+            # a slot is a hole when nobody on the roster scores in it: empty, or held by a
+            # player with NO GAME this week or tagged OUT (10-06: Butker on bye still
+            # 'filled' the K slot). A zero projection with a game is not a hole.
+            if k is not None:
+                if (vals.get(k) or 0) > 0: continue
+                if t == W:                                                 # this week: no game yet / OUT only
+                    kf = f.mine.get(k)
+                    if kf is None or not (getattr(kf, 'kick', None) is None or kf.designation in RU.UNUSABLE): continue
             if k is not None and k in locks: continue                     # a locked starter keeps his slot
             acc = set()
             for fm, sl in f.cfg.fam_slots.items():
                 if s in sl: acc.add(fm)
             fams = sorted(acc)
             why = _hole_why(f, s, t)
-            for c in f.best_fa(None, t, n=3, accept=fams):
+            for c in f.best_fa(None, t, n=8, accept=fams):                 # deep enough that single-source (G5) kickers do not hide the cover (10-06: Santos)
                 if t == W and (c.kicked or c.on_waivers): continue
                 _merge(cands, c.key, c, dict(src='hole', hole=True, firm=True, slot=s, week=t,
                                              text=f'week-{t} hole at {s} ({why}); {c.name} {f.value(c, t):.1f} is the best free {c.fam} on week-{t} values'))
@@ -361,8 +367,9 @@ def _hole_why(f, s, t):
     parts = []
     for x in who[:3]:
         v = f.value(x, t)
-        if t != f.week and x.tm in f.byes.get(t, set()): parts.append(f'{x.name} on bye')
-        elif v is None: parts.append(f'{x.name} {x.designation}')
+        if x.tm in f.byes.get(t, set()) or (t == f.week and getattr(x, 'kick', None) is None and x.designation not in RU.UNUSABLE):
+            parts.append(f'{x.name} on bye')
+        elif v is None or x.designation in RU.UNUSABLE: parts.append(f'{x.name} {x.designation}')
         elif v <= 0: parts.append(f'{x.name} {x.w1_src if t == f.week + 1 else "0"}')
     return ', '.join(parts) or 'no eligible player with a number'
 
@@ -451,7 +458,7 @@ class Objective:
 
 
 def fmt_terms(t):
-    return (f"J {t['J']:+.2f} = 1.0x{t['dS_W']:+.2f} (wk W) + 0.8x{t['dS_W1']:+.2f} (W+1) + 0.3x{t['dS_rest']:+.2f} (rest, mean of wks {t['rest_weeks']})"
+    return (f"J {t['J']:+.2f} = {W_NOW:.1f}x{t['dS_W']:+.2f} (wk W) + {W_NEXT:.1f}x{t['dS_W1']:+.2f} (W+1) + {W_REST:.1f}x{t['dS_rest']:+.2f} (rest, mean of wks {t['rest_weeks']})"
             f" + 0.1x{t['d_boom']:+.2f} (bench boom) - {t['pen_acq']:.2f} acq - {t['pen_fab']:.2f} FAB(${t['bid'] or 0}) - {t['pen_churn']:.2f} churn")
 
 
@@ -506,6 +513,12 @@ def pair_block(f, c, s, repl):
         return f'{s.label} is your only {s.fam}: a one-for-one {s.fam} swap only'
     if x.fam in ('DEF', 'K') and not c.hole and s.kind == 'drop' and s.tier >= 3:
         return f'a {x.fam} stream that is not a hole never costs a real bench player ({s.label})'
+    # a kicker or defense is fungible: it NEVER costs a skill player or an IDP, hole or
+    # not — the spot is an open spot, the spare/only DEF-K (a one-for-one swap), or a
+    # dead/registry spot (10-06: 'add Boswell, drop Travis Kelce' at J +11 because the
+    # rest-of-season term made Kelce look cheap)
+    if x.fam in ('DEF', 'K') and s.kind == 'drop' and s.fact is not None and s.fact.fam not in ('DEF', 'K') and s.tier >= 2:
+        return f'a {x.fam} never costs a {s.fact.fam} ({s.label}) — kickers and defenses swap one-for-one'
     return None
 
 
@@ -807,7 +820,9 @@ def _lineup_after(f, moves, ev):
     for m in moves:
         if m['kind'] == 'add' and m['eff'] == 'W':
             add = f.fa(m['add_key'])
-            drop = f.mine.get(next((t['key'] for t in m['txns'] if t['op'] == 'drop'), None) or '')
+            # the player who leaves the active roster: dropped, or moved to IR (10-06:
+            # an IR'd starter stayed in the lineup pairing as 'bench Kam Curl')
+            drop = f.mine.get(next((t['key'] for t in m['txns'] if t['op'] in ('drop', 'ir')), None) or '')
             changes.append((add, drop, 'W'))
         if m['kind'] == 'ir' and m['eff'] == 'W' and not m['provisional']:
             changes.append((None, f.mine.get(m['txns'][0]['key']), 'W'))
@@ -816,7 +831,12 @@ def _lineup_after(f, moves, ev):
     r0, v0, l0 = _week_inputs(f, [], W)
     cur_tot, _ = LU.optimal_points(r0, f.cfg, v0, l0)
     gone = {d.key for _, d, _ in changes if d is not None}
-    cur = {f.mine[k].slot: k for k in f.mine_keys if f.mine[k].slot not in ('BN', 'IR') and k not in gone}
+    # the dropped starter's slot stays mapped to him so the lineup pairing says
+    # 'over Butker (dropped)' at K instead of borrowing an unrelated displaced
+    # starter (10-06: 'start Mevis at K over Chiefs')
+    cur = {f.mine[k].slot: k for k in f.mine_keys if f.mine[k].slot not in ('BN', 'IR')}
+    gone_slots = {f.mine[k].slot: k for k in gone if k in f.mine and f.mine[k].slot not in ('BN', 'IR')}
+    for sl in gone_slots: cur.pop(sl, None)
     cur_set, opt_set = set(cur.values()), {k for k in asg.values() if k}
     real_in, real_out = opt_set - cur_set, cur_set - opt_set
     fact = lambda k: f.mine.get(k) or f.fa(k)
@@ -826,11 +846,16 @@ def _lineup_after(f, moves, ev):
     for s in f.cfg.slots:
         o = asg.get(s); c_ = cur.get(s)
         if o is None or o not in real_in: continue
-        out = c_ if (c_ and c_ in unclaimed) else next((x for x in sorted(unclaimed)), None)
-        if out: unclaimed.discard(out)
-        of, xf = fact(o), (fact(out) if out else None)
+        dropped_here = gone_slots.get(s)
+        if dropped_here:
+            out = None; of, xf = fact(o), fact(dropped_here)
+        else:
+            out = c_ if (c_ and c_ in unclaimed) else next((x for x in sorted(unclaimed)), None)
+            if out: unclaimed.discard(out)
+            of, xf = fact(o), (fact(out) if out else None)
         gain = (vals.get(o) or 0.0) - ((vals.get(out) or 0.0) if out else 0.0)
-        sit_out = xf is not None and xf.designation in RU.UNUSABLE
+        bye_out = xf is not None and xf.designation not in RU.UNUSABLE and getattr(xf, 'kick', None) is None and not (vals.get(out or dropped_here) or 0)
+        sit_out = xf is not None and (xf.designation in RU.UNUSABLE or bye_out)      # OUT or no game this week: a hole (10-06)
         hole = c_ is None and out is None
         q_zero = xf is not None and xf.designation in ('Q', 'D') and not (vals.get(out) or 0)
         prov_why = []
@@ -845,10 +870,10 @@ def _lineup_after(f, moves, ev):
                     r_ = lr(of.kick)
                     if r_: prov_why.append(f'inputs degraded ({r_})')
                 except Exception: pass
-        txns = [dict(op='start', player=of.name, key=o, slot=s)] + ([dict(op='bench', player=xf.name, key=out)] if xf else [])
+        txns = [dict(op='start', player=of.name, key=o, slot=s)] + ([dict(op='bench', player=xf.name, key=out)] if (xf and out) else [])
         if o in by_add:
             by_add[o]['txns'] += txns
-            by_add[o]['lineup'] = dict(slot=s, over=(xf.name if xf else 'empty'), gain=round(gain, 2))
+            by_add[o]['lineup'] = dict(slot=s, over=((xf.name + ' (dropped)') if dropped_here else xf.name) if xf else 'empty', gain=round(gain, 2))
             continue
         kick = of.kick
         lmoves.append(dict(id=f'{f.league}:lineup:{s}', league=f.league, kind='lineup', add_name=None, add_key=None,
@@ -856,7 +881,7 @@ def _lineup_after(f, moves, ev):
                            txns=txns, value_terms=dict(J=round(gain, 3), dS_W=round(gain, 3)), J=round(gain, 3),
                            when=(f'before kickoff {C.stamp(kick)}' if kick and kick > f.now else 'now'),
                            at=None, deadline=C.iso(kick) if kick else None, timing_why='', eff='W', gates=dict(add=None, drop=None),
-                           reasons=[(f"{xf.name} is {xf.designation} — the slot scores nothing until he is replaced" if sit_out else
+                           reasons=[((f"{xf.name} has no game this week (bye) — the slot scores nothing until he is replaced" if bye_out else f"{xf.name} is {xf.designation} — the slot scores nothing until he is replaced") if sit_out else
                                      'the slot is empty' if hole else f'{gain:+.2f} this week')] + prov_why,
                            tier=None, srcs=['lineup'], provisional=bool(prov_why), slot=s, start=of.name,
                            sit=(xf.name if xf else None), gain=round(gain, 2), phase=C.lineup_phase(kick) if kick else 'unknown'))

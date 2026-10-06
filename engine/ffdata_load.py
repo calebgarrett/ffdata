@@ -69,7 +69,15 @@ def sync():
     return head
 
 def rows(path):
-    return list(csv.DictReader(open(path))) if os.path.exists(path) else []
+    """Pump rows. Yahoo's display-points columns are blanked when they hold a percentage
+    (Yahoo's in-game pages shift a '% started' figure into them, 10-04): the row itself —
+    owner, slot, player, tag — is still the truth and is installed."""
+    if not os.path.exists(path): return []
+    out = list(csv.DictReader(open(path)))
+    for r in out:
+        for col in ('fan_pts', 'proj_pts'):
+            if col in r and '%' in (r[col] or ''): r[col] = ''
+    return out
 
 def git_time(rel):
     """When the pump last CHANGED data/<rel> (its git history), ISO. In the Action's
@@ -88,6 +96,31 @@ def refuse_or_ok(kind, path, log, label, **kw):
 
 REFUSED = []
 
+def adopt_runner_state(log):
+    """Local runs only: the pump runner is the authoritative writer of the decision
+    record (contract C17). When its engine/data ledger is newer than the local one,
+    adopt its ledger, outcomes, projection log and plans before deciding here."""
+    if os.environ.get('FFDATA_IN_ACTION'): return
+    rd = os.path.join(CLONE, 'engine', 'data')
+    if not os.path.isdir(rd) or os.path.realpath(rd) == os.path.realpath(D.rstrip('/')): return
+    import json, shutil, glob as _g
+    def newest(path):
+        try:
+            L = json.load(open(path)); ts = [T.try_ts(e.get(k), 'ledger') for e in L for k in ('ts', 'status_ts') if e.get(k)]
+            ts = [t for t in ts if t]; return max(ts) if ts else None
+        except Exception: return None
+    a, b = newest(os.path.join(rd, 'ledger.json')), newest(D + 'ledger.json')
+    if not a or (b and a <= b): return
+    shutil.copy(D + 'ledger.json', D + 'ledger.local.bak.json') if os.path.exists(D + 'ledger.json') else None
+    shutil.copy(os.path.join(rd, 'ledger.json'), D + 'ledger.json')
+    n = 1
+    for sub, pat in (('outcomes', '*.jsonl'), ('proj_log', '*.csv'), ('', 'plan*.json')):
+        os.makedirs(os.path.join(D, sub), exist_ok=True)
+        for f in _g.glob(os.path.join(rd, sub, pat)):
+            shutil.copy(f, os.path.join(D, sub, os.path.basename(f))); n += 1
+    bt = b.strftime('%Y-%m-%d %H:%M') if b else 'none'
+    log.append(f'runner state adopted: the pump runner\'s ledger ({a:%Y-%m-%d %H:%M}) was newer than the local one ({bt}) — {n} files copied (C17)')
+
 def main():
     head = sync()
     src = os.path.join(CLONE, 'data')
@@ -103,6 +136,7 @@ def main():
         except Exception: week = None
     if week is None: week = C.nfl_week()
     log = [f'# ffdata pull loaded {C.stamp()} — repo head: {head}', f'week {week}']
+    adopt_runner_state(log)
     os.makedirs(D + 'pulls', exist_ok=True)
     ASOF = {}                      # data/asof.json: per installed file, as-of from content
     head_t = (head.split() or [''])[0]
@@ -216,7 +250,7 @@ def main():
             with open(D + f'yahoo_{lg}_wk{week}.csv', 'w', newline='') as fh:
                 w = csv.writer(fh); w.writerow(['player', 'tm', 'pos', 'pts', 'pulled_at'])
                 for r in rr:
-                    if r['player'] and r['proj_pts'] not in ('', '–', '-'): w.writerow([r['player'], r['nfl'], r['pos'], r['proj_pts'], ts])
+                    if r['player'] and r['proj_pts'] not in ('', '–', '-', '—'): w.writerow([r['player'], r['nfl'], r['pos'], r['proj_pts'], ts])
             ASOF[f'yahoo_{lg}_wk{week}.csv'] = dict(as_of=ts, src='Yahoo pulled_at')
         # matchup: opponent on file + finals as actuals
         mp_ = os.path.join(ydir, f'{lg}_matchup_wk{week}.csv')
@@ -234,7 +268,7 @@ def main():
             mj.setdefault('_pulled', {}).setdefault(str(week), {})[lg] = mts
             RU.atomic_write_json(mp, mj)
             # finals AND games in progress: a live number plus the fraction played
-            scored = [(r, game_frac(r['game'])) for r in mr if r['fan_pts'] not in ('', '–', '-') and game_frac(r['game']) is not None]
+            scored = [(r, game_frac(r['game'])) for r in mr if r['fan_pts'] not in ('', '–', '-', '—') and game_frac(r['game']) is not None]
             finals = [r for r, f in scored if f >= 1.0]
             live = [r for r, f in scored if f < 1.0]
             os.makedirs(D + 'actuals', exist_ok=True)

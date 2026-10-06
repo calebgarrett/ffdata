@@ -94,10 +94,13 @@ def solve(state, proj, actuals=None):
             # a starter Yahoo tags OUT (O/IR/PUP/SUSP/NA) is a hole, not a lineup edge:
             # replacing him is FIRM whatever the market has or has not posted (Burns,
             # torn ACL, 09-29: 'Watt over Burns — not a move until the market posts')
-            sit_out = bool(out) and out.get('designation') in UNUSABLE
+            sit_out = bool(out) and (out.get('designation') in UNUSABLE
+                                     # or he has no game this week (bye): the slot scores 0 — a hole, not an edge (10-06)
+                                     or (out.get('kick') is None and not (out.get('pts') or 0)))
             changes.append(dict(slot=s, start=o, sit=out, gain=gain,
                                 provisional=(not sit_out) and ((gain < NOISE) or not o['ready'] or (bool(out) and not out.get('ready', True)) or bool(o['line'].get('partial')) or q_zero),
-                                reason=(f"{out['player']} is {out['designation']} — the slot scores nothing until he is replaced" if sit_out else
+                                reason=((f"{out['player']} is {out['designation']} — the slot scores nothing until he is replaced" if out.get('designation') in UNUSABLE
+                                         else f"{out['player']} has no game this week (bye) — the slot scores nothing until he is replaced") if sit_out else
                                         f"{out['player']} is {out['designation']} and projected 0.00 — the source assumes he is OUT; if he is active he keeps the slot" if q_zero else ''),
                                 phase=o['phase'], kick=o['kick']))
     tot = lambda d: sum((r['pts'] or 0) for r in d.values() if r)      # the pin bonus is not in r['pts'], so totals are honest

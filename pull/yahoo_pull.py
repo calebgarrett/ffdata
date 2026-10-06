@@ -48,6 +48,15 @@ def write(path, rows, fields):
     with open(path, 'w', newline='') as fh:
         w = csv.DictWriter(fh, fieldnames=fields, extrasaction='ignore'); w.writeheader(); w.writerows(rows)
 
+KEPT = []
+def keep(out, name, html, cap=4):
+    """Save a page the parser could not fully read (data/yahoo/unparsed/<name>.html,
+    at most `cap` per run, cleared at the start of each run) so the parser is fixed
+    against the real markup instead of a guess."""
+    if len(KEPT) >= cap: return
+    d = os.path.join(out, 'unparsed'); os.makedirs(d, exist_ok=True)
+    open(os.path.join(d, f'{name}.html'), 'w').write(html); KEPT.append(name)
+
 def main():
     if len(sys.argv) < 2: raise SystemExit(__doc__)
     out = sys.argv[1]; os.makedirs(out, exist_ok=True)
@@ -55,6 +64,7 @@ def main():
     save_all = '--all' in sys.argv
     if not save_all:
         for f in glob.glob(os.path.join(out, 'raw', '*.html')): os.remove(f)
+    for f in glob.glob(os.path.join(out, 'unparsed', '*.html')): os.remove(f)
     stamp = dt.datetime.now(dt.timezone.utc).isoformat(timespec='seconds')
     status = [f'# yahoo pull {stamp} week {week}']
     R_FIELDS = ['team_id', 'owner', 'record', 'rank', 'slot', 'player', 'pid', 'nfl', 'pos', 'status', 'game', 'bye', 'fan_pts', 'proj_pts', 'pulled_at']
@@ -66,7 +76,9 @@ def main():
         for t in range(1, cfg['teams'] + 1):
             st, html = get(f'{BASE}/{cfg["id"]}/{t}')
             owner, record, rank, rows = Y.parse_team(html) if html else ('', '', '', [])
-            status.append(f'{lg}_team{t}\t{st}\t{len(html)}\t{owner}\t{len(rows)} rows')
+            sus = Y.suspicious(rows)
+            status.append(f'{lg}_team{t}\t{st}\t{len(html)}\t{owner}\t{len(rows)} rows' + (f'\t{len(sus)} odd cell(s)' if sus else ''))
+            if html and (not rows or sus): keep(out, f'{lg}_team{t}', html)
             if not rows: bad += 1
             for r in rows:
                 rosters.append(dict(r, team_id=str(t), owner=owner, record=record, rank=rank, pulled_at=stamp))
@@ -85,10 +97,12 @@ def main():
         status.append(f'{lg}_matchup_wk{week}\t{st}\t{len(html)}\t' + ' vs '.join(t['owner'] for t in teams) + f'\t{len(mrows)} rows')
         if mrows: write(os.path.join(out, f'{lg}_matchup_wk{week}.csv'), mrows, M_FIELDS)
         else: bad += 1
+        if html and (not mrows or any(not t.get('total') for t in teams)): keep(out, f'{lg}_matchup_wk{week}', html)
         time.sleep(0.6)
         st, html = get(f'{BASE}/{cfg["id"]}/transactions')
         trs = Y.parse_transactions(html) if html else []
         status.append(f'{lg}_transactions\t{st}\t{len(html)}\t{len(trs)} rows')
+        if html and not trs: keep(out, f'{lg}_transactions', html)
         if trs: write(os.path.join(out, f'{lg}_transactions.csv'), [dict(x, pulled_at=stamp) for x in trs], T_FIELDS)
         time.sleep(0.6)
     with open(os.path.join(out, 'pulled.txt'), 'w') as fh: fh.write('\n'.join(status) + '\n')
