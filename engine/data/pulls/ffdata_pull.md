@@ -1,22 +1,23 @@
-# ffdata pull loaded Mon Oct 5, 6:31 pm ET — repo head: 2026-10-05T15:53:38Z pull 2026-10-05T15:53Z (in-action, no pull)
+# ffdata pull loaded Mon Oct 5, 10:53 pm ET — repo head: 2026-10-05T22:32:44Z pull 2026-10-05T22:32Z (in-action, no pull)
 week 4
-kalshi.csv: 1236 markets, 58 events, pulled 2026-10-05T22:30:45+00:00
-kalshi_archive: 1 new pull(s) copied, 57 on disk
-espn_games.csv: 16 games for week 4 — 1 with ESPN lines from the pump, 15 schedule-only from lines_wk3_9.csv; Kalshi spread/total ladders supply the lines inside the engine
+kalshi.csv: 1428 markets, 62 events, pulled 2026-10-06T02:52:09+00:00
+kalshi_archive: 1 new pull(s) copied, 58 on disk
+espn_games.csv: 16 games for week 4 — 0 with ESPN lines from the pump, 16 schedule-only from lines_wk3_9.csv; Kalshi spread/total ladders supply the lines inside the engine
 sleeper_off_wk4.csv: 3306 rows
 sleeper_idp_wk4.csv: 4603 rows
 trending_adds.csv: 40 adds / 40 drops (48h)
 usage_wk3_QB.csv: 85 rows
-usage_wk4_QB.csv: 81 rows
+usage_wk4_QB.csv: 85 rows
 usage_wk3_RB.csv: 177 rows
-usage_wk4_RB.csv: 167 rows
+usage_wk4_RB.csv: 179 rows
 usage_wk3_WR.csv: 282 rows
-usage_wk4_WR.csv: 263 rows
+usage_wk4_WR.csv: 283 rows
 usage_wk3_TE.csv: 166 rows
-usage_wk4_TE.csv: 155 rows
-BSB rosters: 216 players on 12 teams, pulled 2026-10-05T22:31:23+00:00 -> new snapshot
+usage_wk4_TE.csv: 165 rows
+BSB rosters (pump pull 2026-10-06T02:52:51+00:00): NOT installed — contract C15: BSB_rosters.csv: 11 non-numeric value(s) in proj_pts: line 67 proj_pts='46%' (a percentage in a points column); line 82 proj_pts='10%' (a percentage in a points column); line 95 proj_pts='98%' (a percentage in a points column)
 BSB matchup wk4: vs FWU; 33 final rows, 0 in progress; totals me 115.15 opp 87.85
 BSB transactions: 0 new of 36 on the page; log now 97 rows
-HH rosters: 239 players on 10 teams, pulled 2026-10-05T22:31:23+00:00 -> new snapshot
+HH rosters (pump pull 2026-10-06T02:52:51+00:00): NOT installed — contract C15: HH_rosters.csv: 13 non-numeric value(s) in proj_pts: line 74 proj_pts='100%' (a percentage in a points column); line 92 proj_pts='25%' (a percentage in a points column); line 95 proj_pts='8%' (a percentage in a points column)
 HH matchup wk4: vs JETS; 47 final rows, 0 in progress; totals me 299.49 opp 279.00
-HH transactions: 1 new of 33 on the page; log now 96 rows
+HH transactions: 0 new of 33 on the page; log now 96 rows
+contract: C15 refused pump file(s) — see the NOT installed lines above
