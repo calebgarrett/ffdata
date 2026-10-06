@@ -1,7 +1,7 @@
-# ffdata pull loaded Tue Oct 6, 12:55 pm ET — repo head: 2026-10-06T10:06:13Z pull 2026-10-06T10:06Z (in-action, no pull)
+# ffdata pull loaded Tue Oct 6, 5:35 pm ET — repo head: 2026-10-06T16:56:55Z pull 2026-10-06T16:56Z (in-action, no pull)
 week 5
-kalshi.csv: 1173 markets, 71 events, pulled 2026-10-06T16:54:33+00:00
-kalshi_archive: 1 new pull(s) copied, 60 on disk
+kalshi.csv: 1575 markets, 91 events, pulled 2026-10-06T21:33:40+00:00
+kalshi_archive: 1 new pull(s) copied, 61 on disk
 espn_games.csv: 15 games for week 5 — 0 with ESPN lines from the pump, 15 schedule-only from lines_wk3_9.csv; Kalshi spread/total ladders supply the lines inside the engine
 sleeper_off_wk5.csv: 3304 rows
 sleeper_idp_wk5.csv: 4603 rows
@@ -10,10 +10,10 @@ usage_wk4_QB.csv: 85 rows
 usage_wk4_RB.csv: 179 rows
 usage_wk4_WR.csv: 283 rows
 usage_wk4_TE.csv: 165 rows
-BSB rosters (pump pull 2026-10-06T16:55:18+00:00): NOT installed — contract C15: BSB_rosters.csv: 14 non-numeric value(s) in fan_pts: line 3 fan_pts='100%' (a percentage in a points column); line 30 fan_pts='99%' (a percentage in a points column); line 52 fan_pts='0%' (a percentage in a points column)
+BSB rosters (pump pull 2026-10-06T21:34:32+00:00): NOT installed — contract C15: BSB_rosters.csv: 14 non-numeric value(s) in fan_pts: line 12 fan_pts='100%' (a percentage in a points column); line 30 fan_pts='99%' (a percentage in a points column); line 52 fan_pts='0%' (a percentage in a points column)
 BSB matchup wk5: vs Phish Phanatics; 0 final rows, 0 in progress; totals me 0.00 opp 0.00
 BSB transactions: 0 new of 36 on the page; log now 97 rows
-HH rosters (pump pull 2026-10-06T16:55:18+00:00): NOT installed — contract C15: HH_rosters.csv: 16 non-numeric value(s) in fan_pts: line 3 fan_pts='96%' (a percentage in a points column); line 8 fan_pts='76%' (a percentage in a points column); line 32 fan_pts='97%' (a percentage in a points column)
+HH rosters (pump pull 2026-10-06T21:34:32+00:00): NOT installed — contract C15: HH_rosters.csv: 16 non-numeric value(s) in fan_pts: line 9 fan_pts='76%' (a percentage in a points column); line 10 fan_pts='96%' (a percentage in a points column); line 33 fan_pts='97%' (a percentage in a points column)
 HH matchup wk5: vs Maker's Mark; 0 final rows, 0 in progress; totals me 0.00 opp 0.00
-HH transactions: 5 new of 32 on the page; log now 101 rows
+HH transactions: 3 new of 33 on the page; log now 104 rows
 contract: C15 refused pump file(s) — see the NOT installed lines above
