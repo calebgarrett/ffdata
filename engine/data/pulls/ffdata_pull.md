@@ -1,7 +1,7 @@
-# ffdata pull loaded Tue Oct 6, 6:47 pm ET — repo head: 2026-10-06T18:41:00-04:00 Add files via upload (in-action, no pull)
+# ffdata pull loaded Tue Oct 6, 9:24 pm ET — repo head: 2026-10-06T22:48:54Z pull 2026-10-06T22:48Z (in-action, no pull)
 week 5
-kalshi.csv: 1575 markets, 91 events, pulled 2026-10-06T22:45:53+00:00
-kalshi_archive: 0 new pull(s) copied, 61 on disk
+kalshi.csv: 1596 markets, 93 events, pulled 2026-10-07T01:23:14+00:00
+kalshi_archive: 1 new pull(s) copied, 62 on disk
 espn_games.csv: 15 games for week 5 — 0 with ESPN lines from the pump, 15 schedule-only from lines_wk3_9.csv; Kalshi spread/total ladders supply the lines inside the engine
 sleeper_off_wk5.csv: 3304 rows
 sleeper_idp_wk5.csv: 4603 rows
@@ -10,9 +10,9 @@ usage_wk4_QB.csv: 85 rows
 usage_wk4_RB.csv: 179 rows
 usage_wk4_WR.csv: 283 rows
 usage_wk4_TE.csv: 165 rows
-BSB rosters: 215 players on 12 teams, pulled 2026-10-06T22:46:42+00:00 -> new snapshot
+BSB rosters: 214 players on 12 teams, pulled 2026-10-07T01:24:04+00:00 -> new snapshot
 BSB matchup wk5: vs Phish Phanatics; 0 final rows, 0 in progress; totals me 0.00 opp 0.00
-BSB transactions: 13 new of 47 on the page; log now 110 rows
-HH rosters: 239 players on 10 teams, pulled 2026-10-06T22:46:42+00:00 -> new snapshot
+BSB transactions: 1 new of 46 on the page; log now 111 rows
+HH rosters: 239 players on 10 teams, pulled 2026-10-07T01:24:04+00:00 -> new snapshot
 HH matchup wk5: vs Maker's Mark; 0 final rows, 0 in progress; totals me 0.00 opp 0.00
-HH transactions: 11 new of 42 on the page; log now 115 rows
+HH transactions: 2 new of 43 on the page; log now 117 rows
