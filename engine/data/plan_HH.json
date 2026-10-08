@@ -11,7 +11,7 @@
  "excluded": [
   {
    "player": "Dak Prescott",
-   "reason": "gate: G6-magnitude 40.06306215995415 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex: 3 QBs for 2 QB-eligible slots \u2014 QB3 is by"
+   "reason": "gate: G6-magnitude 40.05743098285846 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex: 3 QBs for 2 QB-eligible slots \u2014 QB3 is by"
   },
   {
    "player": "Jaylen Warren",
@@ -31,7 +31,7 @@
   },
   {
    "player": "Jared Goff",
-   "reason": "gate: G6-magnitude 40.10772216848846 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex: 3 QBs for 2 QB-eligible slots \u2014 QB3 is by"
+   "reason": "gate: G6-magnitude 39.993551543955995 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex: 3 QBs for 2 QB-eligible slots \u2014 QB3 is b"
   },
   {
    "player": "Rome Odunze",
@@ -39,7 +39,7 @@
   },
   {
    "player": "Matthew Stafford",
-   "reason": "gate: G6-magnitude 38.47971354914032 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex: 3 QBs for 2 QB-eligible slots \u2014 QB3 is by"
+   "reason": "gate: G6-magnitude 38.89767949455204 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex: 3 QBs for 2 QB-eligible slots \u2014 QB3 is by"
   },
   {
    "player": "Malik Washington",
@@ -106,10 +106,10 @@
    "S": "nick cross",
    "TE": "trey mcbride",
    "W/R": "braelon allen",
-   "W/R/T": "drake london",
-   "WR": "jamarr chase"
+   "W/R/T": "jamarr chase",
+   "WR": "drake london"
   },
-  "optimal_before_moves": 314.59,
+  "optimal_before_moves": 315.48,
   "slots": {
    "CB": "Cooper DeJean",
    "D": "Foyesade Oluokun",
@@ -124,12 +124,12 @@
    "S": "Nick Cross",
    "TE": "Trey McBride",
    "W/R": "Braelon Allen",
-   "W/R/T": "Drake London",
-   "WR": "Ja'Marr Chase"
+   "W/R/T": "Ja'Marr Chase",
+   "WR": "Drake London"
   },
-  "total": 318.25
+  "total": 319.16
  },
- "made": "2026-10-08T03:18-04:00",
+ "made": "2026-10-08T10:55-04:00",
  "mechanics": [
   {
    "rule": "Free agents are immediate unless his game is in progress",
@@ -169,7 +169,7 @@
  ],
  "moves": [
   {
-   "J": 8.733,
+   "J": 8.783,
    "add_key": "braelon allen",
    "add_name": "Braelon Allen",
    "at": null,
@@ -197,14 +197,14 @@
    "kind": "add",
    "league": "HH",
    "lineup": {
-    "gain": 3.66,
+    "gain": 3.68,
     "over": "Jameson Williams",
     "slot": "W/R"
    },
    "provisional": false,
    "reasons": [
-    "breakout tier B: 94% snaps, 100% of RB touches; Kalshi rushing yds 75 vs Sleeper 72 (+4%); held (wk3: 52% snaps, 30% of RB touches)",
-    "the spot: Travis Kelce \u2014 rest-of-season 9.8/wk (season blend / 17 x HH/BSB TE ratio 0.97 (approximation))"
+    "breakout tier B: 94% snaps, 100% of RB touches; Kalshi rushing yds 75 vs Sleeper 73 (+3%); held (wk3: 52% snaps, 30% of RB touches)",
+    "the spot: Travis Kelce \u2014 rest-of-season 9.9/wk (season blend / 17 x HH/BSB TE ratio 0.97 (approximation))"
    ],
    "spot_id": "drop:travis kelce",
    "spot_kind": "drop",
@@ -239,12 +239,12 @@
     }
    ],
    "value_terms": {
-    "J": 8.733,
+    "J": 8.783,
     "acq": 1,
     "bid": 0,
-    "dS_W": 3.665,
-    "dS_W1": 5.027,
-    "dS_rest": 2.969,
+    "dS_W": 3.678,
+    "dS_W1": 5.076,
+    "dS_rest": 2.967,
     "d_boom": 1.712,
     "pen_acq": 1.0,
     "pen_churn": 0.5,
@@ -254,24 +254,24 @@
    },
    "values": {
     "add": {
-     "boom": 0.20166231554768982,
-     "ros": 15.508314738610961,
+     "boom": 0.2015080940495003,
+     "ros": 15.520183817839094,
      "ros_src": "W projection 15.5 (usage says starter; the preseason number is stale)",
-     "w": 15.508314738610961,
-     "w1": 15.508314738610961,
+     "w": 15.520183817839094,
+     "w1": 15.520183817839094,
      "w1_src": "rest-of-season per-week (no week-6 projection on disk \u2014 approximation)"
     },
     "drop": {
-     "ros": 9.830401250866807,
+     "ros": 9.876385584962797,
      "ros_src": "season blend / 17 x HH/BSB TE ratio 0.97 (approximation)",
      "w": 0.0,
-     "w1": 9.830401250866807
+     "w1": 9.876385584962797
     }
    },
    "when": "before kickoff Sun Oct 11, 1:00 pm ET"
   },
   {
-   "J": 3.58,
+   "J": 3.5,
    "add_key": null,
    "add_name": null,
    "at": null,
@@ -279,7 +279,7 @@
    "drop_name": null,
    "eff": "W",
    "fam": "DB",
-   "gain": 3.58,
+   "gain": 3.5,
    "gates": {
     "add": null,
     "drop": null
@@ -290,7 +290,7 @@
    "phase": "early",
    "provisional": false,
    "reasons": [
-    "+3.58 this week"
+    "+3.50 this week"
    ],
    "sit": "Kam Curl",
    "slot": "S",
@@ -318,8 +318,8 @@
     }
    ],
    "value_terms": {
-    "J": 3.58,
-    "dS_W": 3.58
+    "J": 3.5,
+    "dS_W": 3.5
    },
    "when": "before kickoff Sun Oct 11, 1:00 pm ET"
   }
@@ -327,7 +327,7 @@
  "notes": [],
  "rejected": [
   {
-   "J": -1.287,
+   "J": -1.297,
    "key": "alvin kamara",
    "name": "Alvin Kamara",
    "reason": "best spot Travis Kelce: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
@@ -336,30 +336,30 @@
    ]
   },
   {
-   "J": -1.453,
+   "J": -1.481,
    "key": "brenton strange",
    "name": "Brenton Strange",
-   "reason": "J -1.45 < 3.0 at its best spot (Travis Kelce) \u2014 J -1.45 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x-0.10 (rest, mean of wks 7-17) + 0.1x+1.27 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
+   "reason": "J -1.48 < 3.0 at its best spot (Travis Kelce) \u2014 J -1.48 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x-0.14 (rest, mean of wks 7-17) + 0.1x+1.28 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
-    "breakout tier B: 87% snaps, 35% targets, 43% air yds; Kalshi receiving yds 38 vs Sleeper 40 (-4%); held (wk3: 77% snaps, 17% targets, 5% air yds)"
+    "breakout tier B: 87% snaps, 35% targets, 43% air yds; Kalshi receiving yds 38 vs Sleeper 40 (-5%); held (wk3: 77% snaps, 17% targets, 5% air yds)"
    ]
   },
   {
-   "J": -1.59,
+   "J": -1.583,
    "key": "cade otton",
    "name": "Cade Otton",
-   "reason": "J -1.59 < 3.0 at its best spot (Travis Kelce) \u2014 J -1.59 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x-0.21 (rest, mean of wks 7-17) + 0.1x+0.78 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
+   "reason": "J -1.58 < 3.0 at its best spot (Travis Kelce) \u2014 J -1.58 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x-0.21 (rest, mean of wks 7-17) + 0.1x+0.84 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
     "breakout tier B: 94% snaps, 22% targets, 0% air yds; Kalshi receiving yds 34 vs Sleeper 36 (-7%) \u2014 a part-time line, under the 35 starter floor; held (wk3: 94% snaps, 16% targets, 14% air yds)"
    ]
   },
   {
-   "J": -0.643,
+   "J": -1.019,
    "key": "carnell tate",
    "name": "Carnell Tate",
-   "reason": "J -0.64 < 3.0 at its best spot (Travis Kelce) \u2014 J -0.64 = 1.0x+0.17 (wk W) + 0.8x+1.53 (W+1) + 0.8x-0.89 (rest, mean of wks 7-17) + 0.1x+1.71 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
+   "reason": "J -1.02 < 3.0 at its best spot (Travis Kelce) \u2014 J -1.02 = 1.0x+0.00 (wk W) + 0.8x+1.28 (W+1) + 0.8x-0.90 (rest, mean of wks 7-17) + 0.1x+1.71 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
-    "breakout tier B: 84% snaps, 39% targets, 80% air yds; Kalshi receiving yds 56 vs Sleeper 59 (-4%); held (wk3: 88% snaps, 25% targets, 47% air yds)"
+    "breakout tier B: 84% snaps, 39% targets, 80% air yds; Kalshi receiving yds 54 vs Sleeper 60 (-9%); held (wk3: 88% snaps, 25% targets, 47% air yds)"
    ]
   },
   {
@@ -372,16 +372,16 @@
    ]
   },
   {
-   "J": 1.219,
+   "J": 2.684,
    "key": "emanuel wilson",
    "name": "Emanuel Wilson",
    "reason": "best spot Travis Kelce: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
-    "breakout tier B: 60% snaps, 76% of RB touches; no market line yet (Sleeper rushing yds 58)"
+    "breakout tier B: 60% snaps, 76% of RB touches; Kalshi rushing yds 60 vs Sleeper 59 (+3%)"
    ]
   },
   {
-   "J": -0.799,
+   "J": -0.802,
    "key": "harrison mevis",
    "name": "Harrison Mevis",
    "reason": "best spot Travis Kelce: a K stream that is not a hole never costs a real bench player (Travis Kelce)",
@@ -395,38 +395,47 @@
    "name": "Isaac TeSlaa",
    "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 5.8 under your weakest 9.4",
    "reasons": [
-    "breakout tier B: 82% snaps, 15% targets, 27% air yds; Kalshi receiving yds 31 vs Sleeper 31 (+0%) \u2014 a part-time line, under the 35 starter floor"
+    "breakout tier B: 82% snaps, 15% targets, 27% air yds; Kalshi receiving yds 32 vs Sleeper 31 (+1%) \u2014 a part-time line, under the 35 starter floor"
    ]
   },
   {
    "J": null,
    "key": "isaiah williams",
    "name": "Isaiah Williams",
-   "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 7.8 under your weakest 9.4",
+   "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 7.7 under your weakest 9.4",
    "reasons": [
     "breakout tier B: 94% snaps, 20% targets, 62% air yds; no market line yet (Sleeper receiving yds 34)"
    ]
   },
   {
-   "J": -2.071,
+   "J": -3.06,
    "key": "jakobi meyers",
    "name": "Jakobi Meyers",
-   "reason": "J -2.07 < 3.0 at its best spot (Travis Kelce) \u2014 J -2.07 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x-0.89 (rest, mean of wks 7-17) + 0.1x+1.44 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
+   "reason": "J -3.06 < 3.0 at its best spot (Chiefs) \u2014 J -3.06 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x-2.12 (rest, mean of wks 7-17) + 0.1x+1.38 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
-    "breakout tier B: 82% snaps, 17% targets, 28% air yds; Kalshi receiving yds 46 vs Sleeper 40 (+15%); held (wk3: 81% snaps, 28% targets, 49% air yds)"
+    "breakout tier A: 82% snaps, 17% targets, 28% air yds; Kalshi receiving yds 46 vs Sleeper 40 (+15%); held (wk3: 81% snaps, 28% targets, 49% air yds)"
    ]
   },
   {
-   "J": -2.074,
+   "J": null,
+   "key": "kc concepcion",
+   "name": "KC Concepcion",
+   "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 9.4 under your weakest 9.4",
+   "reasons": [
+    "breakout tier B: 92% snaps, 24% targets, 23% air yds; Kalshi receiving yds 42 vs Sleeper 37 (+11%); held (wk3: 86% snaps, 29% targets, 14% air yds)"
+   ]
+  },
+  {
+   "J": null,
    "key": "keon coleman",
    "name": "Keon Coleman",
-   "reason": "best spot Travis Kelce: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
+   "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 9.4 under your weakest 9.4",
    "reasons": [
     "breakout tier B: 78% snaps, 21% targets, 66% air yds; no market line yet (Sleeper receiving yds 47)"
    ]
   },
   {
-   "J": -2.087,
+   "J": -2.074,
    "key": "khalil shakir",
    "name": "Khalil Shakir",
    "reason": "best spot Travis Kelce: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
@@ -438,7 +447,7 @@
    "J": null,
    "key": "laquon treadwell",
    "name": "Laquon Treadwell",
-   "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 2.7 under your weakest 9.4",
+   "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 2.6 under your weakest 9.4",
    "reasons": [
     "breakout tier B: 85% snaps, 18% targets, 34% air yds; no market line yet (Sleeper receiving yds 11)"
    ]
@@ -447,27 +456,27 @@
    "J": null,
    "key": "makai lemon",
    "name": "Makai Lemon",
-   "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 6.6 under your weakest 9.4",
+   "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 6.8 under your weakest 9.4",
    "reasons": [
     "breakout tier B: 74% snaps, 22% targets, 35% air yds; no market line yet (Sleeper receiving yds 26)"
    ]
   },
   {
-   "J": -1.568,
+   "J": -1.591,
    "key": "mike mayer",
    "name": "Michael Mayer",
    "reason": "best spot Travis Kelce: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
-    "breakout tier B: 88% snaps, 19% targets, 20% air yds; Kalshi receiving yds 33 vs Sleeper 27 (+19%) \u2014 a part-time line, under the 35 starter floor"
+    "breakout tier B: 88% snaps, 19% targets, 20% air yds; Kalshi receiving yds 30 vs Sleeper 27 (+9%) \u2014 a part-time line, under the 35 starter floor"
    ]
   },
   {
-   "J": -1.238,
+   "J": -1.22,
    "key": "ollie gordon",
    "name": "Ollie Gordon",
-   "reason": "J -1.24 < 3.0 at its best spot (Travis Kelce) \u2014 J -1.24 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.06 (rest, mean of wks 7-17) + 0.1x+2.12 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
+   "reason": "J -1.22 < 3.0 at its best spot (Travis Kelce) \u2014 J -1.22 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.07 (rest, mean of wks 7-17) + 0.1x+2.27 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
-    "breakout tier B: 56% snaps, 69% of RB touches; Kalshi rushing yds 48 vs Sleeper 55 (-12%); held (wk3: 84% snaps, 83% of RB touches)"
+    "breakout tier B: 56% snaps, 69% of RB touches; Kalshi rushing yds 49 vs Sleeper 55 (-12%); held (wk3: 84% snaps, 83% of RB touches)"
    ]
   },
   {
@@ -480,7 +489,7 @@
    ]
   },
   {
-   "J": -1.94,
+   "J": -1.943,
    "key": "tank bigsby",
    "name": "Tank Bigsby",
    "reason": "best spot Travis Kelce: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
@@ -489,7 +498,7 @@
    ]
   },
   {
-   "J": -1.443,
+   "J": -1.458,
    "key": "tj hockenson",
    "name": "T.J. Hockenson",
    "reason": "best spot Travis Kelce: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
@@ -512,16 +521,16 @@
    "name": "TreVeyon Henderson",
    "reason": "you dropped him in HH on 2026-10-02 (<= 7 days, either league)",
    "reasons": [
-    "breakout tier B: 37% snaps, 47% of RB touches; no market line yet (Sleeper rushing yds 47)"
+    "breakout tier B: 37% snaps, 47% of RB touches; no market line yet (Sleeper rushing yds 46)"
    ]
   },
   {
-   "J": -1.437,
+   "J": -1.415,
    "key": "tyler allgeier",
    "name": "Tyler Allgeier",
    "reason": "best spot Travis Kelce: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
-    "breakout tier B: 55% snaps, 40% of RB touches; no market line yet (Sleeper rushing yds 31)"
+    "breakout tier B: 55% snaps, 40% of RB touches; Kalshi rushing yds 31 vs Sleeper 31 (-1%) \u2014 a part-time line, under the 40 starter floor"
    ]
   },
   {
@@ -570,9 +579,9 @@
   "W_REST": 0.8
  },
  "winprob": {
-  "mean": 317.71530080334287,
+  "mean": 318.9678324238381,
   "note": "sampled on the planner's final lineup",
   "p_med": null,
-  "p_opp": 0.9705
+  "p_opp": 0.9663333333333334
  }
 }
