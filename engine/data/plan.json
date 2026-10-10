@@ -16,7 +16,7 @@
      "add": null,
      "bid": null,
      "drop": null,
-     "gain": 0.79,
+     "gain": 0.8,
      "gates": [],
      "kind": "start",
      "provisional": true,
@@ -27,7 +27,7 @@
      "status": "proposed",
      "subject": "Jets",
      "verdict": "PASS",
-     "when": "early"
+     "when": "decide"
     },
     {
      "add": "Philadelphia Eagles",
@@ -48,6 +48,24 @@
      "when": "now"
     },
     {
+     "add": "Darius Cooper",
+     "bid": null,
+     "drop": null,
+     "gates": [],
+     "kind": "breakout",
+     "provisional": false,
+     "sit": null,
+     "slot": null,
+     "start": null,
+     "status": null,
+     "subject": "Darius Cooper",
+     "tier": "B",
+     "verb": "WAIT",
+     "verdict": "PASS",
+     "when": "next usage pull (Tuesday) \u2014 add then if the snaps hold or the market moves toward him",
+     "why": "one game of starter usage; no market confirmation yet and the spot would cost a real player"
+    },
+    {
      "add": "Michael Mayer",
      "bid": null,
      "drop": null,
@@ -63,7 +81,7 @@
      "verb": "NONE",
      "verdict": "PASS",
      "when": "no move for this roster",
-     "why": "you already carry 2 TEs for 1 slot(s) and he projects below your weakest (Isaiah Likely 10.9 vs 8.2). Only a trade chip."
+     "why": "you already carry 2 TEs for 1 slot(s) and he projects below your weakest (Isaiah Likely 11.0 vs 8.1). Only a trade chip."
     },
     {
      "add": "Cade Otton",
@@ -81,7 +99,7 @@
      "verb": "NONE",
      "verdict": "PASS",
      "when": "no move for this roster",
-     "why": "you already carry 2 TEs for 1 slot(s) and he projects below your weakest (Isaiah Likely 10.9 vs 8.7). Only a trade chip."
+     "why": "you already carry 2 TEs for 1 slot(s) and he projects below your weakest (Isaiah Likely 11.0 vs 8.7). Only a trade chip."
     },
     {
      "add": "Tank Bigsby",
@@ -123,32 +141,32 @@
     "DEF": "Jets",
     "K": "Jason Myers",
     "QB": "Matthew Stafford",
-    "RB1": "James Cook III",
-    "RB2": "MarShawn Lloyd",
-    "TE": "Isaiah Likely",
-    "W/R/T": "Sam LaPorta",
+    "RB1": "MarShawn Lloyd",
+    "RB2": "James Cook III",
+    "TE": "Sam LaPorta",
+    "W/R/T": "Isaiah Likely",
     "WR1": "Jaxon Smith-Njigba",
     "WR2": "Drake London",
     "WR3": "Malik Washington"
    },
    "me": "OVERKILL",
-   "others_pulled": "2026-10-10T00:18:12+00:00",
+   "others_pulled": "2026-10-10T06:19:41+00:00",
    "planner": {
     "lineup_after": {
      "DEF": "Jets",
      "K": "Jason Myers",
      "QB": "Matthew Stafford",
-     "RB1": "James Cook III",
-     "RB2": "MarShawn Lloyd",
-     "TE": "Isaiah Likely",
-     "W/R/T": "Sam LaPorta",
+     "RB1": "MarShawn Lloyd",
+     "RB2": "James Cook III",
+     "TE": "Sam LaPorta",
+     "W/R/T": "Isaiah Likely",
      "WR1": "Jaxon Smith-Njigba",
      "WR2": "Drake London",
      "WR3": "Malik Washington"
     },
     "moves": [
      {
-      "J": 0.792,
+      "J": 0.795,
       "add": null,
       "drop": null,
       "gates": [],
@@ -176,7 +194,11 @@
      },
      {
       "name": "Cade Otton",
-      "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 8.7 under your weakest 10.9"
+      "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 8.7 under your weakest 11.0"
+     },
+     {
+      "name": "Darius Cooper",
+      "reason": "best spot Xavier Hutchinson: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
      },
      {
       "name": "Eddy Pineiro",
@@ -188,7 +210,7 @@
      },
      {
       "name": "Michael Mayer",
-      "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 8.2 under your weakest 10.9"
+      "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 8.1 under your weakest 11.0"
      },
      {
       "name": "Tank Bigsby",
@@ -196,7 +218,7 @@
      }
     ]
    },
-   "pulled": "2026-10-10T00:18:12+00:00"
+   "pulled": "2026-10-10T06:19:41+00:00"
   },
   "HH": {
    "actions": [
@@ -234,7 +256,7 @@
      "verb": "NONE",
      "verdict": "PASS",
      "when": "no move for this roster",
-     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Rome Odunze 9.4 vs 8.2). Only a trade chip."
+     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Rome Odunze 9.4 vs 8.3). Only a trade chip."
     },
     {
      "add": "T.J. Hockenson",
@@ -271,6 +293,44 @@
      "verdict": "PASS",
      "when": "no clean drop left",
      "why": "two straight weeks of starter usage (wk3: 77% snaps, 17% targets, 5% air yds), but the rest of the bench is a hold, a handcuff, starter-level usage in its own right, or has no depth-chart check on rec"
+    },
+    {
+     "add": "Keon Coleman",
+     "bid": null,
+     "drop": null,
+     "gates": [
+      "G11-role-registry:WARN"
+     ],
+     "kind": "breakout",
+     "provisional": false,
+     "sit": null,
+     "slot": null,
+     "start": null,
+     "status": null,
+     "subject": "Keon Coleman",
+     "tier": "B",
+     "verb": "NONE",
+     "verdict": "WARN",
+     "when": "no move for this roster",
+     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Rome Odunze 9.4 vs 9.0). Only a trade chip."
+    },
+    {
+     "add": "Darius Cooper",
+     "bid": null,
+     "drop": null,
+     "gates": [],
+     "kind": "breakout",
+     "provisional": false,
+     "sit": null,
+     "slot": null,
+     "start": null,
+     "status": null,
+     "subject": "Darius Cooper",
+     "tier": "B",
+     "verb": "NONE",
+     "verdict": "PASS",
+     "when": "no move for this roster",
+     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Rome Odunze 9.4 vs 5.5). Only a trade chip."
     },
     {
      "add": "Emanuel Wilson",
@@ -378,7 +438,7 @@
      "verb": "NONE",
      "verdict": "PASS",
      "when": "no move for this roster",
-     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Rome Odunze 9.4 vs 6.2). Only a trade chip."
+     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Rome Odunze 9.4 vs 6.3). Only a trade chip."
     },
     {
      "add": "Cade Otton",
@@ -548,7 +608,7 @@
     "CB": "Cooper DeJean",
     "D": "Foyesade Oluokun",
     "DB": "Budda Baker",
-    "DEF": "Texans",
+    "DEF": "Houston",
     "DL": "T.J. Watt",
     "K": "Cairo Santos",
     "LB": "Carson Schwesinger",
@@ -562,15 +622,15 @@
     "WR": "Ja'Marr Chase"
    },
    "flags": [
-    "2 DEFs rostered \u2014 second one is a HOLD in a capped league: Texans (registry hold)",
-    "Ja'Marr Chase is Q at WR \u2014 if he is out, Jameson Williams (12.1) takes the slot; decide before Sun Oct 11, 1:00 pm ET",
+    "2 DEFs rostered \u2014 second one is a HOLD in a capped league: Houston (registry hold)",
+    "Ja'Marr Chase is Q at WR \u2014 if he is out, Jameson Williams (12.2) takes the slot; decide before Sun Oct 11, 1:00 pm ET",
     "Nick Cross [O] holds a roster spot \u2014 why and for how long is NOT on record; not a drop until it is"
    ],
    "lineup": {
     "CB": "Cooper DeJean",
     "D": "Carson Schwesinger",
     "DB": "Kam Curl",
-    "DEF": "Texans",
+    "DEF": "Houston",
     "DL": "T.J. Watt",
     "K": "Cairo Santos",
     "LB": "Foyesade Oluokun",
@@ -580,17 +640,17 @@
     "S": "Budda Baker",
     "TE": "Trey McBride",
     "W/R": "Braelon Allen",
-    "W/R/T": "Ja'Marr Chase",
-    "WR": "Drake London"
+    "W/R/T": "Drake London",
+    "WR": "Ja'Marr Chase"
    },
    "me": "Tecmo Bowlers",
-   "others_pulled": "2026-10-10T00:18:12+00:00",
+   "others_pulled": "2026-10-10T06:19:41+00:00",
    "planner": {
     "lineup_after": {
      "CB": "Cooper DeJean",
      "D": "Carson Schwesinger",
      "DB": "Kam Curl",
-     "DEF": "Texans",
+     "DEF": "Houston",
      "DL": "T.J. Watt",
      "K": "Cairo Santos",
      "LB": "Foyesade Oluokun",
@@ -600,58 +660,66 @@
      "S": "Budda Baker",
      "TE": "Trey McBride",
      "W/R": "Braelon Allen",
-     "W/R/T": "Ja'Marr Chase",
-     "WR": "Drake London"
+     "W/R/T": "Drake London",
+     "WR": "Ja'Marr Chase"
     },
     "moves": [],
     "rejected": [
      {
       "name": "Alvin Kamara",
-      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 10.7 under your weakest 14.9"
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 10.6 under your weakest 15.0"
      },
      {
       "name": "Brenton Strange",
-      "reason": "best spot Chiefs: Tier B (unpriced) never takes the spare DEF \u2014 Tier A only"
+      "reason": "best spot Kansas City: Tier B (unpriced) never takes the spare DEF \u2014 Tier A only"
      },
      {
       "name": "Cade Otton",
-      "reason": "best spot Chiefs: Tier B (unpriced) never takes the spare DEF \u2014 Tier A only"
+      "reason": "best spot Kansas City: Tier B (unpriced) never takes the spare DEF \u2014 Tier A only"
+     },
+     {
+      "name": "Darius Cooper",
+      "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 5.5 under your weakest 9.4"
      },
      {
       "name": "Emanuel Wilson",
-      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 14.1 under your weakest 14.9"
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 14.2 under your weakest 15.0"
      },
      {
       "name": "Harrison Mevis",
-      "reason": "best spot Chiefs: Chiefs is the spare DEF: a spot for a Tier-A add or a same-family stream only (~1 pt/wk on its own, 09-24)"
+      "reason": "best spot Kansas City: Kansas City is the spare DEF: a spot for a Tier-A add or a same-family stream only (~1 pt/wk on its own, 09-24)"
      },
      {
       "name": "Isaac TeSlaa",
-      "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 6.2 under your weakest 9.4"
+      "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 6.3 under your weakest 9.4"
      },
      {
       "name": "Jakobi Meyers",
-      "reason": "best spot Chiefs: Tier B (unpriced) never takes the spare DEF \u2014 Tier A only"
+      "reason": "best spot Kansas City: Tier B (unpriced) never takes the spare DEF \u2014 Tier A only"
      },
      {
       "name": "KC Concepcion",
-      "reason": "J -3.08 < 3.0 at its best spot (Chiefs) \u2014 J -3.08 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x-2.14 (rest, mean of wks 7-17) + 0.1x+1.27 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn"
+      "reason": "J -3.09 < 3.0 at its best spot (Kansas City) \u2014 J -3.09 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x-2.14 (rest, mean of wks 7-17) + 0.1x+1.24 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn"
+     },
+     {
+      "name": "Keon Coleman",
+      "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 9.0 under your weakest 9.4"
      },
      {
       "name": "Khalil Shakir",
-      "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
+      "reason": "best spot Kansas City: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
      },
      {
       "name": "Makai Lemon",
-      "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 8.2 under your weakest 9.4"
+      "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 8.3 under your weakest 9.4"
      },
      {
       "name": "Michael Mayer",
-      "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
+      "reason": "best spot Kansas City: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
      },
      {
       "name": "Ollie Gordon",
-      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 10.5 under your weakest 14.9"
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 10.4 under your weakest 15.0"
      },
      {
       "name": "Quentin Johnston",
@@ -659,27 +727,27 @@
      },
      {
       "name": "RJ Harvey",
-      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 11.8 under your weakest 14.9"
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 11.9 under your weakest 15.0"
      },
      {
       "name": "Tank Bigsby",
-      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 0.0 under your weakest 14.9"
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 0.0 under your weakest 15.0"
      },
      {
       "name": "T.J. Hockenson",
-      "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
+      "reason": "best spot Kansas City: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
      },
      {
       "name": "Tre' Harris",
-      "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
+      "reason": "best spot Kansas City: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
      },
      {
       "name": "TreVeyon Henderson",
-      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 9.6 under your weakest 14.9"
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 9.3 under your weakest 15.0"
      },
      {
       "name": "Tyler Allgeier",
-      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 8.0 under your weakest 14.9"
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 8.0 under your weakest 15.0"
      },
      {
       "name": "Xavier Worthy",
@@ -687,9 +755,9 @@
      }
     ]
    },
-   "pulled": "2026-10-10T00:18:12+00:00"
+   "pulled": "2026-10-10T06:19:41+00:00"
   }
  },
- "now": "2026-10-09T20:21-04:00",
+ "now": "2026-10-10T02:22-04:00",
  "week": 5
 }

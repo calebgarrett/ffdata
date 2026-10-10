@@ -56,30 +56,30 @@
    "DEF": "DST:NYJ",
    "K": "jason myers",
    "QB": "matt stafford",
-   "RB1": "james cook",
-   "RB2": "marshawn lloyd",
-   "TE": "isaiah likely",
-   "W/R/T": "sam laporta",
+   "RB1": "marshawn lloyd",
+   "RB2": "james cook",
+   "TE": "sam laporta",
+   "W/R/T": "isaiah likely",
    "WR1": "jaxon smith njigba",
    "WR2": "drake london",
    "WR3": "malik washington"
   },
-  "optimal_before_moves": 143.26,
+  "optimal_before_moves": 143.59,
   "slots": {
    "DEF": "Jets",
    "K": "Jason Myers",
    "QB": "Matthew Stafford",
-   "RB1": "James Cook III",
-   "RB2": "MarShawn Lloyd",
-   "TE": "Isaiah Likely",
-   "W/R/T": "Sam LaPorta",
+   "RB1": "MarShawn Lloyd",
+   "RB2": "James Cook III",
+   "TE": "Sam LaPorta",
+   "W/R/T": "Isaiah Likely",
    "WR1": "Jaxon Smith-Njigba",
    "WR2": "Drake London",
    "WR3": "Malik Washington"
   },
-  "total": 143.26
+  "total": 143.59
  },
- "made": "2026-10-09T20:21-04:00",
+ "made": "2026-10-10T02:22-04:00",
  "mechanics": [
   {
    "rule": "A never-rostered free agent is free until his game kicks off",
@@ -119,7 +119,7 @@
  ],
  "moves": [
   {
-   "J": 0.792,
+   "J": 0.795,
    "add_key": null,
    "add_name": null,
    "at": null,
@@ -127,7 +127,7 @@
    "drop_name": null,
    "eff": "W",
    "fam": "DEF",
-   "gain": 0.79,
+   "gain": 0.8,
    "gates": {
     "add": null,
     "drop": null
@@ -135,10 +135,10 @@
    "id": "BSB:lineup:DEF",
    "kind": "lineup",
    "league": "BSB",
-   "phase": "early",
+   "phase": "decide",
    "provisional": true,
    "reasons": [
-    "+0.79 this week",
+    "+0.80 this week",
     "inside the 1.5-pt noise band"
    ],
    "sit": "Vikings",
@@ -167,8 +167,8 @@
     }
    ],
    "value_terms": {
-    "J": 0.792,
-    "dS_W": 0.792
+    "J": 0.795,
+    "dS_W": 0.795
    },
    "when": "before kickoff Sun Oct 11, 1:00 pm ET"
   }
@@ -197,9 +197,18 @@
    "J": null,
    "key": "cade otton",
    "name": "Cade Otton",
-   "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 8.7 under your weakest 10.9",
+   "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 8.7 under your weakest 11.0",
    "reasons": [
     "breakout tier B: 94% snaps, 22% targets, 0% air yds; no market line yet (Sleeper receiving yds 38); held (wk3: 94% snaps, 16% targets, 14% air yds)"
+   ]
+  },
+  {
+   "J": -0.504,
+   "key": "darius cooper",
+   "name": "Darius Cooper",
+   "reason": "best spot Xavier Hutchinson: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
+   "reasons": [
+    "breakout tier B: 90% snaps, 26% targets, 42% air yds; Kalshi receiving yds 27 vs Sleeper 31 (-14%) \u2014 a part-time line, under the 35 starter floor"
    ]
   },
   {
@@ -224,7 +233,7 @@
    "J": null,
    "key": "mike mayer",
    "name": "Michael Mayer",
-   "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 8.2 under your weakest 10.9",
+   "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 8.1 under your weakest 11.0",
    "reasons": [
     "breakout tier B: 88% snaps, 19% targets, 20% air yds; Kalshi receiving yds 32 vs Sleeper 29 (+11%) \u2014 a part-time line, under the 35 starter floor"
    ]
@@ -310,9 +319,9 @@
   "W_REST": 0.8
  },
  "winprob": {
-  "mean": 143.11527961449656,
+  "mean": 143.48749145684266,
   "note": "sampled on the planner's final lineup",
-  "p_med": 0.7138333333333333,
-  "p_opp": 0.4761666666666667
+  "p_med": 0.7293333333333333,
+  "p_opp": 0.4713333333333333
  }
 }
