@@ -1,4 +1,4 @@
-PLAN DIFF — week 5 — Sat Oct 10, 5:35 pm ET  (shadow mode: the card still shows the live calls; FF_PLANNER=1 renders the plan)
+PLAN DIFF — week 5 — Sat Oct 10, 8:51 pm ET  (shadow mode: the card still shows the live calls; FF_PLANNER=1 renders the plan)
 objective: J = 1.0*dS_W + 0.8*dS_W1 + 0.8*dS_rest(mean of weeks W+2..17) + 0.1*d_bench_boom - acq ({'HH': 1.0, 'BSB': 0.0}) - 0.1*bid - 0.5*txns; ship at J >= 3.0
 
 == BSB ================================================================================
@@ -9,15 +9,15 @@ objective: J = 1.0*dS_W + 0.8*dS_W1 + 0.8*dS_rest(mean of weeks W+2..17) + 0.1*d
               - +0.81 this week
               - inside the 1.5-pt noise band
   budgets: {"acq_used": 0, "acq_left": null, "acq_reset": null, "acq_reset_verified": null, "fab_left": 93, "ir_free": 0, "open_spots": 0}
-  final lineup week 5: 143.9 pts (optimal before moves 143.9) · P(beat opp) 49% · P(beat median) 73%
+  final lineup week 5: 144.2 pts (optimal before moves 144.2) · P(beat opp) 48% · P(beat median) 72%
   considered and rejected (8):
     - Baltimore Ravens: J +0.78 < 3.0 at its best spot (Jets) — J +0.78 = 1.0x+0.00 (wk W) + 0.8x+1.73 (W+1) + 0.8x+0.00 (rest, mean of wks 7-17) + 0.1x+0.00 (bench boom) - 0.00 acq - 0.10 FAB($1) - 0.50 churn
     - Philadelphia Eagles: J +0.61 < 3.0 at its best spot (Jets) — J +0.61 = 1.0x+0.00 (wk W) + 0.8x+1.17 (W+1) + 0.8x+0.35 (rest, mean of wks 7-17) + 0.1x+0.00 (bench boom) - 0.00 acq - 0.10 FAB($1) - 0.50 churn
     - Eddy Pineiro: J +0.53 < 3.0 at its best spot (Jason Myers) — J +0.53 = 1.0x+0.00 (wk W) + 0.8x+1.93 (W+1) + 0.8x-0.51 (rest, mean of wks 7-17) + 0.1x+0.00 (bench boom) - 0.00 acq - 0.10 FAB($1) - 0.50 churn
     - Darius Cooper: best spot Xavier Hutchinson: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
     - Harrison Mevis: J -0.73 < 3.0 at its best spot (Jason Myers) — J -0.73 = 1.0x+0.00 (wk W) + 0.8x+1.19 (W+1) + 0.8x-1.35 (rest, mean of wks 7-17) + 0.1x+0.00 (bench boom) - 0.00 acq - 0.10 FAB($1) - 0.50 churn
-    - Cade Otton: sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 8.7 under your weakest 11.1
-    - Michael Mayer: sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 8.2 under your weakest 11.1
+    - Cade Otton: sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 8.7 under your weakest 11.2
+    - Michael Mayer: sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 8.2 under your weakest 11.2
     - Tank Bigsby: sits behind everyone: you carry 3 RBs for 2 slot(s) and he projects 0.0 under your weakest 0.9
   not a clean drop: James Cook III (starter-level usage in his own right (59% snaps, 74% of RB touches)); MarShawn Lloyd (starter-level usage in his own right (55% snaps, 48% of RB touches)); Jaxon Smith-Njigba (starter-level usage in his own right (88% snaps, 27% targets, 58% air ); Drake London (starter-level usage in his own right (89% snaps, 30% targets, 46% air ); Malik Washington (starter-level usage in his own right (87% snaps, 29% targets, 84% air ); Sam LaPorta (starter-level usage in his own right (79% snaps, 25% targets, 20% air ); Josh Jacobs (registry HOLD — HOLD. A top-10 RB whose likely return lands before the); Ray Davis (registry HOLD — HOLD, downgraded. James Cook is the single best asset ); Ryan Flournoy (his game is final / live — finished and live players never move); Makai Lemon (starter-level usage in his own right (74% snaps, 22% targets, 35% air )
   UNVERIFIED mechanics: A benched player whose game is over cannot be dropped before the week rolls
@@ -26,7 +26,7 @@ objective: J = 1.0*dS_W + 0.8*dS_W1 + 0.8*dS_rest(mean of weeks W+2..17) + 0.1*d
   card Decide calls vs the plan:
     (the card has no Decide call in this league)
   budgets: {"acq_used": 2, "acq_left": 5, "acq_reset": "2026-10-06T07:00-04:00", "acq_reset_verified": false, "fab_left": null, "ir_free": 1, "open_spots": 0}
-  final lineup week 5: 315.8 pts (optimal before moves 315.8) · P(beat opp) 94%
+  final lineup week 5: 316.1 pts (optimal before moves 316.1) · P(beat opp) 95%
   considered and rejected (22):
     - Harrison Mevis: best spot Chiefs: Chiefs is the spare DEF: a spot for a Tier-A add or a same-family stream only (~1 pt/wk on its own, 09-24)
     - T.J. Hockenson: best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
@@ -37,20 +37,20 @@ objective: J = 1.0*dS_W + 0.8*dS_W1 + 0.8*dS_rest(mean of weeks W+2..17) + 0.1*d
     - Jakobi Meyers: best spot Chiefs: Tier B (unpriced) never takes the spare DEF — Tier A only
     - Tre' Harris: best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
     - KC Concepcion: J -3.09 < 3.0 at its best spot (Chiefs) — J -3.09 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x-2.13 (rest, mean of wks 7-17) + 0.1x+1.21 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn
-    - Alvin Kamara: sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 10.6 under your weakest 15.7
-    - Darius Cooper: sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 5.5 under your weakest 9.3
-    - Emanuel Wilson: sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 14.3 under your weakest 15.7
-    - Isaac TeSlaa: sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 6.2 under your weakest 9.3
-    - Keon Coleman: sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 9.0 under your weakest 9.3
+    - Alvin Kamara: sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 10.6 under your weakest 15.9
+    - Darius Cooper: sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 5.6 under your weakest 9.3
+    - Emanuel Wilson: sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 14.3 under your weakest 15.9
+    - Isaac TeSlaa: sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 6.1 under your weakest 9.3
+    - Keon Coleman: sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 8.9 under your weakest 9.3
     - Makai Lemon: sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 8.1 under your weakest 9.3
-    - Ollie Gordon: sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 10.2 under your weakest 15.7
-    - Quentin Johnston: sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 1.2 under your weakest 9.3
-    - RJ Harvey: sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 11.9 under your weakest 15.7
-    - Tank Bigsby: sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 0.0 under your weakest 15.7
-    - TreVeyon Henderson: sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 9.5 under your weakest 15.7
-    - Tyler Allgeier: sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 8.0 under your weakest 15.7
+    - Ollie Gordon: sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 10.3 under your weakest 15.9
+    - Quentin Johnston: sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 1.1 under your weakest 9.3
+    - RJ Harvey: sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 11.9 under your weakest 15.9
+    - Tank Bigsby: sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 0.0 under your weakest 15.9
+    - TreVeyon Henderson: sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 9.6 under your weakest 15.9
+    - Tyler Allgeier: sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 8.0 under your weakest 15.9
     - Xavier Worthy: sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 0.0 under your weakest 9.3
-  not a clean drop: Dak Prescott (his game is final / live — finished and live players never move); Jaylen Warren (starter-level usage in his own right (97% snaps, 92% of RB touches)); Trey McBride (starter-level usage in his own right (97% snaps, 34% targets, 15% air ); Drake London (starter-level usage in his own right (89% snaps, 30% targets, 46% air ); Braelon Allen (you added him 2026-10-09 (<= 7 days) — your decision, not the spot); Jared Goff (gate: G6-magnitude 39.81279571272479 below QB season bounds [60,600] —); Jameson Williams (starter-level usage in his own right (99% snaps, 15% targets, 27% air ); Rome Odunze (starter-level usage in his own right (89% snaps, 21% targets, 40% air ); Matthew Stafford (gate: G6-magnitude 38.94224346458916 below QB season bounds [60,600] —); Malik Washington (starter-level usage in his own right (87% snaps, 29% targets, 84% air ); Denzel Boston (starter-level usage in his own right (95% snaps, 21% targets, 43% air ); Cairo Santos (you added him 2026-10-06 (<= 7 days) — your decision, not the spot); Texans (registry HOLD — HOLD in Heritage House. A 7-acquisition league rations); Foyesade Oluokun (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Budda Baker (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); T.J. Watt (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Carson Schwesinger (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Cooper DeJean (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Kam Curl (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Nick Cross (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Alontae Taylor (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR)
+  not a clean drop: Dak Prescott (his game is final / live — finished and live players never move); Jaylen Warren (starter-level usage in his own right (97% snaps, 92% of RB touches)); Trey McBride (starter-level usage in his own right (97% snaps, 34% targets, 15% air ); Drake London (starter-level usage in his own right (89% snaps, 30% targets, 46% air ); Braelon Allen (you added him 2026-10-09 (<= 7 days) — your decision, not the spot); Jared Goff (gate: G6-magnitude 39.86798401145163 below QB season bounds [60,600] —); Jameson Williams (starter-level usage in his own right (99% snaps, 15% targets, 27% air ); Rome Odunze (starter-level usage in his own right (89% snaps, 21% targets, 40% air ); Matthew Stafford (gate: G6-magnitude 39.015579546340064 below QB season bounds [60,600] ); Malik Washington (starter-level usage in his own right (87% snaps, 29% targets, 84% air ); Denzel Boston (starter-level usage in his own right (95% snaps, 21% targets, 43% air ); Cairo Santos (you added him 2026-10-06 (<= 7 days) — your decision, not the spot); Texans (registry HOLD — HOLD in Heritage House. A 7-acquisition league rations); Foyesade Oluokun (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Budda Baker (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); T.J. Watt (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Carson Schwesinger (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Cooper DeJean (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Kam Curl (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Nick Cross (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Alontae Taylor (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR)
   UNVERIFIED mechanics: 7 acquisitions per week, counted from the most recent Tuesday 07:00 ET | A player dropped To Waivers sits on waivers 1 day | An O tag is IR-eligible | A benched player whose game is over cannot be dropped before the week rolls
 
 plan simulation (sanity check 11): clean — legal at every step, each spot once, budgets held
