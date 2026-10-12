@@ -1,22 +1,22 @@
-# ffdata pull loaded Sun Oct 11, 7:07 pm ET — repo head: 2026-10-11T19:12:06Z pull 2026-10-11T19:12Z (in-action, no pull)
+# ffdata pull loaded Sun Oct 11, 10:37 pm ET — repo head: 2026-10-11T23:09:29Z pull 2026-10-11T23:09Z (in-action, no pull)
 week 5
-kalshi.csv: 2020 markets, 71 events, pulled 2026-10-11T23:06:16+00:00
-kalshi_archive: 1 new pull(s) copied, 84 on disk
-espn_games.csv: 15 games for week 5 — 1 with ESPN lines from the pump, 14 schedule-only from lines_wk3_9.csv; Kalshi spread/total ladders supply the lines inside the engine
+kalshi.csv: 1343 markets, 59 events, pulled 2026-10-12T02:36:35+00:00
+kalshi_archive: 1 new pull(s) copied, 85 on disk
+espn_games.csv: 15 games for week 5 — 0 with ESPN lines from the pump, 15 schedule-only from lines_wk3_9.csv; Kalshi spread/total ladders supply the lines inside the engine
 sleeper_off_wk5.csv: 3304 rows
 sleeper_idp_wk5.csv: 4604 rows
 trending_adds.csv: 40 adds / 40 drops (48h)
 usage_wk4_QB.csv: 85 rows
-usage_wk5_QB.csv: 70 rows
+usage_wk5_QB.csv: 75 rows
 usage_wk4_RB.csv: 180 rows
-usage_wk5_RB.csv: 146 rows
+usage_wk5_RB.csv: 157 rows
 usage_wk4_WR.csv: 283 rows
-usage_wk5_WR.csv: 233 rows
+usage_wk5_WR.csv: 250 rows
 usage_wk4_TE.csv: 164 rows
-usage_wk5_TE.csv: 140 rows
-BSB rosters: 216 players on 12 teams, pulled 2026-10-11T23:06:55+00:00 -> new snapshot
+usage_wk5_TE.csv: 151 rows
+BSB rosters: 216 players on 12 teams, pulled 2026-10-12T02:37:10+00:00 -> new snapshot
 BSB matchup wk5: vs Phish Phanatics; 2 final rows, 0 in progress; totals me 0.00 opp 0.00
-BSB transactions: 2 new of 48 on the page; log now 169 rows
-HH rosters: 238 players on 10 teams, pulled 2026-10-11T23:06:55+00:00 -> new snapshot
+BSB transactions: 0 new of 48 on the page; log now 169 rows
+HH rosters: 238 players on 10 teams, pulled 2026-10-12T02:37:10+00:00 -> new snapshot
 HH matchup wk5: vs Maker's Mark; 2 final rows, 0 in progress; totals me 36.62 opp 2.55
-HH transactions: 0 new of 44 on the page; log now 141 rows
+HH transactions: 1 new of 44 on the page; log now 142 rows
