@@ -60,6 +60,32 @@ def locked(row, now=None):
     return False
 
 # ------------------------------------------------------------------ BSB waivers
+# ---- FAB (BSB): every dollar is for one thing — maximizing P(win the league).
+# Unspent FAB is worth nothing after the last waiver run, so the price of a
+# dollar falls as the season goes. The reserve is the money kept back for a
+# Tier-A player (a season-changing injury replacement: two weeks of starter
+# usage and a market line), which the ladder says costs ~$34 uncontested and
+# ~$67 against the whale. It steps down as the runs left to find one shrink.
+# Caleb, 10-13: "every policy decision should be about maximizing my chance to
+# win the league." A firm Tier-B claim (a hole cover, an upside add) therefore
+# bids to WIN the claim — the league's 75th-percentile winning bid — not the
+# $1 floor that loses the coin flip whenever a second manager wants the same man.
+FAB_RESERVE = ((10, 60), (12, 30), (99, 0))     # through week w -> dollars held back
+FAB_FIRM_PCT = 0.75                             # a firm Tier-B claim clears this share of the ladder
+
+def fab_reserve(week):
+    for w, r in FAB_RESERVE:
+        if week <= w: return r
+    return 0
+
+def fab_bid_firm(bids, pct=FAB_FIRM_PCT):
+    """The league's pct-ile winning bid (ceil), at least $1; $1 with no ladder."""
+    xs = sorted(int(b) for b in (bids or []))
+    if not xs: return 1
+    import math
+    i = min(len(xs) - 1, max(0, math.ceil(pct * len(xs)) - 1))
+    return max(1, int(xs[i]))
+
 def _bsb_log(path=None):
     return path or os.path.join(ROOT, 'data', 'bsb_transactions.csv')
 

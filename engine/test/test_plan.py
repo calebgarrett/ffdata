@@ -246,6 +246,21 @@ mv = [m for m in moves_of(p) if m['add_key'] == NK(cover)]
 case('a week-W hole is covered by the best free agent who can still play, however deep he ranks', len(mv) == 1 and 'hole' in mv[0]['srcs'], p.summary())
 case('...and the hole reason leads the tile', mv and mv[0]['reasons'][0].startswith(f"week-{WEEK} hole at K"), mv and mv[0]['reasons'][:1])
 
+# ---------------------------------------------------------------- 5c. no pulse on the wire (10-13: Achane, torn ACL, a $1 claim off a 264-pt preseason number)
+# A free agent with NO weekly projection (this week or the last played weeks on disk)
+# is OUT until a tag says otherwise, whatever his season number says — never an add,
+# and his rest-of-season value is zero.
+r5c = bsb_roster(open_spots=1)
+ghost = 'Thaddeus Wraithbourne'
+f, st, pr = league('BSB', r5c, fas=[(ghost, 'RB', 'MIA', None)], season={NK(ghost): dict(name=ghost, tm='MIA', pos='RB', pts=264.0)}, byes={W1: set()})
+gx = f.fa(NK(ghost))
+case('a free agent nobody projects is tagged O, not clear', gx is not None and gx.designation == 'O', gx and (gx.designation, gx.designation_src))
+case('...and his rest-of-season value is zero, not season/17', gx is not None and (gx.ros_pw or 0) == 0.0 and (gx.pts_w1 or 0) == 0.0, gx and (gx.ros_pw, gx.pts_w1))
+ev = dict(breakout_rows=[dict(key=NK(ghost), name=ghost, pos='RB', tm='MIA', tier='A', held='', usage='', market='', in_pool=True, ahead=True)])
+p = PL.plan_facts(f, ev)
+case('...and he is never an add, even into an open spot with Tier-A evidence', not any(m['add_key'] == NK(ghost) for m in p.moves), p.summary())
+case('...rejected with G2 and the reason', any(r['key'] == NK(ghost) and r['reason'].startswith('G2') for r in p.rejected), [r for r in p.rejected if r['key'] == NK(ghost)])
+
 # ---------------------------------------------------------------- 6. owned player never a candidate
 r6 = bsb_roster(open_spots=1)
 own = 'Aurelio Pendergast'
@@ -275,6 +290,38 @@ ev = dict(upgrades=[dict(fam='WR', add=dict(key=NK(wrfa), name=wrfa, week=30.0),
 p = PL.plan_facts(f, ev)
 case('superflex: QB3 is never the drop', not any(t['op'] == 'drop' and t['key'] == NK(qb3) for m in p.moves for t in m['txns']), p.summary())
 case('...he is listed as not a clean drop, with G14', any(e['player'] == qb3 and 'G14' in e['reason'] for e in p.excluded), str(p.excluded))
+
+# ---------------------------------------------------------------- 8b. FAB policy (Caleb, 10-13: every policy decision maximizes P(win the league))
+# A firm claim (hole cover) bids to WIN it — the league's 75th-pct winning bid — from
+# the money above the reserve; the reserve is for a Tier-A player and steps down.
+import lib.fab as _FAB, lib.rules as _RU
+_LADDER = [0, 0, 0, 1, 1, 2, 3, 5, 5, 6, 7, 10, 11, 15, 24, 66]        # 16 bids: 75th pct -> index 11 -> $10
+_real_model = _FAB.model
+_FAB.model = lambda: dict(n=len(_LADDER), bids=list(_LADDER), bands={'B': dict(bid=1), 'A': dict(bid=25), 'contested': dict(bid=67)}, med=5, spent={}, remaining={})
+try:
+    case('rules: the ladder\'s 75th-pct bid is $10 on this ladder', _RU.fab_bid_firm(_LADDER) == 10, _RU.fab_bid_firm(_LADDER))
+    case('rules: the reserve is $60 through week 10, $30 through 12, $0 after', (_RU.fab_reserve(6), _RU.fab_reserve(11), _RU.fab_reserve(13)) == (60, 30, 0))
+    # week-W+1 hole at K in BSB (sole K on bye next week, started this week -> Tuesday claim)
+    r8b = bsb_roster()
+    kb = 'Barnaby Quillfeather'
+    f, st, pr = league('BSB', r8b, fas=[(kb, 'K', 'NE', 9.0)], kicks={'SEA': PAST}, byes={W1: {'SEA'}}, usage=_u4, fab_left=93)
+    p = PL.plan_facts(f, {})
+    km = [m for m in moves_of(p) if m['add_key'] == NK(kb)]
+    bid = km and next((t.get('bid') for t in km[0]['txns'] if t['op'] == 'claim'), None)
+    case('a firm hole-cover claim bids the 75th-pct winning bid ($10), not the $1 floor', bid == 10, (bid, p.summary()))
+    f, st, pr = league('BSB', r8b, fas=[(kb, 'K', 'NE', 9.0)], kicks={'SEA': PAST}, byes={W1: {'SEA'}}, usage=_u4, fab_left=63)
+    p = PL.plan_facts(f, {})
+    km = [m for m in moves_of(p) if m['add_key'] == NK(kb)]
+    bid = km and next((t.get('bid') for t in km[0]['txns'] if t['op'] == 'claim'), None)
+    case('...capped by the reserve: $63 left in week <= 10 leaves $3 above the $60 reserve', bid == 3, (bid, p.summary()))
+    case('...and the claim still ships (money above the reserve is nearly free)', len(km) == 1, p.summary())
+    f, st, pr = league('BSB', r8b, fas=[(kb, 'K', 'NE', 9.0)], kicks={'SEA': PAST}, byes={W1: {'SEA'}}, usage=_u4, fab_left=5)
+    p = PL.plan_facts(f, {})
+    km = [m for m in moves_of(p) if m['add_key'] == NK(kb)]
+    bid = km and next((t.get('bid') for t in km[0]['txns'] if t['op'] == 'claim'), None)
+    case('...never below $1, never above what is left', bid == 1, (bid, p.summary()))
+finally:
+    _FAB.model = _real_model
 
 # ---------------------------------------------------------------- 9. handcuff never a drop
 r9 = bsb_roster()

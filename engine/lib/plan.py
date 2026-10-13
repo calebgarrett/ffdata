@@ -72,7 +72,8 @@ from .facts import Facts, Fact, IR_TAGS
 # ------------------------------------------------------------------ weights (read these)
 W_NOW, W_NEXT, W_REST, W_BOOM = 1.0, 0.8, 0.8, 0.1
 K_ACQ = {'HH': 1.0, 'BSB': 0.0}
-K_FAB = 0.1                       # per dollar (bid / 10)
+K_FAB = 0.1                       # per dollar that eats into the FAB reserve (rules.fab_reserve)
+K_FAB_TIE = 0.01                  # per dollar above it: a tie-break, not a cost
 K_CHURN = 0.5                     # per Yahoo transaction
 SHIP_J = 3.0
 REST_NORM = 'mean'                # dS_REST = sum over weeks W+2..17 / number of those weeks
@@ -119,9 +120,11 @@ class Mechanics:
             ]
 
     # ---- the clock for an add
-    def acquire(self, c, tier=None):
-        """-> dict(kind fa|claim|after_game, eff W|W+1, at, deadline, label, verified, bid)"""
+    def acquire(self, c, tier=None, cand=None):
+        """-> dict(kind fa|claim|after_game, eff W|W+1, at, deadline, label, verified, bid)
+        c is the player's Fact; cand the planner Candidate (firm / srcs drive the bid)."""
         f = self.f; now = f.now
+        self._cand = cand
         ow = c.on_waivers
         if f.league == 'BSB':
             if ow:
@@ -161,22 +164,47 @@ class Mechanics:
         return dict(ok_now=True, at=None, lock_at=d.lock_at, label='')
 
     def bid(self, c, tier):
+        """BSB claim amount. Tier A: clear the field (rivals model / ladder band), the
+        reserve is exactly for him. Firm Tier B / hole cover: the league's 75th-pct
+        winning bid, spent only from the money above the reserve. Else the floor."""
         if self.f.league != 'BSB': return None
         t = tier if tier in ('A', 'B') else 'B'
-        prof = self.f.rivals
-        if prof is not None:
-            try:
-                from . import rivals as RV
-                return int(RV.bid_for(prof, c.fam, t)['bid'])
-            except Exception:
-                pass
+        left = self.f.fab_left
         try:
             from . import fab as F
-            b = (F.model().get('bands') or {}).get(t)
-            if b: return int(b['bid'])
+            fab = F.model()
         except Exception:
-            pass
-        return 1
+            fab = {}
+        bands = fab.get('bands') or {}
+        if t == 'A':
+            b = None
+            prof = self.f.rivals
+            if prof is not None:
+                try:
+                    from . import rivals as RV
+                    b = int(RV.bid_for(prof, c.fam, t, fab=fab)['bid'])
+                except Exception:
+                    b = None
+            if b is None: b = int((bands.get('A') or {}).get('bid', 1))
+            return max(1, min(b, left)) if left is not None else b
+        cd = getattr(self, '_cand', None)
+        firm = bool(cd is not None and (cd.firm or ('hole' in (cd.srcs or set())) or ('nextup' in (cd.srcs or set()))))
+        if not firm:
+            return int((bands.get('B') or {}).get('bid', 1))
+        want = RU.fab_bid_firm(fab.get('bids'))
+        if left is None: return want
+        spendable = max(1, left - RU.fab_reserve(self.f.week))
+        return max(1, min(want, spendable))
+
+    def fab_cost(self, bid):
+        """J cost of a bid: dollars that eat into the reserve cost K_FAB each; dollars
+        above it are nearly free (unspent FAB is worth nothing in January)."""
+        bid = bid or 0
+        if not bid: return 0.0
+        left = self.f.fab_left
+        if left is None: return K_FAB * bid
+        free = max(0, left - RU.fab_reserve(self.f.week))
+        return K_FAB * max(0, bid - free) + K_FAB_TIE * bid
 
     def ir_eligible(self, d):
         """True (firm) / 'ask' (O tag: unverified) / False."""
@@ -405,8 +433,9 @@ def _week_inputs(f, changes, t):
 
 
 class Objective:
-    def __init__(self, facts):
+    def __init__(self, facts, mech=None):
         self.f = facts
+        self.mech = mech
         self.cache = {}
         teams = {facts.mine[k].tm for k in facts.mine_keys}
         self.teams = teams
@@ -449,11 +478,12 @@ class Objective:
         dR = (sum(rest) / len(rest)) if rest else 0.0
         dB = self.boom(changes) - self.boom([])
         acq = costs.get('acq', 0); bid = costs.get('bid', 0) or 0; txn = costs.get('txn', 0)
+        pen_fab = self.mech.fab_cost(bid) if getattr(self, 'mech', None) is not None else K_FAB * bid
         J = (W_NOW * dW + W_NEXT * dW1 + W_REST * dR + W_BOOM * dB
-             - K_ACQ.get(f.league, 0.0) * acq - K_FAB * bid - K_CHURN * txn)
+             - K_ACQ.get(f.league, 0.0) * acq - pen_fab - K_CHURN * txn)
         return dict(J=round(J, 3), dS_W=round(dW, 3), dS_W1=round(dW1, 3), dS_rest=round(dR, 3), d_boom=round(dB, 3),
                     acq=acq, bid=bid, txn=txn,
-                    pen_acq=round(K_ACQ.get(f.league, 0.0) * acq, 3), pen_fab=round(K_FAB * bid, 3), pen_churn=round(K_CHURN * txn, 3),
+                    pen_acq=round(K_ACQ.get(f.league, 0.0) * acq, 3), pen_fab=round(pen_fab, 3), pen_churn=round(K_CHURN * txn, 3),
                     rest_weeks=f'{f.rest_weeks[0]}-{f.rest_weeks[-1]}' if f.rest_weeks else '')
 
 
@@ -470,6 +500,7 @@ def candidate_block(f, c, ev):
         r = next((r for r in c.reasons if r['src'] == 'breakout'), None)
         return 'not in the projection pool — usage only, no source prices him' if r and not r.get('in_pool') else 'not in this league\'s pool (owned, or no source prices him)'
     if x.owner is not None or x.key in f.state.roster_keys: return f'G1: on a roster in this league'
+    if x.designation in RU.UNUSABLE: return f'G2: {x.designation} — {x.designation_src}'      # 10-13: Achane (torn ACL) off a preseason number
     if x.registry.add_no: return 'G11: registry add_no / unavailable'
     if x.recently_dropped:
         lg, d = x.recently_dropped if isinstance(x.recently_dropped, (tuple, list)) else (f.league, x.recently_dropped)
@@ -529,7 +560,7 @@ def plan_facts(facts, ev=None):
     f = facts
     mech = Mechanics(f)
     pool = SpotPool(f, mech)
-    obj = Objective(f)
+    obj = Objective(f, mech)
     cands = produce(f, ev)
     # replacement level per family (best free agent's rest-of-season per-week value)
     repl = {}
@@ -639,7 +670,7 @@ def _eval_pair(f, mech, obj, c, s, repl):
     rel = mech.release(d)
     options = []
     if rel['ok_now']:
-        a = mech.acquire(x, c.tier)
+        a = mech.acquire(x, c.tier, cand=c)
         options.append(('earliest', a))
         if d is not None and (f.value(d, f.week) or 0) > 0 and a['eff'] == 'W':
             options.append(('deferred', mech.deferred(x, c.tier)))

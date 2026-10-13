@@ -128,6 +128,21 @@ from a research subagent rather than a fixed endpoint.
 
 ## Doctrine the code enforces (all Caleb's, all stated in the thread)
 
+**The objective (Caleb, 10-13): every policy decision is about maximizing his chance to
+win the league.** Nothing else — not "value", not tidiness, not saving money. A rule that
+cannot be traced to P(win) is wrong.
+
+- FAB (BSB), 10-13: unspent FAB is worth nothing in January, so a dollar's price falls as
+  the runs left shrink. A FIRM claim (a hole cover, next-man-up) bids to WIN it — the
+  league's 75th-percentile winning bid (`rules.fab_bid_firm`) — from the money above the
+  reserve. The reserve (`rules.fab_reserve`: $60 through week 10, $30 through 12, $0 after)
+  is held for a Tier-A player and only a Tier-A claim dips into it. Non-firm Tier-B
+  streams take the floor. Dollars above the reserve cost J 0.01 each (a tie-break);
+  dollars that eat into it cost 0.1 each. Tests: test_plan 8b.
+- Free agents (10-13): a player no source projects this week, or in his team's last played
+  weeks on disk, is O — not clear — and worth 0; never an add (Achane, torn ACL, was
+  proposed as a $1 claim off a preseason number). `facts._wire_pulse`, test_plan 5c.
+
 - **A tag is never a drop reason** (Caleb, 2026-09-21: "You are telling me to drop control of players and you have no idea why they missed one week. That's horrible roster management."). O/Q/D/IR/PUP/SUSP/CEL on a Yahoo page is a fact about one week. `wire.dead_spot()` is true only for a long-term designation AND a `roles.json` `drop_ok` entry that records what the injury is and how long (Dell IR-R was one; Jennings O was not). Without that, `gate_drop` BLOCKs (G13-injury), the breakout scanner skips him as a drop, the claim plan skips him, and the card says "why and for how long is NOT on record; not a drop until it is". Verifying the injury — reported cause and expected timeline — is a registry write, done with Caleb present.
 - **A market from another week is never applied** (`Projections` week guard, 09-23): Kalshi ladders are kept only when the event ticker's date falls in the current NFL week; game lines only when the kickoff does; the props file only when it was written after the week began; market-readiness counts only this week's events. Before the guard, a week-3 Wednesday priced Sunday's players off week-2 ladders and Goff off week-2 props.
 - **Yahoo projections are the fallback, labelled** (`data/yahoo_{league}_wk{W}.csv`, copied off the matchup page): points-only, league-scored by Yahoo, one source family (`yahoo`), boom share unknown. Every call on them is PROVISIONAL (G5 single source, G7 no market) until the market posts. Win probability refuses to compute P(beat opponent) when the opponent has a starter no source prices, rather than overstating it.

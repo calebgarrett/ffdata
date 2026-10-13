@@ -273,13 +273,23 @@ class Facts:
         kick = e.get('kick')
         kicked = bool(kick and kick <= self.now)
         proj_w = e.get('week')
-        desig = 'none'
+        # a free agent carries no Yahoo tag. 'none' means READ AND CLEAR, so it is
+        # earned, not assumed: Sleeper projects every active player, so a player his
+        # team's last played weeks did not project is inactive or hurt (10-13: De'Von
+        # Achane, torn ACL, proposed as a $1 claim off a preseason season number)
+        alive, pulse = self._wire_pulse(k, fam, tm, proj_w)
+        desig = 'none' if alive else 'O'
+        dsrc = 'pool: ' + pulse
         un, unr = self._usage(k, 'now'); up, upr = self._usage(k, 'prev')
         reg = self._registry(k, desig)
-        ros, ros_src = self._ros(k, fam, tm, proj_w, desig, False, un)
-        w1, w1_src = self._w1(k, fam, tm, line, proj_w, ros, desig, False, pos=e.get('pos'))
+        if alive:
+            ros, ros_src = self._ros(k, fam, tm, proj_w, desig, False, un)
+            w1, w1_src = self._w1(k, fam, tm, line, proj_w, ros, desig, False, pos=e.get('pos'))
+        else:
+            ros, ros_src = 0.0, 'no pulse on the wire — ' + pulse
+            w1, w1_src = 0.0, ros_src
         f = Fact(key=k, name=e['name'], pos=e.get('pos'), fam=fam, tm=tm, elig=_elig(e.get('pos'), self.league),
-                 owner=None, slot=None, designation=desig, designation_src='pool (no Yahoo tag on file for free agents)',
+                 owner=None, slot=None, designation=desig, designation_src=dsrc,
                  kick=kick, kicked=kicked, final=False, live=False, locked=False, locked_until=None,
                  lock_at=(kick if (kick and kick > self.now) else None),
                  on_waivers=self._waiver_status(k, kicked),
@@ -290,6 +300,53 @@ class Facts:
                  line=line, entry=e, season=e.get('season'))
         self._pool_cache[k] = f
         return f
+
+    def _wire_pulse(self, k, fam, tm, proj_w):
+        """(alive, why) for a free agent. Alive when a projection source priced him
+        this week, or in the latest week his team PLAYED that is on disk. Dead when
+        the last two played weeks on disk both have nothing for him. No played week
+        on disk at all -> alive (nothing to judge by), said so."""
+        if proj_w and proj_w > 0: return True, f'projected this week ({proj_w:.1f})'
+        if fam == 'DEF': return True, 'team defense'
+        played = []
+        for t in range(self.week - 1, max(0, self.week - 4), -1):
+            if t < 1: break
+            if tm and tm in self._past_byes(t): continue
+            had = self._past_proj(t)
+            if had is None: continue                                       # no file for that week
+            played.append((t, k in had))
+            if len(played) == 2: break
+        if not played: return True, 'no earlier week on disk to judge by'
+        if any(h for _, h in played): return True, f'projected in week {next(t for t, h in played if h)}'
+        wks = ', '.join(str(t) for t, _ in played)
+        return False, f'no projection in his team\'s last played week(s) on disk (wk {wks}) — inactive or injured until a tag says otherwise'
+
+    def _past_proj(self, t):
+        """Keys with a positive Sleeper projection in week t, or None when no file."""
+        cache = self.__dict__.setdefault('_past_proj_cache', {})
+        if t in cache: return cache[t]
+        import os, csv
+        from . import paths as _paths
+        from .names import key as _key
+        D = _paths.data('')
+        out, found = set(), False
+        for fn in (f'sleeper_off_wk{t}.csv', f'sleeper_wk{t}.csv', f'sleeper_idp_wk{t}.csv'):
+            p = D + fn
+            if not os.path.exists(p): continue
+            found = True
+            for r in csv.DictReader(open(p)):
+                try: v = float(r.get('pts_ppr') or r.get('pts') or 0)
+                except ValueError: v = 0.0
+                if v > 0: out.add(_key(r['player']))
+        cache[t] = out if found else None
+        return cache[t]
+
+    def _past_byes(self, t):
+        """Teams on bye in week t: the posted-lines table when it covers t; weeks
+        1-4 have no byes in 2026; otherwise unknown (empty)."""
+        WN = self.windows
+        if WN is not None and WN.have(t): return set(WN.byes(t))
+        return set()
 
     def _waiver_status(self, k, kicked):
         """-> dict(until, why) when the player is a CLAIM right now, else None."""
