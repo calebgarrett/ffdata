@@ -9324,10 +9324,11 @@
   ],
   "verdict": "WARN",
   "week": 6,
-  "status": "proposed",
+  "status": "executed",
   "provisional": false,
   "resolves_at": "2026-10-18T13:00-04:00",
-  "reverses": null
+  "reverses": null,
+  "status_ts": "2026-10-13T18:36-04:00"
  },
  {
   "id": "e702bfb6",
@@ -9343,10 +9344,11 @@
   ],
   "verdict": "WARN",
   "week": 6,
-  "status": "proposed",
+  "status": "executed",
   "provisional": false,
   "resolves_at": "2026-10-18T13:00-04:00",
-  "reverses": null
+  "reverses": null,
+  "status_ts": "2026-10-13T18:36-04:00"
  },
  {
   "id": "d125aab5",
@@ -9417,10 +9419,11 @@
   ],
   "verdict": "WARN",
   "week": 6,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": "2026-10-18T13:00-04:00",
-  "reverses": null
+  "reverses": null,
+  "superseded_by": "9c184e71"
  },
  {
   "id": "ec9769c4",
@@ -9435,10 +9438,11 @@
   ],
   "verdict": "WARN",
   "week": 6,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": true,
   "resolves_at": "2026-10-18T13:00-04:00",
-  "reverses": null
+  "reverses": null,
+  "superseded_by": "c3f42089"
  },
  {
   "id": "c67d408e",
@@ -9546,10 +9550,11 @@
   ],
   "verdict": "WARN",
   "week": 6,
-  "status": "proposed",
+  "status": "executed",
   "provisional": false,
   "resolves_at": "2026-10-18T20:20-04:00",
-  "reverses": "20a502da"
+  "reverses": "20a502da",
+  "status_ts": "2026-10-13T18:36-04:00"
  },
  {
   "id": "4da0d227",
@@ -9564,10 +9569,11 @@
   ],
   "verdict": "WARN",
   "week": 6,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": "2026-10-18T16:05-04:00",
-  "reverses": "c67d408e"
+  "reverses": "c67d408e",
+  "superseded_by": "47e29161"
  },
  {
   "id": "1bd96416",
@@ -9582,9 +9588,141 @@
   ],
   "verdict": "WARN",
   "week": 6,
+  "status": "superseded",
+  "provisional": true,
+  "resolves_at": "2026-10-19T20:15-04:00",
+  "reverses": null,
+  "superseded_by": "bd1acf4c"
+ },
+ {
+  "id": "e1f3cfa8",
+  "ts": "2026-10-13T18:36-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Indianapolis Colts",
+  "call": "add Indianapolis Colts (DEF) over New York",
+  "detail": "+5.21/wk",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "869172a2",
+  "ts": "2026-10-13T18:36-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Baltimore Ravens",
+  "call": "add Baltimore Ravens (DEF) over New York",
+  "detail": "+5.15/wk",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "89619a93",
+  "ts": "2026-10-13T18:36-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "San Francisco 49ers",
+  "call": "add San Francisco 49ers (DEF) over New York",
+  "detail": "+3.80/wk",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "c3f42089",
+  "ts": "2026-10-13T18:36-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Denzel Boston",
+  "call": "start Denzel Boston at W/R",
+  "detail": "over Ja'Marr Chase +9.81",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": "2026-10-18T13:00-04:00",
+  "reverses": "ec9769c4"
+ },
+ {
+  "id": "9c184e71",
+  "ts": "2026-10-13T18:36-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Rome Odunze",
+  "call": "start Rome Odunze at W/R/T",
+  "detail": "over Braelon Allen +3.25",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "proposed",
+  "provisional": true,
+  "resolves_at": "2026-10-18T13:00-04:00",
+  "reverses": "ea69b42a"
+ },
+ {
+  "id": "47e29161",
+  "ts": "2026-10-13T18:36-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Matthew Stafford",
+  "call": "start Matthew Stafford at Q/W/R/T",
+  "detail": "over Jared Goff +40.85",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": "2026-10-18T16:05-04:00",
+  "reverses": "4da0d227"
+ },
+ {
+  "id": "bd1acf4c",
+  "ts": "2026-10-13T18:36-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Nick Cross",
+  "call": "start Nick Cross at S",
+  "detail": "over Kam Curl +2.23",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 6,
   "status": "proposed",
   "provisional": true,
   "resolves_at": "2026-10-19T20:15-04:00",
-  "reverses": null
+  "reverses": "1bd96416"
  }
 ]
