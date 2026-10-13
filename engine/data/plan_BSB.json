@@ -10,8 +10,12 @@
  },
  "excluded": [
   {
+   "player": "Matthew Stafford",
+   "reason": "his game is final / live \u2014 finished and live players never move"
+  },
+  {
    "player": "James Cook III",
-   "reason": "starter-level usage in his own right (59% snaps, 74% of RB touches)"
+   "reason": "his game is final / live \u2014 finished and live players never move"
   },
   {
    "player": "MarShawn Lloyd",
@@ -92,7 +96,7 @@
    "WR2": "drake london",
    "WR3": "malik washington"
   },
-  "optimal_before_moves": 200.58,
+  "optimal_before_moves": 220.55,
   "slots": {
    "DEF": "Vikings",
    "K": "Jason Myers",
@@ -105,9 +109,9 @@
    "WR2": "Drake London",
    "WR3": "Malik Washington"
   },
-  "total": 200.58
+  "total": 220.55
  },
- "made": "2026-10-12T22:15-04:00",
+ "made": "2026-10-13T05:44-04:00",
  "mechanics": [
   {
    "rule": "A never-rostered free agent is free until his game kicks off",
@@ -149,19 +153,19 @@
  "notes": [],
  "rejected": [
   {
-   "J": -33.644,
+   "J": null,
    "key": "DST:BAL",
    "name": "Baltimore Ravens",
-   "reason": "best spot Matthew Stafford: a DEF stream that is not a hole never costs a real bench player (Matthew Stafford)",
+   "reason": "no roster spot exists",
    "reasons": [
     "week-6 DEF stream: Baltimore Ravens 7.2 vs your best 5.4 (W line re-scored on the week-6 opponent implied total 19.0)"
    ]
   },
   {
-   "J": -33.839,
+   "J": null,
    "key": "DST:PHI",
    "name": "Philadelphia Eagles",
-   "reason": "best spot Matthew Stafford: a DEF stream that is not a hole never costs a real bench player (Matthew Stafford)",
+   "reason": "no roster spot exists",
    "reasons": [
     "week-6 DEF stream: Philadelphia Eagles 6.6 vs your best 5.4 (W line re-scored on the week-6 opponent implied total 18.5)"
    ]
@@ -176,46 +180,46 @@
    ]
   },
   {
-   "J": -33.918,
+   "J": null,
    "key": "darius cooper",
    "name": "Darius Cooper",
-   "reason": "best spot Matthew Stafford: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
+   "reason": "no roster spot exists",
    "reasons": [
     "breakout tier B: 90% snaps, 26% targets, 42% air yds; no market line yet (Sleeper receiving yds 31)"
    ]
   },
   {
-   "J": -32.85,
+   "J": null,
    "key": "eddy pineiro",
    "name": "Eddy Pineiro",
-   "reason": "best spot Matthew Stafford: a K stream that is not a hole never costs a real bench player (Matthew Stafford)",
+   "reason": "no roster spot exists",
    "reasons": [
     "week-6 K stream: Eddy Pineiro 10.6 vs your best 8.6 (W projection x own implied total 28.0/22.5)"
    ]
   },
   {
-   "J": -34.107,
+   "J": null,
    "key": "harrison mevis",
    "name": "Harrison Mevis",
-   "reason": "best spot Matthew Stafford: a K stream that is not a hole never costs a real bench player (Matthew Stafford)",
+   "reason": "no roster spot exists",
    "reasons": [
     "week-6 K stream: Harrison Mevis 9.9 vs your best 8.6 (W projection x own implied total 30.5/28.2)"
    ]
   },
   {
-   "J": -33.521,
+   "J": null,
    "key": "isaiah williams",
    "name": "Isaiah Williams",
-   "reason": "best spot Matthew Stafford: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
+   "reason": "no roster spot exists",
    "reasons": [
     "breakout tier B: 94% snaps, 20% targets, 62% air yds; no market line yet (Sleeper receiving yds 33)"
    ]
   },
   {
-   "J": -35.014,
+   "J": null,
    "key": "laquon treadwell",
    "name": "Laquon Treadwell",
-   "reason": "best spot Matthew Stafford: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
+   "reason": "no roster spot exists",
    "reasons": [
     "breakout tier B: 85% snaps, 18% targets, 34% air yds; no market line yet (Sleeper receiving yds 30)"
    ]
@@ -233,21 +237,13 @@
    "J": null,
    "key": "tank bigsby",
    "name": "Tank Bigsby",
-   "reason": "sits behind everyone: you carry 3 RBs for 2 slot(s) and he projects 0.0 under your weakest 0.9",
+   "reason": "sits behind everyone: you carry 3 RBs for 2 slot(s) and he projects 0.0 under your weakest 4.3",
    "reasons": [
     "breakout tier B: 48% snaps, 60% of RB touches; no market line yet, and no Sleeper line either"
    ]
   }
  ],
- "spots": [
-  {
-   "id": "drop:matt stafford",
-   "kind": "drop",
-   "label": "Matthew Stafford",
-   "taken_by": null,
-   "tier": 3
-  }
- ],
+ "spots": [],
  "week": 5,
  "weights": {
   "K_ACQ": 0.0,
@@ -261,9 +257,9 @@
   "W_REST": 0.8
  },
  "winprob": {
-  "mean": 200.47436392872928,
+  "mean": 220.55000000000004,
   "note": "final lineup = current lineup (the engine's own number)",
   "p_med": 1.0,
-  "p_opp": 0.9951666666666666
+  "p_opp": 0.9993333333333333
  }
 }
