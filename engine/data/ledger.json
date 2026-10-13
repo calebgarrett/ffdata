@@ -9305,10 +9305,11 @@
   ],
   "verdict": "WARN",
   "week": 6,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": "2026-10-18T20:20-04:00",
-  "reverses": null
+  "reverses": null,
+  "superseded_by": "0011a445"
  },
  {
   "id": "26a36d6c",
@@ -9452,10 +9453,11 @@
   ],
   "verdict": "WARN",
   "week": 6,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": "2026-10-18T16:05-04:00",
-  "reverses": null
+  "reverses": null,
+  "superseded_by": "42054ddd"
  },
  {
   "id": "5e174065",
@@ -9529,6 +9531,60 @@
   "status": "proposed",
   "provisional": false,
   "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "0011a445",
+  "ts": "2026-10-13T13:33-04:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Ryan Flournoy",
+  "call": "start Ryan Flournoy at WR3",
+  "detail": "over Malik Washington +7.98",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": "2026-10-18T20:20-04:00",
+  "reverses": "20a502da"
+ },
+ {
+  "id": "42054ddd",
+  "ts": "2026-10-13T13:33-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Matthew Stafford",
+  "call": "start Matthew Stafford at QB",
+  "detail": "over Ja'Marr Chase +41.44",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": "2026-10-18T16:05-04:00",
+  "reverses": "c67d408e"
+ },
+ {
+  "id": "61ecdcb3",
+  "ts": "2026-10-13T13:33-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Nick Cross",
+  "call": "start Nick Cross at DB",
+  "detail": "over Kam Curl +2.10",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "proposed",
+  "provisional": true,
+  "resolves_at": "2026-10-19T20:15-04:00",
   "reverses": null
  }
 ]

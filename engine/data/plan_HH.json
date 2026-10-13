@@ -11,7 +11,7 @@
  "excluded": [
   {
    "player": "Dak Prescott",
-   "reason": "gate: G6-magnitude 39.31738439822677 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex: 3 QBs for 2 QB-eligible slots \u2014 QB3 is by"
+   "reason": "gate: G6-magnitude 39.25326956198459 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex: 3 QBs for 2 QB-eligible slots \u2014 QB3 is by"
   },
   {
    "player": "Jaylen Warren",
@@ -103,41 +103,41 @@
   "keys": {
    "CB": "cooper dejean",
    "D": "foyesade oluokun",
-   "DB": "budda baker",
+   "DB": "nick cross",
    "DEF": "DST:KC",
    "DL": "tj watt",
    "K": "cairo santos",
    "LB": "carson schwesinger",
-   "Q/W/R/T": "matt stafford",
-   "QB": "dak prescott",
+   "Q/W/R/T": "dak prescott",
+   "QB": "matt stafford",
    "RB": "jaylen warren",
-   "S": "kam curl",
+   "S": "budda baker",
    "TE": "trey mcbride",
    "W/R": "rome odunze",
    "W/R/T": "denzel boston",
    "WR": "drake london"
   },
-  "optimal_before_moves": 302.66,
+  "optimal_before_moves": 304.17,
   "slots": {
    "CB": "Cooper DeJean",
    "D": "Foyesade Oluokun",
-   "DB": "Budda Baker",
+   "DB": "Nick Cross",
    "DEF": "Chiefs",
    "DL": "T.J. Watt",
    "K": "Cairo Santos",
    "LB": "Carson Schwesinger",
-   "Q/W/R/T": "Matthew Stafford",
-   "QB": "Dak Prescott",
+   "Q/W/R/T": "Dak Prescott",
+   "QB": "Matthew Stafford",
    "RB": "Jaylen Warren",
-   "S": "Kam Curl",
+   "S": "Budda Baker",
    "TE": "Trey McBride",
    "W/R": "Rome Odunze",
    "W/R/T": "Denzel Boston",
    "WR": "Drake London"
   },
-  "total": 302.66
+  "total": 304.17
  },
- "made": "2026-10-13T13:02-04:00",
+ "made": "2026-10-13T13:34-04:00",
  "mechanics": [
   {
    "rule": "Free agents are immediate unless his game is in progress",
@@ -177,7 +177,61 @@
  ],
  "moves": [
   {
-   "J": -12.928,
+   "J": 17.991,
+   "add_key": null,
+   "add_name": null,
+   "at": null,
+   "deadline": "2026-10-18T16:05-04:00",
+   "drop_name": null,
+   "eff": "W",
+   "fam": "QB",
+   "gain": 17.99,
+   "gates": {
+    "add": null,
+    "drop": null
+   },
+   "id": "HH:lineup:QB",
+   "kind": "lineup",
+   "league": "HH",
+   "phase": "early",
+   "provisional": true,
+   "reasons": [
+    "+17.99 this week",
+    "no player market posted yet for his game"
+   ],
+   "sit": "Texans",
+   "slot": "QB",
+   "spot_id": null,
+   "spot_kind": null,
+   "spot_label": null,
+   "srcs": [
+    "lineup"
+   ],
+   "start": "Matthew Stafford",
+   "tier": null,
+   "timing_why": "",
+   "tm": "LAR",
+   "txns": [
+    {
+     "key": "matt stafford",
+     "op": "start",
+     "player": "Matthew Stafford",
+     "slot": "QB"
+    },
+    {
+     "key": "DST:HOU",
+     "op": "bench",
+     "player": "Texans"
+    }
+   ],
+   "value_terms": {
+    "J": 17.991,
+    "dS_W": 17.991
+   },
+   "when": "before kickoff Sun Oct 18, 4:05 pm ET"
+  },
+  {
+   "J": 3.941,
    "add_key": null,
    "add_name": null,
    "at": null,
@@ -185,7 +239,7 @@
    "drop_name": null,
    "eff": "W",
    "fam": "WR",
-   "gain": -12.93,
+   "gain": 3.94,
    "gates": {
     "add": null,
     "drop": null
@@ -196,11 +250,10 @@
    "phase": "early",
    "provisional": true,
    "reasons": [
-    "-12.93 this week",
-    "inside the 1.5-pt noise band",
+    "+3.94 this week",
     "no player market posted yet for his game"
    ],
-   "sit": "Texans",
+   "sit": "Braelon Allen",
    "slot": "W/R",
    "spot_id": null,
    "spot_kind": null,
@@ -220,19 +273,19 @@
      "slot": "W/R"
     },
     {
-     "key": "DST:HOU",
+     "key": "braelon allen",
      "op": "bench",
-     "player": "Texans"
+     "player": "Braelon Allen"
     }
    ],
    "value_terms": {
-    "J": -12.928,
-    "dS_W": -12.928
+    "J": 3.941,
+    "dS_W": 3.941
    },
    "when": "before kickoff Sun Oct 18, 1:00 pm ET"
   },
   {
-   "J": 3.426,
+   "J": 9.447,
    "add_key": null,
    "add_name": null,
    "at": null,
@@ -240,7 +293,7 @@
    "drop_name": null,
    "eff": "W",
    "fam": "WR",
-   "gain": 3.43,
+   "gain": 9.45,
    "gates": {
     "add": null,
     "drop": null
@@ -249,12 +302,11 @@
    "kind": "lineup",
    "league": "HH",
    "phase": "early",
-   "provisional": true,
+   "provisional": false,
    "reasons": [
-    "+3.43 this week",
-    "no player market posted yet for his game"
+    "Ja'Marr Chase has no game this week (bye) \u2014 the slot scores nothing until he is replaced"
    ],
-   "sit": "Braelon Allen",
+   "sit": "Ja'Marr Chase",
    "slot": "W/R/T",
    "spot_id": null,
    "spot_kind": null,
@@ -274,72 +326,19 @@
      "slot": "W/R/T"
     },
     {
-     "key": "braelon allen",
+     "key": "jamarr chase",
      "op": "bench",
-     "player": "Braelon Allen"
+     "player": "Ja'Marr Chase"
     }
    ],
    "value_terms": {
-    "J": 3.426,
-    "dS_W": 3.426
+    "J": 9.447,
+    "dS_W": 9.447
    },
    "when": "before kickoff Sun Oct 18, 1:00 pm ET"
   },
   {
-   "J": 41.439,
-   "add_key": null,
-   "add_name": null,
-   "at": null,
-   "deadline": "2026-10-18T16:05-04:00",
-   "drop_name": null,
-   "eff": "W",
-   "fam": "QB",
-   "gain": 41.44,
-   "gates": {
-    "add": null,
-    "drop": null
-   },
-   "id": "HH:lineup:Q/W/R/T",
-   "kind": "lineup",
-   "league": "HH",
-   "phase": "early",
-   "provisional": false,
-   "reasons": [
-    "Jared Goff has no game this week (bye) \u2014 the slot scores nothing until he is replaced"
-   ],
-   "sit": "Jared Goff",
-   "slot": "Q/W/R/T",
-   "spot_id": null,
-   "spot_kind": null,
-   "spot_label": null,
-   "srcs": [
-    "lineup"
-   ],
-   "start": "Matthew Stafford",
-   "tier": null,
-   "timing_why": "",
-   "tm": "LAR",
-   "txns": [
-    {
-     "key": "matt stafford",
-     "op": "start",
-     "player": "Matthew Stafford",
-     "slot": "Q/W/R/T"
-    },
-    {
-     "key": "jared goff",
-     "op": "bench",
-     "player": "Jared Goff"
-    }
-   ],
-   "value_terms": {
-    "J": 41.439,
-    "dS_W": 41.439
-   },
-   "when": "before kickoff Sun Oct 18, 4:05 pm ET"
-  },
-  {
-   "J": 27.679,
+   "J": 27.675,
    "add_key": null,
    "add_name": null,
    "at": null,
@@ -358,9 +357,9 @@
    "phase": "early",
    "provisional": false,
    "reasons": [
-    "Ja'Marr Chase has no game this week (bye) \u2014 the slot scores nothing until he is replaced"
+    "Jared Goff has no game this week (bye) \u2014 the slot scores nothing until he is replaced"
    ],
-   "sit": "Ja'Marr Chase",
+   "sit": "Jared Goff",
    "slot": "DEF",
    "spot_id": null,
    "spot_kind": null,
@@ -380,16 +379,70 @@
      "slot": "DEF"
     },
     {
-     "key": "jamarr chase",
+     "key": "jared goff",
      "op": "bench",
-     "player": "Ja'Marr Chase"
+     "player": "Jared Goff"
     }
    ],
    "value_terms": {
-    "J": 27.679,
-    "dS_W": 27.679
+    "J": 27.675,
+    "dS_W": 27.675
    },
    "when": "before kickoff Sun Oct 18, 4:25 pm ET"
+  },
+  {
+   "J": 2.1,
+   "add_key": null,
+   "add_name": null,
+   "at": null,
+   "deadline": "2026-10-19T20:15-04:00",
+   "drop_name": null,
+   "eff": "W",
+   "fam": "DB",
+   "gain": 2.1,
+   "gates": {
+    "add": null,
+    "drop": null
+   },
+   "id": "HH:lineup:DB",
+   "kind": "lineup",
+   "league": "HH",
+   "phase": "early",
+   "provisional": true,
+   "reasons": [
+    "+2.10 this week",
+    "no player market posted yet for his game"
+   ],
+   "sit": "Kam Curl",
+   "slot": "DB",
+   "spot_id": null,
+   "spot_kind": null,
+   "spot_label": null,
+   "srcs": [
+    "lineup"
+   ],
+   "start": "Nick Cross",
+   "tier": null,
+   "timing_why": "",
+   "tm": "WAS",
+   "txns": [
+    {
+     "key": "nick cross",
+     "op": "start",
+     "player": "Nick Cross",
+     "slot": "DB"
+    },
+    {
+     "key": "kam curl",
+     "op": "bench",
+     "player": "Kam Curl"
+    }
+   ],
+   "value_terms": {
+    "J": 2.1,
+    "dS_W": 2.1
+   },
+   "when": "before kickoff Mon Oct 19, 8:15 pm ET"
   }
  ],
  "notes": [],
@@ -413,7 +466,7 @@
    ]
   },
   {
-   "J": -3.333,
+   "J": -3.334,
    "key": "DST:SF",
    "name": "San Francisco 49ers",
    "reason": "J -3.33 < 3.0 at its best spot (Chiefs) \u2014 J -3.33 = 1.0x+0.00 (wk W) + 0.8x-0.08 (W+1) + 0.8x-2.21 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
@@ -422,7 +475,7 @@
    ]
   },
   {
-   "J": -3.596,
+   "J": -3.59,
    "key": "brenton strange",
    "name": "Brenton Strange",
    "reason": "best spot Chiefs: Tier B (unpriced) never takes the spare DEF \u2014 Tier A only",
@@ -431,7 +484,7 @@
    ]
   },
   {
-   "J": -3.801,
+   "J": -3.798,
    "key": "cade otton",
    "name": "Cade Otton",
    "reason": "best spot Chiefs: Tier B (unpriced) never takes the spare DEF \u2014 Tier A only",
@@ -440,7 +493,7 @@
    ]
   },
   {
-   "J": -3.946,
+   "J": -3.948,
    "key": "cam ward",
    "name": "Cam Ward",
    "reason": "best spot Chiefs: Chiefs is the spare DEF: a spot for a Tier-A add or a same-family stream only (~1 pt/wk on its own, 09-24)",
@@ -449,7 +502,7 @@
    ]
   },
   {
-   "J": -4.158,
+   "J": -4.159,
    "key": "charlie kolar",
    "name": "Charlie Kolar",
    "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
@@ -458,7 +511,7 @@
    ]
   },
   {
-   "J": -3.695,
+   "J": -3.691,
    "key": "chig okonkwo",
    "name": "Chig Okonkwo",
    "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
@@ -467,7 +520,7 @@
    ]
   },
   {
-   "J": -4.186,
+   "J": -4.187,
    "key": "dameon pierce",
    "name": "Dameon Pierce",
    "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
@@ -476,7 +529,7 @@
    ]
   },
   {
-   "J": -3.998,
+   "J": -4.001,
    "key": "dawson knox",
    "name": "Dawson Knox",
    "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
@@ -494,17 +547,26 @@
    ]
   },
   {
-   "J": -2.076,
+   "J": null,
+   "key": "dj moore",
+   "name": "DJ Moore",
+   "reason": "gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])",
+   "reasons": [
+    "WR weekly upgrade: DJ Moore 14.7 vs starter Ja'Marr Chase 0.0"
+   ]
+  },
+  {
+   "J": -1.614,
    "key": "emanuel wilson",
    "name": "Emanuel Wilson",
    "reason": "best spot Chiefs: Chiefs is the spare DEF: a spot for a Tier-A add or a same-family stream only (~1 pt/wk on its own, 09-24)",
    "reasons": [
-    "breakout tier B: 59% snaps, 73% of RB touches; Kalshi rushing yds 68 vs Sleeper 67 (+1%); held (wk4: 60% snaps, 76% of RB touches)",
-    "RB weekly upgrade: Emanuel Wilson 13.9 vs starter Braelon Allen 6.6"
+    "breakout tier B: 59% snaps, 73% of RB touches; Kalshi rushing yds 69 vs Sleeper 67 (+2%); held (wk4: 60% snaps, 76% of RB touches)",
+    "RB weekly upgrade: Emanuel Wilson 14.0 vs starter Braelon Allen 6.6"
    ]
   },
   {
-   "J": -3.884,
+   "J": -3.881,
    "key": "greg dulcich",
    "name": "Greg Dulcich",
    "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
@@ -513,7 +575,7 @@
    ]
   },
   {
-   "J": -4.412,
+   "J": -4.413,
    "key": "isaiah bond",
    "name": "Isaiah Bond",
    "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
@@ -531,7 +593,7 @@
    ]
   },
   {
-   "J": -2.047,
+   "J": -2.048,
    "key": "jason sanders",
    "name": "Jason Sanders",
    "reason": "best spot Chiefs: Chiefs is the spare DEF: a spot for a Tier-A add or a same-family stream only (~1 pt/wk on its own, 09-24)",
@@ -540,7 +602,7 @@
    ]
   },
   {
-   "J": -3.708,
+   "J": -3.709,
    "key": "jayden daniels",
    "name": "Jayden Daniels",
    "reason": "best spot Chiefs: Chiefs is the spare DEF: a spot for a Tier-A add or a same-family stream only (~1 pt/wk on its own, 09-24)",
@@ -549,7 +611,7 @@
    ]
   },
   {
-   "J": -4.387,
+   "J": -4.388,
    "key": "jerry jeudy",
    "name": "Jerry Jeudy",
    "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
@@ -558,7 +620,7 @@
    ]
   },
   {
-   "J": -4.022,
+   "J": -4.024,
    "key": "kendre miller",
    "name": "Kendre Miller",
    "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
@@ -567,7 +629,7 @@
    ]
   },
   {
-   "J": -4.429,
+   "J": -4.43,
    "key": "laquon treadwell",
    "name": "Laquon Treadwell",
    "reason": "best spot Chiefs: Tier B (unpriced) never takes the spare DEF \u2014 Tier A only",
@@ -576,7 +638,7 @@
    ]
   },
   {
-   "J": -4.419,
+   "J": -4.42,
    "key": "marquez valdes scantling",
    "name": "Marquez Valdes-Scantling",
    "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
@@ -612,21 +674,12 @@
    ]
   },
   {
-   "J": -4.168,
+   "J": -4.169,
    "key": "rj harvey",
    "name": "RJ Harvey",
    "reason": "best spot Chiefs: Chiefs is the spare DEF: a spot for a Tier-A add or a same-family stream only (~1 pt/wk on its own, 09-24)",
    "reasons": [
     "RB weekly upgrade: RJ Harvey 9.8 vs starter Braelon Allen 6.6"
-   ]
-  },
-  {
-   "J": null,
-   "key": "romeo doubs",
-   "name": "Romeo Doubs",
-   "reason": "gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])",
-   "reasons": [
-    "WR weekly upgrade: Romeo Doubs 10.0 vs starter Ja'Marr Chase 0.0"
    ]
   },
   {
@@ -639,7 +692,7 @@
    ]
   },
   {
-   "J": -3.083,
+   "J": -3.084,
    "key": "ryan fitzgerald",
    "name": "Ryan Fitzgerald",
    "reason": "best spot Chiefs: Chiefs is the spare DEF: a spot for a Tier-A add or a same-family stream only (~1 pt/wk on its own, 09-24)",
@@ -648,12 +701,12 @@
    ]
   },
   {
-   "J": -3.651,
+   "J": -3.647,
    "key": "sam darnold",
    "name": "Sam Darnold",
    "reason": "best spot Chiefs: Chiefs is the spare DEF: a spot for a Tier-A add or a same-family stream only (~1 pt/wk on its own, 09-24)",
    "reasons": [
-    "QB weekly upgrade: Sam Darnold 30.8 vs starter Jared Goff 0.0"
+    "QB weekly upgrade: Sam Darnold 30.9 vs starter Jared Goff 0.0"
    ]
   },
   {
@@ -666,7 +719,7 @@
    ]
   },
   {
-   "J": -4.389,
+   "J": -4.39,
    "key": "treylon burks",
    "name": "Treylon Burks",
    "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
@@ -675,7 +728,7 @@
    ]
   },
   {
-   "J": -4.319,
+   "J": -4.32,
    "key": "tyjae spears",
    "name": "Tyjae Spears",
    "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
@@ -684,7 +737,7 @@
    ]
   },
   {
-   "J": -4.294,
+   "J": -4.295,
    "key": "wandale robinson",
    "name": "Wan'Dale Robinson",
    "reason": "best spot Chiefs: Chiefs is the spare DEF: a spot for a Tier-A add or a same-family stream only (~1 pt/wk on its own, 09-24)",
@@ -694,12 +747,12 @@
    ]
   },
   {
-   "J": -3.733,
+   "J": -3.723,
    "key": "woody marks",
    "name": "Woody Marks",
    "reason": "best spot Chiefs: Chiefs is the spare DEF: a spot for a Tier-A add or a same-family stream only (~1 pt/wk on its own, 09-24)",
    "reasons": [
-    "RB weekly upgrade: Woody Marks 12.3 vs starter Braelon Allen 6.6"
+    "RB weekly upgrade: Woody Marks 12.4 vs starter Braelon Allen 6.6"
    ]
   }
  ],
@@ -725,9 +778,9 @@
   "W_REST": 0.8
  },
  "winprob": {
-  "mean": 302.17538060530984,
+  "mean": 303.060320451079,
   "note": "sampled on the planner's final lineup",
   "p_med": null,
-  "p_opp": 0.8735
+  "p_opp": 0.8756666666666667
  }
 }
