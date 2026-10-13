@@ -79,13 +79,27 @@ def solve(state, proj, actuals=None):
     # most constrained slot first, same family preferred, then the slot's current occupant,
     # then the lowest projection (10-13: 'QB Stafford over Chase', 'Pierce over Vikings').
     out_rows = {r['key']: r for r in cur.values() if r and r['key'] in real_out}
+    def _chain(s):
+        # the starter the newcomer in slot s actually pushes out: follow the occupant of s to
+        # wherever the optimizer moved him, until someone lands on the bench (10-13)
+        r = cur.get(s); seen = set()
+        while r is not None and r['key'] not in seen:
+            if r['key'] in unclaimed: return r['key']
+            seen.add(r['key'])
+            s2 = next((z for z, rr in opt.items() if rr and rr['key'] == r['key'] and z != s), None)
+            if s2 is None: return None
+            r = cur.get(s2)
+        return None
     pairing = {}
     pending = [s for s in slots if opt.get(s) and opt[s]['key'] in real_in]
     while pending:
         opts_ = {s: [k for k in unclaimed if out_rows[k]['elig'] & cfg.accepts[s]] for s in pending}
         s = min(pending, key=lambda z: (len(opts_[z]), slots.index(z)))
         o = opt[s]; c = cur.get(s); cand = opts_[s]
-        if cand:
+        ch = _chain(s)
+        if ch:
+            pairing[s] = out_rows[ch]; unclaimed.discard(ch)
+        elif cand:
             cand.sort(key=lambda k: (0 if _fam(out_rows[k]['pos']) == _fam(o['pos']) else 1, 0 if (c and k == c['key']) else 1, out_rows[k]['pts'] or 0.0, k))
             pairing[s] = out_rows[cand[0]]; unclaimed.discard(cand[0])
         else:

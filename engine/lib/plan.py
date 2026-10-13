@@ -76,6 +76,7 @@ K_FAB = 0.1                       # per dollar that eats into the FAB reserve (r
 K_FAB_TIE = 0.01                  # per dollar above it: a tie-break, not a cost
 K_CHURN = 0.5                     # per Yahoo transaction
 SHIP_J = 3.0
+STICKY_J = 0.5                    # a (add, spot) pair already on the published plan keeps it unless another beats it by this much (10-13: Jennings <-> Hutchinson flip between pulls)
 REST_NORM = 'mean'                # dS_REST = sum over weeks W+2..17 / number of those weeks
 NOISE = LU.NOISE
 GAME_H = 4.0
@@ -554,6 +555,23 @@ def pair_block(f, c, s, repl):
 
 
 # ================================================================== solve
+def _previous_pairs(f):
+    """(add_key, spot_id) pairs on the last plan written for this league and week, or
+    the pairs handed in by the test harness (f.prev_plan_pairs). Empty when none."""
+    given = getattr(f, 'prev_plan_pairs', None)
+    if given is not None: return set(given)
+    try:
+        import json, os
+        from . import paths as _paths
+        p = _paths.data('') + f'plan_{f.league}.json'
+        if not os.path.exists(p): return set()
+        d = json.load(open(p))
+        if int(d.get('week') or 0) != int(f.week): return set()
+        return {(m.get('add_key'), m.get('spot_id')) for m in d.get('moves', []) if m.get('kind') == 'add' and m.get('spot_id')}
+    except Exception:
+        return set()
+
+
 def plan_facts(facts, ev=None):
     """The planner on prepared facts and evidence. Pure. -> Plan"""
     ev = ev or {}
@@ -562,6 +580,7 @@ def plan_facts(facts, ev=None):
     pool = SpotPool(f, mech)
     obj = Objective(f, mech)
     cands = produce(f, ev)
+    prev_pairs = _previous_pairs(f)
     # replacement level per family (best free agent's rest-of-season per-week value)
     repl = {}
     for fam in sorted({c.fact.fam for c in cands if c.fact} | {s.fam for s in pool.spots if s.fam}):
@@ -585,6 +604,10 @@ def plan_facts(facts, ev=None):
         best = None
         for s in pool.spots:
             e = _eval_pair(f, mech, obj, c, s, repl)
+            if e['feasible'] and (c.key, s.id) in prev_pairs:
+                # the call Caleb has already seen: a near-tie never flips it (a published
+                # plan is a decision in flight; two WR5s' values move with every pull)
+                e['J'] = round(e['J'] + STICKY_J, 3); e['sticky'] = STICKY_J
             pairs[(c.key, s.id)] = e
             if best is None or (e['J'] if e['feasible'] else -BIG) > (best['J'] if best['feasible'] else -BIG) \
                     or (not best['feasible'] and not e['feasible'] and e['J'] > best['J']):
@@ -883,14 +906,29 @@ def _lineup_after(f, moves, ev):
     def _ok(k, s):
         x = fact(k)
         return bool(x is not None and (x.elig & f.cfg.accepts.get(s, set())))
+    def _chain(s):
+        # the starter the newcomer in slot s actually pushes out: follow the occupant of s
+        # to wherever the optimizer moved him, until someone lands on the bench
+        # (10-13: Pierce at RB2 pushes Lloyd to W/R/T, which pushes LaPorta out)
+        k = cur.get(s); seen = set()
+        while k is not None and k not in seen:
+            if k in unclaimed: return k
+            seen.add(k)
+            s2 = next((z for z, kk in asg.items() if kk == k and z != s), None)
+            if s2 is None: return None
+            k = cur.get(s2)
+        return None
     pairing = {}
     pending = [s for s in f.cfg.slots if asg.get(s) is not None and asg.get(s) in real_in and not gone_slots.get(s)]
     while pending:
         opts = {s: [k for k in unclaimed if _ok(k, s)] for s in pending}
         s = min(pending, key=lambda z: (len(opts[z]), f.cfg.slots.index(z)))
         o = asg[s]; of = fact(o); c_ = cur.get(s)
-        cand = opts[s]
-        if cand:
+        ch = _chain(s)
+        cand = ([ch] if ch else []) + [k for k in opts[s] if k != ch]
+        if cand and ch:
+            pairing[s] = ch; unclaimed.discard(ch)
+        elif cand:
             cand.sort(key=lambda k: (0 if fact(k).fam == of.fam else 1, 0 if k == c_ else 1, vals.get(k) or 0.0, k))
             pairing[s] = cand[0]; unclaimed.discard(cand[0])
         else:

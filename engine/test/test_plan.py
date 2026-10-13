@@ -340,6 +340,41 @@ rb_over = (lu.get(NK(rb8c)) or {}).get('over', ''); df_over = (lu.get('DST:SEA')
 case('a newcomer at W/R/T is paired with a displaced WR/TE, never the bye defense', lu.get(NK(rb8c)) is not None and 'Bills' not in rb_over, (rb_over, p.summary()))
 case('...and the new defense is paired with the bye defense', lu.get('DST:SEA') is not None and df_over.startswith('Buffalo'), (df_over, p.summary()))
 
+# ---------------------------------------------------------------- 8d. a published pair sticks through a near-tie (10-13: Jennings <-> Hutchinson flipped between two pulls)
+r8d = [(sl, n, ps, tm, (1.0 if (sl == 'BN' and tm == 'LAC') else pt), d) for sl, n, ps, tm, pt, d in bsb_roster(open_spots=0)]   # bench WR (LV) and bench RB (LAC) both at 1.0
+rbx = 'Lysander Thorncroft'
+f, st, pr = league('BSB', r8d, fas=[(rbx, 'RB', 'PHI', 12.0)], byes={W1: {'ATL', 'BAL'}}, usage={NK(rbx): dict(START, pos='RB')})   # both RBs on bye next week: a hole, so every bench spot is in play
+ev = dict(breakout_rows=[dict(key=NK(rbx), name=rbx, pos='RB', tm='PHI', tier='A', held='wk5', usage='', market='', in_pool=True, ahead=True)])
+p0 = PL.plan_facts(f, ev)
+m0 = next((m for m in moves_of(p0) if m['add_key'] == NK(rbx)), None)
+# the two cheapest bench spots are near-equal (bench WRs at 1.0 and 2.5); take whichever
+# the plan picked, then publish the OTHER as the prior plan and re-run: it must stick
+# the feasible bench spots (same family as the add) tie at J; publish the one
+# the plan did NOT pick as the prior plan and re-run: it must stick
+bench_low = sorted([x for x in r8d if x[0] == 'BN' and x[2] == 'RB'], key=lambda x: x[4])     # the bench RBs tie at J (bench value is not in J)
+other = next(x for x in bench_low if m0 and x[1] != m0['drop_name'])
+f.prev_plan_pairs = {(NK(rbx), f'drop:{NK(other[1])}')}
+p1 = PL.plan_facts(f, ev)
+m1 = next((m for m in moves_of(p1) if m['add_key'] == NK(rbx)), None)
+case('a near-tie between two bench spots keeps the spot already published', m0 is not None and m1 is not None and m1['drop_name'] == other[1], (m0 and m0['drop_name'], m1 and m1['drop_name']))
+f.prev_plan_pairs = {(NK(rbx), 'drop:' + NK(next(x[1] for x in r8d if x[0] == 'BN' and x[2] == 'TE')))}   # the bench TE at 2.0: clearly worse by > STICKY_J? no — 0.8x0.9 = 0.72 > 0.5
+p2 = PL.plan_facts(f, ev)
+m2 = next((m for m in moves_of(p2) if m['add_key'] == NK(rbx)), None)
+case('...and the stickiness is bounded: a spot that is clearly worse is not kept', m2 is not None and m2['drop_name'] != next(x[1] for x in r8d if x[0] == 'BN' and x[2] == 'TE'), m2 and m2['drop_name'])
+
+# ---------------------------------------------------------------- 8e. displacement chain (10-13: 'start Pierce at RB2' with no one named)
+# A free RB arrives; the optimizer puts him at RB2 and slides the old RB2 to W/R/T, whose
+# occupant (a bye TE) goes to the bench. The newcomer is 'over' that TE, not over nobody.
+r8e = bsb_roster(open_spots=1)
+r8e = [(sl, n, ps, tm, (0.0 if sl == 'W/R/T' else pt), d) for sl, n, ps, tm, pt, d in r8e]
+flex_name = next(x[1] for x in r8e if x[0] == 'W/R/T')
+rbc = 'Peregrine Ashdown'
+f, st, pr = league('BSB', r8e, fas=[(rbc, 'RB', 'PHI', 13.0)], kicks={'CLE': None}, byes={W1: set()}, usage={NK(rbc): dict(START, pos='RB')})
+ev = dict(breakout_rows=[dict(key=NK(rbc), name=rbc, pos='RB', tm='PHI', tier='A', held='wk5', usage='', market='', in_pool=True, ahead=True)])
+p = PL.plan_facts(f, ev)
+m = next((m for m in moves_of(p) if m['add_key'] == NK(rbc)), None)
+case('a newcomer who starts via a slot shuffle is paired with the starter the shuffle pushes out', m is not None and (m.get('lineup') or {}).get('over') == flex_name, (m and m.get('lineup'), p.summary()[:300]))
+
 # ---------------------------------------------------------------- 9. handcuff never a drop
 r9 = bsb_roster()
 hc = r9[-1][1]
