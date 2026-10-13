@@ -874,6 +874,28 @@ def _lineup_after(f, moves, ev):
     unclaimed = set(real_out)
     lmoves = []
     by_add = {m['add_key']: m for m in moves if m['kind'] == 'add'}
+    # who each newcomer replaces: the optimizer permutes equivalent slots (RB1/RB2,
+    # TE/W/R/T), so 'the man in that slot now' is often still a starter elsewhere.
+    # Pair each incoming player with a displaced starter ELIGIBLE for the slot he
+    # takes — most constrained slot first, same family preferred, then the slot's
+    # current occupant, then the lowest value (10-13: 'Pierce at W/R/T over Vikings',
+    # '49ers at DEF over LaPorta' — three bye starters handed out alphabetically).
+    def _ok(k, s):
+        x = fact(k)
+        return bool(x is not None and (x.elig & f.cfg.accepts.get(s, set())))
+    pairing = {}
+    pending = [s for s in f.cfg.slots if asg.get(s) is not None and asg.get(s) in real_in and not gone_slots.get(s)]
+    while pending:
+        opts = {s: [k for k in unclaimed if _ok(k, s)] for s in pending}
+        s = min(pending, key=lambda z: (len(opts[z]), f.cfg.slots.index(z)))
+        o = asg[s]; of = fact(o); c_ = cur.get(s)
+        cand = opts[s]
+        if cand:
+            cand.sort(key=lambda k: (0 if fact(k).fam == of.fam else 1, 0 if k == c_ else 1, vals.get(k) or 0.0, k))
+            pairing[s] = cand[0]; unclaimed.discard(cand[0])
+        else:
+            pairing[s] = None
+        pending.remove(s)
     for s in f.cfg.slots:
         o = asg.get(s); c_ = cur.get(s)
         if o is None or o not in real_in: continue
@@ -881,8 +903,7 @@ def _lineup_after(f, moves, ev):
         if dropped_here:
             out = None; of, xf = fact(o), fact(dropped_here)
         else:
-            out = c_ if (c_ and c_ in unclaimed) else next((x for x in sorted(unclaimed)), None)
-            if out: unclaimed.discard(out)
+            out = pairing.get(s)
             of, xf = fact(o), (fact(out) if out else None)
         gain = (vals.get(o) or 0.0) - ((vals.get(out) or 0.0) if out else 0.0)
         bye_out = xf is not None and xf.designation not in RU.UNUSABLE and getattr(xf, 'kick', None) is None and not (vals.get(out or dropped_here) or 0)

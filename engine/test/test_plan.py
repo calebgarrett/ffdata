@@ -323,6 +323,23 @@ try:
 finally:
     _FAB.model = _real_model
 
+# ---------------------------------------------------------------- 8c. lineup pairing with several bye starters (10-13: 'Pierce at W/R/T over Vikings')
+# Three starters on bye THIS week (WR3, TE, DEF). Two free agents arrive — an RB who takes
+# W/R/T and a defense. Each must be paired with a displaced starter ELIGIBLE for the slot
+# he takes: the DEF over the bye DEF, the RB over a bye WR/TE, never a defense over a flex.
+r8c = bsb_roster(open_spots=2)
+r8c = [(sl, n, ps, tm, (0.0 if sl in ('DEF', 'TE') or (sl == 'WR' and tm == 'CIN') else pt), d) for sl, n, ps, tm, pt, d in r8c]
+rb8c, df8c = 'Osric Pendleton', DST_NAME['SEA']
+f, st, pr = league('BSB', r8c, fas=[(rb8c, 'RB', 'PHI', 9.0), (df8c, 'DEF', 'SEA', 7.5)],
+                   kicks={'BUF': None, 'DET': None, 'CIN': None}, byes={W1: set()},
+                   usage={NK(rb8c): dict(START, pos='RB')})
+ev = dict(breakout_rows=[dict(key=NK(rb8c), name=rb8c, pos='RB', tm='PHI', tier='A', held='wk5', usage='', market='', in_pool=True, ahead=True)])
+p = PL.plan_facts(f, ev)
+lu = {m['add_key']: m.get('lineup') for m in moves_of(p)}
+rb_over = (lu.get(NK(rb8c)) or {}).get('over', ''); df_over = (lu.get('DST:SEA') or {}).get('over', '')
+case('a newcomer at W/R/T is paired with a displaced WR/TE, never the bye defense', lu.get(NK(rb8c)) is not None and 'Bills' not in rb_over, (rb_over, p.summary()))
+case('...and the new defense is paired with the bye defense', lu.get('DST:SEA') is not None and df_over.startswith('Buffalo'), (df_over, p.summary()))
+
 # ---------------------------------------------------------------- 9. handcuff never a drop
 r9 = bsb_roster()
 hc = r9[-1][1]

@@ -7,11 +7,11 @@
   "refused": []
  },
  "decide": [
-  "BSB \u2014 bye/hole cover, claim by Tue night ($10) \u2014 check first Claim Dameon Pierce ($10) RB PHI \u00b7 drop Jauan Jennings \u00b7 start at W/R/T over Vikings When: claim by Tue night ($10) (Tue->Wed claims window: last week's games are played and the r",
-  "BSB \u2014 stream, claim by Tue night ($1) \u2014 check first Claim San Francisco 49ers ($1) DEF SF \u00b7 drop Jets \u00b7 start at DEF over Sam LaPorta When: claim by Tue night ($1) (Tue->Wed claims window: last week's games are played and the run has not pr",
+  "BSB \u2014 bye/hole cover, claim by Tue night ($10) \u2014 check first Claim Dameon Pierce ($10) RB PHI \u00b7 drop Xavier Hutchinson \u00b7 start at RB2 over empty When: claim by Tue night ($10) (Tue->Wed claims window: last week's games are played and the ru",
+  "BSB \u2014 stream, claim by Tue night ($1) \u2014 check first Claim San Francisco 49ers ($1) DEF SF \u00b7 drop Jets \u00b7 start at DEF over Vikings When: claim by Tue night ($1) (Tue->Wed claims window: last week's games are played and the run has not proces",
   "BSB WR3 lineup Start Ryan Flournoy over Malik Washington +8.0 points locks Sun Oct 18, 8:20 pm set it in Yahoo before then",
-  "HH W/R/T lineup Start Denzel Boston over Ja'Marr Chase +9.8 points locks Sun Oct 18, 1:00 pm set it in Yahoo before then",
-  "HH DEF lineup Start Chiefs over Jared Goff +27.7 points locks Sun Oct 18, 4:25 pm set it in Yahoo before then"
+  "HH QB lineup Start Matthew Stafford over Jared Goff +41.4 points locks Sun Oct 18, 4:05 pm set it in Yahoo before then",
+  "HH W/R lineup Start Rome Odunze over Ja'Marr Chase +10.5 points locks Sun Oct 18, 1:00 pm set it in Yahoo before then"
  ],
  "fast": false,
  "leagues": {
@@ -61,7 +61,7 @@
      "add": null,
      "bid": null,
      "drop": null,
-     "gain": 3.6,
+     "gain": 3.62,
      "gates": [
       "G7-ready:WARN"
      ],
@@ -119,7 +119,7 @@
      "bid": null,
      "drop": null,
      "fam": "WR",
-     "gain": 6.66,
+     "gain": 6.63,
      "gates": [
       "G11-role-registry:WARN"
      ],
@@ -372,8 +372,8 @@
     "DEF": "Jets",
     "K": "Jason Myers",
     "QB": "Matthew Stafford",
-    "RB1": "MarShawn Lloyd",
-    "RB2": "James Cook III",
+    "RB1": "James Cook III",
+    "RB2": "MarShawn Lloyd",
     "TE": "Isaiah Likely",
     "W/R/T": "DeMario Douglas",
     "WR1": "Drake London",
@@ -381,25 +381,25 @@
     "WR3": "Ryan Flournoy"
    },
    "me": "OVERKILL",
-   "others_pulled": "2026-10-13T18:02:59+00:00",
+   "others_pulled": "2026-10-13T18:28:42+00:00",
    "planner": {
     "lineup_after": {
      "DEF": "San Francisco 49ers",
      "K": "Jason Myers",
      "QB": "Matthew Stafford",
-     "RB1": "MarShawn Lloyd",
-     "RB2": "James Cook III",
+     "RB1": "James Cook III",
+     "RB2": "Dameon Pierce",
      "TE": "Isaiah Likely",
-     "W/R/T": "Dameon Pierce",
+     "W/R/T": "MarShawn Lloyd",
      "WR1": "Drake London",
      "WR2": "Jaxon Smith-Njigba",
      "WR3": "Ryan Flournoy"
     },
     "moves": [
      {
-      "J": 8.2,
+      "J": 8.113,
       "add": "Dameon Pierce",
-      "drop": "Jauan Jennings",
+      "drop": "Xavier Hutchinson",
       "gates": [
        "G11-role-registry:WARN"
       ],
@@ -411,14 +411,13 @@
       "start": null,
       "txns": [
        "claim Dameon Pierce ($10)",
-       "drop Jauan Jennings",
-       "start Dameon Pierce at W/R/T",
-       "bench Vikings"
+       "drop Xavier Hutchinson",
+       "start Dameon Pierce at RB2"
       ],
       "when": "claim by Tue night ($10)"
      },
      {
-      "J": 3.604,
+      "J": 3.582,
       "add": "San Francisco 49ers",
       "drop": "Jets",
       "gates": [
@@ -435,7 +434,7 @@
        "claim San Francisco 49ers ($1)",
        "drop Jets",
        "start San Francisco 49ers at DEF",
-       "bench Sam LaPorta"
+       "bench Vikings"
       ],
       "when": "claim by Tue night ($1)"
      },
@@ -512,19 +511,19 @@
      },
      {
       "name": "Pierre Strong",
-      "reason": "jointly with the rest of the plan it adds only J -0.57 (< 3.0) \u2014 J -0.57 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+0.26 (bench boom) - 0.00 acq - 0.10 FAB($10) - 0.50 churn"
+      "reason": "jointly with the rest of the plan it adds only J -1.86 (< 3.0) \u2014 J -1.86 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x-0.60 (rest, mean of wks 8-17) + 0.1x+0.23 (bench boom) - 0.00 acq - 0.90 FAB($10) - 0.50 churn"
      },
      {
       "name": "Rashid Shaheed",
-      "reason": "J +0.14 < 3.0 at its best spot (Jauan Jennings) \u2014 J +0.14 = 1.0x+0.34 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.18 (rest, mean of wks 8-17) + 0.1x+1.62 (bench boom) - 0.00 acq - 0.01 FAB($1) - 0.50 churn"
+      "reason": "J +0.12 < 3.0 at its best spot (Jauan Jennings) \u2014 J +0.12 = 1.0x+0.32 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.18 (rest, mean of wks 8-17) + 0.1x+1.62 (bench boom) - 0.00 acq - 0.01 FAB($1) - 0.50 churn"
      },
      {
       "name": "Roschon Johnson",
-      "reason": "jointly with the rest of the plan it adds only J -1.83 (< 3.0) \u2014 J -1.83 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x-0.60 (rest, mean of wks 8-17) + 0.1x+0.47 (bench boom) - 0.00 acq - 0.90 FAB($10) - 0.50 churn"
+      "reason": "jointly with the rest of the plan it adds only J -0.47 (< 3.0) \u2014 J -0.47 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+1.32 (bench boom) - 0.00 acq - 0.10 FAB($10) - 0.50 churn"
      },
      {
       "name": "Samaje Perine",
-      "reason": "its best spot (Jauan Jennings) went to Dameon Pierce at higher value"
+      "reason": "its best spot (Jauan Jennings) went to another move at higher value"
      },
      {
       "name": "Treylon Burks",
@@ -532,11 +531,11 @@
      },
      {
       "name": "Tyrone Tracy",
-      "reason": "jointly with the rest of the plan it adds only J -0.55 (< 3.0) \u2014 J -0.55 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+0.54 (bench boom) - 0.00 acq - 0.10 FAB($10) - 0.50 churn"
+      "reason": "jointly with the rest of the plan it adds only J -0.52 (< 3.0) \u2014 J -0.52 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+0.80 (bench boom) - 0.00 acq - 0.10 FAB($10) - 0.50 churn"
      }
     ]
    },
-   "pulled": "2026-10-13T18:02:59+00:00"
+   "pulled": "2026-10-13T18:28:42+00:00"
   },
   "HH": {
    "actions": [
@@ -551,8 +550,8 @@
      ],
      "kind": "start",
      "provisional": false,
-     "reason": "Ja'Marr Chase has no game this week (bye) \u2014 the slot scores nothing until he is replaced",
-     "sit": "Ja'Marr Chase",
+     "reason": "Jared Goff has no game this week (bye) \u2014 the slot scores nothing until he is replaced",
+     "sit": "Jared Goff",
      "slot": "QB",
      "start": "Matthew Stafford",
      "status": "proposed",
@@ -564,15 +563,15 @@
      "add": null,
      "bid": null,
      "drop": null,
-     "gain": 3.94,
+     "gain": 10.51,
      "gates": [
       "G5-sources:WARN",
       "G7-ready:WARN"
      ],
      "kind": "start",
-     "provisional": true,
-     "reason": "",
-     "sit": "Braelon Allen",
+     "provisional": false,
+     "reason": "Ja'Marr Chase has no game this week (bye) \u2014 the slot scores nothing until he is replaced",
+     "sit": "Ja'Marr Chase",
      "slot": "W/R",
      "start": "Rome Odunze",
      "status": "proposed",
@@ -584,14 +583,14 @@
      "add": null,
      "bid": null,
      "drop": null,
-     "gain": 9.77,
+     "gain": 3.2,
      "gates": [
       "G7-ready:WARN"
      ],
      "kind": "start",
-     "provisional": false,
-     "reason": "Jared Goff has no game this week (bye) \u2014 the slot scores nothing until he is replaced",
-     "sit": "Jared Goff",
+     "provisional": true,
+     "reason": "",
+     "sit": "Braelon Allen",
      "slot": "W/R/T",
      "start": "Denzel Boston",
      "status": "proposed",
@@ -684,7 +683,7 @@
      "bid": null,
      "drop": null,
      "fam": "QB",
-     "gain": 30.97,
+     "gain": 31.0,
      "gates": [
       "G11-role-registry:WARN"
      ],
@@ -1136,7 +1135,7 @@
     "WR": "Drake London"
    },
    "me": "Tecmo Bowlers",
-   "others_pulled": "2026-10-13T18:02:59+00:00",
+   "others_pulled": "2026-10-13T18:28:42+00:00",
    "planner": {
     "lineup_after": {
      "CB": "Cooper DeJean",
@@ -1157,58 +1156,7 @@
     },
     "moves": [
      {
-      "J": 18.003,
-      "add": null,
-      "drop": null,
-      "gates": [],
-      "ir": null,
-      "kind": "lineup",
-      "provisional": true,
-      "sit": "Texans",
-      "slot": "QB",
-      "start": "Matthew Stafford",
-      "txns": [
-       "start Matthew Stafford at QB",
-       "bench Texans"
-      ],
-      "when": "before kickoff Sun Oct 18, 4:05 pm ET"
-     },
-     {
-      "J": 3.941,
-      "add": null,
-      "drop": null,
-      "gates": [],
-      "ir": null,
-      "kind": "lineup",
-      "provisional": true,
-      "sit": "Braelon Allen",
-      "slot": "W/R",
-      "start": "Rome Odunze",
-      "txns": [
-       "start Rome Odunze at W/R",
-       "bench Braelon Allen"
-      ],
-      "when": "before kickoff Sun Oct 18, 1:00 pm ET"
-     },
-     {
-      "J": 9.772,
-      "add": null,
-      "drop": null,
-      "gates": [],
-      "ir": null,
-      "kind": "lineup",
-      "provisional": false,
-      "sit": "Ja'Marr Chase",
-      "slot": "W/R/T",
-      "start": "Denzel Boston",
-      "txns": [
-       "start Denzel Boston at W/R/T",
-       "bench Ja'Marr Chase"
-      ],
-      "when": "before kickoff Sun Oct 18, 1:00 pm ET"
-     },
-     {
-      "J": 27.689,
+      "J": 41.439,
       "add": null,
       "drop": null,
       "gates": [],
@@ -1216,11 +1164,62 @@
       "kind": "lineup",
       "provisional": false,
       "sit": "Jared Goff",
+      "slot": "QB",
+      "start": "Matthew Stafford",
+      "txns": [
+       "start Matthew Stafford at QB",
+       "bench Jared Goff"
+      ],
+      "when": "before kickoff Sun Oct 18, 4:05 pm ET"
+     },
+     {
+      "J": 10.514,
+      "add": null,
+      "drop": null,
+      "gates": [],
+      "ir": null,
+      "kind": "lineup",
+      "provisional": false,
+      "sit": "Ja'Marr Chase",
+      "slot": "W/R",
+      "start": "Rome Odunze",
+      "txns": [
+       "start Rome Odunze at W/R",
+       "bench Ja'Marr Chase"
+      ],
+      "when": "before kickoff Sun Oct 18, 1:00 pm ET"
+     },
+     {
+      "J": 3.198,
+      "add": null,
+      "drop": null,
+      "gates": [],
+      "ir": null,
+      "kind": "lineup",
+      "provisional": true,
+      "sit": "Braelon Allen",
+      "slot": "W/R/T",
+      "start": "Denzel Boston",
+      "txns": [
+       "start Denzel Boston at W/R/T",
+       "bench Braelon Allen"
+      ],
+      "when": "before kickoff Sun Oct 18, 1:00 pm ET"
+     },
+     {
+      "J": 4.253,
+      "add": null,
+      "drop": null,
+      "gates": [],
+      "ir": null,
+      "kind": "lineup",
+      "provisional": true,
+      "sit": "Texans",
       "slot": "DEF",
       "start": "Chiefs",
       "txns": [
        "start Chiefs at DEF",
-       "bench Jared Goff"
+       "bench Texans"
       ],
       "when": "before kickoff Sun Oct 18, 4:25 pm ET"
      },
@@ -1381,9 +1380,9 @@
      }
     ]
    },
-   "pulled": "2026-10-13T18:02:59+00:00"
+   "pulled": "2026-10-13T18:28:42+00:00"
   }
  },
- "now": "2026-10-13T14:04-04:00",
+ "now": "2026-10-13T14:30-04:00",
  "week": 6
 }

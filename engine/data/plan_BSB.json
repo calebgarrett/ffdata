@@ -48,30 +48,30 @@
    "DEF": "DST:SF",
    "K": "jason myers",
    "QB": "matt stafford",
-   "RB1": "marshawn lloyd",
-   "RB2": "james cook",
+   "RB1": "james cook",
+   "RB2": "dameon pierce",
    "TE": "isaiah likely",
-   "W/R/T": "dameon pierce",
+   "W/R/T": "marshawn lloyd",
    "WR1": "drake london",
    "WR2": "jaxon smith njigba",
    "WR3": "ryan flournoy"
   },
-  "optimal_before_moves": 135.11,
+  "optimal_before_moves": 135.2,
   "slots": {
    "DEF": "San Francisco 49ers",
    "K": "Jason Myers",
    "QB": "Matthew Stafford",
-   "RB1": "MarShawn Lloyd",
-   "RB2": "James Cook III",
+   "RB1": "James Cook III",
+   "RB2": "Dameon Pierce",
    "TE": "Isaiah Likely",
-   "W/R/T": "Dameon Pierce",
+   "W/R/T": "MarShawn Lloyd",
    "WR1": "Drake London",
    "WR2": "Jaxon Smith-Njigba",
    "WR3": "Ryan Flournoy"
   },
-  "total": 140.61
+  "total": 140.69
  },
- "made": "2026-10-13T14:04-04:00",
+ "made": "2026-10-13T14:30-04:00",
  "mechanics": [
   {
    "rule": "A never-rostered free agent is free until his game kicks off",
@@ -111,12 +111,12 @@
  ],
  "moves": [
   {
-   "J": 8.2,
+   "J": 8.113,
    "add_key": "dameon pierce",
    "add_name": "Dameon Pierce",
    "at": "2026-10-14T06:00-04:00",
    "deadline": "2026-10-13T23:59-04:00",
-   "drop_name": "Jauan Jennings",
+   "drop_name": "Xavier Hutchinson",
    "eff": "W",
    "fam": "RB",
    "gates": {
@@ -128,7 +128,7 @@
      "checks": [
       {
        "gate": "G11-role-registry",
-       "msg": "no verified snap count on record \u2014 projection is the only evidence he plays",
+       "msg": "registry usage verified 2026-09-14 (29d old) \u2014 DEMOTED after 14 days; re-verify before counting it",
        "status": "WARN"
       }
      ],
@@ -139,19 +139,19 @@
    "kind": "add",
    "league": "BSB",
    "lineup": {
-    "gain": 7.94,
-    "over": "Vikings",
-    "slot": "W/R/T"
+    "gain": 7.95,
+    "over": "empty",
+    "slot": "RB2"
    },
    "provisional": false,
    "reasons": [
     "breakout tier B: 77% snaps, 70% of RB touches; no market line yet (Sleeper rushing yds 46)",
     "week-7 hole at RB2 (James Cook III on bye, Josh Jacobs CEL); Dameon Pierce 7.9 is the best free RB on week-7 values",
-    "the spot: Jauan Jennings \u2014 rest-of-season 6.0/wk (season blend / 17)"
+    "the spot: Xavier Hutchinson \u2014 rest-of-season 4.6/wk (season blend / 17)"
    ],
-   "spot_id": "drop:jauan jennings",
+   "spot_id": "drop:xavier hutchinson",
    "spot_kind": "drop",
-   "spot_label": "Jauan Jennings",
+   "spot_label": "Xavier Hutchinson",
    "srcs": [
     "breakout",
     "hole"
@@ -167,30 +167,25 @@
      "player": "Dameon Pierce"
     },
     {
-     "key": "jauan jennings",
+     "key": "xavier hutchinson",
      "op": "drop",
-     "player": "Jauan Jennings"
+     "player": "Xavier Hutchinson"
     },
     {
      "key": "dameon pierce",
      "op": "start",
      "player": "Dameon Pierce",
-     "slot": "W/R/T"
-    },
-    {
-     "key": "DST:MIN",
-     "op": "bench",
-     "player": "Vikings"
+     "slot": "RB2"
     }
    ],
    "value_terms": {
-    "J": 8.2,
+    "J": 8.113,
     "acq": 1,
     "bid": 10,
-    "dS_W": 1.624,
-    "dS_W1": 7.94,
-    "dS_rest": 0.437,
-    "d_boom": 4.74,
+    "dS_W": 1.632,
+    "dS_W1": 7.948,
+    "dS_rest": 0.439,
+    "d_boom": 3.716,
     "pen_acq": 0.0,
     "pen_churn": 0.5,
     "pen_fab": 0.1,
@@ -199,24 +194,24 @@
    },
    "values": {
     "add": {
-     "boom": 0.27204030226700254,
-     "ros": 7.9399999999999995,
+     "boom": 0.27176648213387017,
+     "ros": 7.948,
      "ros_src": "W projection 7.9 (usage says starter; the preseason number is stale)",
-     "w": 7.9399999999999995,
-     "w1": 7.9399999999999995,
+     "w": 7.948,
+     "w1": 7.948,
      "w1_src": "rest-of-season per-week (no week-7 projection on disk \u2014 approximation)"
     },
     "drop": {
-     "ros": 5.976470588235294,
+     "ros": 4.594117647058823,
      "ros_src": "season blend / 17",
-     "w": 0.0,
-     "w1": 5.976470588235294
+     "w": 2.6781630939469574,
+     "w1": 4.594117647058823
     }
    },
    "when": "claim by Tue night ($10)"
   },
   {
-   "J": 3.604,
+   "J": 3.582,
    "add_key": "DST:SF",
    "add_name": "San Francisco 49ers",
    "at": "2026-10-14T06:00-04:00",
@@ -251,7 +246,7 @@
    "league": "BSB",
    "lineup": {
     "gain": 7.47,
-    "over": "Sam LaPorta",
+    "over": "Vikings",
     "slot": "DEF"
    },
    "provisional": false,
@@ -287,16 +282,16 @@
      "slot": "DEF"
     },
     {
-     "key": "sam laporta",
+     "key": "DST:MIN",
      "op": "bench",
-     "player": "Sam LaPorta"
+     "player": "Vikings"
     }
    ],
    "value_terms": {
-    "J": 3.604,
+    "J": 3.582,
     "acq": 1,
     "bid": 1,
-    "dS_W": 3.873,
+    "dS_W": 3.85,
     "dS_W1": 0.302,
     "dS_rest": 0.0,
     "d_boom": 0.0,
@@ -318,7 +313,7 @@
     "drop": {
      "ros": 3.396133027670096,
      "ros_src": "season blend / 17",
-     "w": 3.596806637693965,
+     "w": 3.619063008186785,
      "w1": 5.61107034826329
     }
    },
@@ -499,38 +494,38 @@
    ]
   },
   {
-   "J": -0.574,
+   "J": -1.856,
    "key": "pierre strong",
    "name": "Pierre Strong",
-   "reason": "jointly with the rest of the plan it adds only J -0.57 (< 3.0) \u2014 J -0.57 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+0.26 (bench boom) - 0.00 acq - 0.10 FAB($10) - 0.50 churn",
+   "reason": "jointly with the rest of the plan it adds only J -1.86 (< 3.0) \u2014 J -1.86 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x-0.60 (rest, mean of wks 8-17) + 0.1x+0.23 (bench boom) - 0.00 acq - 0.90 FAB($10) - 0.50 churn",
    "reasons": [
     "week-7 hole at RB2 (James Cook III on bye, Josh Jacobs CEL); Pierre Strong 4.7 is the best free RB on week-7 values"
    ]
   },
   {
-   "J": 0.138,
+   "J": 0.117,
    "key": "rashid shaheed",
    "name": "Rashid Shaheed",
-   "reason": "J +0.14 < 3.0 at its best spot (Jauan Jennings) \u2014 J +0.14 = 1.0x+0.34 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.18 (rest, mean of wks 8-17) + 0.1x+1.62 (bench boom) - 0.00 acq - 0.01 FAB($1) - 0.50 churn",
+   "reason": "J +0.12 < 3.0 at its best spot (Jauan Jennings) \u2014 J +0.12 = 1.0x+0.32 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.18 (rest, mean of wks 8-17) + 0.1x+1.62 (bench boom) - 0.00 acq - 0.01 FAB($1) - 0.50 churn",
    "reasons": [
-    "WR weekly upgrade: Rashid Shaheed 6.7 vs starter Malik Washington 0.0"
+    "WR weekly upgrade: Rashid Shaheed 6.6 vs starter Malik Washington 0.0"
    ]
   },
   {
-   "J": -1.832,
+   "J": -0.468,
    "key": "roschon johnson",
    "name": "Roschon Johnson",
-   "reason": "jointly with the rest of the plan it adds only J -1.83 (< 3.0) \u2014 J -1.83 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x-0.60 (rest, mean of wks 8-17) + 0.1x+0.47 (bench boom) - 0.00 acq - 0.90 FAB($10) - 0.50 churn",
+   "reason": "jointly with the rest of the plan it adds only J -0.47 (< 3.0) \u2014 J -0.47 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+1.32 (bench boom) - 0.00 acq - 0.10 FAB($10) - 0.50 churn",
    "reasons": [
     "breakout tier B: 39% snaps, 46% of RB touches; no market line yet (Sleeper rushing yds 16)",
     "week-7 hole at RB2 (James Cook III on bye, Josh Jacobs CEL); Roschon Johnson 4.3 is the best free RB on week-7 values"
    ]
   },
   {
-   "J": 3.289,
+   "J": 3.295,
    "key": "samaje perine",
    "name": "Samaje Perine",
-   "reason": "its best spot (Jauan Jennings) went to Dameon Pierce at higher value",
+   "reason": "its best spot (Jauan Jennings) went to another move at higher value",
    "reasons": [
     "breakout tier B: 51% snaps, 48% of RB touches; no market line yet, and no Sleeper line either",
     "week-7 hole at RB2 (James Cook III on bye, Josh Jacobs CEL); Samaje Perine 4.2 is the best free RB on week-7 values"
@@ -546,10 +541,10 @@
    ]
   },
   {
-   "J": -0.546,
+   "J": -0.52,
    "key": "ty tracy",
    "name": "Tyrone Tracy",
-   "reason": "jointly with the rest of the plan it adds only J -0.55 (< 3.0) \u2014 J -0.55 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+0.54 (bench boom) - 0.00 acq - 0.10 FAB($10) - 0.50 churn",
+   "reason": "jointly with the rest of the plan it adds only J -0.52 (< 3.0) \u2014 J -0.52 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+0.80 (bench boom) - 0.00 acq - 0.10 FAB($10) - 0.50 churn",
    "reasons": [
     "week-7 hole at RB2 (James Cook III on bye, Josh Jacobs CEL); Tyrone Tracy 5.3 is the best free RB on week-7 values"
    ]
@@ -588,7 +583,7 @@
    "id": "drop:jauan jennings",
    "kind": "drop",
    "label": "Jauan Jennings",
-   "taken_by": "Dameon Pierce",
+   "taken_by": null,
    "tier": 3
   },
   {
@@ -623,7 +618,7 @@
    "id": "drop:xavier hutchinson",
    "kind": "drop",
    "label": "Xavier Hutchinson",
-   "taken_by": null,
+   "taken_by": "Dameon Pierce",
    "tier": 3
   }
  ],
@@ -640,9 +635,9 @@
   "W_REST": 0.8
  },
  "winprob": {
-  "mean": 140.39173930857675,
+  "mean": 140.43476113140986,
   "note": "sampled on the planner's final lineup",
-  "p_med": 0.8065,
-  "p_opp": 0.5628333333333333
+  "p_med": 0.8066666666666666,
+  "p_opp": 0.5683333333333334
  }
 }

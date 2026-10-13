@@ -17,6 +17,7 @@ import numpy as np
 from scipy.optimize import linear_sum_assignment
 from . import clock as C, score as SC
 from .rules import UNUSABLE, locked
+from .facts import _fam
 
 NOISE = 1.5    # inside this many points, two players are the same player
 
@@ -72,6 +73,24 @@ def solve(state, proj, actuals=None):
     real_in, real_out = opt_set - cur_set, cur_set - opt_set
     changes, perms = [], []
     unclaimed = set(real_out)          # each displaced starter is named once (Cross/Odunze 09-23)
+    # who each newcomer displaces: the optimizer permutes equivalent slots (QB <-> Q/W/R/T,
+    # TE <-> W/R/T), so the man 'in that slot now' is often still a starter elsewhere.
+    # Pair every incoming player with a displaced starter ELIGIBLE for the slot he takes —
+    # most constrained slot first, same family preferred, then the slot's current occupant,
+    # then the lowest projection (10-13: 'QB Stafford over Chase', 'Pierce over Vikings').
+    out_rows = {r['key']: r for r in cur.values() if r and r['key'] in real_out}
+    pairing = {}
+    pending = [s for s in slots if opt.get(s) and opt[s]['key'] in real_in]
+    while pending:
+        opts_ = {s: [k for k in unclaimed if out_rows[k]['elig'] & cfg.accepts[s]] for s in pending}
+        s = min(pending, key=lambda z: (len(opts_[z]), slots.index(z)))
+        o = opt[s]; c = cur.get(s); cand = opts_[s]
+        if cand:
+            cand.sort(key=lambda k: (0 if _fam(out_rows[k]['pos']) == _fam(o['pos']) else 1, 0 if (c and k == c['key']) else 1, out_rows[k]['pts'] or 0.0, k))
+            pairing[s] = out_rows[cand[0]]; unclaimed.discard(cand[0])
+        else:
+            pairing[s] = None
+        pending.remove(s)
     for s in slots:
         c, o = cur.get(s), opt.get(s)
         if (c and o and c['key'] == o['key']) or (c is None and o is None): continue
@@ -84,8 +103,7 @@ def solve(state, proj, actuals=None):
             # can be made (Douglas for Likely at 2:20 pm, 09-27). One predicate: rules.locked.
             if _locked(o) or (c and _locked(c)): continue
             # who does he displace? the starter in real_out with the same slot-family, else any
-            out = c if (c and c['key'] in unclaimed) else next((x for x in cur.values() if x and x['key'] in unclaimed), None)
-            if out: unclaimed.discard(out['key'])
+            out = pairing.get(s)
             gain = (o['pts'] or 0) - ((out['pts'] or 0) if out else 0)
             # a Q/D starter projected at exactly 0 is a source ASSUMING he is out
             # (Sleeper zeroes injured players; Cross 09-23). That is a game-status

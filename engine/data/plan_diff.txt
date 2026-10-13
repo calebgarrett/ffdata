@@ -1,4 +1,4 @@
-PLAN DIFF — week 6 — Tue Oct 13, 2:04 pm ET  (shadow mode: the card still shows the live calls; FF_PLANNER=1 renders the plan)
+PLAN DIFF — week 6 — Tue Oct 13, 2:30 pm ET  (shadow mode: the card still shows the live calls; FF_PLANNER=1 renders the plan)
 objective: J = 1.0*dS_W + 0.8*dS_W1 + 0.8*dS_rest(mean of weeks W+2..17) + 0.1*d_bench_boom - acq ({'HH': 1.0, 'BSB': 0.0}) - 0.1*bid - 0.5*txns; ship at J >= 3.0
 
 == BSB ================================================================================
@@ -7,36 +7,36 @@ objective: J = 1.0*dS_W + 0.8*dS_W1 + 0.8*dS_rest(mean of weeks W+2..17) + 0.1*d
               plan: start Ryan Flournoy at WR3 ; bench Malik Washington  [before kickoff Sun Oct 18, 8:20 pm ET]
     CARD ONLY lineup: W/R/T start DeMario Douglas over Sam LaPorta (+6.32)
               planner: not a planner candidate (no producer raised him)
-    CARD ONLY lineup: DEF start Jets over Vikings (+3.60)
+    CARD ONLY lineup: DEF start Jets over Vikings (+3.62)
               planner: not a planner candidate (no producer raised him)
-    PLAN ONLY [add] claim Dameon Pierce ($10) ; drop Jauan Jennings ; start Dameon Pierce at W/R/T ; bench Vikings  [claim by Tue night ($10)]
-              J +8.20 = 1.0x+1.62 (wk W) + 0.8x+7.94 (W+1) + 0.8x+0.44 (rest, mean of wks 8-17) + 0.1x+4.74 (bench boom) - 0.00 acq - 0.10 FAB($10) - 0.50 churn
+    PLAN ONLY [add] claim Dameon Pierce ($10) ; drop Xavier Hutchinson ; start Dameon Pierce at RB2  [claim by Tue night ($10)]
+              J +8.11 = 1.0x+1.63 (wk W) + 0.8x+7.95 (W+1) + 0.8x+0.44 (rest, mean of wks 8-17) + 0.1x+3.72 (bench boom) - 0.00 acq - 0.10 FAB($10) - 0.50 churn
               - breakout tier B: 77% snaps, 70% of RB touches; no market line yet (Sleeper rushing yds 46)
               - week-7 hole at RB2 (James Cook III on bye, Josh Jacobs CEL); Dameon Pierce 7.9 is the best free RB on week-7 values
-              - the spot: Jauan Jennings — rest-of-season 6.0/wk (season blend / 17)
-    PLAN ONLY [add] claim San Francisco 49ers ($1) ; drop Jets ; start San Francisco 49ers at DEF ; bench Sam LaPorta  [claim by Tue night ($1)]
-              J +3.60 = 1.0x+3.87 (wk W) + 0.8x+0.30 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 0.00 acq - 0.01 FAB($1) - 0.50 churn
+              - the spot: Xavier Hutchinson — rest-of-season 4.6/wk (season blend / 17)
+    PLAN ONLY [add] claim San Francisco 49ers ($1) ; drop Jets ; start San Francisco 49ers at DEF ; bench Vikings  [claim by Tue night ($1)]
+              J +3.58 = 1.0x+3.85 (wk W) + 0.8x+0.30 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 0.00 acq - 0.01 FAB($1) - 0.50 churn
               - week-7 DEF stream: San Francisco 49ers 7.5 vs your best 7.2 (W line re-scored on the week-7 opponent implied total 21.5)
               - the spot: Jets — the spare DEF
   budgets: {"acq_used": 0, "acq_left": null, "acq_reset": null, "acq_reset_verified": null, "fab_left": 93, "ir_free": 0, "open_spots": 0}
-  final lineup week 6: 140.6 pts (optimal before moves 135.1) · P(beat opp) 56% · P(beat median) 81%
+  final lineup week 6: 140.7 pts (optimal before moves 135.2) · P(beat opp) 57% · P(beat median) 81%
   considered and rejected (19):
-    - Samaje Perine: its best spot (Jauan Jennings) went to Dameon Pierce at higher value
+    - Samaje Perine: its best spot (Jauan Jennings) went to another move at higher value
     - Jake Ferguson: J +2.47 < 3.0 at its best spot (Jauan Jennings) — J +2.47 = 1.0x+2.60 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.18 (rest, mean of wks 8-17) + 0.1x+2.34 (bench boom) - 0.00 acq - 0.01 FAB($1) - 0.50 churn
     - Dalton Schultz: J +1.94 < 3.0 at its best spot (Jauan Jennings) — J +1.94 = 1.0x+2.31 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+1.41 (bench boom) - 0.00 acq - 0.01 FAB($1) - 0.50 churn
     - Cade Otton: J +0.56 < 3.0 at its best spot (Jauan Jennings) — J +0.56 = 1.0x+0.96 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+1.08 (bench boom) - 0.00 acq - 0.01 FAB($1) - 0.50 churn
-    - Rashid Shaheed: J +0.14 < 3.0 at its best spot (Jauan Jennings) — J +0.14 = 1.0x+0.34 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.18 (rest, mean of wks 8-17) + 0.1x+1.62 (bench boom) - 0.00 acq - 0.01 FAB($1) - 0.50 churn
+    - Rashid Shaheed: J +0.12 < 3.0 at its best spot (Jauan Jennings) — J +0.12 = 1.0x+0.32 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.18 (rest, mean of wks 8-17) + 0.1x+1.62 (bench boom) - 0.00 acq - 0.01 FAB($1) - 0.50 churn
     - Dawson Knox: best spot Jets: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
     - Treylon Burks: best spot Jets: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
     - Charlie Kolar: best spot Jets: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
+    - Roschon Johnson: jointly with the rest of the plan it adds only J -0.47 (< 3.0) — J -0.47 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+1.32 (bench boom) - 0.00 acq - 0.10 FAB($10) - 0.50 churn
     - Isaiah Bond: best spot Jets: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
     - Marquez Valdes-Scantling: best spot Jets: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
     - Laquon Treadwell: J -0.49 < 3.0 at its best spot (Jauan Jennings) — J -0.49 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+0.24 (bench boom) - 0.00 acq - 0.01 FAB($1) - 0.50 churn
     - Greg Dulcich: best spot Jets: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
-    - Tyrone Tracy: jointly with the rest of the plan it adds only J -0.55 (< 3.0) — J -0.55 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+0.54 (bench boom) - 0.00 acq - 0.10 FAB($10) - 0.50 churn
-    - Pierre Strong: jointly with the rest of the plan it adds only J -0.57 (< 3.0) — J -0.57 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+0.26 (bench boom) - 0.00 acq - 0.10 FAB($10) - 0.50 churn
+    - Tyrone Tracy: jointly with the rest of the plan it adds only J -0.52 (< 3.0) — J -0.52 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+0.80 (bench boom) - 0.00 acq - 0.10 FAB($10) - 0.50 churn
     - Jason Sanders: J -1.15 < 3.0 at its best spot (Jason Myers) — J -1.15 = 1.0x+0.00 (wk W) + 0.8x+0.76 (W+1) + 0.8x-1.55 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 0.00 acq - 0.01 FAB($1) - 0.50 churn
-    - Roschon Johnson: jointly with the rest of the plan it adds only J -1.83 (< 3.0) — J -1.83 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x-0.60 (rest, mean of wks 8-17) + 0.1x+0.47 (bench boom) - 0.00 acq - 0.90 FAB($10) - 0.50 churn
+    - Pierre Strong: jointly with the rest of the plan it adds only J -1.86 (< 3.0) — J -1.86 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x-0.60 (rest, mean of wks 8-17) + 0.1x+0.23 (bench boom) - 0.00 acq - 0.90 FAB($10) - 0.50 churn
     - Corey Kiner: gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])
     - Jaleel McLaughlin: gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])
     - Kaleb Johnson: gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])
@@ -45,15 +45,16 @@ objective: J = 1.0*dS_W + 0.8*dS_W1 + 0.8*dS_rest(mean of weeks W+2..17) + 0.1*d
 
 == HH ================================================================================
   card Decide calls vs the plan:
-    BOTH      lineup: QB start Matthew Stafford over Ja'Marr Chase (+41.44)
-              plan: start Matthew Stafford at QB ; bench Texans  [before kickoff Sun Oct 18, 4:05 pm ET]  <- different spot
-    BOTH      lineup: W/R/T start Denzel Boston over Jared Goff (+9.77)
-              plan: start Denzel Boston at W/R/T ; bench Ja'Marr Chase  [before kickoff Sun Oct 18, 1:00 pm ET]  <- different spot
-    PLAN ONLY PROVISIONAL [lineup] start Rome Odunze at W/R ; bench Braelon Allen  [before kickoff Sun Oct 18, 1:00 pm ET]
-              - +3.94 this week
+    BOTH      lineup: QB start Matthew Stafford over Jared Goff (+41.44)
+              plan: start Matthew Stafford at QB ; bench Jared Goff  [before kickoff Sun Oct 18, 4:05 pm ET]
+    BOTH      lineup: W/R start Rome Odunze over Ja'Marr Chase (+10.51)
+              plan: start Rome Odunze at W/R ; bench Ja'Marr Chase  [before kickoff Sun Oct 18, 1:00 pm ET]
+    PLAN ONLY PROVISIONAL [lineup] start Denzel Boston at W/R/T ; bench Braelon Allen  [before kickoff Sun Oct 18, 1:00 pm ET]
+              - +3.20 this week
               - no player market posted yet for his game
-    PLAN ONLY [lineup] start Chiefs at DEF ; bench Jared Goff  [before kickoff Sun Oct 18, 4:25 pm ET]
-              - Jared Goff has no game this week (bye) — the slot scores nothing until he is replaced
+    PLAN ONLY PROVISIONAL [lineup] start Chiefs at DEF ; bench Texans  [before kickoff Sun Oct 18, 4:25 pm ET]
+              - +4.25 this week
+              - no player market posted yet for his game
     PLAN ONLY PROVISIONAL [lineup] start Nick Cross at DB ; bench Kam Curl  [before kickoff Mon Oct 19, 8:15 pm ET]
               - +2.10 this week
               - no player market posted yet for his game
@@ -61,15 +62,15 @@ objective: J = 1.0*dS_W + 0.8*dS_W1 + 0.8*dS_rest(mean of weeks W+2..17) + 0.1*d
   final lineup week 6: 305.7 pts (optimal before moves 305.7) · P(beat opp) 88%
   considered and rejected (34):
     - Los Angeles Rams: J -1.63 < 3.0 at its best spot (Chiefs) — J -1.63 = 1.0x+0.00 (wk W) + 0.8x-0.27 (W+1) + 0.8x+0.11 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn
-    - Emanuel Wilson: best spot Chiefs: Chiefs is the spare DEF: a spot for a Tier-A add or a same-family stream only (~1 pt/wk on its own, 09-24)
     - Jason Sanders: best spot Chiefs: Chiefs is the spare DEF: a spot for a Tier-A add or a same-family stream only (~1 pt/wk on its own, 09-24)
     - Indianapolis Colts: J -2.10 < 3.0 at its best spot (Chiefs) — J -2.10 = 1.0x+0.00 (wk W) + 0.8x-0.22 (W+1) + 0.8x-0.53 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn
+    - Emanuel Wilson: best spot Chiefs: Chiefs is the spare DEF: a spot for a Tier-A add or a same-family stream only (~1 pt/wk on its own, 09-24)
     - Ryan Fitzgerald: best spot Chiefs: Chiefs is the spare DEF: a spot for a Tier-A add or a same-family stream only (~1 pt/wk on its own, 09-24)
     - San Francisco 49ers: J -3.34 < 3.0 at its best spot (Chiefs) — J -3.34 = 1.0x+0.00 (wk W) + 0.8x-0.08 (W+1) + 0.8x-2.21 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn
     - Brenton Strange: best spot Chiefs: Tier B (unpriced) never takes the spare DEF — Tier A only
     - Sam Darnold: best spot Chiefs: Chiefs is the spare DEF: a spot for a Tier-A add or a same-family stream only (~1 pt/wk on its own, 09-24)
-    - Chig Okonkwo: best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
     - Woody Marks: best spot Chiefs: Chiefs is the spare DEF: a spot for a Tier-A add or a same-family stream only (~1 pt/wk on its own, 09-24)
+    - Chig Okonkwo: best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
     - Jayden Daniels: best spot Chiefs: Chiefs is the spare DEF: a spot for a Tier-A add or a same-family stream only (~1 pt/wk on its own, 09-24)
     - Cade Otton: best spot Chiefs: Tier B (unpriced) never takes the spare DEF — Tier A only
     - Greg Dulcich: best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week

@@ -133,6 +133,16 @@ _cur_keys = {r['key'] for r in b.starters()}
 case('BSB lineup diff: every change brings in a bench player, never a permutation', all(c['start']['key'] not in _cur_keys for c in lu['changes']), str([(c['start']['player'], c['sit'] and c['sit']['player']) for c in lu['changes']]))
 case('BSB lineup diff: no change starts and sits the same player', all(not c['sit'] or c['sit']['key'] != c['start']['key'] for c in lu['changes']))
 lh = LU.solve(h, P)
+# every displaced starter named on a change must be ELIGIBLE for the slot the newcomer
+# takes (10-13: the optimizer moved Dak to the superflex and the diff said 'QB Stafford
+# over Chase'; BSB said 'Pierce at W/R/T over Vikings')
+def _elig_pairs(lu_, st_):
+    bad = []
+    for c in lu_['changes']:
+        if c['sit'] and not (c['sit']['elig'] & st_.cfg.accepts[c['slot']]): bad.append((c['slot'], c['start']['player'], c['sit']['player']))
+    return bad
+case('BSB lineup diff: the man each newcomer sits is eligible for that slot', not _elig_pairs(lu, b), str(_elig_pairs(lu, b)))
+case('HH lineup diff: the man each newcomer sits is eligible for that slot', not _elig_pairs(lh, h), str(_elig_pairs(lh, h)))
 _cur_h = {r['key'] for r in h.starters()}
 case('HH lineup diff: every change brings in a bench player (a D<->LB swap of two starters is a permutation)', all(c['start']['key'] not in _cur_h for c in lh['changes']))
 case('HH: every change inside the noise band is provisional',
