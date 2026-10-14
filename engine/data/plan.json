@@ -277,7 +277,7 @@
     "WR3": "Ryan Flournoy"
    },
    "me": "OVERKILL",
-   "others_pulled": "2026-10-14T18:09:32+00:00",
+   "others_pulled": "2026-10-14T21:54:46+00:00",
    "planner": {
     "lineup_after": {
      "DEF": "49ers",
@@ -295,7 +295,7 @@
     "rejected": [
      {
       "name": "Cade Otton",
-      "reason": "J -0.54 < 3.0 at its best spot (Xavier Hutchinson) \u2014 J -0.54 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x-0.43 (bench boom) - 0.00 acq - 0.00 FAB($0) - 0.50 churn"
+      "reason": "J -0.09 < 3.0 at its best spot (Xavier Hutchinson) \u2014 J -0.09 = 1.0x+0.46 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x-0.47 (bench boom) - 0.00 acq - 0.00 FAB($0) - 0.50 churn"
      },
      {
       "name": "Charlie Kolar",
@@ -327,7 +327,7 @@
      },
      {
       "name": "Mark Andrews",
-      "reason": "best spot DeMario Douglas: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
+      "reason": "best spot Xavier Hutchinson: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
      },
      {
       "name": "Marquez Valdes-Scantling",
@@ -347,11 +347,11 @@
      },
      {
       "name": "Tyler Loop",
-      "reason": "J -1.09 < 3.0 at its best spot (Jason Myers) \u2014 J -1.09 = 1.0x+0.07 (wk W) + 0.8x+0.08 (W+1) + 0.8x-0.90 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 0.00 acq - 0.00 FAB($0) - 0.50 churn"
+      "reason": "J -1.17 < 3.0 at its best spot (Jason Myers) \u2014 J -1.17 = 1.0x+0.02 (wk W) + 0.8x+0.03 (W+1) + 0.8x-0.90 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 0.00 acq - 0.00 FAB($0) - 0.50 churn"
      }
     ]
    },
-   "pulled": "2026-10-14T18:09:32+00:00"
+   "pulled": "2026-10-14T21:54:46+00:00"
   },
   "HH": {
    "actions": [
@@ -359,8 +359,10 @@
      "add": null,
      "bid": null,
      "drop": null,
-     "gain": 0.6,
-     "gates": [],
+     "gain": 0.87,
+     "gates": [
+      "G2-desig:WARN"
+     ],
      "kind": "start",
      "provisional": true,
      "reason": "",
@@ -369,7 +371,7 @@
      "start": "Denzel Boston",
      "status": "proposed",
      "subject": "Denzel Boston",
-     "verdict": "PASS",
+     "verdict": "WARN",
      "when": "early"
     },
     {
@@ -377,7 +379,7 @@
      "bid": null,
      "drop": null,
      "fam": "WR",
-     "gain": 4.41,
+     "gain": 4.47,
      "gates": [
       "G5-sources:BLOCK",
       "G11-role-registry:WARN"
@@ -397,7 +399,7 @@
      "bid": null,
      "drop": null,
      "fam": "WR",
-     "gain": 4.18,
+     "gain": 4.24,
      "gates": [
       "G5-sources:BLOCK",
       "G11-role-registry:WARN"
@@ -413,23 +415,22 @@
      "when": null
     },
     {
-     "add": "Jalen Coker",
+     "add": "Emanuel Wilson",
      "bid": null,
      "drop": null,
-     "fam": "WR",
-     "gain": 2.77,
+     "fam": "RB",
+     "gain": 2.15,
      "gates": [
-      "G5-sources:BLOCK",
       "G11-role-registry:WARN"
      ],
      "kind": "upgrade",
      "provisional": false,
-     "sit": "Rome Odunze",
+     "sit": "Braelon Allen",
      "slot": null,
      "start": null,
-     "status": "blocked",
-     "subject": "Jalen Coker",
-     "verdict": "BLOCK",
+     "status": "proposed",
+     "subject": "Emanuel Wilson",
+     "verdict": "WARN",
      "when": null
     },
     {
@@ -793,15 +794,6 @@
      ],
      "kind": "upgrade",
      "subject": "Rashee Rice"
-    },
-    {
-     "add": "Jalen Coker",
-     "drop": null,
-     "gates": [
-      "G5-sources:BLOCK"
-     ],
-     "kind": "upgrade",
-     "subject": "Jalen Coker"
     }
    ],
    "current": {
@@ -844,7 +836,7 @@
     "WR": "Drake London"
    },
    "me": "Tecmo Bowlers",
-   "others_pulled": "2026-10-14T18:09:32+00:00",
+   "others_pulled": "2026-10-14T21:54:46+00:00",
    "planner": {
     "lineup_after": {
      "CB": "Cooper DeJean",
@@ -865,7 +857,7 @@
     },
     "moves": [
      {
-      "J": 0.603,
+      "J": 0.867,
       "add": null,
       "drop": null,
       "gates": [],
@@ -928,12 +920,8 @@
       "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
      },
      {
-      "name": "Jalen Coker",
-      "reason": "gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])"
-     },
-     {
       "name": "Jason Sanders",
-      "reason": "J -0.59 < 3.0 at its best spot (Cairo Santos) \u2014 J -0.59 = 1.0x+0.00 (wk W) + 0.8x+1.91 (W+1) + 0.8x-0.77 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn"
+      "reason": "J -0.53 < 3.0 at its best spot (Cairo Santos) \u2014 J -0.53 = 1.0x+0.00 (wk W) + 0.8x+1.99 (W+1) + 0.8x-0.77 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn"
      },
      {
       "name": "Jerry Jeudy",
@@ -969,11 +957,11 @@
      },
      {
       "name": "Roschon Johnson",
-      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 4.1 under your weakest 11.6"
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 4.0 under your weakest 11.6"
      },
      {
       "name": "Ryan Fitzgerald",
-      "reason": "J -1.09 < 3.0 at its best spot (Cairo Santos) \u2014 J -1.09 = 1.0x+0.00 (wk W) + 0.8x+0.66 (W+1) + 0.8x-0.14 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn"
+      "reason": "J -1.10 < 3.0 at its best spot (Cairo Santos) \u2014 J -1.10 = 1.0x+0.00 (wk W) + 0.8x+0.64 (W+1) + 0.8x-0.14 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn"
      },
      {
       "name": "Samaje Perine",
@@ -985,9 +973,9 @@
      }
     ]
    },
-   "pulled": "2026-10-14T18:09:32+00:00"
+   "pulled": "2026-10-14T21:54:46+00:00"
   }
  },
- "now": "2026-10-14T14:11-04:00",
+ "now": "2026-10-14T17:56-04:00",
  "week": 6
 }
