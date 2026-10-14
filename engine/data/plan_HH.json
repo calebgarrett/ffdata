@@ -11,7 +11,7 @@
  "excluded": [
   {
    "player": "Dak Prescott",
-   "reason": "gate: G6-magnitude 40.15879514724355 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex: 3 QBs for 2 QB-eligible slots \u2014 QB3 is by"
+   "reason": "gate: G6-magnitude 40.41179340720473 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex: 3 QBs for 2 QB-eligible slots \u2014 QB3 is by"
   },
   {
    "player": "Jaylen Warren",
@@ -47,7 +47,7 @@
   },
   {
    "player": "Matthew Stafford",
-   "reason": "gate: G6-magnitude 40.00649458756869 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex: 3 QBs for 2 QB-eligible slots \u2014 QB3 is by"
+   "reason": "gate: G6-magnitude 39.98577814186621 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex: 3 QBs for 2 QB-eligible slots \u2014 QB3 is by"
   },
   {
    "player": "Malik Washington",
@@ -58,7 +58,7 @@
    "reason": "starter-level usage in his own right (91% snaps, 21% targets, 35% air yds)"
   },
   {
-   "player": "Houston",
+   "player": "Texans",
    "reason": "registry HOLD \u2014 HOLD in Heritage House. A 7-acquisition league rations streaming, and Tecmo Bowl"
   },
   {
@@ -109,16 +109,16 @@
    "RB": "jaylen warren",
    "S": "nick cross",
    "TE": "trey mcbride",
-   "W/R": "denzel boston",
-   "W/R/T": "rome odunze",
+   "W/R": "rome odunze",
+   "W/R/T": "denzel boston",
    "WR": "drake london"
   },
-  "optimal_before_moves": 303.64,
+  "optimal_before_moves": 305.68,
   "slots": {
    "CB": "Cooper DeJean",
    "D": "Foyesade Oluokun",
    "DB": "Budda Baker",
-   "DEF": "Kansas City",
+   "DEF": "Chiefs",
    "DL": "T.J. Watt",
    "K": "Cairo Santos",
    "LB": "Carson Schwesinger",
@@ -127,13 +127,13 @@
    "RB": "Jaylen Warren",
    "S": "Nick Cross",
    "TE": "Trey McBride",
-   "W/R": "Denzel Boston",
-   "W/R/T": "Rome Odunze",
+   "W/R": "Rome Odunze",
+   "W/R/T": "Denzel Boston",
    "WR": "Drake London"
   },
-  "total": 303.64
+  "total": 305.68
  },
- "made": "2026-10-14T07:10-04:00",
+ "made": "2026-10-14T09:04-04:00",
  "mechanics": [
   {
    "rule": "Free agents are immediate unless his game is in progress",
@@ -173,7 +173,7 @@
  ],
  "moves": [
   {
-   "J": 9.772,
+   "J": 10.172,
    "add_key": null,
    "add_name": null,
    "at": null,
@@ -181,7 +181,7 @@
    "drop_name": null,
    "eff": "W",
    "fam": "WR",
-   "gain": 9.77,
+   "gain": 10.17,
    "gates": {
     "add": null,
     "drop": null
@@ -202,15 +202,15 @@
    "srcs": [
     "lineup"
    ],
-   "start": "Denzel Boston",
+   "start": "Rome Odunze",
    "tier": null,
    "timing_why": "",
-   "tm": "CLE",
+   "tm": "CHI",
    "txns": [
     {
-     "key": "denzel boston",
+     "key": "rome odunze",
      "op": "start",
-     "player": "Denzel Boston",
+     "player": "Rome Odunze",
      "slot": "W/R"
     },
     {
@@ -220,13 +220,13 @@
     }
    ],
    "value_terms": {
-    "J": 9.772,
-    "dS_W": 9.772
+    "J": 10.172,
+    "dS_W": 10.172
    },
    "when": "before kickoff Sun Oct 18, 1:00 pm ET"
   },
   {
-   "J": 3.285,
+   "J": 2.61,
    "add_key": null,
    "add_name": null,
    "at": null,
@@ -234,7 +234,7 @@
    "drop_name": null,
    "eff": "W",
    "fam": "WR",
-   "gain": 3.29,
+   "gain": 2.61,
    "gates": {
     "add": null,
     "drop": null
@@ -245,7 +245,7 @@
    "phase": "early",
    "provisional": true,
    "reasons": [
-    "+3.29 this week",
+    "+2.61 this week",
     "no player market posted yet for his game"
    ],
    "sit": "Braelon Allen",
@@ -256,15 +256,15 @@
    "srcs": [
     "lineup"
    ],
-   "start": "Rome Odunze",
+   "start": "Denzel Boston",
    "tier": null,
    "timing_why": "",
-   "tm": "CHI",
+   "tm": "CLE",
    "txns": [
     {
-     "key": "rome odunze",
+     "key": "denzel boston",
      "op": "start",
-     "player": "Rome Odunze",
+     "player": "Denzel Boston",
      "slot": "W/R/T"
     },
     {
@@ -274,13 +274,13 @@
     }
    ],
    "value_terms": {
-    "J": 3.285,
-    "dS_W": 3.285
+    "J": 2.61,
+    "dS_W": 2.61
    },
    "when": "before kickoff Sun Oct 18, 1:00 pm ET"
   },
   {
-   "J": 40.006,
+   "J": 39.986,
    "add_key": null,
    "add_name": null,
    "at": null,
@@ -288,7 +288,7 @@
    "drop_name": null,
    "eff": "W",
    "fam": "QB",
-   "gain": 40.01,
+   "gain": 39.99,
    "gates": {
     "add": null,
     "drop": null
@@ -327,13 +327,13 @@
     }
    ],
    "value_terms": {
-    "J": 40.006,
-    "dS_W": 40.006
+    "J": 39.986,
+    "dS_W": 39.986
    },
    "when": "before kickoff Sun Oct 18, 4:05 pm ET"
   },
   {
-   "J": 4.215,
+   "J": 4.214,
    "add_key": null,
    "add_name": null,
    "at": null,
@@ -341,7 +341,7 @@
    "drop_name": null,
    "eff": "W",
    "fam": "DEF",
-   "gain": 4.22,
+   "gain": 4.21,
    "gates": {
     "add": null,
     "drop": null
@@ -352,9 +352,9 @@
    "phase": "early",
    "provisional": false,
    "reasons": [
-    "+4.22 this week"
+    "+4.21 this week"
    ],
-   "sit": "Houston",
+   "sit": "Texans",
    "slot": "DEF",
    "spot_id": null,
    "spot_kind": null,
@@ -362,7 +362,7 @@
    "srcs": [
     "lineup"
    ],
-   "start": "Kansas City",
+   "start": "Chiefs",
    "tier": null,
    "timing_why": "",
    "tm": "KC",
@@ -370,18 +370,18 @@
     {
      "key": "DST:KC",
      "op": "start",
-     "player": "Kansas City",
+     "player": "Chiefs",
      "slot": "DEF"
     },
     {
      "key": "DST:HOU",
      "op": "bench",
-     "player": "Houston"
+     "player": "Texans"
     }
    ],
    "value_terms": {
-    "J": 4.215,
-    "dS_W": 4.215
+    "J": 4.214,
+    "dS_W": 4.214
    },
    "when": "before kickoff Sun Oct 18, 4:25 pm ET"
   },
@@ -446,16 +446,16 @@
    "J": -2.096,
    "key": "DST:IND",
    "name": "Indianapolis Colts",
-   "reason": "J -2.10 < 3.0 at its best spot (Kansas City) \u2014 J -2.10 = 1.0x+0.00 (wk W) + 0.8x-0.22 (W+1) + 0.8x-0.53 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
+   "reason": "J -2.10 < 3.0 at its best spot (Chiefs) \u2014 J -2.10 = 1.0x+0.00 (wk W) + 0.8x-0.22 (W+1) + 0.8x-0.53 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
-    "DEF weekly upgrade: Indianapolis Colts 27.1 vs starter Houston 23.5"
+    "DEF weekly upgrade: Indianapolis Colts 27.1 vs starter Texans 23.5"
    ]
   },
   {
-   "J": -3.592,
+   "J": -3.591,
    "key": "brenton strange",
    "name": "Brenton Strange",
-   "reason": "best spot Kansas City: Tier B (unpriced) never takes the spare DEF \u2014 Tier A only",
+   "reason": "best spot Chiefs: Tier B (unpriced) never takes the spare DEF \u2014 Tier A only",
    "reasons": [
     "breakout tier B: 81% snaps, 21% targets, 33% air yds; Kalshi receiving yds 41 vs Sleeper 46 (-11%); held (wk4: 87% snaps, 35% targets, 43% air yds)"
    ]
@@ -464,25 +464,25 @@
    "J": -3.785,
    "key": "cade otton",
    "name": "Cade Otton",
-   "reason": "best spot Kansas City: Tier B (unpriced) never takes the spare DEF \u2014 Tier A only",
+   "reason": "best spot Chiefs: Tier B (unpriced) never takes the spare DEF \u2014 Tier A only",
    "reasons": [
     "breakout tier B: 92% snaps, 16% targets, 19% air yds; no market line yet (Sleeper receiving yds 31); held (wk4: 94% snaps, 22% targets, 0% air yds)"
    ]
   },
   {
-   "J": -3.915,
+   "J": -3.899,
    "key": "cam ward",
    "name": "Cam Ward",
-   "reason": "best spot Kansas City: Kansas City is the spare DEF: a spot for a Tier-A add or a same-family stream only (~1 pt/wk on its own, 09-24)",
+   "reason": "best spot Chiefs: Chiefs is the spare DEF: a spot for a Tier-A add or a same-family stream only (~1 pt/wk on its own, 09-24)",
    "reasons": [
-    "QB weekly upgrade: Cam Ward 30.9 vs starter Jared Goff 0.0"
+    "QB weekly upgrade: Cam Ward 31.1 vs starter Jared Goff 0.0"
    ]
   },
   {
-   "J": -4.156,
+   "J": -4.155,
    "key": "charlie kolar",
    "name": "Charlie Kolar",
-   "reason": "best spot Kansas City: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
+   "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
     "breakout tier B: 76% snaps, 17% targets, 34% air yds; no market line yet (Sleeper receiving yds 15)"
    ]
@@ -491,7 +491,7 @@
    "J": -3.677,
    "key": "chig okonkwo",
    "name": "Chig Okonkwo",
-   "reason": "best spot Kansas City: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
+   "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
     "breakout tier B: 71% snaps, 24% targets, 25% air yds; no market line yet (Sleeper receiving yds 27)"
    ]
@@ -506,19 +506,19 @@
    ]
   },
   {
-   "J": -4.166,
+   "J": -4.254,
    "key": "dameon pierce",
    "name": "Dameon Pierce",
-   "reason": "best spot Kansas City: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
+   "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
     "breakout tier B: 77% snaps, 70% of RB touches; no market line yet (Sleeper rushing yds 46)"
    ]
   },
   {
-   "J": -4.025,
+   "J": -3.997,
    "key": "dawson knox",
    "name": "Dawson Knox",
-   "reason": "best spot Kansas City: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
+   "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
     "breakout tier B: 70% snaps, 16% targets, 19% air yds; no market line yet (Sleeper receiving yds 12)"
    ]
@@ -542,20 +542,20 @@
    ]
   },
   {
-   "J": -2.544,
+   "J": -2.47,
    "key": "emanuel wilson",
    "name": "Emanuel Wilson",
-   "reason": "best spot Kansas City: Kansas City is the spare DEF: a spot for a Tier-A add or a same-family stream only (~1 pt/wk on its own, 09-24)",
+   "reason": "best spot Chiefs: Chiefs is the spare DEF: a spot for a Tier-A add or a same-family stream only (~1 pt/wk on its own, 09-24)",
    "reasons": [
-    "breakout tier B: 59% snaps, 73% of RB touches; Kalshi rushing yds 69 vs Sleeper 66 (+5%); held (wk4: 60% snaps, 76% of RB touches)",
-    "RB weekly upgrade: Emanuel Wilson 13.6 vs starter Braelon Allen 6.4"
+    "breakout tier B: 59% snaps, 73% of RB touches; Kalshi rushing yds 70 vs Sleeper 66 (+5%); held (wk4: 60% snaps, 76% of RB touches)",
+    "RB weekly upgrade: Emanuel Wilson 13.7 vs starter Braelon Allen 7.5"
    ]
   },
   {
    "J": -3.87,
    "key": "greg dulcich",
    "name": "Greg Dulcich",
-   "reason": "best spot Kansas City: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
+   "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
     "breakout tier B: 74% snaps, 19% targets, 27% air yds; no market line yet, and no Sleeper line either"
    ]
@@ -564,7 +564,7 @@
    "J": -4.41,
    "key": "isaiah bond",
    "name": "Isaiah Bond",
-   "reason": "best spot Kansas City: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
+   "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
     "breakout tier B: 72% snaps, 21% targets, 47% air yds; no market line yet (Sleeper receiving yds 12)"
    ]
@@ -588,46 +588,46 @@
    ]
   },
   {
-   "J": -3.711,
+   "J": -3.71,
    "key": "jayden daniels",
    "name": "Jayden Daniels",
-   "reason": "best spot Kansas City: Kansas City is the spare DEF: a spot for a Tier-A add or a same-family stream only (~1 pt/wk on its own, 09-24)",
+   "reason": "best spot Chiefs: Chiefs is the spare DEF: a spot for a Tier-A add or a same-family stream only (~1 pt/wk on its own, 09-24)",
    "reasons": [
     "QB weekly upgrade: Jayden Daniels 31.9 vs starter Jared Goff 0.0"
    ]
   },
   {
-   "J": -4.385,
+   "J": -4.384,
    "key": "jerry jeudy",
    "name": "Jerry Jeudy",
-   "reason": "best spot Kansas City: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
+   "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
     "breakout tier B: 81% snaps, 21% targets, 14% air yds; no market line yet (Sleeper receiving yds 14)"
    ]
   },
   {
-   "J": -4.172,
+   "J": -4.134,
    "key": "kendre miller",
    "name": "Kendre Miller",
-   "reason": "best spot Kansas City: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
+   "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
     "breakout tier B: 31% snaps, 50% of RB touches; no market line yet (Sleeper rushing yds 36)"
    ]
   },
   {
-   "J": -4.392,
+   "J": -4.371,
    "key": "laquon treadwell",
    "name": "Laquon Treadwell",
-   "reason": "best spot Kansas City: Tier B (unpriced) never takes the spare DEF \u2014 Tier A only",
+   "reason": "best spot Chiefs: Tier B (unpriced) never takes the spare DEF \u2014 Tier A only",
    "reasons": [
     "breakout tier B: 80% snaps, 18% targets, 14% air yds; no market line yet (Sleeper receiving yds 10); held (wk4: 85% snaps, 18% targets, 34% air yds)"
    ]
   },
   {
-   "J": -4.422,
+   "J": -4.421,
    "key": "marquez valdes scantling",
    "name": "Marquez Valdes-Scantling",
-   "reason": "best spot Kansas City: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
+   "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
     "breakout tier B: 75% snaps, 12% targets, 26% air yds; no market line yet (Sleeper receiving yds 12)"
    ]
@@ -636,16 +636,16 @@
    "J": null,
    "key": "ollie gordon",
    "name": "Ollie Gordon",
-   "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 0.0 under your weakest 6.4",
+   "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 0.0 under your weakest 7.5",
    "reasons": [
     "breakout tier B: 65% snaps, 75% of RB touches; no market line yet, and no Sleeper line either; held (wk4: 56% snaps, 69% of RB touches)"
    ]
   },
   {
-   "J": -4.096,
+   "J": null,
    "key": "rachaad white",
    "name": "Rachaad White",
-   "reason": "best spot Kansas City: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
+   "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 6.4 under your weakest 7.5",
    "reasons": [
     "breakout tier B: 60% snaps, 35% of RB touches; no market line yet (Sleeper rushing yds 23)"
    ]
@@ -660,37 +660,37 @@
    ]
   },
   {
-   "J": -4.364,
+   "J": -4.363,
    "key": "rashod bateman",
    "name": "Rashod Bateman",
-   "reason": "best spot Kansas City: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
+   "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
     "breakout tier B: 80% snaps, 19% targets, 41% air yds; no market line yet (Sleeper receiving yds 32)"
    ]
   },
   {
-   "J": -4.147,
+   "J": -4.242,
    "key": "rj harvey",
    "name": "RJ Harvey",
-   "reason": "best spot Kansas City: Kansas City is the spare DEF: a spot for a Tier-A add or a same-family stream only (~1 pt/wk on its own, 09-24)",
+   "reason": "best spot Chiefs: Chiefs is the spare DEF: a spot for a Tier-A add or a same-family stream only (~1 pt/wk on its own, 09-24)",
    "reasons": [
-    "RB weekly upgrade: RJ Harvey 9.7 vs starter Braelon Allen 6.4"
+    "RB weekly upgrade: RJ Harvey 9.7 vs starter Braelon Allen 7.5"
    ]
   },
   {
    "J": null,
    "key": "roschon johnson",
    "name": "Roschon Johnson",
-   "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 3.6 under your weakest 6.4",
+   "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 3.9 under your weakest 7.5",
    "reasons": [
     "breakout tier B: 39% snaps, 46% of RB touches; no market line yet (Sleeper rushing yds 17)"
    ]
   },
   {
-   "J": -3.658,
+   "J": -3.657,
    "key": "sam darnold",
    "name": "Sam Darnold",
-   "reason": "best spot Kansas City: Kansas City is the spare DEF: a spot for a Tier-A add or a same-family stream only (~1 pt/wk on its own, 09-24)",
+   "reason": "best spot Chiefs: Chiefs is the spare DEF: a spot for a Tier-A add or a same-family stream only (~1 pt/wk on its own, 09-24)",
    "reasons": [
     "QB weekly upgrade: Sam Darnold 31.0 vs starter Jared Goff 0.0"
    ]
@@ -699,36 +699,27 @@
    "J": null,
    "key": "samaje perine",
    "name": "Samaje Perine",
-   "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 0.0 under your weakest 6.4",
+   "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 0.0 under your weakest 7.5",
    "reasons": [
     "breakout tier B: 51% snaps, 48% of RB touches; no market line yet, and no Sleeper line either"
    ]
   },
   {
-   "J": -4.387,
+   "J": -4.386,
    "key": "treylon burks",
    "name": "Treylon Burks",
-   "reason": "best spot Kansas City: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
+   "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
     "breakout tier B: 73% snaps, 20% targets, 16% air yds; no market line yet (Sleeper receiving yds 2)"
    ]
   },
   {
-   "J": -4.383,
-   "key": "tyjae spears",
-   "name": "Tyjae Spears",
-   "reason": "best spot Kansas City: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
-   "reasons": [
-    "breakout tier B: 54% snaps, 41% of RB touches; Kalshi rushing yds 17 vs Sleeper 19 (-14%) \u2014 a part-time line, under the 40 starter floor"
-   ]
-  },
-  {
-   "J": -3.592,
+   "J": -3.19,
    "key": "woody marks",
    "name": "Woody Marks",
-   "reason": "best spot Kansas City: Kansas City is the spare DEF: a spot for a Tier-A add or a same-family stream only (~1 pt/wk on its own, 09-24)",
+   "reason": "best spot Chiefs: Chiefs is the spare DEF: a spot for a Tier-A add or a same-family stream only (~1 pt/wk on its own, 09-24)",
    "reasons": [
-    "RB weekly upgrade: Woody Marks 12.8 vs starter Braelon Allen 6.4"
+    "RB weekly upgrade: Woody Marks 13.2 vs starter Braelon Allen 7.5"
    ]
   }
  ],
@@ -736,7 +727,7 @@
   {
    "id": "drop:DST:KC",
    "kind": "spare",
-   "label": "Kansas City",
+   "label": "Chiefs",
    "taken_by": null,
    "tier": 2
   },
@@ -761,9 +752,9 @@
   "W_REST": 0.8
  },
  "winprob": {
-  "mean": 302.86702756515905,
+  "mean": 305.3055348154684,
   "note": "sampled on the planner's final lineup",
   "p_med": null,
-  "p_opp": 0.6936666666666667
+  "p_opp": 0.6995
  }
 }

@@ -9900,10 +9900,11 @@
   ],
   "verdict": "WARN",
   "week": 6,
-  "status": "proposed",
+  "status": "executed",
   "provisional": true,
   "resolves_at": "2026-10-19T20:15-04:00",
-  "reverses": null
+  "reverses": null,
+  "status_ts": "2026-10-14T09:04-04:00"
  },
  {
   "id": "94c79da8",
@@ -9918,10 +9919,11 @@
   ],
   "verdict": "WARN",
   "week": 6,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": null,
-  "reverses": null
+  "reverses": null,
+  "superseded_by": "59d6b0b7"
  },
  {
   "id": "d08e5d67",
@@ -9937,10 +9939,11 @@
   ],
   "verdict": "WARN",
   "week": 6,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": "2026-10-18T13:00-04:00",
-  "reverses": "2814d4e2"
+  "reverses": "2814d4e2",
+  "superseded_by": "91d7a47e"
  },
  {
   "id": "47a2e5ad",
@@ -9956,10 +9959,11 @@
   ],
   "verdict": "WARN",
   "week": 6,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": true,
   "resolves_at": "2026-10-18T13:00-04:00",
-  "reverses": "afd0edb2"
+  "reverses": "afd0edb2",
+  "superseded_by": "b777d4dc"
  },
  {
   "id": "4b7a9f91",
@@ -9979,5 +9983,61 @@
   "provisional": false,
   "resolves_at": "2026-10-18T16:25-04:00",
   "reverses": null
+ },
+ {
+  "id": "59d6b0b7",
+  "ts": "2026-10-14T09:04-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Tennessee Titans",
+  "call": "stream Tennessee Titans for week 7, drop 49ers",
+  "detail": "DEF: TEN 19.0 vs yours 49ers 21.5 \u2014 edge 2.5 implied pts",
+  "evidence": [
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "94c79da8"
+ },
+ {
+  "id": "b777d4dc",
+  "ts": "2026-10-14T09:04-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Rome Odunze",
+  "call": "start Rome Odunze at W/R",
+  "detail": "over Ja'Marr Chase +10.17",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": "2026-10-18T13:00-04:00",
+  "reverses": "47a2e5ad"
+ },
+ {
+  "id": "91d7a47e",
+  "ts": "2026-10-14T09:04-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Denzel Boston",
+  "call": "start Denzel Boston at W/R/T",
+  "detail": "over Braelon Allen +2.61",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "proposed",
+  "provisional": true,
+  "resolves_at": "2026-10-18T13:00-04:00",
+  "reverses": "d08e5d67"
  }
 ]

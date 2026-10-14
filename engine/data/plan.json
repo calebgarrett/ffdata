@@ -7,39 +7,18 @@
   "refused": []
  },
  "decide": [
-  "BSB \u2014 bye/hole cover, before kickoff Sun Oct 18, 8:20 pm ET \u2014 check first Add Pierre Strong RB GB \u00b7 drop Jauan Jennings When: before kickoff Sun Oct 18, 8:20 pm ET (never-rostered free agent: free until his kickoff). Why: week-7 hole at RB2",
-  "BSB DEF lineup Start San Francisco over empty +7.5 points locks Mon Oct 19, 8:15 pm set it in Yahoo before then",
-  "HH W/R lineup Start Denzel Boston over Ja'Marr Chase +9.8 points locks Sun Oct 18, 1:00 pm set it in Yahoo before then",
+  "HH W/R lineup Start Rome Odunze over Ja'Marr Chase +10.2 points locks Sun Oct 18, 1:00 pm set it in Yahoo before then",
   "HH Q/W/R/T lineup Start Matthew Stafford over Jared Goff +40.0 points locks Sun Oct 18, 4:05 pm set it in Yahoo before then",
-  "HH DEF lineup Start Kansas City over Houston +4.2 points locks Sun Oct 18, 4:25 pm set it in Yahoo before then"
+  "HH DEF lineup Start Chiefs over Texans +4.2 points locks Sun Oct 18, 4:25 pm set it in Yahoo before then"
  ],
  "fast": false,
  "leagues": {
   "BSB": {
    "actions": [
     {
-     "add": null,
-     "bid": null,
-     "drop": null,
-     "gain": 7.46,
-     "gates": [
-      "G7-ready:WARN"
-     ],
-     "kind": "start",
-     "provisional": true,
-     "reason": "",
-     "sit": null,
-     "slot": "DEF",
-     "start": "San Francisco",
-     "status": "proposed",
-     "subject": "San Francisco",
-     "verdict": "WARN",
-     "when": "early"
-    },
-    {
      "add": "Tennessee Titans",
      "bid": null,
-     "drop": "San Francisco",
+     "drop": "49ers",
      "fam": "DEF",
      "gates": [
       "G7-ready:WARN"
@@ -164,8 +143,8 @@
     },
     {
      "add": "Laquon Treadwell",
-     "bid": 1,
-     "drop": "Jauan Jennings",
+     "bid": null,
+     "drop": null,
      "gates": [],
      "kind": "breakout",
      "provisional": false,
@@ -175,10 +154,10 @@
      "status": null,
      "subject": "Laquon Treadwell",
      "tier": "B",
-     "verb": "ADD",
+     "verb": "WAIT",
      "verdict": "PASS",
-     "when": "free agent until his game kicks off; after that a waiver claim, in by Tue night (runs Wed ~5am) \u2014 bid $1: an unpriced role nobody else's model is looking at yet; the floor is the number \u2014 locks Sun 1:00 PM ET",
-     "why": "starter usage two weeks running (wk4: 85% snaps, 18% targets, 34% air yds) and the market has not priced him yet \u2014 the cheap window. Jauan Jennings is the spot: lowest-valued bench player (bench-level"
+     "when": "no drop worth less than him",
+     "why": "two straight weeks of starter usage (wk4: 85% snaps, 18% targets, 34% air yds), but the cheapest clean drop (Makai Lemon, 5.2 this week) projects at or above him (2.6)"
     },
     {
      "add": "Treylon Burks",
@@ -214,7 +193,7 @@
      "verb": "NONE",
      "verdict": "PASS",
      "when": "no move for this roster",
-     "why": "you already carry 3 RBs for 2 slot(s) and he projects below your weakest (Ray Davis 1.2 vs 0.0). Only a trade chip."
+     "why": "you already carry 4 RBs for 2 slot(s) and he projects below your weakest (Ray Davis 1.2 vs 0.0). Only a trade chip."
     },
     {
      "add": "Dawson Knox",
@@ -273,6 +252,7 @@
    ],
    "blocked": [],
    "current": {
+    "DEF": "49ers",
     "K": "Jason Myers",
     "QB": "Matthew Stafford",
     "RB1": "James Cook III",
@@ -284,154 +264,94 @@
     "WR3": "Ryan Flournoy"
    },
    "flags": [
-    "2 DEFs rostered (Minnesota, San Francisco) for one DEF slot \u2014 the spare is San Francisco (85 season vs Minnesota 122)",
+    "2 DEFs rostered (49ers, Vikings) for one DEF slot \u2014 the spare is 49ers (85 season vs Vikings 122)",
     "Jaxon Smith-Njigba is Q at WR1 \u2014 if he is out, Makai Lemon (5.2) takes the slot; decide before Thu Oct 15, 8:15 pm ET",
     "Josh Jacobs [CEL] holds a roster spot \u2014 HOLD: HOLD. A top-10 RB whose likely return lands before the week 15-17 playoff run. C"
    ],
    "lineup": {
-    "DEF": "San Francisco",
+    "DEF": "49ers",
     "K": "Jason Myers",
     "QB": "Matthew Stafford",
     "RB1": "James Cook III",
     "RB2": "MarShawn Lloyd",
     "TE": "Isaiah Likely",
-    "W/R/T": "DeMario Douglas",
+    "W/R/T": "Ryan Flournoy",
     "WR1": "Drake London",
-    "WR2": "Jaxon Smith-Njigba",
-    "WR3": "Ryan Flournoy"
+    "WR2": "DeMario Douglas",
+    "WR3": "Jaxon Smith-Njigba"
    },
    "me": "OVERKILL",
-   "others_pulled": "2026-10-14T11:08:18+00:00",
+   "others_pulled": "2026-10-14T13:03:18+00:00",
    "planner": {
     "lineup_after": {
-     "DEF": "San Francisco",
+     "DEF": "49ers",
      "K": "Jason Myers",
      "QB": "Matthew Stafford",
      "RB1": "James Cook III",
      "RB2": "MarShawn Lloyd",
      "TE": "Isaiah Likely",
-     "W/R/T": "DeMario Douglas",
+     "W/R/T": "Ryan Flournoy",
      "WR1": "Drake London",
-     "WR2": "Jaxon Smith-Njigba",
-     "WR3": "Ryan Flournoy"
+     "WR2": "DeMario Douglas",
+     "WR3": "Jaxon Smith-Njigba"
     },
-    "moves": [
-     {
-      "J": 4.315,
-      "add": "Pierre Strong",
-      "drop": "Jauan Jennings",
-      "gates": [
-       "G11-role-registry:WARN"
-      ],
-      "ir": null,
-      "kind": "add",
-      "provisional": false,
-      "sit": null,
-      "slot": null,
-      "start": null,
-      "txns": [
-       "add Pierre Strong",
-       "drop Jauan Jennings"
-      ],
-      "when": "before kickoff Sun Oct 18, 8:20 pm ET"
-     },
-     {
-      "J": 7.459,
-      "add": null,
-      "drop": null,
-      "gates": [],
-      "ir": null,
-      "kind": "lineup",
-      "provisional": false,
-      "sit": null,
-      "slot": "DEF",
-      "start": "San Francisco",
-      "txns": [
-       "start San Francisco at DEF"
-      ],
-      "when": "before kickoff Mon Oct 19, 8:15 pm ET"
-     }
-    ],
+    "moves": [],
     "rejected": [
      {
       "name": "Cade Otton",
-      "reason": "J -0.39 < 3.0 at its best spot (Jauan Jennings) \u2014 J -0.39 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+1.08 (bench boom) - 0.00 acq - 0.00 FAB($0) - 0.50 churn"
+      "reason": "J -0.50 < 3.0 at its best spot (Xavier Hutchinson) \u2014 J -0.50 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x-0.00 (bench boom) - 0.00 acq - 0.00 FAB($0) - 0.50 churn"
      },
      {
       "name": "Charlie Kolar",
-      "reason": "best spot Jauan Jennings: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
-     },
-     {
-      "name": "CJ Donaldson",
-      "reason": "its best spot (Jauan Jennings) went to Pierre Strong at higher value"
-     },
-     {
-      "name": "Corey Kiner",
-      "reason": "jointly with the rest of the plan it adds only J -0.64 (< 3.0) \u2014 J -0.64 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x-0.30 (bench boom) - 0.00 acq - 0.11 FAB($11) - 0.50 churn"
-     },
-     {
-      "name": "Dare Ogunbowale",
-      "reason": "its best spot (Jauan Jennings) went to Pierre Strong at higher value"
+      "reason": "best spot Xavier Hutchinson: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
      },
      {
       "name": "Dawson Knox",
-      "reason": "best spot Jauan Jennings: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
+      "reason": "best spot Xavier Hutchinson: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
      },
      {
       "name": "Greg Dulcich",
-      "reason": "best spot Jauan Jennings: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
+      "reason": "best spot Xavier Hutchinson: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
      },
      {
       "name": "Isaiah Bond",
-      "reason": "best spot Jauan Jennings: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
+      "reason": "best spot Xavier Hutchinson: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
      },
      {
       "name": "Jake Ferguson",
-      "reason": "best spot Jauan Jennings: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
-     },
-     {
-      "name": "Jaleel McLaughlin",
-      "reason": "gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])"
+      "reason": "best spot DeMario Douglas: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
      },
      {
       "name": "Jason Sanders",
       "reason": "J -1.02 < 3.0 at its best spot (Jason Myers) \u2014 J -1.02 = 1.0x+0.00 (wk W) + 0.8x+0.88 (W+1) + 0.8x-1.51 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 0.00 acq - 0.01 FAB($1) - 0.50 churn"
      },
      {
-      "name": "Kaleb Johnson",
-      "reason": "jointly with the rest of the plan it adds only J -1.06 (< 3.0) \u2014 J -1.06 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x-0.60 (rest, mean of wks 8-17) + 0.1x+0.29 (bench boom) - 0.00 acq - 0.11 FAB($11) - 0.50 churn"
-     },
-     {
       "name": "Laquon Treadwell",
-      "reason": "J -0.43 < 3.0 at its best spot (Jauan Jennings) \u2014 J -0.43 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+0.67 (bench boom) - 0.00 acq - 0.00 FAB($0) - 0.50 churn"
+      "reason": "best spot Xavier Hutchinson: Tier B held, but Xavier Hutchinson (2.7) projects at or above him (2.6) this week"
      },
      {
       "name": "Mark Andrews",
-      "reason": "best spot Jauan Jennings: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
+      "reason": "best spot DeMario Douglas: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
      },
      {
       "name": "Marquez Valdes-Scantling",
-      "reason": "best spot Jauan Jennings: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
+      "reason": "best spot Xavier Hutchinson: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
      },
      {
       "name": "Roschon Johnson",
-      "reason": "best spot Jauan Jennings: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
+      "reason": "best spot Xavier Hutchinson: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
      },
      {
       "name": "Samaje Perine",
-      "reason": "its best spot (Jauan Jennings) went to Pierre Strong at higher value"
+      "reason": "sits behind everyone: you carry 4 RBs for 2 slot(s) and he projects 0.0 under your weakest 1.2"
      },
      {
       "name": "Treylon Burks",
-      "reason": "best spot Jauan Jennings: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
-     },
-     {
-      "name": "Tyrone Tracy",
-      "reason": "jointly with the rest of the plan it adds only J -0.25 (< 3.0) \u2014 J -0.25 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.14 (rest, mean of wks 8-17) + 0.1x+1.33 (bench boom) - 0.00 acq - 0.00 FAB($0) - 0.50 churn"
+      "reason": "best spot Xavier Hutchinson: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
      }
     ]
    },
-   "pulled": "2026-10-14T11:08:18+00:00"
+   "pulled": "2026-10-14T13:03:18+00:00"
   },
   "HH": {
    "actions": [
@@ -439,36 +359,15 @@
      "add": null,
      "bid": null,
      "drop": null,
-     "gain": 9.77,
+     "gain": 10.17,
      "gates": [
-      "G7-ready:WARN",
-      "G9-reversal:WARN"
+      "G7-ready:WARN"
      ],
      "kind": "start",
      "provisional": false,
      "reason": "Ja'Marr Chase has no game this week (bye) \u2014 the slot scores nothing until he is replaced",
      "sit": "Ja'Marr Chase",
      "slot": "W/R",
-     "start": "Denzel Boston",
-     "status": "proposed",
-     "subject": "Denzel Boston",
-     "verdict": "WARN",
-     "when": "early"
-    },
-    {
-     "add": null,
-     "bid": null,
-     "drop": null,
-     "gain": 3.29,
-     "gates": [
-      "G7-ready:WARN",
-      "G9-reversal:WARN"
-     ],
-     "kind": "start",
-     "provisional": true,
-     "reason": "",
-     "sit": "Braelon Allen",
-     "slot": "W/R/T",
      "start": "Rome Odunze",
      "status": "proposed",
      "subject": "Rome Odunze",
@@ -479,7 +378,26 @@
      "add": null,
      "bid": null,
      "drop": null,
-     "gain": 40.01,
+     "gain": 2.61,
+     "gates": [
+      "G7-ready:WARN"
+     ],
+     "kind": "start",
+     "provisional": true,
+     "reason": "",
+     "sit": "Braelon Allen",
+     "slot": "W/R/T",
+     "start": "Denzel Boston",
+     "status": "proposed",
+     "subject": "Denzel Boston",
+     "verdict": "WARN",
+     "when": "early"
+    },
+    {
+     "add": null,
+     "bid": null,
+     "drop": null,
+     "gain": 39.99,
      "gates": [],
      "kind": "start",
      "provisional": false,
@@ -496,16 +414,16 @@
      "add": null,
      "bid": null,
      "drop": null,
-     "gain": 4.22,
+     "gain": 4.21,
      "gates": [],
      "kind": "start",
      "provisional": false,
      "reason": "",
-     "sit": "Houston",
+     "sit": "Texans",
      "slot": "DEF",
-     "start": "Kansas City",
+     "start": "Chiefs",
      "status": "proposed",
-     "subject": "Kansas City",
+     "subject": "Chiefs",
      "verdict": "PASS",
      "when": "early"
     },
@@ -551,30 +469,11 @@
      "when": null
     },
     {
-     "add": "Sam Darnold",
-     "bid": null,
-     "drop": null,
-     "fam": "QB",
-     "gain": 30.96,
-     "gates": [
-      "G11-role-registry:WARN"
-     ],
-     "kind": "upgrade",
-     "provisional": false,
-     "sit": "Jared Goff",
-     "slot": null,
-     "start": null,
-     "status": "proposed",
-     "subject": "Sam Darnold",
-     "verdict": "WARN",
-     "when": null
-    },
-    {
      "add": "Cam Ward",
      "bid": null,
      "drop": null,
      "fam": "QB",
-     "gain": 30.87,
+     "gain": 31.05,
      "gates": [
       "G11-role-registry:WARN"
      ],
@@ -585,6 +484,25 @@
      "start": null,
      "status": "proposed",
      "subject": "Cam Ward",
+     "verdict": "WARN",
+     "when": null
+    },
+    {
+     "add": "Sam Darnold",
+     "bid": null,
+     "drop": null,
+     "fam": "QB",
+     "gain": 30.99,
+     "gates": [
+      "G11-role-registry:WARN"
+     ],
+     "kind": "upgrade",
+     "provisional": false,
+     "sit": "Jared Goff",
+     "slot": null,
+     "start": null,
+     "status": "proposed",
+     "subject": "Sam Darnold",
      "verdict": "WARN",
      "when": null
     },
@@ -744,24 +662,6 @@
      "start": null,
      "status": null,
      "subject": "Chig Okonkwo",
-     "tier": "B",
-     "verb": "WAIT",
-     "verdict": "PASS",
-     "when": "next usage pull (Tuesday) \u2014 add then if the snaps hold or the market moves toward him",
-     "why": "one game of starter usage; no market confirmation yet and the spot would cost a real player"
-    },
-    {
-     "add": "Tyjae Spears",
-     "bid": null,
-     "drop": null,
-     "gates": [],
-     "kind": "breakout",
-     "provisional": false,
-     "sit": null,
-     "slot": null,
-     "start": null,
-     "status": null,
-     "subject": "Tyjae Spears",
      "tier": "B",
      "verb": "WAIT",
      "verdict": "PASS",
@@ -964,7 +864,7 @@
     "CB": "Cooper DeJean",
     "D": "Foyesade Oluokun",
     "DB": "Budda Baker",
-    "DEF": "Houston",
+    "DEF": "Texans",
     "DL": "T.J. Watt",
     "K": "Cairo Santos",
     "LB": "Carson Schwesinger",
@@ -978,14 +878,14 @@
     "WR": "Ja'Marr Chase"
    },
    "flags": [
-    "2 DEFs rostered \u2014 second one is a HOLD in a capped league: Houston (registry hold)",
+    "2 DEFs rostered \u2014 second one is a HOLD in a capped league: Texans (registry hold)",
     "Carson Schwesinger is Q at LB \u2014 no healthy bench player can fill LB; decide before Sun Oct 18, 1:00 pm ET"
    ],
    "lineup": {
     "CB": "Cooper DeJean",
     "D": "Foyesade Oluokun",
     "DB": "Budda Baker",
-    "DEF": "Kansas City",
+    "DEF": "Chiefs",
     "DL": "T.J. Watt",
     "K": "Cairo Santos",
     "LB": "Carson Schwesinger",
@@ -994,18 +894,18 @@
     "RB": "Jaylen Warren",
     "S": "Nick Cross",
     "TE": "Trey McBride",
-    "W/R": "Denzel Boston",
-    "W/R/T": "Rome Odunze",
+    "W/R": "Rome Odunze",
+    "W/R/T": "Denzel Boston",
     "WR": "Drake London"
    },
    "me": "Tecmo Bowlers",
-   "others_pulled": "2026-10-14T11:08:18+00:00",
+   "others_pulled": "2026-10-14T13:03:18+00:00",
    "planner": {
     "lineup_after": {
      "CB": "Cooper DeJean",
      "D": "Foyesade Oluokun",
      "DB": "Budda Baker",
-     "DEF": "Kansas City",
+     "DEF": "Chiefs",
      "DL": "T.J. Watt",
      "K": "Cairo Santos",
      "LB": "Carson Schwesinger",
@@ -1014,13 +914,13 @@
      "RB": "Jaylen Warren",
      "S": "Nick Cross",
      "TE": "Trey McBride",
-     "W/R": "Denzel Boston",
-     "W/R/T": "Rome Odunze",
+     "W/R": "Rome Odunze",
+     "W/R/T": "Denzel Boston",
      "WR": "Drake London"
     },
     "moves": [
      {
-      "J": 9.772,
+      "J": 10.172,
       "add": null,
       "drop": null,
       "gates": [],
@@ -1029,15 +929,15 @@
       "provisional": false,
       "sit": "Ja'Marr Chase",
       "slot": "W/R",
-      "start": "Denzel Boston",
+      "start": "Rome Odunze",
       "txns": [
-       "start Denzel Boston at W/R",
+       "start Rome Odunze at W/R",
        "bench Ja'Marr Chase"
       ],
       "when": "before kickoff Sun Oct 18, 1:00 pm ET"
      },
      {
-      "J": 3.285,
+      "J": 2.61,
       "add": null,
       "drop": null,
       "gates": [],
@@ -1046,15 +946,15 @@
       "provisional": true,
       "sit": "Braelon Allen",
       "slot": "W/R/T",
-      "start": "Rome Odunze",
+      "start": "Denzel Boston",
       "txns": [
-       "start Rome Odunze at W/R/T",
+       "start Denzel Boston at W/R/T",
        "bench Braelon Allen"
       ],
       "when": "before kickoff Sun Oct 18, 1:00 pm ET"
      },
      {
-      "J": 40.006,
+      "J": 39.986,
       "add": null,
       "drop": null,
       "gates": [],
@@ -1071,19 +971,19 @@
       "when": "before kickoff Sun Oct 18, 4:05 pm ET"
      },
      {
-      "J": 4.215,
+      "J": 4.214,
       "add": null,
       "drop": null,
       "gates": [],
       "ir": null,
       "kind": "lineup",
       "provisional": false,
-      "sit": "Houston",
+      "sit": "Texans",
       "slot": "DEF",
-      "start": "Kansas City",
+      "start": "Chiefs",
       "txns": [
-       "start Kansas City at DEF",
-       "bench Houston"
+       "start Chiefs at DEF",
+       "bench Texans"
       ],
       "when": "before kickoff Sun Oct 18, 4:25 pm ET"
      },
@@ -1108,27 +1008,27 @@
     "rejected": [
      {
       "name": "Indianapolis Colts",
-      "reason": "J -2.10 < 3.0 at its best spot (Kansas City) \u2014 J -2.10 = 1.0x+0.00 (wk W) + 0.8x-0.22 (W+1) + 0.8x-0.53 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn"
+      "reason": "J -2.10 < 3.0 at its best spot (Chiefs) \u2014 J -2.10 = 1.0x+0.00 (wk W) + 0.8x-0.22 (W+1) + 0.8x-0.53 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn"
      },
      {
       "name": "Brenton Strange",
-      "reason": "best spot Kansas City: Tier B (unpriced) never takes the spare DEF \u2014 Tier A only"
+      "reason": "best spot Chiefs: Tier B (unpriced) never takes the spare DEF \u2014 Tier A only"
      },
      {
       "name": "Cade Otton",
-      "reason": "best spot Kansas City: Tier B (unpriced) never takes the spare DEF \u2014 Tier A only"
+      "reason": "best spot Chiefs: Tier B (unpriced) never takes the spare DEF \u2014 Tier A only"
      },
      {
       "name": "Cam Ward",
-      "reason": "best spot Kansas City: Kansas City is the spare DEF: a spot for a Tier-A add or a same-family stream only (~1 pt/wk on its own, 09-24)"
+      "reason": "best spot Chiefs: Chiefs is the spare DEF: a spot for a Tier-A add or a same-family stream only (~1 pt/wk on its own, 09-24)"
      },
      {
       "name": "Charlie Kolar",
-      "reason": "best spot Kansas City: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
+      "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
      },
      {
       "name": "Chig Okonkwo",
-      "reason": "best spot Kansas City: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
+      "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
      },
      {
       "name": "Chris Boswell",
@@ -1136,11 +1036,11 @@
      },
      {
       "name": "Dameon Pierce",
-      "reason": "best spot Kansas City: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
+      "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
      },
      {
       "name": "Dawson Knox",
-      "reason": "best spot Kansas City: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
+      "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
      },
      {
       "name": "Devin Lloyd",
@@ -1152,15 +1052,15 @@
      },
      {
       "name": "Emanuel Wilson",
-      "reason": "best spot Kansas City: Kansas City is the spare DEF: a spot for a Tier-A add or a same-family stream only (~1 pt/wk on its own, 09-24)"
+      "reason": "best spot Chiefs: Chiefs is the spare DEF: a spot for a Tier-A add or a same-family stream only (~1 pt/wk on its own, 09-24)"
      },
      {
       "name": "Greg Dulcich",
-      "reason": "best spot Kansas City: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
+      "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
      },
      {
       "name": "Isaiah Bond",
-      "reason": "best spot Kansas City: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
+      "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
      },
      {
       "name": "Jalen Coker",
@@ -1172,31 +1072,31 @@
      },
      {
       "name": "Jayden Daniels",
-      "reason": "best spot Kansas City: Kansas City is the spare DEF: a spot for a Tier-A add or a same-family stream only (~1 pt/wk on its own, 09-24)"
+      "reason": "best spot Chiefs: Chiefs is the spare DEF: a spot for a Tier-A add or a same-family stream only (~1 pt/wk on its own, 09-24)"
      },
      {
       "name": "Jerry Jeudy",
-      "reason": "best spot Kansas City: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
+      "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
      },
      {
       "name": "Kendre Miller",
-      "reason": "best spot Kansas City: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
+      "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
      },
      {
       "name": "Laquon Treadwell",
-      "reason": "best spot Kansas City: Tier B (unpriced) never takes the spare DEF \u2014 Tier A only"
+      "reason": "best spot Chiefs: Tier B (unpriced) never takes the spare DEF \u2014 Tier A only"
      },
      {
       "name": "Marquez Valdes-Scantling",
-      "reason": "best spot Kansas City: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
+      "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
      },
      {
       "name": "Ollie Gordon",
-      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 0.0 under your weakest 6.4"
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 0.0 under your weakest 7.5"
      },
      {
       "name": "Rachaad White",
-      "reason": "best spot Kansas City: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 6.4 under your weakest 7.5"
      },
      {
       "name": "Rashee Rice",
@@ -1204,41 +1104,37 @@
      },
      {
       "name": "Rashod Bateman",
-      "reason": "best spot Kansas City: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
+      "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
      },
      {
       "name": "RJ Harvey",
-      "reason": "best spot Kansas City: Kansas City is the spare DEF: a spot for a Tier-A add or a same-family stream only (~1 pt/wk on its own, 09-24)"
+      "reason": "best spot Chiefs: Chiefs is the spare DEF: a spot for a Tier-A add or a same-family stream only (~1 pt/wk on its own, 09-24)"
      },
      {
       "name": "Roschon Johnson",
-      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 3.6 under your weakest 6.4"
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 3.9 under your weakest 7.5"
      },
      {
       "name": "Sam Darnold",
-      "reason": "best spot Kansas City: Kansas City is the spare DEF: a spot for a Tier-A add or a same-family stream only (~1 pt/wk on its own, 09-24)"
+      "reason": "best spot Chiefs: Chiefs is the spare DEF: a spot for a Tier-A add or a same-family stream only (~1 pt/wk on its own, 09-24)"
      },
      {
       "name": "Samaje Perine",
-      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 0.0 under your weakest 6.4"
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 0.0 under your weakest 7.5"
      },
      {
       "name": "Treylon Burks",
-      "reason": "best spot Kansas City: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
-     },
-     {
-      "name": "Tyjae Spears",
-      "reason": "best spot Kansas City: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
+      "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
      },
      {
       "name": "Woody Marks",
-      "reason": "best spot Kansas City: Kansas City is the spare DEF: a spot for a Tier-A add or a same-family stream only (~1 pt/wk on its own, 09-24)"
+      "reason": "best spot Chiefs: Chiefs is the spare DEF: a spot for a Tier-A add or a same-family stream only (~1 pt/wk on its own, 09-24)"
      }
     ]
    },
-   "pulled": "2026-10-14T11:08:18+00:00"
+   "pulled": "2026-10-14T13:03:18+00:00"
   }
  },
- "now": "2026-10-14T07:09-04:00",
+ "now": "2026-10-14T09:04-04:00",
  "week": 6
 }
