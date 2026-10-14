@@ -7,10 +7,10 @@
   "refused": []
  },
  "decide": [
-  "BSB \u2014 bye/hole cover, claim by Tue night ($10) \u2014 check first Claim Dameon Pierce ($10) RB PHI \u00b7 drop Xavier Hutchinson \u00b7 start at W/R/T over DeMario Douglas When: claim by Tue night ($10) (Tue->Wed claims window: last week's games are playe",
+  "BSB \u2014 bye/hole cover, claim by Tue night ($10) \u2014 check first Claim Dameon Pierce ($10) RB PHI \u00b7 drop Xavier Hutchinson \u00b7 start at RB2 over DeMario Douglas When: claim by Tue night ($10) (Tue->Wed claims window: last week's games are played ",
   "BSB \u2014 weekly upgrade, claim by Tue night ($1) \u2014 check first Claim Baltimore Ravens ($1) DEF BAL \u00b7 drop Vikings \u00b7 start at DEF over Jets When: claim by Tue night ($1) (dropped to waivers Thu 8:44 PM \u2014 a claim until the run). Why: DEF weekly ",
-  "HH QB lineup Start Matthew Stafford over Jared Goff +40.9 points locks Sun Oct 18, 4:05 pm set it in Yahoo before then",
-  "HH W/R lineup Start Denzel Boston over Ja'Marr Chase +9.8 points locks Sun Oct 18, 1:00 pm set it in Yahoo before then",
+  "HH W/R lineup Start Rome Odunze over Ja'Marr Chase +9.8 points locks Sun Oct 18, 1:00 pm set it in Yahoo before then",
+  "HH Q/W/R/T lineup Start Matthew Stafford over Jared Goff +40.1 points locks Sun Oct 18, 4:05 pm set it in Yahoo before then",
   "HH DEF lineup Start Chiefs over Texans +4.2 points locks Sun Oct 18, 4:25 pm set it in Yahoo before then"
  ],
  "fast": false,
@@ -23,9 +23,7 @@
      "drop": null,
      "fam": "DEF",
      "gain": 5.16,
-     "gates": [
-      "G7-ready:WARN"
-     ],
+     "gates": [],
      "kind": "upgrade",
      "provisional": false,
      "sit": "Jets",
@@ -33,7 +31,7 @@
      "start": null,
      "status": "proposed",
      "subject": "Indianapolis Colts",
-     "verdict": "WARN",
+     "verdict": "PASS",
      "when": null
     },
     {
@@ -60,7 +58,7 @@
      "bid": null,
      "drop": null,
      "fam": "DEF",
-     "gain": 3.77,
+     "gain": 3.75,
      "gates": [
       "G7-ready:WARN"
      ],
@@ -79,9 +77,7 @@
      "bid": null,
      "drop": "Vikings",
      "fam": "DEF",
-     "gates": [
-      "G7-ready:WARN"
-     ],
+     "gates": [],
      "kind": "week_upgrade",
      "open": false,
      "provisional": false,
@@ -90,7 +86,7 @@
      "start": null,
      "status": "proposed",
      "subject": "Indianapolis Colts",
-     "verdict": "WARN",
+     "verdict": "PASS",
      "when": "now"
     },
     {
@@ -271,7 +267,7 @@
      "verb": "NONE",
      "verdict": "PASS",
      "when": "no move for this roster",
-     "why": "you already carry 3 RBs for 2 slot(s) and he projects below your weakest (Ray Davis 1.0 vs 0.0). Only a trade chip."
+     "why": "you already carry 3 RBs for 2 slot(s) and he projects below your weakest (Ray Davis 1.1 vs 0.0). Only a trade chip."
     },
     {
      "add": "Dawson Knox",
@@ -332,32 +328,32 @@
     "DEF": "Jets",
     "K": "Jason Myers",
     "QB": "Matthew Stafford",
-    "RB1": "MarShawn Lloyd",
-    "RB2": "James Cook III",
+    "RB1": "James Cook III",
+    "RB2": "MarShawn Lloyd",
     "TE": "Isaiah Likely",
     "W/R/T": "DeMario Douglas",
-    "WR1": "Drake London",
-    "WR2": "Jaxon Smith-Njigba",
-    "WR3": "Ryan Flournoy"
+    "WR1": "Jaxon Smith-Njigba",
+    "WR2": "Ryan Flournoy",
+    "WR3": "Drake London"
    },
    "me": "OVERKILL",
-   "others_pulled": "2026-10-14T01:47:47+00:00",
+   "others_pulled": "2026-10-14T07:28:08+00:00",
    "planner": {
     "lineup_after": {
      "DEF": "Baltimore Ravens",
      "K": "Jason Myers",
      "QB": "Matthew Stafford",
-     "RB1": "MarShawn Lloyd",
-     "RB2": "James Cook III",
+     "RB1": "James Cook III",
+     "RB2": "Dameon Pierce",
      "TE": "Isaiah Likely",
-     "W/R/T": "Dameon Pierce",
-     "WR1": "Drake London",
-     "WR2": "Jaxon Smith-Njigba",
-     "WR3": "Ryan Flournoy"
+     "W/R/T": "MarShawn Lloyd",
+     "WR1": "Ryan Flournoy",
+     "WR2": "Drake London",
+     "WR3": "Jaxon Smith-Njigba"
     },
     "moves": [
      {
-      "J": 7.457,
+      "J": 6.998,
       "add": "Dameon Pierce",
       "drop": "Xavier Hutchinson",
       "gates": [
@@ -372,13 +368,13 @@
       "txns": [
        "claim Dameon Pierce ($10)",
        "drop Xavier Hutchinson",
-       "start Dameon Pierce at W/R/T",
+       "start Dameon Pierce at RB2",
        "bench DeMario Douglas"
       ],
       "when": "claim by Tue night ($10)"
      },
      {
-      "J": 3.149,
+      "J": 3.147,
       "add": "Baltimore Ravens",
       "drop": "Vikings",
       "gates": [
@@ -407,11 +403,11 @@
      },
      {
       "name": "San Francisco 49ers",
-      "reason": "J +1.68 < 3.0 at its best spot (Vikings) \u2014 J +1.68 = 1.0x+3.77 (wk W) + 0.8x+0.30 (W+1) + 0.8x-2.29 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 0.00 acq - 0.01 FAB($1) - 0.50 churn"
+      "reason": "J +1.65 < 3.0 at its best spot (Vikings) \u2014 J +1.65 = 1.0x+3.75 (wk W) + 0.8x+0.30 (W+1) + 0.8x-2.29 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 0.00 acq - 0.01 FAB($1) - 0.50 churn"
      },
      {
       "name": "Cade Otton",
-      "reason": "J -0.16 < 3.0 at its best spot (Jauan Jennings) \u2014 J -0.16 = 1.0x+0.24 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+1.08 (bench boom) - 0.00 acq - 0.01 FAB($1) - 0.50 churn"
+      "reason": "J -0.40 < 3.0 at its best spot (Jauan Jennings) \u2014 J -0.40 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+1.08 (bench boom) - 0.00 acq - 0.01 FAB($1) - 0.50 churn"
      },
      {
       "name": "Charlie Kolar",
@@ -419,7 +415,7 @@
      },
      {
       "name": "Corey Kiner",
-      "reason": "jointly with the rest of the plan it adds only J -1.88 (< 3.0) \u2014 J -1.88 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x-0.60 (rest, mean of wks 8-17) + 0.1x-0.05 (bench boom) - 0.00 acq - 0.90 FAB($10) - 0.50 churn"
+      "reason": "jointly with the rest of the plan it adds only J -0.63 (< 3.0) \u2014 J -0.63 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x-0.34 (bench boom) - 0.00 acq - 0.10 FAB($10) - 0.50 churn"
      },
      {
       "name": "Dawson Knox",
@@ -451,7 +447,7 @@
      },
      {
       "name": "Laquon Treadwell",
-      "reason": "J -0.49 < 3.0 at its best spot (Jauan Jennings) \u2014 J -0.49 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+0.24 (bench boom) - 0.00 acq - 0.01 FAB($1) - 0.50 churn"
+      "reason": "J -0.45 < 3.0 at its best spot (Jauan Jennings) \u2014 J -0.45 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+0.60 (bench boom) - 0.00 acq - 0.01 FAB($1) - 0.50 churn"
      },
      {
       "name": "Marquez Valdes-Scantling",
@@ -463,15 +459,11 @@
      },
      {
       "name": "Roschon Johnson",
-      "reason": "best spot Jauan Jennings: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
+      "reason": "its best spot (Jauan Jennings) went to another move at higher value"
      },
      {
       "name": "Samaje Perine",
       "reason": "its best spot (Jauan Jennings) went to another move at higher value"
-     },
-     {
-      "name": "Tank Bigsby",
-      "reason": "J +2.95 < 3.0 at its best spot (Jauan Jennings) \u2014 J +2.95 = 1.0x+0.00 (wk W) + 0.8x+3.85 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+4.74 (bench boom) - 0.00 acq - 0.10 FAB($10) - 0.50 churn"
      },
      {
       "name": "Treylon Burks",
@@ -479,11 +471,11 @@
      },
      {
       "name": "Tyrone Tracy",
-      "reason": "jointly with the rest of the plan it adds only J -0.44 (< 3.0) \u2014 J -0.44 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+1.59 (bench boom) - 0.00 acq - 0.10 FAB($10) - 0.50 churn"
+      "reason": "jointly with the rest of the plan it adds only J -1.71 (< 3.0) \u2014 J -1.71 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x-0.60 (rest, mean of wks 8-17) + 0.1x+1.67 (bench boom) - 0.00 acq - 0.90 FAB($10) - 0.50 churn"
      }
     ]
    },
-   "pulled": "2026-10-14T01:47:47+00:00"
+   "pulled": "2026-10-14T07:28:08+00:00"
   },
   "HH": {
    "actions": [
@@ -491,55 +483,16 @@
      "add": null,
      "bid": null,
      "drop": null,
-     "gain": 40.85,
-     "gates": [
-      "G5-sources:WARN",
-      "G7-ready:WARN",
-      "G9-reversal:WARN"
-     ],
-     "kind": "start",
-     "provisional": false,
-     "reason": "Jared Goff has no game this week (bye) \u2014 the slot scores nothing until he is replaced",
-     "sit": "Jared Goff",
-     "slot": "QB",
-     "start": "Matthew Stafford",
-     "status": "proposed",
-     "subject": "Matthew Stafford",
-     "verdict": "WARN",
-     "when": "early"
-    },
-    {
-     "add": null,
-     "bid": null,
-     "drop": null,
      "gain": 9.81,
      "gates": [
-      "G7-ready:WARN"
+      "G7-ready:WARN",
+      "G9-reversal:WARN"
      ],
      "kind": "start",
      "provisional": false,
      "reason": "Ja'Marr Chase has no game this week (bye) \u2014 the slot scores nothing until he is replaced",
      "sit": "Ja'Marr Chase",
      "slot": "W/R",
-     "start": "Denzel Boston",
-     "status": "proposed",
-     "subject": "Denzel Boston",
-     "verdict": "WARN",
-     "when": "early"
-    },
-    {
-     "add": null,
-     "bid": null,
-     "drop": null,
-     "gain": 3.16,
-     "gates": [
-      "G7-ready:WARN"
-     ],
-     "kind": "start",
-     "provisional": true,
-     "reason": "",
-     "sit": "Braelon Allen",
-     "slot": "W/R/T",
      "start": "Rome Odunze",
      "status": "proposed",
      "subject": "Rome Odunze",
@@ -550,7 +503,46 @@
      "add": null,
      "bid": null,
      "drop": null,
-     "gain": 4.22,
+     "gain": 3.5,
+     "gates": [
+      "G7-ready:WARN",
+      "G9-reversal:WARN"
+     ],
+     "kind": "start",
+     "provisional": true,
+     "reason": "",
+     "sit": "Braelon Allen",
+     "slot": "W/R/T",
+     "start": "Denzel Boston",
+     "status": "proposed",
+     "subject": "Denzel Boston",
+     "verdict": "WARN",
+     "when": "early"
+    },
+    {
+     "add": null,
+     "bid": null,
+     "drop": null,
+     "gain": 40.12,
+     "gates": [
+      "G9-reversal:WARN"
+     ],
+     "kind": "start",
+     "provisional": false,
+     "reason": "Jared Goff has no game this week (bye) \u2014 the slot scores nothing until he is replaced",
+     "sit": "Jared Goff",
+     "slot": "Q/W/R/T",
+     "start": "Matthew Stafford",
+     "status": "proposed",
+     "subject": "Matthew Stafford",
+     "verdict": "WARN",
+     "when": "early"
+    },
+    {
+     "add": null,
+     "bid": null,
+     "drop": null,
+     "gain": 4.21,
      "gates": [],
      "kind": "start",
      "provisional": false,
@@ -585,31 +577,11 @@
      "when": "early"
     },
     {
-     "add": "Cam Ward",
-     "bid": null,
-     "drop": null,
-     "fam": "QB",
-     "gain": 32.22,
-     "gates": [
-      "G5-sources:BLOCK",
-      "G11-role-registry:WARN"
-     ],
-     "kind": "upgrade",
-     "provisional": false,
-     "sit": "Jared Goff",
-     "slot": null,
-     "start": null,
-     "status": "blocked",
-     "subject": "Cam Ward",
-     "verdict": "BLOCK",
-     "when": null
-    },
-    {
      "add": "Jayden Daniels",
      "bid": null,
      "drop": null,
      "fam": "QB",
-     "gain": 31.83,
+     "gain": 31.91,
      "gates": [
       "G5-sources:BLOCK",
       "G11-role-registry:WARN"
@@ -625,11 +597,30 @@
      "when": null
     },
     {
+     "add": "Cam Ward",
+     "bid": null,
+     "drop": null,
+     "fam": "QB",
+     "gain": 31.0,
+     "gates": [
+      "G11-role-registry:WARN"
+     ],
+     "kind": "upgrade",
+     "provisional": false,
+     "sit": "Jared Goff",
+     "slot": null,
+     "start": null,
+     "status": "proposed",
+     "subject": "Cam Ward",
+     "verdict": "WARN",
+     "when": null
+    },
+    {
      "add": "Sam Darnold",
      "bid": null,
      "drop": null,
      "fam": "QB",
-     "gain": 30.81,
+     "gain": 30.93,
      "gates": [
       "G11-role-registry:WARN"
      ],
@@ -642,6 +633,24 @@
      "subject": "Sam Darnold",
      "verdict": "WARN",
      "when": null
+    },
+    {
+     "add": "Woody Marks",
+     "bid": null,
+     "drop": null,
+     "gates": [],
+     "kind": "breakout",
+     "provisional": false,
+     "sit": null,
+     "slot": null,
+     "start": null,
+     "status": null,
+     "subject": "Woody Marks",
+     "tier": "B",
+     "verb": "WAIT",
+     "verdict": "PASS",
+     "when": "next usage pull (Tuesday) \u2014 add then if the snaps hold or the market moves toward him",
+     "why": "one game of starter usage; no market confirmation yet and the spot would cost a real player"
     },
     {
      "add": "Dameon Pierce",
@@ -799,24 +808,6 @@
      "start": null,
      "status": null,
      "subject": "Chig Okonkwo",
-     "tier": "B",
-     "verb": "WAIT",
-     "verdict": "PASS",
-     "when": "next usage pull (Tuesday) \u2014 add then if the snaps hold or the market moves toward him",
-     "why": "one game of starter usage; no market confirmation yet and the spot would cost a real player"
-    },
-    {
-     "add": "Tyjae Spears",
-     "bid": null,
-     "drop": null,
-     "gates": [],
-     "kind": "breakout",
-     "provisional": false,
-     "sit": null,
-     "slot": null,
-     "start": null,
-     "status": null,
-     "subject": "Tyjae Spears",
      "tier": "B",
      "verb": "WAIT",
      "verdict": "PASS",
@@ -986,24 +977,6 @@
      "why": "one game of starter usage; no market confirmation yet and the spot would cost a real player"
     },
     {
-     "add": "Wan'Dale Robinson",
-     "bid": null,
-     "drop": null,
-     "gates": [],
-     "kind": "breakout",
-     "provisional": false,
-     "sit": null,
-     "slot": null,
-     "start": null,
-     "status": null,
-     "subject": "Wan'Dale Robinson",
-     "tier": "B",
-     "verb": "WAIT",
-     "verdict": "PASS",
-     "when": "next usage pull (Tuesday) \u2014 add then if the snaps hold or the market moves toward him",
-     "why": "one game of starter usage; no market confirmation yet and the spot would cost a real player"
-    },
-    {
      "add": "Rachaad White",
      "bid": null,
      "drop": null,
@@ -1023,15 +996,6 @@
     }
    ],
    "blocked": [
-    {
-     "add": "Cam Ward",
-     "drop": null,
-     "gates": [
-      "G5-sources:BLOCK"
-     ],
-     "kind": "upgrade",
-     "subject": "Cam Ward"
-    },
     {
      "add": "Jayden Daniels",
      "drop": null,
@@ -1071,17 +1035,17 @@
     "DL": "T.J. Watt",
     "K": "Cairo Santos",
     "LB": "Carson Schwesinger",
-    "Q/W/R/T": "Dak Prescott",
-    "QB": "Matthew Stafford",
+    "Q/W/R/T": "Matthew Stafford",
+    "QB": "Dak Prescott",
     "RB": "Jaylen Warren",
     "S": "Nick Cross",
     "TE": "Trey McBride",
-    "W/R": "Denzel Boston",
-    "W/R/T": "Rome Odunze",
+    "W/R": "Rome Odunze",
+    "W/R/T": "Denzel Boston",
     "WR": "Drake London"
    },
    "me": "Tecmo Bowlers",
-   "others_pulled": "2026-10-14T01:47:47+00:00",
+   "others_pulled": "2026-10-14T07:28:08+00:00",
    "planner": {
     "lineup_after": {
      "CB": "Cooper DeJean",
@@ -1091,35 +1055,18 @@
      "DL": "T.J. Watt",
      "K": "Cairo Santos",
      "LB": "Carson Schwesinger",
-     "Q/W/R/T": "Dak Prescott",
-     "QB": "Matthew Stafford",
+     "Q/W/R/T": "Matthew Stafford",
+     "QB": "Dak Prescott",
      "RB": "Jaylen Warren",
      "S": "Nick Cross",
      "TE": "Trey McBride",
-     "W/R": "Denzel Boston",
-     "W/R/T": "Rome Odunze",
+     "W/R": "Rome Odunze",
+     "W/R/T": "Denzel Boston",
      "WR": "Drake London"
     },
     "moves": [
      {
-      "J": 40.852,
-      "add": null,
-      "drop": null,
-      "gates": [],
-      "ir": null,
-      "kind": "lineup",
-      "provisional": false,
-      "sit": "Jared Goff",
-      "slot": "QB",
-      "start": "Matthew Stafford",
-      "txns": [
-       "start Matthew Stafford at QB",
-       "bench Jared Goff"
-      ],
-      "when": "before kickoff Sun Oct 18, 4:05 pm ET"
-     },
-     {
-      "J": 9.805,
+      "J": 9.806,
       "add": null,
       "drop": null,
       "gates": [],
@@ -1128,15 +1075,15 @@
       "provisional": false,
       "sit": "Ja'Marr Chase",
       "slot": "W/R",
-      "start": "Denzel Boston",
+      "start": "Rome Odunze",
       "txns": [
-       "start Denzel Boston at W/R",
+       "start Rome Odunze at W/R",
        "bench Ja'Marr Chase"
       ],
       "when": "before kickoff Sun Oct 18, 1:00 pm ET"
      },
      {
-      "J": 3.163,
+      "J": 3.504,
       "add": null,
       "drop": null,
       "gates": [],
@@ -1145,15 +1092,32 @@
       "provisional": true,
       "sit": "Braelon Allen",
       "slot": "W/R/T",
-      "start": "Rome Odunze",
+      "start": "Denzel Boston",
       "txns": [
-       "start Rome Odunze at W/R/T",
+       "start Denzel Boston at W/R/T",
        "bench Braelon Allen"
       ],
       "when": "before kickoff Sun Oct 18, 1:00 pm ET"
      },
      {
-      "J": 4.219,
+      "J": 40.119,
+      "add": null,
+      "drop": null,
+      "gates": [],
+      "ir": null,
+      "kind": "lineup",
+      "provisional": false,
+      "sit": "Jared Goff",
+      "slot": "Q/W/R/T",
+      "start": "Matthew Stafford",
+      "txns": [
+       "start Matthew Stafford at Q/W/R/T",
+       "bench Jared Goff"
+      ],
+      "when": "before kickoff Sun Oct 18, 4:05 pm ET"
+     },
+     {
+      "J": 4.206,
       "add": null,
       "drop": null,
       "gates": [],
@@ -1190,11 +1154,7 @@
     "rejected": [
      {
       "name": "Indianapolis Colts",
-      "reason": "J -2.10 < 3.0 at its best spot (Chiefs) \u2014 J -2.10 = 1.0x+0.00 (wk W) + 0.8x-0.22 (W+1) + 0.8x-0.54 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn"
-     },
-     {
-      "name": "Los Angeles Rams",
-      "reason": "J -1.66 < 3.0 at its best spot (Chiefs) \u2014 J -1.66 = 1.0x+0.00 (wk W) + 0.8x-0.31 (W+1) + 0.8x+0.11 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn"
+      "reason": "J -2.10 < 3.0 at its best spot (Chiefs) \u2014 J -2.10 = 1.0x+0.00 (wk W) + 0.8x-0.22 (W+1) + 0.8x-0.53 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn"
      },
      {
       "name": "Brenton Strange",
@@ -1254,7 +1214,7 @@
      },
      {
       "name": "Jason Sanders",
-      "reason": "J -0.54 < 3.0 at its best spot (Cairo Santos) \u2014 J -0.54 = 1.0x+0.00 (wk W) + 0.8x+1.98 (W+1) + 0.8x-0.78 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn"
+      "reason": "J -0.54 < 3.0 at its best spot (Cairo Santos) \u2014 J -0.54 = 1.0x+0.00 (wk W) + 0.8x+1.98 (W+1) + 0.8x-0.77 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn"
      },
      {
       "name": "Jayden Daniels",
@@ -1278,11 +1238,11 @@
      },
      {
       "name": "Ollie Gordon",
-      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 0.0 under your weakest 6.6"
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 0.0 under your weakest 6.3"
      },
      {
       "name": "Rachaad White",
-      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 6.4 under your weakest 6.6"
+      "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
      },
      {
       "name": "Rashee Rice",
@@ -1298,7 +1258,7 @@
      },
      {
       "name": "Roschon Johnson",
-      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 3.7 under your weakest 6.6"
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 4.0 under your weakest 6.3"
      },
      {
       "name": "Sam Darnold",
@@ -1306,18 +1266,10 @@
      },
      {
       "name": "Samaje Perine",
-      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 0.0 under your weakest 6.6"
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 0.0 under your weakest 6.3"
      },
      {
       "name": "Treylon Burks",
-      "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
-     },
-     {
-      "name": "Tyjae Spears",
-      "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
-     },
-     {
-      "name": "Wan'Dale Robinson",
       "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
      },
      {
@@ -1326,9 +1278,9 @@
      }
     ]
    },
-   "pulled": "2026-10-14T01:47:47+00:00"
+   "pulled": "2026-10-14T07:28:08+00:00"
   }
  },
- "now": "2026-10-13T21:48-04:00",
+ "now": "2026-10-14T03:29-04:00",
  "week": 6
 }

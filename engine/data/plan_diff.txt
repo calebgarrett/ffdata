@@ -1,4 +1,4 @@
-PLAN DIFF — week 6 — Tue Oct 13, 9:48 pm ET  (shadow mode: the card still shows the live calls; FF_PLANNER=1 renders the plan)
+PLAN DIFF — week 6 — Wed Oct 14, 3:29 am ET  (shadow mode: the card still shows the live calls; FF_PLANNER=1 renders the plan)
 objective: J = 1.0*dS_W + 0.8*dS_W1 + 0.8*dS_rest(mean of weeks W+2..17) + 0.1*d_bench_boom - acq ({'HH': 1.0, 'BSB': 0.0}) - 0.1*bid - 0.5*txns; ship at J >= 3.0
 
 == BSB ================================================================================
@@ -6,11 +6,11 @@ objective: J = 1.0*dS_W + 0.8*dS_W1 + 0.8*dS_rest(mean of weeks W+2..17) + 0.1*d
     CARD ONLY this week's DEF: add Indianapolis Colts drop Vikings, start over Jets
               planner: J +2.28 < 3.0 at its best spot (Vikings) — J +2.28 = 1.0x+5.16 (wk W) + 0.8x-0.31 (W+1) + 0.8x-2.65 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 0.00 acq - 0.01 FAB($1) - 0.50 churn
     CARD ONLY breakout B: add Cade Otton drop Xavier Hutchinson
-              planner: J -0.16 < 3.0 at its best spot (Jauan Jennings) — J -0.16 = 1.0x+0.24 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+1.08 (bench boom) - 0.00 acq - 0.01 FAB($1) - 0.50 churn
+              planner: J -0.40 < 3.0 at its best spot (Jauan Jennings) — J -0.40 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+1.08 (bench boom) - 0.00 acq - 0.01 FAB($1) - 0.50 churn
     CARD ONLY breakout B: add Laquon Treadwell drop Jauan Jennings
-              planner: J -0.49 < 3.0 at its best spot (Jauan Jennings) — J -0.49 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+0.24 (bench boom) - 0.00 acq - 0.01 FAB($1) - 0.50 churn
-    PLAN ONLY [add] claim Dameon Pierce ($10) ; drop Xavier Hutchinson ; start Dameon Pierce at W/R/T ; bench DeMario Douglas  [claim by Tue night ($10)]
-              J +7.46 = 1.0x+0.97 (wk W) + 0.8x+7.96 (W+1) + 0.8x+0.44 (rest, mean of wks 8-17) + 0.1x+3.65 (bench boom) - 0.00 acq - 0.10 FAB($10) - 0.50 churn
+              planner: J -0.45 < 3.0 at its best spot (Jauan Jennings) — J -0.45 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+0.60 (bench boom) - 0.00 acq - 0.01 FAB($1) - 0.50 churn
+    PLAN ONLY [add] claim Dameon Pierce ($10) ; drop Xavier Hutchinson ; start Dameon Pierce at RB2 ; bench DeMario Douglas  [claim by Tue night ($10)]
+              J +7.00 = 1.0x+0.51 (wk W) + 0.8x+7.96 (W+1) + 0.8x+0.44 (rest, mean of wks 8-17) + 0.1x+3.77 (bench boom) - 0.00 acq - 0.10 FAB($10) - 0.50 churn
               - breakout tier B: 77% snaps, 70% of RB touches; no market line yet (Sleeper rushing yds 46)
               - week-7 hole at RB2 (James Cook III on bye, Josh Jacobs CEL); Dameon Pierce 8.0 is the best free RB on week-7 values
               - the spot: Xavier Hutchinson — rest-of-season 4.6/wk (season blend / 17)
@@ -19,74 +19,73 @@ objective: J = 1.0*dS_W + 0.8*dS_W1 + 0.8*dS_rest(mean of weeks W+2..17) + 0.1*d
               - DEF weekly upgrade: Baltimore Ravens 8.8 vs starter Jets 3.7
               - the spot: Vikings — the only DEF
   budgets: {"acq_used": 0, "acq_left": null, "acq_reset": null, "acq_reset_verified": null, "fab_left": 93, "ir_free": 0, "open_spots": 0}
-  final lineup week 6: 142.2 pts (optimal before moves 136.1) · P(beat opp) 62% · P(beat median) 82%
-  considered and rejected (20):
+  final lineup week 6: 143.3 pts (optimal before moves 137.7) · P(beat opp) 67% · P(beat median) 81%
+  considered and rejected (19):
     - Kaleb Johnson: its best spot (Jauan Jennings) went to another move at higher value
     - Samaje Perine: its best spot (Jauan Jennings) went to another move at higher value
-    - Roschon Johnson: best spot Jauan Jennings: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
-    - Tank Bigsby: J +2.95 < 3.0 at its best spot (Jauan Jennings) — J +2.95 = 1.0x+0.00 (wk W) + 0.8x+3.85 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+4.74 (bench boom) - 0.00 acq - 0.10 FAB($10) - 0.50 churn
+    - Roschon Johnson: its best spot (Jauan Jennings) went to another move at higher value
     - Indianapolis Colts: J +2.28 < 3.0 at its best spot (Vikings) — J +2.28 = 1.0x+5.16 (wk W) + 0.8x-0.31 (W+1) + 0.8x-2.65 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 0.00 acq - 0.01 FAB($1) - 0.50 churn
-    - San Francisco 49ers: J +1.68 < 3.0 at its best spot (Vikings) — J +1.68 = 1.0x+3.77 (wk W) + 0.8x+0.30 (W+1) + 0.8x-2.29 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 0.00 acq - 0.01 FAB($1) - 0.50 churn
+    - San Francisco 49ers: J +1.65 < 3.0 at its best spot (Vikings) — J +1.65 = 1.0x+3.75 (wk W) + 0.8x+0.30 (W+1) + 0.8x-2.29 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 0.00 acq - 0.01 FAB($1) - 0.50 churn
     - Jake Ferguson: best spot Jauan Jennings: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
-    - Cade Otton: J -0.16 < 3.0 at its best spot (Jauan Jennings) — J -0.16 = 1.0x+0.24 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+1.08 (bench boom) - 0.00 acq - 0.01 FAB($1) - 0.50 churn
+    - Cade Otton: J -0.40 < 3.0 at its best spot (Jauan Jennings) — J -0.40 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+1.08 (bench boom) - 0.00 acq - 0.01 FAB($1) - 0.50 churn
     - Dawson Knox: best spot Jauan Jennings: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
     - Pierre Strong: jointly with the rest of the plan it adds only J -0.42 (< 3.0) — J -0.42 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+1.77 (bench boom) - 0.00 acq - 0.10 FAB($10) - 0.50 churn
-    - Tyrone Tracy: jointly with the rest of the plan it adds only J -0.44 (< 3.0) — J -0.44 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+1.59 (bench boom) - 0.00 acq - 0.10 FAB($10) - 0.50 churn
     - Treylon Burks: best spot Jauan Jennings: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
+    - Laquon Treadwell: J -0.45 < 3.0 at its best spot (Jauan Jennings) — J -0.45 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+0.60 (bench boom) - 0.00 acq - 0.01 FAB($1) - 0.50 churn
     - Charlie Kolar: best spot Jauan Jennings: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
     - Isaiah Bond: best spot Jauan Jennings: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
     - Marquez Valdes-Scantling: best spot Jauan Jennings: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
-    - Laquon Treadwell: J -0.49 < 3.0 at its best spot (Jauan Jennings) — J -0.49 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+0.24 (bench boom) - 0.00 acq - 0.01 FAB($1) - 0.50 churn
     - Greg Dulcich: best spot Jauan Jennings: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
+    - Corey Kiner: jointly with the rest of the plan it adds only J -0.63 (< 3.0) — J -0.63 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x-0.34 (bench boom) - 0.00 acq - 0.10 FAB($10) - 0.50 churn
     - Jason Sanders: J -1.02 < 3.0 at its best spot (Jason Myers) — J -1.02 = 1.0x+0.00 (wk W) + 0.8x+0.88 (W+1) + 0.8x-1.51 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 0.00 acq - 0.01 FAB($1) - 0.50 churn
-    - Corey Kiner: jointly with the rest of the plan it adds only J -1.88 (< 3.0) — J -1.88 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x-0.60 (rest, mean of wks 8-17) + 0.1x-0.05 (bench boom) - 0.00 acq - 0.90 FAB($10) - 0.50 churn
+    - Tyrone Tracy: jointly with the rest of the plan it adds only J -1.71 (< 3.0) — J -1.71 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x-0.60 (rest, mean of wks 8-17) + 0.1x+1.67 (bench boom) - 0.00 acq - 0.90 FAB($10) - 0.50 churn
     - Jaleel McLaughlin: gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])
   not a clean drop: James Cook III (starter-level usage in his own right (62% snaps, 79% of RB touches)); Jaxon Smith-Njigba (starter-level usage in his own right (84% snaps, 28% targets, 70% air ); Drake London (starter-level usage in his own right (98% snaps, 31% targets, 52% air ); Isaiah Likely (starter-level usage in his own right (80% snaps, 24% targets, 33% air ); Sam LaPorta (starter-level usage in his own right (89% snaps, 17% targets, 37% air ); Malik Washington (starter-level usage in his own right (80% snaps, 30% targets, 32% air ); Josh Jacobs (registry HOLD — HOLD. A top-10 RB whose likely return lands before the); Ray Davis (registry HOLD — HOLD, downgraded. James Cook is the single best asset ); Jets (you added him 2026-10-13 (<= 7 days) — your decision, not the spot)
   UNVERIFIED mechanics: A benched player whose game is over cannot be dropped before the week rolls
 
 == HH ================================================================================
   card Decide calls vs the plan:
-    BOTH      lineup: QB start Matthew Stafford over Jared Goff (+40.85)
-              plan: start Matthew Stafford at QB ; bench Jared Goff  [before kickoff Sun Oct 18, 4:05 pm ET]
-    BOTH      lineup: W/R start Denzel Boston over Ja'Marr Chase (+9.81)
-              plan: start Denzel Boston at W/R ; bench Ja'Marr Chase  [before kickoff Sun Oct 18, 1:00 pm ET]
-    BOTH      lineup: DEF start Chiefs over Texans (+4.22)
+    BOTH      lineup: W/R start Rome Odunze over Ja'Marr Chase (+9.81)
+              plan: start Rome Odunze at W/R ; bench Ja'Marr Chase  [before kickoff Sun Oct 18, 1:00 pm ET]
+    BOTH      lineup: Q/W/R/T start Matthew Stafford over Jared Goff (+40.12)
+              plan: start Matthew Stafford at Q/W/R/T ; bench Jared Goff  [before kickoff Sun Oct 18, 4:05 pm ET]
+    BOTH      lineup: DEF start Chiefs over Texans (+4.21)
               plan: start Chiefs at DEF ; bench Texans  [before kickoff Sun Oct 18, 4:25 pm ET]
-    PLAN ONLY PROVISIONAL [lineup] start Rome Odunze at W/R/T ; bench Braelon Allen  [before kickoff Sun Oct 18, 1:00 pm ET]
-              - +3.16 this week
+    PLAN ONLY PROVISIONAL [lineup] start Denzel Boston at W/R/T ; bench Braelon Allen  [before kickoff Sun Oct 18, 1:00 pm ET]
+              - +3.50 this week
               - no player market posted yet for his game
     PLAN ONLY PROVISIONAL [lineup] start Nick Cross at S ; bench Kam Curl  [before kickoff Mon Oct 19, 8:15 pm ET]
               - +2.23 this week
               - no player market posted yet for his game
   budgets: {"acq_used": 0, "acq_left": 7, "acq_reset": "2026-10-13T07:00-04:00", "acq_reset_verified": false, "fab_left": null, "ir_free": 1, "open_spots": 0}
-  final lineup week 6: 303.7 pts (optimal before moves 303.7) · P(beat opp) 90%
-  considered and rejected (34):
-    - Jason Sanders: J -0.54 < 3.0 at its best spot (Cairo Santos) — J -0.54 = 1.0x+0.00 (wk W) + 0.8x+1.98 (W+1) + 0.8x-0.78 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn
+  final lineup week 6: 304.8 pts (optimal before moves 304.8) · P(beat opp) 70%
+  considered and rejected (31):
+    - Jason Sanders: J -0.54 < 3.0 at its best spot (Cairo Santos) — J -0.54 = 1.0x+0.00 (wk W) + 0.8x+1.98 (W+1) + 0.8x-0.77 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn
     - Chris Boswell: J -1.35 < 3.0 at its best spot (Cairo Santos) — J -1.35 = 1.0x+0.00 (wk W) + 0.8x+0.48 (W+1) + 0.8x-0.30 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn
-    - Los Angeles Rams: J -1.66 < 3.0 at its best spot (Chiefs) — J -1.66 = 1.0x+0.00 (wk W) + 0.8x-0.31 (W+1) + 0.8x+0.11 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn
-    - Indianapolis Colts: J -2.10 < 3.0 at its best spot (Chiefs) — J -2.10 = 1.0x+0.00 (wk W) + 0.8x-0.22 (W+1) + 0.8x-0.54 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn
+    - Indianapolis Colts: J -2.10 < 3.0 at its best spot (Chiefs) — J -2.10 = 1.0x+0.00 (wk W) + 0.8x-0.22 (W+1) + 0.8x-0.53 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn
     - Emanuel Wilson: best spot Chiefs: Chiefs is the spare DEF: a spot for a Tier-A add or a same-family stream only (~1 pt/wk on its own, 09-24)
+    - Woody Marks: best spot Chiefs: Chiefs is the spare DEF: a spot for a Tier-A add or a same-family stream only (~1 pt/wk on its own, 09-24)
     - Brenton Strange: best spot Chiefs: Tier B (unpriced) never takes the spare DEF — Tier A only
     - Sam Darnold: best spot Chiefs: Chiefs is the spare DEF: a spot for a Tier-A add or a same-family stream only (~1 pt/wk on its own, 09-24)
     - Chig Okonkwo: best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
     - Jayden Daniels: best spot Chiefs: Chiefs is the spare DEF: a spot for a Tier-A add or a same-family stream only (~1 pt/wk on its own, 09-24)
-    - Woody Marks: best spot Chiefs: Chiefs is the spare DEF: a spot for a Tier-A add or a same-family stream only (~1 pt/wk on its own, 09-24)
     - Cade Otton: best spot Chiefs: Tier B (unpriced) never takes the spare DEF — Tier A only
     - Greg Dulcich: best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
     - Cam Ward: best spot Chiefs: Chiefs is the spare DEF: a spot for a Tier-A add or a same-family stream only (~1 pt/wk on its own, 09-24)
     - Dawson Knox: best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
     - Kendre Miller: best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
-    - Charlie Kolar: best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
+    - Rachaad White: best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
     - RJ Harvey: best spot Chiefs: Chiefs is the spare DEF: a spot for a Tier-A add or a same-family stream only (~1 pt/wk on its own, 09-24)
+    - Charlie Kolar: best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
     - Dameon Pierce: best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
-    - Wan'Dale Robinson: best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
-    - Tyjae Spears: best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
     - Rashod Bateman: best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
     - Jerry Jeudy: best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
     - Treylon Burks: best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
+    - Laquon Treadwell: best spot Chiefs: Tier B (unpriced) never takes the spare DEF — Tier A only
     - Isaiah Bond: best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
     - Marquez Valdes-Scantling: best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
-  not a clean drop: Dak Prescott (gate: G6-magnitude 40.485420280604636 below QB season bounds [60,600] ); Jaylen Warren (starter-level usage in his own right (87% snaps, 95% of RB touches)); Ja'Marr Chase (starter-level usage in his own right (89% snaps, 31% targets, 57% air ); Trey McBride (starter-level usage in his own right (90% snaps, 21% targets, 24% air ); Drake London (starter-level usage in his own right (98% snaps, 31% targets, 52% air ); Braelon Allen (you added him 2026-10-09 (<= 7 days) — your decision, not the spot); Jared Goff (gate: G6-magnitude 0 below QB season bounds [60,600] — bad read, not a); Jameson Williams (starter-level usage in his own right (89% snaps, 13% targets, 39% air ); Rome Odunze (starter-level usage in his own right (99% snaps, 22% targets, 39% air ); Matthew Stafford (gate: G6-magnitude 40.85205670348218 below QB season bounds [60,600] —); Malik Washington (starter-level usage in his own right (80% snaps, 30% targets, 32% air ); Denzel Boston (starter-level usage in his own right (91% snaps, 21% targets, 35% air ); Texans (registry HOLD — HOLD in Heritage House. A 7-acquisition league rations); Foyesade Oluokun (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Budda Baker (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); T.J. Watt (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Carson Schwesinger (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Cooper DeJean (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Kam Curl (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Nick Cross (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Alontae Taylor (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR)
+    - Devin Lloyd: gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])
+  not a clean drop: Dak Prescott (gate: G6-magnitude 40.38022685184778 below QB season bounds [60,600] —); Jaylen Warren (starter-level usage in his own right (87% snaps, 95% of RB touches)); Ja'Marr Chase (starter-level usage in his own right (89% snaps, 31% targets, 57% air ); Trey McBride (starter-level usage in his own right (90% snaps, 21% targets, 24% air ); Drake London (starter-level usage in his own right (98% snaps, 31% targets, 52% air ); Braelon Allen (you added him 2026-10-09 (<= 7 days) — your decision, not the spot); Jared Goff (gate: G6-magnitude 0 below QB season bounds [60,600] — bad read, not a); Jameson Williams (starter-level usage in his own right (89% snaps, 13% targets, 39% air ); Rome Odunze (starter-level usage in his own right (99% snaps, 22% targets, 39% air ); Matthew Stafford (gate: G6-magnitude 40.11897146188221 below QB season bounds [60,600] —); Malik Washington (starter-level usage in his own right (80% snaps, 30% targets, 32% air ); Denzel Boston (starter-level usage in his own right (91% snaps, 21% targets, 35% air ); Texans (registry HOLD — HOLD in Heritage House. A 7-acquisition league rations); Foyesade Oluokun (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Budda Baker (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); T.J. Watt (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Carson Schwesinger (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Cooper DeJean (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Kam Curl (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Nick Cross (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Alontae Taylor (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR)
   UNVERIFIED mechanics: 7 acquisitions per week, counted from the most recent Tuesday 07:00 ET | A player dropped To Waivers sits on waivers 1 day | An O tag is IR-eligible | A benched player whose game is over cannot be dropped before the week rolls
 
 plan simulation (sanity check 11): clean — legal at every step, each spot once, budgets held

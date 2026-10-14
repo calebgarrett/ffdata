@@ -9668,10 +9668,11 @@
   ],
   "verdict": "WARN",
   "week": 6,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": "2026-10-18T13:00-04:00",
-  "reverses": "ec9769c4"
+  "reverses": "ec9769c4",
+  "superseded_by": "2814d4e2"
  },
  {
   "id": "9c184e71",
@@ -9687,10 +9688,11 @@
   ],
   "verdict": "WARN",
   "week": 6,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": true,
   "resolves_at": "2026-10-18T13:00-04:00",
-  "reverses": "ea69b42a"
+  "reverses": "ea69b42a",
+  "superseded_by": "afd0edb2"
  },
  {
   "id": "47e29161",
@@ -9799,9 +9801,86 @@
   ],
   "verdict": "WARN",
   "week": 6,
+  "status": "superseded",
+  "provisional": false,
+  "resolves_at": "2026-10-18T16:05-04:00",
+  "reverses": "47e29161",
+  "superseded_by": "0f39d260"
+ },
+ {
+  "id": "afd0edb2",
+  "ts": "2026-10-14T03:29-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Rome Odunze",
+  "call": "start Rome Odunze at W/R",
+  "detail": "over Ja'Marr Chase +9.81",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": "2026-10-18T13:00-04:00",
+  "reverses": "9c184e71"
+ },
+ {
+  "id": "2814d4e2",
+  "ts": "2026-10-14T03:29-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Denzel Boston",
+  "call": "start Denzel Boston at W/R/T",
+  "detail": "over Braelon Allen +3.50",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "proposed",
+  "provisional": true,
+  "resolves_at": "2026-10-18T13:00-04:00",
+  "reverses": "c3f42089"
+ },
+ {
+  "id": "0f39d260",
+  "ts": "2026-10-14T03:29-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Matthew Stafford",
+  "call": "start Matthew Stafford at Q/W/R/T",
+  "detail": "over Jared Goff +40.12",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 6,
   "status": "proposed",
   "provisional": false,
   "resolves_at": "2026-10-18T16:05-04:00",
-  "reverses": "47e29161"
+  "reverses": "8b62a60e"
+ },
+ {
+  "id": "2d53dd62",
+  "ts": "2026-10-14T03:29-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Cam Ward",
+  "call": "add Cam Ward (QB) over Jared Goff",
+  "detail": "+31.00/wk",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
  }
 ]
