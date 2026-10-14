@@ -8,9 +8,9 @@
  },
  "decide": [
   "BSB \u2014 bye/hole cover, claim by Tue night ($10) \u2014 check first Claim Dameon Pierce ($10) RB PHI \u00b7 drop Xavier Hutchinson \u00b7 start at W/R/T over DeMario Douglas When: claim by Tue night ($10) (Tue->Wed claims window: last week's games are playe",
-  "BSB \u2014 weekly upgrade, claim by Tue night ($1) \u2014 check first Claim Indianapolis Colts ($1) DEF IND \u00b7 drop New York \u00b7 start at DEF over New York (dropped) When: claim by Tue night ($1) (Tue->Wed claims window: last week's games are played and",
+  "BSB \u2014 weekly upgrade, claim by Tue night ($1) \u2014 check first Claim Baltimore Ravens ($1) DEF BAL \u00b7 drop Vikings \u00b7 start at DEF over Jets When: claim by Tue night ($1) (dropped to waivers Thu 8:44 PM \u2014 a claim until the run). Why: DEF weekly ",
+  "HH QB lineup Start Matthew Stafford over Jared Goff +40.9 points locks Sun Oct 18, 4:05 pm set it in Yahoo before then",
   "HH W/R lineup Start Denzel Boston over Ja'Marr Chase +9.8 points locks Sun Oct 18, 1:00 pm set it in Yahoo before then",
-  "HH Q/W/R/T lineup Start Matthew Stafford over Jared Goff +40.9 points locks Sun Oct 18, 4:05 pm set it in Yahoo before then",
   "HH DEF lineup Start Chiefs over Texans +4.2 points locks Sun Oct 18, 4:25 pm set it in Yahoo before then"
  ],
  "fast": false,
@@ -22,13 +22,13 @@
      "bid": null,
      "drop": null,
      "fam": "DEF",
-     "gain": 5.21,
+     "gain": 5.16,
      "gates": [
       "G7-ready:WARN"
      ],
      "kind": "upgrade",
      "provisional": false,
-     "sit": "New York",
+     "sit": "Jets",
      "slot": null,
      "start": null,
      "status": "proposed",
@@ -41,13 +41,13 @@
      "bid": null,
      "drop": null,
      "fam": "DEF",
-     "gain": 5.15,
+     "gain": 5.1,
      "gates": [
       "G7-ready:WARN"
      ],
      "kind": "upgrade",
      "provisional": false,
-     "sit": "New York",
+     "sit": "Jets",
      "slot": null,
      "start": null,
      "status": "proposed",
@@ -60,13 +60,13 @@
      "bid": null,
      "drop": null,
      "fam": "DEF",
-     "gain": 3.8,
+     "gain": 3.77,
      "gates": [
       "G7-ready:WARN"
      ],
      "kind": "upgrade",
      "provisional": false,
-     "sit": "New York",
+     "sit": "Jets",
      "slot": null,
      "start": null,
      "status": "proposed",
@@ -77,7 +77,7 @@
     {
      "add": "Indianapolis Colts",
      "bid": null,
-     "drop": "Minnesota",
+     "drop": "Vikings",
      "fam": "DEF",
      "gates": [
       "G7-ready:WARN"
@@ -85,7 +85,7 @@
      "kind": "week_upgrade",
      "open": false,
      "provisional": false,
-     "sit": "New York",
+     "sit": "Jets",
      "slot": null,
      "start": null,
      "status": "proposed",
@@ -131,8 +131,8 @@
     },
     {
      "add": "Cade Otton",
-     "bid": null,
-     "drop": null,
+     "bid": 1,
+     "drop": "Xavier Hutchinson",
      "gates": [],
      "kind": "breakout",
      "provisional": false,
@@ -142,10 +142,10 @@
      "status": null,
      "subject": "Cade Otton",
      "tier": "B",
-     "verb": "WAIT",
+     "verb": "ADD",
      "verdict": "PASS",
-     "when": "no drop worth less than him",
-     "why": "two straight weeks of starter usage (wk4: 94% snaps, 22% targets, 0% air yds), but the only clean spot is the second DEF (New York), which is worth about a point a week on its own \u2014 a market-confirmed"
+     "when": "his game has already kicked off \u2014 Yahoo locks an unrostered player at kickoff, so he is a Wednesday waiver claim in BSB \u2014 bid $1: an unpriced role nobody else's model is looking at yet; the floor is the number \u2014 locks Sun 1:00 PM ET",
+     "why": "starter usage two weeks running (wk4: 94% snaps, 22% targets, 0% air yds) and the market has not priced him yet \u2014 the cheap window. Xavier Hutchinson is the spot: lowest-valued bench player (bench-lev"
     },
     {
      "add": "Charlie Kolar",
@@ -221,8 +221,8 @@
     },
     {
      "add": "Laquon Treadwell",
-     "bid": null,
-     "drop": null,
+     "bid": 1,
+     "drop": "Jauan Jennings",
      "gates": [],
      "kind": "breakout",
      "provisional": false,
@@ -232,10 +232,10 @@
      "status": null,
      "subject": "Laquon Treadwell",
      "tier": "B",
-     "verb": "WAIT",
+     "verb": "ADD",
      "verdict": "PASS",
-     "when": "no drop worth less than him",
-     "why": "two straight weeks of starter usage (wk4: 85% snaps, 18% targets, 34% air yds), but the only clean spot is the second DEF (New York), which is worth about a point a week on its own \u2014 a market-confirme"
+     "when": "his game has already kicked off \u2014 Yahoo locks an unrostered player at kickoff, so he is a Wednesday waiver claim in BSB \u2014 bid $1: an unpriced role nobody else's model is looking at yet; the floor is the number \u2014 locks Sun 1:00 PM ET",
+     "why": "starter usage two weeks running (wk4: 85% snaps, 18% targets, 34% air yds) and the market has not priced him yet \u2014 the cheap window. Jauan Jennings is the spot: lowest-valued bench player (bench-level"
     },
     {
      "add": "Treylon Burks",
@@ -312,7 +312,7 @@
    ],
    "blocked": [],
    "current": {
-    "DEF": "New York",
+    "DEF": "Jets",
     "K": "Jason Myers",
     "QB": "Matthew Stafford",
     "RB1": "James Cook III",
@@ -324,40 +324,40 @@
     "WR3": "Ryan Flournoy"
    },
    "flags": [
-    "2 DEFs rostered (New York, Minnesota) for one DEF slot \u2014 the spare is New York (58 season vs Minnesota 122)",
+    "2 DEFs rostered (Jets, Vikings) for one DEF slot \u2014 the spare is Jets (58 season vs Vikings 122)",
     "Jaxon Smith-Njigba is Q at WR1 \u2014 if he is out, Makai Lemon (5.2) takes the slot; decide before Thu Oct 15, 8:15 pm ET",
     "Josh Jacobs [CEL] holds a roster spot \u2014 HOLD: HOLD. A top-10 RB whose likely return lands before the week 15-17 playoff run. C"
    ],
    "lineup": {
-    "DEF": "New York",
+    "DEF": "Jets",
     "K": "Jason Myers",
     "QB": "Matthew Stafford",
     "RB1": "MarShawn Lloyd",
     "RB2": "James Cook III",
     "TE": "Isaiah Likely",
     "W/R/T": "DeMario Douglas",
-    "WR1": "Jaxon Smith-Njigba",
-    "WR2": "Drake London",
+    "WR1": "Drake London",
+    "WR2": "Jaxon Smith-Njigba",
     "WR3": "Ryan Flournoy"
    },
    "me": "OVERKILL",
-   "others_pulled": "2026-10-13T22:35:46+00:00",
+   "others_pulled": "2026-10-14T01:47:47+00:00",
    "planner": {
     "lineup_after": {
-     "DEF": "Indianapolis Colts",
+     "DEF": "Baltimore Ravens",
      "K": "Jason Myers",
      "QB": "Matthew Stafford",
      "RB1": "MarShawn Lloyd",
      "RB2": "James Cook III",
      "TE": "Isaiah Likely",
      "W/R/T": "Dameon Pierce",
-     "WR1": "Jaxon Smith-Njigba",
-     "WR2": "Drake London",
+     "WR1": "Drake London",
+     "WR2": "Jaxon Smith-Njigba",
      "WR3": "Ryan Flournoy"
     },
     "moves": [
      {
-      "J": 8.121,
+      "J": 7.457,
       "add": "Dameon Pierce",
       "drop": "Xavier Hutchinson",
       "gates": [
@@ -378,13 +378,12 @@
       "when": "claim by Tue night ($10)"
      },
      {
-      "J": 4.698,
-      "add": "Indianapolis Colts",
-      "drop": "New York",
+      "J": 3.149,
+      "add": "Baltimore Ravens",
+      "drop": "Vikings",
       "gates": [
        "G7-ready:WARN",
-       "G7-ready:WARN",
-       "G12-state:WARN"
+       "G7-ready:WARN"
       ],
       "ir": null,
       "kind": "add",
@@ -393,49 +392,46 @@
       "slot": null,
       "start": null,
       "txns": [
-       "claim Indianapolis Colts ($1)",
-       "drop New York",
-       "start Indianapolis Colts at DEF"
+       "claim Baltimore Ravens ($1)",
+       "drop Vikings",
+       "start Baltimore Ravens at DEF",
+       "bench Jets"
       ],
       "when": "claim by Tue night ($1)"
      }
     ],
     "rejected": [
      {
-      "name": "Baltimore Ravens",
-      "reason": "jointly with the rest of the plan it adds only J -2.05 (< 3.0) \u2014 J -2.05 = 1.0x+0.00 (wk W) + 0.8x-0.21 (W+1) + 0.8x-1.59 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 0.00 acq - 0.11 FAB($1) - 0.50 churn"
+      "name": "Indianapolis Colts",
+      "reason": "J +2.28 < 3.0 at its best spot (Vikings) \u2014 J +2.28 = 1.0x+5.16 (wk W) + 0.8x-0.31 (W+1) + 0.8x-2.65 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 0.00 acq - 0.01 FAB($1) - 0.50 churn"
      },
      {
       "name": "San Francisco 49ers",
-      "reason": "its best spot (New York) went to Indianapolis Colts at higher value"
+      "reason": "J +1.68 < 3.0 at its best spot (Vikings) \u2014 J +1.68 = 1.0x+3.77 (wk W) + 0.8x+0.30 (W+1) + 0.8x-2.29 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 0.00 acq - 0.01 FAB($1) - 0.50 churn"
      },
      {
       "name": "Cade Otton",
-      "reason": "J +0.51 < 3.0 at its best spot (Jauan Jennings) \u2014 J +0.51 = 1.0x+0.91 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+1.08 (bench boom) - 0.00 acq - 0.01 FAB($1) - 0.50 churn"
+      "reason": "J -0.16 < 3.0 at its best spot (Jauan Jennings) \u2014 J -0.16 = 1.0x+0.24 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+1.08 (bench boom) - 0.00 acq - 0.01 FAB($1) - 0.50 churn"
      },
      {
       "name": "Charlie Kolar",
-      "reason": "best spot New York: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
-     },
-     {
-      "name": "CJ Donaldson",
-      "reason": "J +2.98 < 3.0 at its best spot (Jauan Jennings) \u2014 J +2.98 = 1.0x+0.00 (wk W) + 0.8x+3.88 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+4.74 (bench boom) - 0.00 acq - 0.10 FAB($10) - 0.50 churn"
+      "reason": "best spot Jauan Jennings: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
      },
      {
       "name": "Corey Kiner",
-      "reason": "gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])"
+      "reason": "jointly with the rest of the plan it adds only J -1.88 (< 3.0) \u2014 J -1.88 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x-0.60 (rest, mean of wks 8-17) + 0.1x-0.05 (bench boom) - 0.00 acq - 0.90 FAB($10) - 0.50 churn"
      },
      {
       "name": "Dawson Knox",
-      "reason": "best spot New York: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
+      "reason": "best spot Jauan Jennings: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
      },
      {
       "name": "Greg Dulcich",
-      "reason": "best spot New York: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
+      "reason": "best spot Jauan Jennings: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
      },
      {
       "name": "Isaiah Bond",
-      "reason": "best spot New York: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
+      "reason": "best spot Jauan Jennings: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
      },
      {
       "name": "Jake Ferguson",
@@ -447,11 +443,11 @@
      },
      {
       "name": "Jason Sanders",
-      "reason": "J -1.10 < 3.0 at its best spot (Jason Myers) \u2014 J -1.10 = 1.0x+0.00 (wk W) + 0.8x+0.81 (W+1) + 0.8x-1.55 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 0.00 acq - 0.01 FAB($1) - 0.50 churn"
+      "reason": "J -1.02 < 3.0 at its best spot (Jason Myers) \u2014 J -1.02 = 1.0x+0.00 (wk W) + 0.8x+0.88 (W+1) + 0.8x-1.51 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 0.00 acq - 0.01 FAB($1) - 0.50 churn"
      },
      {
       "name": "Kaleb Johnson",
-      "reason": "gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])"
+      "reason": "its best spot (Jauan Jennings) went to another move at higher value"
      },
      {
       "name": "Laquon Treadwell",
@@ -459,31 +455,35 @@
      },
      {
       "name": "Marquez Valdes-Scantling",
-      "reason": "best spot New York: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
+      "reason": "best spot Jauan Jennings: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
      },
      {
       "name": "Pierre Strong",
-      "reason": "jointly with the rest of the plan it adds only J -0.58 (< 3.0) \u2014 J -0.58 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+0.23 (bench boom) - 0.00 acq - 0.10 FAB($10) - 0.50 churn"
+      "reason": "jointly with the rest of the plan it adds only J -0.42 (< 3.0) \u2014 J -0.42 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+1.77 (bench boom) - 0.00 acq - 0.10 FAB($10) - 0.50 churn"
      },
      {
       "name": "Roschon Johnson",
-      "reason": "best spot New York: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
+      "reason": "best spot Jauan Jennings: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
      },
      {
       "name": "Samaje Perine",
-      "reason": "jointly with the rest of the plan it adds only J -1.88 (< 3.0) \u2014 J -1.88 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x-0.60 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 0.00 acq - 0.90 FAB($10) - 0.50 churn"
+      "reason": "its best spot (Jauan Jennings) went to another move at higher value"
+     },
+     {
+      "name": "Tank Bigsby",
+      "reason": "J +2.95 < 3.0 at its best spot (Jauan Jennings) \u2014 J +2.95 = 1.0x+0.00 (wk W) + 0.8x+3.85 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+4.74 (bench boom) - 0.00 acq - 0.10 FAB($10) - 0.50 churn"
      },
      {
       "name": "Treylon Burks",
-      "reason": "best spot New York: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
+      "reason": "best spot Jauan Jennings: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
      },
      {
       "name": "Tyrone Tracy",
-      "reason": "jointly with the rest of the plan it adds only J -0.43 (< 3.0) \u2014 J -0.43 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+1.66 (bench boom) - 0.00 acq - 0.10 FAB($10) - 0.50 churn"
+      "reason": "jointly with the rest of the plan it adds only J -0.44 (< 3.0) \u2014 J -0.44 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+1.59 (bench boom) - 0.00 acq - 0.10 FAB($10) - 0.50 churn"
      }
     ]
    },
-   "pulled": "2026-10-13T22:35:46+00:00"
+   "pulled": "2026-10-14T01:47:47+00:00"
   },
   "HH": {
    "actions": [
@@ -491,10 +491,30 @@
      "add": null,
      "bid": null,
      "drop": null,
-     "gain": 9.81,
+     "gain": 40.85,
      "gates": [
+      "G5-sources:WARN",
       "G7-ready:WARN",
       "G9-reversal:WARN"
+     ],
+     "kind": "start",
+     "provisional": false,
+     "reason": "Jared Goff has no game this week (bye) \u2014 the slot scores nothing until he is replaced",
+     "sit": "Jared Goff",
+     "slot": "QB",
+     "start": "Matthew Stafford",
+     "status": "proposed",
+     "subject": "Matthew Stafford",
+     "verdict": "WARN",
+     "when": "early"
+    },
+    {
+     "add": null,
+     "bid": null,
+     "drop": null,
+     "gain": 9.81,
+     "gates": [
+      "G7-ready:WARN"
      ],
      "kind": "start",
      "provisional": false,
@@ -511,10 +531,9 @@
      "add": null,
      "bid": null,
      "drop": null,
-     "gain": 3.25,
+     "gain": 3.16,
      "gates": [
-      "G7-ready:WARN",
-      "G9-reversal:WARN"
+      "G7-ready:WARN"
      ],
      "kind": "start",
      "provisional": true,
@@ -524,27 +543,6 @@
      "start": "Rome Odunze",
      "status": "proposed",
      "subject": "Rome Odunze",
-     "verdict": "WARN",
-     "when": "early"
-    },
-    {
-     "add": null,
-     "bid": null,
-     "drop": null,
-     "gain": 40.85,
-     "gates": [
-      "G5-sources:WARN",
-      "G7-ready:WARN",
-      "G9-reversal:WARN"
-     ],
-     "kind": "start",
-     "provisional": false,
-     "reason": "Jared Goff has no game this week (bye) \u2014 the slot scores nothing until he is replaced",
-     "sit": "Jared Goff",
-     "slot": "Q/W/R/T",
-     "start": "Matthew Stafford",
-     "status": "proposed",
-     "subject": "Matthew Stafford",
      "verdict": "WARN",
      "when": "early"
     },
@@ -573,8 +571,7 @@
      "gates": [
       "G2-desig:WARN",
       "G5-sources:WARN",
-      "G7-ready:WARN",
-      "G9-reversal:WARN"
+      "G7-ready:WARN"
      ],
      "kind": "start",
      "provisional": true,
@@ -632,7 +629,7 @@
      "bid": null,
      "drop": null,
      "fam": "QB",
-     "gain": 30.79,
+     "gain": 30.81,
      "gates": [
       "G11-role-registry:WARN"
      ],
@@ -1074,8 +1071,8 @@
     "DL": "T.J. Watt",
     "K": "Cairo Santos",
     "LB": "Carson Schwesinger",
-    "Q/W/R/T": "Matthew Stafford",
-    "QB": "Dak Prescott",
+    "Q/W/R/T": "Dak Prescott",
+    "QB": "Matthew Stafford",
     "RB": "Jaylen Warren",
     "S": "Nick Cross",
     "TE": "Trey McBride",
@@ -1084,7 +1081,7 @@
     "WR": "Drake London"
    },
    "me": "Tecmo Bowlers",
-   "others_pulled": "2026-10-13T22:35:46+00:00",
+   "others_pulled": "2026-10-14T01:47:47+00:00",
    "planner": {
     "lineup_after": {
      "CB": "Cooper DeJean",
@@ -1094,8 +1091,8 @@
      "DL": "T.J. Watt",
      "K": "Cairo Santos",
      "LB": "Carson Schwesinger",
-     "Q/W/R/T": "Matthew Stafford",
-     "QB": "Dak Prescott",
+     "Q/W/R/T": "Dak Prescott",
+     "QB": "Matthew Stafford",
      "RB": "Jaylen Warren",
      "S": "Nick Cross",
      "TE": "Trey McBride",
@@ -1104,6 +1101,23 @@
      "WR": "Drake London"
     },
     "moves": [
+     {
+      "J": 40.852,
+      "add": null,
+      "drop": null,
+      "gates": [],
+      "ir": null,
+      "kind": "lineup",
+      "provisional": false,
+      "sit": "Jared Goff",
+      "slot": "QB",
+      "start": "Matthew Stafford",
+      "txns": [
+       "start Matthew Stafford at QB",
+       "bench Jared Goff"
+      ],
+      "when": "before kickoff Sun Oct 18, 4:05 pm ET"
+     },
      {
       "J": 9.805,
       "add": null,
@@ -1122,7 +1136,7 @@
       "when": "before kickoff Sun Oct 18, 1:00 pm ET"
      },
      {
-      "J": 3.252,
+      "J": 3.163,
       "add": null,
       "drop": null,
       "gates": [],
@@ -1137,23 +1151,6 @@
        "bench Braelon Allen"
       ],
       "when": "before kickoff Sun Oct 18, 1:00 pm ET"
-     },
-     {
-      "J": 40.852,
-      "add": null,
-      "drop": null,
-      "gates": [],
-      "ir": null,
-      "kind": "lineup",
-      "provisional": false,
-      "sit": "Jared Goff",
-      "slot": "Q/W/R/T",
-      "start": "Matthew Stafford",
-      "txns": [
-       "start Matthew Stafford at Q/W/R/T",
-       "bench Jared Goff"
-      ],
-      "when": "before kickoff Sun Oct 18, 4:05 pm ET"
      },
      {
       "J": 4.219,
@@ -1193,15 +1190,11 @@
     "rejected": [
      {
       "name": "Indianapolis Colts",
-      "reason": "J -2.10 < 3.0 at its best spot (Chiefs) \u2014 J -2.10 = 1.0x+0.00 (wk W) + 0.8x-0.22 (W+1) + 0.8x-0.53 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn"
+      "reason": "J -2.10 < 3.0 at its best spot (Chiefs) \u2014 J -2.10 = 1.0x+0.00 (wk W) + 0.8x-0.22 (W+1) + 0.8x-0.54 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn"
      },
      {
       "name": "Los Angeles Rams",
       "reason": "J -1.66 < 3.0 at its best spot (Chiefs) \u2014 J -1.66 = 1.0x+0.00 (wk W) + 0.8x-0.31 (W+1) + 0.8x+0.11 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn"
-     },
-     {
-      "name": "San Francisco 49ers",
-      "reason": "J -3.33 < 3.0 at its best spot (Chiefs) \u2014 J -3.33 = 1.0x+0.00 (wk W) + 0.8x-0.08 (W+1) + 0.8x-2.21 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn"
      },
      {
       "name": "Brenton Strange",
@@ -1261,7 +1254,7 @@
      },
      {
       "name": "Jason Sanders",
-      "reason": "J -0.66 < 3.0 at its best spot (Cairo Santos) \u2014 J -0.66 = 1.0x+0.00 (wk W) + 0.8x+1.89 (W+1) + 0.8x-0.84 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn"
+      "reason": "J -0.54 < 3.0 at its best spot (Cairo Santos) \u2014 J -0.54 = 1.0x+0.00 (wk W) + 0.8x+1.98 (W+1) + 0.8x-0.78 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn"
      },
      {
       "name": "Jayden Daniels",
@@ -1285,11 +1278,15 @@
      },
      {
       "name": "Ollie Gordon",
-      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 0.0 under your weakest 6.5"
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 0.0 under your weakest 6.6"
      },
      {
       "name": "Rachaad White",
-      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 6.4 under your weakest 6.5"
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 6.4 under your weakest 6.6"
+     },
+     {
+      "name": "Rashee Rice",
+      "reason": "gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])"
      },
      {
       "name": "Rashod Bateman",
@@ -1301,7 +1298,7 @@
      },
      {
       "name": "Roschon Johnson",
-      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 3.7 under your weakest 6.5"
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 3.7 under your weakest 6.6"
      },
      {
       "name": "Sam Darnold",
@@ -1309,7 +1306,7 @@
      },
      {
       "name": "Samaje Perine",
-      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 0.0 under your weakest 6.5"
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 0.0 under your weakest 6.6"
      },
      {
       "name": "Treylon Burks",
@@ -1321,7 +1318,7 @@
      },
      {
       "name": "Wan'Dale Robinson",
-      "reason": "best spot Chiefs: Chiefs is the spare DEF: a spot for a Tier-A add or a same-family stream only (~1 pt/wk on its own, 09-24)"
+      "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
      },
      {
       "name": "Woody Marks",
@@ -1329,9 +1326,9 @@
      }
     ]
    },
-   "pulled": "2026-10-13T22:35:46+00:00"
+   "pulled": "2026-10-14T01:47:47+00:00"
   }
  },
- "now": "2026-10-13T18:36-04:00",
+ "now": "2026-10-13T21:48-04:00",
  "week": 6
 }

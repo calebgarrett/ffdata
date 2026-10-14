@@ -40,38 +40,42 @@
   {
    "player": "Ray Davis",
    "reason": "registry HOLD \u2014 HOLD, downgraded. James Cook is the single best asset on this roster (+188 over "
+  },
+  {
+   "player": "Jets",
+   "reason": "you added him 2026-10-13 (<= 7 days) \u2014 your decision, not the spot"
   }
  ],
  "league": "BSB",
  "lineup_after": {
   "keys": {
-   "DEF": "DST:IND",
+   "DEF": "DST:BAL",
    "K": "jason myers",
    "QB": "matt stafford",
    "RB1": "marshawn lloyd",
    "RB2": "james cook",
    "TE": "isaiah likely",
    "W/R/T": "dameon pierce",
-   "WR1": "jaxon smith njigba",
-   "WR2": "drake london",
+   "WR1": "drake london",
+   "WR2": "jaxon smith njigba",
    "WR3": "ryan flournoy"
   },
-  "optimal_before_moves": 134.0,
+  "optimal_before_moves": 136.13,
   "slots": {
-   "DEF": "Indianapolis Colts",
+   "DEF": "Baltimore Ravens",
    "K": "Jason Myers",
    "QB": "Matthew Stafford",
    "RB1": "MarShawn Lloyd",
    "RB2": "James Cook III",
    "TE": "Isaiah Likely",
    "W/R/T": "Dameon Pierce",
-   "WR1": "Jaxon Smith-Njigba",
-   "WR2": "Drake London",
+   "WR1": "Drake London",
+   "WR2": "Jaxon Smith-Njigba",
    "WR3": "Ryan Flournoy"
   },
-  "total": 140.84
+  "total": 142.2
  },
- "made": "2026-10-13T18:36-04:00",
+ "made": "2026-10-13T21:49-04:00",
  "mechanics": [
   {
    "rule": "A never-rostered free agent is free until his game kicks off",
@@ -111,7 +115,7 @@
  ],
  "moves": [
   {
-   "J": 8.121,
+   "J": 7.457,
    "add_key": "dameon pierce",
    "add_name": "Dameon Pierce",
    "at": "2026-10-14T06:00-04:00",
@@ -139,7 +143,7 @@
    "kind": "add",
    "league": "BSB",
    "lineup": {
-    "gain": 1.64,
+    "gain": 0.98,
     "over": "DeMario Douglas",
     "slot": "W/R/T"
    },
@@ -184,12 +188,12 @@
     }
    ],
    "value_terms": {
-    "J": 8.121,
+    "J": 7.457,
     "acq": 1,
     "bid": 10,
-    "dS_W": 1.639,
+    "dS_W": 0.975,
     "dS_W1": 7.955,
-    "dS_rest": 0.44,
+    "dS_rest": 0.441,
     "d_boom": 3.655,
     "pen_acq": 0.0,
     "pen_churn": 0.5,
@@ -209,19 +213,19 @@
     "drop": {
      "ros": 4.594117647058823,
      "ros_src": "season blend / 17",
-     "w": 2.6771630939469575,
+     "w": 2.6761630939469576,
      "w1": 4.594117647058823
     }
    },
    "when": "claim by Tue night ($10)"
   },
   {
-   "J": 4.698,
-   "add_key": "DST:IND",
-   "add_name": "Indianapolis Colts",
+   "J": 3.149,
+   "add_key": "DST:BAL",
+   "add_name": "Baltimore Ravens",
    "at": "2026-10-14T06:00-04:00",
    "deadline": "2026-10-13T23:59-04:00",
-   "drop_name": "New York",
+   "drop_name": "Vikings",
    "eff": "W",
    "fam": "DEF",
    "gates": {
@@ -241,64 +245,64 @@
        "gate": "G7-ready",
        "msg": "market coverage for this game not established",
        "status": "WARN"
-      },
-      {
-       "gate": "G12-state",
-       "msg": "ALREADY TRUE in live state (2026-10-13T22:35) \u2014 not an action, a confirmation",
-       "status": "WARN"
       }
      ],
      "verdict": "WARN"
     }
    },
-   "id": "BSB:DST:IND",
+   "id": "BSB:DST:BAL",
    "kind": "add",
    "league": "BSB",
    "lineup": {
-    "gain": 8.84,
-    "over": "New York (dropped)",
+    "gain": 5.1,
+    "over": "Jets",
     "slot": "DEF"
    },
    "provisional": false,
    "reasons": [
-    "DEF weekly upgrade: Indianapolis Colts 8.8 vs starter New York 3.6",
-    "the spot: New York \u2014 the spare DEF"
+    "DEF weekly upgrade: Baltimore Ravens 8.8 vs starter Jets 3.7",
+    "the spot: Vikings \u2014 the only DEF"
    ],
-   "spot_id": "drop:DST:NYJ",
-   "spot_kind": "spare",
-   "spot_label": "New York",
+   "spot_id": "drop:DST:MIN",
+   "spot_kind": "swap",
+   "spot_label": "Vikings",
    "srcs": [
     "upgrade"
    ],
    "tier": null,
-   "timing_why": "Tue->Wed claims window: last week's games are played and the run has not processed",
-   "tm": "IND",
+   "timing_why": "dropped to waivers Thu 8:44 PM \u2014 a claim until the run",
+   "tm": "BAL",
    "txns": [
     {
      "bid": 1,
-     "key": "DST:IND",
+     "key": "DST:BAL",
      "op": "claim",
-     "player": "Indianapolis Colts"
+     "player": "Baltimore Ravens"
+    },
+    {
+     "key": "DST:MIN",
+     "op": "drop",
+     "player": "Vikings"
+    },
+    {
+     "key": "DST:BAL",
+     "op": "start",
+     "player": "Baltimore Ravens",
+     "slot": "DEF"
     },
     {
      "key": "DST:NYJ",
-     "op": "drop",
-     "player": "New York"
-    },
-    {
-     "key": "DST:IND",
-     "op": "start",
-     "player": "Indianapolis Colts",
-     "slot": "DEF"
+     "op": "bench",
+     "player": "Jets"
     }
    ],
    "value_terms": {
-    "J": 4.698,
+    "J": 3.149,
     "acq": 1,
     "bid": 1,
-    "dS_W": 5.208,
-    "dS_W1": 0.0,
-    "dS_rest": 0.0,
+    "dS_W": 5.097,
+    "dS_W1": -0.213,
+    "dS_rest": -1.585,
     "d_boom": 0.0,
     "pen_acq": 0.0,
     "pen_churn": 0.5,
@@ -309,17 +313,17 @@
    "values": {
     "add": {
      "boom": null,
-     "ros": 5.005462088437172,
+     "ros": 6.184942637154429,
      "ros_src": "season blend / 17",
-     "w": 8.842382625746694,
-     "w1": 6.837507873073718,
-     "w1_src": "W line re-scored on the week-7 opponent implied total 24.5"
+     "w": 8.785094074238266,
+     "w1": 6.939281596088975,
+     "w1_src": "W line re-scored on the week-7 opponent implied total 24.0"
     },
     "drop": {
-     "ros": 3.396133027670096,
+     "ros": 7.151951345821544,
      "ros_src": "season blend / 17",
-     "w": 3.6344754825648167,
-     "w1": 5.61107034826329
+     "w": null,
+     "w1": 7.151951345821544
     }
    },
    "when": "claim by Tue night ($1)"
@@ -328,29 +332,29 @@
  "notes": [],
  "rejected": [
   {
-   "J": -2.049,
-   "key": "DST:BAL",
-   "name": "Baltimore Ravens",
-   "reason": "jointly with the rest of the plan it adds only J -2.05 (< 3.0) \u2014 J -2.05 = 1.0x+0.00 (wk W) + 0.8x-0.21 (W+1) + 0.8x-1.59 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 0.00 acq - 0.11 FAB($1) - 0.50 churn",
+   "J": 2.276,
+   "key": "DST:IND",
+   "name": "Indianapolis Colts",
+   "reason": "J +2.28 < 3.0 at its best spot (Vikings) \u2014 J +2.28 = 1.0x+5.16 (wk W) + 0.8x-0.31 (W+1) + 0.8x-2.65 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 0.00 acq - 0.01 FAB($1) - 0.50 churn",
    "reasons": [
-    "DEF weekly upgrade: Baltimore Ravens 8.8 vs starter New York 3.6"
+    "DEF weekly upgrade: Indianapolis Colts 8.8 vs starter Jets 3.7"
    ]
   },
   {
-   "J": 4.036,
+   "J": 1.675,
    "key": "DST:SF",
    "name": "San Francisco 49ers",
-   "reason": "its best spot (New York) went to Indianapolis Colts at higher value",
+   "reason": "J +1.68 < 3.0 at its best spot (Vikings) \u2014 J +1.68 = 1.0x+3.77 (wk W) + 0.8x+0.30 (W+1) + 0.8x-2.29 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 0.00 acq - 0.01 FAB($1) - 0.50 churn",
    "reasons": [
-    "DEF weekly upgrade: San Francisco 49ers 7.4 vs starter New York 3.6",
+    "DEF weekly upgrade: San Francisco 49ers 7.5 vs starter Jets 3.7",
     "week-7 DEF stream: San Francisco 49ers 7.5 vs your best 7.2 (W line re-scored on the week-7 opponent implied total 21.5)"
    ]
   },
   {
-   "J": 0.511,
+   "J": -0.163,
    "key": "cade otton",
    "name": "Cade Otton",
-   "reason": "J +0.51 < 3.0 at its best spot (Jauan Jennings) \u2014 J +0.51 = 1.0x+0.91 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+1.08 (bench boom) - 0.00 acq - 0.01 FAB($1) - 0.50 churn",
+   "reason": "J -0.16 < 3.0 at its best spot (Jauan Jennings) \u2014 J -0.16 = 1.0x+0.24 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+1.08 (bench boom) - 0.00 acq - 0.01 FAB($1) - 0.50 churn",
    "reasons": [
     "breakout tier B: 92% snaps, 16% targets, 19% air yds; no market line yet (Sleeper receiving yds 31); held (wk4: 94% snaps, 22% targets, 0% air yds)"
    ]
@@ -359,34 +363,25 @@
    "J": -0.468,
    "key": "charlie kolar",
    "name": "Charlie Kolar",
-   "reason": "best spot New York: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
+   "reason": "best spot Jauan Jennings: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
     "breakout tier B: 76% snaps, 17% targets, 34% air yds; no market line yet (Sleeper receiving yds 15)"
    ]
   },
   {
-   "J": 2.979,
-   "key": "cj donaldson",
-   "name": "CJ Donaldson",
-   "reason": "J +2.98 < 3.0 at its best spot (Jauan Jennings) \u2014 J +2.98 = 1.0x+0.00 (wk W) + 0.8x+3.88 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+4.74 (bench boom) - 0.00 acq - 0.10 FAB($10) - 0.50 churn",
-   "reasons": [
-    "week-7 hole at RB2 (James Cook III on bye, Josh Jacobs CEL); CJ Donaldson 3.9 is the best free RB on week-7 values"
-   ]
-  },
-  {
-   "J": null,
+   "J": -1.883,
    "key": "corey kiner",
    "name": "Corey Kiner",
-   "reason": "gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])",
+   "reason": "jointly with the rest of the plan it adds only J -1.88 (< 3.0) \u2014 J -1.88 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x-0.60 (rest, mean of wks 8-17) + 0.1x-0.05 (bench boom) - 0.00 acq - 0.90 FAB($10) - 0.50 churn",
    "reasons": [
-    "week-7 hole at RB2 (James Cook III on bye, Josh Jacobs CEL); Corey Kiner 5.7 is the best free RB on week-7 values"
+    "week-7 hole at RB2 (James Cook III on bye, Josh Jacobs CEL); Corey Kiner 4.9 is the best free RB on week-7 values"
    ]
   },
   {
    "J": -0.39,
    "key": "dawson knox",
    "name": "Dawson Knox",
-   "reason": "best spot New York: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
+   "reason": "best spot Jauan Jennings: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
     "breakout tier B: 70% snaps, 16% targets, 19% air yds; no market line yet (Sleeper receiving yds 12)"
    ]
@@ -395,7 +390,7 @@
    "J": -0.51,
    "key": "greg dulcich",
    "name": "Greg Dulcich",
-   "reason": "best spot New York: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
+   "reason": "best spot Jauan Jennings: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
     "breakout tier B: 74% snaps, 19% targets, 27% air yds; no market line yet, and no Sleeper line either"
    ]
@@ -404,18 +399,18 @@
    "J": -0.47,
    "key": "isaiah bond",
    "name": "Isaiah Bond",
-   "reason": "best spot New York: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
+   "reason": "best spot Jauan Jennings: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
     "breakout tier B: 72% snaps, 21% targets, 47% air yds; no market line yet (Sleeper receiving yds 12)"
    ]
   },
   {
-   "J": 2.471,
+   "J": 0.772,
    "key": "jake ferguson",
    "name": "Jake Ferguson",
    "reason": "best spot Jauan Jennings: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
-    "breakout tier B: 83% snaps, 14% targets, 2% air yds; no market line yet (Sleeper receiving yds 31)"
+    "breakout tier B: 83% snaps, 14% targets, 2% air yds; Kalshi receiving yds 31 vs Sleeper 31 (+0%) \u2014 a part-time line, under the 35 starter floor"
    ]
   },
   {
@@ -428,21 +423,21 @@
    ]
   },
   {
-   "J": -1.102,
+   "J": -1.02,
    "key": "jason sanders",
    "name": "Jason Sanders",
-   "reason": "J -1.10 < 3.0 at its best spot (Jason Myers) \u2014 J -1.10 = 1.0x+0.00 (wk W) + 0.8x+0.81 (W+1) + 0.8x-1.55 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 0.00 acq - 0.01 FAB($1) - 0.50 churn",
+   "reason": "J -1.02 < 3.0 at its best spot (Jason Myers) \u2014 J -1.02 = 1.0x+0.00 (wk W) + 0.8x+0.88 (W+1) + 0.8x-1.51 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 0.00 acq - 0.01 FAB($1) - 0.50 churn",
    "reasons": [
-    "week-7 K stream: Jason Sanders 10.5 vs your best 9.7 (W projection x own implied total 22.0/16.5)"
+    "week-7 K stream: Jason Sanders 10.6 vs your best 9.7 (W projection x own implied total 22.0/16.5)"
    ]
   },
   {
-   "J": null,
+   "J": 3.396,
    "key": "kaleb johnson",
    "name": "Kaleb Johnson",
-   "reason": "gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])",
+   "reason": "its best spot (Jauan Jennings) went to another move at higher value",
    "reasons": [
-    "week-7 hole at RB2 (James Cook III on bye, Josh Jacobs CEL); Kaleb Johnson 4.5 is the best free RB on week-7 values"
+    "week-7 hole at RB2 (James Cook III on bye, Josh Jacobs CEL); Kaleb Johnson 4.4 is the best free RB on week-7 values"
    ]
   },
   {
@@ -455,56 +450,65 @@
    ]
   },
   {
-   "J": -0.474,
+   "J": -0.48,
    "key": "marquez valdes scantling",
    "name": "Marquez Valdes-Scantling",
-   "reason": "best spot New York: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
+   "reason": "best spot Jauan Jennings: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
-    "breakout tier B: 75% snaps, 12% targets, 26% air yds; no market line yet (Sleeper receiving yds 14)"
+    "breakout tier B: 75% snaps, 12% targets, 26% air yds; no market line yet (Sleeper receiving yds 12)"
    ]
   },
   {
-   "J": -0.578,
+   "J": -0.423,
    "key": "pierre strong",
    "name": "Pierre Strong",
-   "reason": "jointly with the rest of the plan it adds only J -0.58 (< 3.0) \u2014 J -0.58 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+0.23 (bench boom) - 0.00 acq - 0.10 FAB($10) - 0.50 churn",
+   "reason": "jointly with the rest of the plan it adds only J -0.42 (< 3.0) \u2014 J -0.42 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+1.77 (bench boom) - 0.00 acq - 0.10 FAB($10) - 0.50 churn",
    "reasons": [
-    "week-7 hole at RB2 (James Cook III on bye, Josh Jacobs CEL); Pierre Strong 4.7 is the best free RB on week-7 values"
+    "week-7 hole at RB2 (James Cook III on bye, Josh Jacobs CEL); Pierre Strong 5.4 is the best free RB on week-7 values"
    ]
   },
   {
    "J": 3.013,
    "key": "roschon johnson",
    "name": "Roschon Johnson",
-   "reason": "best spot New York: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
+   "reason": "best spot Jauan Jennings: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
     "breakout tier B: 39% snaps, 46% of RB touches; no market line yet (Sleeper rushing yds 16)"
    ]
   },
   {
-   "J": -1.878,
+   "J": 3.289,
    "key": "samaje perine",
    "name": "Samaje Perine",
-   "reason": "jointly with the rest of the plan it adds only J -1.88 (< 3.0) \u2014 J -1.88 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x-0.60 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 0.00 acq - 0.90 FAB($10) - 0.50 churn",
+   "reason": "its best spot (Jauan Jennings) went to another move at higher value",
    "reasons": [
     "breakout tier B: 51% snaps, 48% of RB touches; no market line yet, and no Sleeper line either",
     "week-7 hole at RB2 (James Cook III on bye, Josh Jacobs CEL); Samaje Perine 4.2 is the best free RB on week-7 values"
    ]
   },
   {
+   "J": 2.952,
+   "key": "tank bigsby",
+   "name": "Tank Bigsby",
+   "reason": "J +2.95 < 3.0 at its best spot (Jauan Jennings) \u2014 J +2.95 = 1.0x+0.00 (wk W) + 0.8x+3.85 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+4.74 (bench boom) - 0.00 acq - 0.10 FAB($10) - 0.50 churn",
+   "reasons": [
+    "week-7 hole at RB2 (James Cook III on bye, Josh Jacobs CEL); Tank Bigsby 3.8 is the best free RB on week-7 values"
+   ]
+  },
+  {
    "J": -0.446,
    "key": "treylon burks",
    "name": "Treylon Burks",
-   "reason": "best spot New York: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
+   "reason": "best spot Jauan Jennings: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
     "breakout tier B: 73% snaps, 20% targets, 16% air yds; no market line yet (Sleeper receiving yds 2)"
    ]
   },
   {
-   "J": -0.434,
+   "J": -0.441,
    "key": "ty tracy",
    "name": "Tyrone Tracy",
-   "reason": "jointly with the rest of the plan it adds only J -0.43 (< 3.0) \u2014 J -0.43 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+1.66 (bench boom) - 0.00 acq - 0.10 FAB($10) - 0.50 churn",
+   "reason": "jointly with the rest of the plan it adds only J -0.44 (< 3.0) \u2014 J -0.44 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+1.59 (bench boom) - 0.00 acq - 0.10 FAB($10) - 0.50 churn",
    "reasons": [
     "week-7 hole at RB2 (James Cook III on bye, Josh Jacobs CEL); Tyrone Tracy 5.3 is the best free RB on week-7 values"
    ]
@@ -514,15 +518,8 @@
   {
    "id": "drop:DST:MIN",
    "kind": "swap",
-   "label": "Minnesota",
-   "taken_by": null,
-   "tier": 2
-  },
-  {
-   "id": "drop:DST:NYJ",
-   "kind": "spare",
-   "label": "New York",
-   "taken_by": "Indianapolis Colts",
+   "label": "Vikings",
+   "taken_by": "Baltimore Ravens",
    "tier": 2
   },
   {
@@ -595,9 +592,9 @@
   "W_REST": 0.8
  },
  "winprob": {
-  "mean": 140.86382731652714,
+  "mean": 142.01953348641223,
   "note": "sampled on the planner's final lineup",
-  "p_med": 0.811,
-  "p_opp": 0.618
+  "p_med": 0.8211666666666667,
+  "p_opp": 0.6226666666666667
  }
 }

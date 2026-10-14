@@ -9608,10 +9608,11 @@
   ],
   "verdict": "WARN",
   "week": 6,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": null,
-  "reverses": null
+  "reverses": null,
+  "superseded_by": "427b6859"
  },
  {
   "id": "869172a2",
@@ -9627,10 +9628,11 @@
   ],
   "verdict": "WARN",
   "week": 6,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": null,
-  "reverses": null
+  "reverses": null,
+  "superseded_by": "70f6eec5"
  },
  {
   "id": "89619a93",
@@ -9646,10 +9648,11 @@
   ],
   "verdict": "WARN",
   "week": 6,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": null,
-  "reverses": null
+  "reverses": null,
+  "superseded_by": "29d08bdb"
  },
  {
   "id": "c3f42089",
@@ -9702,10 +9705,11 @@
   ],
   "verdict": "WARN",
   "week": 6,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": "2026-10-18T16:05-04:00",
-  "reverses": "4da0d227"
+  "reverses": "4da0d227",
+  "superseded_by": "8b62a60e"
  },
  {
   "id": "bd1acf4c",
@@ -9724,5 +9728,80 @@
   "provisional": true,
   "resolves_at": "2026-10-19T20:15-04:00",
   "reverses": "1bd96416"
+ },
+ {
+  "id": "427b6859",
+  "ts": "2026-10-13T21:48-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Indianapolis Colts",
+  "call": "add Indianapolis Colts (DEF) over Jets",
+  "detail": "+5.16/wk",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "e1f3cfa8"
+ },
+ {
+  "id": "70f6eec5",
+  "ts": "2026-10-13T21:48-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Baltimore Ravens",
+  "call": "add Baltimore Ravens (DEF) over Jets",
+  "detail": "+5.10/wk",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "869172a2"
+ },
+ {
+  "id": "29d08bdb",
+  "ts": "2026-10-13T21:48-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "San Francisco 49ers",
+  "call": "add San Francisco 49ers (DEF) over Jets",
+  "detail": "+3.77/wk",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "89619a93"
+ },
+ {
+  "id": "8b62a60e",
+  "ts": "2026-10-13T21:48-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Matthew Stafford",
+  "call": "start Matthew Stafford at QB",
+  "detail": "over Jared Goff +40.85",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": "2026-10-18T16:05-04:00",
+  "reverses": "47e29161"
  }
 ]
