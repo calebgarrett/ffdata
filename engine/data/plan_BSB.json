@@ -3,8 +3,8 @@
   "acq_left": null,
   "acq_reset": null,
   "acq_reset_verified": null,
-  "acq_used": 0,
-  "fab_left": 93,
+  "acq_used": 1,
+  "fab_left": 91,
   "ir_free": 0,
   "open_spots": 0
  },
@@ -42,40 +42,40 @@
    "reason": "registry HOLD \u2014 HOLD, downgraded. James Cook is the single best asset on this roster (+188 over "
   },
   {
-   "player": "Jets",
-   "reason": "you added him 2026-10-13 (<= 7 days) \u2014 your decision, not the spot"
+   "player": "San Francisco",
+   "reason": "you added him 2026-10-14 (<= 7 days) \u2014 your decision, not the spot"
   }
  ],
  "league": "BSB",
  "lineup_after": {
   "keys": {
-   "DEF": "DST:BAL",
+   "DEF": "DST:SF",
    "K": "jason myers",
    "QB": "matt stafford",
    "RB1": "james cook",
-   "RB2": "dameon pierce",
+   "RB2": "marshawn lloyd",
    "TE": "isaiah likely",
-   "W/R/T": "marshawn lloyd",
-   "WR1": "ryan flournoy",
-   "WR2": "drake london",
-   "WR3": "jaxon smith njigba"
+   "W/R/T": "demario douglas",
+   "WR1": "drake london",
+   "WR2": "jaxon smith njigba",
+   "WR3": "ryan flournoy"
   },
-  "optimal_before_moves": 137.69,
+  "optimal_before_moves": 140.75,
   "slots": {
-   "DEF": "Baltimore Ravens",
+   "DEF": "San Francisco",
    "K": "Jason Myers",
    "QB": "Matthew Stafford",
    "RB1": "James Cook III",
-   "RB2": "Dameon Pierce",
+   "RB2": "MarShawn Lloyd",
    "TE": "Isaiah Likely",
-   "W/R/T": "MarShawn Lloyd",
-   "WR1": "Ryan Flournoy",
-   "WR2": "Drake London",
-   "WR3": "Jaxon Smith-Njigba"
+   "W/R/T": "DeMario Douglas",
+   "WR1": "Drake London",
+   "WR2": "Jaxon Smith-Njigba",
+   "WR3": "Ryan Flournoy"
   },
-  "total": 143.29
+  "total": 140.75
  },
- "made": "2026-10-14T03:29-04:00",
+ "made": "2026-10-14T07:09-04:00",
  "mechanics": [
   {
    "rule": "A never-rostered free agent is free until his game kicks off",
@@ -115,12 +115,12 @@
  ],
  "moves": [
   {
-   "J": 6.998,
-   "add_key": "dameon pierce",
-   "add_name": "Dameon Pierce",
-   "at": "2026-10-14T06:00-04:00",
-   "deadline": "2026-10-13T23:59-04:00",
-   "drop_name": "Xavier Hutchinson",
+   "J": 4.315,
+   "add_key": "pierre strong",
+   "add_name": "Pierre Strong",
+   "at": null,
+   "deadline": "2026-10-18T20:20-04:00",
+   "drop_name": "Jauan Jennings",
    "eff": "W",
    "fam": "RB",
    "gates": {
@@ -132,235 +132,136 @@
      "checks": [
       {
        "gate": "G11-role-registry",
-       "msg": "registry usage verified 2026-09-14 (30d old) \u2014 DEMOTED after 14 days; re-verify before counting it",
+       "msg": "no verified snap count on record \u2014 projection is the only evidence he plays",
        "status": "WARN"
       }
      ],
      "verdict": "WARN"
     }
    },
-   "id": "BSB:dameon pierce",
+   "id": "BSB:pierre strong",
    "kind": "add",
    "league": "BSB",
-   "lineup": {
-    "gain": 0.51,
-    "over": "DeMario Douglas",
-    "slot": "RB2"
-   },
    "provisional": false,
    "reasons": [
-    "breakout tier B: 77% snaps, 70% of RB touches; no market line yet (Sleeper rushing yds 46)",
-    "week-7 hole at RB2 (James Cook III on bye, Josh Jacobs CEL); Dameon Pierce 8.0 is the best free RB on week-7 values",
-    "the spot: Xavier Hutchinson \u2014 rest-of-season 4.6/wk (season blend / 17)"
+    "week-7 hole at RB2 (James Cook III on bye, Josh Jacobs CEL); Pierre Strong 5.4 is the best free RB on week-7 values",
+    "the spot: Jauan Jennings \u2014 rest-of-season 6.0/wk (season blend / 17)"
    ],
-   "spot_id": "drop:xavier hutchinson",
+   "spot_id": "drop:jauan jennings",
    "spot_kind": "drop",
-   "spot_label": "Xavier Hutchinson",
+   "spot_label": "Jauan Jennings",
    "srcs": [
-    "breakout",
     "hole"
    ],
-   "tier": "B",
-   "timing_why": "Tue->Wed claims window: last week's games are played and the run has not processed",
-   "tm": "PHI",
+   "tier": null,
+   "timing_why": "never-rostered free agent: free until his kickoff",
+   "tm": "GB",
    "txns": [
     {
-     "bid": 10,
-     "key": "dameon pierce",
-     "op": "claim",
-     "player": "Dameon Pierce"
+     "key": "pierre strong",
+     "op": "add",
+     "player": "Pierre Strong"
     },
     {
-     "key": "xavier hutchinson",
+     "key": "jauan jennings",
      "op": "drop",
-     "player": "Xavier Hutchinson"
-    },
-    {
-     "key": "dameon pierce",
-     "op": "start",
-     "player": "Dameon Pierce",
-     "slot": "RB2"
-    },
-    {
-     "key": "demario douglas",
-     "op": "bench",
-     "player": "DeMario Douglas"
+     "player": "Jauan Jennings"
     }
    ],
    "value_terms": {
-    "J": 6.998,
+    "J": 4.315,
     "acq": 1,
-    "bid": 10,
-    "dS_W": 0.506,
-    "dS_W1": 7.955,
-    "dS_rest": 0.441,
-    "d_boom": 3.774,
+    "bid": 0,
+    "dS_W": 0.0,
+    "dS_W1": 5.42,
+    "dS_rest": 0.0,
+    "d_boom": 4.791,
     "pen_acq": 0.0,
     "pen_churn": 0.5,
-    "pen_fab": 0.1,
+    "pen_fab": 0.0,
     "rest_weeks": "8-17",
     "txn": 1
    },
    "values": {
     "add": {
-     "boom": 0.2715273412947832,
-     "ros": 7.955,
-     "ros_src": "W projection 8.0 (usage says starter; the preseason number is stale)",
-     "w": 7.955,
-     "w1": 7.955,
+     "boom": 0.3258584134920401,
+     "ros": 5.420226363615466,
+     "ros_src": "W projection (no season number)",
+     "w": 5.420226363615466,
+     "w1": 5.420226363615466,
      "w1_src": "rest-of-season per-week (no week-7 projection on disk \u2014 approximation)"
     },
     "drop": {
-     "ros": 4.594117647058823,
+     "ros": 5.976470588235294,
      "ros_src": "season blend / 17",
-     "w": 2.6781630939469574,
-     "w1": 4.594117647058823
+     "w": 0.0,
+     "w1": 5.976470588235294
     }
    },
-   "when": "claim by Tue night ($10)"
+   "when": "before kickoff Sun Oct 18, 8:20 pm ET"
   },
   {
-   "J": 3.147,
-   "add_key": "DST:BAL",
-   "add_name": "Baltimore Ravens",
-   "at": "2026-10-14T06:00-04:00",
-   "deadline": "2026-10-13T23:59-04:00",
-   "drop_name": "Vikings",
+   "J": 7.459,
+   "add_key": null,
+   "add_name": null,
+   "at": null,
+   "deadline": "2026-10-19T20:15-04:00",
+   "drop_name": null,
    "eff": "W",
    "fam": "DEF",
+   "gain": 7.46,
    "gates": {
-    "add": {
-     "checks": [
-      {
-       "gate": "G7-ready",
-       "msg": "NO player market posted for this game yet \u2014 call is PROVISIONAL, re-run when lines post",
-       "status": "WARN"
-      }
-     ],
-     "verdict": "WARN"
-    },
-    "drop": {
-     "checks": [
-      {
-       "gate": "G7-ready",
-       "msg": "market coverage for this game not established",
-       "status": "WARN"
-      }
-     ],
-     "verdict": "WARN"
-    }
+    "add": null,
+    "drop": null
    },
-   "id": "BSB:DST:BAL",
-   "kind": "add",
+   "id": "BSB:lineup:DEF",
+   "kind": "lineup",
    "league": "BSB",
-   "lineup": {
-    "gain": 5.1,
-    "over": "Jets",
-    "slot": "DEF"
-   },
+   "phase": "early",
    "provisional": false,
    "reasons": [
-    "DEF weekly upgrade: Baltimore Ravens 8.8 vs starter Jets 3.7",
-    "the spot: Vikings \u2014 the only DEF"
+    "the slot is empty"
    ],
-   "spot_id": "drop:DST:MIN",
-   "spot_kind": "swap",
-   "spot_label": "Vikings",
+   "sit": null,
+   "slot": "DEF",
+   "spot_id": null,
+   "spot_kind": null,
+   "spot_label": null,
    "srcs": [
-    "upgrade"
+    "lineup"
    ],
+   "start": "San Francisco",
    "tier": null,
-   "timing_why": "dropped to waivers Thu 8:44 PM \u2014 a claim until the run",
-   "tm": "BAL",
+   "timing_why": "",
+   "tm": "SF",
    "txns": [
     {
-     "bid": 1,
-     "key": "DST:BAL",
-     "op": "claim",
-     "player": "Baltimore Ravens"
-    },
-    {
-     "key": "DST:MIN",
-     "op": "drop",
-     "player": "Vikings"
-    },
-    {
-     "key": "DST:BAL",
+     "key": "DST:SF",
      "op": "start",
-     "player": "Baltimore Ravens",
+     "player": "San Francisco",
      "slot": "DEF"
-    },
-    {
-     "key": "DST:NYJ",
-     "op": "bench",
-     "player": "Jets"
     }
    ],
    "value_terms": {
-    "J": 3.147,
-    "acq": 1,
-    "bid": 1,
-    "dS_W": 5.097,
-    "dS_W1": -0.213,
-    "dS_rest": -1.585,
-    "d_boom": 0.0,
-    "pen_acq": 0.0,
-    "pen_churn": 0.5,
-    "pen_fab": 0.01,
-    "rest_weeks": "8-17",
-    "txn": 1
+    "J": 7.459,
+    "dS_W": 7.459
    },
-   "values": {
-    "add": {
-     "boom": null,
-     "ros": 6.184942637154429,
-     "ros_src": "season blend / 17",
-     "w": 8.783506053486128,
-     "w1": 6.939281596088975,
-     "w1_src": "W line re-scored on the week-7 opponent implied total 24.0"
-    },
-    "drop": {
-     "ros": 7.151951345821544,
-     "ros_src": "season blend / 17",
-     "w": null,
-     "w1": 7.151951345821544
-    }
-   },
-   "when": "claim by Tue night ($1)"
+   "when": "before kickoff Mon Oct 19, 8:15 pm ET"
   }
  ],
  "notes": [],
  "rejected": [
   {
-   "J": 2.282,
-   "key": "DST:IND",
-   "name": "Indianapolis Colts",
-   "reason": "J +2.28 < 3.0 at its best spot (Vikings) \u2014 J +2.28 = 1.0x+5.16 (wk W) + 0.8x-0.31 (W+1) + 0.8x-2.65 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 0.00 acq - 0.01 FAB($1) - 0.50 churn",
-   "reasons": [
-    "DEF weekly upgrade: Indianapolis Colts 8.8 vs starter Jets 3.7"
-   ]
-  },
-  {
-   "J": 1.653,
-   "key": "DST:SF",
-   "name": "San Francisco 49ers",
-   "reason": "J +1.65 < 3.0 at its best spot (Vikings) \u2014 J +1.65 = 1.0x+3.75 (wk W) + 0.8x+0.30 (W+1) + 0.8x-2.29 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 0.00 acq - 0.01 FAB($1) - 0.50 churn",
-   "reasons": [
-    "DEF weekly upgrade: San Francisco 49ers 7.4 vs starter Jets 3.7",
-    "week-7 DEF stream: San Francisco 49ers 7.5 vs your best 7.2 (W line re-scored on the week-7 opponent implied total 21.5)"
-   ]
-  },
-  {
-   "J": -0.402,
+   "J": -0.392,
    "key": "cade otton",
    "name": "Cade Otton",
-   "reason": "J -0.40 < 3.0 at its best spot (Jauan Jennings) \u2014 J -0.40 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+1.08 (bench boom) - 0.00 acq - 0.01 FAB($1) - 0.50 churn",
+   "reason": "J -0.39 < 3.0 at its best spot (Jauan Jennings) \u2014 J -0.39 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+1.08 (bench boom) - 0.00 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
     "breakout tier B: 92% snaps, 16% targets, 19% air yds; no market line yet (Sleeper receiving yds 31); held (wk4: 94% snaps, 22% targets, 0% air yds)"
    ]
   },
   {
-   "J": -0.468,
+   "J": -0.458,
    "key": "charlie kolar",
    "name": "Charlie Kolar",
    "reason": "best spot Jauan Jennings: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
@@ -369,16 +270,34 @@
    ]
   },
   {
-   "J": -0.634,
+   "J": 3.062,
+   "key": "cj donaldson",
+   "name": "CJ Donaldson",
+   "reason": "its best spot (Jauan Jennings) went to Pierre Strong at higher value",
+   "reasons": [
+    "week-7 hole at RB2 (James Cook III on bye, Josh Jacobs CEL); CJ Donaldson 3.9 is the best free RB on week-7 values"
+   ]
+  },
+  {
+   "J": -0.64,
    "key": "corey kiner",
    "name": "Corey Kiner",
-   "reason": "jointly with the rest of the plan it adds only J -0.63 (< 3.0) \u2014 J -0.63 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x-0.34 (bench boom) - 0.00 acq - 0.10 FAB($10) - 0.50 churn",
+   "reason": "jointly with the rest of the plan it adds only J -0.64 (< 3.0) \u2014 J -0.64 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x-0.30 (bench boom) - 0.00 acq - 0.11 FAB($11) - 0.50 churn",
    "reasons": [
     "week-7 hole at RB2 (James Cook III on bye, Josh Jacobs CEL); Corey Kiner 5.1 is the best free RB on week-7 values"
    ]
   },
   {
-   "J": -0.422,
+   "J": 3.081,
+   "key": "dare ogunbowale",
+   "name": "Dare Ogunbowale",
+   "reason": "its best spot (Jauan Jennings) went to Pierre Strong at higher value",
+   "reasons": [
+    "week-7 hole at RB2 (James Cook III on bye, Josh Jacobs CEL); Dare Ogunbowale 3.9 is the best free RB on week-7 values"
+   ]
+  },
+  {
+   "J": -0.416,
    "key": "dawson knox",
    "name": "Dawson Knox",
    "reason": "best spot Jauan Jennings: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
@@ -387,7 +306,7 @@
    ]
   },
   {
-   "J": -0.51,
+   "J": -0.5,
    "key": "greg dulcich",
    "name": "Greg Dulcich",
    "reason": "best spot Jauan Jennings: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
@@ -396,7 +315,7 @@
    ]
   },
   {
-   "J": -0.47,
+   "J": -0.46,
    "key": "isaiah bond",
    "name": "Isaiah Bond",
    "reason": "best spot Jauan Jennings: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
@@ -405,12 +324,12 @@
    ]
   },
   {
-   "J": 0.753,
+   "J": 0.558,
    "key": "jake ferguson",
    "name": "Jake Ferguson",
    "reason": "best spot Jauan Jennings: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
-    "breakout tier B: 83% snaps, 14% targets, 2% air yds; Kalshi receiving yds 32 vs Sleeper 31 (+3%) \u2014 a part-time line, under the 35 starter floor"
+    "breakout tier B: 83% snaps, 14% targets, 2% air yds; Kalshi receiving yds 31 vs Sleeper 31 (+1%) \u2014 a part-time line, under the 35 starter floor"
    ]
   },
   {
@@ -432,25 +351,34 @@
    ]
   },
   {
-   "J": 3.441,
+   "J": -1.06,
    "key": "kaleb johnson",
    "name": "Kaleb Johnson",
-   "reason": "its best spot (Jauan Jennings) went to another move at higher value",
+   "reason": "jointly with the rest of the plan it adds only J -1.06 (< 3.0) \u2014 J -1.06 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x-0.60 (rest, mean of wks 8-17) + 0.1x+0.29 (bench boom) - 0.00 acq - 0.11 FAB($11) - 0.50 churn",
    "reasons": [
     "week-7 hole at RB2 (James Cook III on bye, Josh Jacobs CEL); Kaleb Johnson 4.4 is the best free RB on week-7 values"
    ]
   },
   {
-   "J": -0.45,
+   "J": -0.433,
    "key": "laquon treadwell",
    "name": "Laquon Treadwell",
-   "reason": "J -0.45 < 3.0 at its best spot (Jauan Jennings) \u2014 J -0.45 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+0.60 (bench boom) - 0.00 acq - 0.01 FAB($1) - 0.50 churn",
+   "reason": "J -0.43 < 3.0 at its best spot (Jauan Jennings) \u2014 J -0.43 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+0.67 (bench boom) - 0.00 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
     "breakout tier B: 80% snaps, 18% targets, 14% air yds; no market line yet (Sleeper receiving yds 10); held (wk4: 85% snaps, 18% targets, 34% air yds)"
    ]
   },
   {
-   "J": -0.48,
+   "J": -0.17,
+   "key": "mark andrews",
+   "name": "Mark Andrews",
+   "reason": "best spot Jauan Jennings: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
+   "reasons": [
+    "breakout tier B: 72% snaps, 19% targets, 15% air yds; no market line yet (Sleeper receiving yds 38)"
+   ]
+  },
+  {
+   "J": -0.47,
    "key": "marquez valdes scantling",
    "name": "Marquez Valdes-Scantling",
    "reason": "best spot Jauan Jennings: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
@@ -459,36 +387,26 @@
    ]
   },
   {
-   "J": -0.423,
-   "key": "pierre strong",
-   "name": "Pierre Strong",
-   "reason": "jointly with the rest of the plan it adds only J -0.42 (< 3.0) \u2014 J -0.42 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+1.77 (bench boom) - 0.00 acq - 0.10 FAB($10) - 0.50 churn",
-   "reasons": [
-    "week-7 hole at RB2 (James Cook III on bye, Josh Jacobs CEL); Pierre Strong 5.4 is the best free RB on week-7 values"
-   ]
-  },
-  {
-   "J": 3.274,
+   "J": 3.027,
    "key": "roschon johnson",
    "name": "Roschon Johnson",
-   "reason": "its best spot (Jauan Jennings) went to another move at higher value",
+   "reason": "best spot Jauan Jennings: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
-    "breakout tier B: 39% snaps, 46% of RB touches; no market line yet (Sleeper rushing yds 17)",
-    "week-7 hole at RB2 (James Cook III on bye, Josh Jacobs CEL); Roschon Johnson 4.2 is the best free RB on week-7 values"
+    "breakout tier B: 39% snaps, 46% of RB touches; no market line yet (Sleeper rushing yds 17)"
    ]
   },
   {
-   "J": 3.301,
+   "J": 3.394,
    "key": "samaje perine",
    "name": "Samaje Perine",
-   "reason": "its best spot (Jauan Jennings) went to another move at higher value",
+   "reason": "its best spot (Jauan Jennings) went to Pierre Strong at higher value",
    "reasons": [
     "breakout tier B: 51% snaps, 48% of RB touches; no market line yet, and no Sleeper line either",
     "week-7 hole at RB2 (James Cook III on bye, Josh Jacobs CEL); Samaje Perine 4.2 is the best free RB on week-7 values"
    ]
   },
   {
-   "J": -0.446,
+   "J": -0.436,
    "key": "treylon burks",
    "name": "Treylon Burks",
    "reason": "best spot Jauan Jennings: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
@@ -497,10 +415,10 @@
    ]
   },
   {
-   "J": -1.711,
+   "J": -0.253,
    "key": "ty tracy",
    "name": "Tyrone Tracy",
-   "reason": "jointly with the rest of the plan it adds only J -1.71 (< 3.0) \u2014 J -1.71 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x-0.60 (rest, mean of wks 8-17) + 0.1x+1.67 (bench boom) - 0.00 acq - 0.90 FAB($10) - 0.50 churn",
+   "reason": "jointly with the rest of the plan it adds only J -0.25 (< 3.0) \u2014 J -0.25 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.14 (rest, mean of wks 8-17) + 0.1x+1.33 (bench boom) - 0.00 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
     "week-7 hole at RB2 (James Cook III on bye, Josh Jacobs CEL); Tyrone Tracy 5.3 is the best free RB on week-7 values"
    ]
@@ -510,8 +428,8 @@
   {
    "id": "drop:DST:MIN",
    "kind": "swap",
-   "label": "Vikings",
-   "taken_by": "Baltimore Ravens",
+   "label": "Minnesota",
+   "taken_by": null,
    "tier": 2
   },
   {
@@ -532,7 +450,7 @@
    "id": "drop:jauan jennings",
    "kind": "drop",
    "label": "Jauan Jennings",
-   "taken_by": null,
+   "taken_by": "Pierre Strong",
    "tier": 3
   },
   {
@@ -567,7 +485,7 @@
    "id": "drop:xavier hutchinson",
    "kind": "drop",
    "label": "Xavier Hutchinson",
-   "taken_by": "Dameon Pierce",
+   "taken_by": null,
    "tier": 3
   }
  ],
@@ -584,9 +502,9 @@
   "W_REST": 0.8
  },
  "winprob": {
-  "mean": 143.3907065237124,
+  "mean": 140.61819778983158,
   "note": "sampled on the planner's final lineup",
-  "p_med": 0.808,
-  "p_opp": 0.6676666666666666
+  "p_med": 0.7735,
+  "p_opp": 0.6443333333333333
  }
 }

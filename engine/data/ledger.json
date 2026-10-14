@@ -9783,10 +9783,11 @@
   ],
   "verdict": "WARN",
   "week": 6,
-  "status": "proposed",
+  "status": "executed",
   "provisional": false,
   "resolves_at": null,
-  "reverses": "89619a93"
+  "reverses": "89619a93",
+  "status_ts": "2026-10-14T07:09-04:00"
  },
  {
   "id": "8b62a60e",
@@ -9821,10 +9822,11 @@
   ],
   "verdict": "WARN",
   "week": 6,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": "2026-10-18T13:00-04:00",
-  "reverses": "9c184e71"
+  "reverses": "9c184e71",
+  "superseded_by": "47a2e5ad"
  },
  {
   "id": "2814d4e2",
@@ -9840,10 +9842,11 @@
   ],
   "verdict": "WARN",
   "week": 6,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": true,
   "resolves_at": "2026-10-18T13:00-04:00",
-  "reverses": "c3f42089"
+  "reverses": "c3f42089",
+  "superseded_by": "d08e5d67"
  },
  {
   "id": "0f39d260",
@@ -9881,6 +9884,100 @@
   "status": "proposed",
   "provisional": false,
   "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "c3d6fa38",
+  "ts": "2026-10-14T07:09-04:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "San Francisco",
+  "call": "start San Francisco at DEF",
+  "detail": "over empty +7.46",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "proposed",
+  "provisional": true,
+  "resolves_at": "2026-10-19T20:15-04:00",
+  "reverses": null
+ },
+ {
+  "id": "94c79da8",
+  "ts": "2026-10-14T07:09-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Tennessee Titans",
+  "call": "stream Tennessee Titans for week 7, drop San Francisco",
+  "detail": "DEF: TEN 19.0 vs yours San Francisco 21.5 \u2014 edge 2.5 implied pts",
+  "evidence": [
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "d08e5d67",
+  "ts": "2026-10-14T07:09-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Denzel Boston",
+  "call": "start Denzel Boston at W/R",
+  "detail": "over Ja'Marr Chase +9.77",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": "2026-10-18T13:00-04:00",
+  "reverses": "2814d4e2"
+ },
+ {
+  "id": "47a2e5ad",
+  "ts": "2026-10-14T07:09-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Rome Odunze",
+  "call": "start Rome Odunze at W/R/T",
+  "detail": "over Braelon Allen +3.29",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "proposed",
+  "provisional": true,
+  "resolves_at": "2026-10-18T13:00-04:00",
+  "reverses": "afd0edb2"
+ },
+ {
+  "id": "4b7a9f91",
+  "ts": "2026-10-14T07:09-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Kansas City",
+  "call": "start Kansas City at DEF",
+  "detail": "over Houston +4.22",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "PASS",
+  "week": 6,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": "2026-10-18T16:25-04:00",
   "reverses": null
  }
 ]
