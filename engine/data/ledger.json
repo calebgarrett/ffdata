@@ -9477,10 +9477,11 @@
   ],
   "verdict": "WARN",
   "week": 6,
-  "status": "proposed",
+  "status": "executed",
   "provisional": true,
   "resolves_at": "2026-10-18T16:25-04:00",
-  "reverses": null
+  "reverses": null,
+  "status_ts": "2026-10-14T14:10-04:00"
  },
  {
   "id": "73079aed",
@@ -9726,10 +9727,11 @@
   ],
   "verdict": "WARN",
   "week": 6,
-  "status": "proposed",
+  "status": "executed",
   "provisional": true,
   "resolves_at": "2026-10-19T20:15-04:00",
-  "reverses": "1bd96416"
+  "reverses": "1bd96416",
+  "status_ts": "2026-10-14T14:10-04:00"
  },
  {
   "id": "427b6859",
@@ -9862,10 +9864,11 @@
   ],
   "verdict": "WARN",
   "week": 6,
-  "status": "proposed",
+  "status": "executed",
   "provisional": false,
   "resolves_at": "2026-10-18T16:05-04:00",
-  "reverses": "8b62a60e"
+  "reverses": "8b62a60e",
+  "status_ts": "2026-10-14T14:10-04:00"
  },
  {
   "id": "2d53dd62",
@@ -9979,10 +9982,11 @@
   ],
   "verdict": "PASS",
   "week": 6,
-  "status": "proposed",
+  "status": "executed",
   "provisional": false,
   "resolves_at": "2026-10-18T16:25-04:00",
-  "reverses": null
+  "reverses": null,
+  "status_ts": "2026-10-14T14:10-04:00"
  },
  {
   "id": "59d6b0b7",
@@ -10016,10 +10020,11 @@
   ],
   "verdict": "WARN",
   "week": 6,
-  "status": "proposed",
+  "status": "executed",
   "provisional": false,
   "resolves_at": "2026-10-18T13:00-04:00",
-  "reverses": "47a2e5ad"
+  "reverses": "47a2e5ad",
+  "status_ts": "2026-10-14T14:10-04:00"
  },
  {
   "id": "91d7a47e",
@@ -10035,9 +10040,83 @@
   ],
   "verdict": "WARN",
   "week": 6,
+  "status": "superseded",
+  "provisional": true,
+  "resolves_at": "2026-10-18T13:00-04:00",
+  "reverses": "d08e5d67",
+  "superseded_by": "0e89c559"
+ },
+ {
+  "id": "0e89c559",
+  "ts": "2026-10-14T14:10-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Denzel Boston",
+  "call": "start Denzel Boston at W/R",
+  "detail": "over Rome Odunze +0.60",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 6,
   "status": "proposed",
   "provisional": true,
   "resolves_at": "2026-10-18T13:00-04:00",
-  "reverses": "d08e5d67"
+  "reverses": "91d7a47e"
+ },
+ {
+  "id": "65704161",
+  "ts": "2026-10-14T14:10-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "DJ Moore",
+  "call": "add DJ Moore (WR) over Rome Odunze",
+  "detail": "+4.41/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 6,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "8a6734ed",
+  "ts": "2026-10-14T14:10-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Rashee Rice",
+  "call": "add Rashee Rice (WR) over Rome Odunze",
+  "detail": "+4.18/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 6,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "e614d26d",
+  "ts": "2026-10-14T14:10-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Jalen Coker",
+  "call": "add Jalen Coker (WR) over Rome Odunze",
+  "detail": "+2.77/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 6,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
  }
 ]
