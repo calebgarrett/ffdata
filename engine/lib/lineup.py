@@ -129,10 +129,12 @@ def solve(state, proj, actuals=None):
             sit_out = bool(out) and (out.get('designation') in UNUSABLE
                                      # or he has no game this week (bye): the slot scores 0 — a hole, not an edge (10-06)
                                      or (out.get('kick') is None and not (out.get('pts') or 0)))
+            hole = out is None and c is None            # an EMPTY slot: filling it is firm whatever the market says (10-14: DEF empty after a drop)
             changes.append(dict(slot=s, start=o, sit=out, gain=gain,
-                                provisional=(not sit_out) and ((gain < NOISE) or not o['ready'] or (bool(out) and not out.get('ready', True)) or bool(o['line'].get('partial')) or q_zero),
+                                provisional=(not sit_out) and (not hole) and ((gain < NOISE) or not o['ready'] or (bool(out) and not out.get('ready', True)) or bool(o['line'].get('partial')) or q_zero),
                                 reason=((f"{out['player']} is {out['designation']} — the slot scores nothing until he is replaced" if out.get('designation') in UNUSABLE
                                          else f"{out['player']} has no game this week (bye) — the slot scores nothing until he is replaced") if sit_out else
+                                        'the slot is empty — it scores nothing until someone is in it' if hole else
                                         f"{out['player']} is {out['designation']} and projected 0.00 — the source assumes he is OUT; if he is active he keeps the slot" if q_zero else ''),
                                 phase=o['phase'], kick=o['kick']))
     tot = lambda d: sum((r['pts'] or 0) for r in d.values() if r)      # the pin bonus is not in r['pts'], so totals are honest

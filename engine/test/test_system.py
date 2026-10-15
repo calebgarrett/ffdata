@@ -25,8 +25,10 @@ case('kickoff 00:15Z parses to Thu 8:15 pm ET', k.strftime('%a %H:%M') == 'Thu 2
 
 # 2. State: BSB slots numbered, nobody dropped from the current lineup.
 b = S.load('BSB')
-case('BSB current lineup has 10 slots', len(b.current_lineup()) == 10, str(sorted(b.current_lineup())))
-case('BSB: the DEF slot holds a DEF', bool(b.current_lineup().get('DEF')) and b.current_lineup()['DEF']['pos'] == 'DEF')
+# an EMPTY slot is a legal state (10-14: the DEF slot was empty after the Jets were dropped
+# and the 49ers landed on the bench) — the engine must run and name the hole, not refuse
+case('BSB current lineup: at most 10 slots, every one a real slot name', len(b.current_lineup()) <= 10 and set(b.current_lineup()) <= set(b.cfg.slots), str(sorted(b.current_lineup())))
+case('BSB: every filled slot holds an eligible player', all(r['elig'] & b.cfg.accepts[sl] for sl, r in b.current_lineup().items()), str({sl: r['pos'] for sl, r in b.current_lineup().items()}))
 h = S.load('HH')
 # The suite tests MECHANICS against the live rosters, not the calendar: the pump has
 # no pull between Thursday afternoon and Saturday morning, so a Friday-night run
@@ -46,7 +48,7 @@ case('state knows its age', S.load('BSB').age_h is not None and S.load('BSB').ag
 # 3. Ledger: already-set detection and dedupe (in-memory, do not pollute the real ledger)
 import tempfile, os
 real = L.PATH; L.PATH = os.path.join(tempfile.mkdtemp(), 'ledger.json')
-_cur_def = next((r['player'] for r in b.starters() if r['pos'] == 'DEF'), '49ers')     # whoever is in the slot now (10-01)
+_cur_def = next((r['player'] for r in b.starters() if r['pos'] == 'DEF'), None) or b.starters()[0]['player']     # whoever starts now (10-01; any starter when DEF is empty, 10-14)
 e = L.propose('BSB', 'start', _cur_def, f'start {_cur_def} DEF', state=b)
 case('ledger files a start of an already-starting player as already_set', e['status'] == 'already_set', _cur_def)
 # pick a name guaranteed unrostered in the LIVE snapshot, so the test does not
@@ -145,6 +147,8 @@ case('BSB lineup diff: the man each newcomer sits is eligible for that slot', no
 case('HH lineup diff: the man each newcomer sits is eligible for that slot', not _elig_pairs(lh, h), str(_elig_pairs(lh, h)))
 _cur_h = {r['key'] for r in h.starters()}
 case('HH lineup diff: every change brings in a bench player (a D<->LB swap of two starters is a permutation)', all(c['start']['key'] not in _cur_h for c in lh['changes']))
+# an empty slot is a hole: filling it is never provisional (10-14: 'start San Francisco over empty [PROVISIONAL]')
+case('BSB: a change into an EMPTY slot is firm', all(not c['provisional'] for c in lu['changes'] if c['sit'] is None and lu['current'].get(c['slot']) is None), str([(c['slot'], c['provisional']) for c in lu['changes'] if c['sit'] is None]))
 case('HH: every change inside the noise band is provisional',
      all(c['provisional'] for c in lh['changes'] if c['gain'] < LU.NOISE))
 
@@ -259,8 +263,12 @@ _gj = _wb.gate_drop(_jen)
 case('drop gate on a tagged player: the tag is a WARN that counts for nothing, value is his season number, never 0',
      any(g == 'G13-injury' and st == 'WARN' for g, st, _ in _gj.checks) and not any(g == 'G13-injury' and st == 'BLOCK' for g, st, _ in _gj.checks))
 _bench_wr = sorted((r for r in b.mine if r['slot'] == 'BN' and r['pos'] == 'WR' and r['key'] not in _wb.hold), key=lambda r: _wb.season.get(r['key'], {}).get('pts') or 0)
+# the live premise: Jennings carries a tag today AND a healthy bench WR is worth less; when
+# neither holds (10-14: no tag, and he IS the cheapest bench WR) the case does not apply
+_jen_live = b.row_of('Jauan Jennings') or {}
+_jen_premise = bool(_jen_live) and (_jen_live.get('designation') or 'none') not in ('', 'none') and _bench_wr and _bench_wr[0]['player'] != 'Jauan Jennings'
 case('a tagged player is never the drop while a lower-valued healthy bench player exists (Jennings 101.6 vs Douglas 77.5)',
-     all(x['move'].get('drop') != 'Jauan Jennings' for x in _bb['rows']) if _bench_wr and _bench_wr[0]['player'] != 'Jauan Jennings' else True)
+     all(x['move'].get('drop') != 'Jauan Jennings' for x in _bb['rows']) if _jen_premise else True)
 _dell = dict(key='tank dell', player='Tank Dell', pos='WR', designation='IR-R', pts=0.0, slot='BN', elig={'WR'})
 case('a long-term tag WITH a registry entry (Dell IR-R, drop_ok) is still a dead spot', _wb.dead_spot(_dell))# 10. Trade market and FAB: sides never cross rosters, the week's gaps are
 #     persisted, and the FAB bands come from the log, not a guess.
@@ -522,6 +530,17 @@ case('stale page: a logged drop the page still shows is removed', 'old guy' not 
 case('stale page: an add of a player the page has elsewhere trusts the page (trades are not in the log)', _own40.get('kept man') == 'B')
 case('stale page: the replay starts at the previous NFL week, so an old add with no logged drop stays out', 'ancient add' not in _own40)
 case('stale page: the change list is the net difference', sorted(_c40) == ['A +New Guy', 'A -Old Guy'], str(_c40))
+# 40b. A renamed team (10-15: 'Bad News Bears' -> 'WINdianapolis'): the log names him as he
+#      was called then. Resolve by team id; a name the page does not know never becomes a
+#      13th owner (it created a phantom one-player roster and refused the runner twice).
+_rows40b = [dict(owner='WINdianapolis', manager='WINdianapolis', slot='BN', player='Some Guy', pos='WR', nfl='CAR', designation='none', team_id='12'),
+            dict(owner='OVERKILL', manager='OVERKILL', slot='WR', player='My Guy', pos='WR', nfl='DET', designation='none', team_id='7')]
+_log40b = [dict(datetime=_d40, team='Bad News Bears', action='Add', player='Renamed Add', pos='WR', nfl='GB', team_id='12'),
+           dict(datetime=_d40, team='Ghost Team', action='Add', player='Ghost Add', pos='WR', nfl='GB', team_id='')]
+_r40b, _c40b = S.reconcile('BSB', _rows40b, _log40b)
+_own40b = {N.key(r['player']): r['owner'] for r in _r40b}
+case('renamed team: a logged add under the old name lands on the current owner via team id', _own40b.get('renamed add') == 'WINdianapolis', str(_own40b))
+case('renamed team: an owner the page does not know never creates a phantom roster', set(r['owner'] for r in _r40b) == {'WINdianapolis', 'OVERKILL'}, str(set(r['owner'] for r in _r40b)))
 _hl = S.latest('HH')
 case('live HH state: no player the log shows added by another team since last Tuesday is a free agent',
      all(_hl.owner_of(t['player']) for t in __import__('csv').DictReader(open('/home/claude/bsb2/data/hh_transactions.csv'))

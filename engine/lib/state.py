@@ -154,8 +154,19 @@ def reconcile(league, rows, log_rows=None, now=None):
     orig = [dict(r) for r in rows]
     rows = [dict(r) for r in rows]
     changes = []
+    # a manager can rename his team mid-season; the log names him as he was called at
+    # the time. Resolve by team id when the log has it, else by the one owner the page
+    # knows; a name the page does not know never creates a 13th owner (10-15: 'Bad News
+    # Bears' -> WINdianapolis left a phantom one-player roster and refused the runner)
+    owners = {r['owner'] for r in rows}
+    id2owner = {str(r.get('team_id')): r['owner'] for r in rows if r.get('team_id')}
+    unknown = set()
     for t in log:
         k = key(t['player']); owner = t['team']
+        if owner not in owners:
+            owner = id2owner.get(str(t.get('team_id') or '')) or owner
+        if owner not in owners:
+            unknown.add(t['team']); continue
         holders = [r for r in rows if key(r['player']) == k]
         if t['action'] == 'Add':
             if holders: continue
@@ -254,7 +265,7 @@ def save(league, rows, pulled, note='', others_pulled=None, records=None):
     whole league (Fields 09-23: an add called 'unrostered' against a 3-day-old
     league read, after a waiver run — he had been claimed)."""
     p = os.path.join(_snap_dir(league), C.now().strftime('%Y-%m-%dT%H%M') + '.json')
-    RAW = ('owner','manager','slot','player','pos','nfl','designation')
+    RAW = ('owner','manager','slot','player','pos','nfl','designation','team_id')
     clean = [{k: r.get(k, '') for k in RAW} for r in rows]
     json.dump({'league': league, 'pulled': pulled, 'others_pulled': others_pulled or pulled, 'note': note, 'records': records or {}, 'rows': clean}, open(p, 'w'), indent=0)
     return p

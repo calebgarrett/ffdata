@@ -9305,10 +9305,11 @@
   ],
   "verdict": "WARN",
   "week": 6,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": "2026-10-18T20:20-04:00",
-  "reverses": null
+  "reverses": null,
+  "superseded_by": "ca103115"
  },
  {
   "id": "26a36d6c",
@@ -9323,10 +9324,11 @@
   ],
   "verdict": "WARN",
   "week": 6,
-  "status": "proposed",
+  "status": "executed",
   "provisional": false,
   "resolves_at": "2026-10-18T13:00-04:00",
-  "reverses": null
+  "reverses": null,
+  "status_ts": "2026-10-13T18:36-04:00"
  },
  {
   "id": "e702bfb6",
@@ -9342,10 +9344,11 @@
   ],
   "verdict": "WARN",
   "week": 6,
-  "status": "proposed",
+  "status": "executed",
   "provisional": false,
   "resolves_at": "2026-10-18T13:00-04:00",
-  "reverses": null
+  "reverses": null,
+  "status_ts": "2026-10-13T18:36-04:00"
  },
  {
   "id": "d125aab5",
@@ -9416,10 +9419,11 @@
   ],
   "verdict": "WARN",
   "week": 6,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": "2026-10-18T13:00-04:00",
-  "reverses": null
+  "reverses": null,
+  "superseded_by": "9c184e71"
  },
  {
   "id": "ec9769c4",
@@ -9434,10 +9438,11 @@
   ],
   "verdict": "WARN",
   "week": 6,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": true,
   "resolves_at": "2026-10-18T13:00-04:00",
-  "reverses": null
+  "reverses": null,
+  "superseded_by": "c3f42089"
  },
  {
   "id": "c67d408e",
@@ -9452,10 +9457,11 @@
   ],
   "verdict": "WARN",
   "week": 6,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": "2026-10-18T16:05-04:00",
-  "reverses": null
+  "reverses": null,
+  "superseded_by": "4da0d227"
  },
  {
   "id": "5e174065",
@@ -9471,10 +9477,11 @@
   ],
   "verdict": "WARN",
   "week": 6,
-  "status": "proposed",
+  "status": "executed",
   "provisional": true,
   "resolves_at": "2026-10-18T16:25-04:00",
-  "reverses": null
+  "reverses": null,
+  "status_ts": "2026-10-14T14:10-04:00"
  },
  {
   "id": "73079aed",
@@ -9527,6 +9534,587 @@
   "verdict": "WARN",
   "week": 6,
   "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "ca103115",
+  "ts": "2026-10-13T14:03-04:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Ryan Flournoy",
+  "call": "start Ryan Flournoy at WR3",
+  "detail": "over Malik Washington +7.98",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "executed",
+  "provisional": false,
+  "resolves_at": "2026-10-18T20:20-04:00",
+  "reverses": "20a502da",
+  "status_ts": "2026-10-13T18:36-04:00"
+ },
+ {
+  "id": "4da0d227",
+  "ts": "2026-10-13T14:03-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Matthew Stafford",
+  "call": "start Matthew Stafford at QB",
+  "detail": "over Ja'Marr Chase +41.44",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "superseded",
+  "provisional": false,
+  "resolves_at": "2026-10-18T16:05-04:00",
+  "reverses": "c67d408e",
+  "superseded_by": "47e29161"
+ },
+ {
+  "id": "1bd96416",
+  "ts": "2026-10-13T14:03-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Nick Cross",
+  "call": "start Nick Cross at DB",
+  "detail": "over Kam Curl +2.10",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "superseded",
+  "provisional": true,
+  "resolves_at": "2026-10-19T20:15-04:00",
+  "reverses": null,
+  "superseded_by": "bd1acf4c"
+ },
+ {
+  "id": "e1f3cfa8",
+  "ts": "2026-10-13T18:36-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Indianapolis Colts",
+  "call": "add Indianapolis Colts (DEF) over New York",
+  "detail": "+5.21/wk",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "superseded",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null,
+  "superseded_by": "427b6859"
+ },
+ {
+  "id": "869172a2",
+  "ts": "2026-10-13T18:36-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Baltimore Ravens",
+  "call": "add Baltimore Ravens (DEF) over New York",
+  "detail": "+5.15/wk",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "superseded",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null,
+  "superseded_by": "70f6eec5"
+ },
+ {
+  "id": "89619a93",
+  "ts": "2026-10-13T18:36-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "San Francisco 49ers",
+  "call": "add San Francisco 49ers (DEF) over New York",
+  "detail": "+3.80/wk",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "superseded",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null,
+  "superseded_by": "29d08bdb"
+ },
+ {
+  "id": "c3f42089",
+  "ts": "2026-10-13T18:36-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Denzel Boston",
+  "call": "start Denzel Boston at W/R",
+  "detail": "over Ja'Marr Chase +9.81",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "superseded",
+  "provisional": false,
+  "resolves_at": "2026-10-18T13:00-04:00",
+  "reverses": "ec9769c4",
+  "superseded_by": "2814d4e2"
+ },
+ {
+  "id": "9c184e71",
+  "ts": "2026-10-13T18:36-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Rome Odunze",
+  "call": "start Rome Odunze at W/R/T",
+  "detail": "over Braelon Allen +3.25",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "superseded",
+  "provisional": true,
+  "resolves_at": "2026-10-18T13:00-04:00",
+  "reverses": "ea69b42a",
+  "superseded_by": "afd0edb2"
+ },
+ {
+  "id": "47e29161",
+  "ts": "2026-10-13T18:36-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Matthew Stafford",
+  "call": "start Matthew Stafford at Q/W/R/T",
+  "detail": "over Jared Goff +40.85",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "superseded",
+  "provisional": false,
+  "resolves_at": "2026-10-18T16:05-04:00",
+  "reverses": "4da0d227",
+  "superseded_by": "8b62a60e"
+ },
+ {
+  "id": "bd1acf4c",
+  "ts": "2026-10-13T18:36-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Nick Cross",
+  "call": "start Nick Cross at S",
+  "detail": "over Kam Curl +2.23",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "executed",
+  "provisional": true,
+  "resolves_at": "2026-10-19T20:15-04:00",
+  "reverses": "1bd96416",
+  "status_ts": "2026-10-14T14:10-04:00"
+ },
+ {
+  "id": "427b6859",
+  "ts": "2026-10-13T21:48-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Indianapolis Colts",
+  "call": "add Indianapolis Colts (DEF) over Jets",
+  "detail": "+5.16/wk",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "e1f3cfa8"
+ },
+ {
+  "id": "70f6eec5",
+  "ts": "2026-10-13T21:48-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Baltimore Ravens",
+  "call": "add Baltimore Ravens (DEF) over Jets",
+  "detail": "+5.10/wk",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "869172a2"
+ },
+ {
+  "id": "29d08bdb",
+  "ts": "2026-10-13T21:48-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "San Francisco 49ers",
+  "call": "add San Francisco 49ers (DEF) over Jets",
+  "detail": "+3.77/wk",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "executed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "89619a93",
+  "status_ts": "2026-10-14T07:09-04:00"
+ },
+ {
+  "id": "8b62a60e",
+  "ts": "2026-10-13T21:48-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Matthew Stafford",
+  "call": "start Matthew Stafford at QB",
+  "detail": "over Jared Goff +40.85",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "superseded",
+  "provisional": false,
+  "resolves_at": "2026-10-18T16:05-04:00",
+  "reverses": "47e29161",
+  "superseded_by": "0f39d260"
+ },
+ {
+  "id": "afd0edb2",
+  "ts": "2026-10-14T03:29-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Rome Odunze",
+  "call": "start Rome Odunze at W/R",
+  "detail": "over Ja'Marr Chase +9.81",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "superseded",
+  "provisional": false,
+  "resolves_at": "2026-10-18T13:00-04:00",
+  "reverses": "9c184e71",
+  "superseded_by": "47a2e5ad"
+ },
+ {
+  "id": "2814d4e2",
+  "ts": "2026-10-14T03:29-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Denzel Boston",
+  "call": "start Denzel Boston at W/R/T",
+  "detail": "over Braelon Allen +3.50",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "superseded",
+  "provisional": true,
+  "resolves_at": "2026-10-18T13:00-04:00",
+  "reverses": "c3f42089",
+  "superseded_by": "d08e5d67"
+ },
+ {
+  "id": "0f39d260",
+  "ts": "2026-10-14T03:29-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Matthew Stafford",
+  "call": "start Matthew Stafford at Q/W/R/T",
+  "detail": "over Jared Goff +40.12",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "executed",
+  "provisional": false,
+  "resolves_at": "2026-10-18T16:05-04:00",
+  "reverses": "8b62a60e",
+  "status_ts": "2026-10-14T14:10-04:00"
+ },
+ {
+  "id": "2d53dd62",
+  "ts": "2026-10-14T03:29-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Cam Ward",
+  "call": "add Cam Ward (QB) over Jared Goff",
+  "detail": "+31.00/wk",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "c3d6fa38",
+  "ts": "2026-10-14T07:09-04:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "San Francisco",
+  "call": "start San Francisco at DEF",
+  "detail": "over empty +7.46",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "executed",
+  "provisional": true,
+  "resolves_at": "2026-10-19T20:15-04:00",
+  "reverses": null,
+  "status_ts": "2026-10-14T09:04-04:00"
+ },
+ {
+  "id": "94c79da8",
+  "ts": "2026-10-14T07:09-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Tennessee Titans",
+  "call": "stream Tennessee Titans for week 7, drop San Francisco",
+  "detail": "DEF: TEN 19.0 vs yours San Francisco 21.5 \u2014 edge 2.5 implied pts",
+  "evidence": [
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "superseded",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null,
+  "superseded_by": "59d6b0b7"
+ },
+ {
+  "id": "d08e5d67",
+  "ts": "2026-10-14T07:09-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Denzel Boston",
+  "call": "start Denzel Boston at W/R",
+  "detail": "over Ja'Marr Chase +9.77",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "superseded",
+  "provisional": false,
+  "resolves_at": "2026-10-18T13:00-04:00",
+  "reverses": "2814d4e2",
+  "superseded_by": "91d7a47e"
+ },
+ {
+  "id": "47a2e5ad",
+  "ts": "2026-10-14T07:09-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Rome Odunze",
+  "call": "start Rome Odunze at W/R/T",
+  "detail": "over Braelon Allen +3.29",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "superseded",
+  "provisional": true,
+  "resolves_at": "2026-10-18T13:00-04:00",
+  "reverses": "afd0edb2",
+  "superseded_by": "b777d4dc"
+ },
+ {
+  "id": "4b7a9f91",
+  "ts": "2026-10-14T07:09-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Kansas City",
+  "call": "start Kansas City at DEF",
+  "detail": "over Houston +4.22",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "PASS",
+  "week": 6,
+  "status": "executed",
+  "provisional": false,
+  "resolves_at": "2026-10-18T16:25-04:00",
+  "reverses": null,
+  "status_ts": "2026-10-14T14:10-04:00"
+ },
+ {
+  "id": "59d6b0b7",
+  "ts": "2026-10-14T09:04-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Tennessee Titans",
+  "call": "stream Tennessee Titans for week 7, drop 49ers",
+  "detail": "DEF: TEN 19.0 vs yours 49ers 21.5 \u2014 edge 2.5 implied pts",
+  "evidence": [
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "94c79da8"
+ },
+ {
+  "id": "b777d4dc",
+  "ts": "2026-10-14T09:04-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Rome Odunze",
+  "call": "start Rome Odunze at W/R",
+  "detail": "over Ja'Marr Chase +10.17",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "executed",
+  "provisional": false,
+  "resolves_at": "2026-10-18T13:00-04:00",
+  "reverses": "47a2e5ad",
+  "status_ts": "2026-10-14T14:10-04:00"
+ },
+ {
+  "id": "91d7a47e",
+  "ts": "2026-10-14T09:04-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Denzel Boston",
+  "call": "start Denzel Boston at W/R/T",
+  "detail": "over Braelon Allen +2.61",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "superseded",
+  "provisional": true,
+  "resolves_at": "2026-10-18T13:00-04:00",
+  "reverses": "d08e5d67",
+  "superseded_by": "0e89c559"
+ },
+ {
+  "id": "0e89c559",
+  "ts": "2026-10-14T14:10-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Denzel Boston",
+  "call": "start Denzel Boston at W/R",
+  "detail": "over Rome Odunze +0.60",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "proposed",
+  "provisional": true,
+  "resolves_at": "2026-10-18T13:00-04:00",
+  "reverses": "91d7a47e"
+ },
+ {
+  "id": "65704161",
+  "ts": "2026-10-14T14:10-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "DJ Moore",
+  "call": "add DJ Moore (WR) over Rome Odunze",
+  "detail": "+4.41/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 6,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "8a6734ed",
+  "ts": "2026-10-14T14:10-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Rashee Rice",
+  "call": "add Rashee Rice (WR) over Rome Odunze",
+  "detail": "+4.18/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 6,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "e614d26d",
+  "ts": "2026-10-14T14:10-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Jalen Coker",
+  "call": "add Jalen Coker (WR) over Rome Odunze",
+  "detail": "+2.77/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 6,
+  "status": "blocked",
   "provisional": false,
   "resolves_at": null,
   "reverses": null

@@ -165,10 +165,11 @@ if _add:
 #     A start call on a player who is already starting must not come back PASS.
 #     (whichever DEF is in the slot NOW — 10-01: the Vikings replaced the 49ers and the
 #      literal name made the case fail on the runner)
-_cur_def = next((r['player'] for r in BSB.starters() if r['pos'] == 'DEF'), '49ers')
+_cur_def_row = next((r for r in BSB.starters() if r['pos'] == 'DEF'), None) or BSB.starters()[0]   # any starter when the DEF slot is empty (10-14)
+_cur_def = _cur_def_row['player']
 CASES.append((f'start {_cur_def} when they are already starting', G.check(
-    'start',f'start {_cur_def} DEF',player=_cur_def,designation='none',
-    sources=['vegas','sleeper'],pos='DEF',value=10.16,horizon='weekly',
+    'start',f'start {_cur_def} {_cur_def_row["pos"]}',player=_cur_def,designation='none',
+    sources=['vegas','sleeper'],pos=_cur_def_row['pos'],value=10.16,horizon='weekly',
     market_ready=True,pulled=TODAY,state=BSB)))
 
 bad=0 if _phantom_ok else 1

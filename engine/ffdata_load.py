@@ -235,7 +235,7 @@ def main():
         latest = ST.latest(lg)
         owners = sorted({r['owner'] for r in rr})
         srows = [dict(owner=r['owner'], manager=r['owner'], slot=r['slot'], player=r['player'], pos=r['pos'],
-                      nfl=r['nfl'], designation=(r['status'] or 'none')) for r in rr if r['player']]
+                      nfl=r['nfl'], designation=(r['status'] or 'none'), team_id=r.get('team_id') or '') for r in rr if r['player']]
         recs = {r['owner']: dict(record=r['record'], rank=r['rank']) for r in rr}
         if not rost_ok:
             pass                                    # the team pages failed the contract: the snapshot on disk stands
@@ -295,16 +295,21 @@ def main():
             path = D + ('bsb_transactions.csv' if lg == 'BSB' else 'hh_transactions.csv')
             old = [r for r in rows(path) if 'action' in r and 'datetime' in r]      # an older log with another shape is not merged
             seen = {(r['datetime'], r['team'], r['player'], r['action']) for r in old}
+            # back-fill team_id on older rows when the page still carries the same (datetime, team, player)
+            idmap = {(when(r['ts']), r['team'], r['player']): r.get('team_id') or '' for r in tr}
+            for r in old:
+                if not r.get('team_id'): r['team_id'] = idmap.get((r['datetime'], r['team'], r['player']), '')
             new_rows = []
             for r in tr:
                 m = _re.match(r'\$(\d+) Waiver', r['kind'])
                 rec = dict(datetime=when(r['ts']), team=r['team'], action='Add' if r['action'] == 'add' else 'Drop', player=r['player'],
-                           pos=r['pos'], nfl=r['nfl'], bid=(m.group(1) if m else ''), note=('Waiver' if m else r['kind']))
+                           pos=r['pos'], nfl=r['nfl'], bid=(m.group(1) if m else ''), note=('Waiver' if m else r['kind']),
+                           team_id=r.get('team_id') or '')         # a team can rename mid-season (10-15: Bad News Bears -> WINdianapolis); the id does not
                 k = (rec['datetime'], rec['team'], rec['player'], rec['action'])
                 if k not in seen: seen.add(k); new_rows.append(rec)
             allr = sorted(old + new_rows, key=lambda r: r['datetime'], reverse=True)
             with open(path, 'w', newline='') as fh:
-                w = csv.DictWriter(fh, fieldnames=['datetime', 'team', 'action', 'player', 'pos', 'nfl', 'bid', 'note']); w.writeheader(); w.writerows(allr)
+                w = csv.DictWriter(fh, fieldnames=['datetime', 'team', 'action', 'player', 'pos', 'nfl', 'bid', 'note', 'team_id'], extrasaction='ignore'); w.writeheader(); w.writerows(allr)
             log.append(f'{lg} transactions: {len(new_rows)} new of {len(tr)} on the page; log now {len(allr)} rows')
             ASOF['bsb_transactions.csv' if lg == 'BSB' else 'hh_transactions.csv'] = dict(as_of=tts, src='Yahoo transactions page pulled_at')
 
