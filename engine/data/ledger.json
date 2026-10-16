@@ -10386,10 +10386,11 @@
   ],
   "verdict": "WARN",
   "week": 6,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": null,
-  "reverses": "59d6b0b7"
+  "reverses": "59d6b0b7",
+  "superseded_by": "757f01a6"
  },
  {
   "id": "d715b534",
@@ -10425,9 +10426,66 @@
   ],
   "verdict": "WARN",
   "week": 6,
+  "status": "superseded",
+  "provisional": true,
+  "resolves_at": "2026-10-18T13:00-04:00",
+  "reverses": "d715b534",
+  "superseded_by": "fc57ccb4"
+ },
+ {
+  "id": "757f01a6",
+  "ts": "2026-10-16T15:55-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Tennessee Titans",
+  "call": "stream Tennessee Titans for week 7, drop 49ers",
+  "detail": "DEF: TEN 19.0 vs yours 49ers 21.5 \u2014 edge 2.5 implied pts",
+  "evidence": [
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "e3fee263"
+ },
+ {
+  "id": "fc57ccb4",
+  "ts": "2026-10-16T15:55-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Denzel Boston",
+  "call": "start Denzel Boston at W/R/T",
+  "detail": "over Rome Odunze +0.38",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 6,
   "status": "proposed",
   "provisional": true,
   "resolves_at": "2026-10-18T13:00-04:00",
-  "reverses": "d715b534"
+  "reverses": "f007bfc6"
+ },
+ {
+  "id": "f5d9d8b7",
+  "ts": "2026-10-16T15:55-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Xavier Worthy",
+  "call": "add Xavier Worthy (WR) over Rome Odunze",
+  "detail": "+2.51/wk",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
  }
 ]
