@@ -7,7 +7,7 @@
   "refused": []
  },
  "decide": [
-  "BSB WR3 lineup Start Makai Lemon over DeMario Douglas +1.5 points locks Sun Oct 18, 1:00 pm set it in Yahoo before then"
+  "BSB W/R/T lineup Start Makai Lemon over DeMario Douglas +1.7 points locks Sun Oct 18, 1:00 pm set it in Yahoo before then"
  ],
  "fast": false,
  "leagues": {
@@ -17,13 +17,13 @@
      "add": null,
      "bid": null,
      "drop": null,
-     "gain": 1.52,
+     "gain": 1.69,
      "gates": [],
      "kind": "start",
      "provisional": false,
      "reason": "",
      "sit": "DeMario Douglas",
-     "slot": "WR3",
+     "slot": "W/R/T",
      "start": "Makai Lemon",
      "status": "proposed",
      "subject": "Makai Lemon",
@@ -33,7 +33,7 @@
     {
      "add": "Tennessee Titans",
      "bid": null,
-     "drop": "49ers",
+     "drop": "San Francisco",
      "fam": "DEF",
      "gates": [
       "G7-ready:WARN"
@@ -158,8 +158,8 @@
     },
     {
      "add": "Laquon Treadwell",
-     "bid": 1,
-     "drop": "Makai Lemon",
+     "bid": null,
+     "drop": null,
      "gates": [],
      "kind": "breakout",
      "provisional": false,
@@ -169,10 +169,10 @@
      "status": null,
      "subject": "Laquon Treadwell",
      "tier": "B",
-     "verb": "ADD",
+     "verb": "WAIT",
      "verdict": "PASS",
-     "when": "free agent until his game kicks off; after that a waiver claim, in by Tue night (runs Wed ~5am) \u2014 bid $1: an unpriced role nobody else's model is looking at yet; the floor is the number \u2014 locks Sun 1:00 PM ET",
-     "why": "starter usage two weeks running (wk4: 85% snaps, 18% targets, 34% air yds) and the market has not priced him yet \u2014 the cheap window. Makai Lemon is the spot: lowest-valued bench player (part-time usag"
+     "when": "no drop worth less than him",
+     "why": "two straight weeks of starter usage (wk4: 85% snaps, 18% targets, 34% air yds), but the cheapest clean drop (Makai Lemon, 6.8 this week) projects at or above him (6.6)"
     },
     {
      "add": "Treylon Burks",
@@ -208,7 +208,7 @@
      "verb": "NONE",
      "verdict": "PASS",
      "when": "no move for this roster",
-     "why": "you already carry 4 RBs for 2 slot(s) and he projects below your weakest (Ray Davis 1.2 vs 0.0). Only a trade chip."
+     "why": "you already carry 4 RBs for 2 slot(s) and he projects below your weakest (Ray Davis 1.8 vs 0.0). Only a trade chip."
     },
     {
      "add": "Dawson Knox",
@@ -267,7 +267,7 @@
    ],
    "blocked": [],
    "current": {
-    "DEF": "49ers",
+    "DEF": "San Francisco",
     "K": "Jason Myers",
     "QB": "Matthew Stafford",
     "RB1": "James Cook III",
@@ -279,39 +279,39 @@
     "WR3": "Ryan Flournoy"
    },
    "flags": [
-    "2 DEFs rostered (49ers, Vikings) for one DEF slot \u2014 the spare is 49ers (85 season vs Vikings 122)",
+    "2 DEFs rostered (San Francisco, Minnesota) for one DEF slot \u2014 the spare is San Francisco (85 season vs Minnesota 122)",
     "Josh Jacobs [CEL] holds a roster spot \u2014 HOLD: HOLD. A top-10 RB whose likely return lands before the week 15-17 playoff run. C"
    ],
    "lineup": {
-    "DEF": "49ers",
+    "DEF": "San Francisco",
     "K": "Jason Myers",
     "QB": "Matthew Stafford",
     "RB1": "James Cook III",
     "RB2": "MarShawn Lloyd",
     "TE": "Isaiah Likely",
-    "W/R/T": "Drake London",
+    "W/R/T": "Makai Lemon",
     "WR1": "Jaxon Smith-Njigba",
     "WR2": "Ryan Flournoy",
-    "WR3": "Makai Lemon"
+    "WR3": "Drake London"
    },
    "me": "OVERKILL",
-   "others_pulled": "2026-10-16T06:19:00+00:00",
+   "others_pulled": "2026-10-16T11:50:53+00:00",
    "planner": {
     "lineup_after": {
-     "DEF": "49ers",
+     "DEF": "San Francisco",
      "K": "Jason Myers",
      "QB": "Matthew Stafford",
      "RB1": "James Cook III",
      "RB2": "MarShawn Lloyd",
      "TE": "Isaiah Likely",
-     "W/R/T": "Drake London",
+     "W/R/T": "Makai Lemon",
      "WR1": "Jaxon Smith-Njigba",
      "WR2": "Ryan Flournoy",
-     "WR3": "Makai Lemon"
+     "WR3": "Drake London"
     },
     "moves": [
      {
-      "J": 1.519,
+      "J": 1.688,
       "add": null,
       "drop": null,
       "gates": [],
@@ -319,10 +319,10 @@
       "kind": "lineup",
       "provisional": false,
       "sit": "DeMario Douglas",
-      "slot": "WR3",
+      "slot": "W/R/T",
       "start": "Makai Lemon",
       "txns": [
-       "start Makai Lemon at WR3",
+       "start Makai Lemon at W/R/T",
        "bench DeMario Douglas"
       ],
       "when": "before kickoff Sun Oct 18, 1:00 pm ET"
@@ -331,7 +331,7 @@
     "rejected": [
      {
       "name": "Cade Otton",
-      "reason": "J +0.60 < 3.0 at its best spot (Xavier Hutchinson) \u2014 J +0.60 = 1.0x+1.08 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+0.22 (bench boom) - 0.00 acq - 0.00 FAB($0) - 0.50 churn"
+      "reason": "J +0.23 < 3.0 at its best spot (Xavier Hutchinson) \u2014 J +0.23 = 1.0x+0.71 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+0.23 (bench boom) - 0.00 acq - 0.00 FAB($0) - 0.50 churn"
      },
      {
       "name": "Charlie Kolar",
@@ -359,7 +359,7 @@
      },
      {
       "name": "Laquon Treadwell",
-      "reason": "J -0.37 < 3.0 at its best spot (Xavier Hutchinson) \u2014 J -0.37 = 1.0x+0.07 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.06 (rest, mean of wks 8-17) + 0.1x+0.12 (bench boom) - 0.00 acq - 0.00 FAB($0) - 0.50 churn"
+      "reason": "J -0.44 < 3.0 at its best spot (Xavier Hutchinson) \u2014 J -0.44 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.06 (rest, mean of wks 8-17) + 0.1x+0.12 (bench boom) - 0.00 acq - 0.00 FAB($0) - 0.50 churn"
      },
      {
       "name": "Mark Andrews",
@@ -379,7 +379,7 @@
      },
      {
       "name": "Samaje Perine",
-      "reason": "sits behind everyone: you carry 4 RBs for 2 slot(s) and he projects 0.0 under your weakest 1.2"
+      "reason": "sits behind everyone: you carry 4 RBs for 2 slot(s) and he projects 0.0 under your weakest 1.8"
      },
      {
       "name": "Treylon Burks",
@@ -387,7 +387,7 @@
      }
     ]
    },
-   "pulled": "2026-10-16T06:19:00+00:00"
+   "pulled": "2026-10-16T11:50:53+00:00"
   },
   "HH": {
    "actions": [
@@ -395,7 +395,7 @@
      "add": null,
      "bid": null,
      "drop": null,
-     "gain": 0.95,
+     "gain": 1.09,
      "gates": [
       "G2-desig:WARN"
      ],
@@ -403,7 +403,7 @@
      "provisional": true,
      "reason": "",
      "sit": "Rome Odunze",
-     "slot": "WR",
+     "slot": "W/R/T",
      "start": "Denzel Boston",
      "status": "proposed",
      "subject": "Denzel Boston",
@@ -415,7 +415,7 @@
      "bid": null,
      "drop": null,
      "fam": "WR",
-     "gain": 4.74,
+     "gain": 4.65,
      "gates": [
       "G5-sources:BLOCK",
       "G11-role-registry:WARN"
@@ -435,7 +435,7 @@
      "bid": null,
      "drop": null,
      "fam": "WR",
-     "gain": 3.92,
+     "gain": 3.83,
      "gates": [
       "G5-sources:BLOCK",
       "G11-role-registry:WARN"
@@ -455,7 +455,7 @@
      "bid": null,
      "drop": null,
      "fam": "WR",
-     "gain": 2.98,
+     "gain": 2.78,
      "gates": [
       "G11-role-registry:WARN"
      ],
@@ -884,9 +884,9 @@
     "RB": "Jaylen Warren",
     "S": "Budda Baker",
     "TE": "Trey McBride",
-    "W/R": "Drake London",
-    "W/R/T": "Braelon Allen",
-    "WR": "Denzel Boston"
+    "W/R": "Braelon Allen",
+    "W/R/T": "Denzel Boston",
+    "WR": "Drake London"
    },
    "me": "Tecmo Bowlers",
    "others_pulled": "2026-10-16T06:19:00+00:00",
@@ -910,7 +910,7 @@
     },
     "moves": [
      {
-      "J": 0.949,
+      "J": 1.087,
       "add": null,
       "drop": null,
       "gates": [],
@@ -954,7 +954,7 @@
      },
      {
       "name": "Dameon Pierce",
-      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 8.7 under your weakest 14.6"
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 8.7 under your weakest 14.7"
      },
      {
       "name": "Dawson Knox",
@@ -970,7 +970,7 @@
      },
      {
       "name": "Emanuel Wilson",
-      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 13.0 under your weakest 14.6"
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 13.0 under your weakest 14.7"
      },
      {
       "name": "Greg Dulcich",
@@ -994,7 +994,7 @@
      },
      {
       "name": "Kendre Miller",
-      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 8.5 under your weakest 14.6"
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 8.5 under your weakest 14.7"
      },
      {
       "name": "Laquon Treadwell",
@@ -1006,11 +1006,11 @@
      },
      {
       "name": "Ollie Gordon",
-      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 0.0 under your weakest 14.6"
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 0.0 under your weakest 14.7"
      },
      {
       "name": "Rachaad White",
-      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 7.5 under your weakest 14.6"
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 7.4 under your weakest 14.7"
      },
      {
       "name": "Rashee Rice",
@@ -1022,7 +1022,7 @@
      },
      {
       "name": "Roschon Johnson",
-      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 4.3 under your weakest 14.6"
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 4.3 under your weakest 14.7"
      },
      {
       "name": "Ryan Fitzgerald",
@@ -1030,7 +1030,7 @@
      },
      {
       "name": "Samaje Perine",
-      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 0.0 under your weakest 14.6"
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 0.0 under your weakest 14.7"
      },
      {
       "name": "Treylon Burks",
@@ -1038,13 +1038,13 @@
      },
      {
       "name": "Woody Marks",
-      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 13.9 under your weakest 14.6"
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 13.9 under your weakest 14.7"
      }
     ]
    },
    "pulled": "2026-10-16T06:19:00+00:00"
   }
  },
- "now": "2026-10-16T02:21-04:00",
+ "now": "2026-10-16T07:52-04:00",
  "week": 6
 }

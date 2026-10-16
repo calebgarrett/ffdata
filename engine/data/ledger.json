@@ -10002,10 +10002,11 @@
   ],
   "verdict": "WARN",
   "week": 6,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": null,
-  "reverses": "94c79da8"
+  "reverses": "94c79da8",
+  "superseded_by": "e3fee263"
  },
  {
   "id": "b777d4dc",
@@ -10327,10 +10328,11 @@
   ],
   "verdict": "WARN",
   "week": 6,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": true,
   "resolves_at": "2026-10-18T13:00-04:00",
-  "reverses": "ad9dd845"
+  "reverses": "ad9dd845",
+  "superseded_by": "f5240f2b"
  },
  {
   "id": "601870ec",
@@ -10346,9 +10348,66 @@
   ],
   "verdict": "WARN",
   "week": 6,
+  "status": "superseded",
+  "provisional": true,
+  "resolves_at": "2026-10-18T13:00-04:00",
+  "reverses": "373b62e9",
+  "superseded_by": "d715b534"
+ },
+ {
+  "id": "f5240f2b",
+  "ts": "2026-10-16T07:52-04:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Makai Lemon",
+  "call": "start Makai Lemon at W/R/T",
+  "detail": "over DeMario Douglas +1.69",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": "2026-10-18T13:00-04:00",
+  "reverses": "c3bae1c3"
+ },
+ {
+  "id": "e3fee263",
+  "ts": "2026-10-16T07:52-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Tennessee Titans",
+  "call": "stream Tennessee Titans for week 7, drop San Francisco",
+  "detail": "DEF: TEN 19.0 vs yours San Francisco 21.5 \u2014 edge 2.5 implied pts",
+  "evidence": [
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "59d6b0b7"
+ },
+ {
+  "id": "d715b534",
+  "ts": "2026-10-16T07:52-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Denzel Boston",
+  "call": "start Denzel Boston at W/R/T",
+  "detail": "over Rome Odunze +1.09",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 6,
   "status": "proposed",
   "provisional": true,
   "resolves_at": "2026-10-18T13:00-04:00",
-  "reverses": "373b62e9"
+  "reverses": "601870ec"
  }
 ]
