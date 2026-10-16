@@ -10464,10 +10464,11 @@
   ],
   "verdict": "WARN",
   "week": 6,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": true,
   "resolves_at": "2026-10-18T13:00-04:00",
-  "reverses": "f007bfc6"
+  "reverses": "f007bfc6",
+  "superseded_by": "e7509b58"
  },
  {
   "id": "f5d9d8b7",
@@ -10484,6 +10485,62 @@
   "verdict": "WARN",
   "week": 6,
   "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "0baf7f9f",
+  "ts": "2026-10-16T18:48-04:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Pierre Strong Jr.",
+  "call": "start Pierre Strong Jr. at W/R/T",
+  "detail": "over DeMario Douglas +1.63",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "PASS",
+  "week": 6,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": "2026-10-18T20:20-04:00",
+  "reverses": null
+ },
+ {
+  "id": "e7509b58",
+  "ts": "2026-10-16T18:48-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Denzel Boston",
+  "call": "start Denzel Boston at W/R",
+  "detail": "over Rome Odunze +1.39",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "proposed",
+  "provisional": true,
+  "resolves_at": "2026-10-18T13:00-04:00",
+  "reverses": "fc57ccb4"
+ },
+ {
+  "id": "c199b56e",
+  "ts": "2026-10-16T18:48-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Devin Lloyd",
+  "call": "add Devin Lloyd (LB) over Carson Schwesinger",
+  "detail": "+2.57/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 6,
+  "status": "blocked",
   "provisional": false,
   "resolves_at": null,
   "reverses": null
