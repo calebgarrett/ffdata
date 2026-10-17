@@ -6,9 +6,7 @@
   ],
   "refused": []
  },
- "decide": [
-  "BSB RB2 lineup Start Pierre Strong Jr. over DeMario Douglas +1.5 points locks Sun Oct 18, 8:20 pm set it in Yahoo before then"
- ],
+ "decide": [],
  "fast": false,
  "leagues": {
   "BSB": {
@@ -17,19 +15,17 @@
      "add": null,
      "bid": null,
      "drop": null,
-     "gain": 1.52,
-     "gates": [
-      "G9-reversal:WARN"
-     ],
+     "gain": 1.29,
+     "gates": [],
      "kind": "start",
-     "provisional": false,
+     "provisional": true,
      "reason": "",
      "sit": "DeMario Douglas",
      "slot": "RB2",
      "start": "Pierre Strong Jr.",
      "status": "proposed",
      "subject": "Pierre Strong Jr.",
-     "verdict": "WARN",
+     "verdict": "PASS",
      "when": "early"
     },
     {
@@ -116,24 +112,6 @@
      "start": null,
      "status": null,
      "subject": "Greg Dulcich",
-     "tier": "B",
-     "verb": "WAIT",
-     "verdict": "PASS",
-     "when": "next usage pull (Tuesday) \u2014 add then if the snaps hold or the market moves toward him",
-     "why": "one game of starter usage; no market confirmation yet and the spot would cost a real player"
-    },
-    {
-     "add": "Roschon Johnson",
-     "bid": null,
-     "drop": null,
-     "gates": [],
-     "kind": "breakout",
-     "provisional": false,
-     "sit": null,
-     "slot": null,
-     "start": null,
-     "status": null,
-     "subject": "Roschon Johnson",
      "tier": "B",
      "verb": "WAIT",
      "verdict": "PASS",
@@ -288,38 +266,38 @@
     "DEF": "49ers",
     "K": "Jason Myers",
     "QB": "Matthew Stafford",
-    "RB1": "James Cook III",
+    "RB1": "MarShawn Lloyd",
     "RB2": "Pierre Strong Jr.",
     "TE": "Isaiah Likely",
-    "W/R/T": "MarShawn Lloyd",
+    "W/R/T": "James Cook III",
     "WR1": "Jaxon Smith-Njigba",
     "WR2": "Drake London",
     "WR3": "Ryan Flournoy"
    },
    "me": "OVERKILL",
-   "others_pulled": "2026-10-17T06:04:30+00:00",
+   "others_pulled": "2026-10-17T11:07:27+00:00",
    "planner": {
     "lineup_after": {
      "DEF": "49ers",
      "K": "Jason Myers",
      "QB": "Matthew Stafford",
-     "RB1": "James Cook III",
+     "RB1": "MarShawn Lloyd",
      "RB2": "Pierre Strong Jr.",
      "TE": "Isaiah Likely",
-     "W/R/T": "MarShawn Lloyd",
+     "W/R/T": "James Cook III",
      "WR1": "Jaxon Smith-Njigba",
      "WR2": "Drake London",
      "WR3": "Ryan Flournoy"
     },
     "moves": [
      {
-      "J": 1.521,
+      "J": 1.294,
       "add": null,
       "drop": null,
       "gates": [],
       "ir": null,
       "kind": "lineup",
-      "provisional": false,
+      "provisional": true,
       "sit": "DeMario Douglas",
       "slot": "RB2",
       "start": "Pierre Strong Jr.",
@@ -333,7 +311,7 @@
     "rejected": [
      {
       "name": "Cade Otton",
-      "reason": "J +0.56 < 3.0 at its best spot (Xavier Hutchinson) \u2014 J +0.56 = 1.0x+1.04 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.01 (rest, mean of wks 8-17) + 0.1x+0.19 (bench boom) - 0.00 acq - 0.00 FAB($0) - 0.50 churn"
+      "reason": "J +0.74 < 3.0 at its best spot (Xavier Hutchinson) \u2014 J +0.74 = 1.0x+1.22 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+0.20 (bench boom) - 0.00 acq - 0.00 FAB($0) - 0.50 churn"
      },
      {
       "name": "Charlie Kolar",
@@ -361,7 +339,7 @@
      },
      {
       "name": "Laquon Treadwell",
-      "reason": "J -0.42 < 3.0 at its best spot (Xavier Hutchinson) \u2014 J -0.42 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.05 (rest, mean of wks 8-17) + 0.1x+0.33 (bench boom) - 0.00 acq - 0.00 FAB($0) - 0.50 churn"
+      "reason": "J -0.46 < 3.0 at its best spot (Xavier Hutchinson) \u2014 J -0.46 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.01 (rest, mean of wks 8-17) + 0.1x+0.34 (bench boom) - 0.00 acq - 0.00 FAB($0) - 0.50 churn"
      },
      {
       "name": "Mark Andrews",
@@ -369,10 +347,6 @@
      },
      {
       "name": "Marquez Valdes-Scantling",
-      "reason": "best spot Xavier Hutchinson: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
-     },
-     {
-      "name": "Roschon Johnson",
       "reason": "best spot Xavier Hutchinson: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
      },
      {
@@ -389,7 +363,7 @@
      }
     ]
    },
-   "pulled": "2026-10-17T06:04:30+00:00"
+   "pulled": "2026-10-17T11:07:27+00:00"
   },
   "HH": {
    "actions": [
@@ -397,17 +371,19 @@
      "add": null,
      "bid": null,
      "drop": null,
-     "gain": 1.37,
-     "gates": [],
+     "gain": 1.29,
+     "gates": [
+      "G9-reversal:WARN"
+     ],
      "kind": "start",
      "provisional": true,
      "reason": "",
      "sit": "Rome Odunze",
-     "slot": "WR",
+     "slot": "W/R/T",
      "start": "Denzel Boston",
      "status": "proposed",
      "subject": "Denzel Boston",
-     "verdict": "PASS",
+     "verdict": "WARN",
      "when": "decide"
     },
     {
@@ -415,7 +391,7 @@
      "bid": null,
      "drop": null,
      "fam": "WR",
-     "gain": 3.03,
+     "gain": 3.07,
      "gates": [
       "G5-sources:BLOCK",
       "G11-role-registry:WARN"
@@ -435,7 +411,7 @@
      "bid": null,
      "drop": null,
      "fam": "WR",
-     "gain": 2.71,
+     "gain": 2.74,
      "gates": [
       "G11-role-registry:WARN"
      ],
@@ -450,23 +426,22 @@
      "when": null
     },
     {
-     "add": "Devin Lloyd",
+     "add": "Xavier Worthy",
      "bid": null,
      "drop": null,
-     "fam": "LB",
-     "gain": 2.57,
+     "fam": "WR",
+     "gain": 2.59,
      "gates": [
-      "G5-sources:BLOCK",
       "G11-role-registry:WARN"
      ],
      "kind": "upgrade",
      "provisional": false,
-     "sit": "Carson Schwesinger",
+     "sit": "Rome Odunze",
      "slot": null,
      "start": null,
-     "status": "blocked",
-     "subject": "Devin Lloyd",
-     "verdict": "BLOCK",
+     "status": "proposed",
+     "subject": "Xavier Worthy",
+     "verdict": "WARN",
      "when": null
     },
     {
@@ -668,24 +643,6 @@
      "why": "one game of starter usage; no market confirmation yet and the spot would cost a real player"
     },
     {
-     "add": "Roschon Johnson",
-     "bid": null,
-     "drop": null,
-     "gates": [],
-     "kind": "breakout",
-     "provisional": false,
-     "sit": null,
-     "slot": null,
-     "start": null,
-     "status": null,
-     "subject": "Roschon Johnson",
-     "tier": "B",
-     "verb": "WAIT",
-     "verdict": "PASS",
-     "when": "next usage pull (Tuesday) \u2014 add then if the snaps hold or the market moves toward him",
-     "why": "one game of starter usage; no market confirmation yet and the spot would cost a real player"
-    },
-    {
      "add": "Marquez Valdes-Scantling",
      "bid": null,
      "drop": null,
@@ -839,15 +796,6 @@
      ],
      "kind": "upgrade",
      "subject": "DJ Moore"
-    },
-    {
-     "add": "Devin Lloyd",
-     "drop": null,
-     "gates": [
-      "G5-sources:BLOCK"
-     ],
-     "kind": "upgrade",
-     "subject": "Devin Lloyd"
     }
    ],
    "current": {
@@ -885,12 +833,12 @@
     "RB": "Jaylen Warren",
     "S": "Budda Baker",
     "TE": "Trey McBride",
-    "W/R": "Drake London",
-    "W/R/T": "Braelon Allen",
-    "WR": "Denzel Boston"
+    "W/R": "Braelon Allen",
+    "W/R/T": "Denzel Boston",
+    "WR": "Drake London"
    },
    "me": "Tecmo Bowlers",
-   "others_pulled": "2026-10-17T06:04:30+00:00",
+   "others_pulled": "2026-10-17T11:07:27+00:00",
    "planner": {
     "lineup_after": {
      "CB": "Cooper DeJean",
@@ -911,7 +859,7 @@
     },
     "moves": [
      {
-      "J": 1.368,
+      "J": 1.295,
       "add": null,
       "drop": null,
       "gates": [],
@@ -967,7 +915,7 @@
      },
      {
       "name": "Emanuel Wilson",
-      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 13.0 under your weakest 14.5"
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 13.0 under your weakest 14.4"
      },
      {
       "name": "Greg Dulcich",
@@ -991,7 +939,7 @@
      },
      {
       "name": "Kendre Miller",
-      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 8.5 under your weakest 14.5"
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 8.6 under your weakest 14.4"
      },
      {
       "name": "Laquon Treadwell",
@@ -1003,19 +951,15 @@
      },
      {
       "name": "Ollie Gordon",
-      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 0.0 under your weakest 14.5"
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 0.0 under your weakest 14.4"
      },
      {
       "name": "Rachaad White",
-      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 8.9 under your weakest 14.5"
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 8.9 under your weakest 14.4"
      },
      {
       "name": "Rashod Bateman",
       "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
-     },
-     {
-      "name": "Roschon Johnson",
-      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 6.1 under your weakest 14.5"
      },
      {
       "name": "Ryan Fitzgerald",
@@ -1023,7 +967,7 @@
      },
      {
       "name": "Samaje Perine",
-      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 0.0 under your weakest 14.5"
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 0.0 under your weakest 14.4"
      },
      {
       "name": "Treylon Burks",
@@ -1035,7 +979,7 @@
      },
      {
       "name": "Woody Marks",
-      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 13.7 under your weakest 14.5"
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 13.7 under your weakest 14.4"
      },
      {
       "name": "Xavier Worthy",
@@ -1043,9 +987,9 @@
      }
     ]
    },
-   "pulled": "2026-10-17T06:04:30+00:00"
+   "pulled": "2026-10-17T11:07:27+00:00"
   }
  },
- "now": "2026-10-17T02:06-04:00",
+ "now": "2026-10-17T07:09-04:00",
  "week": 6
 }
