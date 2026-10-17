@@ -138,13 +138,17 @@ lh = LU.solve(h, P)
 # every displaced starter named on a change must be ELIGIBLE for the slot the newcomer
 # takes (10-13: the optimizer moved Dak to the superflex and the diff said 'QB Stafford
 # over Chase'; BSB said 'Pierce at W/R/T over Vikings')
+# the man a newcomer 'sits' is one who actually LEAVES the lineup — either eligible for the
+# newcomer's slot or the end of a displacement chain (10-17: Strong at RB2 pushes Lloyd to
+# W/R/T, which pushes Douglas out — Douglas is the right name even though he is a WR)
 def _elig_pairs(lu_, st_):
     bad = []
+    opt_keys = {r['key'] for r in lu_['optimal'].values() if r}
     for c in lu_['changes']:
-        if c['sit'] and not (c['sit']['elig'] & st_.cfg.accepts[c['slot']]): bad.append((c['slot'], c['start']['player'], c['sit']['player']))
+        if c['sit'] and (c['sit']['key'] in opt_keys): bad.append((c['slot'], c['start']['player'], c['sit']['player']))
     return bad
-case('BSB lineup diff: the man each newcomer sits is eligible for that slot', not _elig_pairs(lu, b), str(_elig_pairs(lu, b)))
-case('HH lineup diff: the man each newcomer sits is eligible for that slot', not _elig_pairs(lh, h), str(_elig_pairs(lh, h)))
+case('BSB lineup diff: the man each newcomer sits actually leaves the lineup', not _elig_pairs(lu, b), str(_elig_pairs(lu, b)))
+case('HH lineup diff: the man each newcomer sits actually leaves the lineup', not _elig_pairs(lh, h), str(_elig_pairs(lh, h)))
 _cur_h = {r['key'] for r in h.starters()}
 case('HH lineup diff: every change brings in a bench player (a D<->LB swap of two starters is a permutation)', all(c['start']['key'] not in _cur_h for c in lh['changes']))
 # an empty slot is a hole: filling it is never provisional (10-14: 'start San Francisco over empty [PROVISIONAL]')
@@ -325,6 +329,16 @@ from lib import actuals as _AC
 case('game_frac: Q3 5:12 -> 0.66', abs(_ffl.game_frac('Q3 5:12 vs Atl') - ((30 + (15 - 5.2)) / 60)) < 1e-3, str(_ffl.game_frac('Q3 5:12 vs Atl')))
 case('game_frac: Half -> 0.5, End Q1 -> 0.25, OT -> 0.97', (_ffl.game_frac('Half @ GB'), _ffl.game_frac('End Q1 vs Atl'), _ffl.game_frac('OT 4:00')) == (0.5, 0.25, 0.97))
 case('game_frac: Final -> 1.0, future kickoff -> None, blank -> None', _ffl.game_frac('Final W 35-14 vs Atl') == 1.0 and _ffl.game_frac('Sun 1:00 pm @ Was') is None and _ffl.game_frac('') is None)
+# loader rows(): Yahoo's '--empty--' placeholder (pid 99001) is an empty slot, not a player
+# (10-16: one on T-rex's W/R/T refused the whole HH roster file at C4)
+import tempfile as _tf0, csv as _csv0
+_tp = _tf0.NamedTemporaryFile('w', suffix='.csv', delete=False, newline='')
+_w = _csv0.DictWriter(_tp, fieldnames=['owner', 'slot', 'player', 'pid', 'nfl', 'pos', 'status', 'fan_pts', 'proj_pts'])
+_w.writeheader(); _w.writerow(dict(owner='T-rex', slot='W/R/T', player='--empty--', pid='99001', nfl='', pos='', status='NA', fan_pts='–', proj_pts='-'))
+_w.writerow(dict(owner='T-rex', slot='QB', player='Real Guy', pid='1', nfl='DAL', pos='QB', status='', fan_pts='12%', proj_pts='20.1')); _tp.close()
+_rr = _ffl.rows(_tp.name)
+case("loader: an '--empty--' placeholder row becomes an empty slot", _rr[0]['player'] == '' and _rr[0]['pid'] == '' and _rr[0]['status'] == '' and _rr[0]['slot'] == 'W/R/T', str(_rr[0]))
+case("loader: a real row keeps its player and loses only the '%' points cell", _rr[1]['player'] == 'Real Guy' and _rr[1]['fan_pts'] == '' and _rr[1]['proj_pts'] == '20.1', str(_rr[1]))
 _live = dict(pts=12.4, final=False, frac=0.66); _fin = dict(pts=28.4, final=True, frac=1.0)
 case('blend: live 12.4 at 66% played with a 20-pt projection -> 19.2', abs(_AC.blend(_live, 20.0) - (12.4 + 20 * 0.34)) < 1e-9, str(_AC.blend(_live, 20.0)))
 case('blend: final ignores the projection', _AC.blend(_fin, 99.0) == 28.4)

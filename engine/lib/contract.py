@@ -35,7 +35,7 @@ Invariants (each names the failure it exists for):
   C3  per-purpose freshness: Kalshi <= 6h and Sleeper <= 24h for lineup calls on games
       in the decide/alert window; rosters <= 18h lineup / <= 30h add-drop                  DEGRADE
   C4  roster shape: owners == league size; each team_id once; my team present; rows per
-      team within [slots+bench-2, slots+bench+IR]; no '--empty--'                          REFUSE
+      team within [slots+bench-2, slots+bench+IR]; '--empty--' is an empty slot (not a player)   REFUSE
   C5  after reconcile, each player key on at most one roster; no team over max              REFUSE
   C6  every DEF row: nfl is one of the 32 codes and key == DST:<nfl>; no rostered key is a
       bare city or nickname                                                                REFUSE
@@ -710,14 +710,15 @@ def c3(c):
 def _shape(lg, rows, owners_key='owner'):
     cfg = ALL[lg]; out = []
     lo, hi = len(cfg.slots) + cfg.bench - 2, len(cfg.slots) + cfg.bench + cfg.ir_slots
-    players = [r for r in rows if (r.get('player') or '').strip()]
+    # Yahoo renders an unfilled slot as a placeholder 'player' named '--empty--' (pid
+    # 99001). It is an empty slot: the loader blanks it (rows()) and the shape check
+    # counts it as nobody (10-16: one on T-rex's W/R/T refused the whole HH file)
+    players = [r for r in rows if (r.get('player') or '').strip() and (r.get('player') or '').strip().lower().strip('-') != 'empty']
     owners = sorted({r.get(owners_key) for r in players})
     if len(owners) != cfg.managers:
         out.append(f'{len(owners)} rostered teams, the league has {cfg.managers} — a missing team page turns its whole roster into free agents')
     if cfg.name not in owners:
         out.append(f'my team {cfg.name!r} is not among the owners')
-    emp = [f"{r.get(owners_key)} {r.get('slot')}" for r in players if '--empty--' in (r.get('player') or '').lower()]
-    if emp: out.append(f"'--empty--' rows (an empty slot parsed as a player): {', '.join(emp[:4])}")
     cnt = Counter(r.get(owners_key) for r in players)
     off = {o: n for o, n in cnt.items() if not (lo <= n <= hi)}
     if off: out.append(f'rows per team outside [{lo}, {hi}]: {off}')

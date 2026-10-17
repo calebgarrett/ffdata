@@ -116,11 +116,14 @@ case('C3: the clean base at 08:30 is fresh', not B.degrade_lineup and not B.degr
 # ---------------------------------------------------------------- C4 roster shape
 r4 = run(root('base', 'C4_empty', edit=lambda d: [os.remove(os.path.join(d, 'state', 'HH', f)) for f in os.listdir(os.path.join(d, 'state', 'HH')) if f != '2026-09-29T0810.json']),
          now=at(2026, 9, 29, 8, 30), week=4, only=('C4',))
-case("C4 REFUSE: the real '--empty--' row (Pound the Rock CB, 09-29)", bool([v for v in fired(r4, 'C4', CT.REFUSE) if '--empty--' in v.msg]), r4.codes_line())
+# 10-16: an '--empty--' row is Yahoo's placeholder for an UNFILLED slot (pid 99001), not a
+# parse error — it is an empty slot, never a reason to refuse a roster file (T-rex W/R/T
+# refused the whole HH file and left the local engine a snapshot behind)
+case("C4: the real '--empty--' row (Pound the Rock CB, 09-29) is an empty slot, not a refusal", not [v for v in fired(r4, 'C4', CT.REFUSE) if '--empty--' in v.msg], r4.codes_line())
 r4b = run(root('base', 'C4_team_missing'), only=('C4',))
 case('C4 REFUSE: a BSB roster CSV with one team removed (11 of 12)', bool([v for v in fired(r4b, 'C4', CT.REFUSE) if '11 rostered teams' in v.msg]), r4b.codes_line())
 _raw = list(csv.DictReader(open(os.path.join(FX, 'C15', 'data', 'yahoo', 'HH_rosters.csv'))))
-case("C4 (loader): the pump file with the '--empty--' row is not installed", any(v.code == 'C4' for v in CT.check_pump_file('rosters', os.path.join(FX, 'C15', 'data', 'yahoo', 'HH_rosters.csv'), league='HH', now=at(2026, 9, 29, 7))))
+case("C4 (loader): the pump file with the '--empty--' row IS installed (the slot reads as empty)", not any(v.code == 'C4' and '--empty--' in v.msg for v in CT.check_pump_file('rosters', os.path.join(FX, 'C15', 'data', 'yahoo', 'HH_rosters.csv'), league='HH', now=at(2026, 9, 29, 7))))
 def _swap_id(d):
     rw_csv(os.path.join(d, 'yahoo', 'BSB_rosters.csv'), lambda rs: [dict(r, team_id='3') if r['owner'] == 'OVERKILL' else r for r in rs])
 r4c = run(root('base', edit=_swap_id), only=('C4',))

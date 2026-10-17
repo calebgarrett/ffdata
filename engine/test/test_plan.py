@@ -27,6 +27,10 @@ print('=' * 88); print('PLANNER REGRESSION'); print('=' * 88)
 _real = C.now()
 WEEK = max(1, C.nfl_week(_real))
 NOW = (C.week_start(WEEK) + C.dt.timedelta(days=2, hours=5)).astimezone(C.ET)     # Thu 12:00 ET
+# the gates read the clock themselves (G12 state age, G8 freshness): pin it to the same
+# Thursday, or a Saturday run sees a 48h-old 'live' state and blocks every add (10-17)
+import os as _os
+_os.environ['FF_NOW'] = NOW.strftime('%Y-%m-%dT%H:%M')
 FUT = NOW + C.dt.timedelta(days=1)          # a kickoff still ahead
 PAST = NOW - C.dt.timedelta(hours=2)        # a game in progress / started
 OLD = NOW - C.dt.timedelta(hours=30)        # a game over
@@ -373,7 +377,7 @@ f, st, pr = league('BSB', r8e, fas=[(rbc, 'RB', 'PHI', 13.0)], kicks={'CLE': Non
 ev = dict(breakout_rows=[dict(key=NK(rbc), name=rbc, pos='RB', tm='PHI', tier='A', held='wk5', usage='', market='', in_pool=True, ahead=True)])
 p = PL.plan_facts(f, ev)
 m = next((m for m in moves_of(p) if m['add_key'] == NK(rbc)), None)
-case('a newcomer who starts via a slot shuffle is paired with the starter the shuffle pushes out', m is not None and (m.get('lineup') or {}).get('over') == flex_name, (m and m.get('lineup'), p.summary()[:300]))
+case('a newcomer who starts via a slot shuffle is paired with the starter the shuffle pushes out', m is not None and ((m.get('lineup') or {}).get('over') or '').startswith(flex_name), (m and m.get('lineup'), p.summary()[:300]))
 
 # ---------------------------------------------------------------- 9. handcuff never a drop
 r9 = bsb_roster()

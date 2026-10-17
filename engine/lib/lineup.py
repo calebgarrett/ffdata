@@ -130,12 +130,19 @@ def solve(state, proj, actuals=None):
                                      # or he has no game this week (bye): the slot scores 0 — a hole, not an edge (10-06)
                                      or (out.get('kick') is None and not (out.get('pts') or 0)))
             hole = out is None and c is None            # an EMPTY slot: filling it is firm whatever the market says (10-14: DEF empty after a drop)
+            # the newcomer's slot is held by someone who merely SLIDES to another slot: say so,
+            # or 'Strong at RB2 over Douglas' reads as nonsense (10-17)
+            slide = ''
+            if c and out and c['key'] != out['key']:
+                s2 = next((z for z, rr in opt.items() if rr and rr['key'] == c['key'] and z != s), None)
+                if s2: slide = f" ({c['player']} slides to {s2})"
             changes.append(dict(slot=s, start=o, sit=out, gain=gain,
                                 provisional=(not sit_out) and (not hole) and ((gain < NOISE) or not o['ready'] or (bool(out) and not out.get('ready', True)) or bool(o['line'].get('partial')) or q_zero),
                                 reason=((f"{out['player']} is {out['designation']} — the slot scores nothing until he is replaced" if out.get('designation') in UNUSABLE
                                          else f"{out['player']} has no game this week (bye) — the slot scores nothing until he is replaced") if sit_out else
                                         'the slot is empty — it scores nothing until someone is in it' if hole else
-                                        f"{out['player']} is {out['designation']} and projected 0.00 — the source assumes he is OUT; if he is active he keeps the slot" if q_zero else ''),
+                                        f"{out['player']} is {out['designation']} and projected 0.00 — the source assumes he is OUT; if he is active he keeps the slot" if q_zero else '') + slide,
+                                slide=slide.strip(),
                                 phase=o['phase'], kick=o['kick']))
     tot = lambda d: sum((r['pts'] or 0) for r in d.values() if r)      # the pin bonus is not in r['pts'], so totals are honest
     return dict(optimal=opt, current=cur, changes=changes, perms=perms,

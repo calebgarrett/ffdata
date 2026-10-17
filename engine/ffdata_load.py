@@ -77,6 +77,12 @@ def rows(path):
     for r in out:
         for col in ('fan_pts', 'proj_pts'):
             if col in r and '%' in (r[col] or ''): r[col] = ''
+        # Yahoo renders an unfilled slot as a placeholder 'player' named '--empty--' (pid
+        # 99001). That is an empty slot, not a player: blank the row's player fields so
+        # the slot reads as empty (10-16: T-rex's W/R/T refused the whole HH roster file)
+        if 'player' in r and (r.get('player') or '').strip().lower().strip('-') == 'empty':
+            for col in ('player', 'pid', 'nfl', 'pos', 'status', 'game', 'bye', 'fan_pts', 'proj_pts'):
+                if col in r: r[col] = ''
     return out
 
 def git_time(rel):
@@ -114,10 +120,12 @@ def adopt_runner_state(log):
     shutil.copy(D + 'ledger.json', D + 'ledger.local.bak.json') if os.path.exists(D + 'ledger.json') else None
     shutil.copy(os.path.join(rd, 'ledger.json'), D + 'ledger.json')
     n = 1
-    for sub, pat in (('outcomes', '*.jsonl'), ('proj_log', '*.csv'), ('', 'plan*.json')):
+    for sub, pat in (('outcomes', '*.jsonl'), ('proj_log', '*.csv'), ('', 'plan*.json'), ('state/BSB', '*.json'), ('state/HH', '*.json')):
         os.makedirs(os.path.join(D, sub), exist_ok=True)
         for f in _g.glob(os.path.join(rd, sub, pat)):
-            shutil.copy(f, os.path.join(D, sub, os.path.basename(f))); n += 1
+            dst = os.path.join(D, sub, os.path.basename(f))
+            if sub.startswith('state') and os.path.exists(dst): continue          # snapshots are immutable: copy only the ones we lack
+            shutil.copy(f, dst); n += 1
     bt = b.strftime('%Y-%m-%d %H:%M') if b else 'none'
     log.append(f'runner state adopted: the pump runner\'s ledger ({a:%Y-%m-%d %H:%M}) was newer than the local one ({bt}) — {n} files copied (C17)')
 

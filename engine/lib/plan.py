@@ -961,9 +961,14 @@ def _lineup_after(f, moves, ev):
                     if r_: prov_why.append(f'inputs degraded ({r_})')
                 except Exception: pass
         txns = [dict(op='start', player=of.name, key=o, slot=s)] + ([dict(op='bench', player=xf.name, key=out)] if (xf and out) else [])
+        # the slot's holder merely slides elsewhere: name it (10-17: 'Strong at RB2 over Douglas')
+        slide = ''
+        if c_ and out and c_ != out:
+            s2 = next((z for z, kk in asg.items() if kk == c_ and z != s), None)
+            if s2: slide = f' ({fact(c_).name} slides to {s2})'
         if o in by_add:
             by_add[o]['txns'] += txns
-            by_add[o]['lineup'] = dict(slot=s, over=((xf.name + ' (dropped)') if dropped_here else xf.name) if xf else 'empty', gain=round(gain, 2))
+            by_add[o]['lineup'] = dict(slot=s, over=(((xf.name + ' (dropped)') if dropped_here else xf.name) if xf else 'empty') + slide, gain=round(gain, 2))
             continue
         kick = of.kick
         lmoves.append(dict(id=f'{f.league}:lineup:{s}', league=f.league, kind='lineup', add_name=None, add_key=None,
@@ -972,7 +977,7 @@ def _lineup_after(f, moves, ev):
                            when=(f'before kickoff {C.stamp(kick)}' if kick and kick > f.now else 'now'),
                            at=None, deadline=C.iso(kick) if kick else None, timing_why='', eff='W', gates=dict(add=None, drop=None),
                            reasons=[((f"{xf.name} has no game this week (bye) — the slot scores nothing until he is replaced" if bye_out else f"{xf.name} is {xf.designation} — the slot scores nothing until he is replaced") if sit_out else
-                                     'the slot is empty' if hole else f'{gain:+.2f} this week')] + prov_why,
+                                     'the slot is empty' if hole else f'{gain:+.2f} this week') + slide] + prov_why,
                            tier=None, srcs=['lineup'], provisional=bool(prov_why), slot=s, start=of.name,
                            sit=(xf.name if xf else None), gain=round(gain, 2), phase=C.lineup_phase(kick) if kick else 'unknown'))
     after = dict(total=round(tot, 2), optimal_before_moves=round(cur_tot, 2),
