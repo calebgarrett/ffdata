@@ -16,13 +16,13 @@
      "add": null,
      "bid": null,
      "drop": null,
-     "gain": 1.08,
+     "gain": 1.04,
      "gates": [],
      "kind": "start",
      "provisional": true,
-     "reason": "",
+     "reason": " (MarShawn Lloyd slides to W/R/T)",
      "sit": "DeMario Douglas",
-     "slot": "W/R/T",
+     "slot": "RB2",
      "start": "Pierre Strong Jr.",
      "status": "proposed",
      "subject": "Pierre Strong Jr.",
@@ -268,31 +268,31 @@
     "K": "Jason Myers",
     "QB": "Matthew Stafford",
     "RB1": "James Cook III",
-    "RB2": "MarShawn Lloyd",
+    "RB2": "Pierre Strong Jr.",
     "TE": "Isaiah Likely",
-    "W/R/T": "Pierre Strong Jr.",
+    "W/R/T": "MarShawn Lloyd",
     "WR1": "Jaxon Smith-Njigba",
     "WR2": "Drake London",
     "WR3": "Ryan Flournoy"
    },
    "me": "OVERKILL",
-   "others_pulled": "2026-10-18T05:02:46+00:00",
+   "others_pulled": "2026-10-18T09:50:55+00:00",
    "planner": {
     "lineup_after": {
      "DEF": "49ers",
      "K": "Jason Myers",
      "QB": "Matthew Stafford",
      "RB1": "James Cook III",
-     "RB2": "MarShawn Lloyd",
+     "RB2": "Pierre Strong Jr.",
      "TE": "Isaiah Likely",
-     "W/R/T": "Pierre Strong Jr.",
+     "W/R/T": "MarShawn Lloyd",
      "WR1": "Jaxon Smith-Njigba",
      "WR2": "Drake London",
      "WR3": "Ryan Flournoy"
     },
     "moves": [
      {
-      "J": 1.077,
+      "J": 1.039,
       "add": null,
       "drop": null,
       "gates": [],
@@ -300,10 +300,10 @@
       "kind": "lineup",
       "provisional": true,
       "sit": "DeMario Douglas",
-      "slot": "W/R/T",
+      "slot": "RB2",
       "start": "Pierre Strong Jr.",
       "txns": [
-       "start Pierre Strong Jr. at W/R/T",
+       "start Pierre Strong Jr. at RB2",
        "bench DeMario Douglas"
       ],
       "when": "before kickoff Sun Oct 18, 8:20 pm ET"
@@ -312,7 +312,7 @@
     "rejected": [
      {
       "name": "Cade Otton",
-      "reason": "J +0.30 < 3.0 at its best spot (Xavier Hutchinson) \u2014 J +0.30 = 1.0x+0.77 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+0.34 (bench boom) - 0.00 acq - 0.00 FAB($0) - 0.50 churn"
+      "reason": "J +0.32 < 3.0 at its best spot (Xavier Hutchinson) \u2014 J +0.32 = 1.0x+0.79 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+0.28 (bench boom) - 0.00 acq - 0.00 FAB($0) - 0.50 churn"
      },
      {
       "name": "Charlie Kolar",
@@ -340,7 +340,7 @@
      },
      {
       "name": "Laquon Treadwell",
-      "reason": "J -0.42 < 3.0 at its best spot (Xavier Hutchinson) \u2014 J -0.42 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.04 (rest, mean of wks 8-17) + 0.1x+0.41 (bench boom) - 0.00 acq - 0.00 FAB($0) - 0.50 churn"
+      "reason": "J -0.42 < 3.0 at its best spot (Xavier Hutchinson) \u2014 J -0.42 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.06 (rest, mean of wks 8-17) + 0.1x+0.35 (bench boom) - 0.00 acq - 0.00 FAB($0) - 0.50 churn"
      },
      {
       "name": "Marquez Valdes-Scantling",
@@ -364,7 +364,7 @@
      }
     ]
    },
-   "pulled": "2026-10-18T05:02:46+00:00"
+   "pulled": "2026-10-18T09:50:55+00:00"
   },
   "HH": {
    "actions": [
@@ -372,13 +372,13 @@
      "add": null,
      "bid": null,
      "drop": null,
-     "gain": 0.8,
+     "gain": 0.85,
      "gates": [],
      "kind": "start",
      "provisional": true,
-     "reason": " (Drake London slides to WR)",
+     "reason": " (Braelon Allen slides to W/R)",
      "sit": "Rome Odunze",
-     "slot": "W/R",
+     "slot": "W/R/T",
      "start": "Denzel Boston",
      "status": "proposed",
      "subject": "Denzel Boston",
@@ -390,7 +390,7 @@
      "bid": null,
      "drop": null,
      "fam": "WR",
-     "gain": 2.78,
+     "gain": 2.8,
      "gates": [
       "G5-sources:BLOCK",
       "G11-role-registry:WARN"
@@ -410,7 +410,7 @@
      "bid": null,
      "drop": null,
      "fam": "WR",
-     "gain": 2.59,
+     "gain": 2.57,
      "gates": [
       "G11-role-registry:WARN"
      ],
@@ -479,6 +479,24 @@
      "verdict": "PASS",
      "when": "next usage pull (Tuesday) \u2014 add then if the snaps hold or the market moves toward him",
      "why": "one game of starter usage; no market confirmation yet and the spot would cost a real player"
+    },
+    {
+     "add": "Malik Washington",
+     "bid": null,
+     "drop": null,
+     "gates": [],
+     "kind": "breakout",
+     "provisional": false,
+     "sit": null,
+     "slot": null,
+     "start": null,
+     "status": null,
+     "subject": "Malik Washington",
+     "tier": "B",
+     "verb": "NONE",
+     "verdict": "PASS",
+     "when": "no move \u2014 you dropped him",
+     "why": "you dropped him in HH on 2026-10-18; the usage behind this row predates that and is not re-proposed until a newer usage pull says otherwise"
     },
     {
      "add": "Ollie Gordon",
@@ -864,48 +882,49 @@
     "2 DEFs rostered \u2014 second one is a HOLD in a capped league: Texans (registry hold)",
     "Budda Baker is Q at DB \u2014 if he is out, Alontae Taylor (14.4) takes the slot; decide before Sun Oct 18, 4:05 pm ET",
     "Carson Schwesinger is Q at LB \u2014 no healthy bench player can fill LB; decide before Sun Oct 18, 1:00 pm ET",
-    "Nick Cross is Q at S \u2014 no healthy bench player can fill S; decide before Mon Oct 19, 8:15 pm ET"
+    "Nick Cross is Q at S \u2014 no healthy bench player can fill S; decide before Mon Oct 19, 8:15 pm ET",
+    "Rashee Rice [O] holds a roster spot \u2014 why and for how long is NOT on record; not a drop until it is"
    ],
    "lineup": {
     "CB": "Cooper DeJean",
-    "D": "Foyesade Oluokun",
+    "D": "Carson Schwesinger",
     "DB": "Nick Cross",
     "DEF": "Chiefs",
     "DL": "T.J. Watt",
     "K": "Cairo Santos",
-    "LB": "Carson Schwesinger",
+    "LB": "Foyesade Oluokun",
     "Q/W/R/T": "Matthew Stafford",
     "QB": "Dak Prescott",
     "RB": "Jaylen Warren",
     "S": "Budda Baker",
     "TE": "Trey McBride",
-    "W/R": "Denzel Boston",
-    "W/R/T": "Braelon Allen",
+    "W/R": "Braelon Allen",
+    "W/R/T": "Denzel Boston",
     "WR": "Drake London"
    },
    "me": "Tecmo Bowlers",
-   "others_pulled": "2026-10-18T05:02:46+00:00",
+   "others_pulled": "2026-10-18T09:50:55+00:00",
    "planner": {
     "lineup_after": {
      "CB": "Cooper DeJean",
-     "D": "Foyesade Oluokun",
+     "D": "Carson Schwesinger",
      "DB": "Nick Cross",
      "DEF": "Chiefs",
      "DL": "T.J. Watt",
      "K": "Cairo Santos",
-     "LB": "Carson Schwesinger",
+     "LB": "Foyesade Oluokun",
      "Q/W/R/T": "Matthew Stafford",
      "QB": "Dak Prescott",
      "RB": "Jaylen Warren",
      "S": "Budda Baker",
      "TE": "Trey McBride",
      "W/R": "Braelon Allen",
-     "W/R/T": "Drake London",
-     "WR": "Denzel Boston"
+     "W/R/T": "Denzel Boston",
+     "WR": "Drake London"
     },
     "moves": [
      {
-      "J": 0.796,
+      "J": 0.846,
       "add": null,
       "drop": null,
       "gates": [],
@@ -913,10 +932,10 @@
       "kind": "lineup",
       "provisional": true,
       "sit": "Rome Odunze",
-      "slot": "WR",
+      "slot": "W/R/T",
       "start": "Denzel Boston",
       "txns": [
-       "start Denzel Boston at WR",
+       "start Denzel Boston at W/R/T",
        "bench Rome Odunze"
       ],
       "when": "before kickoff Sun Oct 18, 1:00 pm ET"
@@ -949,7 +968,7 @@
      },
      {
       "name": "Dameon Pierce",
-      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 11.4 under your weakest 14.8"
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 11.3 under your weakest 14.9"
      },
      {
       "name": "Dawson Knox",
@@ -965,7 +984,7 @@
      },
      {
       "name": "Emanuel Wilson",
-      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 13.0 under your weakest 14.8"
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 13.0 under your weakest 14.9"
      },
      {
       "name": "Greg Dulcich",
@@ -989,11 +1008,15 @@
      },
      {
       "name": "Kendre Miller",
-      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 8.6 under your weakest 14.8"
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 7.8 under your weakest 14.9"
      },
      {
       "name": "Laquon Treadwell",
       "reason": "best spot Chiefs: Tier B (unpriced) never takes the spare DEF \u2014 Tier A only"
+     },
+     {
+      "name": "Malik Washington",
+      "reason": "you dropped him in HH on 2026-10-18 (<= 7 days, either league)"
      },
      {
       "name": "Marquez Valdes-Scantling",
@@ -1001,11 +1024,11 @@
      },
      {
       "name": "Ollie Gordon",
-      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 0.0 under your weakest 14.8"
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 0.0 under your weakest 14.9"
      },
      {
       "name": "Rachaad White",
-      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 11.3 under your weakest 14.8"
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 11.4 under your weakest 14.9"
      },
      {
       "name": "Rashod Bateman",
@@ -1013,7 +1036,7 @@
      },
      {
       "name": "Roschon Johnson",
-      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 6.2 under your weakest 14.8"
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 5.9 under your weakest 14.9"
      },
      {
       "name": "Ryan Fitzgerald",
@@ -1021,7 +1044,7 @@
      },
      {
       "name": "Samaje Perine",
-      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 0.0 under your weakest 14.8"
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 0.0 under your weakest 14.9"
      },
      {
       "name": "Treylon Burks",
@@ -1033,7 +1056,7 @@
      },
      {
       "name": "Woody Marks",
-      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 13.5 under your weakest 14.8"
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 13.5 under your weakest 14.9"
      },
      {
       "name": "Xavier Worthy",
@@ -1041,9 +1064,9 @@
      }
     ]
    },
-   "pulled": "2026-10-18T05:02:46+00:00"
+   "pulled": "2026-10-18T09:50:55+00:00"
   }
  },
- "now": "2026-10-18T01:05-04:00",
+ "now": "2026-10-18T05:54-04:00",
  "week": 6
 }
