@@ -61,29 +61,29 @@
    "K": "jason myers",
    "QB": "matt stafford",
    "RB1": "james cook",
-   "RB2": "pierre strong",
+   "RB2": "marshawn lloyd",
    "TE": "isaiah likely",
-   "W/R/T": "marshawn lloyd",
+   "W/R/T": "pierre strong",
    "WR1": "jaxon smith njigba",
-   "WR2": "ryan flournoy",
-   "WR3": "drake london"
+   "WR2": "drake london",
+   "WR3": "ryan flournoy"
   },
-  "optimal_before_moves": 146.19,
+  "optimal_before_moves": 147.22,
   "slots": {
    "DEF": "49ers",
    "K": "Jason Myers",
    "QB": "Matthew Stafford",
    "RB1": "James Cook III",
-   "RB2": "Pierre Strong Jr.",
+   "RB2": "MarShawn Lloyd",
    "TE": "Isaiah Likely",
-   "W/R/T": "MarShawn Lloyd",
+   "W/R/T": "Pierre Strong Jr.",
    "WR1": "Jaxon Smith-Njigba",
-   "WR2": "Ryan Flournoy",
-   "WR3": "Drake London"
+   "WR2": "Drake London",
+   "WR3": "Ryan Flournoy"
   },
-  "total": 146.19
+  "total": 147.22
  },
- "made": "2026-10-17T20:17-04:00",
+ "made": "2026-10-18T01:05-04:00",
  "mechanics": [
   {
    "rule": "A never-rostered free agent is free until his game kicks off",
@@ -123,7 +123,7 @@
  ],
  "moves": [
   {
-   "J": 1.007,
+   "J": 1.077,
    "add_key": null,
    "add_name": null,
    "at": null,
@@ -131,22 +131,22 @@
    "drop_name": null,
    "eff": "W",
    "fam": "RB",
-   "gain": 1.01,
+   "gain": 1.08,
    "gates": {
     "add": null,
     "drop": null
    },
-   "id": "BSB:lineup:RB2",
+   "id": "BSB:lineup:W/R/T",
    "kind": "lineup",
    "league": "BSB",
-   "phase": "decide",
+   "phase": "alert",
    "provisional": true,
    "reasons": [
-    "+1.01 this week (MarShawn Lloyd slides to W/R/T)",
+    "+1.08 this week",
     "inside the 1.5-pt noise band"
    ],
    "sit": "DeMario Douglas",
-   "slot": "RB2",
+   "slot": "W/R/T",
    "spot_id": null,
    "spot_kind": null,
    "spot_label": null,
@@ -162,7 +162,7 @@
      "key": "pierre strong",
      "op": "start",
      "player": "Pierre Strong Jr.",
-     "slot": "RB2"
+     "slot": "W/R/T"
     },
     {
      "key": "demario douglas",
@@ -171,8 +171,8 @@
     }
    ],
    "value_terms": {
-    "J": 1.007,
-    "dS_W": 1.007
+    "J": 1.077,
+    "dS_W": 1.077
    },
    "when": "before kickoff Sun Oct 18, 8:20 pm ET"
   }
@@ -180,109 +180,100 @@
  "notes": [],
  "rejected": [
   {
-   "J": 0.43,
+   "J": 0.301,
    "key": "cade otton",
    "name": "Cade Otton",
-   "reason": "J +0.43 < 3.0 at its best spot (DeMario Douglas) \u2014 J +0.43 = 1.0x+0.90 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+0.28 (bench boom) - 0.00 acq - 0.00 FAB($0) - 0.50 churn",
+   "reason": "J +0.30 < 3.0 at its best spot (Xavier Hutchinson) \u2014 J +0.30 = 1.0x+0.77 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+0.34 (bench boom) - 0.00 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
-    "breakout tier B: 92% snaps, 16% targets, 19% air yds; Kalshi receiving yds 32 vs Sleeper 32 (-1%) \u2014 a part-time line, under the 35 starter floor; held (wk4: 94% snaps, 22% targets, 0% air yds)"
+    "breakout tier B: 92% snaps, 16% targets, 19% air yds; Kalshi receiving yds 32 vs Sleeper 32 (-0%) \u2014 a part-time line, under the 35 starter floor; held (wk4: 94% snaps, 22% targets, 0% air yds)"
    ]
   },
   {
-   "J": -0.472,
+   "J": -0.466,
    "key": "charlie kolar",
    "name": "Charlie Kolar",
-   "reason": "best spot DeMario Douglas: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
+   "reason": "best spot Xavier Hutchinson: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
-    "breakout tier B: 76% snaps, 17% targets, 34% air yds; Kalshi receiving yds 26 vs Sleeper 19 (+41%) \u2014 a part-time line, under the 35 starter floor"
+    "breakout tier B: 76% snaps, 17% targets, 34% air yds; Kalshi receiving yds 26 vs Sleeper 19 (+38%) \u2014 a part-time line, under the 35 starter floor"
    ]
   },
   {
-   "J": -0.436,
+   "J": -0.43,
    "key": "dawson knox",
    "name": "Dawson Knox",
-   "reason": "best spot DeMario Douglas: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
+   "reason": "best spot Xavier Hutchinson: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
     "breakout tier B: 70% snaps, 16% targets, 19% air yds; no market line yet (Sleeper receiving yds 12)"
    ]
   },
   {
-   "J": -0.566,
+   "J": -0.56,
    "key": "greg dulcich",
    "name": "Greg Dulcich",
-   "reason": "best spot DeMario Douglas: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
+   "reason": "best spot Xavier Hutchinson: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
     "breakout tier B: 74% snaps, 19% targets, 27% air yds; no market line yet, and no Sleeper line either"
    ]
   },
   {
-   "J": -0.523,
+   "J": -0.517,
    "key": "isaiah bond",
    "name": "Isaiah Bond",
-   "reason": "best spot DeMario Douglas: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
+   "reason": "best spot Xavier Hutchinson: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
     "breakout tier B: 72% snaps, 21% targets, 47% air yds; no market line yet (Sleeper receiving yds 15)"
    ]
   },
   {
-   "J": 1.052,
+   "J": 0.884,
    "key": "jake ferguson",
    "name": "Jake Ferguson",
-   "reason": "best spot DeMario Douglas: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
+   "reason": "best spot Xavier Hutchinson: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
     "breakout tier B: 83% snaps, 14% targets, 2% air yds; Kalshi receiving yds 28 vs Sleeper 30 (-7%) \u2014 a part-time line, under the 35 starter floor"
    ]
   },
   {
-   "J": 0.771,
+   "J": 0.777,
    "key": "jason sanders",
    "name": "Jason Sanders",
-   "reason": "best spot DeMario Douglas: a K stream that is not a hole never costs a real bench player (DeMario Douglas)",
+   "reason": "best spot Xavier Hutchinson: a K stream that is not a hole never costs a real bench player (Xavier Hutchinson)",
    "reasons": [
     "week-7 K stream: Jason Sanders 10.6 vs your best 9.7 (W projection x own implied total 22.0/16.5)"
    ]
   },
   {
-   "J": -0.427,
+   "J": -0.424,
    "key": "laquon treadwell",
    "name": "Laquon Treadwell",
-   "reason": "J -0.43 < 3.0 at its best spot (DeMario Douglas) \u2014 J -0.43 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.05 (rest, mean of wks 8-17) + 0.1x+0.35 (bench boom) - 0.00 acq - 0.00 FAB($0) - 0.50 churn",
+   "reason": "J -0.42 < 3.0 at its best spot (Xavier Hutchinson) \u2014 J -0.42 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.04 (rest, mean of wks 8-17) + 0.1x+0.41 (bench boom) - 0.00 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
-    "breakout tier B: 80% snaps, 18% targets, 14% air yds; Kalshi receiving yds 31 vs Sleeper 34 (-7%) \u2014 a part-time line, under the 35 starter floor; held (wk4: 85% snaps, 18% targets, 34% air yds)"
+    "breakout tier B: 80% snaps, 18% targets, 14% air yds; Kalshi receiving yds 31 vs Sleeper 33 (-6%) \u2014 a part-time line, under the 35 starter floor; held (wk4: 85% snaps, 18% targets, 34% air yds)"
    ]
   },
   {
-   "J": -0.245,
-   "key": "mark andrews",
-   "name": "Mark Andrews",
-   "reason": "best spot DeMario Douglas: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
-   "reasons": [
-    "breakout tier B: 72% snaps, 19% targets, 15% air yds; Kalshi receiving yds 33 vs Sleeper 27 (+18%) \u2014 a part-time line, under the 35 starter floor"
-   ]
-  },
-  {
-   "J": -0.527,
+   "J": -0.521,
    "key": "marquez valdes scantling",
    "name": "Marquez Valdes-Scantling",
-   "reason": "best spot DeMario Douglas: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
+   "reason": "best spot Xavier Hutchinson: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
     "breakout tier B: 75% snaps, 12% targets, 26% air yds; no market line yet, and no Sleeper line either"
    ]
   },
   {
-   "J": -0.234,
+   "J": -0.23,
    "key": "roschon johnson",
    "name": "Roschon Johnson",
-   "reason": "best spot DeMario Douglas: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
+   "reason": "best spot Xavier Hutchinson: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
-    "breakout tier B: 39% snaps, 46% of RB touches; Kalshi rushing yds 25 vs Sleeper 27 (-7%) \u2014 a part-time line, under the 40 starter floor"
+    "breakout tier B: 39% snaps, 46% of RB touches; Kalshi rushing yds 25 vs Sleeper 27 (-8%) \u2014 a part-time line, under the 40 starter floor"
    ]
   },
   {
-   "J": 0.107,
+   "J": 0.113,
    "key": "ryan fitzgerald",
    "name": "Ryan Fitzgerald",
-   "reason": "best spot DeMario Douglas: a K stream that is not a hole never costs a real bench player (DeMario Douglas)",
+   "reason": "best spot Xavier Hutchinson: a K stream that is not a hole never costs a real bench player (Xavier Hutchinson)",
    "reasons": [
     "week-7 K stream: Ryan Fitzgerald 9.8 vs your best 9.7 (W projection x own implied total 22.0/18.5)"
    ]
@@ -297,10 +288,10 @@
    ]
   },
   {
-   "J": -0.474,
+   "J": -0.468,
    "key": "treylon burks",
    "name": "Treylon Burks",
-   "reason": "best spot DeMario Douglas: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
+   "reason": "best spot Xavier Hutchinson: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
     "breakout tier B: 73% snaps, 20% targets, 16% air yds; no market line yet (Sleeper receiving yds 5)"
    ]
@@ -370,9 +361,9 @@
   "W_REST": 0.8
  },
  "winprob": {
-  "mean": 146.43848415540478,
+  "mean": 147.6394529799366,
   "note": "sampled on the planner's final lineup",
-  "p_med": 0.7846666666666666,
-  "p_opp": 0.731
+  "p_med": 0.7905,
+  "p_opp": 0.8121666666666667
  }
 }
