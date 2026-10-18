@@ -1,7 +1,7 @@
-# ffdata pull loaded Sat Oct 17, 7:04 pm ET — repo head: 2026-10-17T19:00:22-04:00 Add files via upload (in-action, no pull)
+# ffdata pull loaded Sat Oct 17, 8:15 pm ET — repo head: 2026-10-17T23:06:54Z pull 2026-10-17T23:06Z (in-action, no pull)
 week 6
-kalshi.csv: 4464 markets, 148 events, pulled 2026-10-17T23:02:34+00:00
-kalshi_archive: 3 new pull(s) copied, 117 on disk
+kalshi.csv: 4475 markets, 148 events, pulled 2026-10-18T00:13:21+00:00
+kalshi_archive: 1 new pull(s) copied, 118 on disk
 espn_games.csv: 14 games for week 6 — 0 with ESPN lines from the pump, 14 schedule-only from lines_wk3_9.csv; Kalshi spread/total ladders supply the lines inside the engine
 sleeper_off_wk6.csv: 3302 rows
 sleeper_idp_wk6.csv: 4604 rows
@@ -10,9 +10,9 @@ usage_wk5_QB.csv: 81 rows
 usage_wk5_RB.csv: 167 rows
 usage_wk5_WR.csv: 265 rows
 usage_wk5_TE.csv: 160 rows
-BSB rosters: 216 players on 12 teams, pulled 2026-10-17T23:03:39+00:00 -> new snapshot
+BSB rosters: 216 players on 12 teams, pulled 2026-10-18T00:14:31+00:00 -> new snapshot
 BSB matchup wk6: vs Deadites; 2 final rows, 0 in progress; totals me 34.30 opp 0.00
 BSB transactions: 0 new of 46 on the page; log now 199 rows
-HH rosters: 237 players on 10 teams, pulled 2026-10-17T23:03:39+00:00 -> new snapshot
+HH rosters: 237 players on 10 teams, pulled 2026-10-18T00:14:31+00:00 -> new snapshot
 HH matchup wk6: vs My Team is on IR; 2 final rows, 0 in progress; totals me 0.00 opp 29.00
 HH transactions: 0 new of 46 on the page; log now 170 rows
