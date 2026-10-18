@@ -13,23 +13,6 @@
   "BSB": {
    "actions": [
     {
-     "add": null,
-     "bid": null,
-     "drop": null,
-     "gain": 0.86,
-     "gates": [],
-     "kind": "start",
-     "provisional": true,
-     "reason": "",
-     "sit": "DeMario Douglas",
-     "slot": "W/R/T",
-     "start": "Pierre Strong Jr.",
-     "status": "proposed",
-     "subject": "Pierre Strong Jr.",
-     "verdict": "PASS",
-     "when": "alert"
-    },
-    {
      "add": "Tennessee Titans",
      "bid": null,
      "drop": "49ers",
@@ -80,7 +63,7 @@
      "tier": "B",
      "verb": "ADD",
      "verdict": "PASS",
-     "when": "free agent until his game kicks off; after that a waiver claim, in by Tue night (runs Wed ~5am) \u2014 bid $1: an unpriced role nobody else's model is looking at yet; the floor is the number \u2014 locks Sun 1:00 PM ET",
+     "when": "his game has already kicked off \u2014 Yahoo locks an unrostered player at kickoff, so he is a Wednesday waiver claim in BSB \u2014 bid $1: an unpriced role nobody else's model is looking at yet; the floor is the number",
      "why": "starter usage two weeks running (wk4: 94% snaps, 22% targets, 0% air yds) and the market has not priced him yet \u2014 the cheap window. Xavier Hutchinson is the spot: lowest-valued bench player (bench-lev"
     },
     {
@@ -120,24 +103,6 @@
      "why": "one game of starter usage; no market confirmation yet and the spot would cost a real player"
     },
     {
-     "add": "Roschon Johnson",
-     "bid": null,
-     "drop": null,
-     "gates": [],
-     "kind": "breakout",
-     "provisional": false,
-     "sit": null,
-     "slot": null,
-     "start": null,
-     "status": null,
-     "subject": "Roschon Johnson",
-     "tier": "B",
-     "verb": "WAIT",
-     "verdict": "PASS",
-     "when": "next usage pull (Tuesday) \u2014 add then if the snaps hold or the market moves toward him",
-     "why": "one game of starter usage; no market confirmation yet and the spot would cost a real player"
-    },
-    {
      "add": "Marquez Valdes-Scantling",
      "bid": null,
      "drop": null,
@@ -170,7 +135,7 @@
      "tier": "B",
      "verb": "ADD",
      "verdict": "PASS",
-     "when": "free agent until his game kicks off; after that a waiver claim, in by Tue night (runs Wed ~5am) \u2014 bid $1: an unpriced role nobody else's model is looking at yet; the floor is the number \u2014 locks Sun 1:00 PM ET",
+     "when": "his game has already kicked off \u2014 Yahoo locks an unrostered player at kickoff, so he is a Wednesday waiver claim in BSB \u2014 bid $1: an unpriced role nobody else's model is looking at yet; the floor is the number",
      "why": "starter usage two weeks running (wk4: 85% snaps, 18% targets, 34% air yds) and the market has not priced him yet \u2014 the cheap window. Makai Lemon is the spot: lowest-valued bench player (part-time usag"
     },
     {
@@ -207,7 +172,7 @@
      "verb": "NONE",
      "verdict": "PASS",
      "when": "no move for this roster",
-     "why": "you already carry 4 RBs for 2 slot(s) and he projects below your weakest (Ray Davis 2.3 vs 0.0). Only a trade chip."
+     "why": "you already carry 4 RBs for 2 slot(s) and he projects below your weakest (Ray Davis 2.2 vs 0.0). Only a trade chip."
     },
     {
      "add": "Dawson Knox",
@@ -270,13 +235,13 @@
     "RB1": "James Cook III",
     "RB2": "MarShawn Lloyd",
     "TE": "Isaiah Likely",
-    "W/R/T": "Pierre Strong Jr.",
+    "W/R/T": "DeMario Douglas",
     "WR1": "Jaxon Smith-Njigba",
     "WR2": "Drake London",
     "WR3": "Ryan Flournoy"
    },
    "me": "OVERKILL",
-   "others_pulled": "2026-10-18T13:55:10+00:00",
+   "others_pulled": "2026-10-18T17:15:09+00:00",
    "planner": {
     "lineup_after": {
      "DEF": "49ers",
@@ -285,34 +250,20 @@
      "RB1": "James Cook III",
      "RB2": "MarShawn Lloyd",
      "TE": "Isaiah Likely",
-     "W/R/T": "Pierre Strong Jr.",
+     "W/R/T": "DeMario Douglas",
      "WR1": "Jaxon Smith-Njigba",
      "WR2": "Drake London",
      "WR3": "Ryan Flournoy"
     },
-    "moves": [
-     {
-      "J": 0.857,
-      "add": null,
-      "drop": null,
-      "gates": [],
-      "ir": null,
-      "kind": "lineup",
-      "provisional": true,
-      "sit": "DeMario Douglas",
-      "slot": "W/R/T",
-      "start": "Pierre Strong Jr.",
-      "txns": [
-       "start Pierre Strong Jr. at W/R/T",
-       "bench DeMario Douglas"
-      ],
-      "when": "before kickoff Sun Oct 18, 8:20 pm ET"
-     }
-    ],
+    "moves": [],
     "rejected": [
      {
+      "name": "Pittsburgh Steelers",
+      "reason": "J -0.73 < 3.0 at its best spot (Vikings) \u2014 J -0.73 = 1.0x+0.00 (wk W) + 0.8x+0.22 (W+1) + 0.8x-0.50 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 0.00 acq - 0.01 FAB($1) - 0.50 churn"
+     },
+     {
       "name": "Cade Otton",
-      "reason": "J +0.28 < 3.0 at its best spot (DeMario Douglas) \u2014 J +0.28 = 1.0x+0.76 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.1x+0.21 (bench boom) - 0.00 acq - 0.00 FAB($0) - 0.50 churn"
+      "reason": "J -0.42 < 3.0 at its best spot (Xavier Hutchinson) \u2014 J -0.42 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.02 (rest, mean of wks 8-17) + 0.1x+0.81 (bench boom) - 0.00 acq - 0.01 FAB($1) - 0.50 churn"
      },
      {
       "name": "Charlie Kolar",
@@ -332,7 +283,7 @@
      },
      {
       "name": "Jake Ferguson",
-      "reason": "best spot DeMario Douglas: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
+      "reason": "best spot Xavier Hutchinson: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
      },
      {
       "name": "Jason Sanders",
@@ -340,14 +291,10 @@
      },
      {
       "name": "Laquon Treadwell",
-      "reason": "J -0.40 < 3.0 at its best spot (Xavier Hutchinson) \u2014 J -0.40 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.05 (rest, mean of wks 8-17) + 0.1x+0.74 (bench boom) - 0.00 acq - 0.01 FAB($1) - 0.50 churn"
+      "reason": "J -0.43 < 3.0 at its best spot (Xavier Hutchinson) \u2014 J -0.43 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.03 (rest, mean of wks 8-17) + 0.1x+0.51 (bench boom) - 0.00 acq - 0.01 FAB($1) - 0.50 churn"
      },
      {
       "name": "Marquez Valdes-Scantling",
-      "reason": "best spot Xavier Hutchinson: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
-     },
-     {
-      "name": "Roschon Johnson",
       "reason": "best spot Xavier Hutchinson: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
      },
      {
@@ -356,7 +303,7 @@
      },
      {
       "name": "Samaje Perine",
-      "reason": "sits behind everyone: you carry 4 RBs for 2 slot(s) and he projects 0.0 under your weakest 2.3"
+      "reason": "sits behind everyone: you carry 4 RBs for 2 slot(s) and he projects 0.0 under your weakest 2.2"
      },
      {
       "name": "Treylon Burks",
@@ -364,86 +311,10 @@
      }
     ]
    },
-   "pulled": "2026-10-18T13:55:10+00:00"
+   "pulled": "2026-10-18T17:15:09+00:00"
   },
   "HH": {
    "actions": [
-    {
-     "add": null,
-     "bid": null,
-     "drop": null,
-     "gain": 0.93,
-     "gates": [],
-     "kind": "start",
-     "provisional": true,
-     "reason": " (Drake London slides to WR)",
-     "sit": "Rome Odunze",
-     "slot": "W/R",
-     "start": "Denzel Boston",
-     "status": "proposed",
-     "subject": "Denzel Boston",
-     "verdict": "PASS",
-     "when": "alert"
-    },
-    {
-     "add": "DJ Moore",
-     "bid": null,
-     "drop": null,
-     "fam": "WR",
-     "gain": 2.95,
-     "gates": [
-      "G5-sources:BLOCK",
-      "G11-role-registry:WARN"
-     ],
-     "kind": "upgrade",
-     "provisional": false,
-     "sit": "Rome Odunze",
-     "slot": null,
-     "start": null,
-     "status": "blocked",
-     "subject": "DJ Moore",
-     "verdict": "BLOCK",
-     "when": null
-    },
-    {
-     "add": "Jalen Coker",
-     "bid": null,
-     "drop": null,
-     "fam": "WR",
-     "gain": 2.65,
-     "gates": [
-      "G11-role-registry:WARN"
-     ],
-     "kind": "upgrade",
-     "provisional": false,
-     "sit": "Rome Odunze",
-     "slot": null,
-     "start": null,
-     "status": "proposed",
-     "subject": "Jalen Coker",
-     "verdict": "WARN",
-     "when": null
-    },
-    {
-     "add": "Devin Lloyd",
-     "bid": null,
-     "drop": null,
-     "fam": "LB",
-     "gain": 2.49,
-     "gates": [
-      "G5-sources:BLOCK",
-      "G11-role-registry:WARN"
-     ],
-     "kind": "upgrade",
-     "provisional": false,
-     "sit": "Carson Schwesinger",
-     "slot": null,
-     "start": null,
-     "status": "blocked",
-     "subject": "Devin Lloyd",
-     "verdict": "BLOCK",
-     "when": null
-    },
     {
      "add": "Woody Marks",
      "bid": null,
@@ -636,6 +507,24 @@
      "start": null,
      "status": null,
      "subject": "Chig Okonkwo",
+     "tier": "B",
+     "verb": "WAIT",
+     "verdict": "PASS",
+     "when": "next usage pull (Tuesday) \u2014 add then if the snaps hold or the market moves toward him",
+     "why": "one game of starter usage; no market confirmation yet and the spot would cost a real player"
+    },
+    {
+     "add": "Tyjae Spears",
+     "bid": null,
+     "drop": null,
+     "gates": [],
+     "kind": "breakout",
+     "provisional": false,
+     "sit": null,
+     "slot": null,
+     "start": null,
+     "status": null,
+     "subject": "Tyjae Spears",
      "tier": "B",
      "verb": "WAIT",
      "verdict": "PASS",
@@ -841,26 +730,7 @@
      "why": "one game of starter usage; no market confirmation yet and the spot would cost a real player"
     }
    ],
-   "blocked": [
-    {
-     "add": "DJ Moore",
-     "drop": null,
-     "gates": [
-      "G5-sources:BLOCK"
-     ],
-     "kind": "upgrade",
-     "subject": "DJ Moore"
-    },
-    {
-     "add": "Devin Lloyd",
-     "drop": null,
-     "gates": [
-      "G5-sources:BLOCK"
-     ],
-     "kind": "upgrade",
-     "subject": "Devin Lloyd"
-    }
-   ],
+   "blocked": [],
    "current": {
     "CB": "Cooper DeJean",
     "D": "Foyesade Oluokun",
@@ -880,10 +750,10 @@
    },
    "flags": [
     "2 DEFs rostered \u2014 second one is a HOLD in a capped league: Texans (registry hold)",
-    "Budda Baker is Q at DB \u2014 if he is out, Alontae Taylor (14.3) takes the slot; decide before Sun Oct 18, 4:05 pm ET",
-    "Carson Schwesinger is Q at LB \u2014 no healthy bench player can fill LB; decide before Sun Oct 18, 1:00 pm ET",
+    "Budda Baker is Q at DB \u2014 no healthy bench player can fill DB; decide before Sun Oct 18, 4:05 pm ET",
     "Nick Cross is Q at S \u2014 no healthy bench player can fill S; decide before Mon Oct 19, 8:15 pm ET",
-    "Rashee Rice [O] holds a roster spot \u2014 why and for how long is NOT on record; not a drop until it is"
+    "Rashee Rice [O] holds a roster spot \u2014 why and for how long is NOT on record; not a drop until it is",
+    "Alontae Taylor [NA] holds a roster spot \u2014 why and for how long is NOT on record; not a drop until it is"
    ],
    "lineup": {
     "CB": "Cooper DeJean",
@@ -893,17 +763,17 @@
     "DL": "T.J. Watt",
     "K": "Cairo Santos",
     "LB": "Carson Schwesinger",
-    "Q/W/R/T": "Matthew Stafford",
-    "QB": "Dak Prescott",
+    "Q/W/R/T": "Dak Prescott",
+    "QB": "Matthew Stafford",
     "RB": "Jaylen Warren",
     "S": "Budda Baker",
     "TE": "Trey McBride",
-    "W/R": "Denzel Boston",
+    "W/R": "Drake London",
     "W/R/T": "Braelon Allen",
-    "WR": "Drake London"
+    "WR": "Rome Odunze"
    },
    "me": "Tecmo Bowlers",
-   "others_pulled": "2026-10-18T13:55:10+00:00",
+   "others_pulled": "2026-10-18T17:15:09+00:00",
    "planner": {
     "lineup_after": {
      "CB": "Cooper DeJean",
@@ -913,41 +783,19 @@
      "DL": "T.J. Watt",
      "K": "Cairo Santos",
      "LB": "Carson Schwesinger",
-     "Q/W/R/T": "Matthew Stafford",
-     "QB": "Dak Prescott",
+     "Q/W/R/T": "Dak Prescott",
+     "QB": "Matthew Stafford",
      "RB": "Jaylen Warren",
      "S": "Budda Baker",
      "TE": "Trey McBride",
-     "W/R": "Braelon Allen",
-     "W/R/T": "Drake London",
-     "WR": "Denzel Boston"
+     "W/R": "Drake London",
+     "W/R/T": "Braelon Allen",
+     "WR": "Rome Odunze"
     },
-    "moves": [
-     {
-      "J": 0.935,
-      "add": null,
-      "drop": null,
-      "gates": [],
-      "ir": null,
-      "kind": "lineup",
-      "provisional": true,
-      "sit": "Rome Odunze",
-      "slot": "WR",
-      "start": "Denzel Boston",
-      "txns": [
-       "start Denzel Boston at WR",
-       "bench Rome Odunze"
-      ],
-      "when": "before kickoff Sun Oct 18, 1:00 pm ET"
-     }
-    ],
+    "moves": [],
     "rejected": [
      {
-      "name": "Indianapolis Colts",
-      "reason": "J -1.92 < 3.0 at its best spot (Chiefs) \u2014 J -1.92 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x-0.53 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn"
-     },
-     {
-      "name": "Brandon Aubrey",
+      "name": "Akeem Davis-Gaither",
       "reason": "gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])"
      },
      {
@@ -968,23 +816,23 @@
      },
      {
       "name": "Dameon Pierce",
-      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 11.3 under your weakest 14.7"
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 10.7 under your weakest 13.7"
      },
      {
       "name": "Dawson Knox",
       "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
      },
      {
+      "name": "Devin Bush",
+      "reason": "gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])"
+     },
+     {
       "name": "Devin Lloyd",
       "reason": "gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])"
      },
      {
-      "name": "DJ Moore",
-      "reason": "gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])"
-     },
-     {
       "name": "Emanuel Wilson",
-      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 13.0 under your weakest 14.7"
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 13.0 under your weakest 13.7"
      },
      {
       "name": "Greg Dulcich",
@@ -995,12 +843,8 @@
       "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
      },
      {
-      "name": "Jalen Coker",
-      "reason": "best spot Chiefs: Chiefs is the spare DEF: a spot for a Tier-A add or a same-family stream only (~1 pt/wk on its own, 09-24)"
-     },
-     {
       "name": "Jason Sanders",
-      "reason": "J +0.06 < 3.0 at its best spot (Cairo Santos) \u2014 J +0.06 = 1.0x+0.00 (wk W) + 0.8x+2.72 (W+1) + 0.8x-0.77 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn"
+      "reason": "J -0.18 < 3.0 at its best spot (Cairo Santos) \u2014 J -0.18 = 1.0x+0.00 (wk W) + 0.8x+2.54 (W+1) + 0.8x-0.89 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn"
      },
      {
       "name": "Jerry Jeudy",
@@ -1008,7 +852,7 @@
      },
      {
       "name": "Kendre Miller",
-      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 7.6 under your weakest 14.7"
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 8.7 under your weakest 13.7"
      },
      {
       "name": "Laquon Treadwell",
@@ -1024,31 +868,51 @@
      },
      {
       "name": "Ollie Gordon",
-      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 0.0 under your weakest 14.7"
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 0.0 under your weakest 13.7"
+     },
+     {
+      "name": "Quay Walker",
+      "reason": "gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])"
+     },
+     {
+      "name": "Quincy Williams",
+      "reason": "gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])"
      },
      {
       "name": "Rachaad White",
-      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 11.5 under your weakest 14.7"
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 11.6 under your weakest 13.7"
      },
      {
       "name": "Rashod Bateman",
       "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
      },
      {
+      "name": "Robert Spillane",
+      "reason": "gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])"
+     },
+     {
       "name": "Roschon Johnson",
-      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 5.9 under your weakest 14.7"
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 6.5 under your weakest 13.7"
      },
      {
       "name": "Ryan Fitzgerald",
-      "reason": "J -0.38 < 3.0 at its best spot (Cairo Santos) \u2014 J -0.38 = 1.0x+0.00 (wk W) + 0.8x+1.54 (W+1) + 0.8x-0.14 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn"
+      "reason": "J -0.32 < 3.0 at its best spot (Cairo Santos) \u2014 J -0.32 = 1.0x+0.00 (wk W) + 0.8x+1.62 (W+1) + 0.8x-0.14 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn"
      },
      {
       "name": "Samaje Perine",
-      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 0.0 under your weakest 14.7"
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 0.0 under your weakest 13.7"
+     },
+     {
+      "name": "Tremaine Edmunds",
+      "reason": "gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])"
      },
      {
       "name": "Treylon Burks",
       "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
+     },
+     {
+      "name": "Tyjae Spears",
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 8.0 under your weakest 13.7"
      },
      {
       "name": "Wan'Dale Robinson",
@@ -1056,17 +920,17 @@
      },
      {
       "name": "Woody Marks",
-      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 13.7 under your weakest 14.7"
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 13.7 under your weakest 13.7"
      },
      {
-      "name": "Xavier Worthy",
-      "reason": "best spot Chiefs: Chiefs is the spare DEF: a spot for a Tier-A add or a same-family stream only (~1 pt/wk on its own, 09-24)"
+      "name": "Zaire Franklin",
+      "reason": "gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])"
      }
     ]
    },
-   "pulled": "2026-10-18T13:55:10+00:00"
+   "pulled": "2026-10-18T17:15:09+00:00"
   }
  },
- "now": "2026-10-18T09:57-04:00",
+ "now": "2026-10-18T13:18-04:00",
  "week": 6
 }

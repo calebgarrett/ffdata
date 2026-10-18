@@ -11,7 +11,7 @@
  "excluded": [
   {
    "player": "Dak Prescott",
-   "reason": "gate: G6-magnitude 40.97332937021553 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex: 3 QBs for 2 QB-eligible slots \u2014 QB3 is by"
+   "reason": "gate: G6-magnitude 40.769322866825135 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex: 3 QBs for 2 QB-eligible slots \u2014 QB3 is b"
   },
   {
    "player": "Jaylen Warren",
@@ -35,7 +35,7 @@
   },
   {
    "player": "Matthew Stafford",
-   "reason": "gate: G6-magnitude 39.95208483501214 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex: 3 QBs for 2 QB-eligible slots \u2014 QB3 is by"
+   "reason": "gate: G6-magnitude 40.14837862085336 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex: 3 QBs for 2 QB-eligible slots \u2014 QB3 is by"
   },
   {
    "player": "Jared Goff",
@@ -104,16 +104,16 @@
    "DL": "tj watt",
    "K": "cairo santos",
    "LB": "carson schwesinger",
-   "Q/W/R/T": "matt stafford",
-   "QB": "dak prescott",
+   "Q/W/R/T": "dak prescott",
+   "QB": "matt stafford",
    "RB": "jaylen warren",
    "S": "budda baker",
    "TE": "trey mcbride",
-   "W/R": "braelon allen",
-   "W/R/T": "drake london",
-   "WR": "denzel boston"
+   "W/R": "drake london",
+   "W/R/T": "braelon allen",
+   "WR": "rome odunze"
   },
-  "optimal_before_moves": 309.26,
+  "optimal_before_moves": 305.18,
   "slots": {
    "CB": "Cooper DeJean",
    "D": "Foyesade Oluokun",
@@ -122,18 +122,18 @@
    "DL": "T.J. Watt",
    "K": "Cairo Santos",
    "LB": "Carson Schwesinger",
-   "Q/W/R/T": "Matthew Stafford",
-   "QB": "Dak Prescott",
+   "Q/W/R/T": "Dak Prescott",
+   "QB": "Matthew Stafford",
    "RB": "Jaylen Warren",
    "S": "Budda Baker",
    "TE": "Trey McBride",
-   "W/R": "Braelon Allen",
-   "W/R/T": "Drake London",
-   "WR": "Denzel Boston"
+   "W/R": "Drake London",
+   "W/R/T": "Braelon Allen",
+   "WR": "Rome Odunze"
   },
-  "total": 309.26
+  "total": 305.18
  },
- "made": "2026-10-18T09:57-04:00",
+ "made": "2026-10-18T13:18-04:00",
  "mechanics": [
   {
    "rule": "Free agents are immediate unless his game is in progress",
@@ -171,84 +171,20 @@
    "verified": false
   }
  ],
- "moves": [
-  {
-   "J": 0.935,
-   "add_key": null,
-   "add_name": null,
-   "at": null,
-   "deadline": "2026-10-18T13:00-04:00",
-   "drop_name": null,
-   "eff": "W",
-   "fam": "WR",
-   "gain": 0.93,
-   "gates": {
-    "add": null,
-    "drop": null
-   },
-   "id": "HH:lineup:WR",
-   "kind": "lineup",
-   "league": "HH",
-   "phase": "alert",
-   "provisional": true,
-   "reasons": [
-    "+0.93 this week",
-    "inside the 1.5-pt noise band"
-   ],
-   "sit": "Rome Odunze",
-   "slot": "WR",
-   "spot_id": null,
-   "spot_kind": null,
-   "spot_label": null,
-   "srcs": [
-    "lineup"
-   ],
-   "start": "Denzel Boston",
-   "tier": null,
-   "timing_why": "",
-   "tm": "CLE",
-   "txns": [
-    {
-     "key": "denzel boston",
-     "op": "start",
-     "player": "Denzel Boston",
-     "slot": "WR"
-    },
-    {
-     "key": "rome odunze",
-     "op": "bench",
-     "player": "Rome Odunze"
-    }
-   ],
-   "value_terms": {
-    "J": 0.935,
-    "dS_W": 0.935
-   },
-   "when": "before kickoff Sun Oct 18, 1:00 pm ET"
-  }
- ],
+ "moves": [],
  "notes": [],
  "rejected": [
   {
-   "J": -1.922,
-   "key": "DST:IND",
-   "name": "Indianapolis Colts",
-   "reason": "J -1.92 < 3.0 at its best spot (Chiefs) \u2014 J -1.92 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x-0.53 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
-   "reasons": [
-    "week-7 DEF stream: Indianapolis Colts 25.6 vs your best 25.6 (W line re-scored on the week-7 opponent implied total 24.5)"
-   ]
-  },
-  {
    "J": null,
-   "key": "brandon aubrey",
-   "name": "Brandon Aubrey",
+   "key": "akeem davis gaither",
+   "name": "Akeem Davis-Gaither",
    "reason": "gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])",
    "reasons": [
-    "K weekly upgrade: Brandon Aubrey 14.3 vs starter Cairo Santos 12.6"
+    "week-7 hole at LB (Foyesade Oluokun on bye); Akeem Davis-Gaither 20.3 is the best free LB on week-7 values"
    ]
   },
   {
-   "J": -3.342,
+   "J": -3.095,
    "key": "brenton strange",
    "name": "Brenton Strange",
    "reason": "best spot Chiefs: Tier B (unpriced) never takes the spare DEF \u2014 Tier A only",
@@ -257,48 +193,57 @@
    ]
   },
   {
-   "J": -3.631,
+   "J": -3.35,
    "key": "cade otton",
    "name": "Cade Otton",
    "reason": "best spot Chiefs: Tier B (unpriced) never takes the spare DEF \u2014 Tier A only",
    "reasons": [
-    "breakout tier B: 92% snaps, 16% targets, 19% air yds; Kalshi receiving yds 32 vs Sleeper 32 (-1%) \u2014 a part-time line, under the 35 starter floor; held (wk4: 94% snaps, 22% targets, 0% air yds)"
+    "breakout tier B: 92% snaps, 16% targets, 19% air yds; no market line yet (Sleeper receiving yds 35); held (wk4: 94% snaps, 22% targets, 0% air yds)"
    ]
   },
   {
-   "J": -3.793,
+   "J": -3.545,
    "key": "charlie kolar",
    "name": "Charlie Kolar",
    "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
-    "breakout tier B: 76% snaps, 17% targets, 34% air yds; Kalshi receiving yds 26 vs Sleeper 19 (+38%) \u2014 a part-time line, under the 35 starter floor"
+    "breakout tier B: 76% snaps, 17% targets, 34% air yds; Kalshi receiving yds 26 vs Sleeper 19 (+39%) \u2014 a part-time line, under the 35 starter floor"
    ]
   },
   {
-   "J": -3.537,
+   "J": -3.298,
    "key": "chig okonkwo",
    "name": "Chig Okonkwo",
    "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
-    "breakout tier B: 71% snaps, 24% targets, 25% air yds; Kalshi receiving yds 28 vs Sleeper 27 (+2%) \u2014 a part-time line, under the 35 starter floor"
+    "breakout tier B: 71% snaps, 24% targets, 25% air yds; Kalshi receiving yds 28 vs Sleeper 27 (+3%) \u2014 a part-time line, under the 35 starter floor"
    ]
   },
   {
    "J": null,
    "key": "dameon pierce",
    "name": "Dameon Pierce",
-   "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 11.3 under your weakest 14.7",
+   "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 10.7 under your weakest 13.7",
    "reasons": [
-    "breakout tier B: 77% snaps, 70% of RB touches; Kalshi rushing yds 57 vs Sleeper 62 (-8%)"
+    "breakout tier B: 77% snaps, 70% of RB touches; no market line yet (Sleeper rushing yds 60)"
    ]
   },
   {
-   "J": -3.85,
+   "J": -3.609,
    "key": "dawson knox",
    "name": "Dawson Knox",
    "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
-    "breakout tier B: 70% snaps, 16% targets, 19% air yds; Kalshi receiving yds 15 vs Sleeper 12 (+20%) \u2014 a part-time line, under the 35 starter floor"
+    "breakout tier B: 70% snaps, 16% targets, 19% air yds; Kalshi receiving yds 16 vs Sleeper 12 (+27%) \u2014 a part-time line, under the 35 starter floor"
+   ]
+  },
+  {
+   "J": null,
+   "key": "devin bush",
+   "name": "Devin Bush",
+   "reason": "gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])",
+   "reasons": [
+    "week-7 hole at LB (Foyesade Oluokun on bye); Devin Bush 17.8 is the best free LB on week-7 values"
    ]
   },
   {
@@ -307,29 +252,20 @@
    "name": "Devin Lloyd",
    "reason": "gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])",
    "reasons": [
-    "LB weekly upgrade: Devin Lloyd 23.5 vs starter Carson Schwesinger 21.0"
-   ]
-  },
-  {
-   "J": null,
-   "key": "dj moore",
-   "name": "DJ Moore",
-   "reason": "gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])",
-   "reasons": [
-    "WR weekly upgrade: DJ Moore 13.2 vs starter Rome Odunze 10.3"
+    "week-7 hole at LB (Foyesade Oluokun on bye); Devin Lloyd 23.6 is the best free LB on week-7 values"
    ]
   },
   {
    "J": null,
    "key": "emanuel wilson",
    "name": "Emanuel Wilson",
-   "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 13.0 under your weakest 14.7",
+   "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 13.0 under your weakest 13.7",
    "reasons": [
     "breakout tier B: 59% snaps, 73% of RB touches; no market line yet (Sleeper rushing yds 66); held (wk4: 60% snaps, 76% of RB touches)"
    ]
   },
   {
-   "J": -3.706,
+   "J": -3.465,
    "key": "greg dulcich",
    "name": "Greg Dulcich",
    "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
@@ -338,57 +274,48 @@
    ]
   },
   {
-   "J": -4.24,
+   "J": -4.007,
    "key": "isaiah bond",
    "name": "Isaiah Bond",
    "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
-    "breakout tier B: 72% snaps, 21% targets, 47% air yds; no market line yet (Sleeper receiving yds 15)"
+    "breakout tier B: 72% snaps, 21% targets, 47% air yds; no market line yet (Sleeper receiving yds 18)"
    ]
   },
   {
-   "J": -4.179,
-   "key": "jalen coker",
-   "name": "Jalen Coker",
-   "reason": "best spot Chiefs: Chiefs is the spare DEF: a spot for a Tier-A add or a same-family stream only (~1 pt/wk on its own, 09-24)",
-   "reasons": [
-    "WR weekly upgrade: Jalen Coker 12.9 vs starter Rome Odunze 10.3"
-   ]
-  },
-  {
-   "J": 0.062,
+   "J": -0.181,
    "key": "jason sanders",
    "name": "Jason Sanders",
-   "reason": "J +0.06 < 3.0 at its best spot (Cairo Santos) \u2014 J +0.06 = 1.0x+0.00 (wk W) + 0.8x+2.72 (W+1) + 0.8x-0.77 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
+   "reason": "J -0.18 < 3.0 at its best spot (Cairo Santos) \u2014 J -0.18 = 1.0x+0.00 (wk W) + 0.8x+2.54 (W+1) + 0.8x-0.89 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
-    "week-7 K stream: Jason Sanders 14.9 vs your best 12.2 (W projection x own implied total 22.0/16.5)"
+    "week-7 K stream: Jason Sanders 14.7 vs your best 12.2 (W projection x own implied total 22.0/16.5)"
    ]
   },
   {
-   "J": -4.18,
+   "J": -3.981,
    "key": "jerry jeudy",
    "name": "Jerry Jeudy",
    "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
-    "breakout tier B: 81% snaps, 21% targets, 14% air yds; Kalshi receiving yds 22 vs Sleeper 10 (+114%) \u2014 a part-time line, under the 35 starter floor"
+    "breakout tier B: 81% snaps, 21% targets, 14% air yds; no market line yet (Sleeper receiving yds 13)"
    ]
   },
   {
    "J": null,
    "key": "kendre miller",
    "name": "Kendre Miller",
-   "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 7.6 under your weakest 14.7",
+   "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 8.7 under your weakest 13.7",
    "reasons": [
-    "breakout tier B: 31% snaps, 50% of RB touches; Kalshi rushing yds 40 vs Sleeper 36 (+11%) \u2014 a part-time line, under the 40 starter floor"
+    "breakout tier B: 31% snaps, 50% of RB touches; no market line yet (Sleeper rushing yds 36)"
    ]
   },
   {
-   "J": -4.194,
+   "J": -3.967,
    "key": "laquon treadwell",
    "name": "Laquon Treadwell",
    "reason": "best spot Chiefs: Tier B (unpriced) never takes the spare DEF \u2014 Tier A only",
    "reasons": [
-    "breakout tier B: 80% snaps, 18% targets, 14% air yds; Kalshi receiving yds 31 vs Sleeper 33 (-4%) \u2014 a part-time line, under the 35 starter floor; held (wk4: 85% snaps, 18% targets, 34% air yds)"
+    "breakout tier B: 80% snaps, 18% targets, 14% air yds; no market line yet (Sleeper receiving yds 32); held (wk4: 85% snaps, 18% targets, 34% air yds)"
    ]
   },
   {
@@ -401,7 +328,7 @@
    ]
   },
   {
-   "J": -4.246,
+   "J": -3.992,
    "key": "marquez valdes scantling",
    "name": "Marquez Valdes-Scantling",
    "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
@@ -413,58 +340,94 @@
    "J": null,
    "key": "ollie gordon",
    "name": "Ollie Gordon",
-   "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 0.0 under your weakest 14.7",
+   "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 0.0 under your weakest 13.7",
    "reasons": [
     "breakout tier B: 65% snaps, 75% of RB touches; no market line yet, and no Sleeper line either; held (wk4: 56% snaps, 69% of RB touches)"
    ]
   },
   {
    "J": null,
-   "key": "rachaad white",
-   "name": "Rachaad White",
-   "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 11.5 under your weakest 14.7",
+   "key": "quay walker",
+   "name": "Quay Walker",
+   "reason": "gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])",
    "reasons": [
-    "breakout tier B: 60% snaps, 35% of RB touches; Kalshi rushing yds 48 vs Sleeper 46 (+5%)"
+    "week-7 hole at LB (Foyesade Oluokun on bye); Quay Walker 20.2 is the best free LB on week-7 values"
    ]
   },
   {
-   "J": -4.169,
+   "J": null,
+   "key": "quincy williams",
+   "name": "Quincy Williams",
+   "reason": "gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])",
+   "reasons": [
+    "week-7 hole at LB (Foyesade Oluokun on bye); Quincy Williams 17.8 is the best free LB on week-7 values"
+   ]
+  },
+  {
+   "J": null,
+   "key": "rachaad white",
+   "name": "Rachaad White",
+   "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 11.6 under your weakest 13.7",
+   "reasons": [
+    "breakout tier B: 60% snaps, 35% of RB touches; Kalshi rushing yds 50 vs Sleeper 46 (+7%)"
+   ]
+  },
+  {
+   "J": -3.949,
    "key": "rashod bateman",
    "name": "Rashod Bateman",
    "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
-    "breakout tier B: 80% snaps, 19% targets, 41% air yds; Kalshi receiving yds 27 vs Sleeper 24 (+12%) \u2014 a part-time line, under the 35 starter floor"
+    "breakout tier B: 80% snaps, 19% targets, 41% air yds; no market line yet (Sleeper receiving yds 32)"
+   ]
+  },
+  {
+   "J": null,
+   "key": "rob spillane",
+   "name": "Robert Spillane",
+   "reason": "gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])",
+   "reasons": [
+    "week-7 hole at LB (Foyesade Oluokun on bye); Robert Spillane 19.5 is the best free LB on week-7 values"
    ]
   },
   {
    "J": null,
    "key": "roschon johnson",
    "name": "Roschon Johnson",
-   "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 5.9 under your weakest 14.7",
+   "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 6.5 under your weakest 13.7",
    "reasons": [
-    "breakout tier B: 39% snaps, 46% of RB touches; Kalshi rushing yds 24 vs Sleeper 27 (-9%) \u2014 a part-time line, under the 40 starter floor"
+    "breakout tier B: 39% snaps, 46% of RB touches; no market line yet (Sleeper rushing yds 25)"
    ]
   },
   {
-   "J": -0.38,
+   "J": -0.316,
    "key": "ryan fitzgerald",
    "name": "Ryan Fitzgerald",
-   "reason": "J -0.38 < 3.0 at its best spot (Cairo Santos) \u2014 J -0.38 = 1.0x+0.00 (wk W) + 0.8x+1.54 (W+1) + 0.8x-0.14 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
+   "reason": "J -0.32 < 3.0 at its best spot (Cairo Santos) \u2014 J -0.32 = 1.0x+0.00 (wk W) + 0.8x+1.62 (W+1) + 0.8x-0.14 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
-    "week-7 K stream: Ryan Fitzgerald 13.7 vs your best 12.2 (W projection x own implied total 22.0/18.5)"
+    "week-7 K stream: Ryan Fitzgerald 13.8 vs your best 12.2 (W projection x own implied total 22.0/18.5)"
    ]
   },
   {
    "J": null,
    "key": "samaje perine",
    "name": "Samaje Perine",
-   "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 0.0 under your weakest 14.7",
+   "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 0.0 under your weakest 13.7",
    "reasons": [
     "breakout tier B: 51% snaps, 48% of RB touches; no market line yet, and no Sleeper line either"
    ]
   },
   {
-   "J": -4.192,
+   "J": null,
+   "key": "tremaine edmunds",
+   "name": "Tremaine Edmunds",
+   "reason": "gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])",
+   "reasons": [
+    "week-7 hole at LB (Foyesade Oluokun on bye); Tremaine Edmunds 18.4 is the best free LB on week-7 values"
+   ]
+  },
+  {
+   "J": -3.945,
    "key": "treylon burks",
    "name": "Treylon Burks",
    "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
@@ -473,30 +436,39 @@
    ]
   },
   {
-   "J": -4.172,
+   "J": null,
+   "key": "tyjae spears",
+   "name": "Tyjae Spears",
+   "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 8.0 under your weakest 13.7",
+   "reasons": [
+    "breakout tier B: 54% snaps, 41% of RB touches; no market line yet (Sleeper rushing yds 27)"
+   ]
+  },
+  {
+   "J": -3.877,
    "key": "wandale robinson",
    "name": "Wan'Dale Robinson",
    "reason": "best spot Chiefs: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
-    "breakout tier B: 75% snaps, 19% targets, 42% air yds; Kalshi receiving yds 43 vs Sleeper 48 (-12%)"
+    "breakout tier B: 75% snaps, 19% targets, 42% air yds; no market line yet (Sleeper receiving yds 48)"
    ]
   },
   {
    "J": null,
    "key": "woody marks",
    "name": "Woody Marks",
-   "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 13.7 under your weakest 14.7",
+   "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 13.7 under your weakest 13.7",
    "reasons": [
     "breakout tier B: 85% snaps, 79% of RB touches; no market line yet (Sleeper rushing yds 54)"
    ]
   },
   {
-   "J": -4.111,
-   "key": "xavier worthy",
-   "name": "Xavier Worthy",
-   "reason": "best spot Chiefs: Chiefs is the spare DEF: a spot for a Tier-A add or a same-family stream only (~1 pt/wk on its own, 09-24)",
+   "J": null,
+   "key": "zaire franklin",
+   "name": "Zaire Franklin",
+   "reason": "gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])",
    "reasons": [
-    "WR weekly upgrade: Xavier Worthy 12.6 vs starter Rome Odunze 10.3"
+    "week-7 hole at LB (Foyesade Oluokun on bye); Zaire Franklin 19.7 is the best free LB on week-7 values"
    ]
   }
  ],
@@ -529,9 +501,9 @@
   "W_REST": 0.8
  },
  "winprob": {
-  "mean": 309.36333592458635,
+  "mean": 305.30486213489286,
   "note": "sampled on the planner's final lineup",
   "p_med": null,
-  "p_opp": 0.5888333333333333
+  "p_opp": 0.6221666666666666
  }
 }
