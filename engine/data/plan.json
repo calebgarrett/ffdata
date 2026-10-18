@@ -226,7 +226,7 @@
    },
    "flags": [
     "2 DEFs rostered (49ers, Vikings) for one DEF slot \u2014 the spare is 49ers (85 season vs Vikings 122)",
-    "Josh Jacobs [CEL] holds a roster spot \u2014 HOLD: HOLD. A top-10 RB whose likely return lands before the week 15-17 playoff run. C"
+    "Josh Jacobs [CEL] holds a roster spot \u2014 HOLD: HOLD, and START when active: a top-10 RB in the #9 December environment for the "
    ],
    "lineup": {
     "DEF": "49ers",
@@ -241,7 +241,7 @@
     "WR3": "Ryan Flournoy"
    },
    "me": "OVERKILL",
-   "others_pulled": "2026-10-18T17:15:09+00:00",
+   "others_pulled": "2026-10-18T17:30:50+00:00",
    "planner": {
     "lineup_after": {
      "DEF": "49ers",
@@ -259,47 +259,67 @@
     "rejected": [
      {
       "name": "Pittsburgh Steelers",
-      "reason": "J -0.73 < 3.0 at its best spot (Vikings) \u2014 J -0.73 = 1.0x+0.00 (wk W) + 0.8x+0.22 (W+1) + 0.8x-0.50 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 0.00 acq - 0.01 FAB($1) - 0.50 churn"
+      "reason": "J -2.34 < 3.0 at its best spot (Vikings) \u2014 J -2.34 = 1.0x+0.00 (wk W) + 0.8x+0.22 (W+1) + 0.8x-0.50 (rest, mean of wks 8-17) + 0.58x-0.32 (wks 15-17, P(playoffs) 96%) + 0.1x+0.00 (bench boom) + 0.2x-7.15 (depth) - 0.00 acq - 0.01 FAB($1) - "
+     },
+     {
+      "name": "Audric Estime",
+      "reason": "gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])"
      },
      {
       "name": "Cade Otton",
-      "reason": "J -0.42 < 3.0 at its best spot (Xavier Hutchinson) \u2014 J -0.42 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.02 (rest, mean of wks 8-17) + 0.1x+0.81 (bench boom) - 0.00 acq - 0.01 FAB($1) - 0.50 churn"
+      "reason": "J -0.47 < 3.0 at its best spot (DeMario Douglas) \u2014 J -0.47 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.02 (rest, mean of wks 8-17) + 0.58x+0.00 (wks 15-17, P(playoffs) 96%) + 0.1x+0.30 (bench boom) + 0.2x+0.00 (depth) - 0.00 acq - 0.01 FA"
      },
      {
       "name": "Charlie Kolar",
-      "reason": "best spot Xavier Hutchinson: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
+      "reason": "best spot DeMario Douglas: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
+     },
+     {
+      "name": "Dalton Schultz",
+      "reason": "J -0.50 < 3.0 at its best spot (DeMario Douglas) \u2014 J -0.50 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 8-17) + 0.58x+0.00 (wks 15-17, P(playoffs) 96%) + 0.1x+0.13 (bench boom) + 0.2x+0.00 (depth) - 0.00 acq - 0.01 FA"
      },
      {
       "name": "Dawson Knox",
-      "reason": "best spot Xavier Hutchinson: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
+      "reason": "best spot DeMario Douglas: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
      },
      {
       "name": "Greg Dulcich",
-      "reason": "best spot Xavier Hutchinson: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
+      "reason": "best spot DeMario Douglas: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
      },
      {
       "name": "Isaiah Bond",
-      "reason": "best spot Xavier Hutchinson: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
+      "reason": "best spot DeMario Douglas: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
      },
      {
       "name": "Jake Ferguson",
-      "reason": "best spot Xavier Hutchinson: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
+      "reason": "J -0.23 < 3.0 at its best spot (DeMario Douglas) \u2014 J -0.23 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.18 (rest, mean of wks 8-17) + 0.58x+0.00 (wks 15-17, P(playoffs) 96%) + 0.1x+1.34 (bench boom) + 0.2x+0.00 (depth) - 0.00 acq - 0.01 FA"
+     },
+     {
+      "name": "Jaleel McLaughlin",
+      "reason": "gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])"
+     },
+     {
+      "name": "Jalen Nailor",
+      "reason": "J -0.36 < 3.0 at its best spot (DeMario Douglas) \u2014 J -0.36 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.13 (rest, mean of wks 8-17) + 0.58x+0.00 (wks 15-17, P(playoffs) 96%) + 0.1x+0.50 (bench boom) + 0.2x+0.00 (depth) - 0.00 acq - 0.01 FA"
      },
      {
       "name": "Jason Sanders",
-      "reason": "best spot Xavier Hutchinson: a K stream that is not a hole never costs a real bench player (Xavier Hutchinson)"
+      "reason": "best spot DeMario Douglas: a K stream that is not a hole never costs a real bench player (DeMario Douglas)"
      },
      {
       "name": "Laquon Treadwell",
-      "reason": "J -0.43 < 3.0 at its best spot (Xavier Hutchinson) \u2014 J -0.43 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.03 (rest, mean of wks 8-17) + 0.1x+0.51 (bench boom) - 0.00 acq - 0.01 FAB($1) - 0.50 churn"
+      "reason": "J -0.49 < 3.0 at its best spot (DeMario Douglas) \u2014 J -0.49 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.03 (rest, mean of wks 8-17) + 0.58x+0.00 (wks 15-17, P(playoffs) 96%) + 0.1x+0.01 (bench boom) + 0.2x+0.00 (depth) - 0.00 acq - 0.01 FA"
      },
      {
       "name": "Marquez Valdes-Scantling",
-      "reason": "best spot Xavier Hutchinson: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
+      "reason": "best spot DeMario Douglas: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
+     },
+     {
+      "name": "Rashid Shaheed",
+      "reason": "J -0.33 < 3.0 at its best spot (DeMario Douglas) \u2014 J -0.33 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.18 (rest, mean of wks 8-17) + 0.58x+0.00 (wks 15-17, P(playoffs) 96%) + 0.1x+0.38 (bench boom) + 0.2x+0.00 (depth) - 0.00 acq - 0.01 FA"
      },
      {
       "name": "Ryan Fitzgerald",
-      "reason": "best spot Xavier Hutchinson: a K stream that is not a hole never costs a real bench player (Xavier Hutchinson)"
+      "reason": "best spot DeMario Douglas: a K stream that is not a hole never costs a real bench player (DeMario Douglas)"
      },
      {
       "name": "Samaje Perine",
@@ -307,11 +327,11 @@
      },
      {
       "name": "Treylon Burks",
-      "reason": "best spot Xavier Hutchinson: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
+      "reason": "best spot DeMario Douglas: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
      }
     ]
    },
-   "pulled": "2026-10-18T17:15:09+00:00"
+   "pulled": "2026-10-18T17:30:50+00:00"
   },
   "HH": {
    "actions": [
@@ -773,7 +793,7 @@
     "WR": "Rome Odunze"
    },
    "me": "Tecmo Bowlers",
-   "others_pulled": "2026-10-18T17:15:09+00:00",
+   "others_pulled": "2026-10-18T17:30:50+00:00",
    "planner": {
     "lineup_after": {
      "CB": "Cooper DeJean",
@@ -844,7 +864,7 @@
      },
      {
       "name": "Jason Sanders",
-      "reason": "J -0.18 < 3.0 at its best spot (Cairo Santos) \u2014 J -0.18 = 1.0x+0.00 (wk W) + 0.8x+2.54 (W+1) + 0.8x-0.89 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn"
+      "reason": "J +0.03 < 3.0 at its best spot (Cairo Santos) \u2014 J +0.03 = 1.0x+0.00 (wk W) + 0.8x+2.54 (W+1) + 0.8x-0.89 (rest, mean of wks 8-17) + 0.60x-0.99 (wks 15-17, P(playoffs) 100%) + 0.1x+0.00 (bench boom) + 0.2x+0.00 (depth) - 0.20 acq - 0.00 FAB("
      },
      {
       "name": "Jerry Jeudy",
@@ -880,7 +900,7 @@
      },
      {
       "name": "Rachaad White",
-      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 11.6 under your weakest 13.7"
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 11.7 under your weakest 13.7"
      },
      {
       "name": "Rashod Bateman",
@@ -896,7 +916,7 @@
      },
      {
       "name": "Ryan Fitzgerald",
-      "reason": "J -0.32 < 3.0 at its best spot (Cairo Santos) \u2014 J -0.32 = 1.0x+0.00 (wk W) + 0.8x+1.62 (W+1) + 0.8x-0.14 (rest, mean of wks 8-17) + 0.1x+0.00 (bench boom) - 1.00 acq - 0.00 FAB($0) - 0.50 churn"
+      "reason": "J -0.33 < 3.0 at its best spot (Cairo Santos) \u2014 J -0.33 = 1.0x+0.00 (wk W) + 0.8x+1.62 (W+1) + 0.8x-0.14 (rest, mean of wks 8-17) + 0.60x-1.35 (wks 15-17, P(playoffs) 100%) + 0.1x+0.00 (bench boom) + 0.2x+0.00 (depth) - 0.20 acq - 0.00 FAB("
      },
      {
       "name": "Samaje Perine",
@@ -928,9 +948,9 @@
      }
     ]
    },
-   "pulled": "2026-10-18T17:15:09+00:00"
+   "pulled": "2026-10-18T17:30:50+00:00"
   }
  },
- "now": "2026-10-18T13:18-04:00",
+ "now": "2026-10-18T13:33-04:00",
  "week": 6
 }

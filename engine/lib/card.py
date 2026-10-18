@@ -750,6 +750,18 @@ def _assemble(out, run):
     if _planner:
         A += sec('Considered — not moves', ['<div class="acts" style="padding:10px 12px">'] + _pt['considered'] + ['</div>'],
                  f'{len(_pt["considered"])} candidates the planner rejected, each with the rule that binds')
+    # stash watch: a longer view (10-18). Free agents with a real season number and no
+    # current projection — hurt or suspended, not dead — for a PERSON to verify.
+    _sw = []
+    for lg, R in run['leagues'].items():
+        for r in (R.get('stash_watch') or []):
+            _sw.append(f'<div class="act hold"><span class="lg">{lg} — verify</span><div class="mv">{esc(r["name"])} <span style="opacity:.7">{esc(r["pos"])} {esc(r["tm"])}</span></div>'
+                       f'<div class="why">season {r["season"]:.0f} ({r["per_week"]:.1f}/wk) · last projected week {r["last_proj_week"] or "—"} · zero for {r["weeks_zero"]} week(s). '
+                       + (f'<b>Verified {esc(r["verified"].get("as_of", ""))}:</b> {esc(r["verified"].get("why", ""))}' if r.get('verified') else
+                          'Hurt or suspended now, not dead. Verify the injury and return date; a verified role is a registry add_yes and the planner prices him.') + '</div></div>')
+    if _sw:
+        A += sec('Stash watch — verify before adding', ['<div class="acts" style="padding:10px 12px">'] + _sw + ['</div>'],
+                 f'{len(_sw)} free agents with a real season number and no current projection')
     A += sec('Lineups and gate output', leagues, 'both rosters, every call with its checks')
     if watch or holds: A += sec('Provisional calls and holds', ['<div class="acts" style="padding:10px 12px">'] + watch + holds + ['</div>'], f'{len(watch)} provisional · {len(holds)} holds')
     for w in wires: A += sec(title(w), w)

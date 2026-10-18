@@ -71,11 +71,15 @@ from .facts import Facts, Fact, IR_TAGS
 
 # ------------------------------------------------------------------ weights (read these)
 W_NOW, W_NEXT, W_REST, W_BOOM = 1.0, 0.8, 0.8, 0.1
+K_DEPTH = 0.2                     # per point/wk of rest-of-season value a cut BENCH player carried (depth lost, 10-18)
+W_PLAY = 0.6                      # x P(playoffs): extra weight on weeks 15-17 — a team that is in only wins by being strongest THEN (10-18)
+PLAYOFF_WEEKS = (15, 16, 17)
 K_ACQ = {'HH': 1.0, 'BSB': 0.0}
 K_FAB = 0.1                       # per dollar that eats into the FAB reserve (rules.fab_reserve)
 K_FAB_TIE = 0.01                  # per dollar above it: a tie-break, not a cost
 K_CHURN = 0.5                     # per Yahoo transaction
 SHIP_J = 3.0
+DEPTH_MARGIN = 3.0                # a depth add must clear the weakest bench player by this much per week (rest of season)
 STICKY_J = 0.5                    # a (add, spot) pair already on the published plan keeps it unless another beats it by this much (10-13: Jennings <-> Hutchinson flip between pulls)
 REST_NORM = 'mean'                # dS_REST = sum over weeks W+2..17 / number of those weeks
 NOISE = LU.NOISE
@@ -381,6 +385,25 @@ def produce(facts, ev):
         r = a['row']
         _merge(cands, k, f.fa(k), dict(src='nextup', firm=True,
                                        text=f"next man up: {r['player']} ({r['slot']}) is {r['status']} — {a['fa']['name']} inherits the role"))
+    # 7. depth (10-18, Caleb: "a longer view is valid"): a free agent whose rest-of-season
+    #    per-week value clears my weakest bench player at a position I can start him by
+    #    DEPTH_MARGIN. The objective decides whether he ever starts (dS_rest) — this only
+    #    puts him in front of it. A player hurt NOW with a real role (Rashee Rice, 10-18)
+    #    is exactly what this finds and the weekly producers never do.
+    weakest = {}
+    for k in f.mine_keys:
+        m = f.mine[k]
+        if m.slot in ('BN',) and m.fam in ('QB', 'RB', 'WR', 'TE') and m.designation not in RU.UNUSABLE:
+            v = m.ros_pw or 0.0
+            if m.fam not in weakest or v < weakest[m.fam][0]: weakest[m.fam] = (v, m.name)
+    floor_any = min([v for v, _ in weakest.values()] or [0.0])
+    for fam in ('QB', 'RB', 'WR', 'TE'):
+        if fam == 'QB' and f.league != 'HH': continue                    # a 1-QB league never stashes a QB
+        ref = min(weakest.get(fam, (floor_any, ''))[0], floor_any) if fam != 'QB' else weakest.get('QB', (floor_any, ''))[0]
+        for c in f.best_fa(fam, 'rest', n=3) if hasattr(f, 'best_fa') else []:
+            v = c.ros_pw or 0.0
+            if v - ref < DEPTH_MARGIN: continue
+            _merge(cands, c.key, c, dict(src='depth', text=f'depth: {c.name} {v:.1f}/wk rest-of-season vs your weakest bench {fam if fam in weakest else "player"} {ref:.1f} ({c.ros_src})'))
     # 6. registry add_yes
     for k, v in sorted((f.add_yes or {}).items()):
         if k.startswith('_') or k in f.state.roster_keys: continue
@@ -477,20 +500,31 @@ class Objective:
         dW1 = self._S(changes, W1)[0] - self._S([], W1)[0]
         rest = [self._S(changes, t, xt)[0] - self._S([], t, xt)[0] for t in f.rest_weeks]
         dR = (sum(rest) / len(rest)) if rest else 0.0
+        # the playoff weeks, weighted by how likely the team is to be playing in them
+        # (the sim's P(playoffs)); a locked-in team is judged on December strength
+        play = [r for t, r in zip(f.rest_weeks, rest) if t in PLAYOFF_WEEKS]
+        dP = (sum(play) / len(play)) if play else 0.0
+        q = float(getattr(f, 'p_playoffs', 0.0) or 0.0)
         dB = self.boom(changes) - self.boom([])
+        # a bench player cut is depth lost: his rest-of-season per-week value never shows in
+        # the optimal-lineup terms (he was not starting), so it is charged here (10-18)
+        dDepth = -sum((d.ros_pw or 0.0) for a, d, _ in changes if a is not None and d is not None and d.slot == 'BN')
         acq = costs.get('acq', 0); bid = costs.get('bid', 0) or 0; txn = costs.get('txn', 0)
         pen_fab = self.mech.fab_cost(bid) if getattr(self, 'mech', None) is not None else K_FAB * bid
-        J = (W_NOW * dW + W_NEXT * dW1 + W_REST * dR + W_BOOM * dB
-             - K_ACQ.get(f.league, 0.0) * acq - pen_fab - K_CHURN * txn)
-        return dict(J=round(J, 3), dS_W=round(dW, 3), dS_W1=round(dW1, 3), dS_rest=round(dR, 3), d_boom=round(dB, 3),
+        pen_acq = K_ACQ.get(f.league, 0.0) * acq * RU.acq_price(f.now, getattr(f, 'acq_left', None))
+        J = (W_NOW * dW + W_NEXT * dW1 + W_REST * dR + W_PLAY * q * dP + W_BOOM * dB + K_DEPTH * dDepth
+             - pen_acq - pen_fab - K_CHURN * txn)
+        return dict(J=round(J, 3), dS_W=round(dW, 3), dS_W1=round(dW1, 3), dS_rest=round(dR, 3), dS_play=round(dP, 3), p_playoffs=round(q, 2),
+                    d_boom=round(dB, 3), d_depth=round(dDepth, 3),
                     acq=acq, bid=bid, txn=txn,
-                    pen_acq=round(K_ACQ.get(f.league, 0.0) * acq, 3), pen_fab=round(pen_fab, 3), pen_churn=round(K_CHURN * txn, 3),
+                    pen_acq=round(pen_acq, 3), pen_fab=round(pen_fab, 3), pen_churn=round(K_CHURN * txn, 3),
                     rest_weeks=f'{f.rest_weeks[0]}-{f.rest_weeks[-1]}' if f.rest_weeks else '')
 
 
 def fmt_terms(t):
     return (f"J {t['J']:+.2f} = {W_NOW:.1f}x{t['dS_W']:+.2f} (wk W) + {W_NEXT:.1f}x{t['dS_W1']:+.2f} (W+1) + {W_REST:.1f}x{t['dS_rest']:+.2f} (rest, mean of wks {t['rest_weeks']})"
-            f" + 0.1x{t['d_boom']:+.2f} (bench boom) - {t['pen_acq']:.2f} acq - {t['pen_fab']:.2f} FAB(${t['bid'] or 0}) - {t['pen_churn']:.2f} churn")
+            + (f" + {W_PLAY * t.get('p_playoffs', 0):.2f}x{t.get('dS_play', 0.0):+.2f} (wks 15-17, P(playoffs) {t.get('p_playoffs', 0):.0%})" if t.get('p_playoffs') else '')
+            + f" + 0.1x{t['d_boom']:+.2f} (bench boom) + {K_DEPTH:.1f}x{t.get('d_depth', 0.0):+.2f} (depth) - {t['pen_acq']:.2f} acq - {t['pen_fab']:.2f} FAB(${t['bid'] or 0}) - {t['pen_churn']:.2f} churn")
 
 
 # ================================================================== feasibility
@@ -576,6 +610,8 @@ def plan_facts(facts, ev=None):
     """The planner on prepared facts and evidence. Pure. -> Plan"""
     ev = ev or {}
     f = facts
+    if ev.get('p_playoffs') is not None:
+        f.p_playoffs = float(ev['p_playoffs'])
     mech = Mechanics(f)
     pool = SpotPool(f, mech)
     obj = Objective(f, mech)
@@ -675,7 +711,7 @@ def plan_facts(facts, ev=None):
                 budgets=dict(acq_used=f.acq_used, acq_left=f.acq_left, acq_reset=C.iso(f.acq_reset) if f.league == 'HH' else None,
                              acq_reset_verified=False if f.league == 'HH' else None, fab_left=f.fab_left,
                              ir_free=f.ir_free, open_spots=f.open_spots),
-                weights=dict(W_NOW=W_NOW, W_NEXT=W_NEXT, W_REST=W_REST, W_BOOM=W_BOOM, K_ACQ=K_ACQ.get(f.league), K_FAB=K_FAB,
+                weights=dict(W_NOW=W_NOW, W_NEXT=W_NEXT, W_REST=W_REST, W_PLAY=W_PLAY, p_playoffs=getattr(f, 'p_playoffs', None), K_DEPTH=K_DEPTH, W_BOOM=W_BOOM, K_ACQ=K_ACQ.get(f.league), K_FAB=K_FAB,
                              K_CHURN=K_CHURN, SHIP_J=SHIP_J, REST_NORM=REST_NORM),
                 notes=list(f.notes))
     wp = ev.get('winprob')
@@ -809,7 +845,8 @@ def _marginals(f, obj, sel, pairs, live):
         rest = [x for x in keys if x != k]
         rc, rcost = chg(rest)
         part = obj.terms(rc, rcost)
-        res[k] = {kk: (round(full[kk] - part[kk], 3) if isinstance(full[kk], (int, float)) and not isinstance(full[kk], bool) else full[kk]) for kk in full}
+        res[k] = {kk: (full[kk] if kk in ('p_playoffs', 'rest_weeks') else
+                       round(full[kk] - part[kk], 3) if isinstance(full[kk], (int, float)) and not isinstance(full[kk], bool) else full[kk]) for kk in full}
     return res
 
 
@@ -1031,6 +1068,11 @@ def evidence_from_run(run, lg):
     CR = run.get('contract')
     if CR is not None and hasattr(CR, 'lineup_reason'): ev['lineup_reason'] = CR.lineup_reason
     ev['winprob'] = lambda after: _winprob(run, lg, after)
+    po = R.get('playoff') or {}
+    try:
+        ev['p_playoffs'] = float((po.get('p') or {}).get(R['state'].me, 0.0)) if po else None
+    except Exception:
+        ev['p_playoffs'] = None
     return ev
 
 

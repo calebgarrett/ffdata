@@ -6,18 +6,18 @@
   "josh jacobs": {
    "team": "GB",
    "pos": "RB",
-   "designation": "CEL",
-   "why": "NFL Commissioner's Exempt List since 2026-08-30, not an injury. Pled no contest 2026-09-10; criminal case closed. NFL personal-conduct review still open with NO published timeline. Exempt games COUNT toward any eventual suspension (Maske/FOS) and ~2 are already banked; Schefter 2026-09-13 cites a six-game DV minimum, 'could be more or less'. Nothing reported says season-long.",
-   "call": "HOLD. A top-10 RB whose likely return lands before the week 15-17 playoff run. Converting this spot to the best available RB buys Ty Johnson, who is Buffalo's RB3 and himself hurt. That trade is strictly worse.",
-   "src": "nbcsports.com/nfl/profootballtalk 2026-09-10; profootballrumors.com 2026-09-11; clutchpoints 2026-09-13",
-   "cost": "a dead roster spot for roughly 3-6 more weeks in a league with no IR slot"
+   "designation": "CEL -> removed Mon 2026-10-19",
+   "why": "Removed from the Commissioner's Exempt List effective Mon 10-19 (NFL statement 10-16); may practice after GB's Sunday-night game and can play as early as week 7. The personal-conduct investigation remains OPEN: discipline could still come, and any suspension would COUNT the six games already missed on paid leave toward its total (PFR 10-16, the author infers a six-game total is being set up — i.e. likely no further missed games, not confirmed). GB ranks last in rushing (60 yd/g), so the role is his on return. NFL Commissioner's Exempt List since 2026-08-30, not an injury. Pled no contest 2026-09-10; criminal case closed. NFL personal-conduct review still open with NO published timeline. Exempt games COUNT toward any eventual suspension (Maske/FOS) and ~2 are already banked; Schefter 2026-09-13 cites a six-game DV minimum, 'could be more or less'. Nothing reported says season-long.",
+   "call": "HOLD, and START when active: a top-10 RB in the #9 December environment for the week 15-17 run. Lloyd and Strong lose most of their value on his return.",
+   "src": "profootballrumors.com 2026-10-16; washingtontimes.com 2026-10-16; nbcsports.com/nfl/profootballtalk 2026-09-10; profootballrumors.com 2026-09-11; clutchpoints 2026-09-13",
+   "cost": "none now — eligible from week 7"
   },
   "ray davis": {
    "team": "BUF",
    "pos": "RB",
    "handcuff_for": "James Cook",
    "why": "Still listed RB2 behind Cook, but Week 1 usage undercuts it: Davis 5 snaps / 1 carry, practice-squad elevation Frank Gore Jr. 10-11 snaps / 1 carry including third-down pass protection. Rotowire calls him 'a shakier bench stash'. Ty Johnson (RB3) was inactive, so the split may move again.",
-   "call": "HOLD, downgraded. James Cook is the single best asset on this roster (+188 over the wire); insuring him still has value. But this is no longer a hard block \u2014 if a genuinely rising player needs the spot, Davis is the piece to move.",
+   "call": "HOLD, downgraded. James Cook is the single best asset on this roster (+188 over the wire); insuring him still has value. But this is no longer a hard block — if a genuinely rising player needs the spot, Davis is the piece to move.",
    "src": "rotowire 2026-09-13; si.com/nfl/bills 2026-09-14"
   },
   "DST:HOU": {
@@ -27,7 +27,7 @@
    "why": "Best season defense in the league on two sources (140.5 blended, #1 of 32; Yahoo's own HH-scored projection had them 432.9 vs Chiefs 389.8). Schedule by opponent implied total: 2nd-easiest in weeks 10-14, 4th-easiest in the playoff weeks 15-17 (Chiefs: 17th and 14th). Only weeks 3-9 favour the Chiefs.",
    "call": "HOLD in Heritage House. A 7-acquisition league rations streaming, and Tecmo Bowlers is near-certain to reach a playoff window where this defense has the 4th-best schedule. The 'second DEF is a wasted spot' rule is BSB logic (uncapped adds) and does not transfer.",
    "src": "season_blend.json (FFToday+Sleeper) 2026-09-15; lines_wk10_18.csv; memory note 2026-09-13 (Texans 432.87 season)",
-   "reverses": "2026-09-16 07:16 'drop the Texans' \u2014 wrong, caught by Caleb"
+   "reverses": "2026-09-16 07:16 'drop the Texans' — wrong, caught by Caleb"
   }
  },
  "drop_ok": {
@@ -60,61 +60,26 @@
    "pos": "DL,LB",
    "designation": "expected IR",
    "why": "Torn ACL, believed suffered in Sunday's game (Rapoport/Schefter, reported Mon 2026-09-28 ~7:45 am ET; he had played through ankle pain). An ACL tear ends the season.",
-   "call": "IR, NOT DROP. Heritage House has 3 IR slots and one is free (Garrett holds one): move Burns to IR the moment Yahoo tags him O/IR, which frees his roster spot without losing him. Until the tag lands he cannot be IR'd and is not worth dropping. T.J. Watt (LB,DE \u2014 DL-eligible) takes the DL slot.",
+   "call": "IR, NOT DROP. Heritage House has 3 IR slots and one is free (Garrett holds one): move Burns to IR the moment Yahoo tags him O/IR, which frees his roster spot without losing him. Until the tag lands he cannot be IR'd and is not worth dropping. T.J. Watt (LB,DE — DL-eligible) takes the DL slot.",
    "src": "Ian Rapoport @RapSheet 2026-09-28, sourced with Adam Schefter (screenshot from Caleb)",
    "ir_eligible_when": "Yahoo designation O or IR (IR-slot rules SLN28136)",
    "ir": true
   }
  },
  "add_yes": {
-  "xavier hutchinson": {
-   "team": "HOU",
+  "_priority_note": "priority is set by the reasoning in `why`, and outranks the projection gap between verified names. It is the durable form of a judgment call.",
+  "rashee rice": {
+   "team": "KC",
    "pos": "WR",
-   "designation": "none published",
-   "usage_wk1": "44 snaps, 2nd among Texans WRs behind Nico Collins (57). 6 targets, 3 catches, 32 yards.",
-   "why": "The role cannot be given back. Jayden Higgins tore his ACL in training camp and is on IR for the entire 2026 season. There is no one returning to reclaim these snaps.",
-   "src": "rotowire 2026-09-14; nfl.com (Higgins ACL)",
-   "priority": 1
-  },
-  "demario douglas": {
-   "team": "NE",
-   "pos": "WR",
-   "designation": "none published",
-   "usage_wk1": "41 snaps (61%), 33 ROUTES = 79% route share, highest on the team. 7 targets, 5 catches, 22.6% target share.",
-   "why": "Route share far exceeding snap share means he is on the field for essentially every passing down. A.J. Brown went on IR with a high ankle sprain, out at least 4 weeks and likely nearer 6 - the only player who outranked him for passing-down targets.",
-   "caveat": "Brown comes back. This is a 4-6 week window, not a season-long role change.",
-   "src": "rotowire 2026-09-10 box score; rotowire injury analysis 2026-09-15",
-   "priority": 2
-  },
-  "malachi fields": {
-   "team": "NYG",
-   "pos": "WR",
-   "designation": "none published",
-   "usage_wk1": "49-50 of 69 snaps (72%), led ALL Giants skill players in snap share on debut. 4 targets, 2 catches, 25 yards. 18 routes = 50% route share.",
-   "why": "Reported as settling in as the Giants' No. 2 behind Malik Nabers.",
-   "caveat": "Route share (50%) is well below snap share (72%) - the Giants are using his size to block. Targets will lag the snaps until that changes.",
-   "src": "rotowire box score 2026-09-14",
-   "priority": 3
-  },
-  "antonio williams": {
-   "team": "WAS",
-   "pos": "WR",
-   "designation": "none published",
-   "usage_wk1": "26 of 70 snaps (37%), WR4. 4 targets, 4 catches, 64 yards, 1 TD - led the team in receiving yards.",
-   "why": "Best per-snap efficiency on the board, and as the WR4 the snap count is the number with the most room to rise.",
-   "src": "rotowire 2026-09-14",
-   "priority": 4
-  },
-  "tj hockenson": {
-   "team": "MIN",
-   "pos": "TE",
-   "designation": "none published",
-   "usage_wk1": "43 of 65 snaps (66%), TE1. 5 targets (2nd on the team behind Justin Jefferson), 4 catches, 36 yards, 1 TD.",
-   "why": "Nothing acute explains his availability - no injury, no suspension, no trade. It is a two-year efficiency decline (TE34 in 2024, TE26 in 2025) plus a near 50/50 snap timeshare with Josh Oliver (42 snaps), and the draft market gave up (ADP 161.6, TE26). Week 1 usage contradicts the market.",
-   "src": "rotowire 2026-09-13; yahoo/PFF Vikings snap counts 2026-09-14",
-   "priority": 5
-  },
-  "_priority_note": "priority is set by the reasoning in `why`, and outranks the projection gap between verified names. It is the durable form of a judgment call."
+   "designation": "O (hamstring) at the 10-13 drop; out wk 6",
+   "usage_wk1": "KC WR1/2 role when healthy; no change in the depth chart behind him",
+   "why": "Hamstring strain in week 4, rested through the bye, out week 6. Andy Reid (10-16): \"a pretty fast healer\", expects a relatively quick recovery after the Chargers game; no plans to place him on IR. Rest-of-season 13.9/wk in HH scoring vs the weakest bench WR 7.2; KC is a top-8 December environment. A playoff-run flex sitting free because he is hurt now. Caleb added him 10-18 for Malik Washington.",
+   "src": "si.com Chiefs injury report 2026-10-16 (Reid quotes); nbcsports.com player news 2026-10-16; Yahoo HH log (T-rex drop 10-13)",
+   "priority": 1,
+   "league": "HH",
+   "added": "2026-10-18",
+   "as_of": "2026-10-18"
+  }
  },
  "add_no": {
   "_why": "These are the names a projection-only model surfaces. Week 1 snap counts say do not.",
@@ -140,5 +105,155 @@
   "jordyn tyson": "NO (New Orleans Saints, NOT Arizona - he is an Arizona State product, which is where that error came from). IR-R, right hamstring, ~2 months from 2026-08-30, earliest Week 5, realistically late October. cbssports 2026-08-30; nfl.com",
   "omar cooper": "high ankle sprain",
   "isiah pacheco": "IR"
+ },
+ "_demoted_add_yes": {
+  "xavier hutchinson": {
+   "team": "HOU",
+   "pos": "WR",
+   "designation": "none published",
+   "usage_wk1": "44 snaps, 2nd among Texans WRs behind Nico Collins (57). 6 targets, 3 catches, 32 yards.",
+   "why": "The role cannot be given back. Jayden Higgins tore his ACL in training camp and is on IR for the entire 2026 season. There is no one returning to reclaim these snaps.",
+   "src": "rotowire 2026-09-14; nfl.com (Higgins ACL)",
+   "priority": 1,
+   "as_of": "2026-09-14",
+   "as_of_from": "src",
+   "demoted": "34d old"
+  },
+  "demario douglas": {
+   "team": "NE",
+   "pos": "WR",
+   "designation": "none published",
+   "usage_wk1": "41 snaps (61%), 33 ROUTES = 79% route share, highest on the team. 7 targets, 5 catches, 22.6% target share.",
+   "why": "Route share far exceeding snap share means he is on the field for essentially every passing down. A.J. Brown went on IR with a high ankle sprain, out at least 4 weeks and likely nearer 6 - the only player who outranked him for passing-down targets.",
+   "caveat": "Brown comes back. This is a 4-6 week window, not a season-long role change.",
+   "src": "rotowire 2026-09-10 box score; rotowire injury analysis 2026-09-15",
+   "priority": 2,
+   "as_of": "2026-09-15",
+   "as_of_from": "src",
+   "demoted": "33d old"
+  },
+  "malachi fields": {
+   "team": "NYG",
+   "pos": "WR",
+   "designation": "none published",
+   "usage_wk1": "49-50 of 69 snaps (72%), led ALL Giants skill players in snap share on debut. 4 targets, 2 catches, 25 yards. 18 routes = 50% route share.",
+   "why": "Reported as settling in as the Giants' No. 2 behind Malik Nabers.",
+   "caveat": "Route share (50%) is well below snap share (72%) - the Giants are using his size to block. Targets will lag the snaps until that changes.",
+   "src": "rotowire box score 2026-09-14",
+   "priority": 3,
+   "as_of": "2026-09-14",
+   "as_of_from": "src",
+   "demoted": "34d old"
+  },
+  "antonio williams": {
+   "team": "WAS",
+   "pos": "WR",
+   "designation": "none published",
+   "usage_wk1": "26 of 70 snaps (37%), WR4. 4 targets, 4 catches, 64 yards, 1 TD - led the team in receiving yards.",
+   "why": "Best per-snap efficiency on the board, and as the WR4 the snap count is the number with the most room to rise.",
+   "src": "rotowire 2026-09-14",
+   "priority": 4,
+   "as_of": "2026-09-14",
+   "as_of_from": "src",
+   "demoted": "34d old"
+  },
+  "tj hockenson": {
+   "team": "MIN",
+   "pos": "TE",
+   "designation": "none published",
+   "usage_wk1": "43 of 65 snaps (66%), TE1. 5 targets (2nd on the team behind Justin Jefferson), 4 catches, 36 yards, 1 TD.",
+   "why": "Nothing acute explains his availability - no injury, no suspension, no trade. It is a two-year efficiency decline (TE34 in 2024, TE26 in 2025) plus a near 50/50 snap timeshare with Josh Oliver (42 snaps), and the draft market gave up (ADP 161.6, TE26). Week 1 usage contradicts the market.",
+   "src": "rotowire 2026-09-13; yahoo/PFF Vikings snap counts 2026-09-14",
+   "priority": 5,
+   "as_of": "2026-09-14",
+   "as_of_from": "src",
+   "demoted": "34d old"
+  }
+ },
+ "stash": {
+  "_why": "Stash-watch names a person verified (web, dated). 'season' and 'skip' close the watch; 'watch' keeps the name with its timeline. Re-verify a 'watch' before adding.",
+  "jaxson dart": {
+   "verdict": "season",
+   "pos": "QB",
+   "tm": "NYG",
+   "why": "Knee (MCL/PCL/meniscus) on 9-21 MNF vs LAR; ruled out for the rest of the 2026 season; Winston starts.",
+   "src": "skysports 2026-09-23; espn.com 2026-09 (knee surgery, out rest of regular season)",
+   "as_of": "2026-10-18"
+  },
+  "jayden reed": {
+   "verdict": "season",
+   "pos": "WR",
+   "tm": "GB",
+   "why": "Neck injury 9-20 at NYJ, carted off; placed on IR; LaFleur: season-ending surgery. Season over.",
+   "src": "heavy.com 2026-09-30 (Schefter IR report, LaFleur)",
+   "as_of": "2026-10-18"
+  },
+  "devon achane": {
+   "verdict": "season",
+   "pos": "RB",
+   "tm": "MIA",
+   "why": "Torn ACL; season over (verified at the 10-13 Achane case).",
+   "src": "engine case 5c 2026-10-13",
+   "as_of": "2026-10-18"
+  },
+  "fernando mendoza": {
+   "verdict": "skip",
+   "pos": "QB",
+   "tm": "LV",
+   "why": "Not hurt. Healthy backup behind Kirk Cousins (LV 3-1 at the report); no timeline for a start this season. Not a role.",
+   "src": "sports.yahoo.com / Last Word on Sports 2026-10-10",
+   "as_of": "2026-10-18"
+  },
+  "jonathon brooks": {
+   "verdict": "skip",
+   "pos": "RB",
+   "tm": "CAR",
+   "why": "Groin, surgery, IR 9-23 for ~6 weeks (earliest ~week 10) and he was the backup to Hubbard before it (5 carries to 12). Not a playoff role.",
+   "src": "usnews/AP 2026-09-23; espn.com 2026-09 (surgery, IR); sports.yahoo.com 2026-09-21 (role)",
+   "as_of": "2026-10-18"
+  },
+  "baker mayfield": {
+   "verdict": "watch",
+   "pos": "QB",
+   "tm": "TB",
+   "return_week": 7,
+   "why": "Dislocated thumb (throwing hand), out since week 3; Bucs EXPECT him back week 7 (not confirmed — grip progressing, swelling after Monday throwing, no practice yet). 1-QB league: a bye/injury cover for Stafford, not a starter upgrade; the planner prices him once Sleeper posts a week-7 number.",
+   "src": "profootballrumors 2026-10-17 (B/R James Palmer); nfl.com (initial 3-week prognosis)",
+   "as_of": "2026-10-18"
+  },
+  "mike pittman": {
+   "verdict": "watch",
+   "pos": "WR",
+   "tm": "PIT",
+   "return_week": 10,
+   "why": "Plantar fasciitis; short-term IR 10-10, out at least 4 games; PIT bye week 9, so earliest return week 10 vs CIN. A WR2/3 behind Metcalf — a December flex, not a starter. Three weeks of roster spot before he can score.",
+   "src": "steelersdepot 2026-10-10 (Fowler: short-term IR); espn.com 2026-10-10",
+   "as_of": "2026-10-18"
+  },
+  "alec pierce": {
+   "verdict": "watch",
+   "pos": "WR",
+   "tm": "IND",
+   "return_week": null,
+   "why": "Heel; Pelissero 10-17: \"still a few weeks away\" — no return week yet. A real IND WR2 role (deep threat) when back; re-check in two weeks, not a roster spot now.",
+   "src": "nbcsports.com player news 2026-10-17 (Pelissero)",
+   "as_of": "2026-10-18"
+  },
+  "jalen mcmillan": {
+   "verdict": "skip",
+   "pos": "WR",
+   "tm": "TB",
+   "why": "Left knee PCL re-injury 9-27, out 6-8 weeks (earliest ~week 10-12); zero catches before it. Not a role worth the wait.",
+   "src": "yardbarker/Field Level Media 2026-09-29",
+   "as_of": "2026-10-18"
+  },
+  "dezhaun stribling": {
+   "verdict": "skip",
+   "pos": "WR",
+   "tm": "SF",
+   "why": "Rookie; ankle surgery 9-16, IR, Shanahan \"close to 10 weeks\" (~week 12); 21 snaps, no targets before it. Not a playoff role.",
+   "src": "nbcsportsbayarea 2026-09-16 (Maiocco)",
+   "as_of": "2026-10-18"
+  }
  }
 }

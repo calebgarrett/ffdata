@@ -10386,10 +10386,11 @@
   ],
   "verdict": "WARN",
   "week": 6,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": null,
-  "reverses": "59d6b0b7"
+  "reverses": "59d6b0b7",
+  "superseded_by": "757f01a6"
  },
  {
   "id": "d715b534",
@@ -10405,9 +10406,321 @@
   ],
   "verdict": "WARN",
   "week": 6,
+  "status": "superseded",
+  "provisional": true,
+  "resolves_at": "2026-10-18T13:00-04:00",
+  "reverses": "601870ec",
+  "superseded_by": "f007bfc6"
+ },
+ {
+  "id": "f007bfc6",
+  "ts": "2026-10-16T12:34-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Denzel Boston",
+  "call": "start Denzel Boston at W/R",
+  "detail": "over Rome Odunze +0.94",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "superseded",
+  "provisional": true,
+  "resolves_at": "2026-10-18T13:00-04:00",
+  "reverses": "d715b534",
+  "superseded_by": "fc57ccb4"
+ },
+ {
+  "id": "757f01a6",
+  "ts": "2026-10-16T15:55-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Tennessee Titans",
+  "call": "stream Tennessee Titans for week 7, drop 49ers",
+  "detail": "DEF: TEN 19.0 vs yours 49ers 21.5 \u2014 edge 2.5 implied pts",
+  "evidence": [
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "superseded",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "e3fee263",
+  "superseded_by": "ffb04f32"
+ },
+ {
+  "id": "fc57ccb4",
+  "ts": "2026-10-16T15:55-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Denzel Boston",
+  "call": "start Denzel Boston at W/R/T",
+  "detail": "over Rome Odunze +0.38",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "superseded",
+  "provisional": true,
+  "resolves_at": "2026-10-18T13:00-04:00",
+  "reverses": "f007bfc6",
+  "superseded_by": "e7509b58"
+ },
+ {
+  "id": "f5d9d8b7",
+  "ts": "2026-10-16T15:55-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Xavier Worthy",
+  "call": "add Xavier Worthy (WR) over Rome Odunze",
+  "detail": "+2.51/wk",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "0baf7f9f",
+  "ts": "2026-10-16T18:48-04:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Pierre Strong Jr.",
+  "call": "start Pierre Strong Jr. at W/R/T",
+  "detail": "over DeMario Douglas +1.63",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "PASS",
+  "week": 6,
+  "status": "superseded",
+  "provisional": false,
+  "resolves_at": "2026-10-18T20:20-04:00",
+  "reverses": null,
+  "superseded_by": "1ae1ee8c"
+ },
+ {
+  "id": "e7509b58",
+  "ts": "2026-10-16T18:48-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Denzel Boston",
+  "call": "start Denzel Boston at W/R",
+  "detail": "over Rome Odunze +1.39",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "superseded",
+  "provisional": true,
+  "resolves_at": "2026-10-18T13:00-04:00",
+  "reverses": "fc57ccb4",
+  "superseded_by": "e95cf633"
+ },
+ {
+  "id": "c199b56e",
+  "ts": "2026-10-16T18:48-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Devin Lloyd",
+  "call": "add Devin Lloyd (LB) over Carson Schwesinger",
+  "detail": "+2.57/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 6,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "e95cf633",
+  "ts": "2026-10-16T21:17-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Denzel Boston",
+  "call": "start Denzel Boston at WR",
+  "detail": "over Rome Odunze +1.27",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "superseded",
+  "provisional": true,
+  "resolves_at": "2026-10-18T13:00-04:00",
+  "reverses": "e7509b58",
+  "superseded_by": "eddc0b94"
+ },
+ {
+  "id": "1ae1ee8c",
+  "ts": "2026-10-17T02:06-04:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Pierre Strong Jr.",
+  "call": "start Pierre Strong Jr. at RB2",
+  "detail": "over DeMario Douglas +1.52",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "superseded",
+  "provisional": false,
+  "resolves_at": "2026-10-18T20:20-04:00",
+  "reverses": "0baf7f9f",
+  "superseded_by": "bae56701"
+ },
+ {
+  "id": "eddc0b94",
+  "ts": "2026-10-17T07:09-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Denzel Boston",
+  "call": "start Denzel Boston at W/R/T",
+  "detail": "over Rome Odunze +1.29",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "superseded",
+  "provisional": true,
+  "resolves_at": "2026-10-18T13:00-04:00",
+  "reverses": "e95cf633",
+  "superseded_by": "7a74238a"
+ },
+ {
+  "id": "ffb04f32",
+  "ts": "2026-10-17T10:25-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Tennessee Titans",
+  "call": "stream Tennessee Titans for week 7, drop San Francisco",
+  "detail": "DEF: TEN 19.0 vs yours San Francisco 21.5 \u2014 edge 2.5 implied pts",
+  "evidence": [
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "superseded",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "757f01a6",
+  "superseded_by": "1e76130c"
+ },
+ {
+  "id": "bae56701",
+  "ts": "2026-10-17T19:05-04:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Pierre Strong Jr.",
+  "call": "start Pierre Strong Jr. at W/R/T",
+  "detail": "over DeMario Douglas +0.95",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "superseded",
+  "provisional": true,
+  "resolves_at": "2026-10-18T20:20-04:00",
+  "reverses": "1ae1ee8c",
+  "superseded_by": "eac88797"
+ },
+ {
+  "id": "1e76130c",
+  "ts": "2026-10-17T19:05-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Tennessee Titans",
+  "call": "stream Tennessee Titans for week 7, drop 49ers",
+  "detail": "DEF: TEN 19.0 vs yours 49ers 21.5 \u2014 edge 2.5 implied pts",
+  "evidence": [
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "ffb04f32"
+ },
+ {
+  "id": "7a74238a",
+  "ts": "2026-10-17T19:05-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Denzel Boston",
+  "call": "start Denzel Boston at W/R",
+  "detail": "over Rome Odunze +0.94",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 6,
   "status": "proposed",
   "provisional": true,
   "resolves_at": "2026-10-18T13:00-04:00",
-  "reverses": "601870ec"
+  "reverses": "eddc0b94"
+ },
+ {
+  "id": "eac88797",
+  "ts": "2026-10-17T20:16-04:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Pierre Strong Jr.",
+  "call": "start Pierre Strong Jr. at RB2",
+  "detail": "over DeMario Douglas +1.01",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "superseded",
+  "provisional": true,
+  "resolves_at": "2026-10-18T20:20-04:00",
+  "reverses": "bae56701",
+  "superseded_by": "0fc13d21"
+ },
+ {
+  "id": "0fc13d21",
+  "ts": "2026-10-18T01:05-04:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Pierre Strong Jr.",
+  "call": "start Pierre Strong Jr. at W/R/T",
+  "detail": "over DeMario Douglas +1.08",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 6,
+  "status": "proposed",
+  "provisional": true,
+  "resolves_at": "2026-10-18T20:20-04:00",
+  "reverses": "eac88797"
  }
 ]

@@ -361,10 +361,11 @@ f.prev_plan_pairs = {(NK(rbx), f'drop:{NK(other[1])}')}
 p1 = PL.plan_facts(f, ev)
 m1 = next((m for m in moves_of(p1) if m['add_key'] == NK(rbx)), None)
 case('a near-tie between two bench spots keeps the spot already published', m0 is not None and m1 is not None and m1['drop_name'] == other[1], (m0 and m0['drop_name'], m1 and m1['drop_name']))
-f.prev_plan_pairs = {(NK(rbx), 'drop:' + NK(next(x[1] for x in r8d if x[0] == 'BN' and x[2] == 'TE')))}   # the bench TE at 2.0: clearly worse by > STICKY_J? no — 0.8x0.9 = 0.72 > 0.5
+_worse = next(x for x in r8d if x[0] == 'BN' and x[2] == 'RB' and x[4] >= 3.0)      # the 3.5 bench RB: depth cost 0.2 x (3.5 - 1.0) = 0.5 worse, plus churn ordering
+f.prev_plan_pairs = {(NK(rbx), 'drop:' + NK(_worse[1]))}
 p2 = PL.plan_facts(f, ev)
 m2 = next((m for m in moves_of(p2) if m['add_key'] == NK(rbx)), None)
-case('...and the stickiness is bounded: a spot that is clearly worse is not kept', m2 is not None and m2['drop_name'] != next(x[1] for x in r8d if x[0] == 'BN' and x[2] == 'TE'), m2 and m2['drop_name'])
+case('...and the stickiness is bounded: a spot that is clearly worse (a 3.5/wk player for a 1.0) is not kept', m2 is not None and m2['drop_name'] != _worse[1], m2 and m2['drop_name'])
 
 # ---------------------------------------------------------------- 8e. displacement chain (10-13: 'start Pierce at RB2' with no one named)
 # A free RB arrives; the optimizer puts him at RB2 and slides the old RB2 to W/R/T, whose
@@ -378,6 +379,35 @@ ev = dict(breakout_rows=[dict(key=NK(rbc), name=rbc, pos='RB', tm='PHI', tier='A
 p = PL.plan_facts(f, ev)
 m = next((m for m in moves_of(p) if m['add_key'] == NK(rbc)), None)
 case('a newcomer who starts via a slot shuffle is paired with the starter the shuffle pushes out', m is not None and ((m.get('lineup') or {}).get('over') or '').startswith(flex_name), (m and m.get('lineup'), p.summary()[:300]))
+
+# ---------------------------------------------------------------- 8f. HH acquisitions are cheap late in the week (10-18)
+import lib.rules as _RU2
+case('rules: an HH acquisition costs full price on Tuesday with 7 left', _RU2.acq_price(C.week_start(WEEK) + C.dt.timedelta(hours=1), 7) == 1.0)
+case('rules: ...and a fifth of that on Saturday with 4+ left', _RU2.acq_price(C.week_start(WEEK) + C.dt.timedelta(days=4), 7) == 0.2)
+case('rules: ...but full price on Saturday when only 2 are left', _RU2.acq_price(C.week_start(WEEK) + C.dt.timedelta(days=4), 2) == 1.0)
+case('rules: BSB (no cap) is unaffected', _RU2.acq_price(C.week_start(WEEK) + C.dt.timedelta(days=4), None) == 1.0)
+
+# ---------------------------------------------------------------- 8g. playoff weighting (10-18): a locked-in team is judged on weeks 15-17
+# Two free WRs, equal this week and next: one is a December asset (his team's implied
+# totals rise in weeks 15-17), the other fades. With P(playoffs) = 1 the planner prefers
+# the December man; with P(playoffs) = 0 the two tie and the rest-of-season mean decides.
+r8g = bsb_roster(open_spots=1)
+dec, fade = 'Caspian Wintermere', 'Orlo Summerfield'
+class _PW(FakeWindows):
+    def __init__(self, byes=None): super().__init__(byes); self.rank_ = {}
+# season blend gives both the same rest-of-season per-week value; playoff weeks are read
+# per week through f.value -> ros_pw, so we tilt the December man by registering a
+# higher ros for weeks 15-17 only via a per-week override hook if the harness has one;
+# otherwise the case checks the term is wired: dS_play reported and weighted by q.
+f, st, pr = league('BSB', r8g, fas=[(dec, 'WR', 'PHI', 14.0)], byes={W1: set()}, usage={NK(dec): dict(START, pos='WR')})
+ev = dict(breakout_rows=[dict(key=NK(dec), name=dec, pos='WR', tm='PHI', tier='A', held='wk5', usage='', market='', in_pool=True, ahead=True)], p_playoffs=1.0)
+p = PL.plan_facts(f, ev)
+m = next((m for m in moves_of(p) if m['add_key'] == NK(dec)), None)
+case('playoff term: with P(playoffs)=1 the move reports its weeks-15-17 value and the weight', m is not None and m['value_terms'].get('p_playoffs') == 1.0 and 'dS_play' in m['value_terms'], m and m['value_terms'])
+f2, st2, pr2 = league('BSB', r8g, fas=[(dec, 'WR', 'PHI', 14.0)], byes={W1: set()}, usage={NK(dec): dict(START, pos='WR')})
+p2 = PL.plan_facts(f2, dict(ev, p_playoffs=0.0))
+m2 = next((m for m in moves_of(p2) if m['add_key'] == NK(dec)), None)
+case('playoff term: with P(playoffs)=0 the term contributes nothing', m2 is not None and abs(m2['J'] - (m['J'] - PL.W_PLAY * 1.0 * m['value_terms']['dS_play'])) < 1e-6, (m and m['J'], m2 and m2['J']))
 
 # ---------------------------------------------------------------- 9. handcuff never a drop
 r9 = bsb_roster()

@@ -73,6 +73,21 @@ def locked(row, now=None):
 FAB_RESERVE = ((10, 60), (12, 30), (99, 0))     # through week w -> dollars held back
 FAB_FIRM_PCT = 0.75                             # a firm Tier-B claim clears this share of the ladder
 
+# ---- HH acquisitions: 7 a week, reset Tuesday, unused ones expire. Early in the week
+# an acquisition is worth a full point of J (it might be needed for a Sunday injury
+# replacement); from Friday on, with most of them still unused, it is worth almost
+# nothing — a stash that would be refused Tuesday for "costing an acquisition" is
+# nearly free on Saturday (Caleb, 10-18: "a longer view is valid").
+ACQ_LATE_WEEKDAY = 4          # Friday (Mon=0)
+ACQ_LATE_MIN_LEFT = 4         # with at least this many unused
+ACQ_LATE_PRICE = 0.2          # fraction of K_ACQ
+
+def acq_price(now, acq_left):
+    """Fraction of the per-acquisition J cost that applies right now."""
+    if acq_left is None: return 1.0
+    if now.weekday() >= ACQ_LATE_WEEKDAY and acq_left >= ACQ_LATE_MIN_LEFT: return ACQ_LATE_PRICE
+    return 1.0
+
 def fab_reserve(week):
     for w, r in FAB_RESERVE:
         if week <= w: return r

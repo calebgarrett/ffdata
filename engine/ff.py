@@ -459,6 +459,16 @@ def build(week=None):
             if over: R['playoff']['over'] = True
         except Exception as e:
             R['playoff'] = None; R['flags'].append(f'playoff simulation failed: {e!r}')
+    # stash watch (10-18, Caleb: 'maximize playoff success — a longer view is valid'):
+    # free agents with a real season number whose recent weekly projections are ZERO —
+    # hurt or suspended now, not dead. The engine cannot see why; a person can (Rice).
+    # Listed for verification, never acted on: a verified one becomes a registry add_yes.
+    from lib import stash as STW
+    for lg, R in run['leagues'].items():
+        try:
+            R['stash_watch'] = STW.scan(lg, R['state'], P, week, season=sea_blend)      # the blend is BSB-scored; here it only identifies a role
+        except Exception as e:
+            R['stash_watch'] = []; R['flags'].append(f'stash watch failed: {e!r}')
     # next man up: who inherits each starter's role, and whether he is on the wire —
     # the Sunday-morning pickup nobody else is positioned for (09-26)
     from lib import nextup as NU, breakout as BK, usage as U
@@ -812,6 +822,9 @@ def print_win(run):
     from lib import nextup as NU, playoff as PO
     for lg, R in run['leagues'].items():
         if R.get('nextup'): print(); print(NU.fmt(R['nextup'], lg))
+        if R.get('stash_watch') is not None:
+            from lib import stash as STW
+            print(); print(STW.fmt(lg, R['stash_watch']))
     for lg, R in run['leagues'].items():
         if R.get('playoff'): print(); print(PO.fmt(R['playoff'], lg))
     from lib import rivals as RV, calib as CB
