@@ -1,43 +1,43 @@
-PLAN DIFF — week 6 — Mon Oct 19, 7:11 am ET  (shadow mode: the card still shows the live calls; FF_PLANNER=1 renders the plan)
+PLAN DIFF — week 6 — Mon Oct 19, 1:44 pm ET  (shadow mode: the card still shows the live calls; FF_PLANNER=1 renders the plan)
 objective: J = 1.0*dS_W + 0.8*dS_W1 + 0.8*dS_rest(mean of weeks W+2..17) + 0.1*d_bench_boom - acq ({'HH': 1.0, 'BSB': 0.0}) - 0.1*bid - 0.5*txns; ship at J >= 3.0
 
 == BSB ================================================================================
   card Decide calls vs the plan:
-    CARD ONLY stream: add Tennessee Titans (DEF), drop 49ers
+    CARD ONLY stream: add Tennessee Titans (DEF), drop San Francisco
               planner: not a planner candidate (no producer raised him)
     CARD ONLY breakout B: add Cade Otton drop Xavier Hutchinson
-              planner: best spot Vikings: Vikings is your only DEF: a one-for-one DEF swap only
+              planner: best spot Minnesota: Minnesota is your only DEF: a one-for-one DEF swap only
     CARD ONLY breakout B: add Laquon Treadwell drop Makai Lemon
-              planner: best spot Vikings: Vikings is your only DEF: a one-for-one DEF swap only
+              planner: best spot Minnesota: Minnesota is your only DEF: a one-for-one DEF swap only
   budgets: {"acq_used": 3, "acq_left": null, "acq_reset": null, "acq_reset_verified": null, "fab_left": 89, "ir_free": 0, "open_spots": 0}
   final lineup week 6: 162.5 pts (optimal before moves 162.5) · P(beat opp) 100% · P(beat median) 100%
   considered and rejected (18):
-    - Pittsburgh Steelers: J -2.32 < 3.0 at its best spot (Vikings) — J -2.32 = 1.0x+0.00 (wk W) + 0.8x+0.25 (W+1) + 0.8x-0.50 (rest, mean of wks 8-17) + 0.58x-0.32 (wks 15-17, P(playoffs) 96%) + 0.1x+0.00 (bench boom) + 0.2x-7.15 (depth) - 0.00 acq - 0.01 
-    - Jason Sanders: best spot Vikings: Vikings is your only DEF: a one-for-one DEF swap only
-    - Ryan Fitzgerald: best spot Vikings: Vikings is your only DEF: a one-for-one DEF swap only
-    - Jake Ferguson: best spot Vikings: Vikings is your only DEF: a one-for-one DEF swap only
-    - Jalen Nailor: best spot Vikings: Vikings is your only DEF: a one-for-one DEF swap only
-    - Rashid Shaheed: best spot Vikings: Vikings is your only DEF: a one-for-one DEF swap only
-    - Dawson Knox: best spot Vikings: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
-    - Cade Otton: best spot Vikings: Vikings is your only DEF: a one-for-one DEF swap only
-    - Laquon Treadwell: best spot Vikings: Vikings is your only DEF: a one-for-one DEF swap only
-    - Treylon Burks: best spot Vikings: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
-    - Dalton Schultz: best spot Vikings: Vikings is your only DEF: a one-for-one DEF swap only
-    - Charlie Kolar: best spot Vikings: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
-    - Isaiah Bond: best spot Vikings: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
-    - Greg Dulcich: best spot Vikings: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
-    - Marquez Valdes-Scantling: best spot Vikings: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
+    - Pittsburgh Steelers: J -2.31 < 3.0 at its best spot (Minnesota) — J -2.31 = 1.0x+0.00 (wk W) + 0.8x+0.26 (W+1) + 0.8x-0.50 (rest, mean of wks 8-17) + 0.58x-0.32 (wks 15-17, P(playoffs) 96%) + 0.1x+0.00 (bench boom) + 0.2x-7.15 (depth) - 0.00 acq - 0.0
+    - Jason Sanders: best spot Minnesota: Minnesota is your only DEF: a one-for-one DEF swap only
+    - Ryan Fitzgerald: best spot Minnesota: Minnesota is your only DEF: a one-for-one DEF swap only
+    - Jake Ferguson: best spot Minnesota: Minnesota is your only DEF: a one-for-one DEF swap only
+    - Jalen Nailor: best spot Minnesota: Minnesota is your only DEF: a one-for-one DEF swap only
+    - Rashid Shaheed: best spot Minnesota: Minnesota is your only DEF: a one-for-one DEF swap only
+    - Dawson Knox: best spot Minnesota: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
+    - Cade Otton: best spot Minnesota: Minnesota is your only DEF: a one-for-one DEF swap only
+    - Laquon Treadwell: best spot Minnesota: Minnesota is your only DEF: a one-for-one DEF swap only
+    - Treylon Burks: best spot Minnesota: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
+    - Dalton Schultz: best spot Minnesota: Minnesota is your only DEF: a one-for-one DEF swap only
+    - Charlie Kolar: best spot Minnesota: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
+    - Isaiah Bond: best spot Minnesota: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
+    - Greg Dulcich: best spot Minnesota: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
+    - Marquez Valdes-Scantling: best spot Minnesota: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
     - Audric Estime: gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])
     - Jaleel McLaughlin: gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])
     - Samaje Perine: sits behind everyone: you carry 4 RBs for 2 slot(s) and he projects 0.0 under your weakest 1.0
-  not a clean drop: Matthew Stafford (his game is final / live — finished and live players never move); James Cook III (his game is final / live — finished and live players never move); MarShawn Lloyd (his game is final / live — finished and live players never move); Jaxon Smith-Njigba (his game is final / live — finished and live players never move); Drake London (his game is final / live — finished and live players never move); Ryan Flournoy (his game is final / live — finished and live players never move); Isaiah Likely (his game is final / live — finished and live players never move); DeMario Douglas (his game is final / live — finished and live players never move); Sam LaPorta (starter-level usage in his own right (89% snaps, 17% targets, 37% air ); Malik Washington (starter-level usage in his own right (80% snaps, 30% targets, 32% air ); Josh Jacobs (registry HOLD — HOLD, and START when active: a top-10 RB in the #9 Dec); Ray Davis (registry HOLD — HOLD, downgraded. James Cook is the single best asset ); Xavier Hutchinson (his game is final / live — finished and live players never move); Makai Lemon (his game is final / live — finished and live players never move); Pierre Strong Jr. (you added him 2026-10-14 (<= 7 days) — your decision, not the spot); Jason Myers (his game is final / live — finished and live players never move); 49ers (you added him 2026-10-14 (<= 7 days) — your decision, not the spot)
+  not a clean drop: Matthew Stafford (his game is final / live — finished and live players never move); James Cook III (his game is final / live — finished and live players never move); MarShawn Lloyd (his game is final / live — finished and live players never move); Jaxon Smith-Njigba (his game is final / live — finished and live players never move); Drake London (his game is final / live — finished and live players never move); Ryan Flournoy (his game is final / live — finished and live players never move); Isaiah Likely (his game is final / live — finished and live players never move); DeMario Douglas (his game is final / live — finished and live players never move); Sam LaPorta (starter-level usage in his own right (89% snaps, 17% targets, 37% air ); Malik Washington (starter-level usage in his own right (80% snaps, 30% targets, 32% air ); Josh Jacobs (registry HOLD — HOLD, and START when active: a top-10 RB in the #9 Dec); Ray Davis (registry HOLD — HOLD, downgraded. James Cook is the single best asset ); Xavier Hutchinson (his game is final / live — finished and live players never move); Makai Lemon (his game is final / live — finished and live players never move); Pierre Strong Jr. (you added him 2026-10-14 (<= 7 days) — your decision, not the spot); Jason Myers (his game is final / live — finished and live players never move); San Francisco (you added him 2026-10-14 (<= 7 days) — your decision, not the spot)
   UNVERIFIED mechanics: A benched player whose game is over cannot be dropped before the week rolls
 
 == HH ================================================================================
   card Decide calls vs the plan:
     (the card has no Decide call in this league)
   budgets: {"acq_used": 1, "acq_left": 6, "acq_reset": "2026-10-13T07:00-04:00", "acq_reset_verified": false, "fab_left": null, "ir_free": 1, "open_spots": 0}
-  final lineup week 6: 317.2 pts (optimal before moves 317.2) · P(beat opp) 86%
+  final lineup week 6: 317.1 pts (optimal before moves 317.1) · P(beat opp) 86%
   considered and rejected (33):
     - AJ Haulcy: gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])
     - Alohi Gilman: gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])
