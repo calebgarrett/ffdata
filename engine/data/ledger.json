@@ -10985,10 +10985,11 @@
   ],
   "verdict": "WARN",
   "week": 7,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": "2026-10-25T16:25-04:00",
-  "reverses": "6ffd95d3"
+  "reverses": "6ffd95d3",
+  "superseded_by": "9733fe61"
  },
  {
   "id": "afd89d60",
@@ -11057,10 +11058,11 @@
   ],
   "verdict": "WARN",
   "week": 7,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": null,
-  "reverses": "40d274e0"
+  "reverses": "40d274e0",
+  "superseded_by": "c34e096f"
  },
  {
   "id": "b52dc86d",
@@ -11075,10 +11077,11 @@
   ],
   "verdict": "WARN",
   "week": 7,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": true,
   "resolves_at": "2026-10-25T20:20-04:00",
-  "reverses": null
+  "reverses": null,
+  "superseded_by": "7283e39c"
  },
  {
   "id": "b4b94b93",
@@ -11112,10 +11115,11 @@
   ],
   "verdict": "WARN",
   "week": 7,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": true,
   "resolves_at": "2026-10-25T16:25-04:00",
-  "reverses": "1526b05b"
+  "reverses": "1526b05b",
+  "superseded_by": "6fd051c5"
  },
  {
   "id": "112cdb42",
@@ -11149,9 +11153,100 @@
   ],
   "verdict": "WARN",
   "week": 7,
+  "status": "superseded",
+  "provisional": false,
+  "resolves_at": "2026-10-25T13:00-04:00",
+  "reverses": "feadbe0e",
+  "superseded_by": "b4974160"
+ },
+ {
+  "id": "c34e096f",
+  "ts": "2026-10-20T16:51-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Pittsburgh Steelers",
+  "call": "stream Pittsburgh Steelers for week 8, drop 49ers",
+  "detail": "DEF: PIT 16.8 vs yours Vikings 26.0 \u2014 edge 9.2 implied pts",
+  "evidence": [
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 7,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "47bf9027"
+ },
+ {
+  "id": "6fd051c5",
+  "ts": "2026-10-20T16:51-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Jared Goff",
+  "call": "start Jared Goff at QB",
+  "detail": "over Dak Prescott +4.55",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 7,
+  "status": "proposed",
+  "provisional": true,
+  "resolves_at": "2026-10-25T16:25-04:00",
+  "reverses": "54d4d732"
+ },
+ {
+  "id": "7283e39c",
+  "ts": "2026-10-20T16:51-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Rashee Rice",
+  "call": "start Rashee Rice at WR",
+  "detail": "over Rome Odunze +2.95",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 7,
+  "status": "proposed",
+  "provisional": true,
+  "resolves_at": "2026-10-25T20:20-04:00",
+  "reverses": "b52dc86d"
+ },
+ {
+  "id": "b4974160",
+  "ts": "2026-10-20T16:51-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Alontae Taylor",
+  "call": "start Alontae Taylor at D",
+  "detail": "over Foyesade Oluokun +14.17",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 7,
   "status": "proposed",
   "provisional": false,
   "resolves_at": "2026-10-25T13:00-04:00",
-  "reverses": "feadbe0e"
+  "reverses": "8bc71901"
+ },
+ {
+  "id": "9733fe61",
+  "ts": "2026-10-20T16:51-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Kam Curl",
+  "call": "start Kam Curl at DB",
+  "detail": "over Nick Cross +14.94",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 7,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": "2026-10-25T16:25-04:00",
+  "reverses": "f90a33f3"
  }
 ]

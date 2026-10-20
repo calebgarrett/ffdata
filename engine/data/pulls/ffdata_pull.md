@@ -1,7 +1,7 @@
-# ffdata pull loaded Tue Oct 20, 1:29 pm ET — repo head: 2026-10-20T12:07:26Z pull 2026-10-20T12:07Z (in-action, no pull)
+# ffdata pull loaded Tue Oct 20, 4:50 pm ET — repo head: 2026-10-20T17:30:54Z pull 2026-10-20T17:30Z (in-action, no pull)
 week 7
-kalshi.csv: 1277 markets, 78 events, pulled 2026-10-20T17:28:08+00:00
-kalshi_archive: 1 new pull(s) copied, 133 on disk
+kalshi.csv: 1284 markets, 79 events, pulled 2026-10-20T20:49:18+00:00
+kalshi_archive: 1 new pull(s) copied, 134 on disk
 espn_games.csv: 14 games for week 7 — 0 with ESPN lines from the pump, 14 schedule-only from lines_wk3_9.csv; Kalshi spread/total ladders supply the lines inside the engine
 sleeper_off_wk7.csv: 3302 rows
 sleeper_idp_wk7.csv: 4604 rows
@@ -10,9 +10,9 @@ usage_wk6_QB.csv: 75 rows
 usage_wk6_RB.csv: 160 rows
 usage_wk6_WR.csv: 256 rows
 usage_wk6_TE.csv: 148 rows
-BSB rosters: 216 players on 12 teams, pulled 2026-10-20T17:28:56+00:00 -> new snapshot
+BSB rosters: 216 players on 12 teams, pulled 2026-10-20T20:50:04+00:00 -> new snapshot
 BSB matchup wk7: vs Sycawhores; 0 final rows, 0 in progress; totals me 0.00 opp 0.00
 BSB transactions: 0 new of 47 on the page; log now 225 rows
-HH rosters: 238 players on 10 teams, pulled 2026-10-20T17:28:56+00:00 -> new snapshot
+HH rosters: 238 players on 10 teams, pulled 2026-10-20T20:50:04+00:00 -> new snapshot
 HH matchup wk7: vs Fumbling Idiot; 0 final rows, 0 in progress; totals me 0.00 opp 0.00
-HH transactions: 4 new of 45 on the page; log now 181 rows
+HH transactions: 6 new of 46 on the page; log now 187 rows
