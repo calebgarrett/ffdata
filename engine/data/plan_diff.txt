@@ -1,4 +1,4 @@
-PLAN DIFF — week 6 — Mon Oct 19, 6:18 pm ET  (shadow mode: the card still shows the live calls; FF_PLANNER=1 renders the plan)
+PLAN DIFF — week 6 — Mon Oct 19, 9:14 pm ET  (shadow mode: the card still shows the live calls; FF_PLANNER=1 renders the plan)
 objective: J = 1.0*dS_W + 0.8*dS_W1 + 0.8*dS_rest(mean of weeks W+2..17) + 0.1*d_bench_boom - acq ({'HH': 1.0, 'BSB': 0.0}) - 0.1*bid - 0.5*txns; ship at J >= 3.0
 
 == BSB ================================================================================
@@ -10,9 +10,9 @@ objective: J = 1.0*dS_W + 0.8*dS_W1 + 0.8*dS_rest(mean of weeks W+2..17) + 0.1*d
     CARD ONLY breakout B: add Laquon Treadwell drop Makai Lemon
               planner: best spot Vikings: Vikings is your only DEF: a one-for-one DEF swap only
   budgets: {"acq_used": 3, "acq_left": null, "acq_reset": null, "acq_reset_verified": null, "fab_left": 89, "ir_free": 0, "open_spots": 0}
-  final lineup week 6: 162.5 pts (optimal before moves 162.5) · P(beat opp) 100% · P(beat median) 100%
+  final lineup week 6: 162.4 pts (optimal before moves 162.4) · P(beat opp) 100% · P(beat median) 100%
   considered and rejected (18):
-    - Pittsburgh Steelers: J -2.32 < 3.0 at its best spot (Vikings) — J -2.32 = 1.0x+0.00 (wk W) + 0.8x+0.25 (W+1) + 0.8x-0.50 (rest, mean of wks 8-17) + 0.58x-0.32 (wks 15-17, P(playoffs) 97%) + 0.1x+0.00 (bench boom) + 0.2x-7.15 (depth) - 0.00 acq - 0.01 
+    - Pittsburgh Steelers: J -2.29 < 3.0 at its best spot (Vikings) — J -2.29 = 1.0x+0.00 (wk W) + 0.8x+0.29 (W+1) + 0.8x-0.50 (rest, mean of wks 8-17) + 0.59x-0.32 (wks 15-17, P(playoffs) 98%) + 0.1x+0.00 (bench boom) + 0.2x-7.15 (depth) - 0.00 acq - 0.01 
     - Jason Sanders: best spot Vikings: Vikings is your only DEF: a one-for-one DEF swap only
     - Ryan Fitzgerald: best spot Vikings: Vikings is your only DEF: a one-for-one DEF swap only
     - Jake Ferguson: best spot Vikings: Vikings is your only DEF: a one-for-one DEF swap only
@@ -21,8 +21,8 @@ objective: J = 1.0*dS_W + 0.8*dS_W1 + 0.8*dS_rest(mean of weeks W+2..17) + 0.1*d
     - Dawson Knox: best spot Vikings: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
     - Cade Otton: best spot Vikings: Vikings is your only DEF: a one-for-one DEF swap only
     - Laquon Treadwell: best spot Vikings: Vikings is your only DEF: a one-for-one DEF swap only
-    - Treylon Burks: best spot Vikings: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
     - Dalton Schultz: best spot Vikings: Vikings is your only DEF: a one-for-one DEF swap only
+    - Treylon Burks: best spot Vikings: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
     - Charlie Kolar: best spot Vikings: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
     - Samaje Perine: best spot Vikings: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
     - Isaiah Bond: best spot Vikings: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
@@ -54,7 +54,6 @@ objective: J = 1.0*dS_W + 0.8*dS_W1 + 0.8*dS_rest(mean of weeks W+2..17) + 0.1*d
     - Jason Sanders: no roster spot exists
     - Jerry Jeudy: no roster spot exists
     - Jessie Bates: gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])
-    - Ji'Ayir Brown: gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])
     - Kendre Miller: sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 8.7 under your weakest 9.7
     - Laquon Treadwell: no roster spot exists
     - Malik Washington: you dropped him in HH on 2026-10-18 (<= 7 days, either league)
@@ -64,6 +63,7 @@ objective: J = 1.0*dS_W + 0.8*dS_W1 + 0.8*dS_rest(mean of weeks W+2..17) + 0.1*d
     - Rachaad White: no roster spot exists
     - Rashod Bateman: no roster spot exists
     - Roschon Johnson: sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 6.5 under your weakest 9.7
+    - Ryan Fitzgerald: no roster spot exists
   not a clean drop: Dak Prescott (his game is final / live — finished and live players never move); Jaylen Warren (his game is final / live — finished and live players never move); Rome Odunze (his game is final / live — finished and live players never move); Trey McBride (his game is final / live — finished and live players never move); Drake London (his game is final / live — finished and live players never move); Braelon Allen (his game is final / live — finished and live players never move); Matthew Stafford (his game is final / live — finished and live players never move); Jared Goff (gate: G6-magnitude 0 below QB season bounds [60,600] — bad read, not a); Ja'Marr Chase (starter-level usage in his own right (89% snaps, 31% targets, 57% air ); Jameson Williams (starter-level usage in his own right (89% snaps, 13% targets, 39% air ); Denzel Boston (his game is final / live — finished and live players never move); Rashee Rice (you added him 2026-10-18 (<= 7 days) — your decision, not the spot); Cairo Santos (his game is final / live — finished and live players never move); Chiefs (his game is final / live — finished and live players never move); Texans (registry HOLD — HOLD in Heritage House. A 7-acquisition league rations); Foyesade Oluokun (his game is final / live — finished and live players never move); Budda Baker (his game is final / live — finished and live players never move); T.J. Watt (his game is final / live — finished and live players never move); Carson Schwesinger (his game is final / live — finished and live players never move); Cooper DeJean (his game is final / live — finished and live players never move); Nick Cross (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Kam Curl (his game is final / live — finished and live players never move); Alontae Taylor (his game is final / live — finished and live players never move)
   UNVERIFIED mechanics: 7 acquisitions per week, counted from the most recent Tuesday 07:00 ET | A player dropped To Waivers sits on waivers 1 day | An O tag is IR-eligible | A benched player whose game is over cannot be dropped before the week rolls
 
