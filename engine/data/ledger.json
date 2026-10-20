@@ -10872,10 +10872,11 @@
   ],
   "verdict": "WARN",
   "week": 7,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": null,
-  "reverses": null
+  "reverses": null,
+  "superseded_by": "47bf9027"
  },
  {
   "id": "1526b05b",
@@ -10890,10 +10891,11 @@
   ],
   "verdict": "WARN",
   "week": 7,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": true,
   "resolves_at": "2026-10-25T16:25-04:00",
-  "reverses": null
+  "reverses": null,
+  "superseded_by": "54d4d732"
  },
  {
   "id": "f350b044",
@@ -10908,10 +10910,11 @@
   ],
   "verdict": "WARN",
   "week": 7,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": true,
   "resolves_at": "2026-10-25T13:00-04:00",
-  "reverses": null
+  "reverses": null,
+  "superseded_by": "b4b94b93"
  },
  {
   "id": "58f1d4b0",
@@ -10963,10 +10966,11 @@
   ],
   "verdict": "WARN",
   "week": 7,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": "2026-10-25T13:00-04:00",
-  "reverses": null
+  "reverses": null,
+  "superseded_by": "8bc71901"
  },
  {
   "id": "f90a33f3",
@@ -11039,5 +11043,115 @@
   "provisional": false,
   "resolves_at": null,
   "reverses": null
+ },
+ {
+  "id": "47bf9027",
+  "ts": "2026-10-20T13:30-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Pittsburgh Steelers",
+  "call": "stream Pittsburgh Steelers for week 8, drop San Francisco",
+  "detail": "DEF: PIT 16.8 vs yours Minnesota 26.0 \u2014 edge 9.2 implied pts",
+  "evidence": [
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 7,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "40d274e0"
+ },
+ {
+  "id": "b52dc86d",
+  "ts": "2026-10-20T13:30-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Rashee Rice",
+  "call": "start Rashee Rice at W/R",
+  "detail": "over Rome Odunze +2.91",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 7,
+  "status": "proposed",
+  "provisional": true,
+  "resolves_at": "2026-10-25T20:20-04:00",
+  "reverses": null
+ },
+ {
+  "id": "b4b94b93",
+  "ts": "2026-10-20T13:30-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Ja'Marr Chase",
+  "call": "start Ja'Marr Chase at W/R/T",
+  "detail": "over Braelon Allen +9.88",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 7,
+  "status": "proposed",
+  "provisional": true,
+  "resolves_at": "2026-10-25T13:00-04:00",
+  "reverses": "f350b044"
+ },
+ {
+  "id": "54d4d732",
+  "ts": "2026-10-20T13:30-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Jared Goff",
+  "call": "start Jared Goff at Q/W/R/T",
+  "detail": "over Dak Prescott +3.67",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 7,
+  "status": "proposed",
+  "provisional": true,
+  "resolves_at": "2026-10-25T16:25-04:00",
+  "reverses": "1526b05b"
+ },
+ {
+  "id": "112cdb42",
+  "ts": "2026-10-20T13:30-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Houston",
+  "call": "start Houston at DEF",
+  "detail": "over Kansas City +3.53",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 7,
+  "status": "proposed",
+  "provisional": true,
+  "resolves_at": "2026-10-25T13:00-04:00",
+  "reverses": null
+ },
+ {
+  "id": "8bc71901",
+  "ts": "2026-10-20T13:30-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Alontae Taylor",
+  "call": "start Alontae Taylor at DB",
+  "detail": "over Foyesade Oluokun +14.17",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 7,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": "2026-10-25T13:00-04:00",
+  "reverses": "feadbe0e"
  }
 ]
