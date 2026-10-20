@@ -1,73 +1,190 @@
   INPUT CONTRACT: ok — C10 REFUSE (input dropped: espn_props.csv) · C12 DEGRADE · C16 WARN
-    C10 REFUSE (input espn_props.csv dropped): espn_props.csv carries 14 event id(s) that are not week-6 games (e.g. 401872932, 401872933, 401872934) — props from another week are never applied
-    C12 DEGRADE: HH transactions log: line 35: no player/team; line 99: no player/team
+    C10 REFUSE (input espn_props.csv dropped): espn_props.csv carries 14 event id(s) that are not week-7 games (e.g. 401872932, 401872933, 401872934) — props from another week are never applied
+    C12 DEGRADE: HH transactions log: line 39: no player/team; line 103: no player/team
 
 ================================================================================================
-BSB · OVERKILL · WEEK 6 LINEUP   current 161.40 → optimal 161.40
+BSB · OVERKILL · WEEK 7 LINEUP   current 133.55 → optimal 133.55
 ================================================================================================
-  state 2026-10-20T06:30 (0h)   0 real change(s), 0 permutation(s) ignored
-  ??? Vikings — no source covers him this week (unknown, not zero)
-
-  LINEUP IS OPTIMAL — nobody on the bench outscores a starter.
-
-================================================================================================
-HH · Tecmo Bowlers · WEEK 6 LINEUP   current 304.24 → optimal 304.24
-================================================================================================
-  state 2026-10-20T06:30 (0h)   0 real change(s), 0 permutation(s) ignored
+  state 2026-10-20T12:05 (0h)   0 real change(s), 6 permutation(s) ignored
 
   LINEUP IS OPTIMAL — nobody on the bench outscores a starter.
+
+================================================================================================
+HH · Tecmo Bowlers · WEEK 7 LINEUP   current 245.76 → optimal 295.89
+================================================================================================
+  state 2026-10-20T12:05 (0h)   6 real change(s), 1 permutation(s) ignored
+
+  QB       Jared Goff (38.88) over Dak Prescott +4.08   [PROVISIONAL]  Sun Oct 25, 4:25 pm ET · early
+           not a move: no player market posted yet for both games. Re-check when the market posts.
+     WARN  START: QB: Jared Goff
+       ok G2-desig     designation read, clear
+       ok G4-horizon   horizon=weekly, correct for a start at QB
+       !! G5-sources   SINGLE SOURCE: ['rotowire'] (['sleeper'])
+       ok G6-magnitude 38.883581316544394 within QB weekly bounds
+       !! G7-ready     NO player market posted for this game yet — call is PROVISIONAL, re-run when lines post
+       ok G8-fresh     inputs per the manifest: rosters BSB 0h/HH 0h · Kalshi 0h · Sleeper 6h · BSB log 0h
+       ok G9-reversal  no conflicting prior call on record
+       ok G12-state    checked against live state: state 0h old, within the 18h limit for lineup
+       ok G10-mech     legal under HH rules
+       ok G11-role-registry no verified snap count on record — projection is the only evidence he plays
+
+  WR       Ja'Marr Chase (19.26) over Rome Odunze +8.74   [PROVISIONAL]  Sun Oct 25, 1:00 pm ET · early
+           not a move: no player market posted yet for Ja'Marr Chase's game. Re-check when the market posts.
+     WARN  START: WR: Ja'Marr Chase
+       ok G2-desig     designation read, clear
+       ok G4-horizon   horizon=weekly, correct for a start at WR
+       !! G5-sources   SINGLE SOURCE: ['rotowire'] (['sleeper'])
+       ok G6-magnitude 19.2631744781766 within WR weekly bounds
+       !! G7-ready     NO player market posted for this game yet — call is PROVISIONAL, re-run when lines post
+       ok G8-fresh     inputs per the manifest: rosters BSB 0h/HH 0h · Kalshi 0h · Sleeper 6h · BSB log 0h
+       ok G9-reversal  no conflicting prior call on record
+       ok G12-state    checked against live state: state 0h old, within the 18h limit for lineup
+       ok G10-mech     legal under HH rules
+       ok G11-role-registry no verified snap count on record — projection is the only evidence he plays
+
+  W/R/T    Jameson Williams (11.59) over Braelon Allen +4.59   [PROVISIONAL]  Sun Oct 25, 4:25 pm ET · early
+           not a move: no player market posted yet for both games. Re-check when the market posts.
+     WARN  START: W/R/T: Jameson Williams
+       ok G2-desig     designation read, clear
+       ok G4-horizon   horizon=weekly, correct for a start at WR
+       !! G5-sources   SINGLE SOURCE: ['rotowire'] (['sleeper'])
+       ok G6-magnitude 11.59441268420684 within WR weekly bounds
+       !! G7-ready     NO player market posted for this game yet — call is PROVISIONAL, re-run when lines post
+       ok G8-fresh     inputs per the manifest: rosters BSB 0h/HH 0h · Kalshi 0h · Sleeper 6h · BSB log 0h
+       ok G9-reversal  no conflicting prior call on record
+       ok G12-state    checked against live state: state 0h old, within the 18h limit for lineup
+       ok G10-mech     legal under HH rules
+       ok G11-role-registry no verified snap count on record — projection is the only evidence he plays
+
+  DEF      Texans (27.30) over Chiefs +3.53   [PROVISIONAL]  Sun Oct 25, 1:00 pm ET · early
+           not a move: no player market posted yet for both games. Re-check when the market posts.
+     WARN  START: DEF: Texans
+       ok G2-desig     designation read, clear
+       ok G4-horizon   horizon=weekly, correct for a start at DEF
+       ok G5-sources   2 independent families: ['market', 'rotowire']  (['sleeper', 'vegas'])
+       ok G6-magnitude 27.298398254787774 within DEF weekly bounds
+       !! G7-ready     NO player market posted for this game yet — call is PROVISIONAL, re-run when lines post
+       ok G8-fresh     inputs per the manifest: rosters BSB 0h/HH 0h · Kalshi 0h · Sleeper 6h · BSB log 0h
+       ok G9-reversal  no conflicting prior call on record
+       ok G12-state    checked against live state: state 0h old, within the 18h limit for lineup
+       ok G10-mech     legal under HH rules
+       ok G11-role-registry DEF — snap count does not apply
+
+  CB       Alontae Taylor (14.17) over Foyesade Oluokun +14.17   [WARN]  Sun Oct 25, 1:00 pm ET · early
+     WARN  START: CB: Alontae Taylor
+       ok G2-desig     designation read, clear
+       ok G4-horizon   horizon=weekly, correct for a start at DB
+       !! G5-sources   SINGLE SOURCE: ['rotowire'] (['sleeper'])
+       ok G6-magnitude 14.17 within DB weekly bounds
+       !! G7-ready     NO player market posted for this game yet — call is PROVISIONAL, re-run when lines post
+       ok G8-fresh     inputs per the manifest: rosters BSB 0h/HH 0h · Kalshi 0h · Sleeper 6h · BSB log 0h
+       ok G9-reversal  no conflicting prior call on record
+       ok G12-state    checked against live state: state 0h old, within the 18h limit for lineup
+       ok G10-mech     legal under HH rules
+       ok G11-role-registry no verified snap count on record — projection is the only evidence he plays
+
+  S        Kam Curl (15.02) over Nick Cross +15.02   [WARN]  Sun Oct 25, 4:25 pm ET · early
+     WARN  START: S: Kam Curl
+       ok G2-desig     designation read, clear
+       ok G4-horizon   horizon=weekly, correct for a start at DB
+       !! G5-sources   SINGLE SOURCE: ['rotowire'] (['sleeper'])
+       ok G6-magnitude 15.02 within DB weekly bounds
+       !! G7-ready     NO player market posted for this game yet — call is PROVISIONAL, re-run when lines post
+       ok G8-fresh     inputs per the manifest: rosters BSB 0h/HH 0h · Kalshi 0h · Sleeper 6h · BSB log 0h
+       ok G9-reversal  no conflicting prior call on record
+       ok G12-state    checked against live state: state 0h old, within the 18h limit for lineup
+       ok G10-mech     legal under HH rules
+       ok G11-role-registry no verified snap count on record — projection is the only evidence he plays
 
 ================================================================================================
 BSB · WIRE   pool 7317 · phantoms removed 2 · near-misses kept 253
 ================================================================================================
-  PHANTOM removed: devin smith == devonta smith ("devin"/"devonta" share 3 leading chars, ratio 0.67)
   PHANTOM removed: brandon allen == braelon allen ("brandon"/"braelon" share 3 leading chars, ratio 0.71)
-  ** 2 DEFs rostered (49ers, Vikings) for one DEF slot — the spare is 49ers (85 season vs Vikings 122)
+  PHANTOM removed: devin smith == devonta smith ("devin"/"devonta" share 3 leading chars, ratio 0.67)
+  ** 2 DEFs rostered (Vikings, 49ers) for one DEF slot — the spare is 49ers (85 season vs Vikings 122)
 
   best available (✓ = week-1 usage verified; sorted usage-first):
-    QB  Jaxson Dart NYG 0.0/368 | Baker Mayfield TB 0.0/350 | Sam Darnold SEA 17.6/347
+    QB  Jaxson Dart NYG 0.0/368 | Baker Mayfield TB 0.0/350 | Sam Darnold SEA 17.4/347
     RB  De'Von Achane MIA 0.0/264 | Jonathon Brooks CAR 0.0/153 | Dylan Sampson CLE 0.0/102
-    WR  Jayden Reed GB 0.0/191 | Rashid Shaheed SEA 5.6/141 | De'Zhaun Stribling SF 0.0/138
-    TE  Jake Ferguson DAL 9.1/160 | Dalton Schultz HOU 8.8/150 | Greg Dulcich MIA 0.0/125
-    K   Nick Folk ATL 9.4/128 | Matt Gay LV 9.4/130 | Chris Boswell PIT 8.9/142
-    DEF Jacksonville Jagua JAX 7.5/102 | Pittsburgh Steeler PIT 7.4/116 | Philadelphia Eagle PHI 7.1/128
+    WR  Jayden Reed GB 0.0/191 | Rashid Shaheed SEA 5.7/141 | De'Zhaun Stribling SF 0.0/138
+    TE  Jake Ferguson DAL 8.0/160 | Dalton Schultz HOU 8.4/150 | Greg Dulcich MIA 6.6/125
+    K   Will Reichard MIN 10.6/148 | Tyler Loop BAL 9.8/147 | Jake Bates DET 9.7/146
+    DEF Tennessee Titans TEN 7.6/53 | Pittsburgh Steeler PIT 7.4/116 | Dallas Cowboys DAL 7.1/77
 
   nothing on the wire clears the gate. Hold.
 
-  WEEK 7 STREAMING — DEF by opponent implied total (low = good), K by own total (high = good)
-    DEF:  Tennessee Titans 19.0 · Pittsburgh Steel 20.0 · 49ers * 21.5 · Vikings * 22.0 · Tampa Bay Buccan 22.0 · New Orleans Sain 22.5
-         best of yours 49ers 21.5  vs  best free Tennessee Titans 19.0  → FA is better by 2.5
-    K:  Tyler Loop 27.5 · Jake Moody 27.5 · Jake Bates 26.5 · Jake Elliott 25.8 · Wil Lutz 25.5 · Will Reichard 24.5
-         best of yours Jason Myers 24.2  vs  best free Tyler Loop 27.5  → FA is better by 3.2
+  WEEK 8 STREAMING — DEF by opponent implied total (low = good), K by own total (high = good)
+    DEF:  Pittsburgh Steel 16.8 · Dallas Cowboys 18.5 · Green Bay Packer 19.2 · Tampa Bay Buccan 21.0 · Las Vegas Raider 21.0 · Detroit Lions 21.5
+         on bye: 49ers
+         best of yours Vikings 26.0  vs  best free Pittsburgh Steelers 16.8  → FA is better by 9.2
+    K:  Evan McPherson 28.0 · Andy Borregales 26.2 · Lenny Krieg 26.2 · Andres Borregale 26.2 · Jason Myers * 26.0 · Jake Bates 26.0
+         best of yours Jason Myers 26.0  vs  best free Evan McPherson 28.0  → FA is better by 2.0
 
 ================================================================================================
 HH · WIRE   pool 7286 · phantoms removed 4 · near-misses kept 308
 ================================================================================================
-  PHANTOM removed: markus jones == marcus jones ("markus"/"marcus" share 3 leading chars, ratio 0.83)
-  PHANTOM removed: devin smith == devonta smith ("devin"/"devonta" share 3 leading chars, ratio 0.67)
   PHANTOM removed: brandon allen == braelon allen ("brandon"/"braelon" share 3 leading chars, ratio 0.71)
+  PHANTOM removed: devin smith == devonta smith ("devin"/"devonta" share 3 leading chars, ratio 0.67)
   PHANTOM removed: danthony jones == dan jones ("danthony"/"dan" share 3 leading chars, ratio 0.55)
-  ** 2 DEFs rostered — second one is a HOLD in a capped league: Houston (registry hold)
+  PHANTOM removed: markus jones == marcus jones ("markus"/"marcus" share 3 leading chars, ratio 0.83)
+  ** 2 DEFs rostered — second one is a HOLD in a capped league: Texans (registry hold)
   ** Rashee Rice [O] holds a roster spot — why and for how long is NOT on record; not a drop until it is
 
   best available (✓ = week-1 usage verified; sorted usage-first):
-    QB  Cam Ward TEN 31.3 | Sam Darnold SEA 29.8 | Michael Penix ATL 28.7
-    RB  Woody Marks HOU 13.7 | Tyler Allgeier ARI 13.3 | Emanuel Wilson SEA 13.0
-    WR  Jalen Coker CAR 12.8 | Wan'Dale Robinson TEN 10.8 | Khalil Shakir BUF 10.7
-    TE  Brenton Strange JAX 10.0 | Hunter Henry NE 8.3 | Pat Freiermuth PIT 8.3
-    DL  Austin Booker CHI 13.8 | DeForest Buckner IND 12.5 | Abdul Carter NYG 11.9
-    LB  Devin Lloyd CAR 23.6 | Akeem Davis-Gaithe IND 20.3 | Quay Walker LV 20.2
-    DB  Cam Bynum IND 17.1 | Jessie Bates ATL 16.3 | Tykee Smith TB 16.2
-    K   Brandon Aubrey DAL 14.6 | Nick Folk ATL 13.1 | Chris Boswell PIT 12.9
-    DEF Indianapolis Colts IND 26.6 | Carolina Panthers CAR 25.4 | Philadelphia Eagle PHI 24.6
+    QB  Cam Ward TEN 30.0 | Sam Darnold SEA 29.7 | Michael Penix ATL 29.4
+    RB  Ollie Gordon MIA 13.3 | RJ Harvey DEN 10.7 | Woody Marks HOU 10.7
+    WR  Jalen Coker CAR 13.9 | Wan'Dale Robinson TEN 9.9 | KC Concepcion CLE 9.6
+    TE  T.J. Hockenson MIN 11.0 | Pat Freiermuth PIT 9.0 | Kenyon Sadiq NYJ 8.5
+    DL  Austin Booker CHI 14.8 | Cameron Heyward PIT 12.6 | Boye Mafe CIN 12.5
+    LB  Quay Walker LV 19.3 | Robert Spillane NE 19.2 | Zaire Franklin GB 19.1
+    DB  Tykee Smith TB 17.2 | Jessie Bates ATL 16.5 | Jalen Pitre HOU 15.0
+    K   Brandon Aubrey DAL 14.6 | Chris Boswell PIT 14.0 | Jake Bates DET 13.3
+    DEF New York Jets NYJ 27.3 | Tennessee Titans TEN 25.8 | Dallas Cowboys DAL 25.2
 
-  nothing on the wire clears the gate. Hold.
+  WEEKLY UPGRADES (vs a current starter):
 
-  WEEK 7 STREAMING — DEF by opponent implied total (low = good), K by own total (high = good)
-    DEF:  Houston * 19.0 · Tennessee Titans 19.0 · New York Jets 19.5 · Tampa Bay Buccan 22.0 · New Orleans Sain 22.5 · Philadelphia Eag 22.8
-         best of yours Houston 19.0  vs  best free Tennessee Titans 19.0  → yours is better by 0.0
-    K:  Jake Moody 27.5 · Blake Grupe 27.0 · Jake Bates 26.5 · Jake Elliott 25.8 · Wil Lutz 25.5 · Cairo Santos * 24.5
-         best of yours Cairo Santos 24.5  vs  best free Jake Moody 27.5  → FA is better by 3.0
+    LB ADD Quay Walker 19.26 over Foyesade Oluokun 0.00  +19.26
+       BLOCK  ADD: add Quay Walker
+         ok G1-owner     unrostered, checked against every roster in the league
+         ok G2-desig     designation read, clear
+         ok G4-horizon   horizon=season, correct for a add at LB
+         XX G5-sources   SINGLE SOURCE: ['rotowire'] (['sleeper'])
+         ok G8-fresh     inputs per the manifest: rosters BSB 0h/HH 0h · Kalshi 0h · Sleeper 6h · BSB log 0h
+         ok G9-reversal  no conflicting prior call on record
+         ok G12-state    checked against live state: state 0h old, within the 30h limit for add_drop
+         ok G10-mech     legal under HH rules
+         !! G11-role-registry no verified snap count on record — projection is the only evidence he plays
+
+    LB ADD Robert Spillane 19.18 over Foyesade Oluokun 0.00  +19.18
+       BLOCK  ADD: add Robert Spillane
+         ok G1-owner     unrostered, checked against every roster in the league
+         ok G2-desig     designation read, clear
+         ok G4-horizon   horizon=season, correct for a add at LB
+         XX G5-sources   SINGLE SOURCE: ['rotowire'] (['sleeper'])
+         ok G8-fresh     inputs per the manifest: rosters BSB 0h/HH 0h · Kalshi 0h · Sleeper 6h · BSB log 0h
+         ok G9-reversal  no conflicting prior call on record
+         ok G12-state    checked against live state: state 0h old, within the 30h limit for add_drop
+         ok G10-mech     legal under HH rules
+         !! G11-role-registry no verified snap count on record — projection is the only evidence he plays
+
+    LB ADD Zaire Franklin 19.11 over Foyesade Oluokun 0.00  +19.11
+       BLOCK  ADD: add Zaire Franklin
+         ok G1-owner     unrostered, checked against every roster in the league
+         ok G2-desig     designation read, clear
+         ok G4-horizon   horizon=season, correct for a add at LB
+         XX G5-sources   SINGLE SOURCE: ['rotowire'] (['sleeper'])
+         ok G8-fresh     inputs per the manifest: rosters BSB 0h/HH 0h · Kalshi 0h · Sleeper 6h · BSB log 0h
+         ok G9-reversal  no conflicting prior call on record
+         ok G12-state    checked against live state: state 0h old, within the 30h limit for add_drop
+         ok G10-mech     legal under HH rules
+         !! G11-role-registry no verified snap count on record — projection is the only evidence he plays
+
+  WEEK 8 STREAMING — DEF by opponent implied total (low = good), K by own total (high = good)
+    DEF:  Dallas Cowboys 18.5 · New York Jets 19.5 · Tampa Bay Buccan 21.0 · Detroit Lions 21.5 · Cincinnati Benga 21.5 · Chiefs * 22.5
+         on bye: Texans
+         best of yours Chiefs 22.5  vs  best free Dallas Cowboys 18.5  → FA is better by 4.0
+    K:  Brandon Aubrey 29.0 · Tyler Bass 27.0 · Trey Smack 26.2 · Andy Borregales 26.2 · Lenny Krieg 26.2 · Jake Bates 26.0
+         best of yours Cairo Santos 21.5  vs  best free Brandon Aubrey 29.0  → FA is better by 7.5
 
 ================================================================================================
 BSB · SEASON   December environment (wk 15-17), IDP judged on OPPONENT
@@ -92,10 +209,8 @@ BSB · SEASON   December environment (wk 15-17), IDP judged on OPPONENT
   Malik Washington       MIA  own  18.92  rank 30/32  << thin
 
   byes ahead (your starters out):
-    wk  7: James Cook III
-    wk  8: Isaiah Likely, 49ers
-    wk 11: Matthew Stafford, MarShawn Lloyd, Jaxon Smith-Njigba, Drake London, DeMario Douglas, Jason Myers
-    wk 14: Ryan Flournoy
+    wk  8: Isaiah Likely
+    wk 11: Matthew Stafford, MarShawn Lloyd, Josh Jacobs, Jaxon Smith-Njigba, Drake London, Jason Myers
 
 ================================================================================================
 HH · SEASON   December environment (wk 15-17), IDP judged on OPPONENT
@@ -111,14 +226,14 @@ HH · SEASON   December environment (wk 15-17), IDP judged on OPPONENT
   Cairo Santos           CHI  own  24.67  rank  8/32  << asset
   Nick Cross             WAS  opp  24.00  rank  8/32  << asset
   Rashee Rice            KC   own  23.58  rank 11/32
-  Kansas City            KC   own  23.58  rank 11/32
+  Chiefs                 KC   own  23.58  rank 11/32
   Kam Curl               LAR  opp  23.25  rank 14/32
   Budda Baker            ARI  opp  22.83  rank 16/32
   Alontae Taylor         TEN  opp  22.83  rank 17/32
   Drake London           ATL  own  22.17  rank 21/32
   Jaylen Warren          PIT  own  22.17  rank 22/32
   T.J. Watt              PIT  opp  21.33  rank 26/32  << thin
-  Houston                HOU  own  20.25  rank 27/32  << thin
+  Texans                 HOU  own  20.25  rank 27/32  << thin
   Trey McBride           ARI  own  20.00  rank 28/32  << thin
   Braelon Allen          NYJ  own  18.83  rank 31/32  << thin
   Cooper DeJean          PHI  opp  20.67  rank 31/32  << thin
@@ -135,281 +250,334 @@ HH · SEASON   December environment (wk 15-17), IDP judged on OPPONENT
 ========================================================================================
 BREAKOUTS — role before price
 ========================================================================================
-BREAKOUT SCAN — BSB — week 5 usage pulled Mon 10-19 21:14 ET
+BREAKOUT SCAN — BSB — week 6 usage pulled Tue 10-20 02:32 ET
   T player                pos tm    snap   tgt   air   tch   wk1   pre  crowd    nxt boom  market
-  B Isaiah Bond           WR  CLE    72%   21%   47%    0%  10.4   106      0    3.3   9%  no market line yet (Sleeper receiving yds 18)
+  B Jahan Dotson          WR  ATL    85%   15%   46%    0%  17.7   103      0    3.7  23%  no market line yet (Sleeper receiving yds 18)
       -> WAIT: next usage pull (Tuesday) — add then if the snaps hold or the market moves toward him  [one game of starter usage; no market confirmation yet and the spot would cost a real player]
-  B Cade Otton            TE  TB     92%   16%   19%    0%   5.5    25      0    7.8  14%  no market line yet (Sleeper receiving yds 35)
-      -> ADD: his game has already kicked off — Yahoo locks an unrostered player at kickoff, so he is a Wednesday waiver claim in BSB — bid $1: an unpriced role nobody else's model is looking at yet; the floor is the number; drop Xavier Hutchinson  [starter usage two weeks running (wk4: 94% snaps, 22% targets, 0% air yds) and the market has not priced him ye]
-  B Charlie Kolar         TE  LAC    76%   17%   34%    0%   4.7    54      0    4.4  12%  no market line yet (Sleeper receiving yds 19)
+  B Jaleel McLaughlin     RB  CLE    63%   15%    1%   54%   9.5   und 461410    1.5  31%  no market line yet (Sleeper rushing yds 7)
       -> WAIT: next usage pull (Tuesday) — add then if the snaps hold or the market moves toward him  [one game of starter usage; no market confirmation yet and the spot would cost a real player]
-  B Greg Dulcich          TE  MIA    74%   19%   27%    0%   9.7    24      0    0.0  n/a  no market line yet, and no Sleeper line either
+  B KeAndre Lambert-Smith WR  LAC    87%   24%   19%    0%   6.2   122      0    0.0  n/a  no market line yet, and no Sleeper line either
+      -> NONE: no move for this roster  [you already carry 7 WRs for 3 slot(s) and he projects below your weakest (Xavier Hutchinson 2.7 vs 0.0). Only ]
+  B Michael Mayer         TE  LV     79%   22%   16%    0%  16.5    34 407214    7.1  14%  no market line yet (Sleeper receiving yds 29)
+      -> NONE: no move for this roster  [you already carry 2 TEs for 1 slot(s) and he projects below your weakest (Isaiah Likely 11.8 vs 7.1). Only a t]
+  B Zonovan Knight        RB  ARI    44%    6%    7%   46%  11.8   und      0    3.8  28%  no market line yet (Sleeper rushing yds 15)
       -> WAIT: next usage pull (Tuesday) — add then if the snaps hold or the market moves toward him  [one game of starter usage; no market confirmation yet and the spot would cost a real player]
-  B Marquez Valdes-ScantliWR  LAC    75%   12%   26%    0%   4.2   und      0    0.0  n/a  no market line yet, and no Sleeper line either
+  B Darnell Washington    TE  PIT    71%   12%   18%    0%  12.5    37      0    6.6  16%  no market line yet (Sleeper receiving yds 29)
+      -> NONE: no move for this roster  [you already carry 2 TEs for 1 slot(s) and he projects below your weakest (Isaiah Likely 11.8 vs 6.6). Only a t]
+  B Tyrone Tracy          RB  NYG    38%    6%    2%   50%  18.5    48 181472    7.7  28%  no market line yet (Sleeper rushing yds 31)
       -> WAIT: next usage pull (Tuesday) — add then if the snaps hold or the market moves toward him  [one game of starter usage; no market confirmation yet and the spot would cost a real player]
-  B Laquon Treadwell      WR  IND    80%   18%   14%    0%   5.4   und      0    6.3  12%  no market line yet (Sleeper receiving yds 32)
-      -> ADD: his game has already kicked off — Yahoo locks an unrostered player at kickoff, so he is a Wednesday waiver claim in BSB — bid $1: an unpriced role nobody else's model is looking at yet; the floor is the number; drop Makai Lemon  [starter usage two weeks running (wk4: 85% snaps, 18% targets, 34% air yds) and the market has not priced him y]
-  B Treylon Burks         WR  WAS    73%   20%   16%    0%   4.6   118      0    1.5  28%  no market line yet (Sleeper receiving yds 5)
-      -> WAIT: next usage pull (Tuesday) — add then if the snaps hold or the market moves toward him  [one game of starter usage; no market confirmation yet and the spot would cost a real player]
-  B Samaje Perine         RB  CIN    51%    6%    0%   48%  15.8    57      0    0.0  n/a  no market line yet, and no Sleeper line either
-      -> WAIT: next usage pull (Tuesday) — add then if the snaps hold or the market moves toward him  [one game of starter usage; no market confirmation yet and the spot would cost a real player]
-  B Dawson Knox           TE  BUF    70%   16%   19%    0%   1.6    38      0    4.7  27%  no market line yet (Sleeper receiving yds 17)
-      -> WAIT: next usage pull (Tuesday) — add then if the snaps hold or the market moves toward him  [one game of starter usage; no market confirmation yet and the spot would cost a real player]
-  B Jake Ferguson         TE  DAL    83%   14%    2%    0%   4.9    12      0    9.1  26%  no market line yet (Sleeper receiving yds 31)
-      -> WAIT: next usage pull (Tuesday) — add then if the snaps hold or the market moves toward him  [one game of starter usage; no market confirmation yet and the spot would cost a real player]
-  W Tim Patrick           WR  NYJ    93%   10%   19%    0%   4.6   und      0    4.5  15%  no market line yet (Sleeper receiving yds 21)
-      -> NONE: watch next pull  [93% snaps, 10% targets, 19% air yds]
-  W Darius Cooper         WR  PHI    85%    8%   24%    0%  15.1   und      0    4.6  20%  no market line yet (Sleeper receiving yds 20)
-      -> NONE: watch next pull  [85% snaps, 8% targets, 24% air yds]
-  SUMMARY: 2 to act on: Cade Otton over Xavier Hutchinson; Laquon Treadwell over Makai Lemon. free agent until his game kicks off; after that a waiver claim, in by Tue night (runs Wed ~5am).
-  tiers: A=0 B=10 C=0 W=12   pre=preseason rank at position ('und' = not in the season blend)
+  W Malachi Fields        WR  NYG    94%   17%    4%    0%   3.9    90      0    4.9  15%  no market line yet (Sleeper receiving yds 24)
+      -> NONE: watch next pull  [94% snaps, 17% targets, 4% air yds]
+  W Tommy Tremble         TE  CAR    68%   10%   21%    0%  20.6    47      0    3.1  21%  no market line yet (Sleeper receiving yds 11)
+      -> NONE: watch next pull  [68% snaps, 10% targets, 21% air yds]
+  W Jalen Royals          WR  KC     74%   13%    9%    0%   4.4   und      0    2.4  20%  no market line yet (Sleeper receiving yds 9)
+      -> NONE: watch next pull  [74% snaps, 13% targets, 9% air yds]
+  W Charlie Kolar         TE  LAC    66%   16%   12%    0%   5.0    54      0    0.0  n/a  no market line yet, and no Sleeper line either
+      -> NONE: watch next pull  [66% snaps, 16% targets, 12% air yds]
+  W Noah Gray             TE  KC     64%   10%   15%    0%   8.3    42      0    3.6  12%  no market line yet (Sleeper receiving yds 15)
+      -> NONE: watch next pull  [64% snaps, 10% targets, 15% air yds]
+  SUMMARY: No move this week. Starter-level usage exists on the wire but nothing clears both the add gate and a clean drop; re-check after the next usage pull.
+  tiers: A=0 B=7 C=0 W=9   pre=preseason rank at position ('und' = not in the season blend)
   note: 'starter ahead is out' is not a feed yet: verified injuries live in roles.json add_yes/why
 
-BREAKOUT SCAN — HH — week 5 usage pulled Mon 10-19 21:14 ET
+BREAKOUT SCAN — HH — week 6 usage pulled Tue 10-20 02:32 ET
   T player                pos tm    snap   tgt   air   tch   wk1   pre  crowd    nxt boom  market
-  B Woody Marks           RB  HOU    85%   12%    0%   79%  12.5    45      0   13.7  26%  no market line yet (Sleeper rushing yds 54)
+  B Dameon Pierce         RB  PHI    95%   11%    1%   89%  15.0   und 356184    6.0  23%  no market line yet (Sleeper rushing yds 37)
+      -> WAIT: no clean drop left  [two straight weeks of starter usage (wk5: 77% snaps, 70% of RB touches), but the rest of the bench is a hold, ]
+  B Woody Marks           RB  HOU    78%    9%    3%   72%  10.1    45      0   10.7  27%  no market line yet (Sleeper rushing yds 49)
+      -> WAIT: no clean drop left  [two straight weeks of starter usage (wk5: 85% snaps, 79% of RB touches), but the rest of the bench is a hold, ]
+  B Keon Coleman          WR  BUF    85%   18%   51%    0%  15.9   101 361089    0.0  n/a  no market line yet, and no Sleeper line either
+      -> NONE: no move for this roster  [you already carry 5 WRs for 2 slot(s) and he projects below your weakest (Rome Odunze 10.5 vs 0.0). Only a tra]
+      gate WARN: G11-role-registry PROTECTED STATUS LIFTED. He was held as a real WR3 role; Week 1 says the role is not real. Droppable.
+  B Jahan Dotson          WR  ATL    85%   15%   46%    0%  17.7   103      0    3.4  21%  no market line yet (Sleeper receiving yds 18)
+      -> NONE: no move for this roster  [you already carry 5 WRs for 2 slot(s) and he projects below your weakest (Rome Odunze 10.5 vs 3.4). Only a tra]
+  B Pierre Strong         RB  GB     55%   15%    4%   63%  11.7   und 151092    0.7  21%  no market line yet (Sleeper rushing yds 3)
       -> WAIT: next usage pull (Tuesday) — add then if the snaps hold or the market moves toward him  [one game of starter usage; no market confirmation yet and the spot would cost a real player]
-  B Dameon Pierce         RB  PHI    77%   12%    0%   70%   3.2   und 368640   10.7  22%  no market line yet (Sleeper rushing yds 60)
+  B Jalen Coker           WR  CAR    75%   33%   28%    0%  15.7    53      0   13.9  18%  no market line yet (Sleeper receiving yds 62)
       -> WAIT: next usage pull (Tuesday) — add then if the snaps hold or the market moves toward him  [one game of starter usage; no market confirmation yet and the spot would cost a real player]
-  B Malik Washington      WR  MIA    80%   30%   32%    0%  12.1    64      0    0.0  n/a  no market line yet, and no Sleeper line either
-      -> NONE: no move — you dropped him  [you dropped him in HH on 2026-10-18; the usage behind this row predates that and is not re-proposed until a ne]
-  B Ollie Gordon          RB  MIA    65%    0%    0%   75%  14.8    79      0    0.0  n/a  no market line yet, and no Sleeper line either
-      -> WAIT: no clean drop left  [two straight weeks of starter usage (wk4: 56% snaps, 69% of RB touches), but the rest of the bench is a hold, ]
-  B Isaiah Bond           WR  CLE    72%   21%   47%    0%  10.4   106      0    3.1   8%  no market line yet (Sleeper receiving yds 18)
+  B Jaleel McLaughlin     RB  CLE    63%   15%    1%   54%   9.5   und 461410    1.4  29%  no market line yet (Sleeper rushing yds 7)
       -> WAIT: next usage pull (Tuesday) — add then if the snaps hold or the market moves toward him  [one game of starter usage; no market confirmation yet and the spot would cost a real player]
-  B Rashod Bateman        WR  BAL    80%   19%   41%    0%  11.2    60      0    5.8  11%  no market line yet (Sleeper receiving yds 32)
-      -> WAIT: next usage pull (Tuesday) — add then if the snaps hold or the market moves toward him  [one game of starter usage; no market confirmation yet and the spot would cost a real player]
-  B Emanuel Wilson        RB  SEA    59%    7%    0%   73%  13.2    90      0   13.0  25%  no market line yet (Sleeper rushing yds 66)
-      -> WAIT: no clean drop left  [two straight weeks of starter usage (wk4: 60% snaps, 76% of RB touches), but the rest of the bench is a hold, ]
-  B Brenton Strange       TE  JAX    81%   21%   33%    0%  13.8    17      0   10.0  13%  no market line yet (Sleeper receiving yds 46)
-      -> WAIT: no clean drop left  [two straight weeks of starter usage (wk4: 87% snaps, 35% targets, 43% air yds), but the rest of the bench is a]
-  B Cade Otton            TE  TB     92%   16%   19%    0%   5.5    25      0    7.4  12%  no market line yet (Sleeper receiving yds 35)
-      -> WAIT: no clean drop left  [two straight weeks of starter usage (wk4: 94% snaps, 22% targets, 0% air yds), but the rest of the bench is a ]
-  B Charlie Kolar         TE  LAC    76%   17%   34%    0%   4.7    54      0    4.1  11%  no market line yet (Sleeper receiving yds 19)
-      -> WAIT: next usage pull (Tuesday) — add then if the snaps hold or the market moves toward him  [one game of starter usage; no market confirmation yet and the spot would cost a real player]
-  B Chig Okonkwo          TE  WAS    71%   24%   25%    0%  10.0    23      0    7.1  19%  no market line yet (Sleeper receiving yds 28)
-      -> WAIT: next usage pull (Tuesday) — add then if the snaps hold or the market moves toward him  [one game of starter usage; no market confirmation yet and the spot would cost a real player]
-  B Tyjae Spears          RB  TEN    54%   25%    0%   41%   9.8    44      0    8.0  20%  no market line yet (Sleeper rushing yds 27)
-      -> WAIT: next usage pull (Tuesday) — add then if the snaps hold or the market moves toward him  [one game of starter usage; no market confirmation yet and the spot would cost a real player]
+  B Xavier Worthy         WR  KC     84%   23%   26%    0%  14.3    46 209493    8.6  13%  no market line yet (Sleeper receiving yds 36)
+      -> NONE: no move for this roster  [you already carry 5 WRs for 2 slot(s) and he projects below your weakest (Rome Odunze 10.5 vs 8.6). Only a tra]
+  B Keenan Allen          WR  IND    71%   26%   34%    0%  16.2    59 156660    2.0   5%  no market line yet (Sleeper receiving yds 10)
+      -> NONE: no move for this roster  [you already carry 5 WRs for 2 slot(s) and he projects below your weakest (Rome Odunze 10.5 vs 2.0). Only a tra]
+  B KeAndre Lambert-Smith WR  LAC    87%   24%   19%    0%   6.2   122      0    0.0  n/a  no market line yet, and no Sleeper line either
+      -> NONE: no move for this roster  [you already carry 5 WRs for 2 slot(s) and he projects below your weakest (Rome Odunze 10.5 vs 0.0). Only a tra]
+  B Quentin Johnston      WR  LAC    82%    8%   38%    0%   6.7    49      0    0.0  n/a  no market line yet, and no Sleeper line either
+      -> NONE: no move for this roster  [you already carry 5 WRs for 2 slot(s) and he projects below your weakest (Rome Odunze 10.5 vs 0.0). Only a tra]
+  B KC Concepcion         WR  CLE    82%   23%   20%    0%   7.9    52      0    9.6  13%  no market line yet (Sleeper receiving yds 41)
+      -> NONE: no move for this roster  [you already carry 5 WRs for 2 slot(s) and he projects below your weakest (Rome Odunze 10.5 vs 9.6). Only a tra]
   SUMMARY: No move this week. Starter-level usage exists on the wire but nothing clears both the add gate and a clean drop; re-check after the next usage pull.
-  tiers: A=0 B=23 C=7 W=29   pre=preseason rank at position ('und' = not in the season blend)
+  tiers: A=0 B=25 C=5 W=25   pre=preseason rank at position ('und' = not in the season blend)
   note: 'starter ahead is out' is not a feed yet: verified injuries live in roles.json add_yes/why
 
 
 ========================================================================================
 WIN PROBABILITY and FAB
 ========================================================================================
-WIN PROBABILITY — BSB — vs Deadites and vs the league median  (6000 samples; 20 players sampled from Kalshi ladders, 96 from assumed spreads)
-  current lineup: 161.4 ± 0.0   P(beat opp) 100%   P(beat median) 100%
-  mean-optimal                                  161.4  opp 100%  med 100%  Δ +0.000
+WIN PROBABILITY — BSB — vs Sycawhores and vs the league median  (6000 samples; 11 players sampled from Kalshi ladders, 115 from assumed spreads)
+  current lineup: 133.4 ± 24.3   P(beat opp) 71%   P(beat median) 75%
+  mean-optimal                                  133.4  opp 71%  med 75%  Δ +0.000
+  DeMario Douglas for Malik Washington at WR2   132.5  opp 71%  med 74%  Δ -0.012
+  Ryan Flournoy for Malik Washington at WR2     131.0  opp 69%  med 72%  Δ -0.050
+  49ers for Vikings at DEF                      131.1  opp 69%  med 72%  Δ -0.056
+  DeMario Douglas for Isaiah Likely at W/R/T    130.2  opp 68%  med 71%  Δ -0.072
   -> current lineup is within noise of the best: no change
   note: same-game correlation modelled for QB/RB/WR/TE (game sd 0.15, team sd 0.25); DEF, K and IDP independent; treat a 2-3 point probability edge as noise
-  note: 28 finished players carry their actual score; other teams' finished players still use projections in the median
 
-WIN PROBABILITY — HH — vs My Team is on IR  (6000 samples; 30 players sampled from Kalshi ladders, 110 from assumed spreads)
-  current lineup: 304.2 ± 0.0   P(beat opp) 0%   P(beat median) n/a
-  mean-optimal                                  304.2  opp 0%  med n/a  Δ +0.000
+WIN PROBABILITY — HH — vs Fumbling Idiot  (6000 samples; 5 players sampled from Kalshi ladders, 143 from assumed spreads)
+  current lineup: 246.2 ± 30.4   P(beat opp) n/a   P(beat median) n/a
+  mean-optimal                                  296.0  opp n/a  med n/a  Δ +0.000
+  Jared Goff for Dak Prescott at QB             250.4  opp n/a  med n/a  Δ +0.000
+  Ja'Marr Chase for Rome Odunze at WR           255.0  opp n/a  med n/a  Δ +0.000
+  Jameson Williams for Rome Odunze at WR        247.3  opp n/a  med n/a  Δ +0.000
+  Denzel Boston for Rome Odunze at WR           246.7  opp n/a  med n/a  Δ +0.000
   -> current lineup is within noise of the best: no change
   note: same-game correlation modelled for QB/RB/WR/TE (game sd 0.15, team sd 0.25); DEF, K and IDP independent; treat a 2-3 point probability edge as noise
-  note: 44 finished players carry their actual score; other teams' finished players still use projections in the median
+  note: Fumbling Idiot has 1 starter(s) no source prices (Jaguars) — P(beat opponent) not computed rather than overstated
 
 FAB LADDER — 60 winning bids across 10 run(s): $0, $0, $0, $0, $0, $0, $0, $0, $0, $0, $0, $0, $0, $1, $1, $1, $1, $1, $1, $2, $2, $2, $2, $2, $2, $2, $3, $3, $3, $3, $4, $5, $5, $5, $5, $5, $5, $5, $6, $6, $6, $7, $7, $7, $10, $11, $11, $13, $15, $15, $15, $16, $17, $24, $25, $27, $28, $31, $33, $66
   bands: Tier B $1 · Tier A $34 · contested $67   (median winning bid $4; whale Rayland $66)
   spent / remaining: Rayland $100/0, FWU $94/6, Regulators $69/31, Phish Phanatics $56/44, Ex-Presidents $35/65, Bad News Bears $25/75, Short Bus $25/75, WINdianapolis $20/80, Deadites $20/80, Sycawhores $12/88, OVERKILL $11/89
 
 STEAM — what the market learned between pulls
-  baseline Tue 1:00 PM ET · previous pull Mon 9:13 PM ET · threshold 15%
+  baseline Tue 8:05 AM ET · no earlier pull to compare for withdrawals
   no rostered player's ladder moved more than the threshold
 
-NEXT MAN UP — BSB (depth charts from week-5 usage, two pulls blended)
+NEXT MAN UP — BSB (depth charts from week-6 usage, two pulls blended)
+  you      QB      Matthew Stafford         active       -> Stetson Bennett 0% (free agent, 0.0) · Matthew Caldwell 0% (free agent, 0.0)
+  you      RB1     MarShawn Lloyd           active       -> Kaleb Johnson 10% (free agent, 0.7) · Josh Jacobs 0% (on your bench, 12.6)
+  you      RB2     Josh Jacobs              active       -> Damon Bankston 0% (free agent, 0.0) · Chris Brooks 0% (free agent, 0.0)
+  you      WR1     Jaxon Smith-Njigba       active       -> Cooper Kupp 83% (owned by WINdianapolis, 6.6) · Rashid Shaheed 46% (free agent, 5.7)
+  you      WR2     Malik Washington         active       -> Chris Bell 24% (on waivers (dropped Thu 12:56 PM), 5.5) · Kevin Coleman 21% (free agent, 2.2)
+  you      WR3     Drake London             active       -> Jahan Dotson 79% (free agent, 3.7) · Olamide Zaccheaus 47% (not in the pool (no projection), 2.1)
+  you      TE      Sam LaPorta              active       -> Brock Wright 22% (free agent, 1.8) · Tyler Conklin 4% (free agent, 0.4)
+  you      W/R/T   Isaiah Likely            active       -> Thomas Fidone 25% (free agent, 0.0) · Theo Johnson 16% (free agent, 2.6)
+  opponent QB      Caleb Williams           active       -> Tyson Bagent 22% (free agent, 0.0) · Case Keenum 11% (free agent, 0.0)
+  opponent RB1     Rhamondre Stevenson      active       -> Corey Kiner 26% (free agent, 4.2) · TreVeyon Henderson 22% (owned by Ex-Presidents, 7.4)
+  opponent RB2     Kendre Miller            active       -> Alvin Kamara 27% (owned by WINdianapolis, 7.5) · CJ Donaldson 27% (free agent, 3.4)
+  opponent WR1     George Pickens           active       -> Ryan Flournoy 81% (on your bench, 7.1) · CeeDee Lamb 78% (owned by Deadites, 17.4)
+  opponent WR2     Josh Downs               active       -> Keenan Allen 62% (owned by 65 SOUTH, 2.2) · Deion Burks 15% (free agent, 0.1)
+  opponent WR3     Nico Collins             active       -> Xavier Hutchinson 50% (on your bench, 2.7) · Jaylin Noel 48% (owned by Deadites, 5.6)
+  opponent TE      Hunter Henry             active       -> Eli Raridon 57% (free agent, 4.2) · Cameron Latu 19% (free agent, 0.5)
+  opponent W/R/T   Michael Wilson           active       -> Kendrick Bourne 54% (owned by Ex-Presidents, 7.8) · Jalen Brooks 53% (free agent, 3.0)
 
 STASH WATCH — BSB: free agents with a real season number and NO projection in the last two weeks (hurt or suspended; verify before adding)
-  Baker Mayfield           QB  TB   season  350.4 (20.6/wk)  last projected wk 3  zero for 3 wk(s)
+  Baker Mayfield           QB  TB   season  350.4 (20.6/wk)  last projected wk -  zero for 4 wk(s)
       verified 2026-10-18: Dislocated thumb (throwing hand), out since week 3; Bucs EXPECT him back week 7 (not confirmed — grip progressing, swelling after Monday throwing, no practice yet). 1-QB league: a bye/injury cover for Stafford, not a starter upgrade; the planner prices him once Sleeper posts a week-7 number.
-  Terrance Ferguson        TE  LAR  season  110.7 ( 6.5/wk)  last projected wk 3  zero for 3 wk(s)
+  Terrance Ferguson        TE  LAR  season  110.7 ( 6.5/wk)  last projected wk -  zero for 4 wk(s)
   -> the engine cannot see WHY. Verify the injury/suspension and the return date; a verified role is a registry add_yes and the planner prices him.
 
-NEXT MAN UP — HH (depth charts from week-5 usage, two pulls blended)
+NEXT MAN UP — HH (depth charts from week-6 usage, two pulls blended)
+  you      QB      Dak Prescott             active       -> Sam Howell 0% (free agent, 0.0) · Joe Milton 0% (free agent, 0.0)
+  you      RB      Jaylen Warren            active       -> Rico Dowdle 22% (owned by Eatin Pigskins, 7.8) · Lew Nichols 3% (free agent, 0.2)
+  you      WR      Rome Odunze              active       -> Kalif Raymond 54% (free agent, 6.6) · Luther Burden 52% (owned by Fumbling Idiot, 13.5)
+  you      TE      Trey McBride             active       -> Elijah Higgins 47% (free agent, 1.7) · Teagan Quitoriano 41% (free agent, 0.0)
+  you      W/R     Drake London             active       -> Jahan Dotson 79% (free agent, 3.4) · Olamide Zaccheaus 47% (not in the pool (no projection), 2.0)
+  you      W/R/T   Braelon Allen            active       -> Isaiah Davis 20% (not in the pool (no projection), 0.3) · Andrew Beck 1% (free agent, 0.0)
+  you      Q/W/R/T Matthew Stafford         active       -> Stetson Bennett 0% (free agent, 0.0) · Matthew Caldwell 0% (free agent, 0.0)
+  opponent QB      Justin Herbert           active       -> Trey Lance 0% (free agent, 0.0) · DJ Uiagalelei 0% (free agent, 0.0)
+  opponent RB      Jahmyr Gibbs             active       -> Sione Vaki 8% (free agent, 4.0) · Isiah Pacheco 0% (not in the pool (no projection), 0.0)
+  opponent WR      Nico Collins             active       -> Xavier Hutchinson 50% (free agent, 2.4) · Jaylin Noel 48% (not in the pool (no projection), 5.1)
+  opponent TE      Brock Bowers             active       -> Michael Mayer 74% (free agent, 6.7) · Ian Thomas 27% (free agent, 0.5)
+  opponent W/R     Tee Higgins              active       -> Dohnte Meyers 10% (free agent, 2.9) · Mitch Tinsley 7% (free agent, 1.0)
+  opponent W/R/T   Zay Flowers              active       -> Devontez Walker 63% (free agent, 2.7) · Rashod Bateman 47% (free agent, 7.1)
+  opponent Q/W/R/T Luther Burden III        active       -> Zavion Thomas 16% (free agent, 1.0) · Jahdae Walker 12% (free agent, 0.7)
 
 STASH WATCH — HH: free agents with a real season number and NO projection in the last two weeks (hurt or suspended; verify before adding)
-  D.J. Moore               WR  BUF  season  193.0 (11.4/wk)  last projected wk 4  zero for 2 wk(s)
-  Michael Pittman Jr.      WR  PIT  season  182.3 (10.7/wk)  last projected wk 4  zero for 2 wk(s)
+  D.J. Moore               WR  BUF  season  193.0 (11.4/wk)  last projected wk 4  zero for 3 wk(s)
+  Michael Pittman Jr.      WR  PIT  season  182.3 (10.7/wk)  last projected wk 4  zero for 3 wk(s)
       verified 2026-10-18: Plantar fasciitis; short-term IR 10-10, out at least 4 games; PIT bye week 9, so earliest return week 10 vs CIN. A WR2/3 behind Metcalf — a December flex, not a starter. Three weeks of roster spot before he can score.
   Alec Pierce              WR  IND  season  179.8 (10.6/wk)  last projected wk -  zero for 4 wk(s)
       verified 2026-10-18: Heel; Pelissero 10-17: "still a few weeks away" — no return week yet. A real IND WR2 role (deep threat) when back; re-check in two weeks, not a roster spot now.
   Jordyn Tyson             WR  NO   season  123.7 ( 7.3/wk)  last projected wk -  zero for 4 wk(s)
-  Terrance Ferguson        TE  LAR  season  110.7 ( 6.5/wk)  last projected wk 3  zero for 3 wk(s)
+  Terrance Ferguson        TE  LAR  season  110.7 ( 6.5/wk)  last projected wk -  zero for 4 wk(s)
   -> the engine cannot see WHY. Verify the injury/suspension and the return date; a verified role is a registry add_yes and the planner prices him.
 
-PLAYOFF LEVERAGE — BSB: P(playoffs) 98% · win 99% / lose 96% → next week's game (opponent not on file) is worth +3% · +5 pts/week of roster strength → 99%
-  top-3 seed: 74% · win 83% / lose 60% → +23% · +5/wk → 86%
+PLAYOFF LEVERAGE — BSB: P(playoffs) 100% · win 100% / lose 99% → this game is worth +1% · +5 pts/week of roster strength → 100%
+  top-3 seed: 88% · win 92% / lose 79% → +12% · +5/wk → 95%
   4000 seasons from week 7 through 14; 6 of 12 qualify. Opponents after this week are drawn at random (the league schedule is not on file); BSB divisions are not modelled; the vs-median result is. Strength = each roster's optimal lineup on individual per-week values, byes zeroed by week.
   playoffs  top-3  team                        wins    PF     strength
-       99%    84%  Phish Phanatics             6.0    732.6   126.6/wk
-       99%    79%  Ain’t No Waller-Back Girl   8.0    661.3   123.4/wk
-       98%    74%  OVERKILL                    8.0    772.5   118.3/wk
-       86%    30%  Deadites                    6.0    688.8   122.4/wk
-       71%    14%  Short Bus                   8.0    747.9   108.8/wk
-       69%    14%  FWU                         6.0    689.8   121.0/wk
-       33%     3%  WINdianapolis               5.0    661.2   118.6/wk
-       31%     2%  65 SOUTH                    4.0    662.4    86.4/wk
-        6%     0%  Sycawhores                  3.0    583.0   107.9/wk
-        4%     0%  Regulators                  4.0    735.0   107.5/wk
-        3%     0%  Ex-Presidents               2.0    531.5   107.3/wk
-        1%     0%  Rayland                     0.0    595.9   110.3/wk
+      100%    92%  Phish Phanatics             8.0    880.0   126.6/wk
+      100%    88%  Ain’t No Waller-Back Girl  10.0    783.6   123.4/wk
+      100%    88%  OVERKILL                   10.0    933.9   118.3/wk
+       82%    14%  Deadites                    6.0    793.1   122.4/wk
+       77%    11%  Short Bus                   9.0    857.5   108.8/wk
+       61%     5%  FWU                         6.0    793.8   121.0/wk
+       40%     1%  65 SOUTH                    5.0    783.0    86.4/wk
+       27%     0%  WINdianapolis               5.0    778.5   118.6/wk
+        4%     0%  Rayland                     2.0    736.6   110.3/wk
+        4%     0%  Sycawhores                  3.0    701.8   107.9/wk
+        4%     0%  Regulators                  6.0    860.1   103.0/wk
+        2%     0%  Ex-Presidents               2.0    625.7   107.3/wk
 
-PLAYOFF LEVERAGE — HH: P(playoffs) 100% · win 100% / lose 100% → next week's game (opponent not on file) is worth +0% · +5 pts/week of roster strength → 100%
-  top-4 seed: 99% · win 100% / lose 98% → +2% · +5/wk → 100%
+PLAYOFF LEVERAGE — HH: P(playoffs) 100% · win 100% / lose 100% → this game is worth +0% · +5 pts/week of roster strength → 100%
+  top-4 seed: 96% · win 96% / lose 83% → +13% · +5/wk → 98%
   4000 seasons from week 7 through 14; 8 of 10 qualify. Opponents after this week are drawn at random (the league schedule is not on file). Strength = each roster's optimal lineup on individual per-week values, byes zeroed by week.
   playoffs  top-4  team                        wins    PF     strength
-      100%    99%  Tecmo Bowlers               5.0      0.0   290.9/wk
-      100%    91%  The STRIB Club              4.0      0.0   293.5/wk
-      100%    80%  T-rex                       2.0      0.0   284.8/wk
-      100%    58%  My Team is on IR            3.0      0.0   289.7/wk
-       99%    33%  JETS                        2.0      0.0   275.1/wk
-       98%    15%  Grey Poop On Bijan Mustard  3.0      0.0   236.3/wk
-       98%    22%  Eatin Pigskins              2.0      0.0   274.4/wk
-       88%     3%  Maker's Mark                3.0      0.0   256.2/wk
-       15%     0%  Pound the Rock              1.0      0.0   226.6/wk
-        1%     0%  Fumbling Idiot              0.0    982.8   181.7/wk
+      100%    56%  My Team is on IR            4.0      0.0   290.6/wk
+      100%    96%  Tecmo Bowlers               5.0      0.0   295.9/wk
+      100%    89%  The STRIB Club              4.0      0.0   305.5/wk
+      100%    85%  T-rex                       3.0      0.0   311.6/wk
+      100%    46%  Grey Poop On Bijan Mustard  4.0      0.0   265.8/wk
+      100%    23%  JETS                        3.0      0.0   283.2/wk
+       97%     5%  Eatin Pigskins              2.0      0.0   276.0/wk
+       81%     0%  Maker's Mark                3.0      0.0   251.1/wk
+       21%     0%  Pound the Rock              2.0      0.0   228.0/wk
+        1%     0%  Fumbling Idiot              0.0      0.0   203.8/wk
 
 RIVALS — BSB: 225 logged transactions (Sep 2 → Oct 18)
-  Rayland                  adds  4 (claims 3, FA 1, last 7d 0)  FAB $100/0 left, max $66, median $33          streams DEF: no  thin at: RB (weakest starter 6.6 vs league median 10.4)
-  FWU                      adds 29 (claims 16, FA 13, last 7d 9)  FAB $94/6 left, max $31, median $4            streams DEF: yes  thin at: WR (weakest starter 5.3 vs league median 9.8), RB (weakest starter 6.8 vs league median 10.4)
-  Regulators               adds 17 (claims 10, FA 7, last 7d 4)  FAB $69/31 left, max $24, median $2           streams DEF: yes  thin at: none
-  Phish Phanatics          adds 19 (claims 8, FA 11, last 7d 4)  FAB $56/44 left, max $27, median $2           streams DEF: yes  thin at: none
-  Ex-Presidents            adds  7 (claims 2, FA 5, last 7d 2)  FAB $35/65 left, max $28, median $18          streams DEF: no  thin at: QB (weakest starter 17.7 vs league median 22.8), RB (weakest starter 8.2 vs league median 10.4), K (a starter is out)
+  Rayland                  adds  4 (claims 3, FA 1, last 7d 0)  FAB $100/0 left, max $66, median $33          streams DEF: no  thin at: WR (weakest starter 0.0 vs league median 7.4)
+  FWU                      adds 29 (claims 16, FA 13, last 7d 9)  FAB $94/6 left, max $31, median $4            streams DEF: yes  thin at: WR (weakest starter 2.6 vs league median 7.4), RB (weakest starter 5.6 vs league median 7.7)
+  Regulators               adds 17 (claims 10, FA 7, last 7d 4)  FAB $69/31 left, max $24, median $2           streams DEF: yes  thin at: DEF (weakest starter 5.3 vs league median 6.8)
+  Phish Phanatics          adds 19 (claims 8, FA 11, last 7d 4)  FAB $56/44 left, max $27, median $2           streams DEF: yes  thin at: TE (weakest starter 8.6 vs league median 10.9)
+  Ex-Presidents            adds  7 (claims 2, FA 5, last 7d 2)  FAB $35/65 left, max $28, median $18          streams DEF: no  thin at: K (a starter is out), RB (weakest starter 0.0 vs league median 7.7)
   Bad News Bears           adds  6 (claims 4, FA 2, last 7d 0)  FAB $25/75 left, max $15, median $5           streams DEF: yes  thin at: none
-  Short Bus                adds  4 (claims 1, FA 3, last 7d 0)  FAB $25/75 left, max $25, median $25          streams DEF: no  thin at: DEF (weakest starter 2.6 vs league median 7.3), WR (a starter is out), TE (weakest starter 7.5 vs league median 9.9)
-  WINdianapolis            adds  7 (claims 4, FA 3, last 7d 3)  FAB $20/80 left, max $15, median $2           streams DEF: yes  thin at: QB (weakest starter 18.0 vs league median 22.8), WR (a starter is out)
-  Deadites                 adds  6 (claims 3, FA 3, last 7d 1)  FAB $20/80 left, max $13, median $7           streams DEF: no  thin at: WR (weakest starter 5.5 vs league median 9.8), RB (weakest starter 7.8 vs league median 10.4)
-  Sycawhores               adds  9 (claims 4, FA 5, last 7d 0)  FAB $12/88 left, max $5, median $3            streams DEF: yes  thin at: DEF (weakest starter 5.6 vs league median 7.3)
-  OVERKILL                 adds 10 (claims 5, FA 5, last 7d 3)  FAB $11/89 left, max $5, median $2            streams DEF: yes  thin at: WR (weakest starter 4.2 vs league median 9.8)
-  65 SOUTH                 adds  4 (claims 0, FA 4, last 7d 1)  FAB $0/100 left                               streams DEF: yes  thin at: none
-  Ain’t No Waller-Back Gir adds  2 (claims 0, FA 2, last 7d 1)  FAB $0/100 left                               streams DEF: no  thin at: none
+  Short Bus                adds  4 (claims 1, FA 3, last 7d 0)  FAB $25/75 left, max $25, median $25          streams DEF: no  thin at: TE (weakest starter 7.4 vs league median 10.9)
+  WINdianapolis            adds  7 (claims 4, FA 3, last 7d 3)  FAB $20/80 left, max $15, median $2           streams DEF: yes  thin at: QB (weakest starter 18.1 vs league median 23.8), WR (a starter is out)
+  Deadites                 adds  6 (claims 3, FA 3, last 7d 1)  FAB $20/80 left, max $13, median $7           streams DEF: no  thin at: WR (weakest starter 5.6 vs league median 7.4)
+  Sycawhores               adds  9 (claims 4, FA 5, last 7d 0)  FAB $12/88 left, max $5, median $3            streams DEF: yes  thin at: K (weakest starter 0.0 vs league median 9.1), TE (weakest starter 8.6 vs league median 10.9)
+  OVERKILL                 adds 10 (claims 5, FA 5, last 7d 3)  FAB $11/89 left, max $5, median $2            streams DEF: yes  thin at: RB (weakest starter 5.8 vs league median 7.7)
+  65 SOUTH                 adds  4 (claims 0, FA 4, last 7d 1)  FAB $0/100 left                               streams DEF: yes  thin at: K (weakest starter 0.0 vs league median 9.1), QB (weakest starter 0.0 vs league median 23.8), WR (weakest starter 0.0 vs league median 7.4), DEF (weakest starter 4.2 vs league median 6.8), RB (weakest starter 2.6 vs league median 7.7)
+  Ain’t No Waller-Back Gir adds  2 (claims 0, FA 2, last 7d 1)  FAB $0/100 left                               streams DEF: no  thin at: WR (weakest starter 0.0 vs league median 7.4)
 
-RIVALS — HH: 173 logged transactions (Sep 17 → Oct 18)
+RIVALS — HH: 177 logged transactions (Sep 17 → Oct 20)
   The STRIB Club           adds 21 (claims 3, FA 18, last 7d 7)                                                streams DEF: yes  thin at: none
-  T-rex                    adds 17 (claims 1, FA 16, last 7d 1)                                                streams DEF: no  thin at: WR (weakest starter 1.4 vs league median 10.7)
-  JETS                     adds 15 (claims 0, FA 15, last 7d 3)                                                streams DEF: yes  thin at: TE (weakest starter 8.5 vs league median 11.9)
-  Tecmo Bowlers            adds 10 (claims 0, FA 10, last 7d 1)                                                streams DEF: no  thin at: none
-  My Team is on IR         adds  7 (claims 0, FA 7, last 7d 1)                                                streams DEF: no  thin at: WR (weakest starter 4.4 vs league median 10.7), TE (weakest starter 8.8 vs league median 11.9)
-  Grey Poop On Bijan Musta adds  6 (claims 0, FA 6, last 7d 1)                                                streams DEF: no  thin at: TE (weakest starter 8.5 vs league median 11.9), RB (a starter is out), DB (weakest starter 0.0 vs league median 13.2), LB (weakest starter 0.0 vs league median 14.9)
-  Pound the Rock           adds  4 (claims 0, FA 4, last 7d 0)                                                streams DEF: no  thin at: RB (a starter is out), DB (a starter is out), LB (weakest starter 0.0 vs league median 14.9)
-  Maker's Mark             adds  4 (claims 0, FA 4, last 7d 0)                                                streams DEF: no  thin at: WR (a starter is out), TE (weakest starter 9.1 vs league median 11.9), RB (a starter is out), DL (weakest starter 0.0 vs league median 13.7)
-  Eatin Pigskins           adds  3 (claims 0, FA 3, last 7d 0)                                                streams DEF: no  thin at: RB (a starter is out)
-  Fumbling Idiot           adds  0 (claims 0, FA 0, last 7d 0)                                                streams DEF: no  thin at: WR (weakest starter 0.0 vs league median 10.7), RB (weakest starter 0.0 vs league median 15.9), DB (a starter is out), DL (a starter is out), K (weakest starter 0.0 vs league median 12.6), LB (a starter is out)
+  T-rex                    adds 19 (claims 1, FA 18, last 7d 3)                                                streams DEF: no  thin at: none
+  JETS                     adds 15 (claims 0, FA 15, last 7d 3)                                                streams DEF: yes  thin at: TE (weakest starter 8.0 vs league median 11.4), QB (weakest starter 0.0 vs league median 31.8)
+  Tecmo Bowlers            adds 10 (claims 0, FA 10, last 7d 1)                                                streams DEF: no  thin at: DB (weakest starter 0.0 vs league median 12.8), RB (weakest starter 7.0 vs league median 16.0), LB (weakest starter 0.0 vs league median 13.7)
+  My Team is on IR         adds  7 (claims 0, FA 7, last 7d 1)                                                streams DEF: no  thin at: TE (weakest starter 8.1 vs league median 11.4), WR (weakest starter 5.9 vs league median 12.9)
+  Grey Poop On Bijan Musta adds  6 (claims 0, FA 6, last 7d 1)                                                streams DEF: no  thin at: TE (weakest starter 7.4 vs league median 11.4), QB (weakest starter 0.0 vs league median 31.8), WR (weakest starter 9.0 vs league median 12.9)
+  Pound the Rock           adds  4 (claims 0, FA 4, last 7d 0)                                                streams DEF: no  thin at: DB (a starter is out), RB (a starter is out)
+  Maker's Mark             adds  4 (claims 0, FA 4, last 7d 0)                                                streams DEF: no  thin at: WR (a starter is out), RB (a starter is out)
+  Eatin Pigskins           adds  3 (claims 0, FA 3, last 7d 0)                                                streams DEF: no  thin at: K (weakest starter 0.0 vs league median 12.9), QB (weakest starter 25.5 vs league median 31.8), RB (a starter is out)
+  Fumbling Idiot           adds  0 (claims 0, FA 0, last 7d 0)                                                streams DEF: no  thin at: DB (a starter is out), QB (weakest starter 0.0 vs league median 31.8), DL (a starter is out), LB (a starter is out)
 
 CALIBRATION — paired pregame numbers vs actuals (league scoring)
-  weeks: BSB wk3, BSB wk4, BSB wk5, HH wk3, HH wk4, HH wk5 · 1205 scored player-weeks · actuals {'sleeper': 863, 'no stat row (did not play)': 110, 'yahoo': 232}
-  origin of the pregame rows: BSB wk3 backfill 222, BSB wk3 live 5, BSB wk4 live 223, BSB wk5 live 238, HH wk3 backfill 176, HH wk3 live 4, HH wk4 live 168, HH wk5 live 169
+  weeks: BSB wk3, BSB wk4, BSB wk5, BSB wk6, HH wk3, HH wk4, HH wk5, HH wk6 · 1611 scored player-weeks · actuals {'sleeper': 1130, 'no stat row (did not play)': 179, 'yahoo': 302}
+  origin of the pregame rows: BSB wk3 backfill 222, BSB wk3 live 5, BSB wk4 live 223, BSB wk5 live 238, BSB wk6 live 233, HH wk3 backfill 176, HH wk3 live 4, HH wk4 live 168, HH wk5 live 169, HH wk6 live 173
   pair             lg      n   MAE a  MAE b  RMSE a RMSE b  bias a bias b   MAE a-b [95% CI by game]
-  engine v sleeper BSB   684    5.03   4.96    6.83   6.79   +0.09  +0.03   +0.07 [-0.03, +0.18] (48 games)
-  engine v sleeper HH    506    6.99   6.98    9.27   9.26   -0.48  -0.47   +0.02 [-0.08, +0.13] (48 games)
-  engine v sleeper ALL  1190    5.87   5.82    7.96   7.93   -0.15  -0.18   +0.05 [-0.04, +0.15] (48 games)
-  engine v yahoo   BSB   486    5.11   5.06    6.80   6.74   +0.20  +0.30   +0.05 [-0.09, +0.19] (42 games)
-  engine v yahoo   HH    353    6.92   7.09    8.98   9.47   -0.64  -0.68   -0.17 [-0.45, +0.05] (43 games)
-  engine v yahoo   ALL   839    5.87   5.91    7.79   8.00   -0.15  -0.11   -0.04 [-0.22, +0.11] (46 games)
-  sleeper v yahoo  BSB   484    5.01   5.05    6.74   6.74   +0.04  +0.27   -0.04 [-0.13, +0.05] (42 games)
-  sleeper v yahoo  HH    345    6.67   6.69    8.72   8.81   -1.10  -1.25   -0.02 [-0.18, +0.14] (38 games)
-  sleeper v yahoo  ALL   829    5.70   5.74    7.63   7.67   -0.43  -0.36   -0.03 [-0.14, +0.07] (45 games)
+  engine v sleeper BSB   915    4.83   4.77    6.60   6.58   +0.17  +0.07   +0.06 [-0.02, +0.15] (66 games)
+  engine v sleeper HH    675    6.57   6.56    8.78   8.77   -0.19  -0.24   +0.01 [-0.08, +0.10] (66 games)
+  engine v sleeper ALL  1590    5.57   5.53    7.60   7.59   +0.01  -0.06   +0.04 [-0.04, +0.13] (66 games)
+  engine v yahoo   BSB   691    5.01   4.97    6.64   6.58   +0.27  +0.32   +0.05 [-0.07, +0.16] (56 games)
+  engine v yahoo   HH    502    6.64   6.70    8.58   8.89   -0.24  -0.39   -0.06 [-0.27, +0.11] (57 games)
+  engine v yahoo   ALL  1193    5.70   5.70    7.51   7.64   +0.06  +0.02   +0.00 [-0.13, +0.13] (60 games)
+  sleeper v yahoo  BSB   689    4.94   4.96    6.61   6.58   +0.09  +0.30   -0.02 [-0.10, +0.05] (56 games)
+  sleeper v yahoo  HH    494    6.46   6.42    8.40   8.39   -0.62  -0.79   +0.05 [-0.09, +0.18] (52 games)
+  sleeper v yahoo  ALL  1183    5.58   5.57    7.41   7.39   -0.21  -0.15   +0.01 [-0.08, +0.09] (59 games)
   engine v sleeper by position:
-    DB   n=  27  MAE  6.19 v  6.19  bias -2.45 v -2.45  diff +0.00 [+0.00, +0.00]
-    DEF  n= 105  MAE  6.43 v  6.43  bias +2.97 v +2.97  diff +0.00 [+0.00, +0.00]
+    DB   n=  36  MAE  7.09 v  7.09  bias -2.77 v -2.77  diff +0.00 [+0.00, +0.00]
+    DEF  n= 136  MAE  6.11 v  6.11  bias +2.38 v +2.38  diff +0.00 [+0.00, +0.00]
     DL   n=   2  MAE 14.58 v 14.58  bias -5.93 v -5.93  diff +0.00 [+0.00, +0.00]
-    K    n=  77  MAE  6.21 v  6.21  bias -1.06 v -1.06  diff +0.00 [+0.00, +0.00]
-    LB   n=  19  MAE 11.20 v 11.20  bias -3.07 v -3.07  diff +0.00 [+0.00, +0.00]
-    QB   n= 150  MAE  6.80 v  6.70  bias -1.47 v -1.31  diff +0.10 [-0.11, +0.29]
-    RB   n= 295  MAE  5.00 v  5.03  bias +0.13 v +0.10  diff -0.02 [-0.19, +0.17]
-    TE   n= 132  MAE  5.72 v  5.80  bias +0.03 v -0.03  diff -0.08 [-0.30, +0.14]
-    WR   n= 383  MAE  5.66 v  5.50  bias -0.25 v -0.36  diff +0.16 [-0.06, +0.42]
-  where the market changed the number (Kalshi field, |engine - sleeper| >= 1): n=292  MAE engine 7.13 v sleeper 6.89  diff +0.24 [-0.12, +0.65] (46 games)
-    same subset with a Yahoo number: n=202  MAE engine 7.55 v yahoo 7.20  diff +0.35 [-0.09, +0.81]
+    K    n= 105  MAE  5.55 v  5.55  bias -0.76 v -0.76  diff +0.00 [+0.00, +0.00]
+    LB   n=  25  MAE 10.42 v 10.42  bias -2.62 v -2.62  diff +0.00 [+0.00, +0.00]
+    QB   n= 202  MAE  6.57 v  6.35  bias -1.05 v -1.19  diff +0.22 [-0.03, +0.54]
+    RB   n= 398  MAE  4.72 v  4.76  bias +0.43 v +0.37  diff -0.04 [-0.19, +0.11]
+    TE   n= 175  MAE  5.62 v  5.66  bias +0.50 v +0.40  diff -0.04 [-0.24, +0.17]
+    WR   n= 511  MAE  5.31 v  5.23  bias -0.18 v -0.28  diff +0.08 [-0.08, +0.29]
+  where the market changed the number (Kalshi field, |engine - sleeper| >= 1): n=399  MAE engine 6.77 v sleeper 6.58  diff +0.19 [-0.14, +0.51] (60 games)
+    same subset with a Yahoo number: n=309  MAE engine 6.94 v yahoo 6.69  diff +0.25 [-0.09, +0.64]
   engine-only (HH wk2 back-fill, not paired, not compared): n=316 MAE 6.08 bias +0.92
-  Kalshi P(anytime TD) reliability (weeks [3, 4, 5], n=978, Brier 0.138):
-    0%-10%: n= 344  priced 6.5%  scored 7.3%
-    10%-20%: n= 276  priced 14.7%  scored 17.0%
-    20%-30%: n= 172  priced 24.6%  scored 22.7%
-    30%-40%: n=  98  priced 34.9%  scored 39.8%
-    40%-50%: n=  45  priced 44.9%  scored 26.7%
-    50%-60%: n=  31  priced 53.9%  scored 58.1%
-    60%-100%: n=  12  priced 66.8%  scored 91.7%
-  P(win) reliability: 3 league-week(s) with P(win) at lock and a final — reliability prints at 4
+  Kalshi P(anytime TD) reliability (weeks [3, 4, 5, 6], n=1277, Brier 0.136):
+    0%-10%: n= 450  priced 6.5%  scored 7.6%
+    10%-20%: n= 363  priced 14.6%  scored 15.2%
+    20%-30%: n= 221  priced 24.5%  scored 24.4%
+    30%-40%: n= 126  priced 34.9%  scored 37.3%
+    40%-50%: n=  58  priced 44.7%  scored 25.9%
+    50%-60%: n=  41  priced 54.1%  scored 51.2%
+    60%-100%: n=  18  priced 66.4%  scored 83.3%
+  P(win) reliability: n=5 Brier 0.222 20%-40%: n=1 said 38% won 100%; 40%-60%: n=2 said 54% won 50%; 60%-80%: n=1 said 64% won 100%; 80%-100%: n=1 said 95% won 100%
 
 ================================================================================================
 PLANNER (shadow) — plan vs the live card
 ================================================================================================
-PLAN DIFF — week 6 — Tue Oct 20, 2:32 am ET  (shadow mode: the card still shows the live calls; FF_PLANNER=1 renders the plan)
+PLAN DIFF — week 7 — Tue Oct 20, 8:07 am ET  (shadow mode: the card still shows the live calls; FF_PLANNER=1 renders the plan)
 objective: J = 1.0*dS_W + 0.8*dS_W1 + 0.8*dS_rest(mean of weeks W+2..17) + 0.1*d_bench_boom - acq ({'HH': 1.0, 'BSB': 0.0}) - 0.1*bid - 0.5*txns; ship at J >= 3.0
 
 == BSB ================================================================================
   card Decide calls vs the plan:
-    CARD ONLY stream: add Tennessee Titans (DEF), drop 49ers
-              planner: not a planner candidate (no producer raised him)
-    CARD ONLY breakout B: add Cade Otton drop Xavier Hutchinson
-              planner: best spot Vikings: Vikings is your only DEF: a one-for-one DEF swap only
-    CARD ONLY breakout B: add Laquon Treadwell drop Makai Lemon
-              planner: best spot Vikings: Vikings is your only DEF: a one-for-one DEF swap only
-  budgets: {"acq_used": 3, "acq_left": null, "acq_reset": null, "acq_reset_verified": null, "fab_left": 89, "ir_free": 0, "open_spots": 0}
-  final lineup week 6: 161.4 pts (optimal before moves 161.4) · P(beat opp) 100% · P(beat median) 100%
+    CARD ONLY stream: add Pittsburgh Steelers (DEF), drop 49ers
+              planner: J +1.18 < 3.0 at its best spot (Vikings) — J +1.18 = 1.0x+0.00 (wk W) + 0.8x+2.87 (W+1) + 0.8x-0.52 (rest, mean of wks 9-17) + 0.60x-0.32 (wks 15-17, P(playoffs) 100%) + 0.1x+0.00 (bench boom) + 0.2x+0.00 (depth) - 0.00 acq - 0.01 FAB($1) - 0.50 churn
+  budgets: {"acq_used": 0, "acq_left": null, "acq_reset": null, "acq_reset_verified": null, "fab_left": 89, "ir_free": 0, "open_spots": 0}
+  final lineup week 7: 133.6 pts (optimal before moves 133.6) · P(beat opp) 71% · P(beat median) 75%
   considered and rejected (18):
-    - Pittsburgh Steelers: J -2.29 < 3.0 at its best spot (Vikings) — J -2.29 = 1.0x+0.00 (wk W) + 0.8x+0.29 (W+1) + 0.8x-0.50 (rest, mean of wks 8-17) + 0.59x-0.32 (wks 15-17, P(playoffs) 98%) + 0.1x+0.00 (bench boom) + 0.2x-7.15 (depth) - 0.00 acq - 0.01 
-    - Jason Sanders: best spot Vikings: Vikings is your only DEF: a one-for-one DEF swap only
-    - Ryan Fitzgerald: best spot Vikings: Vikings is your only DEF: a one-for-one DEF swap only
-    - Jake Ferguson: best spot Vikings: Vikings is your only DEF: a one-for-one DEF swap only
-    - Jalen Nailor: best spot Vikings: Vikings is your only DEF: a one-for-one DEF swap only
-    - Rashid Shaheed: best spot Vikings: Vikings is your only DEF: a one-for-one DEF swap only
-    - Dawson Knox: best spot Vikings: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
-    - Cade Otton: best spot Vikings: Vikings is your only DEF: a one-for-one DEF swap only
-    - Laquon Treadwell: best spot Vikings: Vikings is your only DEF: a one-for-one DEF swap only
-    - Dalton Schultz: best spot Vikings: Vikings is your only DEF: a one-for-one DEF swap only
-    - Treylon Burks: best spot Vikings: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
-    - Charlie Kolar: best spot Vikings: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
-    - Samaje Perine: best spot Vikings: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
-    - Isaiah Bond: best spot Vikings: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
-    - Greg Dulcich: best spot Vikings: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
-    - Marquez Valdes-Scantling: best spot Vikings: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
-    - Audric Estime: gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])
-    - Jaleel McLaughlin: gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])
-  not a clean drop: Matthew Stafford (his game is final / live — finished and live players never move); James Cook III (his game is final / live — finished and live players never move); MarShawn Lloyd (his game is final / live — finished and live players never move); Jaxon Smith-Njigba (his game is final / live — finished and live players never move); Drake London (his game is final / live — finished and live players never move); Ryan Flournoy (his game is final / live — finished and live players never move); Isaiah Likely (his game is final / live — finished and live players never move); DeMario Douglas (his game is final / live — finished and live players never move); Sam LaPorta (starter-level usage in his own right (89% snaps, 17% targets, 37% air ); Malik Washington (starter-level usage in his own right (80% snaps, 30% targets, 32% air ); Josh Jacobs (registry HOLD — HOLD, and START when active: a top-10 RB in the #9 Dec); Ray Davis (registry HOLD — HOLD, downgraded. James Cook is the single best asset ); Xavier Hutchinson (his game is final / live — finished and live players never move); Makai Lemon (his game is final / live — finished and live players never move); Pierre Strong Jr. (you added him 2026-10-14 (<= 7 days) — your decision, not the spot); Jason Myers (his game is final / live — finished and live players never move); 49ers (you added him 2026-10-14 (<= 7 days) — your decision, not the spot)
+    - Pittsburgh Steelers: J +1.18 < 3.0 at its best spot (Vikings) — J +1.18 = 1.0x+0.00 (wk W) + 0.8x+2.87 (W+1) + 0.8x-0.52 (rest, mean of wks 9-17) + 0.60x-0.32 (wks 15-17, P(playoffs) 100%) + 0.1x+0.00 (bench boom) + 0.2x+0.00 (depth) - 0.00 acq - 0.01
+    - Tyrone Tracy: J +0.97 < 3.0 at its best spot (Xavier Hutchinson) — J +0.97 = 1.0x+1.90 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.43 (rest, mean of wks 9-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+1.64 (bench boom) + 0.2x-4.59 (depth) - 0.00 
+    - Jake Ferguson: J +0.17 < 3.0 at its best spot (Xavier Hutchinson) — J +0.17 = 1.0x+0.00 (wk W) + 0.8x+1.78 (W+1) + 0.8x+0.00 (rest, mean of wks 9-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+1.73 (bench boom) + 0.2x-4.59 (depth) - 0.00 
+    - Rashid Shaheed: J -0.62 < 3.0 at its best spot (Xavier Hutchinson) — J -0.62 = 1.0x+0.00 (wk W) + 0.8x+0.67 (W+1) + 0.8x+0.13 (rest, mean of wks 9-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+1.73 (bench boom) + 0.2x-4.59 (depth) - 0.00 
+    - Evan McPherson: J -0.88 < 3.0 at its best spot (Jason Myers) — J -0.88 = 1.0x+0.00 (wk W) + 0.8x+0.70 (W+1) + 0.8x-0.21 (rest, mean of wks 9-17) + 0.60x-1.28 (wks 15-17, P(playoffs) 100%) + 0.1x+0.00 (bench boom) + 0.2x+0.00 (depth) - 0.00 acq - 
+    - Jalen Nailor: J -1.20 < 3.0 at its best spot (Xavier Hutchinson) — J -1.20 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.14 (rest, mean of wks 9-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+1.18 (bench boom) + 0.2x-4.59 (depth) - 0.00 
+    - Devin Singletary: J -1.26 < 3.0 at its best spot (Xavier Hutchinson) — J -1.26 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.10 (rest, mean of wks 9-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.80 (bench boom) + 0.2x-4.59 (depth) - 0.00 
+    - Calvin Ridley: J -1.30 < 3.0 at its best spot (Xavier Hutchinson) — J -1.30 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.08 (rest, mean of wks 9-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.69 (bench boom) + 0.2x-4.59 (depth) - 0.00 
+    - Dalton Schultz: J -1.37 < 3.0 at its best spot (Xavier Hutchinson) — J -1.37 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 9-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.62 (bench boom) + 0.2x-4.59 (depth) - 0.00 
+    - Zonovan Knight: best spot Xavier Hutchinson: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
+    - Jahan Dotson: best spot Xavier Hutchinson: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
+    - Greg Dulcich: J -1.40 < 3.0 at its best spot (Xavier Hutchinson) — J -1.40 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 9-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.29 (bench boom) + 0.2x-4.59 (depth) - 0.00 
+    - Jaleel McLaughlin: best spot Xavier Hutchinson: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
+    - Dallas Cowboys: J -2.08 < 3.0 at its best spot (Vikings) — J -2.08 = 1.0x+0.00 (wk W) + 0.8x+1.75 (W+1) + 0.8x-2.12 (rest, mean of wks 9-17) + 0.60x-2.12 (wks 15-17, P(playoffs) 100%) + 0.1x+0.00 (bench boom) + 0.2x+0.00 (depth) - 0.00 acq - 0.01
+    - Darnell Washington: sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 6.6 under your weakest 11.8
+    - KeAndre Lambert-Smith: sits behind everyone: you carry 7 WRs for 3 slot(s) and he projects 0.0 under your weakest 2.7
+    - Michael Mayer: sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 7.1 under your weakest 11.8
+    - Sione Vaki: gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])
+  not a clean drop: Josh Jacobs (registry HOLD — HOLD, and START when active: a top-10 RB in the #9 Dec); Jaxon Smith-Njigba (starter-level usage in his own right (92% snaps, 31% targets, 51% air ); Malik Washington (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Drake London (starter-level usage in his own right (100% snaps, 30% targets, 20% air); Sam LaPorta (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Isaiah Likely (starter-level usage in his own right (91% snaps, 23% targets, 27% air ); James Cook III (starter-level usage in his own right (66% snaps, 83% of RB touches)); Ray Davis (registry HOLD — HOLD, downgraded. James Cook is the single best asset ); Pierre Strong Jr. (you added him 2026-10-14 (<= 7 days) — your decision, not the spot); 49ers (you added him 2026-10-14 (<= 7 days) — your decision, not the spot)
   UNVERIFIED mechanics: A benched player whose game is over cannot be dropped before the week rolls
 
 == HH ================================================================================
   card Decide calls vs the plan:
-    (the card has no Decide call in this league)
-  budgets: {"acq_used": 1, "acq_left": 6, "acq_reset": "2026-10-13T07:00-04:00", "acq_reset_verified": false, "fab_left": null, "ir_free": 1, "open_spots": 0}
-  final lineup week 6: 304.2 pts (optimal before moves 304.2) · P(beat opp) 0%
-  considered and rejected (33):
-    - AJ Haulcy: gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])
-    - Alohi Gilman: gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])
-    - Brenton Strange: no roster spot exists
-    - Cade Otton: no roster spot exists
-    - Cam Bynum: gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])
-    - Charlie Kolar: no roster spot exists
-    - Chig Okonkwo: no roster spot exists
-    - Dameon Pierce: no roster spot exists
-    - Dawson Knox: no roster spot exists
-    - Emanuel Wilson: no roster spot exists
-    - Greg Dulcich: no roster spot exists
-    - Isaiah Bond: no roster spot exists
-    - Jason Sanders: no roster spot exists
-    - Jerry Jeudy: no roster spot exists
+    BOTH      lineup: CB start Alontae Taylor over Foyesade Oluokun (+14.17)
+              plan: start Alontae Taylor at CB ; bench Foyesade Oluokun  [before kickoff Sun Oct 25, 1:00 pm ET]
+    BOTH      lineup: S start Kam Curl over Nick Cross (+15.02)
+              plan: start Kam Curl at S ; bench Nick Cross  [before kickoff Sun Oct 25, 4:25 pm ET]
+    PLAN ONLY [add] add Brandon Aubrey ; drop Cairo Santos ; start Brandon Aubrey at K  [before kickoff Thu Oct 22, 8:15 pm ET]
+              J +8.96 = 1.0x+1.41 (wk W) + 0.8x+7.04 (W+1) + 0.8x+2.31 (rest, mean of wks 9-17) + 0.60x+2.60 (wks 15-17, P(playoffs) 100%) + 0.1x+0.00 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 0.00 FAB($0) - 0.50 churn
+              - week-8 K stream: Brandon Aubrey 18.6 vs your best 11.6 (W projection x own implied total 29.0/22.8)
+              - the spot: Cairo Santos — the only K
+    PLAN ONLY PROVISIONAL [lineup] start Jared Goff at QB ; bench Dak Prescott  [before kickoff Sun Oct 25, 4:25 pm ET]
+              - +4.08 this week
+              - no player market posted yet for his game
+    PLAN ONLY PROVISIONAL [lineup] start Ja'Marr Chase at WR ; bench Rome Odunze  [before kickoff Sun Oct 25, 1:00 pm ET]
+              - +8.74 this week
+              - no player market posted yet for his game
+    PLAN ONLY PROVISIONAL [lineup] start Jameson Williams at W/R/T ; bench Braelon Allen  [before kickoff Sun Oct 25, 4:25 pm ET]
+              - +4.59 this week
+              - no player market posted yet for his game
+    PLAN ONLY PROVISIONAL [lineup] start Texans at DEF ; bench Chiefs  [before kickoff Sun Oct 25, 1:00 pm ET]
+              - +3.53 this week
+              - no player market posted yet for his game
+  budgets: {"acq_used": 0, "acq_left": 7, "acq_reset": "2026-10-20T07:00-04:00", "acq_reset_verified": false, "fab_left": null, "ir_free": 1, "open_spots": 0}
+  final lineup week 7: 297.3 pts (optimal before moves 295.9)
+  considered and rejected (37):
+    - Jalen Coker: J +0.95 < 3.0 at its best spot (Rome Odunze) — J +0.95 = 1.0x+2.31 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.13 (rest, mean of wks 9-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.30 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 
+    - Chris Boswell: J +0.84 < 3.0 at its best spot (Cairo Santos) — J +0.84 = 1.0x+0.75 (wk W) + 0.8x+2.52 (W+1) + 0.8x-0.29 (rest, mean of wks 9-17) + 0.60x-0.33 (wks 15-17, P(playoffs) 100%) + 0.1x+0.00 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq -
+    - Dallas Cowboys: J -0.10 < 3.0 at its best spot (Chiefs) — J -0.10 = 1.0x+0.00 (wk W) + 0.8x+1.75 (W+1) + 0.8x+0.00 (rest, mean of wks 9-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.00 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 0.00 
+    - Kyle Pitts: best spot Rome Odunze: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
+    - Brenton Strange: best spot Rome Odunze: Tier B held, but Rome Odunze (10.5) projects at or above him (0.0) this week
+    - Michael Mayer: best spot Rome Odunze: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
+    - Darnell Washington: best spot Rome Odunze: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
+    - Woody Marks: J -1.11 < 3.0 at its best spot (Rome Odunze) — J -1.11 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.41 (rest, mean of wks 9-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.65 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 
+    - Kendre Miller: best spot Rome Odunze: Tier B held, but Rome Odunze (10.5) projects at or above him (8.8) this week
+    - Tennessee Titans: J -1.33 < 3.0 at its best spot (Chiefs) — J -1.33 = 1.0x+0.00 (wk W) + 0.8x+0.21 (W+1) + 0.8x+0.00 (rest, mean of wks 9-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.00 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 0.00 
+    - RJ Harvey: J -1.42 < 3.0 at its best spot (Rome Odunze) — J -1.42 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.17 (rest, mean of wks 9-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x-0.53 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 
+    - Emanuel Wilson: best spot Rome Odunze: Tier B held, but Rome Odunze (10.5) projects at or above him (7.9) this week
+    - Tyrone Tracy: best spot Rome Odunze: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
+    - New York Jets: you dropped him in BSB on 2026-10-14 (<= 7 days, either league)
+    - Cooper Kupp: sits behind everyone: you carry 5 WRs for 1 slot(s) and he projects 6.2 under your weakest 10.5
+    - Dameon Pierce: sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 6.0 under your weakest 7.0
+    - George Holani: sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 5.9 under your weakest 7.0
+    - Jahan Dotson: sits behind everyone: you carry 5 WRs for 1 slot(s) and he projects 3.4 under your weakest 10.5
+    - Jakobi Meyers: sits behind everyone: you carry 5 WRs for 1 slot(s) and he projects 0.0 under your weakest 10.5
+    - Jaleel McLaughlin: sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 1.4 under your weakest 7.0
+    - Jalen Pitre: gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])
     - Jessie Bates: gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])
-    - Kendre Miller: sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 8.7 under your weakest 9.7
-    - Laquon Treadwell: no roster spot exists
-    - Malik Washington: you dropped him in HH on 2026-10-18 (<= 7 days, either league)
-    - Marquez Valdes-Scantling: no roster spot exists
-    - Nick Scott: gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])
-    - Ollie Gordon: sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 0.0 under your weakest 9.7
-    - Rachaad White: no roster spot exists
-    - Rashod Bateman: no roster spot exists
-    - Roschon Johnson: sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 6.5 under your weakest 9.7
-    - Ryan Fitzgerald: no roster spot exists
-  not a clean drop: Dak Prescott (his game is final / live — finished and live players never move); Jaylen Warren (his game is final / live — finished and live players never move); Rome Odunze (his game is final / live — finished and live players never move); Trey McBride (his game is final / live — finished and live players never move); Drake London (his game is final / live — finished and live players never move); Braelon Allen (his game is final / live — finished and live players never move); Matthew Stafford (his game is final / live — finished and live players never move); Jared Goff (gate: G6-magnitude 0 below QB season bounds [60,600] — bad read, not a); Ja'Marr Chase (starter-level usage in his own right (89% snaps, 31% targets, 57% air ); Jameson Williams (starter-level usage in his own right (89% snaps, 13% targets, 39% air ); Denzel Boston (his game is final / live — finished and live players never move); Rashee Rice (you added him 2026-10-18 (<= 7 days) — your decision, not the spot); Cairo Santos (his game is final / live — finished and live players never move); Kansas City (his game is final / live — finished and live players never move); Houston (registry HOLD — HOLD in Heritage House. A 7-acquisition league rations); Foyesade Oluokun (his game is final / live — finished and live players never move); Budda Baker (his game is final / live — finished and live players never move); T.J. Watt (his game is final / live — finished and live players never move); Carson Schwesinger (his game is final / live — finished and live players never move); Cooper DeJean (his game is final / live — finished and live players never move); Nick Cross (his game is final / live — finished and live players never move); Kam Curl (his game is final / live — finished and live players never move); Alontae Taylor (his game is final / live — finished and live players never move)
+    - KC Concepcion: sits behind everyone: you carry 5 WRs for 1 slot(s) and he projects 9.6 under your weakest 10.5
+    - KeAndre Lambert-Smith: sits behind everyone: you carry 5 WRs for 1 slot(s) and he projects 0.0 under your weakest 10.5
+    - Keenan Allen: sits behind everyone: you carry 5 WRs for 1 slot(s) and he projects 2.0 under your weakest 10.5
+  not a clean drop: Dak Prescott (gate: G6-magnitude 34.79978323719326 below QB season bounds [60,600] —); Jaylen Warren (starter-level usage in his own right (75% snaps, 62% of RB touches)); Trey McBride (starter-level usage in his own right (97% snaps, 26% targets, 23% air ); Drake London (starter-level usage in his own right (100% snaps, 30% targets, 20% air); Braelon Allen (starter-level usage in his own right (87% snaps, 70% of RB touches)); Matthew Stafford (gate: G6-magnitude 36.16862662406386 below QB season bounds [60,600] —); Jared Goff (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Ja'Marr Chase (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Jameson Williams (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Denzel Boston (starter-level usage in his own right (94% snaps, 19% targets, 15% air ); Rashee Rice (you added him 2026-10-18 (<= 7 days) — your decision, not the spot); Texans (registry HOLD — HOLD in Heritage House. A 7-acquisition league rations); Foyesade Oluokun (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Budda Baker (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); T.J. Watt (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Carson Schwesinger (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Cooper DeJean (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Nick Cross (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Kam Curl (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Alontae Taylor (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR)
   UNVERIFIED mechanics: 7 acquisitions per week, counted from the most recent Tuesday 07:00 ET | A player dropped To Waivers sits on waivers 1 day | An O tag is IR-eligible | A benched player whose game is over cannot be dropped before the week rolls
 
 plan simulation (sanity check 11): clean — legal at every step, each spot once, budgets held
 
 
-  card written: /home/claude/bsb2/lineup-card.html (99706 bytes) — sanity read clean
+  card written: /home/claude/bsb2/lineup-card.html (121268 bytes) — sanity read clean
 run exit 0
