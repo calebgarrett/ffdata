@@ -10,7 +10,7 @@
  },
  "decide": [
   "HH \u2014 stream, before kickoff Thu Oct 22, 8:15 pm ET \u2014 check first Add Brandon Aubrey K DAL \u00b7 drop Cairo Santos \u00b7 start at K over Cairo Santos (dropped) When: before kickoff Thu Oct 22, 8:15 pm ET (free agent, immediate). Why: K weekly upgrad",
-  "HH WR lineup Start Ja'Marr Chase over Rome Odunze +7.3 points locks Sun Oct 25, 1:00 pm set it in Yahoo before then",
+  "HH W/R lineup Start Rashee Rice over Rome Odunze +2.2 points locks Sun Oct 25, 8:20 pm set it in Yahoo before then",
   "HH D lineup Start Alontae Taylor over Foyesade Oluokun +14.1 points locks Sun Oct 25, 1:00 pm set it in Yahoo before then",
   "HH S lineup Start Kam Curl over Nick Cross +15.1 points locks Sun Oct 25, 4:25 pm set it in Yahoo before then"
  ],
@@ -19,7 +19,26 @@
   "BSB": {
    "actions": [
     {
-     "add": "Pittsburgh Steelers",
+     "add": "Tyrone Tracy",
+     "bid": null,
+     "drop": null,
+     "fam": "RB",
+     "gain": 2.45,
+     "gates": [
+      "G11-role-registry:WARN"
+     ],
+     "kind": "upgrade",
+     "provisional": false,
+     "sit": "MarShawn Lloyd",
+     "slot": null,
+     "start": null,
+     "status": "proposed",
+     "subject": "Tyrone Tracy",
+     "verdict": "WARN",
+     "when": null
+    },
+    {
+     "add": "Dallas Cowboys",
      "bid": null,
      "drop": "49ers",
      "fam": "DEF",
@@ -32,7 +51,7 @@
      "slot": null,
      "start": null,
      "status": "proposed",
-     "subject": "Pittsburgh Steelers",
+     "subject": "Dallas Cowboys",
      "verdict": "WARN",
      "when": "now"
     },
@@ -48,24 +67,6 @@
      "start": null,
      "status": null,
      "subject": "Jahan Dotson",
-     "tier": "B",
-     "verb": "WAIT",
-     "verdict": "PASS",
-     "when": "next usage pull (Tuesday) \u2014 add then if the snaps hold or the market moves toward him",
-     "why": "one game of starter usage; no market confirmation yet and the spot would cost a real player"
-    },
-    {
-     "add": "Jaleel McLaughlin",
-     "bid": null,
-     "drop": null,
-     "gates": [],
-     "kind": "breakout",
-     "provisional": false,
-     "sit": null,
-     "slot": null,
-     "start": null,
-     "status": null,
-     "subject": "Jaleel McLaughlin",
      "tier": "B",
      "verb": "WAIT",
      "verdict": "PASS",
@@ -106,7 +107,7 @@
      "verb": "NONE",
      "verdict": "PASS",
      "when": "no move for this roster",
-     "why": "you already carry 2 TEs for 1 slot(s) and he projects below your weakest (Sam LaPorta 12.1 vs 6.8). Only a trade chip."
+     "why": "you already carry 2 TEs for 1 slot(s) and he projects below your weakest (Sam LaPorta 12.1 vs 7.1). Only a trade chip."
     },
     {
      "add": "Zonovan Knight",
@@ -142,7 +143,7 @@
      "verb": "NONE",
      "verdict": "PASS",
      "when": "no move for this roster",
-     "why": "you already carry 2 TEs for 1 slot(s) and he projects below your weakest (Sam LaPorta 12.1 vs 6.8). Only a trade chip."
+     "why": "you already carry 2 TEs for 1 slot(s) and he projects below your weakest (Sam LaPorta 12.1 vs 7.1). Only a trade chip."
     },
     {
      "add": "Tyrone Tracy",
@@ -185,14 +186,14 @@
     "QB": "Matthew Stafford",
     "RB1": "MarShawn Lloyd",
     "RB2": "Josh Jacobs",
-    "TE": "Isaiah Likely",
-    "W/R/T": "Sam LaPorta",
-    "WR1": "Drake London",
-    "WR2": "Jaxon Smith-Njigba",
+    "TE": "Sam LaPorta",
+    "W/R/T": "Isaiah Likely",
+    "WR1": "Jaxon Smith-Njigba",
+    "WR2": "Drake London",
     "WR3": "Malik Washington"
    },
    "me": "OVERKILL",
-   "others_pulled": "2026-10-21T04:29:27+00:00",
+   "others_pulled": "2026-10-21T09:34:30+00:00",
    "planner": {
     "lineup_after": {
      "DEF": "Vikings",
@@ -200,37 +201,33 @@
      "QB": "Matthew Stafford",
      "RB1": "MarShawn Lloyd",
      "RB2": "Josh Jacobs",
-     "TE": "Isaiah Likely",
-     "W/R/T": "Sam LaPorta",
-     "WR1": "Drake London",
-     "WR2": "Jaxon Smith-Njigba",
+     "TE": "Sam LaPorta",
+     "W/R/T": "Isaiah Likely",
+     "WR1": "Jaxon Smith-Njigba",
+     "WR2": "Drake London",
      "WR3": "Malik Washington"
     },
     "moves": [],
     "rejected": [
      {
       "name": "Dallas Cowboys",
-      "reason": "J -2.05 < 3.0 at its best spot (Vikings) \u2014 J -2.05 = 1.0x+0.00 (wk W) + 0.8x+1.75 (W+1) + 0.8x-2.12 (rest, mean of wks 9-17) + 0.58x-2.12 (wks 15-17, P(playoffs) 97%) + 0.1x+0.00 (bench boom) + 0.2x+0.00 (depth) - 0.00 acq - 0.01 FAB($1) - "
+      "reason": "J -2.06 < 3.0 at its best spot (Vikings) \u2014 J -2.06 = 1.0x+0.00 (wk W) + 0.8x+1.75 (W+1) + 0.8x-2.12 (rest, mean of wks 9-17) + 0.59x-2.12 (wks 15-17, P(playoffs) 98%) + 0.1x+0.00 (bench boom) + 0.2x+0.00 (depth) - 0.00 acq - 0.01 FAB($1) - "
      },
      {
-      "name": "Pittsburgh Steelers",
-      "reason": "J +1.19 < 3.0 at its best spot (Vikings) \u2014 J +1.19 = 1.0x+0.00 (wk W) + 0.8x+2.87 (W+1) + 0.8x-0.52 (rest, mean of wks 9-17) + 0.58x-0.32 (wks 15-17, P(playoffs) 97%) + 0.1x+0.00 (bench boom) + 0.2x+0.00 (depth) - 0.00 acq - 0.01 FAB($1) - "
+      "name": "Los Angeles Chargers",
+      "reason": "J -0.31 < 3.0 at its best spot (Vikings) \u2014 J -0.31 = 1.0x+0.00 (wk W) + 0.8x+0.95 (W+1) + 0.8x-0.40 (rest, mean of wks 9-17) + 0.59x-0.40 (wks 15-17, P(playoffs) 98%) + 0.1x+0.00 (bench boom) + 0.2x+0.00 (depth) - 0.00 acq - 0.01 FAB($1) - "
      },
      {
       "name": "Dalton Schultz",
-      "reason": "J -1.32 < 3.0 at its best spot (Xavier Hutchinson) \u2014 J -1.32 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 9-17) + 0.58x+0.00 (wks 15-17, P(playoffs) 97%) + 0.1x+1.05 (bench boom) + 0.2x-4.59 (depth) - 0.00 acq - 0.01 "
+      "reason": "J -1.31 < 3.0 at its best spot (Xavier Hutchinson) \u2014 J -1.31 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 9-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 98%) + 0.1x+1.05 (bench boom) + 0.2x-4.59 (depth) - 0.00 acq - 0.00 "
      },
      {
       "name": "Darnell Washington",
-      "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 6.8 under your weakest 12.1"
+      "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 7.1 under your weakest 12.1"
      },
      {
       "name": "Evan McPherson",
-      "reason": "J -0.95 < 3.0 at its best spot (Jason Myers) \u2014 J -0.95 = 1.0x+0.00 (wk W) + 0.8x+0.59 (W+1) + 0.8x-0.21 (rest, mean of wks 9-17) + 0.58x-1.28 (wks 15-17, P(playoffs) 97%) + 0.1x+0.00 (bench boom) + 0.2x+0.00 (depth) - 0.00 acq - 0.01 FAB($1"
-     },
-     {
-      "name": "Greg Dulcich",
-      "reason": "J -1.40 < 3.0 at its best spot (Xavier Hutchinson) \u2014 J -1.40 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 9-17) + 0.58x+0.00 (wks 15-17, P(playoffs) 97%) + 0.1x+0.29 (bench boom) + 0.2x-4.59 (depth) - 0.00 acq - 0.01 "
+      "reason": "J -0.96 < 3.0 at its best spot (Jason Myers) \u2014 J -0.96 = 1.0x+0.00 (wk W) + 0.8x+0.59 (W+1) + 0.8x-0.21 (rest, mean of wks 9-17) + 0.59x-1.28 (wks 15-17, P(playoffs) 98%) + 0.1x+0.00 (bench boom) + 0.2x+0.00 (depth) - 0.00 acq - 0.01 FAB($1"
      },
      {
       "name": "Jahan Dotson",
@@ -238,31 +235,35 @@
      },
      {
       "name": "Jake Ferguson",
-      "reason": "J +0.17 < 3.0 at its best spot (Xavier Hutchinson) \u2014 J +0.17 = 1.0x+0.00 (wk W) + 0.8x+1.78 (W+1) + 0.8x+0.00 (rest, mean of wks 9-17) + 0.58x+0.00 (wks 15-17, P(playoffs) 97%) + 0.1x+1.68 (bench boom) + 0.2x-4.59 (depth) - 0.00 acq - 0.01 "
-     },
-     {
-      "name": "Jaleel McLaughlin",
-      "reason": "best spot Xavier Hutchinson: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
+      "reason": "J +0.17 < 3.0 at its best spot (Xavier Hutchinson) \u2014 J +0.17 = 1.0x+0.00 (wk W) + 0.8x+1.78 (W+1) + 0.8x+0.00 (rest, mean of wks 9-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 98%) + 0.1x+1.68 (bench boom) + 0.2x-4.59 (depth) - 0.00 acq - 0.00 "
      },
      {
       "name": "Jalen Nailor",
-      "reason": "J -1.27 < 3.0 at its best spot (Xavier Hutchinson) \u2014 J -1.27 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.14 (rest, mean of wks 9-17) + 0.58x+0.00 (wks 15-17, P(playoffs) 97%) + 0.1x+0.48 (bench boom) + 0.2x-4.59 (depth) - 0.00 acq - 0.01 "
+      "reason": "J -1.24 < 3.0 at its best spot (Xavier Hutchinson) \u2014 J -1.24 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.14 (rest, mean of wks 9-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 98%) + 0.1x+0.64 (bench boom) + 0.2x-4.59 (depth) - 0.00 acq - 0.00 "
      },
      {
       "name": "KeAndre Lambert-Smith",
       "reason": "sits behind everyone: you carry 7 WRs for 3 slot(s) and he projects 0.0 under your weakest 2.7"
      },
      {
+      "name": "Mark Andrews",
+      "reason": "J +0.28 < 3.0 at its best spot (Xavier Hutchinson) \u2014 J +0.28 = 1.0x+0.00 (wk W) + 0.8x+1.92 (W+1) + 0.8x+0.00 (rest, mean of wks 9-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 98%) + 0.1x+1.68 (bench boom) + 0.2x-4.59 (depth) - 0.00 acq - 0.01 "
+     },
+     {
       "name": "Michael Mayer",
-      "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 6.8 under your weakest 12.1"
+      "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 7.1 under your weakest 12.1"
      },
      {
       "name": "Rashid Shaheed",
-      "reason": "J -0.62 < 3.0 at its best spot (Xavier Hutchinson) \u2014 J -0.62 = 1.0x+0.00 (wk W) + 0.8x+0.67 (W+1) + 0.8x+0.13 (rest, mean of wks 9-17) + 0.58x+0.00 (wks 15-17, P(playoffs) 97%) + 0.1x+1.68 (bench boom) + 0.2x-4.59 (depth) - 0.00 acq - 0.01 "
+      "reason": "J -0.61 < 3.0 at its best spot (Xavier Hutchinson) \u2014 J -0.61 = 1.0x+0.00 (wk W) + 0.8x+0.67 (W+1) + 0.8x+0.13 (rest, mean of wks 9-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 98%) + 0.1x+1.68 (bench boom) + 0.2x-4.59 (depth) - 0.00 acq - 0.00 "
+     },
+     {
+      "name": "Rashod Bateman",
+      "reason": "J -1.24 < 3.0 at its best spot (Xavier Hutchinson) \u2014 J -1.24 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.18 (rest, mean of wks 9-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 98%) + 0.1x+0.50 (bench boom) + 0.2x-4.59 (depth) - 0.00 acq - 0.01 "
      },
      {
       "name": "Tyrone Tracy",
-      "reason": "J +1.49 < 3.0 at its best spot (Xavier Hutchinson) \u2014 J +1.49 = 1.0x+2.45 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.38 (rest, mean of wks 9-17) + 0.58x+0.00 (wks 15-17, P(playoffs) 97%) + 0.1x+1.52 (bench boom) + 0.2x-4.59 (depth) - 0.00 acq - 0.01 "
+      "reason": "J +1.50 < 3.0 at its best spot (Xavier Hutchinson) \u2014 J +1.50 = 1.0x+2.45 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.38 (rest, mean of wks 9-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 98%) + 0.1x+1.52 (bench boom) + 0.2x-4.59 (depth) - 0.00 acq - 0.00 "
      },
      {
       "name": "Zonovan Knight",
@@ -270,7 +271,7 @@
      }
     ]
    },
-   "pulled": "2026-10-21T04:29:27+00:00"
+   "pulled": "2026-10-21T09:34:30+00:00"
   },
   "HH": {
    "actions": [
@@ -278,7 +279,7 @@
      "add": null,
      "bid": null,
      "drop": null,
-     "gain": 4.63,
+     "gain": 4.58,
      "gates": [],
      "kind": "start",
      "provisional": true,
@@ -295,36 +296,39 @@
      "add": null,
      "bid": null,
      "drop": null,
-     "gain": 7.32,
-     "gates": [],
+     "gain": 2.16,
+     "gates": [
+      "G2-desig:WARN",
+      "G5-sources:WARN",
+      "G9-reversal:WARN"
+     ],
      "kind": "start",
      "provisional": false,
-     "reason": "",
+     "reason": " (Drake London slides to WR)",
      "sit": "Rome Odunze",
-     "slot": "WR",
-     "start": "Ja'Marr Chase",
+     "slot": "W/R",
+     "start": "Rashee Rice",
      "status": "proposed",
-     "subject": "Ja'Marr Chase",
-     "verdict": "PASS",
+     "subject": "Rashee Rice",
+     "verdict": "WARN",
      "when": "early"
     },
     {
      "add": null,
      "bid": null,
      "drop": null,
-     "gain": 5.66,
+     "gain": 11.22,
      "gates": [
-      "G2-desig:WARN",
-      "G5-sources:WARN"
+      "G9-reversal:WARN"
      ],
      "kind": "start",
      "provisional": true,
      "reason": "",
      "sit": "Braelon Allen",
      "slot": "W/R/T",
-     "start": "Rashee Rice",
+     "start": "Ja'Marr Chase",
      "status": "proposed",
-     "subject": "Rashee Rice",
+     "subject": "Ja'Marr Chase",
      "verdict": "WARN",
      "when": "early"
     },
@@ -499,7 +503,7 @@
      "verb": "NONE",
      "verdict": "WARN",
      "when": "no move for this roster",
-     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Denzel Boston 10.0 vs 0.0). Only a trade chip."
+     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Denzel Boston 10.2 vs 0.0). Only a trade chip."
     },
     {
      "add": "Jahan Dotson",
@@ -517,7 +521,7 @@
      "verb": "NONE",
      "verdict": "PASS",
      "when": "no move for this roster",
-     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Denzel Boston 10.0 vs 5.5). Only a trade chip."
+     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Denzel Boston 10.2 vs 5.6). Only a trade chip."
     },
     {
      "add": "Pierre Strong",
@@ -571,7 +575,7 @@
      "verb": "NONE",
      "verdict": "PASS",
      "when": "no move for this roster",
-     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Denzel Boston 10.0 vs 9.0). Only a trade chip."
+     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Denzel Boston 10.2 vs 8.9). Only a trade chip."
     },
     {
      "add": "Keenan Allen",
@@ -589,7 +593,7 @@
      "verb": "NONE",
      "verdict": "PASS",
      "when": "no move for this roster",
-     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Denzel Boston 10.0 vs 7.8). Only a trade chip."
+     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Denzel Boston 10.2 vs 7.8). Only a trade chip."
     },
     {
      "add": "KeAndre Lambert-Smith",
@@ -607,7 +611,7 @@
      "verb": "NONE",
      "verdict": "PASS",
      "when": "no move for this roster",
-     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Denzel Boston 10.0 vs 0.0). Only a trade chip."
+     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Denzel Boston 10.2 vs 0.0). Only a trade chip."
     },
     {
      "add": "Quentin Johnston",
@@ -625,7 +629,7 @@
      "verb": "NONE",
      "verdict": "PASS",
      "when": "no move for this roster",
-     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Denzel Boston 10.0 vs 0.0). Only a trade chip."
+     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Denzel Boston 10.2 vs 0.0). Only a trade chip."
     },
     {
      "add": "KC Concepcion",
@@ -643,7 +647,7 @@
      "verb": "NONE",
      "verdict": "PASS",
      "when": "no move for this roster",
-     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Denzel Boston 10.0 vs 9.5). Only a trade chip."
+     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Denzel Boston 10.2 vs 9.5). Only a trade chip."
     },
     {
      "add": "Cooper Kupp",
@@ -661,7 +665,7 @@
      "verb": "NONE",
      "verdict": "PASS",
      "when": "no move for this roster",
-     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Denzel Boston 10.0 vs 5.9). Only a trade chip."
+     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Denzel Boston 10.2 vs 5.9). Only a trade chip."
     },
     {
      "add": "Tyler Allgeier",
@@ -877,7 +881,7 @@
      "verb": "NONE",
      "verdict": "PASS",
      "when": "no move for this roster",
-     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Denzel Boston 10.0 vs 0.0). Only a trade chip."
+     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Denzel Boston 10.2 vs 0.0). Only a trade chip."
     },
     {
      "add": "Kyle Pitts",
@@ -960,12 +964,12 @@
     "RB": "Jaylen Warren",
     "S": "Kam Curl",
     "TE": "Trey McBride",
-    "W/R": "Drake London",
-    "W/R/T": "Rashee Rice",
-    "WR": "Ja'Marr Chase"
+    "W/R": "Rashee Rice",
+    "W/R/T": "Ja'Marr Chase",
+    "WR": "Drake London"
    },
    "me": "Tecmo Bowlers",
-   "others_pulled": "2026-10-21T04:29:27+00:00",
+   "others_pulled": "2026-10-21T09:34:30+00:00",
    "planner": {
     "lineup_after": {
      "CB": "Cooper DeJean",
@@ -980,9 +984,9 @@
      "RB": "Jaylen Warren",
      "S": "Kam Curl",
      "TE": "Trey McBride",
-     "W/R": "Drake London",
-     "W/R/T": "Rashee Rice",
-     "WR": "Ja'Marr Chase"
+     "W/R": "Rashee Rice",
+     "W/R/T": "Ja'Marr Chase",
+     "WR": "Drake London"
     },
     "moves": [
      {
@@ -1007,7 +1011,7 @@
       "when": "before kickoff Thu Oct 22, 8:15 pm ET"
      },
      {
-      "J": 4.627,
+      "J": 4.583,
       "add": null,
       "drop": null,
       "gates": [],
@@ -1024,7 +1028,7 @@
       "when": "before kickoff Sun Oct 25, 4:25 pm ET"
      },
      {
-      "J": 7.315,
+      "J": 2.165,
       "add": null,
       "drop": null,
       "gates": [],
@@ -1032,16 +1036,16 @@
       "kind": "lineup",
       "provisional": false,
       "sit": "Rome Odunze",
-      "slot": "WR",
-      "start": "Ja'Marr Chase",
+      "slot": "W/R",
+      "start": "Rashee Rice",
       "txns": [
-       "start Ja'Marr Chase at WR",
+       "start Rashee Rice at W/R",
        "bench Rome Odunze"
       ],
-      "when": "before kickoff Sun Oct 25, 1:00 pm ET"
+      "when": "before kickoff Sun Oct 25, 8:20 pm ET"
      },
      {
-      "J": 5.664,
+      "J": 11.223,
       "add": null,
       "drop": null,
       "gates": [],
@@ -1050,15 +1054,15 @@
       "provisional": true,
       "sit": "Braelon Allen",
       "slot": "W/R/T",
-      "start": "Rashee Rice",
+      "start": "Ja'Marr Chase",
       "txns": [
-       "start Rashee Rice at W/R/T",
+       "start Ja'Marr Chase at W/R/T",
        "bench Braelon Allen"
       ],
-      "when": "before kickoff Sun Oct 25, 8:20 pm ET"
+      "when": "before kickoff Sun Oct 25, 1:00 pm ET"
      },
      {
-      "J": 3.575,
+      "J": 3.569,
       "add": null,
       "drop": null,
       "gates": [],
@@ -1136,7 +1140,7 @@
      },
      {
       "name": "Cooper Kupp",
-      "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 5.9 under your weakest 10.0"
+      "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 5.9 under your weakest 10.2"
      },
      {
       "name": "Dameon Pierce",
@@ -1156,11 +1160,11 @@
      },
      {
       "name": "Jahan Dotson",
-      "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 5.5 under your weakest 10.0"
+      "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 5.6 under your weakest 10.2"
      },
      {
       "name": "Jakobi Meyers",
-      "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 0.0 under your weakest 10.0"
+      "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 0.0 under your weakest 10.2"
      },
      {
       "name": "Jaleel McLaughlin",
@@ -1176,15 +1180,15 @@
      },
      {
       "name": "KC Concepcion",
-      "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 9.5 under your weakest 10.0"
+      "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 9.5 under your weakest 10.2"
      },
      {
       "name": "KeAndre Lambert-Smith",
-      "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 0.0 under your weakest 10.0"
+      "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 0.0 under your weakest 10.2"
      },
      {
       "name": "Keenan Allen",
-      "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 7.8 under your weakest 10.0"
+      "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 7.8 under your weakest 10.2"
      },
      {
       "name": "Kendre Miller",
@@ -1192,7 +1196,7 @@
      },
      {
       "name": "Keon Coleman",
-      "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 0.0 under your weakest 10.0"
+      "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 0.0 under your weakest 10.2"
      },
      {
       "name": "Kyle Pitts",
@@ -1208,7 +1212,7 @@
      },
      {
       "name": "Pierre Strong",
-      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 3.8 under your weakest 7.0"
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 3.7 under your weakest 7.0"
      },
      {
       "name": "Quay Walker",
@@ -1216,7 +1220,7 @@
      },
      {
       "name": "Quentin Johnston",
-      "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 0.0 under your weakest 10.0"
+      "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 0.0 under your weakest 10.2"
      },
      {
       "name": "Rachaad White",
@@ -1224,7 +1228,7 @@
      },
      {
       "name": "RJ Harvey",
-      "reason": "J -1.43 < 3.0 at its best spot (Rome Odunze) \u2014 J -1.43 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.18 (rest, mean of wks 9-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x-0.67 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 0.00 FAB($"
+      "reason": "J -1.48 < 3.0 at its best spot (Rome Odunze) \u2014 J -1.48 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.17 (rest, mean of wks 9-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x-1.17 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 0.00 FAB($"
      },
      {
       "name": "Robert Spillane",
@@ -1240,15 +1244,15 @@
      },
      {
       "name": "Tyler Allgeier",
-      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 7.0 under your weakest 7.0"
+      "reason": "best spot Rome Odunze: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
      },
      {
       "name": "Woody Marks",
-      "reason": "J -1.02 < 3.0 at its best spot (Rome Odunze) \u2014 J -1.02 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.47 (rest, mean of wks 9-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+1.05 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 0.00 FAB($"
+      "reason": "J -1.05 < 3.0 at its best spot (Rome Odunze) \u2014 J -1.05 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.45 (rest, mean of wks 9-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.85 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 0.00 FAB($"
      },
      {
       "name": "Xavier Worthy",
-      "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 9.0 under your weakest 10.0"
+      "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 8.9 under your weakest 10.2"
      },
      {
       "name": "Zaire Franklin",
@@ -1260,9 +1264,9 @@
      }
     ]
    },
-   "pulled": "2026-10-21T04:29:27+00:00"
+   "pulled": "2026-10-21T09:34:30+00:00"
   }
  },
- "now": "2026-10-21T00:30-04:00",
+ "now": "2026-10-21T05:35-04:00",
  "week": 7
 }
