@@ -302,7 +302,20 @@ def main():
                 return T.parse_ts(s, 'yahoo_page', now=ref).strftime('%Y-%m-%d %H:%M')
             path = D + ('bsb_transactions.csv' if lg == 'BSB' else 'hh_transactions.csv')
             old = [r for r in rows(path) if 'action' in r and 'datetime' in r]      # an older log with another shape is not merged
-            seen = {(r['datetime'], r['team'], r['player'], r['action']) for r in old}
+            # a defense is logged under whatever Yahoo printed that render — 'San Francisco'
+            # one pull, '49ers' the next, for ONE transaction. One name per unit, the
+            # nickname, so the dedupe below sees one row (10-20: T-rex's 49ers add stood
+            # twice and the drop matched neither; the check refused the runner)
+            from lib.names import dst_nick as _dn
+            def _canon(r):
+                if (r.get('pos') or '').upper() == 'DEF' and _dn(r.get('nfl')): r['player'] = _dn(r.get('nfl'))
+                return r
+            old = [_canon(r) for r in old]
+            _k = lambda r: (r['datetime'], r['team'], r['player'], r['action'])
+            _u = {}
+            for r in old: _u.setdefault(_k(r), r)
+            old = list(_u.values())
+            seen = set(_u)
             # back-fill team_id on older rows when the page still carries the same (datetime, team, player)
             idmap = {(when(r['ts']), r['team'], r['player']): r.get('team_id') or '' for r in tr}
             for r in old:
@@ -313,6 +326,7 @@ def main():
                 rec = dict(datetime=when(r['ts']), team=r['team'], action='Add' if r['action'] == 'add' else 'Drop', player=r['player'],
                            pos=r['pos'], nfl=r['nfl'], bid=(m.group(1) if m else ''), note=('Waiver' if m else r['kind']),
                            team_id=r.get('team_id') or '')         # a team can rename mid-season (10-15: Bad News Bears -> WINdianapolis); the id does not
+                rec = _canon(rec)
                 k = (rec['datetime'], rec['team'], rec['player'], rec['action'])
                 if k not in seen: seen.add(k); new_rows.append(rec)
             allr = sorted(old + new_rows, key=lambda r: r['datetime'], reverse=True)

@@ -555,6 +555,19 @@ _r40b, _c40b = S.reconcile('BSB', _rows40b, _log40b)
 _own40b = {N.key(r['player']): r['owner'] for r in _r40b}
 case('renamed team: a logged add under the old name lands on the current owner via team id', _own40b.get('renamed add') == 'WINdianapolis', str(_own40b))
 case('renamed team: an owner the page does not know never creates a phantom roster', set(r['owner'] for r in _r40b) == {'WINdianapolis', 'OVERKILL'}, str(set(r['owner'] for r in _r40b)))
+# 40c. A defense is one unit under every name Yahoo prints (10-20): the page said 'New
+#      York' (NYJ) and the log said 'Jets' — the replay added a phantom 19th man; and
+#      T-rex's '49ers' add / 'San Francisco' drop never met, so the check refused the runner.
+_rows40c = [dict(owner='A', manager='A', slot='DEF', player='New York', pos='DEF', nfl='NYJ', designation='none', team_id='3'),
+            dict(owner='B', manager='B', slot='DEF', player='49ers', pos='DEF', nfl='SF', designation='none', team_id='8')]
+_log40c = [dict(datetime=_d40, team='A', action='Add', player='Jets', pos='DEF', nfl='NYJ', team_id='3'),
+           dict(datetime=_d40, team='B', action='Drop', player='San Francisco', pos='DEF', nfl='SF', team_id='8')]
+_r40c, _c40c = S.reconcile('BSB', _rows40c, _log40c)
+case('defense by any name: a logged add of a unit the page already shows under its city is not a second man', len([r for r in _r40c if r['owner'] == 'A']) == 1, str(_r40c))
+case('defense by any name: a logged drop under the city removes the nickname row', not [r for r in _r40c if r['owner'] == 'B'], str(_r40c))
+case('defense by any name: the city and the nickname key to one unit', N.row_key('New York', 'DEF', 'NYJ') == N.row_key('Jets', 'DEF', '') == 'DST:NYJ' and N.dst_nick('SF') == '49ers')
+case('live HH log: one row per defense transaction, under the nickname',
+     not [t for t in __import__('csv').DictReader(open('/home/claude/bsb2/data/hh_transactions.csv')) if t['pos'] == 'DEF' and N.dst_nick(t['nfl']) and t['player'] != N.dst_nick(t['nfl'])])
 _hl = S.latest('HH')
 case('live HH state: no player the log shows added by another team since last Tuesday is a free agent',
      all(_hl.owner_of(t['player']) for t in __import__('csv').DictReader(open('/home/claude/bsb2/data/hh_transactions.csv'))

@@ -64,6 +64,23 @@ def team(t):
     t=(t or '').strip().upper()
     return TEAM_ALIAS.get(t,t)
 
+def row_key(player, pos=None, nfl=None):
+    """key() for a roster or log ROW: a defense is keyed by its team code whatever
+    Yahoo printed ('New York' + NYJ -> DST:NYJ; 'Jets' -> DST:NYJ), so a city row and a
+    nickname row for the same unit are the same player (10-20: Phish Phanatics' 'New
+    York' on the page + a logged 'Jets' add made a phantom 19th man)."""
+    k = key(player)
+    tm = team(nfl)
+    if tm and ((pos or '').upper() == 'DEF' or k.startswith('DST:')): return 'DST:' + tm
+    return k
+
+def dst_nick(code):
+    """The nickname Yahoo's roster pages print for a defense ('49ers', 'Rams')."""
+    full = DST_FULL.get(team(code))
+    if not full: return None
+    n = full.split()[-1]
+    return n if n[0].isdigit() else n.capitalize()
+
 def key(name):
     """Canonical key for a player or a team defense. Idempotent: key(key(x)) == key(x)."""
     if (name or '').startswith('DST:'): return name

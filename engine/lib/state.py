@@ -17,7 +17,7 @@ from . import paths as _paths
 import os, json, csv, glob
 from collections import defaultdict
 from . import clock as C, ts as T
-from .names import key, team
+from .names import key, team, row_key
 from .leagues import ALL
 
 ROOT = _paths.data()
@@ -162,12 +162,12 @@ def reconcile(league, rows, log_rows=None, now=None):
     id2owner = {str(r.get('team_id')): r['owner'] for r in rows if r.get('team_id')}
     unknown = set()
     for t in log:
-        k = key(t['player']); owner = t['team']
+        k = row_key(t['player'], t.get('pos'), t.get('nfl')); owner = t['team']
         if owner not in owners:
             owner = id2owner.get(str(t.get('team_id') or '')) or owner
         if owner not in owners:
             unknown.add(t['team']); continue
-        holders = [r for r in rows if key(r['player']) == k]
+        holders = [r for r in rows if row_key(r['player'], r.get('pos'), r.get('nfl') or r.get('tm')) == k]
         if t['action'] == 'Add':
             if holders: continue
             rows.append(dict(owner=owner, manager=owner, slot='BN', player=t['player'], pos=t.get('pos') or '', nfl=t.get('nfl') or '', designation='none'))
@@ -175,11 +175,11 @@ def reconcile(league, rows, log_rows=None, now=None):
         else:
             mine = [r for r in holders if r['owner'] == owner]
             if not mine: continue
-            rows = [r for r in rows if not (key(r['player']) == k and r['owner'] == owner)]
+            rows = [r for r in rows if not (row_key(r['player'], r.get('pos'), r.get('nfl') or r.get('tm')) == k and r['owner'] == owner)]
             changes.append(f"{owner} -{t['player']}")
     # report the NET difference from the page, not the replay
-    before = {(r['owner'], key(r['player'])): r['player'] for r in orig}
-    after = {(r['owner'], key(r['player'])): r['player'] for r in rows}
+    before = {(r['owner'], row_key(r['player'], r.get('pos'), r.get('nfl') or r.get('tm'))): r['player'] for r in orig}
+    after = {(r['owner'], row_key(r['player'], r.get('pos'), r.get('nfl') or r.get('tm'))): r['player'] for r in rows}
     net = [f'{o} +{after[(o, k)]}' for (o, k) in after if (o, k) not in before] + \
           [f'{o} -{before[(o, k)]}' for (o, k) in before if (o, k) not in after]
     return rows, net
