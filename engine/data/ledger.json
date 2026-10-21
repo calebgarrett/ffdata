@@ -11210,10 +11210,11 @@
   ],
   "verdict": "WARN",
   "week": 7,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": true,
   "resolves_at": "2026-10-25T16:25-04:00",
-  "reverses": "54d4d732"
+  "reverses": "54d4d732",
+  "superseded_by": "fe459ec6"
  },
  {
   "id": "9fe64e8c",
@@ -11229,10 +11230,11 @@
   ],
   "verdict": "WARN",
   "week": 7,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": "2026-10-25T13:00-04:00",
-  "reverses": "b4b94b93"
+  "reverses": "b4b94b93",
+  "superseded_by": "dd2a1c1b"
  },
  {
   "id": "02dbcac5",
@@ -11269,5 +11271,43 @@
   "provisional": false,
   "resolves_at": "2026-10-25T13:00-04:00",
   "reverses": "8bc71901"
+ },
+ {
+  "id": "dd2a1c1b",
+  "ts": "2026-10-21T19:12-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Ja'Marr Chase",
+  "call": "start Ja'Marr Chase at W/R",
+  "detail": "over Rome Odunze +7.90",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 7,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": "2026-10-25T13:00-04:00",
+  "reverses": "9fe64e8c"
+ },
+ {
+  "id": "fe459ec6",
+  "ts": "2026-10-21T19:12-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Jared Goff",
+  "call": "start Jared Goff at Q/W/R/T",
+  "detail": "over Dak Prescott +4.79",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 7,
+  "status": "proposed",
+  "provisional": true,
+  "resolves_at": "2026-10-25T16:25-04:00",
+  "reverses": "71ccfd57"
  }
 ]
