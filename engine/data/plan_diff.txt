@@ -1,4 +1,4 @@
-PLAN DIFF — week 7 — Wed Oct 21, 11:03 am ET  (shadow mode: the card still shows the live calls; FF_PLANNER=1 renders the plan)
+PLAN DIFF — week 7 — Wed Oct 21, 3:33 pm ET  (shadow mode: the card still shows the live calls; FF_PLANNER=1 renders the plan)
 objective: J = 1.0*dS_W + 0.8*dS_W1 + 0.8*dS_rest(mean of weeks W+2..17) + 0.1*d_bench_boom - acq ({'HH': 1.0, 'BSB': 0.0}) - 0.1*bid - 0.5*txns; ship at J >= 3.0
 
 == BSB ================================================================================
@@ -6,29 +6,31 @@ objective: J = 1.0*dS_W + 0.8*dS_W1 + 0.8*dS_rest(mean of weeks W+2..17) + 0.1*d
     CARD ONLY stream: add Dallas Cowboys (DEF), drop 49ers
               planner: J -0.11 < 3.0 at its best spot (49ers) — J -0.11 = 1.0x+0.00 (wk W) + 0.8x+1.75 (W+1) + 0.8x+0.00 (rest, mean of wks 9-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 98%) + 0.1x+0.00 (bench boom) + 0.2x-5.03 (depth) - 0.00 acq - 0.00 FAB($0) - 0.50 churn
   budgets: {"acq_used": 0, "acq_left": null, "acq_reset": null, "acq_reset_verified": null, "fab_left": 89, "ir_free": 0, "open_spots": 0}
-  final lineup week 7: 129.7 pts (optimal before moves 129.7) · P(beat opp) 71% · P(beat median) 65%
+  final lineup week 7: 127.7 pts (optimal before moves 127.7) · P(beat opp) 70% · P(beat median) 57%
   considered and rejected (14):
-    - Tyrone Tracy: J +1.65 < 3.0 at its best spot (Xavier Hutchinson) — J +1.65 = 1.0x+2.61 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.38 (rest, mean of wks 9-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 98%) + 0.1x+1.52 (bench boom) + 0.2x-4.59 (depth) - 0.00 a
-    - Mark Andrews: J +0.28 < 3.0 at its best spot (Xavier Hutchinson) — J +0.28 = 1.0x+0.00 (wk W) + 0.8x+1.92 (W+1) + 0.8x+0.00 (rest, mean of wks 9-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 98%) + 0.1x+1.68 (bench boom) + 0.2x-4.59 (depth) - 0.00 a
-    - Jake Ferguson: J +0.17 < 3.0 at its best spot (Xavier Hutchinson) — J +0.17 = 1.0x+0.00 (wk W) + 0.8x+1.78 (W+1) + 0.8x+0.00 (rest, mean of wks 9-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 98%) + 0.1x+1.68 (bench boom) + 0.2x-4.59 (depth) - 0.00 a
+    - Mark Andrews: J +0.26 < 3.0 at its best spot (DeMario Douglas) — J +0.26 = 1.0x+0.00 (wk W) + 0.8x+1.92 (W+1) + 0.8x+0.00 (rest, mean of wks 9-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 98%) + 0.1x+1.44 (bench boom) + 0.2x-4.56 (depth) - 0.00 acq
+    - Jake Ferguson: J +0.16 < 3.0 at its best spot (DeMario Douglas) — J +0.16 = 1.0x+0.00 (wk W) + 0.8x+1.78 (W+1) + 0.8x+0.00 (rest, mean of wks 9-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 98%) + 0.1x+1.44 (bench boom) + 0.2x-4.56 (depth) - 0.00 acq
     - Dallas Cowboys: J -0.11 < 3.0 at its best spot (49ers) — J -0.11 = 1.0x+0.00 (wk W) + 0.8x+1.75 (W+1) + 0.8x+0.00 (rest, mean of wks 9-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 98%) + 0.1x+0.00 (bench boom) + 0.2x-5.03 (depth) - 0.00 acq - 0.00 FA
     - Los Angeles Chargers: J -0.31 < 3.0 at its best spot (Vikings) — J -0.31 = 1.0x+0.00 (wk W) + 0.8x+0.95 (W+1) + 0.8x-0.40 (rest, mean of wks 9-17) + 0.59x-0.40 (wks 15-17, P(playoffs) 98%) + 0.1x+0.00 (bench boom) + 0.2x+0.00 (depth) - 0.00 acq - 0.01 
-    - Rashid Shaheed: J -0.61 < 3.0 at its best spot (Xavier Hutchinson) — J -0.61 = 1.0x+0.00 (wk W) + 0.8x+0.67 (W+1) + 0.8x+0.13 (rest, mean of wks 9-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 98%) + 0.1x+1.68 (bench boom) + 0.2x-4.59 (depth) - 0.00 a
-    - Jerry Jeudy: J -1.00 < 3.0 at its best spot (Xavier Hutchinson) — J -1.00 = 1.0x+0.00 (wk W) + 0.8x+0.24 (W+1) + 0.8x+0.08 (rest, mean of wks 9-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 98%) + 0.1x+1.68 (bench boom) + 0.2x-4.59 (depth) - 0.00 a
-    - Rashod Bateman: J -1.24 < 3.0 at its best spot (Xavier Hutchinson) — J -1.24 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.18 (rest, mean of wks 9-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 98%) + 0.1x+0.50 (bench boom) + 0.2x-4.59 (depth) - 0.00 a
-    - Dalton Schultz: J -1.30 < 3.0 at its best spot (Xavier Hutchinson) — J -1.30 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 9-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 98%) + 0.1x+1.21 (bench boom) + 0.2x-4.59 (depth) - 0.00 a
-    - Jahan Dotson: best spot Xavier Hutchinson: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
-    - Zonovan Knight: best spot Xavier Hutchinson: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
-    - Darnell Washington: sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 7.1 under your weakest 12.5
-    - KeAndre Lambert-Smith: sits behind everyone: you carry 7 WRs for 3 slot(s) and he projects 0.0 under your weakest 2.7
-    - Michael Mayer: sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 7.3 under your weakest 12.5
+    - Rashid Shaheed: J -0.63 < 3.0 at its best spot (DeMario Douglas) — J -0.63 = 1.0x+0.00 (wk W) + 0.8x+0.67 (W+1) + 0.8x+0.13 (rest, mean of wks 9-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 98%) + 0.1x+1.44 (bench boom) + 0.2x-4.56 (depth) - 0.00 acq
+    - Jerry Jeudy: J -1.02 < 3.0 at its best spot (DeMario Douglas) — J -1.02 = 1.0x+0.00 (wk W) + 0.8x+0.24 (W+1) + 0.8x+0.08 (rest, mean of wks 9-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 98%) + 0.1x+1.44 (bench boom) + 0.2x-4.56 (depth) - 0.00 acq
+    - Rashod Bateman: J -1.26 < 3.0 at its best spot (DeMario Douglas) — J -1.26 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.18 (rest, mean of wks 9-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 98%) + 0.1x+0.14 (bench boom) + 0.2x-4.56 (depth) - 0.00 acq
+    - Dalton Schultz: J -1.31 < 3.0 at its best spot (DeMario Douglas) — J -1.31 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 9-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 98%) + 0.1x+1.03 (bench boom) + 0.2x-4.56 (depth) - 0.00 acq
+    - Jahan Dotson: best spot DeMario Douglas: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
+    - Zonovan Knight: best spot DeMario Douglas: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
+    - Jaleel McLaughlin: best spot DeMario Douglas: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
+    - Darnell Washington: sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 7.1 under your weakest 10.6
+    - KeAndre Lambert-Smith: sits behind everyone: you carry 7 WRs for 3 slot(s) and he projects 0.0 under your weakest 3.3
+    - Michael Mayer: sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 7.4 under your weakest 10.6
   not a clean drop: Josh Jacobs (registry HOLD — HOLD, and START when active: a top-10 RB in the #9 Dec); Jaxon Smith-Njigba (starter-level usage in his own right (92% snaps, 31% targets, 51% air ); Malik Washington (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Drake London (starter-level usage in his own right (100% snaps, 30% targets, 20% air); Sam LaPorta (gate: G3-role NFL depth-chart role not checked); Isaiah Likely (starter-level usage in his own right (91% snaps, 23% targets, 27% air ); James Cook III (starter-level usage in his own right (66% snaps, 83% of RB touches)); Ray Davis (registry HOLD — HOLD, downgraded. James Cook is the single best asset ); Pierre Strong Jr. (starter-level usage in his own right (55% snaps, 63% of RB touches))
   UNVERIFIED mechanics: A benched player whose game is over cannot be dropped before the week rolls
 
 == HH ================================================================================
   card Decide calls vs the plan:
-    BOTH      lineup: WR start Ja'Marr Chase over Rome Odunze (+7.91)
-              plan: start Ja'Marr Chase at WR ; bench Rome Odunze  [before kickoff Sun Oct 25, 1:00 pm ET]
+    BOTH      lineup: WR start Ja'Marr Chase over Rome Odunze (+7.96)
+              plan: start Ja'Marr Chase at WR  [before kickoff Sun Oct 25, 1:00 pm ET]  <- different spot
+    BOTH      lineup: DEF start Houston over Kansas City (+3.65)
+              plan: start Houston at DEF ; bench Kansas City  [before kickoff Sun Oct 25, 1:00 pm ET]
     BOTH      lineup: D start Alontae Taylor over Foyesade Oluokun (+14.05)
               plan: start Alontae Taylor at D ; bench Foyesade Oluokun  [before kickoff Sun Oct 25, 1:00 pm ET]
     BOTH      lineup: S start Kam Curl over Nick Cross (+15.07)
@@ -38,44 +40,44 @@ objective: J = 1.0*dS_W + 0.8*dS_W1 + 0.8*dS_rest(mean of weeks W+2..17) + 0.1*d
               - K weekly upgrade: Brandon Aubrey 14.5 vs starter Cairo Santos 12.9
               - week-8 K stream: Brandon Aubrey 18.5 vs your best 11.3 (W projection x own implied total 29.0/22.8)
               - the spot: Cairo Santos — the only K
+    PLAN ONLY [add] add Woody Marks ; drop Rome Odunze ; start Woody Marks at W/R/T ; bench Braelon Allen  [before kickoff Thu Oct 22, 8:15 pm ET]
+              J +4.40 = 1.0x+2.86 (wk W) + 0.8x+0.00 (W+1) + 0.8x+2.47 (rest, mean of wks 9-17) + 0.60x+1.55 (wks 15-17, P(playoffs) 100%) + 0.1x+1.31 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 0.00 FAB($0) - 0.50 churn
+              - breakout tier B: 78% snaps, 72% of RB touches; no market line yet (Sleeper rushing yds 78); held (wk5: 85% snaps, 79% of RB touches)
+              - RB weekly upgrade: Woody Marks 15.5 vs starter Braelon Allen 7.0
+              - depth: Woody Marks 15.5/wk rest-of-season vs your weakest bench player 10.5 (W projection 15.5 (usage says starter; the preseason number is stale))
+              - the spot: Rome Odunze — rest-of-season 12.1/wk (season blend / 17 x HH/BSB WR ratio 1.01 (approximation))
     PLAN ONLY PROVISIONAL [lineup] start Jared Goff at QB ; bench Dak Prescott  [before kickoff Sun Oct 25, 4:25 pm ET]
-              - +4.98 this week
-              - no player market posted yet for his game
-    PLAN ONLY PROVISIONAL [lineup] start Rashee Rice at W/R/T ; bench Braelon Allen  [before kickoff Sun Oct 25, 8:20 pm ET]
-              - +5.66 this week
-              - no player market posted yet for his game
-    PLAN ONLY PROVISIONAL [lineup] start Texans at DEF ; bench Chiefs  [before kickoff Sun Oct 25, 1:00 pm ET]
-              - +3.57 this week
+              - +5.02 this week
               - no player market posted yet for his game
   budgets: {"acq_used": 0, "acq_left": 7, "acq_reset": "2026-10-20T07:00-04:00", "acq_reset_verified": false, "fab_left": null, "ir_free": 1, "open_spots": 0}
-  final lineup week 7: 298.1 pts (optimal before moves 296.6)
-  considered and rejected (37):
+  final lineup week 7: 301.4 pts (optimal before moves 296.9)
+  considered and rejected (36):
     - Cameron Dicker: its best spot (Cairo Santos) went to Brandon Aubrey at higher value
-    - Dallas Cowboys: J -0.10 < 3.0 at its best spot (Chiefs) — J -0.10 = 1.0x+0.00 (wk W) + 0.8x+1.75 (W+1) + 0.8x+0.00 (rest, mean of wks 9-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.00 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 0.00 
+    - Dallas Cowboys: J -0.10 < 3.0 at its best spot (Kansas City) — J -0.10 = 1.0x+0.00 (wk W) + 0.8x+1.75 (W+1) + 0.8x+0.00 (rest, mean of wks 9-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.00 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 
     - Kyle Pitts: best spot Rome Odunze: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
-    - Woody Marks: J -0.97 < 3.0 at its best spot (Rome Odunze) — J -0.97 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.50 (rest, mean of wks 9-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+1.30 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 
     - Brenton Strange: best spot Rome Odunze: Tier B held, but Rome Odunze (10.5) projects at or above him (0.0) this week
-    - Darnell Washington: best spot Rome Odunze: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
     - Michael Mayer: best spot Rome Odunze: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
+    - Darnell Washington: best spot Rome Odunze: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
     - Chig Okonkwo: best spot Rome Odunze: Tier B held, but Rome Odunze (10.5) projects at or above him (0.0) this week
-    - Tampa Bay Buccaneers: J -1.11 < 3.0 at its best spot (Chiefs) — J -1.11 = 1.0x+0.00 (wk W) + 0.8x+0.49 (W+1) + 0.8x+0.00 (rest, mean of wks 9-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.00 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 0.00 
-    - Kendre Miller: best spot Rome Odunze: Tier B held, but Rome Odunze (10.5) projects at or above him (8.8) this week
-    - Tennessee Titans: J -1.38 < 3.0 at its best spot (Chiefs) — J -1.38 = 1.0x+0.00 (wk W) + 0.8x+0.15 (W+1) + 0.8x+0.00 (rest, mean of wks 9-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.00 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 0.00 
+    - Tampa Bay Buccaneers: J -1.07 < 3.0 at its best spot (Kansas City) — J -1.07 = 1.0x+0.00 (wk W) + 0.8x+0.53 (W+1) + 0.8x+0.00 (rest, mean of wks 9-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.00 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 
+    - Tennessee Titans: J -1.38 < 3.0 at its best spot (Kansas City) — J -1.38 = 1.0x+0.00 (wk W) + 0.8x+0.15 (W+1) + 0.8x+0.00 (rest, mean of wks 9-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.00 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 
+    - Kendre Miller: best spot Rome Odunze: Tier B held, but Rome Odunze (10.5) projects at or above him (8.4) this week
     - Emanuel Wilson: best spot Rome Odunze: Tier B held, but Rome Odunze (10.5) projects at or above him (7.9) this week
     - Tyler Allgeier: best spot Rome Odunze: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
     - RJ Harvey: J -1.46 < 3.0 at its best spot (Rome Odunze) — J -1.46 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.17 (rest, mean of wks 9-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x-1.01 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 
-    - Tyrone Tracy: best spot Rome Odunze: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
     - Cooper Kupp: sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 6.1 under your weakest 10.5
     - Dameon Pierce: sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 6.0 under your weakest 7.0
     - George Holani: sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 5.4 under your weakest 7.0
-    - Jahan Dotson: sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 5.9 under your weakest 10.5
+    - Jahan Dotson: sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 5.7 under your weakest 10.5
     - Jakobi Meyers: sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 0.0 under your weakest 10.5
     - Jaleel McLaughlin: sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 1.4 under your weakest 7.0
     - Jalen Pitre: gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])
     - Jessie Bates: gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])
-    - KC Concepcion: sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 9.8 under your weakest 10.5
+    - KC Concepcion: sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 9.7 under your weakest 10.5
     - KeAndre Lambert-Smith: sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 0.0 under your weakest 10.5
-  not a clean drop: Dak Prescott (gate: G6-magnitude 34.680922499535264 below QB season bounds [60,600] ); Jaylen Warren (starter-level usage in his own right (75% snaps, 62% of RB touches)); Trey McBride (starter-level usage in his own right (97% snaps, 26% targets, 23% air ); Drake London (starter-level usage in his own right (100% snaps, 30% targets, 20% air); Braelon Allen (starter-level usage in his own right (87% snaps, 70% of RB touches)); Matthew Stafford (gate: G6-magnitude 36.47805839173491 below QB season bounds [60,600] —); Jared Goff (gate: G3-role NFL depth-chart role not checked; G6-magnitude 39.664897); Ja'Marr Chase (gate: G3-role NFL depth-chart role not checked); Jameson Williams (gate: G3-role NFL depth-chart role not checked); Denzel Boston (starter-level usage in his own right (94% snaps, 19% targets, 15% air ); Rashee Rice (you added him 2026-10-18 (<= 7 days) — your decision, not the spot); Texans (registry HOLD — HOLD in Heritage House. A 7-acquisition league rations); Foyesade Oluokun (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Budda Baker (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); T.J. Watt (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Carson Schwesinger (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Cooper DeJean (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Nick Cross (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Kam Curl (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Alontae Taylor (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR)
+    - Keenan Allen: sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 8.0 under your weakest 10.5
+    - Keon Coleman: sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 0.0 under your weakest 10.5
+  not a clean drop: Dak Prescott (gate: G6-magnitude 34.680922499535264 below QB season bounds [60,600] ); Jaylen Warren (starter-level usage in his own right (75% snaps, 62% of RB touches)); Trey McBride (starter-level usage in his own right (97% snaps, 26% targets, 23% air ); Drake London (starter-level usage in his own right (100% snaps, 30% targets, 20% air); Braelon Allen (starter-level usage in his own right (87% snaps, 70% of RB touches)); Matthew Stafford (gate: G6-magnitude 36.42767736972941 below QB season bounds [60,600] —); Jared Goff (gate: G3-role NFL depth-chart role not checked; G6-magnitude 39.697364); Ja'Marr Chase (gate: G3-role NFL depth-chart role not checked); Jameson Williams (gate: G3-role NFL depth-chart role not checked); Denzel Boston (starter-level usage in his own right (94% snaps, 19% targets, 15% air ); Rashee Rice (you added him 2026-10-18 (<= 7 days) — your decision, not the spot); Houston (registry HOLD — HOLD in Heritage House. A 7-acquisition league rations); Foyesade Oluokun (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Budda Baker (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); T.J. Watt (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Carson Schwesinger (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Cooper DeJean (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Nick Cross (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Kam Curl (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Alontae Taylor (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR)
   UNVERIFIED mechanics: 7 acquisitions per week, counted from the most recent Tuesday 07:00 ET | A player dropped To Waivers sits on waivers 1 day | An O tag is IR-eligible | A benched player whose game is over cannot be dropped before the week rolls
 
 plan simulation (sanity check 11): clean — legal at every step, each spot once, budgets held
