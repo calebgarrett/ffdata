@@ -11358,10 +11358,11 @@
   ],
   "verdict": "WARN",
   "week": 7,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": "2026-10-25T20:20-04:00",
-  "reverses": "b6fd4ba2"
+  "reverses": "b6fd4ba2",
+  "superseded_by": "65176ca0"
  },
  {
   "id": "eb5f7e9e",
@@ -11377,9 +11378,47 @@
   ],
   "verdict": "WARN",
   "week": 7,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": true,
   "resolves_at": "2026-10-25T13:00-04:00",
-  "reverses": "1ac2c821"
+  "reverses": "1ac2c821",
+  "superseded_by": "f5a6534e"
+ },
+ {
+  "id": "f5a6534e",
+  "ts": "2026-10-21T11:03-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Ja'Marr Chase",
+  "call": "start Ja'Marr Chase at WR",
+  "detail": "over Rome Odunze +7.91",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 7,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": "2026-10-25T13:00-04:00",
+  "reverses": "eb5f7e9e"
+ },
+ {
+  "id": "65176ca0",
+  "ts": "2026-10-21T11:03-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Rashee Rice",
+  "call": "start Rashee Rice at W/R/T",
+  "detail": "over Braelon Allen +5.66",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 7,
+  "status": "proposed",
+  "provisional": true,
+  "resolves_at": "2026-10-25T20:20-04:00",
+  "reverses": "df754774"
  }
 ]
