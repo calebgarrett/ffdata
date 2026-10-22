@@ -11191,10 +11191,11 @@
   ],
   "verdict": "WARN",
   "week": 7,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": null,
-  "reverses": null
+  "reverses": null,
+  "superseded_by": "6da5edb5"
  },
  {
   "id": "71ccfd57",
@@ -11305,9 +11306,65 @@
   ],
   "verdict": "WARN",
   "week": 7,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": true,
   "resolves_at": "2026-10-25T16:25-04:00",
-  "reverses": "71ccfd57"
+  "reverses": "71ccfd57",
+  "superseded_by": "29eab55a"
+ },
+ {
+  "id": "f8bee7b2",
+  "ts": "2026-10-21T21:47-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Dylan Sampson",
+  "call": "add Dylan Sampson (RB) over MarShawn Lloyd",
+  "detail": "+1.60/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 7,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "6da5edb5",
+  "ts": "2026-10-21T21:47-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Dallas Cowboys",
+  "call": "stream Dallas Cowboys for week 8, drop San Francisco",
+  "detail": "DEF: DAL 18.5 vs yours Minnesota 26.0 \u2014 edge 7.5 implied pts",
+  "evidence": [
+   "vegas"
+  ],
+  "verdict": "BLOCK",
+  "week": 7,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "493e33b6"
+ },
+ {
+  "id": "29eab55a",
+  "ts": "2026-10-21T21:47-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Jared Goff",
+  "call": "start Jared Goff at QB",
+  "detail": "over Dak Prescott +8.11",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 7,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": "2026-10-25T16:25-04:00",
+  "reverses": "fe459ec6"
  }
 ]

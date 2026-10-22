@@ -3,15 +3,17 @@
   "codes": [
    "C10",
    "C12",
-   "C16"
+   "C16",
+   "C5"
   ],
   "refused": []
  },
  "decide": [
   "HH \u2014 stream, before kickoff Thu Oct 22, 8:15 pm ET \u2014 check first Add Brandon Aubrey K DAL \u00b7 drop Cairo Santos \u00b7 start at K over Cairo Santos (dropped) When: before kickoff Thu Oct 22, 8:15 pm ET (free agent, immediate). Why: K weekly upgrad",
-  "HH W/R lineup Start Ja'Marr Chase over Rome Odunze +7.9 points locks Sun Oct 25, 1:00 pm set it in Yahoo before then",
+  "HH QB lineup Start Jared Goff over Dak Prescott +8.1 points locks Sun Oct 25, 4:25 pm set it in Yahoo before then",
+  "HH W/R lineup Start Ja'Marr Chase over Rome Odunze +8.0 points locks Sun Oct 25, 1:00 pm set it in Yahoo before then",
   "HH W/R/T lineup Start Rashee Rice over Braelon Allen +4.3 points locks Sun Oct 25, 8:20 pm set it in Yahoo before then",
-  "HH DEF lineup Start Texans over Chiefs +3.6 points locks Sun Oct 25, 1:00 pm set it in Yahoo before then",
+  "HH DEF lineup Start Texans over Chiefs +3.7 points locks Sun Oct 25, 1:00 pm set it in Yahoo before then",
   "HH D lineup Start Alontae Taylor over Foyesade Oluokun +14.1 points locks Sun Oct 25, 1:00 pm set it in Yahoo before then",
   "HH S lineup Start Kam Curl over Nick Cross +15.1 points locks Sun Oct 25, 4:25 pm set it in Yahoo before then"
  ],
@@ -20,28 +22,52 @@
   "BSB": {
    "actions": [
     {
+     "add": "Dylan Sampson",
+     "bid": null,
+     "drop": null,
+     "fam": "RB",
+     "gain": 1.6,
+     "gates": [
+      "G8-fresh:BLOCK",
+      "G11-role-registry:WARN"
+     ],
+     "kind": "upgrade",
+     "provisional": false,
+     "sit": "MarShawn Lloyd",
+     "slot": null,
+     "start": null,
+     "status": "blocked",
+     "subject": "Dylan Sampson",
+     "verdict": "BLOCK",
+     "when": null
+    },
+    {
      "add": "Dallas Cowboys",
      "bid": null,
-     "drop": "49ers",
+     "drop": "San Francisco",
      "fam": "DEF",
      "gates": [
-      "G7-ready:WARN"
+      "G8-fresh:BLOCK",
+      "G7-ready:WARN",
+      "G8-fresh:BLOCK"
      ],
      "kind": "stream",
      "provisional": false,
      "sit": null,
      "slot": null,
      "start": null,
-     "status": "proposed",
+     "status": "blocked",
      "subject": "Dallas Cowboys",
-     "verdict": "WARN",
+     "verdict": "BLOCK",
      "when": "now"
     },
     {
      "add": "Jahan Dotson",
      "bid": null,
      "drop": null,
-     "gates": [],
+     "gates": [
+      "G8-fresh:BLOCK"
+     ],
      "kind": "breakout",
      "provisional": false,
      "sit": null,
@@ -50,16 +76,18 @@
      "status": null,
      "subject": "Jahan Dotson",
      "tier": "B",
-     "verb": "WAIT",
-     "verdict": "PASS",
-     "when": "next usage pull (Tuesday) \u2014 add then if the snaps hold or the market moves toward him",
-     "why": "one game of starter usage; no market confirmation yet and the spot would cost a real player"
+     "verb": "BLOCKED",
+     "verdict": "BLOCK",
+     "when": "no move",
+     "why": "gate: add/drop inputs DEGRADED \u2014 BSB transactions log: line 14: no player/team"
     },
     {
      "add": "Jaleel McLaughlin",
      "bid": null,
      "drop": null,
-     "gates": [],
+     "gates": [
+      "G8-fresh:BLOCK"
+     ],
      "kind": "breakout",
      "provisional": false,
      "sit": null,
@@ -68,16 +96,18 @@
      "status": null,
      "subject": "Jaleel McLaughlin",
      "tier": "B",
-     "verb": "WAIT",
-     "verdict": "PASS",
-     "when": "next usage pull (Tuesday) \u2014 add then if the snaps hold or the market moves toward him",
-     "why": "one game of starter usage; no market confirmation yet and the spot would cost a real player"
+     "verb": "BLOCKED",
+     "verdict": "BLOCK",
+     "when": "no move",
+     "why": "gate: add/drop inputs DEGRADED \u2014 BSB transactions log: line 14: no player/team"
     },
     {
      "add": "KeAndre Lambert-Smith",
      "bid": null,
      "drop": null,
-     "gates": [],
+     "gates": [
+      "G8-fresh:BLOCK"
+     ],
      "kind": "breakout",
      "provisional": false,
      "sit": null,
@@ -86,16 +116,18 @@
      "status": null,
      "subject": "KeAndre Lambert-Smith",
      "tier": "B",
-     "verb": "NONE",
-     "verdict": "PASS",
-     "when": "no move for this roster",
-     "why": "you already carry 7 WRs for 3 slot(s) and he projects below your weakest (Xavier Hutchinson 3.4 vs 0.0). Only a trade chip."
+     "verb": "BLOCKED",
+     "verdict": "BLOCK",
+     "when": "no move",
+     "why": "gate: add/drop inputs DEGRADED \u2014 BSB transactions log: line 14: no player/team"
     },
     {
      "add": "Michael Mayer",
      "bid": null,
      "drop": null,
-     "gates": [],
+     "gates": [
+      "G8-fresh:BLOCK"
+     ],
      "kind": "breakout",
      "provisional": false,
      "sit": null,
@@ -104,16 +136,18 @@
      "status": null,
      "subject": "Michael Mayer",
      "tier": "B",
-     "verb": "NONE",
-     "verdict": "PASS",
-     "when": "no move for this roster",
-     "why": "you already carry 2 TEs for 1 slot(s) and he projects below your weakest (Isaiah Likely 11.7 vs 7.4). Only a trade chip."
+     "verb": "BLOCKED",
+     "verdict": "BLOCK",
+     "when": "no move",
+     "why": "gate: add/drop inputs DEGRADED \u2014 BSB transactions log: line 14: no player/team"
     },
     {
      "add": "Zonovan Knight",
      "bid": null,
      "drop": null,
-     "gates": [],
+     "gates": [
+      "G8-fresh:BLOCK"
+     ],
      "kind": "breakout",
      "provisional": false,
      "sit": null,
@@ -122,16 +156,18 @@
      "status": null,
      "subject": "Zonovan Knight",
      "tier": "B",
-     "verb": "WAIT",
-     "verdict": "PASS",
-     "when": "next usage pull (Tuesday) \u2014 add then if the snaps hold or the market moves toward him",
-     "why": "one game of starter usage; no market confirmation yet and the spot would cost a real player"
+     "verb": "BLOCKED",
+     "verdict": "BLOCK",
+     "when": "no move",
+     "why": "gate: add/drop inputs DEGRADED \u2014 BSB transactions log: line 14: no player/team"
     },
     {
      "add": "Darnell Washington",
      "bid": null,
      "drop": null,
-     "gates": [],
+     "gates": [
+      "G8-fresh:BLOCK"
+     ],
      "kind": "breakout",
      "provisional": false,
      "sit": null,
@@ -140,15 +176,408 @@
      "status": null,
      "subject": "Darnell Washington",
      "tier": "B",
-     "verb": "NONE",
-     "verdict": "PASS",
-     "when": "no move for this roster",
-     "why": "you already carry 2 TEs for 1 slot(s) and he projects below your weakest (Isaiah Likely 11.7 vs 6.9). Only a trade chip."
+     "verb": "BLOCKED",
+     "verdict": "BLOCK",
+     "when": "no move",
+     "why": "gate: add/drop inputs DEGRADED \u2014 BSB transactions log: line 14: no player/team"
+    },
+    {
+     "add": "Treylon Burks",
+     "bid": null,
+     "drop": null,
+     "gates": [
+      "G8-fresh:BLOCK"
+     ],
+     "kind": "breakout",
+     "provisional": false,
+     "sit": null,
+     "slot": null,
+     "start": null,
+     "status": null,
+     "subject": "Treylon Burks",
+     "tier": "C",
+     "verb": "BLOCKED",
+     "verdict": "BLOCK",
+     "when": "no move",
+     "why": "gate: add/drop inputs DEGRADED \u2014 BSB transactions log: line 14: no player/team"
+    },
+    {
+     "add": "Corey Kiner",
+     "bid": null,
+     "drop": null,
+     "gates": [
+      "G8-fresh:BLOCK"
+     ],
+     "kind": "breakout",
+     "provisional": false,
+     "sit": null,
+     "slot": null,
+     "start": null,
+     "status": null,
+     "subject": "Corey Kiner",
+     "tier": "C",
+     "verb": "BLOCKED",
+     "verdict": "BLOCK",
+     "when": "no move",
+     "why": "gate: add/drop inputs DEGRADED \u2014 BSB transactions log: line 14: no player/team"
+    },
+    {
+     "add": "Jerry Jeudy",
+     "bid": null,
+     "drop": null,
+     "gates": [
+      "G8-fresh:BLOCK"
+     ],
+     "kind": "breakout",
+     "provisional": false,
+     "sit": null,
+     "slot": null,
+     "start": null,
+     "status": null,
+     "subject": "Jerry Jeudy",
+     "tier": "W",
+     "verb": "BLOCKED",
+     "verdict": "BLOCK",
+     "when": "no move",
+     "why": "gate: add/drop inputs DEGRADED \u2014 BSB transactions log: line 14: no player/team"
+    },
+    {
+     "add": "Malachi Fields",
+     "bid": null,
+     "drop": null,
+     "gates": [
+      "G8-fresh:BLOCK"
+     ],
+     "kind": "breakout",
+     "provisional": false,
+     "sit": null,
+     "slot": null,
+     "start": null,
+     "status": null,
+     "subject": "Malachi Fields",
+     "tier": "W",
+     "verb": "BLOCKED",
+     "verdict": "BLOCK",
+     "when": "no move",
+     "why": "gate: add/drop inputs DEGRADED \u2014 BSB transactions log: line 14: no player/team"
+    },
+    {
+     "add": "Tommy Tremble",
+     "bid": null,
+     "drop": null,
+     "gates": [
+      "G8-fresh:BLOCK"
+     ],
+     "kind": "breakout",
+     "provisional": false,
+     "sit": null,
+     "slot": null,
+     "start": null,
+     "status": null,
+     "subject": "Tommy Tremble",
+     "tier": "W",
+     "verb": "BLOCKED",
+     "verdict": "BLOCK",
+     "when": "no move",
+     "why": "gate: add/drop inputs DEGRADED \u2014 BSB transactions log: line 14: no player/team"
+    },
+    {
+     "add": "Jalen Royals",
+     "bid": null,
+     "drop": null,
+     "gates": [
+      "G8-fresh:BLOCK"
+     ],
+     "kind": "breakout",
+     "provisional": false,
+     "sit": null,
+     "slot": null,
+     "start": null,
+     "status": null,
+     "subject": "Jalen Royals",
+     "tier": "W",
+     "verb": "BLOCKED",
+     "verdict": "BLOCK",
+     "when": "no move",
+     "why": "gate: add/drop inputs DEGRADED \u2014 BSB transactions log: line 14: no player/team"
+    },
+    {
+     "add": "Charlie Kolar",
+     "bid": null,
+     "drop": null,
+     "gates": [
+      "G8-fresh:BLOCK"
+     ],
+     "kind": "breakout",
+     "provisional": false,
+     "sit": null,
+     "slot": null,
+     "start": null,
+     "status": null,
+     "subject": "Charlie Kolar",
+     "tier": "W",
+     "verb": "BLOCKED",
+     "verdict": "BLOCK",
+     "when": "no move",
+     "why": "gate: add/drop inputs DEGRADED \u2014 BSB transactions log: line 14: no player/team"
+    },
+    {
+     "add": "Noah Gray",
+     "bid": null,
+     "drop": null,
+     "gates": [
+      "G8-fresh:BLOCK"
+     ],
+     "kind": "breakout",
+     "provisional": false,
+     "sit": null,
+     "slot": null,
+     "start": null,
+     "status": null,
+     "subject": "Noah Gray",
+     "tier": "W",
+     "verb": "BLOCKED",
+     "verdict": "BLOCK",
+     "when": "no move",
+     "why": "gate: add/drop inputs DEGRADED \u2014 BSB transactions log: line 14: no player/team"
+    },
+    {
+     "add": "Colby Parkinson",
+     "bid": null,
+     "drop": null,
+     "gates": [
+      "G8-fresh:BLOCK"
+     ],
+     "kind": "breakout",
+     "provisional": false,
+     "sit": null,
+     "slot": null,
+     "start": null,
+     "status": null,
+     "subject": "Colby Parkinson",
+     "tier": "W",
+     "verb": "BLOCKED",
+     "verdict": "BLOCK",
+     "when": "no move",
+     "why": "gate: add/drop inputs DEGRADED \u2014 BSB transactions log: line 14: no player/team"
+    },
+    {
+     "add": "Devin Singletary",
+     "bid": null,
+     "drop": null,
+     "gates": [
+      "G8-fresh:BLOCK"
+     ],
+     "kind": "breakout",
+     "provisional": false,
+     "sit": null,
+     "slot": null,
+     "start": null,
+     "status": null,
+     "subject": "Devin Singletary",
+     "tier": "W",
+     "verb": "BLOCKED",
+     "verdict": "BLOCK",
+     "when": "no move",
+     "why": "gate: add/drop inputs DEGRADED \u2014 BSB transactions log: line 14: no player/team"
+    },
+    {
+     "add": "Audric Estime",
+     "bid": null,
+     "drop": null,
+     "gates": [
+      "G8-fresh:BLOCK"
+     ],
+     "kind": "breakout",
+     "provisional": false,
+     "sit": null,
+     "slot": null,
+     "start": null,
+     "status": null,
+     "subject": "Audric Estime",
+     "tier": "W",
+     "verb": "BLOCKED",
+     "verdict": "BLOCK",
+     "when": "no move",
+     "why": "gate: add/drop inputs DEGRADED \u2014 BSB transactions log: line 14: no player/team"
     }
    ],
-   "blocked": [],
+   "blocked": [
+    {
+     "add": "Dylan Sampson",
+     "drop": null,
+     "gates": [
+      "G8-fresh:BLOCK"
+     ],
+     "kind": "upgrade",
+     "subject": "Dylan Sampson"
+    },
+    {
+     "add": "Dallas Cowboys",
+     "drop": "San Francisco",
+     "gates": [
+      "G8-fresh:BLOCK",
+      "G8-fresh:BLOCK"
+     ],
+     "kind": "stream",
+     "subject": "Dallas Cowboys"
+    },
+    {
+     "add": "Jahan Dotson",
+     "drop": null,
+     "gates": [
+      "G8-fresh:BLOCK"
+     ],
+     "kind": "breakout",
+     "subject": "Jahan Dotson"
+    },
+    {
+     "add": "Jaleel McLaughlin",
+     "drop": null,
+     "gates": [
+      "G8-fresh:BLOCK"
+     ],
+     "kind": "breakout",
+     "subject": "Jaleel McLaughlin"
+    },
+    {
+     "add": "KeAndre Lambert-Smith",
+     "drop": null,
+     "gates": [
+      "G8-fresh:BLOCK"
+     ],
+     "kind": "breakout",
+     "subject": "KeAndre Lambert-Smith"
+    },
+    {
+     "add": "Michael Mayer",
+     "drop": null,
+     "gates": [
+      "G8-fresh:BLOCK"
+     ],
+     "kind": "breakout",
+     "subject": "Michael Mayer"
+    },
+    {
+     "add": "Zonovan Knight",
+     "drop": null,
+     "gates": [
+      "G8-fresh:BLOCK"
+     ],
+     "kind": "breakout",
+     "subject": "Zonovan Knight"
+    },
+    {
+     "add": "Darnell Washington",
+     "drop": null,
+     "gates": [
+      "G8-fresh:BLOCK"
+     ],
+     "kind": "breakout",
+     "subject": "Darnell Washington"
+    },
+    {
+     "add": "Treylon Burks",
+     "drop": null,
+     "gates": [
+      "G8-fresh:BLOCK"
+     ],
+     "kind": "breakout",
+     "subject": "Treylon Burks"
+    },
+    {
+     "add": "Corey Kiner",
+     "drop": null,
+     "gates": [
+      "G8-fresh:BLOCK"
+     ],
+     "kind": "breakout",
+     "subject": "Corey Kiner"
+    },
+    {
+     "add": "Jerry Jeudy",
+     "drop": null,
+     "gates": [
+      "G8-fresh:BLOCK"
+     ],
+     "kind": "breakout",
+     "subject": "Jerry Jeudy"
+    },
+    {
+     "add": "Malachi Fields",
+     "drop": null,
+     "gates": [
+      "G8-fresh:BLOCK"
+     ],
+     "kind": "breakout",
+     "subject": "Malachi Fields"
+    },
+    {
+     "add": "Tommy Tremble",
+     "drop": null,
+     "gates": [
+      "G8-fresh:BLOCK"
+     ],
+     "kind": "breakout",
+     "subject": "Tommy Tremble"
+    },
+    {
+     "add": "Jalen Royals",
+     "drop": null,
+     "gates": [
+      "G8-fresh:BLOCK"
+     ],
+     "kind": "breakout",
+     "subject": "Jalen Royals"
+    },
+    {
+     "add": "Charlie Kolar",
+     "drop": null,
+     "gates": [
+      "G8-fresh:BLOCK"
+     ],
+     "kind": "breakout",
+     "subject": "Charlie Kolar"
+    },
+    {
+     "add": "Noah Gray",
+     "drop": null,
+     "gates": [
+      "G8-fresh:BLOCK"
+     ],
+     "kind": "breakout",
+     "subject": "Noah Gray"
+    },
+    {
+     "add": "Colby Parkinson",
+     "drop": null,
+     "gates": [
+      "G8-fresh:BLOCK"
+     ],
+     "kind": "breakout",
+     "subject": "Colby Parkinson"
+    },
+    {
+     "add": "Devin Singletary",
+     "drop": null,
+     "gates": [
+      "G8-fresh:BLOCK"
+     ],
+     "kind": "breakout",
+     "subject": "Devin Singletary"
+    },
+    {
+     "add": "Audric Estime",
+     "drop": null,
+     "gates": [
+      "G8-fresh:BLOCK"
+     ],
+     "kind": "breakout",
+     "subject": "Audric Estime"
+    }
+   ],
    "current": {
-    "DEF": "Vikings",
+    "DEF": "Minnesota",
     "K": "Jason Myers",
     "QB": "Matthew Stafford",
     "RB1": "MarShawn Lloyd",
@@ -160,96 +589,100 @@
     "WR3": "Drake London"
    },
    "flags": [
-    "2 DEFs rostered (Vikings, 49ers) for one DEF slot \u2014 the spare is 49ers (85 season vs Vikings 122)"
+    "2 DEFs rostered (Minnesota, San Francisco) for one DEF slot \u2014 the spare is San Francisco (85 season vs Minnesota 122)"
    ],
    "lineup": {
-    "DEF": "Vikings",
+    "DEF": "Minnesota",
     "K": "Jason Myers",
     "QB": "Matthew Stafford",
-    "RB1": "MarShawn Lloyd",
-    "RB2": "Josh Jacobs",
-    "TE": "Isaiah Likely",
-    "W/R/T": "Sam LaPorta",
-    "WR1": "Drake London",
-    "WR2": "Jaxon Smith-Njigba",
+    "RB1": "Josh Jacobs",
+    "RB2": "MarShawn Lloyd",
+    "TE": "Sam LaPorta",
+    "W/R/T": "Isaiah Likely",
+    "WR1": "Jaxon Smith-Njigba",
+    "WR2": "Drake London",
     "WR3": "Malik Washington"
    },
    "me": "OVERKILL",
-   "others_pulled": "2026-10-21T23:11:01+00:00",
+   "others_pulled": "2026-10-22T01:45:33+00:00",
    "planner": {
     "lineup_after": {
-     "DEF": "Vikings",
+     "DEF": "Minnesota",
      "K": "Jason Myers",
      "QB": "Matthew Stafford",
-     "RB1": "MarShawn Lloyd",
-     "RB2": "Josh Jacobs",
-     "TE": "Isaiah Likely",
-     "W/R/T": "Sam LaPorta",
-     "WR1": "Drake London",
-     "WR2": "Jaxon Smith-Njigba",
+     "RB1": "Josh Jacobs",
+     "RB2": "MarShawn Lloyd",
+     "TE": "Sam LaPorta",
+     "W/R/T": "Isaiah Likely",
+     "WR1": "Jaxon Smith-Njigba",
+     "WR2": "Drake London",
      "WR3": "Malik Washington"
     },
     "moves": [],
     "rejected": [
      {
       "name": "Dallas Cowboys",
-      "reason": "J -0.11 < 3.0 at its best spot (49ers) \u2014 J -0.11 = 1.0x+0.00 (wk W) + 0.8x+1.75 (W+1) + 0.8x+0.00 (rest, mean of wks 9-17) + 0.58x+0.00 (wks 15-17, P(playoffs) 97%) + 0.1x+0.00 (bench boom) + 0.2x-5.03 (depth) - 0.00 acq - 0.00 FAB($0) - 0."
+      "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 14: no player/team"
      },
      {
       "name": "Los Angeles Chargers",
-      "reason": "J -0.31 < 3.0 at its best spot (Vikings) \u2014 J -0.31 = 1.0x+0.00 (wk W) + 0.8x+0.95 (W+1) + 0.8x-0.40 (rest, mean of wks 9-17) + 0.58x-0.40 (wks 15-17, P(playoffs) 97%) + 0.1x+0.00 (bench boom) + 0.2x+0.00 (depth) - 0.00 acq - 0.01 FAB($1) - "
+      "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 14: no player/team"
      },
      {
       "name": "Darnell Washington",
-      "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 6.9 under your weakest 11.7"
+      "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 7.0 under your weakest 11.6"
+     },
+     {
+      "name": "Dylan Sampson",
+      "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 14: no player/team"
      },
      {
       "name": "Foster Moreau",
-      "reason": "J -1.40 < 3.0 at its best spot (DeMario Douglas) \u2014 J -1.40 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 9-17) + 0.58x+0.00 (wks 15-17, P(playoffs) 97%) + 0.1x+0.14 (bench boom) + 0.2x-4.56 (depth) - 0.00 acq - 0.00 FA"
+      "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 14: no player/team"
      },
      {
       "name": "Jahan Dotson",
-      "reason": "best spot DeMario Douglas: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
+      "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 14: no player/team"
      },
      {
       "name": "Jake Ferguson",
-      "reason": "J +0.16 < 3.0 at its best spot (DeMario Douglas) \u2014 J +0.16 = 1.0x+0.00 (wk W) + 0.8x+1.78 (W+1) + 0.8x+0.00 (rest, mean of wks 9-17) + 0.58x+0.00 (wks 15-17, P(playoffs) 97%) + 0.1x+1.45 (bench boom) + 0.2x-4.56 (depth) - 0.00 acq - 0.00 FA"
+      "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 14: no player/team"
      },
      {
       "name": "Jaleel McLaughlin",
-      "reason": "best spot DeMario Douglas: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
+      "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 14: no player/team"
      },
      {
       "name": "Jerry Jeudy",
-      "reason": "J -1.02 < 3.0 at its best spot (DeMario Douglas) \u2014 J -1.02 = 1.0x+0.00 (wk W) + 0.8x+0.24 (W+1) + 0.8x+0.08 (rest, mean of wks 9-17) + 0.58x+0.00 (wks 15-17, P(playoffs) 97%) + 0.1x+1.45 (bench boom) + 0.2x-4.56 (depth) - 0.00 acq - 0.01 FA"
+      "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 14: no player/team"
      },
      {
       "name": "KeAndre Lambert-Smith",
-      "reason": "sits behind everyone: you carry 7 WRs for 3 slot(s) and he projects 0.0 under your weakest 3.4"
+      "reason": "sits behind everyone: you carry 7 WRs for 3 slot(s) and he projects 0.0 under your weakest 3.5"
      },
      {
       "name": "Mark Andrews",
-      "reason": "J +0.26 < 3.0 at its best spot (DeMario Douglas) \u2014 J +0.26 = 1.0x+0.00 (wk W) + 0.8x+1.92 (W+1) + 0.8x+0.00 (rest, mean of wks 9-17) + 0.58x+0.00 (wks 15-17, P(playoffs) 97%) + 0.1x+1.45 (bench boom) + 0.2x-4.56 (depth) - 0.00 acq - 0.01 FA"
+      "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 14: no player/team"
      },
      {
       "name": "Michael Mayer",
-      "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 7.4 under your weakest 11.7"
+      "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 7.4 under your weakest 11.6"
      },
      {
       "name": "Rashid Shaheed",
-      "reason": "J -0.63 < 3.0 at its best spot (DeMario Douglas) \u2014 J -0.63 = 1.0x+0.00 (wk W) + 0.8x+0.67 (W+1) + 0.8x+0.13 (rest, mean of wks 9-17) + 0.58x+0.00 (wks 15-17, P(playoffs) 97%) + 0.1x+1.45 (bench boom) + 0.2x-4.56 (depth) - 0.00 acq - 0.00 FA"
+      "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 14: no player/team"
      },
      {
       "name": "Rashod Bateman",
-      "reason": "J -1.26 < 3.0 at its best spot (DeMario Douglas) \u2014 J -1.26 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.18 (rest, mean of wks 9-17) + 0.58x+0.00 (wks 15-17, P(playoffs) 97%) + 0.1x+0.17 (bench boom) + 0.2x-4.56 (depth) - 0.00 acq - 0.01 FA"
+      "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 14: no player/team"
      },
      {
       "name": "Zonovan Knight",
-      "reason": "J +1.61 < 3.0 at its best spot (DeMario Douglas) \u2014 J +1.61 = 1.0x+2.54 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.41 (rest, mean of wks 9-17) + 0.58x+0.00 (wks 15-17, P(playoffs) 97%) + 0.1x+1.54 (bench boom) + 0.2x-4.56 (depth) - 0.00 acq - 0.00 FA"
+      "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 14: no player/team"
      }
     ]
    },
-   "pulled": "2026-10-21T23:11:01+00:00"
+   "pulled": "2026-10-22T01:45:33+00:00"
   },
   "HH": {
    "actions": [
@@ -257,7 +690,26 @@
      "add": null,
      "bid": null,
      "drop": null,
-     "gain": 7.9,
+     "gain": 8.11,
+     "gates": [
+      "G9-reversal:WARN"
+     ],
+     "kind": "start",
+     "provisional": false,
+     "reason": "",
+     "sit": "Dak Prescott",
+     "slot": "QB",
+     "start": "Jared Goff",
+     "status": "proposed",
+     "subject": "Jared Goff",
+     "verdict": "WARN",
+     "when": "early"
+    },
+    {
+     "add": null,
+     "bid": null,
+     "drop": null,
+     "gain": 8.04,
      "gates": [],
      "kind": "start",
      "provisional": false,
@@ -294,24 +746,7 @@
      "add": null,
      "bid": null,
      "drop": null,
-     "gain": 4.79,
-     "gates": [],
-     "kind": "start",
-     "provisional": true,
-     "reason": " (Matthew Stafford slides to QB)",
-     "sit": "Dak Prescott",
-     "slot": "Q/W/R/T",
-     "start": "Jared Goff",
-     "status": "proposed",
-     "subject": "Jared Goff",
-     "verdict": "PASS",
-     "when": "early"
-    },
-    {
-     "add": null,
-     "bid": null,
-     "drop": null,
-     "gain": 3.65,
+     "gain": 3.66,
      "gates": [],
      "kind": "start",
      "provisional": false,
@@ -476,7 +911,7 @@
      "verb": "NONE",
      "verdict": "WARN",
      "when": "no move for this roster",
-     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Rome Odunze 10.5 vs 0.0). Only a trade chip."
+     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Denzel Boston 10.5 vs 0.0). Only a trade chip."
     },
     {
      "add": "Jahan Dotson",
@@ -494,7 +929,7 @@
      "verb": "NONE",
      "verdict": "PASS",
      "when": "no move for this roster",
-     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Rome Odunze 10.5 vs 5.8). Only a trade chip."
+     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Denzel Boston 10.5 vs 5.8). Only a trade chip."
     },
     {
      "add": "Pierre Strong Jr.",
@@ -548,7 +983,7 @@
      "verb": "NONE",
      "verdict": "PASS",
      "when": "no move for this roster",
-     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Rome Odunze 10.5 vs 9.2). Only a trade chip."
+     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Denzel Boston 10.5 vs 9.2). Only a trade chip."
     },
     {
      "add": "Keenan Allen",
@@ -566,7 +1001,7 @@
      "verb": "NONE",
      "verdict": "PASS",
      "when": "no move for this roster",
-     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Rome Odunze 10.5 vs 8.0). Only a trade chip."
+     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Denzel Boston 10.5 vs 8.0). Only a trade chip."
     },
     {
      "add": "KeAndre Lambert-Smith",
@@ -584,7 +1019,7 @@
      "verb": "NONE",
      "verdict": "PASS",
      "when": "no move for this roster",
-     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Rome Odunze 10.5 vs 0.0). Only a trade chip."
+     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Denzel Boston 10.5 vs 0.0). Only a trade chip."
     },
     {
      "add": "Quentin Johnston",
@@ -602,7 +1037,7 @@
      "verb": "NONE",
      "verdict": "PASS",
      "when": "no move for this roster",
-     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Rome Odunze 10.5 vs 0.0). Only a trade chip."
+     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Denzel Boston 10.5 vs 0.0). Only a trade chip."
     },
     {
      "add": "KC Concepcion Jr.",
@@ -620,7 +1055,7 @@
      "verb": "NONE",
      "verdict": "PASS",
      "when": "no move for this roster",
-     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Rome Odunze 10.5 vs 9.8). Only a trade chip."
+     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Denzel Boston 10.5 vs 9.9). Only a trade chip."
     },
     {
      "add": "Cooper Kupp",
@@ -638,7 +1073,7 @@
      "verb": "NONE",
      "verdict": "PASS",
      "when": "no move for this roster",
-     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Rome Odunze 10.5 vs 6.1). Only a trade chip."
+     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Denzel Boston 10.5 vs 6.1). Only a trade chip."
     },
     {
      "add": "Tyler Allgeier",
@@ -767,6 +1202,24 @@
      "why": "one game of starter usage; no market confirmation yet and the spot would cost a real player"
     },
     {
+     "add": "Tyrone Tracy Jr.",
+     "bid": null,
+     "drop": null,
+     "gates": [],
+     "kind": "breakout",
+     "provisional": false,
+     "sit": null,
+     "slot": null,
+     "start": null,
+     "status": null,
+     "subject": "Tyrone Tracy Jr.",
+     "tier": "B",
+     "verb": "WAIT",
+     "verdict": "PASS",
+     "when": "next usage pull (Tuesday) \u2014 add then if the snaps hold or the market moves toward him",
+     "why": "one game of starter usage; no market confirmation yet and the spot would cost a real player"
+    },
+    {
      "add": "Emanuel Wilson",
      "bid": null,
      "drop": null,
@@ -836,7 +1289,7 @@
      "verb": "NONE",
      "verdict": "PASS",
      "when": "no move for this roster",
-     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Rome Odunze 10.5 vs 0.0). Only a trade chip."
+     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Denzel Boston 10.5 vs 0.0). Only a trade chip."
     },
     {
      "add": "Kyle Pitts Sr.",
@@ -905,6 +1358,7 @@
    },
    "flags": [
     "2 DEFs rostered \u2014 second one is a HOLD in a capped league: Texans (registry hold)",
+    "Budda Baker is Q at DB \u2014 if he is out, Kam Curl (15.1) takes the slot; decide before Sun Oct 25, 4:05 pm ET",
     "Carson Schwesinger is Q at LB \u2014 no healthy bench player can fill LB; decide before Sun Oct 25, 1:00 pm ET"
    ],
    "lineup": {
@@ -915,8 +1369,8 @@
     "DL": "T.J. Watt",
     "K": "Cairo Santos",
     "LB": "Carson Schwesinger",
-    "Q/W/R/T": "Jared Goff",
-    "QB": "Matthew Stafford",
+    "Q/W/R/T": "Matthew Stafford",
+    "QB": "Jared Goff",
     "RB": "Jaylen Warren",
     "S": "Kam Curl",
     "TE": "Trey McBride",
@@ -925,7 +1379,7 @@
     "WR": "Drake London"
    },
    "me": "Tecmo Bowlers",
-   "others_pulled": "2026-10-21T23:11:01+00:00",
+   "others_pulled": "2026-10-22T01:45:33+00:00",
    "planner": {
     "lineup_after": {
      "CB": "Cooper DeJean",
@@ -935,8 +1389,8 @@
      "DL": "T.J. Watt",
      "K": "Brandon Aubrey",
      "LB": "Carson Schwesinger",
-     "Q/W/R/T": "Jared Goff",
-     "QB": "Matthew Stafford",
+     "Q/W/R/T": "Matthew Stafford",
+     "QB": "Jared Goff",
      "RB": "Jaylen Warren",
      "S": "Kam Curl",
      "TE": "Trey McBride",
@@ -950,7 +1404,6 @@
       "add": "Brandon Aubrey",
       "drop": "Cairo Santos",
       "gates": [
-       "G7-ready:WARN",
        "G7-ready:WARN"
       ],
       "ir": null,
@@ -967,7 +1420,24 @@
       "when": "before kickoff Thu Oct 22, 8:15 pm ET"
      },
      {
-      "J": 7.899,
+      "J": 8.113,
+      "add": null,
+      "drop": null,
+      "gates": [],
+      "ir": null,
+      "kind": "lineup",
+      "provisional": false,
+      "sit": "Dak Prescott",
+      "slot": "QB",
+      "start": "Jared Goff",
+      "txns": [
+       "start Jared Goff at QB",
+       "bench Dak Prescott"
+      ],
+      "when": "before kickoff Sun Oct 25, 4:25 pm ET"
+     },
+     {
+      "J": 8.039,
       "add": null,
       "drop": null,
       "gates": [],
@@ -1001,24 +1471,7 @@
       "when": "before kickoff Sun Oct 25, 8:20 pm ET"
      },
      {
-      "J": 4.789,
-      "add": null,
-      "drop": null,
-      "gates": [],
-      "ir": null,
-      "kind": "lineup",
-      "provisional": true,
-      "sit": "Dak Prescott",
-      "slot": "Q/W/R/T",
-      "start": "Jared Goff",
-      "txns": [
-       "start Jared Goff at Q/W/R/T",
-       "bench Dak Prescott"
-      ],
-      "when": "before kickoff Sun Oct 25, 4:25 pm ET"
-     },
-     {
-      "J": 3.65,
+      "J": 3.656,
       "add": null,
       "drop": null,
       "gates": [],
@@ -1112,7 +1565,7 @@
      },
      {
       "name": "Emanuel Wilson",
-      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 8.1 under your weakest 8.4"
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 7.8 under your weakest 8.4"
      },
      {
       "name": "George Holani",
@@ -1136,7 +1589,7 @@
      },
      {
       "name": "KC Concepcion Jr.",
-      "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 9.8 under your weakest 10.5"
+      "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 9.9 under your weakest 10.5"
      },
      {
       "name": "KeAndre Lambert-Smith",
@@ -1148,7 +1601,7 @@
      },
      {
       "name": "Kendre Miller",
-      "reason": "best spot Rome Odunze: Tier B held, but Rome Odunze (10.5) projects at or above him (8.5) this week"
+      "reason": "best spot Rome Odunze: Tier B held, but Rome Odunze (10.5) projects at or above him (8.6) this week"
      },
      {
       "name": "Keon Coleman",
@@ -1164,7 +1617,7 @@
      },
      {
       "name": "Pierre Strong Jr.",
-      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 3.9 under your weakest 8.4"
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 3.8 under your weakest 8.4"
      },
      {
       "name": "Quay Walker",
@@ -1180,11 +1633,15 @@
      },
      {
       "name": "RJ Harvey",
-      "reason": "J -1.59 < 3.0 at its best spot (Rome Odunze) \u2014 J -1.59 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.02 (rest, mean of wks 9-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x-1.00 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 0.00 FAB($"
+      "reason": "J -1.58 < 3.0 at its best spot (Rome Odunze) \u2014 J -1.58 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.02 (rest, mean of wks 9-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x-0.99 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 0.00 FAB($"
      },
      {
       "name": "Robert Spillane",
       "reason": "gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])"
+     },
+     {
+      "name": "Tyrone Tracy Jr.",
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 6.2 under your weakest 8.4"
      },
      {
       "name": "Tykee Smith",
@@ -1192,11 +1649,11 @@
      },
      {
       "name": "Tyler Allgeier",
-      "reason": "J -1.28 < 3.0 at its best spot (Rome Odunze) \u2014 J -1.28 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.31 (rest, mean of wks 9-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x-0.32 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 0.00 FAB($"
+      "reason": "J -1.28 < 3.0 at its best spot (Rome Odunze) \u2014 J -1.28 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.31 (rest, mean of wks 9-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x-0.30 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 0.00 FAB($"
      },
      {
       "name": "Woody Marks",
-      "reason": "J +0.49 < 3.0 at its best spot (Rome Odunze) \u2014 J +0.49 = 1.0x+1.27 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.75 (rest, mean of wks 9-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+1.21 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 0.00 FAB($"
+      "reason": "J +0.78 < 3.0 at its best spot (Rome Odunze) \u2014 J +0.78 = 1.0x+1.37 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.88 (rest, mean of wks 9-17) + 0.60x+0.12 (wks 15-17, P(playoffs) 100%) + 0.1x+1.33 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 0.00 FAB($"
      },
      {
       "name": "Xavier Worthy",
@@ -1212,9 +1669,9 @@
      }
     ]
    },
-   "pulled": "2026-10-21T23:11:01+00:00"
+   "pulled": "2026-10-22T01:45:33+00:00"
   }
  },
- "now": "2026-10-21T19:13-04:00",
+ "now": "2026-10-21T21:47-04:00",
  "week": 7
 }
