@@ -11287,10 +11287,11 @@
   ],
   "verdict": "WARN",
   "week": 7,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": "2026-10-25T13:00-04:00",
-  "reverses": "9fe64e8c"
+  "reverses": "9fe64e8c",
+  "superseded_by": "d152604e"
  },
  {
   "id": "fe459ec6",
@@ -11343,10 +11344,11 @@
   ],
   "verdict": "BLOCK",
   "week": 7,
-  "status": "blocked",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": null,
-  "reverses": "493e33b6"
+  "reverses": "493e33b6",
+  "superseded_by": "b89bfcf1"
  },
  {
   "id": "29eab55a",
@@ -11362,9 +11364,66 @@
   ],
   "verdict": "WARN",
   "week": 7,
+  "status": "superseded",
+  "provisional": false,
+  "resolves_at": "2026-10-25T16:25-04:00",
+  "reverses": "fe459ec6",
+  "superseded_by": "0057862b"
+ },
+ {
+  "id": "b89bfcf1",
+  "ts": "2026-10-22T03:29-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Dallas Cowboys",
+  "call": "stream Dallas Cowboys for week 8, drop 49ers",
+  "detail": "DEF: DAL 18.5 vs yours Vikings 26.0 \u2014 edge 7.5 implied pts",
+  "evidence": [
+   "vegas"
+  ],
+  "verdict": "BLOCK",
+  "week": 7,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "6da5edb5"
+ },
+ {
+  "id": "d152604e",
+  "ts": "2026-10-22T03:29-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Ja'Marr Chase",
+  "call": "start Ja'Marr Chase at WR",
+  "detail": "over Rome Odunze +8.04",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 7,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": "2026-10-25T13:00-04:00",
+  "reverses": "dd2a1c1b"
+ },
+ {
+  "id": "0057862b",
+  "ts": "2026-10-22T03:29-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Jared Goff",
+  "call": "start Jared Goff at Q/W/R/T",
+  "detail": "over Dak Prescott +8.11",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 7,
   "status": "proposed",
   "provisional": false,
   "resolves_at": "2026-10-25T16:25-04:00",
-  "reverses": "fe459ec6"
+  "reverses": "29eab55a"
  }
 ]
