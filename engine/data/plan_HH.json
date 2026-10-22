@@ -11,7 +11,7 @@
  "excluded": [
   {
    "player": "Dak Prescott",
-   "reason": "gate: G6-magnitude 37.912066808359945 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex: 3 QBs for 2 QB-eligible slots \u2014 QB3 is b"
+   "reason": "gate: G6-magnitude 37.65582663253767 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex: 3 QBs for 2 QB-eligible slots \u2014 QB3 is by"
   },
   {
    "player": "Jaylen Warren",
@@ -31,11 +31,11 @@
   },
   {
    "player": "Matthew Stafford",
-   "reason": "gate: G6-magnitude 36.78031095353991 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex: 3 QBs for 2 QB-eligible slots \u2014 QB3 is by"
+   "reason": "gate: G6-magnitude 36.93915236310965 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex: 3 QBs for 2 QB-eligible slots \u2014 QB3 is by"
   },
   {
    "player": "Jared Goff",
-   "reason": "gate: G3-role NFL depth-chart role not checked; G6-magnitude 39.592043456183916 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex"
+   "reason": "gate: G3-role NFL depth-chart role not checked; G6-magnitude 39.99763486297762 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex:"
   },
   {
    "player": "Ja'Marr Chase",
@@ -54,7 +54,7 @@
    "reason": "you added him 2026-10-18 (<= 7 days) \u2014 your decision, not the spot"
   },
   {
-   "player": "Houston",
+   "player": "Texans",
    "reason": "registry HOLD \u2014 HOLD in Heritage House. A 7-acquisition league rations streaming, and Tecmo Bowl"
   },
   {
@@ -100,36 +100,36 @@
    "DL": "tj watt",
    "K": "brandon aubrey",
    "LB": "carson schwesinger",
-   "Q/W/R/T": "jared goff",
-   "QB": "dak prescott",
+   "Q/W/R/T": "dak prescott",
+   "QB": "jared goff",
    "RB": "jaylen warren",
    "S": "kam curl",
    "TE": "trey mcbride",
-   "W/R": "jamarr chase",
-   "W/R/T": "foster moreau",
-   "WR": "drake london"
+   "W/R": "drake london",
+   "W/R/T": "rashee rice",
+   "WR": "jamarr chase"
   },
-  "optimal_before_moves": 299.67,
+  "optimal_before_moves": 300.69,
   "slots": {
    "CB": "Cooper DeJean",
    "D": "Alontae Taylor",
    "DB": "Budda Baker",
-   "DEF": "Houston",
+   "DEF": "Texans",
    "DL": "T.J. Watt",
    "K": "Brandon Aubrey",
    "LB": "Carson Schwesinger",
-   "Q/W/R/T": "Jared Goff",
-   "QB": "Dak Prescott",
+   "Q/W/R/T": "Dak Prescott",
+   "QB": "Jared Goff",
    "RB": "Jaylen Warren",
    "S": "Kam Curl",
    "TE": "Trey McBride",
-   "W/R": "Ja'Marr Chase",
-   "W/R/T": "Foster Moreau",
-   "WR": "Drake London"
+   "W/R": "Drake London",
+   "W/R/T": "Rashee Rice",
+   "WR": "Ja'Marr Chase"
   },
-  "total": 308.49
+  "total": 302.17
  },
- "made": "2026-10-22T09:11-04:00",
+ "made": "2026-10-22T14:10-04:00",
  "mechanics": [
   {
    "rule": "Free agents are immediate unless his game is in progress",
@@ -169,115 +169,7 @@
  ],
  "moves": [
   {
-   "J": 15.412,
-   "add_key": "foster moreau",
-   "add_name": "Foster Moreau",
-   "at": null,
-   "deadline": "2026-10-22T20:15-04:00",
-   "drop_name": "Rome Odunze",
-   "eff": "W",
-   "fam": "TE",
-   "gates": {
-    "add": {
-     "checks": [
-      {
-       "gate": "G11-role-registry",
-       "msg": "no verified snap count on record \u2014 projection is the only evidence he plays",
-       "status": "WARN"
-      }
-     ],
-     "verdict": "WARN"
-    },
-    "drop": {
-     "checks": [
-      {
-       "gate": "G11-role-registry",
-       "msg": "no verified snap count on record \u2014 projection is the only evidence he plays",
-       "status": "WARN"
-      }
-     ],
-     "verdict": "WARN"
-    }
-   },
-   "id": "HH:foster moreau",
-   "kind": "add",
-   "league": "HH",
-   "lineup": {
-    "gain": 20.01,
-    "over": "empty",
-    "slot": "W/R/T"
-   },
-   "provisional": false,
-   "reasons": [
-    "TE weekly upgrade: Foster Moreau 20.0 vs starter Trey McBride 17.0",
-    "depth: Foster Moreau 20.0/wk rest-of-season vs your weakest bench player 10.1 (W projection (no season number))",
-    "the spot: Rome Odunze \u2014 rest-of-season 12.2/wk (season blend / 17 x HH/BSB WR ratio 1.01 (approximation))"
-   ],
-   "spot_id": "drop:rome odunze",
-   "spot_kind": "drop",
-   "spot_label": "Rome Odunze",
-   "srcs": [
-    "depth",
-    "upgrade"
-   ],
-   "tier": null,
-   "timing_why": "free agent, immediate",
-   "tm": "HOU",
-   "txns": [
-    {
-     "key": "foster moreau",
-     "op": "add",
-     "player": "Foster Moreau"
-    },
-    {
-     "key": "rome odunze",
-     "op": "drop",
-     "player": "Rome Odunze"
-    },
-    {
-     "key": "foster moreau",
-     "op": "start",
-     "player": "Foster Moreau",
-     "slot": "W/R/T"
-    }
-   ],
-   "value_terms": {
-    "J": 15.412,
-    "acq": 1,
-    "bid": 0,
-    "dS_W": 7.266,
-    "dS_W1": 0.0,
-    "dS_play": 5.991,
-    "dS_rest": 7.691,
-    "d_boom": -1.018,
-    "d_depth": 0,
-    "p_playoffs": 1.0,
-    "pen_acq": 1.0,
-    "pen_churn": 0.5,
-    "pen_fab": 0.0,
-    "rest_weeks": "9-17",
-    "txn": 1
-   },
-   "values": {
-    "add": {
-     "boom": 0.06694039630397289,
-     "ros": 20.008803349413594,
-     "ros_src": "W projection (no season number)",
-     "w": 20.008803349413594,
-     "w1": 0.0,
-     "w1_src": "bye in week 8"
-    },
-    "drop": {
-     "ros": 12.209940119387962,
-     "ros_src": "season blend / 17 x HH/BSB WR ratio 1.01 (approximation)",
-     "w": 10.563923399883915,
-     "w1": 12.209940119387962
-    }
-   },
-   "when": "before kickoff Thu Oct 22, 8:15 pm ET"
-  },
-  {
-   "J": 9.149,
+   "J": 9.015,
    "add_key": "brandon aubrey",
    "add_name": "Brandon Aubrey",
    "at": null,
@@ -305,22 +197,20 @@
    "kind": "add",
    "league": "HH",
    "lineup": {
-    "gain": 14.48,
+    "gain": 14.41,
     "over": "Cairo Santos (dropped)",
     "slot": "K"
    },
    "provisional": false,
    "reasons": [
-    "K weekly upgrade: Brandon Aubrey 14.5 vs starter Cairo Santos 12.9",
-    "week-8 K stream: Brandon Aubrey 18.5 vs your best 11.3 (W projection x own implied total 29.0/22.8)",
+    "week-8 K stream: Brandon Aubrey 18.4 vs your best 11.3 (W projection x own implied total 29.0/22.8)",
     "the spot: Cairo Santos \u2014 the only K"
    ],
    "spot_id": "drop:cairo santos",
    "spot_kind": "swap",
    "spot_label": "Cairo Santos",
    "srcs": [
-    "stream",
-    "upgrade"
+    "stream"
    ],
    "tier": null,
    "timing_why": "free agent, immediate",
@@ -344,13 +234,13 @@
     }
    ],
    "value_terms": {
-    "J": 9.149,
+    "J": 9.015,
     "acq": 1,
     "bid": 0,
-    "dS_W": 1.552,
-    "dS_W1": 7.112,
-    "dS_play": 2.598,
-    "dS_rest": 2.31,
+    "dS_W": 1.484,
+    "dS_W1": 7.026,
+    "dS_play": 2.601,
+    "dS_rest": 2.312,
     "d_boom": 0.0,
     "d_depth": 0,
     "p_playoffs": 1.0,
@@ -363,14 +253,14 @@
    "values": {
     "add": {
      "boom": null,
-     "ros": 14.637435345194518,
+     "ros": 14.648787846072986,
      "ros_src": "season blend / 17 x HH/BSB K ratio 1.40 (approximation)",
-     "w": 14.478060000000003,
-     "w1": 18.455549010989014,
+     "w": 14.410474,
+     "w1": 18.36939542857143,
      "w1_src": "W projection x own implied total 29.0/22.8"
     },
     "drop": {
-     "ros": 12.038879407508299,
+     "ros": 12.048216520590364,
      "ros_src": "season blend / 17 x HH/BSB K ratio 1.40 (approximation)",
      "w": 12.925996000000001,
      "w1": 11.343220979591838
@@ -379,60 +269,7 @@
    "when": "before kickoff Thu Oct 22, 8:15 pm ET"
   },
   {
-   "J": 9.544,
-   "add_key": null,
-   "add_name": null,
-   "at": null,
-   "deadline": "2026-10-25T13:00-04:00",
-   "drop_name": null,
-   "eff": "W",
-   "fam": "WR",
-   "gain": 9.54,
-   "gates": {
-    "add": null,
-    "drop": null
-   },
-   "id": "HH:lineup:W/R",
-   "kind": "lineup",
-   "league": "HH",
-   "phase": "early",
-   "provisional": false,
-   "reasons": [
-    "+9.54 this week (Drake London slides to WR)"
-   ],
-   "sit": "Braelon Allen",
-   "slot": "W/R",
-   "spot_id": null,
-   "spot_kind": null,
-   "spot_label": null,
-   "srcs": [
-    "lineup"
-   ],
-   "start": "Ja'Marr Chase",
-   "tier": null,
-   "timing_why": "",
-   "tm": "CIN",
-   "txns": [
-    {
-     "key": "jamarr chase",
-     "op": "start",
-     "player": "Ja'Marr Chase",
-     "slot": "W/R"
-    },
-    {
-     "key": "braelon allen",
-     "op": "bench",
-     "player": "Braelon Allen"
-    }
-   ],
-   "value_terms": {
-    "J": 9.544,
-    "dS_W": 9.544
-   },
-   "when": "before kickoff Sun Oct 25, 1:00 pm ET"
-  },
-  {
-   "J": 2.812,
+   "J": 3.058,
    "add_key": null,
    "add_name": null,
    "at": null,
@@ -440,21 +277,21 @@
    "drop_name": null,
    "eff": "W",
    "fam": "QB",
-   "gain": 2.81,
+   "gain": 3.06,
    "gates": {
     "add": null,
     "drop": null
    },
-   "id": "HH:lineup:Q/W/R/T",
+   "id": "HH:lineup:QB",
    "kind": "lineup",
    "league": "HH",
    "phase": "early",
    "provisional": false,
    "reasons": [
-    "+2.81 this week"
+    "+3.06 this week (Dak Prescott slides to Q/W/R/T)"
    ],
    "sit": "Matthew Stafford",
-   "slot": "Q/W/R/T",
+   "slot": "QB",
    "spot_id": null,
    "spot_kind": null,
    "spot_label": null,
@@ -470,7 +307,7 @@
      "key": "jared goff",
      "op": "start",
      "player": "Jared Goff",
-     "slot": "Q/W/R/T"
+     "slot": "QB"
     },
     {
      "key": "matt stafford",
@@ -479,13 +316,119 @@
     }
    ],
    "value_terms": {
-    "J": 2.812,
-    "dS_W": 2.812
+    "J": 3.058,
+    "dS_W": 3.058
    },
    "when": "before kickoff Sun Oct 25, 4:25 pm ET"
   },
   {
-   "J": 3.651,
+   "J": 8.776,
+   "add_key": null,
+   "add_name": null,
+   "at": null,
+   "deadline": "2026-10-25T13:00-04:00",
+   "drop_name": null,
+   "eff": "W",
+   "fam": "WR",
+   "gain": 8.78,
+   "gates": {
+    "add": null,
+    "drop": null
+   },
+   "id": "HH:lineup:WR",
+   "kind": "lineup",
+   "league": "HH",
+   "phase": "early",
+   "provisional": false,
+   "reasons": [
+    "+8.78 this week"
+   ],
+   "sit": "Rome Odunze",
+   "slot": "WR",
+   "spot_id": null,
+   "spot_kind": null,
+   "spot_label": null,
+   "srcs": [
+    "lineup"
+   ],
+   "start": "Ja'Marr Chase",
+   "tier": null,
+   "timing_why": "",
+   "tm": "CIN",
+   "txns": [
+    {
+     "key": "jamarr chase",
+     "op": "start",
+     "player": "Ja'Marr Chase",
+     "slot": "WR"
+    },
+    {
+     "key": "rome odunze",
+     "op": "bench",
+     "player": "Rome Odunze"
+    }
+   ],
+   "value_terms": {
+    "J": 8.776,
+    "dS_W": 8.776
+   },
+   "when": "before kickoff Sun Oct 25, 1:00 pm ET"
+  },
+  {
+   "J": 4.098,
+   "add_key": null,
+   "add_name": null,
+   "at": null,
+   "deadline": "2026-10-25T20:20-04:00",
+   "drop_name": null,
+   "eff": "W",
+   "fam": "WR",
+   "gain": 4.1,
+   "gates": {
+    "add": null,
+    "drop": null
+   },
+   "id": "HH:lineup:W/R/T",
+   "kind": "lineup",
+   "league": "HH",
+   "phase": "early",
+   "provisional": false,
+   "reasons": [
+    "+4.10 this week"
+   ],
+   "sit": "Braelon Allen",
+   "slot": "W/R/T",
+   "spot_id": null,
+   "spot_kind": null,
+   "spot_label": null,
+   "srcs": [
+    "lineup"
+   ],
+   "start": "Rashee Rice",
+   "tier": null,
+   "timing_why": "",
+   "tm": "KC",
+   "txns": [
+    {
+     "key": "rashee rice",
+     "op": "start",
+     "player": "Rashee Rice",
+     "slot": "W/R/T"
+    },
+    {
+     "key": "braelon allen",
+     "op": "bench",
+     "player": "Braelon Allen"
+    }
+   ],
+   "value_terms": {
+    "J": 4.098,
+    "dS_W": 4.098
+   },
+   "when": "before kickoff Sun Oct 25, 8:20 pm ET"
+  },
+  {
+   "J": 3.649,
    "add_key": null,
    "add_name": null,
    "at": null,
@@ -506,7 +449,7 @@
    "reasons": [
     "+3.65 this week"
    ],
-   "sit": "Kansas City",
+   "sit": "Chiefs",
    "slot": "DEF",
    "spot_id": null,
    "spot_kind": null,
@@ -514,7 +457,7 @@
    "srcs": [
     "lineup"
    ],
-   "start": "Houston",
+   "start": "Texans",
    "tier": null,
    "timing_why": "",
    "tm": "HOU",
@@ -522,18 +465,18 @@
     {
      "key": "DST:HOU",
      "op": "start",
-     "player": "Houston",
+     "player": "Texans",
      "slot": "DEF"
     },
     {
      "key": "DST:KC",
      "op": "bench",
-     "player": "Kansas City"
+     "player": "Chiefs"
     }
    ],
    "value_terms": {
-    "J": 3.651,
-    "dS_W": 3.651
+    "J": 3.649,
+    "dS_W": 3.649
    },
    "when": "before kickoff Sun Oct 25, 1:00 pm ET"
   },
@@ -647,10 +590,10 @@
  "notes": [],
  "rejected": [
   {
-   "J": -0.104,
+   "J": -0.12,
    "key": "DST:DAL",
    "name": "Dallas Cowboys",
-   "reason": "J -0.10 < 3.0 at its best spot (Kansas City) \u2014 J -0.10 = 1.0x+0.00 (wk W) + 0.8x+1.75 (W+1) + 0.8x+0.00 (rest, mean of wks 9-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.00 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
+   "reason": "J -0.12 < 3.0 at its best spot (Chiefs) \u2014 J -0.12 = 1.0x+0.00 (wk W) + 0.8x+1.73 (W+1) + 0.8x+0.00 (rest, mean of wks 9-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.00 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
     "week-8 DEF stream: Dallas Cowboys 25.5 vs your best 23.8 (W line re-scored on the week-8 opponent implied total 18.5)"
    ]
@@ -659,7 +602,7 @@
    "J": -1.106,
    "key": "DST:TB",
    "name": "Tampa Bay Buccaneers",
-   "reason": "J -1.11 < 3.0 at its best spot (Kansas City) \u2014 J -1.11 = 1.0x+0.00 (wk W) + 0.8x+0.49 (W+1) + 0.8x+0.00 (rest, mean of wks 9-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.00 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
+   "reason": "J -1.11 < 3.0 at its best spot (Chiefs) \u2014 J -1.11 = 1.0x+0.00 (wk W) + 0.8x+0.49 (W+1) + 0.8x+0.00 (rest, mean of wks 9-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.00 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
     "week-8 DEF stream: Tampa Bay Buccaneers 24.3 vs your best 23.8 (W line re-scored on the week-8 opponent implied total 21.0)"
    ]
@@ -668,22 +611,22 @@
    "J": -1.377,
    "key": "DST:TEN",
    "name": "Tennessee Titans",
-   "reason": "J -1.38 < 3.0 at its best spot (Kansas City) \u2014 J -1.38 = 1.0x+0.00 (wk W) + 0.8x+0.15 (W+1) + 0.8x+0.00 (rest, mean of wks 9-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.00 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
+   "reason": "J -1.38 < 3.0 at its best spot (Chiefs) \u2014 J -1.38 = 1.0x+0.00 (wk W) + 0.8x+0.15 (W+1) + 0.8x+0.00 (rest, mean of wks 9-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.00 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
-    "DEF weekly upgrade: Tennessee Titans 25.9 vs starter Kansas City 23.8"
+    "DEF weekly upgrade: Tennessee Titans 25.9 vs starter Chiefs 23.8"
    ]
   },
   {
-   "J": -0.991,
+   "J": -0.99,
    "key": "brenton strange",
    "name": "Brenton Strange",
-   "reason": "best spot Rome Odunze: Tier B held, but Rome Odunze (10.6) projects at or above him (0.0) this week",
+   "reason": "best spot Rome Odunze: Tier B held, but Rome Odunze (10.5) projects at or above him (0.0) this week",
    "reasons": [
     "breakout tier B: 76% snaps, 17% targets, 23% air yds; no market line yet, and no Sleeper line either; held (wk5: 81% snaps, 21% targets, 33% air yds)"
    ]
   },
   {
-   "J": 4.432,
+   "J": 4.444,
    "key": "cam dicker",
    "name": "Cameron Dicker",
    "reason": "its best spot (Cairo Santos) went to Brandon Aubrey at higher value",
@@ -695,7 +638,7 @@
    "J": -1.054,
    "key": "chig okonkwo",
    "name": "Chig Okonkwo",
-   "reason": "best spot Rome Odunze: Tier B held, but Rome Odunze (10.6) projects at or above him (0.0) this week",
+   "reason": "best spot Rome Odunze: Tier B held, but Rome Odunze (10.5) projects at or above him (0.0) this week",
    "reasons": [
     "breakout tier B: 76% snaps, 18% targets, 17% air yds; no market line yet, and no Sleeper line either; held (wk5: 71% snaps, 24% targets, 25% air yds)"
    ]
@@ -704,9 +647,9 @@
    "J": null,
    "key": "cooper kupp",
    "name": "Cooper Kupp",
-   "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 6.2 under your weakest 10.1",
+   "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 6.2 under your weakest 10.4",
    "reasons": [
-    "breakout tier B: 85% snaps, 20% targets, 18% air yds; Kalshi receiving yds 29 vs Sleeper 32 (-9%) \u2014 a part-time line, under the 35 starter floor"
+    "breakout tier B: 85% snaps, 20% targets, 18% air yds; Kalshi receiving yds 30 vs Sleeper 32 (-7%) \u2014 a part-time line, under the 35 starter floor"
    ]
   },
   {
@@ -722,13 +665,13 @@
    "J": null,
    "key": "dameon pierce",
    "name": "Dameon Pierce",
-   "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 7.2 under your weakest 8.9",
+   "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 6.1 under your weakest 8.6",
    "reasons": [
     "breakout tier B: 95% snaps, 89% of RB touches; no market line yet (Sleeper rushing yds 36); held (wk5: 77% snaps, 70% of RB touches)"
    ]
   },
   {
-   "J": -1.01,
+   "J": -1.015,
    "key": "darnell washington",
    "name": "Darnell Washington",
    "reason": "best spot Rome Odunze: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
@@ -749,34 +692,34 @@
    "J": null,
    "key": "emanuel wilson",
    "name": "Emanuel Wilson",
-   "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 8.1 under your weakest 8.9",
+   "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 8.2 under your weakest 8.6",
    "reasons": [
-    "breakout tier B: 32% snaps, 60% of RB touches; no market line yet (Sleeper rushing yds 35); held (wk5: 59% snaps, 73% of RB touches)"
+    "breakout tier B: 32% snaps, 60% of RB touches; no market line yet (Sleeper rushing yds 36); held (wk5: 59% snaps, 73% of RB touches)"
    ]
   },
   {
    "J": null,
    "key": "george holani",
    "name": "George Holani",
-   "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 5.6 under your weakest 8.9",
+   "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 5.6 under your weakest 8.6",
    "reasons": [
-    "breakout tier B: 58% snaps, 20% of RB touches; no market line yet (Sleeper rushing yds 20)"
+    "breakout tier B: 58% snaps, 20% of RB touches; no market line yet (Sleeper rushing yds 21)"
    ]
   },
   {
    "J": null,
    "key": "jahan dotson",
    "name": "Jahan Dotson",
-   "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 6.0 under your weakest 10.1",
+   "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 6.4 under your weakest 10.4",
    "reasons": [
-    "breakout tier A: 85% snaps, 15% targets, 46% air yds; Kalshi receiving yds 35 vs Sleeper 26 (+34%)"
+    "breakout tier B: 85% snaps, 15% targets, 46% air yds; Kalshi receiving yds 34 vs Sleeper 26 (+32%) \u2014 a part-time line, under the 35 starter floor"
    ]
   },
   {
    "J": null,
    "key": "jakobi meyers",
    "name": "Jakobi Meyers",
-   "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 0.0 under your weakest 10.1",
+   "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 0.0 under your weakest 10.4",
    "reasons": [
     "breakout tier B: 75% snaps, 24% targets, 39% air yds; no market line yet, and no Sleeper line either"
    ]
@@ -785,7 +728,7 @@
    "J": null,
    "key": "jaleel mclaughlin",
    "name": "Jaleel McLaughlin",
-   "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 1.1 under your weakest 8.9",
+   "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 1.1 under your weakest 8.6",
    "reasons": [
     "breakout tier B: 63% snaps, 54% of RB touches; no market line yet (Sleeper rushing yds 6)"
    ]
@@ -803,16 +746,16 @@
    "J": null,
    "key": "kc concepcion",
    "name": "KC Concepcion Jr.",
-   "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 9.6 under your weakest 10.1",
+   "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 9.8 under your weakest 10.4",
    "reasons": [
-    "breakout tier B: 82% snaps, 23% targets, 20% air yds; Kalshi receiving yds 40 vs Sleeper 41 (-1%)"
+    "breakout tier B: 82% snaps, 23% targets, 20% air yds; Kalshi receiving yds 42 vs Sleeper 41 (+2%)"
    ]
   },
   {
    "J": null,
    "key": "keandre lambert smith",
    "name": "KeAndre Lambert-Smith",
-   "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 0.0 under your weakest 10.1",
+   "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 0.0 under your weakest 10.4",
    "reasons": [
     "breakout tier B: 87% snaps, 24% targets, 19% air yds; no market line yet, and no Sleeper line either"
    ]
@@ -821,40 +764,40 @@
    "J": null,
    "key": "keenan allen",
    "name": "Keenan Allen",
-   "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 8.0 under your weakest 10.1",
+   "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 8.2 under your weakest 10.4",
    "reasons": [
     "breakout tier B: 71% snaps, 26% targets, 34% air yds; no market line yet (Sleeper receiving yds 37)"
    ]
   },
   {
-   "J": -1.521,
+   "J": -20.264,
    "key": "kendre miller",
    "name": "Kendre Miller",
-   "reason": "best spot Rome Odunze: Tier B held, but Rome Odunze (10.6) projects at or above him (8.9) this week",
+   "reason": "J -20.26 < 3.0 at its best spot (Chiefs) \u2014 J -20.26 = 1.0x+0.00 (wk W) + 0.8x-23.76 (W+1) + 0.8x+0.04 (rest, mean of wks 9-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+2.12 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
-    "breakout tier B: 44% snaps, 55% of RB touches; Kalshi rushing yds 43 vs Sleeper 37 (+15%); held (wk5: 31% snaps, 50% of RB touches)"
+    "breakout tier A: 44% snaps, 55% of RB touches; Kalshi rushing yds 43 vs Sleeper 37 (+16%); held (wk5: 31% snaps, 50% of RB touches)"
    ]
   },
   {
    "J": null,
    "key": "keon coleman",
    "name": "Keon Coleman",
-   "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 0.0 under your weakest 10.1",
+   "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 0.0 under your weakest 10.4",
    "reasons": [
     "breakout tier B: 85% snaps, 18% targets, 51% air yds; no market line yet, and no Sleeper line either"
    ]
   },
   {
-   "J": -19.445,
+   "J": -0.668,
    "key": "kyle pitts",
    "name": "Kyle Pitts Sr.",
-   "reason": "J -19.45 < 3.0 at its best spot (Kansas City) \u2014 J -19.45 = 1.0x+0.00 (wk W) + 0.8x-23.76 (W+1) + 0.8x+1.14 (rest, mean of wks 9-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+1.58 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
+   "reason": "best spot Rome Odunze: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
-    "breakout tier A: 78% snaps, 21% targets, 17% air yds; Kalshi receiving yds 39 vs Sleeper 34 (+16%)"
+    "breakout tier B: 78% snaps, 21% targets, 17% air yds; Kalshi receiving yds 39 vs Sleeper 34 (+14%)"
    ]
   },
   {
-   "J": -1.015,
+   "J": -1.009,
    "key": "mike mayer",
    "name": "Michael Mayer",
    "reason": "best spot Rome Odunze: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
@@ -863,21 +806,21 @@
    ]
   },
   {
-   "J": -1.589,
+   "J": -1.585,
    "key": "mike wilson",
    "name": "Michael Wilson",
    "reason": "best spot Rome Odunze: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
-    "breakout tier B: 92% snaps, 20% targets, 11% air yds; Kalshi receiving yds 53 vs Sleeper 56 (-6%)"
+    "breakout tier B: 92% snaps, 20% targets, 11% air yds; Kalshi receiving yds 53 vs Sleeper 56 (-5%)"
    ]
   },
   {
    "J": null,
    "key": "pierre strong",
    "name": "Pierre Strong Jr.",
-   "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 4.0 under your weakest 8.9",
+   "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 4.2 under your weakest 8.6",
    "reasons": [
-    "breakout tier B: 55% snaps, 63% of RB touches; Kalshi rushing yds 14 vs Sleeper 15 (-9%) \u2014 a part-time line, under the 40 starter floor"
+    "breakout tier B: 55% snaps, 63% of RB touches; Kalshi rushing yds 14 vs Sleeper 15 (-8%) \u2014 a part-time line, under the 40 starter floor"
    ]
   },
   {
@@ -893,7 +836,7 @@
    "J": null,
    "key": "quentin johnston",
    "name": "Quentin Johnston",
-   "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 0.0 under your weakest 10.1",
+   "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 0.0 under your weakest 10.4",
    "reasons": [
     "breakout tier B: 82% snaps, 8% targets, 38% air yds; no market line yet, and no Sleeper line either"
    ]
@@ -902,7 +845,7 @@
    "J": null,
    "key": "rachaad white",
    "name": "Rachaad White",
-   "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 0.0 under your weakest 8.9",
+   "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 0.0 under your weakest 8.6",
    "reasons": [
     "breakout tier B: 69% snaps, 60% of RB touches; no market line yet, and no Sleeper line either; held (wk5: 60% snaps, 35% of RB touches)"
    ]
@@ -920,9 +863,9 @@
    "J": null,
    "key": "ty tracy",
    "name": "Tyrone Tracy Jr.",
-   "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 6.5 under your weakest 8.9",
+   "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 6.7 under your weakest 8.6",
    "reasons": [
-    "breakout tier B: 38% snaps, 50% of RB touches; Kalshi rushing yds 28 vs Sleeper 24 (+18%) \u2014 a part-time line, under the 40 starter floor"
+    "breakout tier B: 38% snaps, 50% of RB touches; Kalshi rushing yds 28 vs Sleeper 24 (+20%) \u2014 a part-time line, under the 40 starter floor"
    ]
   },
   {
@@ -935,29 +878,20 @@
    ]
   },
   {
-   "J": -1.33,
+   "J": -1.294,
    "key": "tyler allgeier",
    "name": "Tyler Allgeier",
-   "reason": "J -1.33 < 3.0 at its best spot (Rome Odunze) \u2014 J -1.33 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.25 (rest, mean of wks 9-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x-0.32 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
+   "reason": "J -1.29 < 3.0 at its best spot (Rome Odunze) \u2014 J -1.29 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.29 (rest, mean of wks 9-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x-0.28 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
     "breakout tier B: 56% snaps, 54% of RB touches; no market line yet (Sleeper rushing yds 46)",
-    "RB weekly upgrade: Tyler Allgeier 11.2 vs starter Braelon Allen 8.9"
-   ]
-  },
-  {
-   "J": -1.043,
-   "key": "woody marks",
-   "name": "Woody Marks",
-   "reason": "J -1.04 < 3.0 at its best spot (Rome Odunze) \u2014 J -1.04 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.41 (rest, mean of wks 9-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+1.26 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
-   "reasons": [
-    "RB weekly upgrade: Woody Marks 12.6 vs starter Braelon Allen 8.9"
+    "RB weekly upgrade: Tyler Allgeier 11.2 vs starter Braelon Allen 8.6"
    ]
   },
   {
    "J": null,
    "key": "xavier worthy",
    "name": "Xavier Worthy",
-   "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 9.1 under your weakest 10.1",
+   "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 9.0 under your weakest 10.4",
    "reasons": [
     "breakout tier B: 84% snaps, 23% targets, 26% air yds; no market line yet (Sleeper receiving yds 36)"
    ]
@@ -975,7 +909,7 @@
    "J": null,
    "key": "zonovan knight",
    "name": "Zonovan Knight",
-   "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 7.2 under your weakest 8.9",
+   "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 7.2 under your weakest 8.6",
    "reasons": [
     "breakout tier B: 44% snaps, 46% of RB touches; no market line yet (Sleeper rushing yds 34)"
    ]
@@ -985,7 +919,7 @@
   {
    "id": "drop:DST:KC",
    "kind": "spare",
-   "label": "Kansas City",
+   "label": "Chiefs",
    "taken_by": null,
    "tier": 2
   },
@@ -1000,7 +934,7 @@
    "id": "drop:rome odunze",
    "kind": "drop",
    "label": "Rome Odunze",
-   "taken_by": "Foster Moreau",
+   "taken_by": null,
    "tier": 3
   }
  ],
@@ -1020,7 +954,7 @@
   "p_playoffs": 1.0
  },
  "winprob": {
-  "mean": 308.4760275935675,
+  "mean": 301.8156432153672,
   "note": "sampled on the planner's final lineup",
   "p_med": null,
   "p_opp": null
