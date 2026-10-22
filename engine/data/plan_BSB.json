@@ -89,29 +89,29 @@
    "K": "jason myers",
    "QB": "matt stafford",
    "RB1": "josh jacobs",
-   "RB2": "marshawn lloyd",
+   "RB2": "pierre strong",
    "TE": "sam laporta",
    "W/R/T": "isaiah likely",
-   "WR1": "jaxon smith njigba",
-   "WR2": "drake london",
+   "WR1": "drake london",
+   "WR2": "jaxon smith njigba",
    "WR3": "malik washington"
   },
-  "optimal_before_moves": 128.92,
+  "optimal_before_moves": 129.94,
   "slots": {
    "DEF": "Vikings",
    "K": "Jason Myers",
    "QB": "Matthew Stafford",
    "RB1": "Josh Jacobs",
-   "RB2": "MarShawn Lloyd",
+   "RB2": "Pierre Strong Jr.",
    "TE": "Sam LaPorta",
    "W/R/T": "Isaiah Likely",
-   "WR1": "Jaxon Smith-Njigba",
-   "WR2": "Drake London",
+   "WR1": "Drake London",
+   "WR2": "Jaxon Smith-Njigba",
    "WR3": "Malik Washington"
   },
-  "total": 128.92
+  "total": 129.94
  },
- "made": "2026-10-22T03:29-04:00",
+ "made": "2026-10-22T09:11-04:00",
  "mechanics": [
   {
    "rule": "A never-rostered free agent is free until his game kicks off",
@@ -149,7 +149,62 @@
    "verified": true
   }
  ],
- "moves": [],
+ "moves": [
+  {
+   "J": 0.061,
+   "add_key": null,
+   "add_name": null,
+   "at": null,
+   "deadline": "2026-10-25T16:25-04:00",
+   "drop_name": null,
+   "eff": "W",
+   "fam": "RB",
+   "gain": 0.06,
+   "gates": {
+    "add": null,
+    "drop": null
+   },
+   "id": "BSB:lineup:RB2",
+   "kind": "lineup",
+   "league": "BSB",
+   "phase": "early",
+   "provisional": true,
+   "reasons": [
+    "+0.06 this week (Josh Jacobs slides to RB1)",
+    "inside the 1.5-pt noise band"
+   ],
+   "sit": "MarShawn Lloyd",
+   "slot": "RB2",
+   "spot_id": null,
+   "spot_kind": null,
+   "spot_label": null,
+   "srcs": [
+    "lineup"
+   ],
+   "start": "Pierre Strong Jr.",
+   "tier": null,
+   "timing_why": "",
+   "tm": "GB",
+   "txns": [
+    {
+     "key": "pierre strong",
+     "op": "start",
+     "player": "Pierre Strong Jr.",
+     "slot": "RB2"
+    },
+    {
+     "key": "marshawn lloyd",
+     "op": "bench",
+     "player": "MarShawn Lloyd"
+    }
+   ],
+   "value_terms": {
+    "J": 0.061,
+    "dS_W": 0.061
+   },
+   "when": "before kickoff Sun Oct 25, 4:25 pm ET"
+  }
+ ],
  "notes": [],
  "rejected": [
   {
@@ -174,9 +229,9 @@
    "J": null,
    "key": "darnell washington",
    "name": "Darnell Washington",
-   "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 7.0 under your weakest 11.6",
+   "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 7.2 under your weakest 12.0",
    "reasons": [
-    "breakout tier B: 71% snaps, 12% targets, 18% air yds; Kalshi receiving yds 28 vs Sleeper 29 (-3%) \u2014 a part-time line, under the 35 starter floor"
+    "breakout tier B: 71% snaps, 12% targets, 18% air yds; Kalshi receiving yds 29 vs Sleeper 29 (+2%) \u2014 a part-time line, under the 35 starter floor"
    ]
   },
   {
@@ -185,7 +240,7 @@
    "name": "Dylan Sampson",
    "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 14: no player/team",
    "reasons": [
-    "RB weekly upgrade: Dylan Sampson 6.2 vs starter MarShawn Lloyd 4.6"
+    "RB weekly upgrade: Dylan Sampson 6.2 vs starter MarShawn Lloyd 4.4"
    ]
   },
   {
@@ -194,7 +249,7 @@
    "name": "Foster Moreau",
    "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 14: no player/team",
    "reasons": [
-    "depth: Foster Moreau 8.9/wk rest-of-season vs your weakest bench player 3.9 (W projection (no season number))"
+    "depth: Foster Moreau 18.2/wk rest-of-season vs your weakest bench player 3.9 (W projection (no season number))"
    ]
   },
   {
@@ -203,7 +258,7 @@
    "name": "Jahan Dotson",
    "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 14: no player/team",
    "reasons": [
-    "breakout tier B: 85% snaps, 15% targets, 46% air yds; Kalshi receiving yds 33 vs Sleeper 26 (+27%) \u2014 a part-time line, under the 35 starter floor"
+    "breakout tier A: 85% snaps, 15% targets, 46% air yds; Kalshi receiving yds 35 vs Sleeper 26 (+34%)"
    ]
   },
   {
@@ -237,7 +292,7 @@
    "J": null,
    "key": "keandre lambert smith",
    "name": "KeAndre Lambert-Smith",
-   "reason": "sits behind everyone: you carry 7 WRs for 3 slot(s) and he projects 0.0 under your weakest 3.5",
+   "reason": "sits behind everyone: you carry 7 WRs for 3 slot(s) and he projects 0.0 under your weakest 3.6",
    "reasons": [
     "breakout tier B: 87% snaps, 24% targets, 19% air yds; no market line yet, and no Sleeper line either"
    ]
@@ -255,7 +310,7 @@
    "J": null,
    "key": "mike mayer",
    "name": "Michael Mayer",
-   "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 7.4 under your weakest 11.6",
+   "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 7.4 under your weakest 12.0",
    "reasons": [
     "breakout tier B: 79% snaps, 22% targets, 15% air yds; no market line yet (Sleeper receiving yds 29)"
    ]
@@ -306,9 +361,9 @@
   "p_playoffs": 0.9705
  },
  "winprob": {
-  "mean": 128.77968680757482,
+  "mean": 129.83110611923283,
   "note": "sampled on the planner's final lineup",
-  "p_med": 0.6005,
-  "p_opp": 0.6148333333333333
+  "p_med": 0.5568333333333333,
+  "p_opp": 0.562
  }
 }
