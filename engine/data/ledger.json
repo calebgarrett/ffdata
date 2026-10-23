@@ -11272,10 +11272,11 @@
   ],
   "verdict": "WARN",
   "week": 7,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": "2026-10-25T13:00-04:00",
-  "reverses": "8bc71901"
+  "reverses": "8bc71901",
+  "superseded_by": "26661887"
  },
  {
   "id": "dd2a1c1b",
@@ -11387,10 +11388,11 @@
   ],
   "verdict": "BLOCK",
   "week": 7,
-  "status": "blocked",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": null,
-  "reverses": "6da5edb5"
+  "reverses": "6da5edb5",
+  "superseded_by": "cb4e5a7e"
  },
  {
   "id": "d152604e",
@@ -11529,5 +11531,41 @@
   "provisional": true,
   "resolves_at": "2026-10-25T16:25-04:00",
   "reverses": null
+ },
+ {
+  "id": "cb4e5a7e",
+  "ts": "2026-10-22T20:35-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Dallas Cowboys",
+  "call": "stream Dallas Cowboys for week 8, drop San Francisco",
+  "detail": "DEF: DAL 18.5 vs yours Minnesota 26.0 \u2014 edge 7.5 implied pts",
+  "evidence": [
+   "vegas"
+  ],
+  "verdict": "BLOCK",
+  "week": 7,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "b89bfcf1"
+ },
+ {
+  "id": "26661887",
+  "ts": "2026-10-22T20:35-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Alontae Taylor",
+  "call": "start Alontae Taylor at DB",
+  "detail": "over Foyesade Oluokun +14.05",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 7,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": "2026-10-25T13:00-04:00",
+  "reverses": "b0281a8b"
  }
 ]
