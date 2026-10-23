@@ -11448,10 +11448,11 @@
   ],
   "verdict": "PASS",
   "week": 7,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": true,
   "resolves_at": "2026-10-25T16:25-04:00",
-  "reverses": null
+  "reverses": null,
+  "superseded_by": "35c181d6"
  },
  {
   "id": "6288fba2",
@@ -11545,10 +11546,11 @@
   ],
   "verdict": "BLOCK",
   "week": 7,
-  "status": "blocked",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": null,
-  "reverses": "b89bfcf1"
+  "reverses": "b89bfcf1",
+  "superseded_by": "a9417179"
  },
  {
   "id": "26661887",
@@ -11567,5 +11569,42 @@
   "provisional": false,
   "resolves_at": "2026-10-25T13:00-04:00",
   "reverses": "b0281a8b"
+ },
+ {
+  "id": "35c181d6",
+  "ts": "2026-10-23T01:57-04:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Pierre Strong Jr.",
+  "call": "start Pierre Strong Jr. at RB1",
+  "detail": "over MarShawn Lloyd +1.20",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 7,
+  "status": "proposed",
+  "provisional": true,
+  "resolves_at": "2026-10-25T16:25-04:00",
+  "reverses": "5c9fd922"
+ },
+ {
+  "id": "a9417179",
+  "ts": "2026-10-23T01:57-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Dallas Cowboys",
+  "call": "stream Dallas Cowboys for week 8, drop 49ers",
+  "detail": "DEF: DAL 18.5 vs yours Vikings 26.0 \u2014 edge 7.5 implied pts",
+  "evidence": [
+   "vegas"
+  ],
+  "verdict": "BLOCK",
+  "week": 7,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "cb4e5a7e"
  }
 ]
