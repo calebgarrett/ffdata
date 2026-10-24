@@ -11,7 +11,7 @@
  "excluded": [
   {
    "player": "Dak Prescott",
-   "reason": "gate: G6-magnitude 37.71992391199407 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex: 3 QBs for 2 QB-eligible slots \u2014 QB3 is by"
+   "reason": "gate: G6-magnitude 37.924607547254695 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex: 3 QBs for 2 QB-eligible slots \u2014 QB3 is b"
   },
   {
    "player": "Jaylen Warren",
@@ -35,7 +35,7 @@
   },
   {
    "player": "Jared Goff",
-   "reason": "gate: G3-role NFL depth-chart role not checked; G6-magnitude 40.31676669513382 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex:"
+   "reason": "gate: G3-role NFL depth-chart role not checked; G6-magnitude 40.137909281783934 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex"
   },
   {
    "player": "Rashee Rice",
@@ -43,7 +43,7 @@
   },
   {
    "player": "Matthew Stafford",
-   "reason": "gate: G6-magnitude 35.692560832375094 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex: 3 QBs for 2 QB-eligible slots \u2014 QB3 is b"
+   "reason": "gate: G6-magnitude 35.893022277201666 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex: 3 QBs for 2 QB-eligible slots \u2014 QB3 is b"
   },
   {
    "player": "Braelon Allen",
@@ -118,10 +118,10 @@
    "S": "kam curl",
    "TE": "trey mcbride",
    "W/R": "drake london",
-   "W/R/T": "jameson williams",
-   "WR": "jamarr chase"
+   "W/R/T": "jamarr chase",
+   "WR": "jameson williams"
   },
-  "optimal_before_moves": 308.41,
+  "optimal_before_moves": 308.67,
   "slots": {
    "CB": "Cooper DeJean",
    "D": "Carson Schwesinger",
@@ -136,12 +136,12 @@
    "S": "Kam Curl",
    "TE": "Trey McBride",
    "W/R": "Drake London",
-   "W/R/T": "Jameson Williams",
-   "WR": "Ja'Marr Chase"
+   "W/R/T": "Ja'Marr Chase",
+   "WR": "Jameson Williams"
   },
-  "total": 308.41
+  "total": 308.67
  },
- "made": "2026-10-24T15:00-04:00",
+ "made": "2026-10-24T17:33-04:00",
  "mechanics": [
   {
    "rule": "Free agents are immediate unless his game is in progress",
@@ -278,7 +278,7 @@
    "J": null,
    "key": "cooper kupp",
    "name": "Cooper Kupp",
-   "reason": "sits behind everyone: you carry 5 WRs for 1 slot(s) and he projects 6.3 under your weakest 10.9",
+   "reason": "sits behind everyone: you carry 5 WRs for 1 slot(s) and he projects 6.3 under your weakest 10.8",
    "reasons": [
     "breakout tier B: 85% snaps, 20% targets, 18% air yds; Kalshi receiving yds 30 vs Sleeper 32 (-8%) \u2014 a part-time line, under the 35 starter floor"
    ]
@@ -296,9 +296,19 @@
    "J": null,
    "key": "dameon pierce",
    "name": "Dameon Pierce",
-   "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 5.4 under your weakest 8.6",
+   "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 5.3 under your weakest 8.6",
    "reasons": [
     "breakout tier B: 95% snaps, 89% of RB touches; no market line yet (Sleeper rushing yds 37); held (wk5: 77% snaps, 70% of RB touches)"
+   ]
+  },
+  {
+   "J": null,
+   "key": "darius cooper",
+   "name": "Darius Cooper",
+   "reason": "no roster spot exists",
+   "reasons": [
+    "WR weekly upgrade: Darius Cooper 27.8 vs starter Jameson Williams 12.4",
+    "depth: Darius Cooper 15.2/wk rest-of-season vs your weakest bench WR 8.6 (positional median 15.2 \u2014 no season number; the W projection 27.8 alone does not carry a season)"
    ]
   },
   {
@@ -325,14 +335,14 @@
    "name": "Emanuel Wilson",
    "reason": "no roster spot exists",
    "reasons": [
-    "breakout tier A: 32% snaps, 60% of RB touches; Kalshi rushing yds 50 vs Sleeper 42 (+20%); held (wk5: 59% snaps, 73% of RB touches)"
+    "breakout tier A: 32% snaps, 60% of RB touches; Kalshi rushing yds 50 vs Sleeper 42 (+19%); held (wk5: 59% snaps, 73% of RB touches)"
    ]
   },
   {
    "J": null,
    "key": "jahan dotson",
    "name": "Jahan Dotson",
-   "reason": "sits behind everyone: you carry 5 WRs for 1 slot(s) and he projects 6.4 under your weakest 10.9",
+   "reason": "sits behind everyone: you carry 5 WRs for 1 slot(s) and he projects 6.4 under your weakest 10.8",
    "reasons": [
     "breakout tier B: 85% snaps, 15% targets, 46% air yds; Kalshi receiving yds 34 vs Sleeper 26 (+30%) \u2014 a part-time line, under the 35 starter floor"
    ]
@@ -341,7 +351,7 @@
    "J": null,
    "key": "jakobi meyers",
    "name": "Jakobi Meyers",
-   "reason": "sits behind everyone: you carry 5 WRs for 1 slot(s) and he projects 0.0 under your weakest 10.9",
+   "reason": "sits behind everyone: you carry 5 WRs for 1 slot(s) and he projects 0.0 under your weakest 10.8",
    "reasons": [
     "breakout tier B: 75% snaps, 24% targets, 39% air yds; no market line yet, and no Sleeper line either"
    ]
@@ -350,7 +360,7 @@
    "J": null,
    "key": "jaleel mclaughlin",
    "name": "Jaleel McLaughlin",
-   "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 1.2 under your weakest 8.6",
+   "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 1.1 under your weakest 8.6",
    "reasons": [
     "breakout tier B: 63% snaps, 54% of RB touches; no market line yet (Sleeper rushing yds 6)"
    ]
@@ -368,16 +378,16 @@
    "J": null,
    "key": "kc concepcion",
    "name": "KC Concepcion Jr.",
-   "reason": "sits behind everyone: you carry 5 WRs for 1 slot(s) and he projects 10.1 under your weakest 10.9",
+   "reason": "sits behind everyone: you carry 5 WRs for 1 slot(s) and he projects 10.3 under your weakest 10.8",
    "reasons": [
-    "breakout tier B: 82% snaps, 23% targets, 20% air yds; Kalshi receiving yds 42 vs Sleeper 41 (+4%)"
+    "breakout tier B: 82% snaps, 23% targets, 20% air yds; Kalshi receiving yds 43 vs Sleeper 41 (+6%)"
    ]
   },
   {
    "J": null,
    "key": "keandre lambert smith",
    "name": "KeAndre Lambert-Smith",
-   "reason": "sits behind everyone: you carry 5 WRs for 1 slot(s) and he projects 0.0 under your weakest 10.9",
+   "reason": "sits behind everyone: you carry 5 WRs for 1 slot(s) and he projects 0.0 under your weakest 10.8",
    "reasons": [
     "breakout tier B: 87% snaps, 24% targets, 19% air yds; no market line yet, and no Sleeper line either"
    ]
@@ -386,9 +396,9 @@
    "J": null,
    "key": "keenan allen",
    "name": "Keenan Allen",
-   "reason": "sits behind everyone: you carry 5 WRs for 1 slot(s) and he projects 10.7 under your weakest 10.9",
+   "reason": "sits behind everyone: you carry 5 WRs for 1 slot(s) and he projects 10.7 under your weakest 10.8",
    "reasons": [
-    "breakout tier B: 71% snaps, 26% targets, 34% air yds; Kalshi receiving yds 44 vs Sleeper 42 (+5%)"
+    "breakout tier B: 71% snaps, 26% targets, 34% air yds; Kalshi receiving yds 45 vs Sleeper 42 (+6%)"
    ]
   },
   {
@@ -404,18 +414,9 @@
    "J": null,
    "key": "keon coleman",
    "name": "Keon Coleman",
-   "reason": "sits behind everyone: you carry 5 WRs for 1 slot(s) and he projects 0.0 under your weakest 10.9",
+   "reason": "sits behind everyone: you carry 5 WRs for 1 slot(s) and he projects 0.0 under your weakest 10.8",
    "reasons": [
     "breakout tier B: 85% snaps, 18% targets, 51% air yds; no market line yet, and no Sleeper line either"
-   ]
-  },
-  {
-   "J": null,
-   "key": "konata mumpfield",
-   "name": "Konata Mumpfield",
-   "reason": "no roster spot exists",
-   "reasons": [
-    "WR weekly upgrade: Konata Mumpfield 24.8 vs starter Jameson Williams 12.3"
    ]
   },
   {
@@ -424,7 +425,16 @@
    "name": "Kyle Pitts Sr.",
    "reason": "no roster spot exists",
    "reasons": [
-    "breakout tier B: 78% snaps, 21% targets, 17% air yds; Kalshi receiving yds 39 vs Sleeper 34 (+14%)"
+    "breakout tier B: 78% snaps, 21% targets, 17% air yds; Kalshi receiving yds 38 vs Sleeper 34 (+12%)"
+   ]
+  },
+  {
+   "J": null,
+   "key": "makai lemon",
+   "name": "Makai Lemon",
+   "reason": "no roster spot exists",
+   "reasons": [
+    "WR weekly upgrade: Makai Lemon 14.8 vs starter Jameson Williams 12.4"
    ]
   },
   {
@@ -442,7 +452,7 @@
    "name": "Michael Wilson",
    "reason": "no roster spot exists",
    "reasons": [
-    "breakout tier B: 92% snaps, 20% targets, 11% air yds; Kalshi receiving yds 53 vs Sleeper 56 (-6%)",
+    "breakout tier B: 92% snaps, 20% targets, 11% air yds; Kalshi receiving yds 53 vs Sleeper 56 (-5%)",
     "depth: Michael Wilson 11.8/wk rest-of-season vs your weakest bench WR 8.6 (W projection 11.8 (usage says starter; the preseason number is stale))"
    ]
   },
@@ -450,7 +460,7 @@
    "J": null,
    "key": "quentin johnston",
    "name": "Quentin Johnston",
-   "reason": "sits behind everyone: you carry 5 WRs for 1 slot(s) and he projects 0.0 under your weakest 10.9",
+   "reason": "sits behind everyone: you carry 5 WRs for 1 slot(s) and he projects 0.0 under your weakest 10.8",
    "reasons": [
     "breakout tier B: 82% snaps, 8% targets, 38% air yds; no market line yet, and no Sleeper line either"
    ]
@@ -468,9 +478,9 @@
    "J": null,
    "key": "ty tracy",
    "name": "Tyrone Tracy Jr.",
-   "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 6.6 under your weakest 8.6",
+   "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 6.5 under your weakest 8.6",
    "reasons": [
-    "breakout tier B: 38% snaps, 50% of RB touches; Kalshi rushing yds 28 vs Sleeper 24 (+17%) \u2014 a part-time line, under the 40 starter floor"
+    "breakout tier B: 38% snaps, 50% of RB touches; Kalshi rushing yds 27 vs Sleeper 24 (+16%) \u2014 a part-time line, under the 40 starter floor"
    ]
   },
   {
@@ -488,8 +498,8 @@
    "name": "Xavier Worthy",
    "reason": "no roster spot exists",
    "reasons": [
-    "breakout tier A: 84% snaps, 23% targets, 26% air yds; Kalshi receiving yds 53 vs Sleeper 46 (+16%)",
-    "depth: Xavier Worthy 12.3/wk rest-of-season vs your weakest bench WR 8.6 (W projection 12.3 (usage says starter; the preseason number is stale))"
+    "breakout tier B: 84% snaps, 23% targets, 26% air yds; Kalshi receiving yds 51 vs Sleeper 45 (+14%)",
+    "depth: Xavier Worthy 12.0/wk rest-of-season vs your weakest bench WR 8.6 (W projection 12.0 (usage says starter; the preseason number is stale))"
    ]
   },
   {
@@ -519,7 +529,7 @@
   "p_playoffs": 1.0
  },
  "winprob": {
-  "mean": 308.51149539663675,
+  "mean": 309.2033070889795,
   "note": "sampled on the planner's final lineup",
   "p_med": null,
   "p_opp": null
