@@ -452,8 +452,33 @@ def _week_inputs(f, changes, t):
             vals[a.key] = None if (a.kicked or late) else a.pts_w
         else:
             vals[a.key] = f.value(a, t)
+    # a kicker or defense is fungible (the doctrine behind every stream call): cutting
+    # one does not leave the slot empty in later weeks, it leaves the best free one, so
+    # weeks after W value the cut DEF/K at the stream the engine will make (10-23: the
+    # Chiefs for Walker read as -18.7 next week — an empty DEF slot the week the Texans
+    # sat — while the stream board already preferred the free Cowboys)
+    if t != W:
+        for add, drop, eff in changes:
+            if drop is None or drop.fam not in ('DEF', 'K') or drop.key not in gone: continue
+            repl = _stream_value(f, drop.fam, t)
+            if repl is None: continue
+            rk = f'__stream:{drop.fam}:{t}'
+            if rk in vals: continue
+            rows.append(dict(key=rk, elig=drop.elig)); vals[rk] = repl
     rows.sort(key=lambda r: r['key'])
     return rows, vals, locks
+
+
+def _stream_value(f, fam, t):
+    """The best free DEF/K's value in week t (W+1 or a rest week), or None."""
+    if not hasattr(f, 'best_fa'): return None
+    cache = f.__dict__.setdefault('_stream_cache', {})
+    key = (fam, t if t == f.week + 1 else 'rest')
+    if key not in cache:
+        best = f.best_fa(fam, 'rest' if key[1] == 'rest' else t, n=1)
+        cache[key] = (f.value(best[0], t) if best else None)
+    v = cache[key]
+    return (v if v is None or v > 0 else None)
 
 
 class Objective:
@@ -508,7 +533,8 @@ class Objective:
         dB = self.boom(changes) - self.boom([])
         # a bench player cut is depth lost: his rest-of-season per-week value never shows in
         # the optimal-lineup terms (he was not starting), so it is charged here (10-18)
-        dDepth = -sum((d.ros_pw or 0.0) for a, d, _ in changes if a is not None and d is not None and d.slot == 'BN')
+        dDepth = -sum((d.ros_pw or 0.0) if d.fam not in ('DEF', 'K') else max(0.0, (d.ros_pw or 0.0) - (_stream_value(f, d.fam, f.rest_weeks[0] if f.rest_weeks else W1) or 0.0))
+                      for a, d, _ in changes if a is not None and d is not None and d.slot == 'BN')      # a spare DEF/K is depth only above the best free one
         acq = costs.get('acq', 0); bid = costs.get('bid', 0) or 0; txn = costs.get('txn', 0)
         pen_fab = self.mech.fab_cost(bid) if getattr(self, 'mech', None) is not None else K_FAB * bid
         pen_acq = K_ACQ.get(f.league, 0.0) * acq * RU.acq_price(f.now, getattr(f, 'acq_left', None))
@@ -573,7 +599,11 @@ def pair_block(f, c, s, repl):
         if dv > xv:
             return f'{s.label} is worth more over replacement at his position ({dv:+.1f}/wk) than the add at his ({xv:+.1f}/wk)'
     if s.kind == 'spare':
-        if not (c.tier == 'A' or (x.fam == s.fam and ({'stream', 'hole', 'upgrade'} & c.srcs))):
+        # a priority-1 registry add_yes is a role a PERSON verified — as strong as Tier A
+        # (10-23: Quay Walker, every-down LB, the D flex; IDP never has a market, so the
+        # breakout tiers cannot see him)
+        verified = (getattr(x.registry, 'add_yes', None) == 1)
+        if not (c.tier == 'A' or verified or (x.fam == s.fam and ({'stream', 'hole', 'upgrade'} & c.srcs))):
             return f'{s.label} is the spare {s.fam}: a spot for a Tier-A add or a same-family stream only (~1 pt/wk on its own, 09-24)'
     if s.kind == 'swap' and x.fam != s.fam:
         return f'{s.label} is your only {s.fam}: a one-for-one {s.fam} swap only'

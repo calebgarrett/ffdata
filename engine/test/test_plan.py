@@ -314,6 +314,24 @@ p = PL.plan_facts(f, ev)
 case('superflex: QB3 is never the drop', not any(t['op'] == 'drop' and t['key'] == NK(qb3) for m in p.moves for t in m['txns']), p.summary())
 case('...he is listed as not a clean drop, with G14', any(e['player'] == qb3 and 'G14' in e['reason'] for e in p.excluded), str(p.excluded))
 
+# ---------------------------------------------------------------- 8a2. a DEF/K is fungible in later weeks (10-23: Quay Walker for the Chiefs)
+# HH: the IDP flex holds a LB on bye; the spare DEF covers next week's DEF bye. A verified
+# every-down LB (registry add_yes priority 1) for the spare DEF: this week +LB, and next
+# week's DEF slot is NOT empty — the engine streams the best free DEF — so W+1 is not a
+# -18 and the depth term does not charge the spare's whole season. The move ships.
+r8a2 = hh_roster(extra_bench=[('BN', 'Kansas City', 'DEF', 'KC', 18.0, 'none'), ('BN', nm(), 'CB', 'TEN', 13.0, 'none')])
+_lb_bye = [r for r in r8a2 if r[0] == 'D'][0]
+walker = 'Quayshawn Ironmonger'
+f, st, pr = league('HH', r8a2, fas=[(walker, 'LB', 'LV', 19.5), ('Dallas Cowboys', 'DEF', 'DAL', 17.5)],
+                   kicks={_lb_bye[3]: None}, byes={WEEK: {_lb_bye[3]}, W1: {"BUF"}},
+                   registry=dict(verified={NK(walker): dict(priority=1, why='every-down LB (test)', team='LV', pos='LB', as_of=NOW.date().isoformat())}))
+p = PL.plan_facts(f, dict())
+m8a2 = next((m for m in p.moves if m.get('add_key') == NK(walker)), None)
+case('fungible DEF: a verified LB takes the spare DEF for the IDP flex', m8a2 is not None, p.summary())
+case('...the drop is the spare DEF, not a skill player', m8a2 is not None and m8a2.get('spot_kind') == 'spare', m8a2 and (m8a2.get('spot_kind'), m8a2.get('spot_id')))
+case('...next week is valued with the best free DEF in the slot, not an empty slot', m8a2 is not None and m8a2['value_terms']['dS_W1'] > -5.0, m8a2 and m8a2['value_terms'])
+case('...and the spare DEF is not charged as depth beyond the free replacement', m8a2 is not None and m8a2['value_terms']['d_depth'] > -2.0, m8a2 and m8a2['value_terms'])
+
 # ---------------------------------------------------------------- 8b. FAB policy (Caleb, 10-13: every policy decision maximizes P(win the league))
 # A firm claim (hole cover) bids to WIN it — the league's 75th-pct winning bid — from
 # the money above the reserve; the reserve is for a Tier-A player and steps down.

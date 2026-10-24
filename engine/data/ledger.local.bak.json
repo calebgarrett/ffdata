@@ -10949,10 +10949,11 @@
   ],
   "verdict": "WARN",
   "week": 7,
-  "status": "proposed",
+  "status": "executed",
   "provisional": true,
   "resolves_at": "2026-10-25T13:00-04:00",
-  "reverses": null
+  "reverses": null,
+  "status_ts": "2026-10-22T17:56-04:00"
  },
  {
   "id": "feadbe0e",
@@ -10986,10 +10987,11 @@
   ],
   "verdict": "WARN",
   "week": 7,
-  "status": "proposed",
+  "status": "executed",
   "provisional": false,
   "resolves_at": "2026-10-25T16:25-04:00",
-  "reverses": "6ffd95d3"
+  "reverses": "6ffd95d3",
+  "status_ts": "2026-10-22T17:56-04:00"
  },
  {
   "id": "afd89d60",
@@ -11135,10 +11137,11 @@
   ],
   "verdict": "WARN",
   "week": 7,
-  "status": "proposed",
+  "status": "executed",
   "provisional": true,
   "resolves_at": "2026-10-25T13:00-04:00",
-  "reverses": null
+  "reverses": null,
+  "status_ts": "2026-10-22T17:56-04:00"
  },
  {
   "id": "8bc71901",
@@ -11250,10 +11253,11 @@
   ],
   "verdict": "WARN",
   "week": 7,
-  "status": "proposed",
+  "status": "executed",
   "provisional": false,
   "resolves_at": "2026-10-25T20:20-04:00",
-  "reverses": "b52dc86d"
+  "reverses": "b52dc86d",
+  "status_ts": "2026-10-22T17:56-04:00"
  },
  {
   "id": "b0281a8b",
@@ -11268,10 +11272,11 @@
   ],
   "verdict": "WARN",
   "week": 7,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": "2026-10-25T13:00-04:00",
-  "reverses": "8bc71901"
+  "reverses": "8bc71901",
+  "superseded_by": "26661887"
  },
  {
   "id": "dd2a1c1b",
@@ -11383,10 +11388,11 @@
   ],
   "verdict": "BLOCK",
   "week": 7,
-  "status": "blocked",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": null,
-  "reverses": "6da5edb5"
+  "reverses": "6da5edb5",
+  "superseded_by": "cb4e5a7e"
  },
  {
   "id": "d152604e",
@@ -11422,10 +11428,11 @@
   ],
   "verdict": "WARN",
   "week": 7,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": "2026-10-25T16:25-04:00",
-  "reverses": "29eab55a"
+  "reverses": "29eab55a",
+  "superseded_by": "1a511f1a"
  },
  {
   "id": "5c9fd922",
@@ -11441,10 +11448,11 @@
   ],
   "verdict": "PASS",
   "week": 7,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": true,
   "resolves_at": "2026-10-25T16:25-04:00",
-  "reverses": null
+  "reverses": null,
+  "superseded_by": "35c181d6"
  },
  {
   "id": "6288fba2",
@@ -11460,19 +11468,173 @@
   ],
   "verdict": "WARN",
   "week": 7,
+  "status": "superseded",
+  "provisional": false,
+  "resolves_at": "2026-10-25T13:00-04:00",
+  "reverses": "d152604e",
+  "superseded_by": "04bdc4b8"
+ },
+ {
+  "id": "1a511f1a",
+  "ts": "2026-10-22T14:10-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Jared Goff",
+  "call": "start Jared Goff at QB",
+  "detail": "over Matthew Stafford +3.06",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 7,
+  "status": "executed",
+  "provisional": false,
+  "resolves_at": "2026-10-25T16:25-04:00",
+  "reverses": "0057862b",
+  "status_ts": "2026-10-22T17:56-04:00"
+ },
+ {
+  "id": "04bdc4b8",
+  "ts": "2026-10-22T14:10-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Ja'Marr Chase",
+  "call": "start Ja'Marr Chase at WR",
+  "detail": "over Rome Odunze +8.78",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 7,
+  "status": "executed",
+  "provisional": false,
+  "resolves_at": "2026-10-25T13:00-04:00",
+  "reverses": "6288fba2",
+  "status_ts": "2026-10-22T17:56-04:00"
+ },
+ {
+  "id": "f186684d",
+  "ts": "2026-10-22T17:56-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Matthew Stafford",
+  "call": "start Matthew Stafford at Q/W/R/T",
+  "detail": "over Dak Prescott +0.59",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "PASS",
+  "week": 7,
+  "status": "proposed",
+  "provisional": true,
+  "resolves_at": "2026-10-25T16:25-04:00",
+  "reverses": null
+ },
+ {
+  "id": "cb4e5a7e",
+  "ts": "2026-10-22T20:35-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Dallas Cowboys",
+  "call": "stream Dallas Cowboys for week 8, drop San Francisco",
+  "detail": "DEF: DAL 18.5 vs yours Minnesota 26.0 \u2014 edge 7.5 implied pts",
+  "evidence": [
+   "vegas"
+  ],
+  "verdict": "BLOCK",
+  "week": 7,
+  "status": "superseded",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "b89bfcf1",
+  "superseded_by": "a9417179"
+ },
+ {
+  "id": "26661887",
+  "ts": "2026-10-22T20:35-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Alontae Taylor",
+  "call": "start Alontae Taylor at DB",
+  "detail": "over Foyesade Oluokun +14.05",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 7,
   "status": "proposed",
   "provisional": false,
   "resolves_at": "2026-10-25T13:00-04:00",
-  "reverses": "d152604e"
+  "reverses": "b0281a8b"
  },
  {
-  "id": "9cbab6d9",
-  "ts": "2026-10-22T11:40-04:00",
+  "id": "35c181d6",
+  "ts": "2026-10-23T01:57-04:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Pierre Strong Jr.",
+  "call": "start Pierre Strong Jr. at RB1",
+  "detail": "over MarShawn Lloyd +1.20",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 7,
+  "status": "superseded",
+  "provisional": true,
+  "resolves_at": "2026-10-25T16:25-04:00",
+  "reverses": "5c9fd922",
+  "superseded_by": "953cb9a5"
+ },
+ {
+  "id": "a9417179",
+  "ts": "2026-10-23T01:57-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Dallas Cowboys",
+  "call": "stream Dallas Cowboys for week 8, drop 49ers",
+  "detail": "DEF: DAL 18.5 vs yours Vikings 26.0 \u2014 edge 7.5 implied pts",
+  "evidence": [
+   "vegas"
+  ],
+  "verdict": "BLOCK",
+  "week": 7,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "cb4e5a7e"
+ },
+ {
+  "id": "953cb9a5",
+  "ts": "2026-10-23T07:05-04:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Pierre Strong Jr.",
+  "call": "start Pierre Strong Jr. at RB2",
+  "detail": "over MarShawn Lloyd +1.20",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 7,
+  "status": "proposed",
+  "provisional": true,
+  "resolves_at": "2026-10-25T16:25-04:00",
+  "reverses": "35c181d6"
+ },
+ {
+  "id": "590193f4",
+  "ts": "2026-10-23T07:05-04:00",
   "league": "BSB",
   "kind": "add",
   "subject": "Dylan Sampson",
   "call": "add Dylan Sampson (RB) over MarShawn Lloyd",
-  "detail": "+1.81/wk",
+  "detail": "+2.11/wk",
   "evidence": [
    "sleeper"
   ],
@@ -11484,8 +11646,8 @@
   "reverses": null
  },
  {
-  "id": "db5fbbb6",
-  "ts": "2026-10-22T11:40-04:00",
+  "id": "f0a98cb4",
+  "ts": "2026-10-23T07:05-04:00",
   "league": "BSB",
   "kind": "add",
   "subject": "Dallas Cowboys",
