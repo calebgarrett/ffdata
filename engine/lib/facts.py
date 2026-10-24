@@ -203,7 +203,13 @@ class Facts:
         if usage_now == 'start' and proj_w and (base is None or proj_w > base):
             return float(proj_w), f'W projection {proj_w:.1f} (usage says starter; the preseason number is stale)'
         if base is not None: return float(base), src
-        if proj_w and proj_w > 0: return float(proj_w), 'W projection (no season number)'
+        if proj_w and proj_w > 0:
+            # one week's number from the most volatile source is not a season: a player
+            # nobody projected for the year is at best an average starter until usage
+            # says otherwise (10-22: a bad market quote made Moreau 18/wk rest-of-season)
+            med = self.posmed.get(fam)
+            if med and proj_w > med: return float(med), f'positional median {med:.1f} — no season number; the W projection {proj_w:.1f} alone does not carry a season'
+            return float(proj_w), 'W projection (no season number)'
         if designation in RU.TAGGED and fam in self.posmed:
             return self.posmed[fam], f'positional median {self.posmed[fam]:.1f} — tagged {designation}, valued as if healthy'
         return 0.0, 'no number from any source'

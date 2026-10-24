@@ -402,13 +402,16 @@ def build(week=None):
             bb = dict(b, best_mine=dict(name=' / '.join(b['byes']) + ' (bye)', val=0.0), edge=fa['val'])
             R['stream_calls'].append(dict(fam=fam, board=bb, add=cand, drop=drop, gate_add=ga, gate_drop=gd, ledger=e, hole=True,
                                           swap_after=locals().get('swap_after'), alternates=[x['name'] for x in b['rows'] if not x['mine'] and x['val'] is not None][1:3]))
-            # the drop is spent: a breakout add that wanted the same player waits
-            if drop:
-                for x in (R['breakout'] or {}).get('rows', []):
-                    if x['move'].get('drop') == drop['player']:
-                        x['move'] = dict(x['move'], verb='WAIT', when='no clean drop left', drop=None,
-                                         why=f"{drop['player']} is the spot, and it goes to next week's bye cover ({fa['name']}) first; re-check after the game")
-                R['breakout']['summary'] = R['breakout']['summary']
+        # the drop is spent: a breakout add that wanted the same player waits. Every
+        # stream call, not only a bye hole (10-22: the week-8 DEF stream named the
+        # 49ers, the breakout scan named the 49ers for Dotson, the check refused)
+        for c in R['stream_calls']:
+            drop = c.get('drop')
+            if not drop: continue
+            for x in (R['breakout'] or {}).get('rows', []):
+                if x['move'].get('drop') == drop['player']:
+                    x['move'] = dict(x['move'], verb='WAIT', when='no clean drop left', drop=None,
+                                     why=f"{drop['player']} is the spot, and it goes to next week's {'bye cover' if c.get('hole') else c['fam'] + ' stream'} ({c['add']['name']}) first; re-check after the game")
         # ---- win probability: the lineup that wins two results, not the highest mean
         from lib import winprob as WP
         R['win'] = None if FAST else WP.evaluate(st, P, lu, lg, actuals=act)

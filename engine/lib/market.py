@@ -127,17 +127,27 @@ def _mid(r):
     if b<=0: return a
     return (a+b)/2
 
+FITS_VER = 2          # bump when _clean_ladder / the fits change
+MAX_SPREAD = 0.30     # a 2c bid / 88c ask is a placeholder, not a price (10-22: Foster Moreau's
+                      # receiving-yards ladder quoted 0.02/0.88 at EVERY strike; the midpoint 0.45
+                      # at 40+ yards made him a 20-point TE and the planner shipped him over McBride)
+
 def _clean_ladder(rows):
     """[(strike, prob)] sorted ascending by strike, made monotone non-increasing.
 
     Thin strikes quote wide and their BID alone is not monotone (22 soft
     inversions observed in the DET@BUF book), which would produce negative
     implied densities. Use the midpoint and enforce monotonicity by taking the
-    running minimum from the low strike upward."""
+    running minimum from the low strike upward. A strike with no market in it
+    (bid-ask wider than MAX_SPREAD) carries no information and is skipped."""
     pts=[]
     for r in rows:
         try: s=float(r['ticker'].rsplit('-',1)[1])
         except (IndexError,ValueError): continue
+        try:
+            b,a=float(r['yes_bid']),float(r['yes_ask'])
+            if a>0 and b>0 and a-b>MAX_SPREAD: continue
+        except (KeyError,ValueError): pass
         m=_mid(r)
         if m is None or not (0.0<m<1.0): continue
         pts.append((s,m))
@@ -201,7 +211,7 @@ def load_kalshi(path):
     Fits are cached beside the CSV, keyed on its mtime -- 472 ladders take
     ~40s to fit and every command builds Projections()."""
     import os, pickle
-    cache=path+'.fits.pkl'
+    cache=path+f'.fits.v{FITS_VER}.pkl'      # the ladder rules are part of the key: a code change must not read old fits (10-22)
     try:
         if os.path.exists(cache) and os.path.getmtime(cache)>=os.path.getmtime(path):
             return pickle.load(open(cache,'rb'))

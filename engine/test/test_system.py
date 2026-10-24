@@ -701,6 +701,17 @@ import importlib, lib.card as _CARD
 _srcs = open('/home/claude/bsb2/lib/card.py').read()
 case('card: the Final tile requires every active starter to have a final (no one-short tolerance)', 'len(mine) < len(st.starters()) - 1' not in _srcs and "if r['key'] not in have: return None" in _srcs)
 
+# 52. A drop named by ANY stream call is spent (10-22): the week-8 DEF stream named the
+#     49ers and the breakout scan named the 49ers for Dotson on the same card. The spent
+#     rule once lived inside the bye-hole branch only; it covers every stream call now.
+_ff_src = open('/home/claude/bsb2/ff.py').read()
+case('a drop named by any stream call (not only a bye hole) is spent before the breakout rows are read',
+     "for c in R['stream_calls']:" in _ff_src and _ff_src.index("for c in R['stream_calls']:\n            drop = c.get('drop')") > _ff_src.index("R['breakout'] = BK.scan("))
+for _lg52, _R52 in _run49['leagues'].items():
+    _spent52 = {c['drop']['player'] for c in _R52.get('stream_calls', []) if c.get('drop')}
+    case(f'{_lg52}: every breakout row that wanted a spent drop now WAITs',
+         all(x['move']['verb'] == 'WAIT' for x in (_R52['breakout'] or {}).get('rows', []) if _spent52 and (x['move'].get('drop') in _spent52)))
+
 print('=' * 88)
 n = total
 print(f'{n - bad}/{n} behaved as required.' + ('  SYSTEM IS SOUND.' if bad == 0 else f'  {bad} FAILURES — do not ship.'))

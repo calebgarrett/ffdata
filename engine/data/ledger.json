@@ -10930,10 +10930,11 @@
   ],
   "verdict": "WARN",
   "week": 7,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": true,
   "resolves_at": "2026-10-25T16:25-04:00",
-  "reverses": null
+  "reverses": null,
+  "superseded_by": "437b1863"
  },
  {
   "id": "165d896e",
@@ -11565,11 +11566,10 @@
   ],
   "verdict": "WARN",
   "week": 7,
-  "status": "superseded",
+  "status": "proposed",
   "provisional": false,
   "resolves_at": "2026-10-25T13:00-04:00",
-  "reverses": "b0281a8b",
-  "superseded_by": "b6da5105"
+  "reverses": "b0281a8b"
  },
  {
   "id": "35c181d6",
@@ -11589,7 +11589,7 @@
   "provisional": true,
   "resolves_at": "2026-10-25T16:25-04:00",
   "reverses": "5c9fd922",
-  "superseded_by": "9dc2e855"
+  "superseded_by": "953cb9a5"
  },
  {
   "id": "a9417179",
@@ -11610,13 +11610,13 @@
   "reverses": "cb4e5a7e"
  },
  {
-  "id": "9dc2e855",
-  "ts": "2026-10-23T11:55-04:00",
+  "id": "953cb9a5",
+  "ts": "2026-10-23T07:05-04:00",
   "league": "BSB",
   "kind": "start",
   "subject": "Pierre Strong Jr.",
   "call": "start Pierre Strong Jr. at RB2",
-  "detail": "over MarShawn Lloyd +1.09",
+  "detail": "over MarShawn Lloyd +1.20",
   "evidence": [
    "kalshi",
    "sleeper"
@@ -11627,11 +11627,104 @@
   "provisional": true,
   "resolves_at": "2026-10-25T16:25-04:00",
   "reverses": "35c181d6",
-  "superseded_by": "6b906c91"
+  "superseded_by": "170e53de"
  },
  {
-  "id": "95455cca",
-  "ts": "2026-10-23T11:55-04:00",
+  "id": "590193f4",
+  "ts": "2026-10-23T07:05-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Dylan Sampson",
+  "call": "add Dylan Sampson (RB) over MarShawn Lloyd",
+  "detail": "+2.11/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 7,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "f0a98cb4",
+  "ts": "2026-10-23T07:05-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Dallas Cowboys",
+  "call": "stream Dallas Cowboys for week 8, drop 49ers",
+  "detail": "DEF: DAL 18.5 vs yours Vikings 26.0 \u2014 edge 7.5 implied pts",
+  "evidence": [
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 7,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "170e53de",
+  "ts": "2026-10-23T23:24-04:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Pierre Strong Jr.",
+  "call": "start Pierre Strong Jr. at RB1",
+  "detail": "over MarShawn Lloyd +0.97",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 7,
+  "status": "proposed",
+  "provisional": true,
+  "resolves_at": "2026-10-25T16:25-04:00",
+  "reverses": "953cb9a5"
+ },
+ {
+  "id": "7c63525a",
+  "ts": "2026-10-23T23:24-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Kenny Gainwell",
+  "call": "add Kenny Gainwell (RB) over MarShawn Lloyd",
+  "detail": "+2.13/wk",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 7,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "437b1863",
+  "ts": "2026-10-23T23:24-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Jameson Williams",
+  "call": "start Jameson Williams at W/R",
+  "detail": "over Rashee Rice +12.35",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 7,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": "2026-10-25T16:25-04:00",
+  "reverses": "58f1d4b0"
+ },
+ {
+  "id": "8f709697",
+  "ts": "2026-10-23T23:24-04:00",
   "league": "HH",
   "kind": "add",
   "subject": "Devin Bush",
@@ -11646,80 +11739,5 @@
   "provisional": false,
   "resolves_at": null,
   "reverses": null
- },
- {
-  "id": "b6da5105",
-  "ts": "2026-10-23T15:56-04:00",
-  "league": "HH",
-  "kind": "start",
-  "subject": "Alontae Taylor",
-  "call": "start Alontae Taylor at CB",
-  "detail": "over Foyesade Oluokun +14.00",
-  "evidence": [
-   "sleeper"
-  ],
-  "verdict": "WARN",
-  "week": 7,
-  "status": "superseded",
-  "provisional": false,
-  "resolves_at": "2026-10-25T13:00-04:00",
-  "reverses": "26661887",
-  "superseded_by": "7787929b"
- },
- {
-  "id": "6b906c91",
-  "ts": "2026-10-23T19:06-04:00",
-  "league": "BSB",
-  "kind": "start",
-  "subject": "Pierre Strong Jr.",
-  "call": "start Pierre Strong Jr. at RB1",
-  "detail": "over MarShawn Lloyd +1.16",
-  "evidence": [
-   "kalshi",
-   "sleeper"
-  ],
-  "verdict": "WARN",
-  "week": 7,
-  "status": "proposed",
-  "provisional": true,
-  "resolves_at": "2026-10-25T16:25-04:00",
-  "reverses": "9dc2e855"
- },
- {
-  "id": "03c5dee7",
-  "ts": "2026-10-23T19:06-04:00",
-  "league": "BSB",
-  "kind": "add",
-  "subject": "Kenny Gainwell",
-  "call": "add Kenny Gainwell (RB) over MarShawn Lloyd",
-  "detail": "+2.04/wk",
-  "evidence": [
-   "kalshi",
-   "sleeper"
-  ],
-  "verdict": "BLOCK",
-  "week": 7,
-  "status": "blocked",
-  "provisional": false,
-  "resolves_at": null,
-  "reverses": null
- },
- {
-  "id": "7787929b",
-  "ts": "2026-10-23T19:06-04:00",
-  "league": "HH",
-  "kind": "start",
-  "subject": "Alontae Taylor",
-  "call": "start Alontae Taylor at DB",
-  "detail": "over Foyesade Oluokun +13.94",
-  "evidence": [
-   "sleeper"
-  ],
-  "verdict": "WARN",
-  "week": 7,
-  "status": "proposed",
-  "provisional": false,
-  "resolves_at": "2026-10-25T13:00-04:00",
-  "reverses": "b6da5105"
  }
 ]

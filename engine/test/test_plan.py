@@ -265,6 +265,25 @@ p = PL.plan_facts(f, ev)
 case('...and he is never an add, even into an open spot with Tier-A evidence', not any(m['add_key'] == NK(ghost) for m in p.moves), p.summary())
 case('...rejected with G2 and the reason', any(r['key'] == NK(ghost) and r['reason'].startswith('G2') for r in p.rejected), [r for r in p.rejected if r['key'] == NK(ghost)])
 
+# ---------------------------------------------------------------- 5d. one week is not a season (10-22: Foster Moreau)
+# A free agent with NO season number and a big W projection is valued rest-of-season at
+# the positional median at most — one week's number from the most volatile source
+# cannot carry the rest/playoff terms of the objective (Moreau: a 0.02/0.88 Kalshi quote
+# read as 20 pts, 18/wk rest-of-season, J +15 over McBride).
+r5d = bsb_roster(open_spots=1)
+flash = 'Orsino Quillfeather'
+f, st, pr = league('BSB', r5d, fas=[(flash, 'TE', 'HOU', 20.0)], byes={W1: set()})
+gx = f.fa(NK(flash))
+_med = f.posmed.get('TE')
+case('no season number: rest-of-season is capped at the positional median, not the W projection', gx is not None and _med is not None and abs((gx.ros_pw or 0) - _med) < 1e-6 and gx.ros_pw < 20.0, gx and (gx.ros_pw, gx.ros_src, _med))
+case('...and the source says why', gx is not None and 'positional median' in (gx.ros_src or ''), gx and gx.ros_src)
+# the market side of the same case: an empty-quote ladder is no ladder
+from lib import market as MK
+_rows5d = [dict(ticker=f'KXNFLRECYDS-26OCT25NYGHOU-HOUX-{s}', yes_bid='0.0200', yes_ask='0.8800') for s in (10, 20, 25, 30, 40)]
+case('market: a ladder quoted 2c/88c at every strike yields no points', MK._clean_ladder(_rows5d) == [], MK._clean_ladder(_rows5d))
+_rows5d2 = [dict(ticker=f'KXNFLRECYDS-26OCT25NYGHOU-HOUX-{s}', yes_bid=f'{p-0.04:.4f}', yes_ask=f'{p+0.04:.4f}') for s, p in ((10, 0.90), (20, 0.70), (25, 0.55), (30, 0.40), (40, 0.20))]
+case('market: a real 8c-wide ladder is kept whole', len(MK._clean_ladder(_rows5d2)) == 5)
+
 # ---------------------------------------------------------------- 6. owned player never a candidate
 r6 = bsb_roster(open_spots=1)
 own = 'Aurelio Pendergast'
