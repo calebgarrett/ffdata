@@ -60,30 +60,30 @@
    "DEF": "DST:MIN",
    "K": "jason myers",
    "QB": "matt stafford",
-   "RB1": "pierre strong",
-   "RB2": "josh jacobs",
+   "RB1": "josh jacobs",
+   "RB2": "pierre strong",
    "TE": "sam laporta",
    "W/R/T": "isaiah likely",
    "WR1": "jaxon smith njigba",
    "WR2": "drake london",
    "WR3": "malik washington"
   },
-  "optimal_before_moves": 131.61,
+  "optimal_before_moves": 131.42,
   "slots": {
-   "DEF": "Minnesota",
+   "DEF": "Vikings",
    "K": "Jason Myers",
    "QB": "Matthew Stafford",
-   "RB1": "Pierre Strong Jr.",
-   "RB2": "Josh Jacobs",
+   "RB1": "Josh Jacobs",
+   "RB2": "Pierre Strong Jr.",
    "TE": "Sam LaPorta",
    "W/R/T": "Isaiah Likely",
    "WR1": "Jaxon Smith-Njigba",
    "WR2": "Drake London",
    "WR3": "Malik Washington"
   },
-  "total": 131.61
+  "total": 131.42
  },
- "made": "2026-10-24T08:15-04:00",
+ "made": "2026-10-24T12:14-04:00",
  "mechanics": [
   {
    "rule": "A never-rostered free agent is free until his game kicks off",
@@ -123,7 +123,7 @@
  ],
  "moves": [
   {
-   "J": 1.034,
+   "J": 0.91,
    "add_key": null,
    "add_name": null,
    "at": null,
@@ -131,22 +131,22 @@
    "drop_name": null,
    "eff": "W",
    "fam": "RB",
-   "gain": 1.03,
+   "gain": 0.91,
    "gates": {
     "add": null,
     "drop": null
    },
-   "id": "BSB:lineup:RB1",
+   "id": "BSB:lineup:RB2",
    "kind": "lineup",
    "league": "BSB",
    "phase": "decide",
    "provisional": true,
    "reasons": [
-    "+1.03 this week",
+    "+0.91 this week (Josh Jacobs slides to RB1)",
     "inside the 1.5-pt noise band"
    ],
    "sit": "MarShawn Lloyd",
-   "slot": "RB1",
+   "slot": "RB2",
    "spot_id": null,
    "spot_kind": null,
    "spot_label": null,
@@ -162,7 +162,7 @@
      "key": "pierre strong",
      "op": "start",
      "player": "Pierre Strong Jr.",
-     "slot": "RB1"
+     "slot": "RB2"
     },
     {
      "key": "marshawn lloyd",
@@ -171,8 +171,8 @@
     }
    ],
    "value_terms": {
-    "J": 1.034,
-    "dS_W": 1.034
+    "J": 0.91,
+    "dS_W": 0.91
    },
    "when": "before kickoff Sun Oct 25, 4:25 pm ET"
   }
@@ -183,7 +183,7 @@
    "J": 1.485,
    "key": "DST:DAL",
    "name": "Dallas Cowboys",
-   "reason": "J +1.49 < 3.0 at its best spot (San Francisco) \u2014 J +1.49 = 1.0x+0.00 (wk W) + 0.8x+1.82 (W+1) + 0.8x+0.38 (rest, mean of wks 9-17) + 0.59x+0.38 (wks 15-17, P(playoffs) 99%) + 0.1x+0.00 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0.00 FAB($0) - 0.50 churn",
+   "reason": "J +1.49 < 3.0 at its best spot (49ers) \u2014 J +1.49 = 1.0x+0.00 (wk W) + 0.8x+1.82 (W+1) + 0.8x+0.38 (rest, mean of wks 9-17) + 0.59x+0.38 (wks 15-17, P(playoffs) 99%) + 0.1x+0.00 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
     "week-8 DEF stream: Dallas Cowboys 7.6 vs your best 5.8 (W line re-scored on the week-8 opponent implied total 18.5)"
    ]
@@ -192,7 +192,7 @@
    "J": 1.485,
    "key": "DST:LAC",
    "name": "Los Angeles Chargers",
-   "reason": "J +1.49 < 3.0 at its best spot (San Francisco) \u2014 J +1.49 = 1.0x+0.00 (wk W) + 0.8x+1.82 (W+1) + 0.8x+0.38 (rest, mean of wks 9-17) + 0.59x+0.38 (wks 15-17, P(playoffs) 99%) + 0.1x+0.00 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0.00 FAB($0) - 0.50 churn",
+   "reason": "J +1.49 < 3.0 at its best spot (49ers) \u2014 J +1.49 = 1.0x+0.00 (wk W) + 0.8x+1.82 (W+1) + 0.8x+0.38 (rest, mean of wks 9-17) + 0.59x+0.38 (wks 15-17, P(playoffs) 99%) + 0.1x+0.00 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
     "week-8 DEF stream: Los Angeles Chargers 6.7 vs your best 5.8 (rest-of-season per-week (no week-8 projection on disk \u2014 approximation))"
    ]
@@ -201,7 +201,7 @@
    "J": -2.088,
    "key": "dalton schultz",
    "name": "Dalton Schultz",
-   "reason": "J -2.09 < 3.0 at its best spot (Ryan Flournoy) \u2014 J -2.09 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x-0.67 (rest, mean of wks 9-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+1.41 (bench boom) + 0.2x-5.98 (depth) - 0.00 acq - 0.00 FAB($0) - 0.50 churn",
+   "reason": "J -2.09 < 3.0 at its best spot (Ryan Flournoy) \u2014 J -2.09 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x-0.67 (rest, mean of wks 9-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+1.40 (bench boom) + 0.2x-5.98 (depth) - 0.00 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
     "depth: Dalton Schultz 8.8/wk rest-of-season vs your weakest bench player 3.9 (season blend / 17)"
    ]
@@ -210,7 +210,7 @@
    "J": -5.144,
    "key": "dameon pierce",
    "name": "Dameon Pierce",
-   "reason": "J -5.14 < 3.0 at its best spot (MarShawn Lloyd) \u2014 J -5.14 = 1.0x+0.00 (wk W) + 0.8x-2.57 (W+1) + 0.8x-1.67 (rest, mean of wks 9-17) + 0.59x-2.09 (wks 15-17, P(playoffs) 99%) + 0.1x+0.00 (bench boom) + 0.2x+0.00 (depth) - 0.00 acq - 0.01 FAB($1) - 0.50 churn",
+   "reason": "J -5.14 < 3.0 at its best spot (MarShawn Lloyd) \u2014 J -5.14 = 1.0x+0.00 (wk W) + 0.8x-2.57 (W+1) + 0.8x-1.67 (rest, mean of wks 9-17) + 0.59x-2.09 (wks 15-17, P(playoffs) 99%) + 0.1x+0.01 (bench boom) + 0.2x+0.00 (depth) - 0.00 acq - 0.01 FAB($1) - 0.50 churn",
    "reasons": [
     "breakout tier B: 95% snaps, 89% of RB touches; no market line yet (Sleeper rushing yds 37); held (wk5: 77% snaps, 70% of RB touches)"
    ]
@@ -219,7 +219,7 @@
    "J": null,
    "key": "darnell washington",
    "name": "Darnell Washington",
-   "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 7.3 under your weakest 12.9",
+   "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 7.3 under your weakest 12.8",
    "reasons": [
     "breakout tier B: 71% snaps, 12% targets, 18% air yds; Kalshi receiving yds 30 vs Sleeper 32 (-6%) \u2014 a part-time line, under the 35 starter floor"
    ]
@@ -228,13 +228,13 @@
    "J": 1.608,
    "key": "jahan dotson",
    "name": "Jahan Dotson",
-   "reason": "best spot San Francisco: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
+   "reason": "best spot 49ers: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
-    "breakout tier B: 85% snaps, 15% targets, 46% air yds; Kalshi receiving yds 35 vs Sleeper 26 (+33%) \u2014 a part-time line, under the 35 starter floor"
+    "breakout tier B: 85% snaps, 15% targets, 46% air yds; Kalshi receiving yds 34 vs Sleeper 26 (+31%) \u2014 a part-time line, under the 35 starter floor"
    ]
   },
   {
-   "J": -0.671,
+   "J": -0.67,
    "key": "jake ferguson",
    "name": "Jake Ferguson",
    "reason": "J -0.67 < 3.0 at its best spot (Ryan Flournoy) \u2014 J -0.67 = 1.0x+0.00 (wk W) + 0.8x+1.78 (W+1) + 0.8x-0.67 (rest, mean of wks 9-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+1.32 (bench boom) + 0.2x-5.98 (depth) - 0.00 acq - 0.00 FAB($0) - 0.50 churn",
@@ -246,7 +246,7 @@
    "J": 1.535,
    "key": "jaleel mclaughlin",
    "name": "Jaleel McLaughlin",
-   "reason": "best spot Minnesota: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
+   "reason": "best spot Vikings: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
     "breakout tier B: 63% snaps, 54% of RB touches; no market line yet (Sleeper rushing yds 6)"
    ]
@@ -275,7 +275,7 @@
    "name": "Kenny Gainwell",
    "reason": "J -0.63 < 3.0 at its best spot (Ryan Flournoy) \u2014 J -0.63 = 1.0x+0.00 (wk W) + 0.8x+1.29 (W+1) + 0.8x-0.11 (rest, mean of wks 9-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+1.32 (bench boom) + 0.2x-5.98 (depth) - 0.00 acq - 0.01 FAB($1) - 0.50 churn",
    "reasons": [
-    "RB weekly upgrade: Kenny Gainwell 6.3 vs starter MarShawn Lloyd 4.1",
+    "RB weekly upgrade: Kenny Gainwell 6.1 vs starter MarShawn Lloyd 4.1",
     "depth: Kenny Gainwell 8.9/wk rest-of-season vs your weakest bench RB 3.9 (season blend / 17)"
    ]
   },
@@ -292,7 +292,7 @@
    "J": null,
    "key": "mike mayer",
    "name": "Michael Mayer",
-   "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 8.3 under your weakest 12.9",
+   "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 8.2 under your weakest 12.8",
    "reasons": [
     "breakout tier B: 79% snaps, 22% targets, 15% air yds; no market line yet (Sleeper receiving yds 29)"
    ]
@@ -316,7 +316,7 @@
    ]
   },
   {
-   "J": -1.52,
+   "J": -1.519,
    "key": "rashod bateman",
    "name": "Rashod Bateman",
    "reason": "J -1.52 < 3.0 at its best spot (Ryan Flournoy) \u2014 J -1.52 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.18 (rest, mean of wks 9-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+0.43 (bench boom) + 0.2x-5.98 (depth) - 0.00 acq - 0.01 FAB($1) - 0.50 churn",
@@ -325,10 +325,10 @@
    ]
   },
   {
-   "J": 0.792,
+   "J": 0.87,
    "key": "zonovan knight",
    "name": "Zonovan Knight",
-   "reason": "J +0.79 < 3.0 at its best spot (Ryan Flournoy) \u2014 J +0.79 = 1.0x+2.53 (wk W) + 0.8x+0.03 (W+1) + 0.8x-0.25 (rest, mean of wks 9-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+1.32 (bench boom) + 0.2x-5.98 (depth) - 0.00 acq - 0.00 FAB($0) - 0.50 churn",
+   "reason": "J +0.87 < 3.0 at its best spot (Ryan Flournoy) \u2014 J +0.87 = 1.0x+2.61 (wk W) + 0.8x+0.03 (W+1) + 0.8x-0.25 (rest, mean of wks 9-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+1.32 (bench boom) + 0.2x-5.98 (depth) - 0.00 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
     "breakout tier B: 44% snaps, 46% of RB touches; no market line yet (Sleeper rushing yds 35)",
     "depth: Zonovan Knight 7.6/wk rest-of-season vs your weakest bench RB 3.9 (W projection 7.6 (usage says starter; the preseason number is stale))"
@@ -339,14 +339,14 @@
   {
    "id": "drop:DST:MIN",
    "kind": "swap",
-   "label": "Minnesota",
+   "label": "Vikings",
    "taken_by": null,
    "tier": 2
   },
   {
    "id": "drop:DST:SF",
    "kind": "spare",
-   "label": "San Francisco",
+   "label": "49ers",
    "taken_by": null,
    "tier": 2
   },
@@ -402,9 +402,9 @@
   "p_playoffs": 0.98575
  },
  "winprob": {
-  "mean": 132.02284004291602,
+  "mean": 131.55405673508844,
   "note": "sampled on the planner's final lineup",
-  "p_med": 0.5541666666666667,
-  "p_opp": 0.3995
+  "p_med": 0.5291666666666667,
+  "p_opp": 0.3908333333333333
  }
 }

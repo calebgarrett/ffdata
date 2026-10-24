@@ -11680,10 +11680,11 @@
   ],
   "verdict": "WARN",
   "week": 7,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": true,
   "resolves_at": "2026-10-25T16:25-04:00",
-  "reverses": "953cb9a5"
+  "reverses": "953cb9a5",
+  "superseded_by": "2db020e2"
  },
  {
   "id": "7c63525a",
@@ -11847,9 +11848,47 @@
   ],
   "verdict": "WARN",
   "week": 7,
+  "status": "superseded",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "f0a98cb4",
+  "superseded_by": "0cbf4f44"
+ },
+ {
+  "id": "2db020e2",
+  "ts": "2026-10-24T12:14-04:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Pierre Strong Jr.",
+  "call": "start Pierre Strong Jr. at RB2",
+  "detail": "over MarShawn Lloyd +0.91",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 7,
+  "status": "proposed",
+  "provisional": true,
+  "resolves_at": "2026-10-25T16:25-04:00",
+  "reverses": "170e53de"
+ },
+ {
+  "id": "0cbf4f44",
+  "ts": "2026-10-24T12:14-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Dallas Cowboys",
+  "call": "stream Dallas Cowboys for week 8, drop 49ers",
+  "detail": "DEF: DAL 18.5 vs yours Vikings 26.0 \u2014 edge 7.5 implied pts",
+  "evidence": [
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 7,
   "status": "proposed",
   "provisional": false,
   "resolves_at": null,
-  "reverses": "f0a98cb4"
+  "reverses": "058595a3"
  }
 ]
