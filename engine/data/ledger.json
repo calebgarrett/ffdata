@@ -11660,10 +11660,11 @@
   ],
   "verdict": "WARN",
   "week": 7,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": null,
-  "reverses": null
+  "reverses": null,
+  "superseded_by": "058595a3"
  },
  {
   "id": "170e53de",
@@ -11832,5 +11833,23 @@
   "provisional": false,
   "resolves_at": null,
   "reverses": null
+ },
+ {
+  "id": "058595a3",
+  "ts": "2026-10-24T08:14-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Dallas Cowboys",
+  "call": "stream Dallas Cowboys for week 8, drop San Francisco",
+  "detail": "DEF: DAL 18.5 vs yours Minnesota 26.0 \u2014 edge 7.5 implied pts",
+  "evidence": [
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 7,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "f0a98cb4"
  }
 ]
