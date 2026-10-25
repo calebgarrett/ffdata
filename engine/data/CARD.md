@@ -1,14 +1,15 @@
 # Lineup Card — week 7
 
-_Sun Oct 25, 5:23 am ET. Decisions first; detail folded below. A PROVISIONAL call waits for the market or a game-status answer._
+_Sun Oct 25, 9:55 am ET. Decisions first; detail folded below. A PROVISIONAL call waits for the market or a game-status answer._
 
 ## Decide (next 36 hours)
 
-- BSB: **Start Pierre Strong Jr. at RB2** over MarShawn Lloyd _(provisional)_ — before kickoff Sun Oct 25, 4:25 pm ET
+- BSB: **Start Pierre Strong Jr. at RB1** over MarShawn Lloyd _(provisional)_ — before kickoff Sun Oct 25, 4:25 pm ET
+- HH: **Start Braelon Allen at W/R/T** over Jameson Williams — before kickoff Sun Oct 25, 1:00 pm ET
 
 ## BSB — OVERKILL
 
-10-2-0, 1st, PF 934 · projected 132 · 38% to beat Sycawhores · 50% vs the league median
+10-2-0, 1st, PF 934 · projected 133 · 39% to beat Sycawhores · 48% vs the league median
 - Next lock: Sun Oct 25, 1:00 pm ET — 4 starters
 
 <details><summary>Lineup after the moves</summary>
@@ -16,8 +17,8 @@ _Sun Oct 25, 5:23 am ET. Decisions first; detail folded below. A PROVISIONAL cal
 - DEF: Vikings
 - K: Jason Myers
 - QB: Matthew Stafford
-- RB1: Josh Jacobs
-- RB2: Pierre Strong Jr.
+- RB1: Pierre Strong Jr.
+- RB2: Josh Jacobs
 - TE: Sam LaPorta
 - W/R/T: Isaiah Likely
 - WR1: Jaxon Smith-Njigba
@@ -28,9 +29,9 @@ _Sun Oct 25, 5:23 am ET. Decisions first; detail folded below. A PROVISIONAL cal
 
 ## HH — Tecmo Bowlers
 
-5-1-0, 1st, PF — · projected 310
+5-1-0, 1st, PF — · projected 312
 - Q/D: Quay Walker, Budda Baker
-- Next lock: Sun Oct 25, 9:30 am ET — T.J. Watt, Jaylen Warren
+- Next lock: Sun Oct 25, 1:00 pm ET — 4 starters
 
 <details><summary>Lineup after the moves</summary>
 
@@ -47,7 +48,7 @@ _Sun Oct 25, 5:23 am ET. Decisions first; detail folded below. A PROVISIONAL cal
 - S: Kam Curl
 - TE: Trey McBride
 - W/R: Drake London
-- W/R/T: Jameson Williams
+- W/R/T: Braelon Allen
 - WR: Ja'Marr Chase
 
 </details>
@@ -56,10 +57,10 @@ _Sun Oct 25, 5:23 am ET. Decisions first; detail folded below. A PROVISIONAL cal
 
 - Dallas Cowboys: J +1.49 < 3.0 at its best spot (49ers) — J +1.49 = 1.0x+0.00 (wk W) + 0.8x+1.82 (W+1) + 0.8x+0.38 (rest, mean of wks 9-17) + 0.59x+0.38 (wks 15-17, P(playoffs) 
 - Los Angeles Chargers: J +1.49 < 3.0 at its best spot (49ers) — J +1.49 = 1.0x+0.00 (wk W) + 0.8x+1.82 (W+1) + 0.8x+0.38 (rest, mean of wks 9-17) + 0.59x+0.38 (wks 15-17, P(playoffs) 
-- Dalton Schultz: J -2.10 < 3.0 at its best spot (Ryan Flournoy) — J -2.10 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x-0.67 (rest, mean of wks 9-17) + 0.59x+0.00 (wks 15-17, P(pl
-- Dameon Pierce: J -5.17 < 3.0 at its best spot (MarShawn Lloyd) — J -5.17 = 1.0x+0.00 (wk W) + 0.8x-2.57 (W+1) + 0.8x-1.68 (rest, mean of wks 9-17) + 0.59x-2.09 (wks 15-17, P(p
-- Darius Cooper: J +0.06 < 3.0 at its best spot (Ryan Flournoy) — J +0.06 = 1.0x+0.00 (wk W) + 0.8x+1.66 (W+1) + 0.8x+0.36 (rest, mean of wks 9-17) + 0.59x+0.00 (wks 15-17, P(pl
-- Darnell Washington: sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 7.3 under your weakest 12.4
+- Dalton Schultz: J -2.11 < 3.0 at its best spot (Ryan Flournoy) — J -2.11 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x-0.67 (rest, mean of wks 9-17) + 0.59x+0.00 (wks 15-17, P(pl
+- Dameon Pierce: J -5.19 < 3.0 at its best spot (MarShawn Lloyd) — J -5.19 = 1.0x+0.00 (wk W) + 0.8x-2.57 (W+1) + 0.8x-1.70 (rest, mean of wks 9-17) + 0.59x-2.09 (wks 15-17, P(p
+- Darius Cooper: J -0.08 < 3.0 at its best spot (Ryan Flournoy) — J -0.08 = 1.0x+0.00 (wk W) + 0.8x+1.51 (W+1) + 0.8x+0.35 (rest, mean of wks 9-17) + 0.59x+0.00 (wks 15-17, P(pl
+- Darnell Washington: sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 6.6 under your weakest 12.5
 - Jahan Dotson: best spot 49ers: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
 - Jake Ferguson: J -0.67 < 3.0 at its best spot (Ryan Flournoy) — J -0.67 = 1.0x+0.00 (wk W) + 0.8x+1.78 (W+1) + 0.8x-0.67 (rest, mean of wks 9-17) + 0.59x+0.00 (wks 15-17, P(pl
 - Jaleel McLaughlin: best spot Vikings: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
@@ -69,7 +70,7 @@ _Sun Oct 25, 5:23 am ET. Decisions first; detail folded below. A PROVISIONAL cal
 
 </details>
 
-<details><summary>HH: considered, not moves (34)</summary>
+<details><summary>HH: considered, not moves (31)</summary>
 
 - Chicago Bears: no roster spot exists
 - Cincinnati Bengals: no roster spot exists
@@ -95,4 +96,4 @@ _Sun Oct 25, 5:23 am ET. Decisions first; detail folded below. A PROVISIONAL cal
 
 </details>
 
-_Engine stamp Sun Oct 25, 5:23 am ET. The HTML card is the full record; this page is the private, phone-readable twin._
+_Engine stamp Sun Oct 25, 9:55 am ET. The HTML card is the full record; this page is the private, phone-readable twin._
