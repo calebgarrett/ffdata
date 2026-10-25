@@ -11,7 +11,7 @@
  "excluded": [
   {
    "player": "Dak Prescott",
-   "reason": "gate: G6-magnitude 37.8342819528895 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex: 3 QBs for 2 QB-eligible slots \u2014 QB3 is bye"
+   "reason": "gate: G6-magnitude 37.91669372616201 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex: 3 QBs for 2 QB-eligible slots \u2014 QB3 is by"
   },
   {
    "player": "Jaylen Warren",
@@ -35,11 +35,11 @@
   },
   {
    "player": "Jared Goff",
-   "reason": "gate: G3-role NFL depth-chart role not checked; G6-magnitude 41.091686599758816 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex"
+   "reason": "gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper']); G6-magnitude 40.56231886957584 below QB season bounds [60,600] \u2014"
   },
   {
    "player": "Jameson Williams",
-   "reason": "gate: G3-role NFL depth-chart role not checked"
+   "reason": "gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])"
   },
   {
    "player": "Rashee Rice",
@@ -47,7 +47,7 @@
   },
   {
    "player": "Matthew Stafford",
-   "reason": "gate: G6-magnitude 36.56202346157828 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex: 3 QBs for 2 QB-eligible slots \u2014 QB3 is by"
+   "reason": "gate: G6-magnitude 35.98864982624249 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex: 3 QBs for 2 QB-eligible slots \u2014 QB3 is by"
   },
   {
    "player": "Rome Odunze",
@@ -112,8 +112,8 @@
    "DL": "tj watt",
    "K": "brandon aubrey",
    "LB": "carson schwesinger",
-   "Q/W/R/T": "dak prescott",
-   "QB": "jared goff",
+   "Q/W/R/T": "jared goff",
+   "QB": "dak prescott",
    "RB": "jaylen warren",
    "S": "kam curl",
    "TE": "trey mcbride",
@@ -121,7 +121,7 @@
    "W/R/T": "braelon allen",
    "WR": "jamarr chase"
   },
-  "optimal_before_moves": 310.55,
+  "optimal_before_moves": 309.0,
   "slots": {
    "CB": "Cooper DeJean",
    "D": "Quay Walker",
@@ -130,8 +130,8 @@
    "DL": "T.J. Watt",
    "K": "Brandon Aubrey",
    "LB": "Carson Schwesinger",
-   "Q/W/R/T": "Dak Prescott",
-   "QB": "Jared Goff",
+   "Q/W/R/T": "Jared Goff",
+   "QB": "Dak Prescott",
    "RB": "Jaylen Warren",
    "S": "Kam Curl",
    "TE": "Trey McBride",
@@ -139,9 +139,9 @@
    "W/R/T": "Braelon Allen",
    "WR": "Ja'Marr Chase"
   },
-  "total": 310.55
+  "total": 309.0
  },
- "made": "2026-10-25T13:36-04:00",
+ "made": "2026-10-25T16:45-04:00",
  "mechanics": [
   {
    "rule": "Free agents are immediate unless his game is in progress",
@@ -280,16 +280,16 @@
    "name": "Cooper Kupp",
    "reason": "sits behind everyone: you carry 5 WRs for 1 slot(s) and he projects 6.4 under your weakest 10.7",
    "reasons": [
-    "breakout tier B: 85% snaps, 20% targets, 18% air yds; Kalshi receiving yds 30 vs Sleeper 32 (-8%) \u2014 a part-time line, under the 35 starter floor"
+    "breakout tier B: 85% snaps, 20% targets, 18% air yds; Kalshi receiving yds 30 vs Sleeper 32 (-6%) \u2014 a part-time line, under the 35 starter floor"
    ]
   },
   {
    "J": null,
    "key": "courtland sutton",
    "name": "Courtland Sutton",
-   "reason": "sits behind everyone: you carry 5 WRs for 1 slot(s) and he projects 8.5 under your weakest 10.7",
+   "reason": "sits behind everyone: you carry 5 WRs for 1 slot(s) and he projects 8.6 under your weakest 10.7",
    "reasons": [
-    "breakout tier B: 77% snaps, 11% targets, 35% air yds; Kalshi receiving yds 39 vs Sleeper 41 (-5%)"
+    "breakout tier B: 77% snaps, 11% targets, 35% air yds; no market line yet (Sleeper receiving yds 42)"
    ]
   },
   {
@@ -323,9 +323,9 @@
    "J": null,
    "key": "emanuel wilson",
    "name": "Emanuel Wilson",
-   "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 10.3 under your weakest 16.1",
+   "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 10.5 under your weakest 16.1",
    "reasons": [
-    "breakout tier A: 32% snaps, 60% of RB touches; Kalshi rushing yds 50 vs Sleeper 42 (+20%); held (wk5: 59% snaps, 73% of RB touches)"
+    "breakout tier A: 32% snaps, 60% of RB touches; Kalshi rushing yds 54 vs Sleeper 42 (+28%); held (wk5: 59% snaps, 73% of RB touches)"
    ]
   },
   {
@@ -353,15 +353,6 @@
    "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 1.1 under your weakest 16.1",
    "reasons": [
     "breakout tier B: 63% snaps, 54% of RB touches; no market line yet (Sleeper rushing yds 6)"
-   ]
-  },
-  {
-   "J": null,
-   "key": "jessie bates",
-   "name": "Jessie Bates III",
-   "reason": "gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])",
-   "reasons": [
-    "DB weekly upgrade: Jessie Bates III 16.5 vs starter Kam Curl 14.9"
    ]
   },
   {
@@ -429,6 +420,15 @@
   },
   {
    "J": null,
+   "key": "pierre strong",
+   "name": "Pierre Strong Jr.",
+   "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 3.4 under your weakest 16.1",
+   "reasons": [
+    "breakout tier B: 55% snaps, 63% of RB touches; no market line yet (Sleeper rushing yds 15)"
+   ]
+  },
+  {
+   "J": null,
    "key": "quentin johnston",
    "name": "Quentin Johnston",
    "reason": "sits behind everyone: you carry 5 WRs for 1 slot(s) and he projects 0.0 under your weakest 10.7",
@@ -452,6 +452,15 @@
    "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 5.3 under your weakest 16.1",
    "reasons": [
     "breakout tier B: 38% snaps, 50% of RB touches; no market line yet (Sleeper rushing yds 16)"
+   ]
+  },
+  {
+   "J": null,
+   "key": "tyler allgeier",
+   "name": "Tyler Allgeier",
+   "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 11.2 under your weakest 16.1",
+   "reasons": [
+    "breakout tier B: 56% snaps, 54% of RB touches; no market line yet (Sleeper rushing yds 46)"
    ]
   },
   {
@@ -481,8 +490,8 @@
   "p_playoffs": 1.0
  },
  "winprob": {
-  "mean": 310.06479319432015,
-  "note": "sampled on the planner's final lineup",
+  "mean": 308.90989261600345,
+  "note": "final lineup = current lineup (the engine's own number)",
   "p_med": null,
   "p_opp": null
  }

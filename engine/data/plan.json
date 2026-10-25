@@ -13,44 +13,6 @@
   "BSB": {
    "actions": [
     {
-     "add": null,
-     "bid": null,
-     "drop": null,
-     "gain": 0.78,
-     "gates": [
-      "G9-reversal:WARN"
-     ],
-     "kind": "start",
-     "provisional": true,
-     "reason": " (Josh Jacobs slides to RB1)",
-     "sit": "MarShawn Lloyd",
-     "slot": "RB2",
-     "start": "Pierre Strong Jr.",
-     "status": "proposed",
-     "subject": "Pierre Strong Jr.",
-     "verdict": "WARN",
-     "when": "alert"
-    },
-    {
-     "add": "Kenny Gainwell",
-     "bid": null,
-     "drop": null,
-     "fam": "RB",
-     "gain": 3.22,
-     "gates": [
-      "G11-role-registry:WARN"
-     ],
-     "kind": "upgrade",
-     "provisional": false,
-     "sit": "MarShawn Lloyd",
-     "slot": null,
-     "start": null,
-     "status": "proposed",
-     "subject": "Kenny Gainwell",
-     "verdict": "WARN",
-     "when": null
-    },
-    {
      "add": "Dallas Cowboys",
      "bid": null,
      "drop": "49ers",
@@ -138,7 +100,7 @@
      "verb": "NONE",
      "verdict": "PASS",
      "when": "no move for this roster",
-     "why": "you already carry 2 TEs for 1 slot(s) and he projects below your weakest (Isaiah Likely 12.8 vs 8.2). Only a trade chip."
+     "why": "you already carry 2 TEs for 1 slot(s) and he projects below your weakest (Isaiah Likely 12.8 vs 7.2). Only a trade chip."
     },
     {
      "add": "Zonovan Knight",
@@ -215,8 +177,8 @@
     "DEF": "Vikings",
     "K": "Jason Myers",
     "QB": "Matthew Stafford",
-    "RB1": "Josh Jacobs",
-    "RB2": "Pierre Strong Jr.",
+    "RB1": "MarShawn Lloyd",
+    "RB2": "Josh Jacobs",
     "TE": "Sam LaPorta",
     "W/R/T": "Isaiah Likely",
     "WR1": "Jaxon Smith-Njigba",
@@ -224,39 +186,21 @@
     "WR3": "Drake London"
    },
    "me": "OVERKILL",
-   "others_pulled": "2026-10-25T17:34:51+00:00",
+   "others_pulled": "2026-10-25T20:44:03+00:00",
    "planner": {
     "lineup_after": {
      "DEF": "Vikings",
      "K": "Jason Myers",
      "QB": "Matthew Stafford",
-     "RB1": "Josh Jacobs",
-     "RB2": "Pierre Strong Jr.",
+     "RB1": "MarShawn Lloyd",
+     "RB2": "Josh Jacobs",
      "TE": "Sam LaPorta",
      "W/R/T": "Isaiah Likely",
      "WR1": "Jaxon Smith-Njigba",
      "WR2": "Malik Washington",
      "WR3": "Drake London"
     },
-    "moves": [
-     {
-      "J": 0.783,
-      "add": null,
-      "drop": null,
-      "gates": [],
-      "ir": null,
-      "kind": "lineup",
-      "provisional": true,
-      "sit": "MarShawn Lloyd",
-      "slot": "RB2",
-      "start": "Pierre Strong Jr.",
-      "txns": [
-       "start Pierre Strong Jr. at RB2",
-       "bench MarShawn Lloyd"
-      ],
-      "when": "before kickoff Sun Oct 25, 4:25 pm ET"
-     }
-    ],
+    "moves": [],
     "rejected": [
      {
       "name": "Dallas Cowboys",
@@ -272,7 +216,7 @@
      },
      {
       "name": "Darius Cooper",
-      "reason": "J -0.26 < 3.0 at its best spot (Ryan Flournoy) \u2014 J -0.26 = 1.0x+0.00 (wk W) + 0.8x+1.28 (W+1) + 0.8x+0.32 (rest, mean of wks 9-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+1.51 (bench boom) + 0.2x-5.98 (depth) - 0.00 acq - 0.00 FAB("
+      "reason": "J -0.03 < 3.0 at its best spot (Ryan Flournoy) \u2014 J -0.03 = 1.0x+0.00 (wk W) + 0.8x+1.56 (W+1) + 0.8x+0.35 (rest, mean of wks 9-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+1.34 (bench boom) + 0.2x-5.98 (depth) - 0.00 acq - 0.00 FAB("
      },
      {
       "name": "Darnell Washington",
@@ -284,7 +228,7 @@
      },
      {
       "name": "Jake Ferguson",
-      "reason": "J -0.65 < 3.0 at its best spot (Ryan Flournoy) \u2014 J -0.65 = 1.0x+0.00 (wk W) + 0.8x+1.78 (W+1) + 0.8x-0.67 (rest, mean of wks 9-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+1.51 (bench boom) + 0.2x-5.98 (depth) - 0.00 acq - 0.00 FAB("
+      "reason": "J -0.67 < 3.0 at its best spot (Ryan Flournoy) \u2014 J -0.67 = 1.0x+0.00 (wk W) + 0.8x+1.78 (W+1) + 0.8x-0.67 (rest, mean of wks 9-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+1.34 (bench boom) + 0.2x-5.98 (depth) - 0.00 acq - 0.00 FAB("
      },
      {
       "name": "Jaleel McLaughlin",
@@ -304,7 +248,7 @@
      },
      {
       "name": "Michael Mayer",
-      "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 8.2 under your weakest 12.8"
+      "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 7.2 under your weakest 12.8"
      },
      {
       "name": "quay walker",
@@ -312,7 +256,7 @@
      },
      {
       "name": "Rashid Shaheed",
-      "reason": "J -1.44 < 3.0 at its best spot (Ryan Flournoy) \u2014 J -1.44 = 1.0x+0.00 (wk W) + 0.8x+0.67 (W+1) + 0.8x-0.54 (rest, mean of wks 9-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+1.51 (bench boom) + 0.2x-5.98 (depth) - 0.00 acq - 0.00 FAB("
+      "reason": "J -1.46 < 3.0 at its best spot (Ryan Flournoy) \u2014 J -1.46 = 1.0x+0.00 (wk W) + 0.8x+0.67 (W+1) + 0.8x-0.54 (rest, mean of wks 9-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+1.34 (bench boom) + 0.2x-5.98 (depth) - 0.00 acq - 0.00 FAB("
      },
      {
       "name": "Terry McLaurin",
@@ -324,34 +268,14 @@
      },
      {
       "name": "Zonovan Knight",
-      "reason": "J +1.06 < 3.0 at its best spot (Ryan Flournoy) \u2014 J +1.06 = 1.0x+2.79 (wk W) + 0.8x+0.03 (W+1) + 0.8x-0.25 (rest, mean of wks 9-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+1.51 (bench boom) + 0.2x-5.98 (depth) - 0.00 acq - 0.00 FAB("
+      "reason": "J -1.76 < 3.0 at its best spot (Ryan Flournoy) \u2014 J -1.76 = 1.0x+0.00 (wk W) + 0.8x+0.02 (W+1) + 0.8x-0.25 (rest, mean of wks 9-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+1.34 (bench boom) + 0.2x-5.98 (depth) - 0.00 acq - 0.01 FAB("
      }
     ]
    },
-   "pulled": "2026-10-25T17:34:51+00:00"
+   "pulled": "2026-10-25T20:44:03+00:00"
   },
   "HH": {
    "actions": [
-    {
-     "add": "Jessie Bates III",
-     "bid": null,
-     "drop": null,
-     "fam": "DB",
-     "gain": 1.57,
-     "gates": [
-      "G5-sources:BLOCK",
-      "G11-role-registry:WARN"
-     ],
-     "kind": "upgrade",
-     "provisional": false,
-     "sit": "Kam Curl",
-     "slot": null,
-     "start": null,
-     "status": "blocked",
-     "subject": "Jessie Bates III",
-     "verdict": "BLOCK",
-     "when": null
-    },
     {
      "add": "Dallas Cowboys",
      "bid": null,
@@ -443,6 +367,24 @@
      "verdict": "PASS",
      "when": "no move for this roster",
      "why": "you already carry 5 WRs for 2 slot(s) and he projects below your weakest (Denzel Boston 10.7 vs 5.6). Only a trade chip."
+    },
+    {
+     "add": "Pierre Strong Jr.",
+     "bid": null,
+     "drop": null,
+     "gates": [],
+     "kind": "breakout",
+     "provisional": false,
+     "sit": null,
+     "slot": null,
+     "start": null,
+     "status": null,
+     "subject": "Pierre Strong Jr.",
+     "tier": "B",
+     "verb": "WAIT",
+     "verdict": "PASS",
+     "when": "next usage pull (Tuesday) \u2014 add then if the snaps hold or the market moves toward him",
+     "why": "one game of starter usage; no market confirmation yet and the spot would cost a real player"
     },
     {
      "add": "Jaleel McLaughlin",
@@ -551,6 +493,24 @@
      "verdict": "PASS",
      "when": "no move for this roster",
      "why": "you already carry 5 WRs for 2 slot(s) and he projects below your weakest (Denzel Boston 10.7 vs 6.4). Only a trade chip."
+    },
+    {
+     "add": "Tyler Allgeier",
+     "bid": null,
+     "drop": null,
+     "gates": [],
+     "kind": "breakout",
+     "provisional": false,
+     "sit": null,
+     "slot": null,
+     "start": null,
+     "status": null,
+     "subject": "Tyler Allgeier",
+     "tier": "B",
+     "verb": "WAIT",
+     "verdict": "PASS",
+     "when": "next usage pull (Tuesday) \u2014 add then if the snaps hold or the market moves toward him",
+     "why": "one game of starter usage; no market confirmation yet and the spot would cost a real player"
     },
     {
      "add": "Michael Mayer",
@@ -730,7 +690,7 @@
      "verb": "NONE",
      "verdict": "PASS",
      "when": "no move for this roster",
-     "why": "you already carry 5 WRs for 2 slot(s) and he projects below your weakest (Denzel Boston 10.7 vs 8.5). Only a trade chip."
+     "why": "you already carry 5 WRs for 2 slot(s) and he projects below your weakest (Denzel Boston 10.7 vs 8.6). Only a trade chip."
     },
     {
      "add": "Kyle Pitts Sr.",
@@ -769,17 +729,7 @@
      "why": "one game of starter usage; no market confirmation yet and the spot would cost a real player"
     }
    ],
-   "blocked": [
-    {
-     "add": "Jessie Bates III",
-     "drop": null,
-     "gates": [
-      "G5-sources:BLOCK"
-     ],
-     "kind": "upgrade",
-     "subject": "Jessie Bates III"
-    }
-   ],
+   "blocked": [],
    "current": {
     "CB": "Cooper DeJean",
     "D": "Quay Walker",
@@ -798,8 +748,6 @@
     "WR": "Ja'Marr Chase"
    },
    "flags": [
-    "Quay Walker is Q at D \u2014 if he is out, Alontae Taylor (14.0) takes the slot; decide before Sun Oct 25, 4:25 pm ET",
-    "Budda Baker is Q at DB \u2014 if he is out, Alontae Taylor (14.0) takes the slot; decide before Sun Oct 25, 4:05 pm ET",
     "Rashee Rice [O] holds a roster spot \u2014 why and for how long is NOT on record; not a drop until it is"
    ],
    "lineup": {
@@ -810,8 +758,8 @@
     "DL": "T.J. Watt",
     "K": "Brandon Aubrey",
     "LB": "Carson Schwesinger",
-    "Q/W/R/T": "Dak Prescott",
-    "QB": "Jared Goff",
+    "Q/W/R/T": "Jared Goff",
+    "QB": "Dak Prescott",
     "RB": "Jaylen Warren",
     "S": "Kam Curl",
     "TE": "Trey McBride",
@@ -820,7 +768,7 @@
     "WR": "Ja'Marr Chase"
    },
    "me": "Tecmo Bowlers",
-   "others_pulled": "2026-10-25T17:34:51+00:00",
+   "others_pulled": "2026-10-25T20:44:03+00:00",
    "planner": {
     "lineup_after": {
      "CB": "Cooper DeJean",
@@ -830,8 +778,8 @@
      "DL": "T.J. Watt",
      "K": "Brandon Aubrey",
      "LB": "Carson Schwesinger",
-     "Q/W/R/T": "Dak Prescott",
-     "QB": "Jared Goff",
+     "Q/W/R/T": "Jared Goff",
+     "QB": "Dak Prescott",
      "RB": "Jaylen Warren",
      "S": "Kam Curl",
      "TE": "Trey McBride",
@@ -887,7 +835,7 @@
      },
      {
       "name": "Courtland Sutton",
-      "reason": "sits behind everyone: you carry 5 WRs for 1 slot(s) and he projects 8.5 under your weakest 10.7"
+      "reason": "sits behind everyone: you carry 5 WRs for 1 slot(s) and he projects 8.6 under your weakest 10.7"
      },
      {
       "name": "Dalton Kincaid",
@@ -903,7 +851,7 @@
      },
      {
       "name": "Emanuel Wilson",
-      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 10.3 under your weakest 16.1"
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 10.5 under your weakest 16.1"
      },
      {
       "name": "Jahan Dotson",
@@ -916,10 +864,6 @@
      {
       "name": "Jaleel McLaughlin",
       "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 1.1 under your weakest 16.1"
-     },
-     {
-      "name": "Jessie Bates III",
-      "reason": "gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])"
      },
      {
       "name": "KC Concepcion Jr.",
@@ -950,6 +894,10 @@
       "reason": "no roster spot exists"
      },
      {
+      "name": "Pierre Strong Jr.",
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 3.4 under your weakest 16.1"
+     },
+     {
       "name": "Quentin Johnston",
       "reason": "sits behind everyone: you carry 5 WRs for 1 slot(s) and he projects 0.0 under your weakest 10.7"
      },
@@ -962,14 +910,18 @@
       "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 5.3 under your weakest 16.1"
      },
      {
+      "name": "Tyler Allgeier",
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 11.2 under your weakest 16.1"
+     },
+     {
       "name": "Zonovan Knight",
       "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 7.3 under your weakest 16.1"
      }
     ]
    },
-   "pulled": "2026-10-25T17:34:51+00:00"
+   "pulled": "2026-10-25T20:44:03+00:00"
   }
  },
- "now": "2026-10-25T13:36-04:00",
+ "now": "2026-10-25T16:45-04:00",
  "week": 7
 }
