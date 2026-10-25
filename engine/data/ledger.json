@@ -11963,10 +11963,11 @@
   ],
   "verdict": "WARN",
   "week": 7,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": true,
   "resolves_at": "2026-10-25T16:25-04:00",
-  "reverses": "2db020e2"
+  "reverses": "2db020e2",
+  "superseded_by": "90bad0eb"
  },
  {
   "id": "ca85627e",
@@ -11982,9 +11983,29 @@
   ],
   "verdict": "PASS",
   "week": 7,
-  "status": "proposed",
+  "status": "executed",
   "provisional": false,
   "resolves_at": "2026-10-25T13:00-04:00",
-  "reverses": null
+  "reverses": null,
+  "status_ts": "2026-10-25T13:36-04:00"
+ },
+ {
+  "id": "90bad0eb",
+  "ts": "2026-10-25T13:36-04:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Pierre Strong Jr.",
+  "call": "start Pierre Strong Jr. at RB2",
+  "detail": "over MarShawn Lloyd +0.78",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 7,
+  "status": "proposed",
+  "provisional": true,
+  "resolves_at": "2026-10-25T16:25-04:00",
+  "reverses": "6cf80e6f"
  }
 ]
