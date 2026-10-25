@@ -929,6 +929,14 @@ def cmd_card(run, publish=False):
         return None
     open(p, 'w').write(html)
     print(f'\n  card written: {p} ({len(html)} bytes) — sanity read clean')
+    # the Markdown twin for a private repo (10-24): docs/CARD.md in the checkout when the
+    # engine runs inside the action, data/CARD.md always
+    try:
+        from lib import mdcard as MD
+        repo = os.environ.get('FFDATA_REPO') or ('/home/claude/ffdata_repo' if os.environ.get('FFDATA_IN_ACTION') else None)
+        for q in MD.write(run, PATHS.root(), repo): print(f'  markdown card written: {q}')
+    except Exception as e:
+        print(f'  markdown card skipped: {e!r}')
     return p
 
 def cmd_decline(lg, kind, player):

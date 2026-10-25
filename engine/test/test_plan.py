@@ -265,6 +265,31 @@ p = PL.plan_facts(f, ev)
 case('...and he is never an add, even into an open spot with Tier-A evidence', not any(m['add_key'] == NK(ghost) for m in p.moves), p.summary())
 case('...rejected with G2 and the reason', any(r['key'] == NK(ghost) and r['reason'].startswith('G2') for r in p.rejected), [r for r in p.rejected if r['key'] == NK(ghost)])
 
+# ---------------------------------------------------------------- 5e. a rival's drop of a real role is a fact (10-25: Terry McLaurin)
+# McLaurin, season 204, projected in his last played game (week 6), knee on Monday night,
+# out for the season; WAS on bye in week 7 so no projection exists to go missing, and the
+# pulse (5c) read him alive. WINdianapolis dropped him Saturday. The planner priced a $1
+# claim into a bench spot. A manager who let a 100+ point role go after his last game knows
+# something; the add waits for a person (registry add_yes clears it).
+r5e = bsb_roster(open_spots=1)
+tmac = 'Thaddeus Mcelroy-Vance'
+_log5e = [dict(datetime=(NOW - C.dt.timedelta(hours=20)).strftime('%Y-%m-%d %H:%M'), team='WINdianapolis', action='Drop', player=tmac, pos='WR', nfl='WAS', note='To Waivers')]
+f, st, pr = league('BSB', r5e, fas=[(tmac, 'WR', 'WAS', 12.0)], season={NK(tmac): dict(name=tmac, tm='WAS', pos='WR', pts=204.0)}, byes={W1: set()}, log_rows=_log5e)
+gx = f.fa(NK(tmac))
+case('rival drop: the fact names the team and the day', gx is not None and gx.get('rival_drop') and gx['rival_drop'][0] == 'WINdianapolis', gx and gx.get('rival_drop'))
+p = PL.plan_facts(f, dict(breakout_rows=[dict(key=NK(tmac), name=tmac, pos='WR', tm='WAS', tier='A', held='wk5', usage='', market='', in_pool=True, ahead=True)]))
+case('rival drop: a 100+ point role a rival dropped this week is not an add, even into an open spot', not any(m['add_key'] == NK(tmac) for m in moves_of(p)), p.summary())
+case('...rejected with G15 and the team named', any(r['key'] == NK(tmac) and r['reason'].startswith('G15') and 'WINdianapolis' in r['reason'] for r in p.rejected), [r for r in p.rejected if r['key'] == NK(tmac)])
+# the clearance: a registry add_yes (a person looked) lets him through
+f2, st2, pr2 = league('BSB', r5e, fas=[(tmac, 'WR', 'WAS', 12.0)], season={NK(tmac): dict(name=tmac, tm='WAS', pos='WR', pts=204.0)}, byes={W1: set()}, log_rows=_log5e,
+                      registry=dict(verified={NK(tmac): dict(priority=1, why='verified healthy (test)', team='WAS', pos='WR', as_of=NOW.date().isoformat())}))
+p2 = PL.plan_facts(f2, dict())
+case('...a registry add_yes clears the rival-drop block', not any(r['key'] == NK(tmac) and r['reason'].startswith('G15') for r in p2.rejected), [r['reason'][:60] for r in p2.rejected if r['key'] == NK(tmac)])
+# my own drop is not a rival drop (5c/9 cover that); a 30-point body dropped by a rival is not a signal
+_log5e2 = [dict(_log5e[0], team=S.ALL['BSB'].name)]
+f3, st3, pr3 = league('BSB', r5e, fas=[(tmac, 'WR', 'WAS', 12.0)], season={NK(tmac): dict(name=tmac, tm='WAS', pos='WR', pts=204.0)}, byes={W1: set()}, log_rows=_log5e2)
+case('...my own drop is not a rival drop', f3.fa(NK(tmac)) is not None and not f3.fa(NK(tmac)).get('rival_drop'))
+
 # ---------------------------------------------------------------- 5d. one week is not a season (10-22: Foster Moreau)
 # A free agent with NO season number and a big W projection is valued rest-of-season at
 # the positional median at most — one week's number from the most volatile source
@@ -445,6 +470,34 @@ f2, st2, pr2 = league('BSB', r8g, fas=[(dec, 'WR', 'PHI', 14.0)], byes={W1: set(
 p2 = PL.plan_facts(f2, dict(ev, p_playoffs=0.0))
 m2 = next((m for m in moves_of(p2) if m['add_key'] == NK(dec)), None)
 case('playoff term: with P(playoffs)=0 the term contributes nothing', m2 is not None and abs(m2['J'] - (m['J'] - PL.W_PLAY * 1.0 * m['value_terms']['dS_play'])) < 1e-6, (m and m['J'], m2 and m2['J']))
+
+# ---------------------------------------------------------------- 8h. QB2 insurance in a one-QB league (Caleb, 10-24)
+# "Given how important QB is, is it not worth keeping a backup?" A roster with ONE QB, a
+# junk bench WR and a spare DEF; the best free QB (17/wk) is a registry priority-2 add.
+# The point terms alone never ship a backup who never starts; the insurance term does,
+# and the spot is the junk WR, not the spare DEF (10-24: the hand-picked 49ers drop).
+r8h = bsb_roster(extra=[('BN', 'Kansas City', 'DEF', 'KC', 6.5, 'none')])
+r8h = [r for r in r8h if not (r[0] == 'BN' and r[3] == 'LV')]          # keep 18: drop the 1.0 WR, keep the 2.5 and 3.0 WRs as the junk
+junk = [r for r in r8h if r[0] == 'BN' and r[2] not in ('DEF', 'K')]          # any bench skill player; never the spare DEF
+qb2 = 'Thackeray Bellweather'
+f, st, pr = league('BSB', r8h, fas=[(qb2, 'QB', 'TB', 17.0), ('Dallas Cowboys', 'DEF', 'DAL', 7.5), ('Ambrose Fennimore', 'QB', 'NYJ', 14.0)],
+                   byes={W1: set()},
+                   registry=dict(verified={NK(qb2): dict(priority=2, why='QB2 insurance (test)', team='TB', pos='QB', as_of=NOW.date().isoformat())}))
+p = PL.plan_facts(f, dict(p_playoffs=1.0))
+m8h = next((m for m in moves_of(p) if m['add_key'] == NK(qb2)), None)
+case('QB2 insurance: a one-QB roster adds the best free QB as a backup', m8h is not None, p.summary())
+case('...the term is explicit and positive', m8h is not None and m8h['value_terms'].get('d_ins', 0) > 0, m8h and m8h['value_terms'])
+case('...the spot is the weakest bench skill player, never the spare DEF', m8h is not None and m8h.get('spot_kind') == 'drop' and m8h.get('drop_name') in {r[1] for r in junk}, m8h and (m8h.get('spot_kind'), m8h.get('drop_name')))
+# control: a roster that already carries two QBs earns no insurance credit for a third
+r8h2 = bsb_roster(extra=[('BN', 'Ignatius Pemberton', 'QB', 'SEA', 15.0, 'none')])
+r8h2 = [r for r in r8h2 if not (r[0] == 'BN' and r[3] == 'LV')]
+f2, st2, pr2 = league('BSB', r8h2, fas=[(qb2, 'QB', 'TB', 17.0)], byes={W1: set()},
+                      registry=dict(verified={NK(qb2): dict(priority=2, why='QB2 insurance (test)', team='TB', pos='QB', as_of=NOW.date().isoformat())}))
+obj2 = PL.Objective(f2, PL.Mechanics(f2))
+case('...a roster with two QBs already gets no insurance credit for a third', obj2.insurance([(f2.fa(NK(qb2)), None, 'W')]) == 0.0)
+# control: a superflex league (two QB-eligible slots) is not a one-QB league
+f3, st3, pr3 = league('HH', hh_roster(), fas=[(qb2, 'QB', 'TB', 30.0)], byes={W1: set()})
+case('...superflex is not a one-QB league: no insurance term', not PL.Objective(f3, PL.Mechanics(f3)).one_qb())
 
 # ---------------------------------------------------------------- 9. handcuff never a drop
 r9 = bsb_roster()

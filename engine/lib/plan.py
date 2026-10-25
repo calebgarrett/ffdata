@@ -79,6 +79,16 @@ K_FAB = 0.1                       # per dollar that eats into the FAB reserve (r
 K_FAB_TIE = 0.01                  # per dollar above it: a tie-break, not a cost
 K_CHURN = 0.5                     # per Yahoo transaction
 SHIP_J = 3.0
+# QB2 insurance in a one-QB league (Caleb, 10-24: "given how important QB is, is it not
+# worth keeping a backup?"). The objective's point terms never see a backup who never
+# starts, so a locked-in playoff team would carry none. The insurance value is explicit
+# and modest: each remaining week, P(the starter misses it) x (the backup's value minus
+# the free replacement that week), with the free replacement worth half from week 13
+# on, when every contender has stashed the spare QBs. Only when the roster has ONE QB.
+INS_P_MISS = 0.06        # a QB misses roughly one game in 17; an assumption, not a measurement
+INS_DEC_WEEK = 13        # from here the free replacement is discounted
+INS_DEC_REPL = 0.5
+RIVAL_DROP_MIN_SEASON = 100.0     # a real role: a manager who let one go after his last game knows something (10-25)
 DEPTH_MARGIN = 3.0                # a depth add must clear the weakest bench player by this much per week (rest of season)
 STICKY_J = 0.5                    # a (add, spot) pair already on the published plan keeps it unless another beats it by this much (10-13: Jennings <-> Hutchinson flip between pulls)
 REST_NORM = 'mean'                # dS_REST = sum over weeks W+2..17 / number of those weeks
@@ -516,6 +526,30 @@ class Objective:
             tot += (x.boom or 0.0) * (x.ros_pw or 0.0)
         return tot
 
+    def one_qb(self):
+        f = self.f
+        return sum(1 for sl in f.cfg.slots if 'QB' in f.cfg.accepts[sl]) == 1
+
+    def insurance(self, changes):
+        """QB2 insurance credit for the changes (see INS_*): > 0 only when the league starts
+        one QB, the roster carries exactly one, and the changes add a QB without dropping one."""
+        f = self.f
+        if not self.one_qb(): return 0.0
+        adds = [a for a, d, _ in changes if a is not None and a.fam == 'QB']
+        if not adds or any(d is not None and d.fam == 'QB' for _, d, _ in changes): return 0.0
+        if sum(1 for k in f.mine_keys if f.mine[k].fam == 'QB' and f.mine[k].slot != 'IR') != 1: return 0.0
+        a = adds[0]
+        if '_ins_repl' not in self.__dict__:
+            best = [c for c in (f.best_fa('QB', 'rest', n=3) if hasattr(f, 'best_fa') else []) if c.key != a.key]
+            self._ins_repl = (best[0].ros_pw or 0.0) if best else 0.0
+        tot = 0.0
+        for t in [f.week + 1] + list(f.rest_weeks or []):
+            v = f.value(a, t) or 0.0
+            if v <= 0: continue                                   # his own bye / not playing: no insurance that week
+            repl = self._ins_repl * (INS_DEC_REPL if t >= INS_DEC_WEEK else 1.0)
+            tot += INS_P_MISS * max(0.0, v - repl)
+        return tot
+
     def terms(self, changes, costs):
         """J and its terms for a set of changes against the current roster."""
         f = self.f
@@ -531,6 +565,7 @@ class Objective:
         dP = (sum(play) / len(play)) if play else 0.0
         q = float(getattr(f, 'p_playoffs', 0.0) or 0.0)
         dB = self.boom(changes) - self.boom([])
+        dIns = self.insurance(changes)
         # a bench player cut is depth lost: his rest-of-season per-week value never shows in
         # the optimal-lineup terms (he was not starting), so it is charged here (10-18)
         dDepth = -sum((d.ros_pw or 0.0) if d.fam not in ('DEF', 'K') else max(0.0, (d.ros_pw or 0.0) - (_stream_value(f, d.fam, f.rest_weeks[0] if f.rest_weeks else W1) or 0.0))
@@ -538,10 +573,10 @@ class Objective:
         acq = costs.get('acq', 0); bid = costs.get('bid', 0) or 0; txn = costs.get('txn', 0)
         pen_fab = self.mech.fab_cost(bid) if getattr(self, 'mech', None) is not None else K_FAB * bid
         pen_acq = K_ACQ.get(f.league, 0.0) * acq * RU.acq_price(f.now, getattr(f, 'acq_left', None))
-        J = (W_NOW * dW + W_NEXT * dW1 + W_REST * dR + W_PLAY * q * dP + W_BOOM * dB + K_DEPTH * dDepth
+        J = (W_NOW * dW + W_NEXT * dW1 + W_REST * dR + W_PLAY * q * dP + W_BOOM * dB + K_DEPTH * dDepth + dIns
              - pen_acq - pen_fab - K_CHURN * txn)
         return dict(J=round(J, 3), dS_W=round(dW, 3), dS_W1=round(dW1, 3), dS_rest=round(dR, 3), dS_play=round(dP, 3), p_playoffs=round(q, 2),
-                    d_boom=round(dB, 3), d_depth=round(dDepth, 3),
+                    d_boom=round(dB, 3), d_depth=round(dDepth, 3), d_ins=round(dIns, 3),
                     acq=acq, bid=bid, txn=txn,
                     pen_acq=round(pen_acq, 3), pen_fab=round(pen_fab, 3), pen_churn=round(K_CHURN * txn, 3),
                     rest_weeks=f'{f.rest_weeks[0]}-{f.rest_weeks[-1]}' if f.rest_weeks else '')
@@ -550,7 +585,7 @@ class Objective:
 def fmt_terms(t):
     return (f"J {t['J']:+.2f} = {W_NOW:.1f}x{t['dS_W']:+.2f} (wk W) + {W_NEXT:.1f}x{t['dS_W1']:+.2f} (W+1) + {W_REST:.1f}x{t['dS_rest']:+.2f} (rest, mean of wks {t['rest_weeks']})"
             + (f" + {W_PLAY * t.get('p_playoffs', 0):.2f}x{t.get('dS_play', 0.0):+.2f} (wks 15-17, P(playoffs) {t.get('p_playoffs', 0):.0%})" if t.get('p_playoffs') else '')
-            + f" + 0.1x{t['d_boom']:+.2f} (bench boom) + {K_DEPTH:.1f}x{t.get('d_depth', 0.0):+.2f} (depth) - {t['pen_acq']:.2f} acq - {t['pen_fab']:.2f} FAB(${t['bid'] or 0}) - {t['pen_churn']:.2f} churn")
+            + f" + 0.1x{t['d_boom']:+.2f} (bench boom) + {K_DEPTH:.1f}x{t.get('d_depth', 0.0):+.2f} (depth)" + (f" + {t['d_ins']:+.2f} (QB2 insurance)" if t.get('d_ins') else '') + f" - {t['pen_acq']:.2f} acq - {t['pen_fab']:.2f} FAB(${t['bid'] or 0}) - {t['pen_churn']:.2f} churn")
 
 
 # ================================================================== feasibility
@@ -563,6 +598,13 @@ def candidate_block(f, c, ev):
     if x.owner is not None or x.key in f.state.roster_keys: return f'G1: on a roster in this league'
     if x.designation in RU.UNUSABLE: return f'G2: {x.designation} — {x.designation_src}'      # 10-13: Achane (torn ACL) off a preseason number
     if x.registry.add_no: return 'G11: registry add_no / unavailable'
+    # a rival's drop of a real role is a fact the feeds may not carry yet (10-25: McLaurin,
+    # season-ending knee on Monday night, dropped Saturday, team on bye -> the pulse read
+    # him alive and the planner priced a $1 claim). Verify why; the registry add_yes clears it.
+    rd = getattr(x, 'rival_drop', None)
+    sv = x.season if isinstance(x.season, (int, float)) else ((x.season or {}).get('pts') if isinstance(x.season, dict) else None)
+    if rd and (sv or 0) >= RIVAL_DROP_MIN_SEASON and not x.registry.add_yes:
+        return f'G15: dropped by {rd[0]} on {rd[1][:10]} — a manager let a {sv:.0f}-point role go after his last game; find out why before claiming (a verified role is a registry add_yes)'
     if x.recently_dropped:
         lg, d = x.recently_dropped if isinstance(x.recently_dropped, (tuple, list)) else (f.league, x.recently_dropped)
         return f'you dropped him in {lg} on {d} (<= 7 days, either league)'

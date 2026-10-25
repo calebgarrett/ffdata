@@ -38,6 +38,7 @@ Per player (a `Fact`, a dict with attribute access):
   boom            share of points from touchdowns / big plays (score.boom)
   sources, market_ready
 """
+import datetime as dt
 import csv, os, json, statistics
 from . import clock as C, score as SC, rules as RU
 from .names import key as NK, team as NT
@@ -303,9 +304,25 @@ class Facts:
                  registry=reg, usage_now=un, usage_now_rule=unr, usage_prev=up, usage_prev_rule=upr,
                  pts_w=proj_w, proj_w=proj_w, pts_w1=w1, w1_src=w1_src, ros_pw=ros, ros_src=ros_src,
                  boom=e.get('boom'), sources=list(line.get('sources') or []), market_ready=bool(e.get('ready')),
-                 line=line, entry=e, season=e.get('season'))
+                 line=line, entry=e, season=e.get('season'),
+                 rival_drop=self._rival_drop(k))
         self._pool_cache[k] = f
         return f
+
+    def _rival_drop(self, k, days=7):
+        """(team, 'YYYY-MM-DD HH:MM') of the latest Drop of this player by ANOTHER manager within
+        `days`, from the league's transaction log, else None. A manager who held a real role
+        all season and let him go after his last game knows something the feeds may not yet
+        (10-25: McLaurin, knee, out for the season on Monday night; dropped Saturday; WAS on
+        bye so the pulse still read him as alive; the planner priced a $1 claim)."""
+        me = getattr(self.state, 'me', None)
+        cutoff = (self.now - dt.timedelta(days=days)).strftime('%Y-%m-%d %H:%M')
+        best = None
+        for r in self.log_rows:
+            if r.get("action") != "Drop" or NK(r.get("player") or "") != k: continue
+            if (r.get('datetime') or '') < cutoff or r.get('team') == me: continue
+            if best is None or r['datetime'] > best[1]: best = (r.get('team') or '?', r['datetime'])
+        return best
 
     def _wire_pulse(self, k, fam, tm, proj_w):
         """(alive, why) for a free agent. Alive when a projection source priced him

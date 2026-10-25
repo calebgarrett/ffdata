@@ -10930,10 +10930,11 @@
   ],
   "verdict": "WARN",
   "week": 7,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": true,
   "resolves_at": "2026-10-25T16:25-04:00",
-  "reverses": null
+  "reverses": null,
+  "superseded_by": "437b1863"
  },
  {
   "id": "165d896e",
@@ -11622,10 +11623,11 @@
   ],
   "verdict": "WARN",
   "week": 7,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": true,
   "resolves_at": "2026-10-25T16:25-04:00",
-  "reverses": "35c181d6"
+  "reverses": "35c181d6",
+  "superseded_by": "170e53de"
  },
  {
   "id": "590193f4",
@@ -11653,6 +11655,174 @@
   "subject": "Dallas Cowboys",
   "call": "stream Dallas Cowboys for week 8, drop 49ers",
   "detail": "DEF: DAL 18.5 vs yours Vikings 26.0 \u2014 edge 7.5 implied pts",
+  "evidence": [
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 7,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "170e53de",
+  "ts": "2026-10-23T23:24-04:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Pierre Strong Jr.",
+  "call": "start Pierre Strong Jr. at RB1",
+  "detail": "over MarShawn Lloyd +0.97",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 7,
+  "status": "proposed",
+  "provisional": true,
+  "resolves_at": "2026-10-25T16:25-04:00",
+  "reverses": "953cb9a5"
+ },
+ {
+  "id": "7c63525a",
+  "ts": "2026-10-23T23:24-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Kenny Gainwell",
+  "call": "add Kenny Gainwell (RB) over MarShawn Lloyd",
+  "detail": "+2.13/wk",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 7,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "437b1863",
+  "ts": "2026-10-23T23:24-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Jameson Williams",
+  "call": "start Jameson Williams at W/R",
+  "detail": "over Rashee Rice +12.35",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 7,
+  "status": "executed",
+  "provisional": false,
+  "resolves_at": "2026-10-25T16:25-04:00",
+  "reverses": "58f1d4b0",
+  "status_ts": "2026-10-24T00:13-04:00"
+ },
+ {
+  "id": "8f709697",
+  "ts": "2026-10-23T23:24-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Devin Bush",
+  "call": "add Devin Bush (LB) over Foyesade Oluokun",
+  "detail": "+19.06/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 7,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "3a1db3e4",
+  "ts": "2026-10-23T23:34-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Quay Walker",
+  "call": "add Quay Walker (LB) over Foyesade Oluokun",
+  "detail": "+19.63/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "PASS",
+  "week": 7,
+  "status": "executed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null,
+  "status_ts": "2026-10-24T00:13-04:00"
+ },
+ {
+  "id": "a7ecad97",
+  "ts": "2026-10-24T00:13-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Konata Mumpfield",
+  "call": "add Konata Mumpfield (WR) over Jameson Williams",
+  "detail": "+6.73/wk",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 7,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "910fd40c",
+  "ts": "2026-10-24T00:13-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Tykee Smith",
+  "call": "add Tykee Smith (DB) over Kam Curl",
+  "detail": "+2.29/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 7,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "82779009",
+  "ts": "2026-10-24T00:13-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Jessie Bates III",
+  "call": "add Jessie Bates III (DB) over Kam Curl",
+  "detail": "+1.57/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 7,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "d320f9ac",
+  "ts": "2026-10-24T00:13-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Dallas Cowboys",
+  "call": "bye cover: Dallas Cowboys for week 8, drop Rome Odunze",
+  "detail": "DEF: Texans on bye week 8; DAL 18.5 is the best free DEF on posted lines",
   "evidence": [
    "vegas"
   ],

@@ -143,6 +143,41 @@ cannot be traced to P(win) is wrong.
   weeks on disk, is O — not clear — and worth 0; never an add (Achane, torn ACL, was
   proposed as a $1 claim off a preseason number). `facts._wire_pulse`, test_plan 5c.
 
+- **The drop is the planner's spot, never a hand pick** (10-24). When Caleb asks for a move
+  by hand ("I want Mayfield now"), the drop is the spot the planner ranks for that add —
+  `data/plan.json` names it — not whichever bench player comes to mind. The hand-picked
+  49ers (a spare DEF with stream value) over Hutchinson (2.3 pts, Houston's WR4; the
+  planner's drop spot for every add that week) was wrong, and Caleb caught it: "I think
+  the 49ers are more valuable than all the junk WR on the bench." Spots rank by what the
+  roster loses — a spare DEF/K is worth its stream optionality (~1/wk), a bench skill
+  player his rest-of-season value — and the planner already does that arithmetic.
+  Tests: test_plan 8h (the spot is the weakest bench skill player, never the spare DEF).
+- **A rival's drop of a real role is a fact the feeds may not carry yet** (10-25). McLaurin
+  (season 204) tore up a knee on Monday night, out for the year; Washington's bye hid it
+  from the free-agent pulse (he was projected in his last played game) and the planner
+  priced a $1 claim the morning after WINdianapolis dropped him. Now `Fact.rival_drop`
+  carries the latest drop of a player by another manager within 7 days, and the planner
+  blocks any 100+ point role so dropped (G15) until a registry add_yes says a person
+  looked. A rival who held a WR1 for six weeks and cut him after one game knows something.
+  Tests: test_plan 5e.
+- **A one-QB roster carries a backup when the spot is dead** (Caleb, 10-24: "given how
+  important QB is, is it not worth keeping a backup?"). The point terms never ship a
+  backup who never starts, so the objective carries an explicit insurance term
+  (`Objective.insurance`, `INS_P_MISS` 0.06/wk x (backup − free replacement), the free
+  replacement discounted by half from week 13, when every contender has stashed the spare
+  QBs). It applies only when the league starts one QB and the roster holds one; it is
+  ~2.5 J for a 17/wk backup, about the week-11 bye cover's worth, so the pair ships into a
+  dead bench spot and never into a real player. Superflex (HH) is not a one-QB league
+  (G14 covers QB depth there). Tests: test_plan 8h.
+- **A cut DEF/K is replaced, not emptied** (10-23). In every week after W the objective
+  values a cut defense or kicker at the best free one (`_stream_value`), because that is
+  what the stream call will do; the depth term charges a spare only above the free
+  replacement. Before this the Chiefs read as −18.7 in the Texans' bye week and blocked
+  Walker. Tests: test_plan 8a2.
+- **IDP never has a market; a verified role is the second source** (10-23). Quay Walker
+  was blocked by G5 (Sleeper only) all week while the IDP flex held a corner. A priority-1
+  registry add_yes (snap share verified) may take the spare DEF like a Tier-A. The real
+  fix — defensive snap share from the usage pull as the second family — is open.
 - **A tag is never a drop reason** (Caleb, 2026-09-21: "You are telling me to drop control of players and you have no idea why they missed one week. That's horrible roster management."). O/Q/D/IR/PUP/SUSP/CEL on a Yahoo page is a fact about one week. `wire.dead_spot()` is true only for a long-term designation AND a `roles.json` `drop_ok` entry that records what the injury is and how long (Dell IR-R was one; Jennings O was not). Without that, `gate_drop` BLOCKs (G13-injury), the breakout scanner skips him as a drop, the claim plan skips him, and the card says "why and for how long is NOT on record; not a drop until it is". Verifying the injury — reported cause and expected timeline — is a registry write, done with Caleb present.
 - **A market from another week is never applied** (`Projections` week guard, 09-23): Kalshi ladders are kept only when the event ticker's date falls in the current NFL week; game lines only when the kickoff does; the props file only when it was written after the week began; market-readiness counts only this week's events. Before the guard, a week-3 Wednesday priced Sunday's players off week-2 ladders and Goff off week-2 props.
 - **Yahoo projections are the fallback, labelled** (`data/yahoo_{league}_wk{W}.csv`, copied off the matchup page): points-only, league-scored by Yahoo, one source family (`yahoo`), boom share unknown. Every call on them is PROVISIONAL (G5 single source, G7 no market) until the market posts. Win probability refuses to compute P(beat opponent) when the opponent has a starter no source prices, rather than overstating it.

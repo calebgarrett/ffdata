@@ -60,30 +60,30 @@
    "DEF": "DST:MIN",
    "K": "jason myers",
    "QB": "matt stafford",
-   "RB1": "pierre strong",
-   "RB2": "josh jacobs",
+   "RB1": "josh jacobs",
+   "RB2": "pierre strong",
    "TE": "sam laporta",
    "W/R/T": "isaiah likely",
-   "WR1": "drake london",
-   "WR2": "jaxon smith njigba",
+   "WR1": "jaxon smith njigba",
+   "WR2": "drake london",
    "WR3": "malik washington"
   },
-  "optimal_before_moves": 132.08,
+  "optimal_before_moves": 131.92,
   "slots": {
    "DEF": "Vikings",
    "K": "Jason Myers",
    "QB": "Matthew Stafford",
-   "RB1": "Pierre Strong Jr.",
-   "RB2": "Josh Jacobs",
+   "RB1": "Josh Jacobs",
+   "RB2": "Pierre Strong Jr.",
    "TE": "Sam LaPorta",
    "W/R/T": "Isaiah Likely",
-   "WR1": "Drake London",
-   "WR2": "Jaxon Smith-Njigba",
+   "WR1": "Jaxon Smith-Njigba",
+   "WR2": "Drake London",
    "WR3": "Malik Washington"
   },
-  "total": 132.08
+  "total": 131.92
  },
- "made": "2026-10-25T00:30-04:00",
+ "made": "2026-10-25T05:23-04:00",
  "mechanics": [
   {
    "rule": "A never-rostered free agent is free until his game kicks off",
@@ -123,103 +123,7 @@
  ],
  "moves": [
   {
-   "J": 6.226,
-   "add_key": "terry mclaurin",
-   "add_name": "Terry McLaurin",
-   "at": "2026-10-28T06:00-04:00",
-   "deadline": "2026-10-27T23:59-04:00",
-   "drop_name": "Ryan Flournoy",
-   "eff": "W+1",
-   "fam": "WR",
-   "gates": {
-    "add": {
-     "checks": [
-      {
-       "gate": "G11-role-registry",
-       "msg": "no verified snap count on record \u2014 projection is the only evidence he plays",
-       "status": "WARN"
-      }
-     ],
-     "verdict": "WARN"
-    },
-    "drop": {
-     "checks": [
-      {
-       "gate": "G11-role-registry",
-       "msg": "no verified snap count on record \u2014 projection is the only evidence he plays",
-       "status": "WARN"
-      }
-     ],
-     "verdict": "WARN"
-    }
-   },
-   "id": "BSB:terry mclaurin",
-   "kind": "add",
-   "league": "BSB",
-   "provisional": false,
-   "reasons": [
-    "depth: Terry McLaurin 12.0/wk rest-of-season vs your weakest bench WR 3.9 (season blend / 17)",
-    "the spot: Ryan Flournoy \u2014 rest-of-season 6.0/wk (season blend / 17)"
-   ],
-   "spot_id": "drop:ryan flournoy",
-   "spot_kind": "drop",
-   "spot_label": "Ryan Flournoy",
-   "srcs": [
-    "depth"
-   ],
-   "tier": null,
-   "timing_why": "held through this week: he plays for you first, the swap is after the week rolls",
-   "tm": "WAS",
-   "txns": [
-    {
-     "bid": 1,
-     "key": "terry mclaurin",
-     "op": "claim",
-     "player": "Terry McLaurin"
-    },
-    {
-     "key": "ryan flournoy",
-     "op": "drop",
-     "player": "Ryan Flournoy"
-    }
-   ],
-   "value_terms": {
-    "J": 6.226,
-    "acq": 1,
-    "bid": 1,
-    "dS_W": 0.0,
-    "dS_W1": 4.406,
-    "dS_play": 2.715,
-    "dS_rest": 3.325,
-    "d_boom": 1.309,
-    "d_depth": -5.982,
-    "p_playoffs": 0.99,
-    "pen_acq": 0.0,
-    "pen_churn": 0.5,
-    "pen_fab": 0.01,
-    "rest_weeks": "9-17",
-    "txn": 1
-   },
-   "values": {
-    "add": {
-     "boom": null,
-     "ros": 12.014705882352942,
-     "ros_src": "season blend / 17",
-     "w": 0.0,
-     "w1": 12.014705882352942,
-     "w1_src": "rest-of-season per-week (no week-8 projection on disk \u2014 approximation)"
-    },
-    "drop": {
-     "ros": 5.982352941176471,
-     "ros_src": "season blend / 17",
-     "w": 8.652049448100929,
-     "w1": 5.982352941176471
-    }
-   },
-   "when": "Tuesday (week-lock) \u2014 claim by Tue night ($1)"
-  },
-  {
-   "J": 0.802,
+   "J": 0.812,
    "add_key": null,
    "add_name": null,
    "at": null,
@@ -227,22 +131,22 @@
    "drop_name": null,
    "eff": "W",
    "fam": "RB",
-   "gain": 0.8,
+   "gain": 0.81,
    "gates": {
     "add": null,
     "drop": null
    },
-   "id": "BSB:lineup:RB1",
+   "id": "BSB:lineup:RB2",
    "kind": "lineup",
    "league": "BSB",
    "phase": "alert",
    "provisional": true,
    "reasons": [
-    "+0.80 this week",
+    "+0.81 this week (Josh Jacobs slides to RB1)",
     "inside the 1.5-pt noise band"
    ],
    "sit": "MarShawn Lloyd",
-   "slot": "RB1",
+   "slot": "RB2",
    "spot_id": null,
    "spot_kind": null,
    "spot_label": null,
@@ -258,7 +162,7 @@
      "key": "pierre strong",
      "op": "start",
      "player": "Pierre Strong Jr.",
-     "slot": "RB1"
+     "slot": "RB2"
     },
     {
      "key": "marshawn lloyd",
@@ -267,8 +171,8 @@
     }
    ],
    "value_terms": {
-    "J": 0.802,
-    "dS_W": 0.802
+    "J": 0.812,
+    "dS_W": 0.812
    },
    "when": "before kickoff Sun Oct 25, 4:25 pm ET"
   }
@@ -312,21 +216,21 @@
    ]
   },
   {
-   "J": -0.411,
+   "J": 0.059,
    "key": "darius cooper",
    "name": "Darius Cooper",
-   "reason": "J -0.41 < 3.0 at its best spot (Ryan Flournoy) \u2014 J -0.41 = 1.0x+0.00 (wk W) + 0.8x+1.14 (W+1) + 0.8x+0.31 (rest, mean of wks 9-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+1.31 (bench boom) + 0.2x-5.98 (depth) - 0.00 acq - 0.00 FAB($0) - 0.50 churn",
+   "reason": "J +0.06 < 3.0 at its best spot (Ryan Flournoy) \u2014 J +0.06 = 1.0x+0.00 (wk W) + 0.8x+1.66 (W+1) + 0.8x+0.36 (rest, mean of wks 9-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+1.34 (bench boom) + 0.2x-5.98 (depth) - 0.00 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
-    "depth: Darius Cooper 8.7/wk rest-of-season vs your weakest bench WR 3.9 (W projection (no season number))"
+    "depth: Darius Cooper 9.3/wk rest-of-season vs your weakest bench WR 3.9 (W projection (no season number))"
    ]
   },
   {
    "J": null,
    "key": "darnell washington",
    "name": "Darnell Washington",
-   "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 7.2 under your weakest 12.6",
+   "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 7.3 under your weakest 12.4",
    "reasons": [
-    "breakout tier B: 71% snaps, 12% targets, 18% air yds; Kalshi receiving yds 29 vs Sleeper 31 (-6%) \u2014 a part-time line, under the 35 starter floor"
+    "breakout tier B: 71% snaps, 12% targets, 18% air yds; Kalshi receiving yds 30 vs Sleeper 31 (-6%) \u2014 a part-time line, under the 35 starter floor"
    ]
   },
   {
@@ -335,14 +239,14 @@
    "name": "Jahan Dotson",
    "reason": "best spot 49ers: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
-    "breakout tier B: 85% snaps, 15% targets, 46% air yds; Kalshi receiving yds 34 vs Sleeper 26 (+30%) \u2014 a part-time line, under the 35 starter floor"
+    "breakout tier B: 85% snaps, 15% targets, 46% air yds; Kalshi receiving yds 34 vs Sleeper 26 (+29%) \u2014 a part-time line, under the 35 starter floor"
    ]
   },
   {
-   "J": -0.671,
+   "J": -0.669,
    "key": "jake ferguson",
    "name": "Jake Ferguson",
-   "reason": "J -0.67 < 3.0 at its best spot (Ryan Flournoy) \u2014 J -0.67 = 1.0x+0.00 (wk W) + 0.8x+1.78 (W+1) + 0.8x-0.67 (rest, mean of wks 9-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+1.31 (bench boom) + 0.2x-5.98 (depth) - 0.00 acq - 0.00 FAB($0) - 0.50 churn",
+   "reason": "J -0.67 < 3.0 at its best spot (Ryan Flournoy) \u2014 J -0.67 = 1.0x+0.00 (wk W) + 0.8x+1.78 (W+1) + 0.8x-0.67 (rest, mean of wks 9-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+1.34 (bench boom) + 0.2x-5.98 (depth) - 0.00 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
     "depth: Jake Ferguson 9.4/wk rest-of-season vs your weakest bench player 3.9 (season blend / 17)"
    ]
@@ -366,20 +270,20 @@
    ]
   },
   {
-   "J": -0.627,
+   "J": null,
    "key": "kenny gainwell",
    "name": "Kenny Gainwell",
-   "reason": "J -0.63 < 3.0 at its best spot (Ryan Flournoy) \u2014 J -0.63 = 1.0x+0.00 (wk W) + 0.8x+1.29 (W+1) + 0.8x-0.11 (rest, mean of wks 9-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+1.31 (bench boom) + 0.2x-5.98 (depth) - 0.00 acq - 0.01 FAB($1) - 0.50 churn",
+   "reason": "G15: dropped by 65 SOUTH on 2026-10-23 \u2014 a manager let a 151-point role go after his last game; find out why before claiming (a verified role is a registry add_yes)",
    "reasons": [
     "RB weekly upgrade: Kenny Gainwell 6.6 vs starter MarShawn Lloyd 4.0",
     "depth: Kenny Gainwell 8.9/wk rest-of-season vs your weakest bench RB 3.9 (season blend / 17)"
    ]
   },
   {
-   "J": -0.571,
+   "J": null,
    "key": "mark andrews",
    "name": "Mark Andrews",
-   "reason": "J -0.57 < 3.0 at its best spot (Ryan Flournoy) \u2014 J -0.57 = 1.0x+0.00 (wk W) + 0.8x+1.92 (W+1) + 0.8x-0.67 (rest, mean of wks 9-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+1.31 (bench boom) + 0.2x-5.98 (depth) - 0.00 acq - 0.01 FAB($1) - 0.50 churn",
+   "reason": "G15: dropped by FWU on 2026-10-21 \u2014 a manager let a 162-point role go after his last game; find out why before claiming (a verified role is a registry add_yes)",
    "reasons": [
     "depth: Mark Andrews 9.5/wk rest-of-season vs your weakest bench player 3.9 (season blend / 17)"
    ]
@@ -388,7 +292,7 @@
    "J": null,
    "key": "mike mayer",
    "name": "Michael Mayer",
-   "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 8.3 under your weakest 12.6",
+   "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 8.3 under your weakest 12.4",
    "reasons": [
     "breakout tier B: 79% snaps, 22% targets, 15% air yds; no market line yet (Sleeper receiving yds 29)"
    ]
@@ -403,19 +307,28 @@
    ]
   },
   {
-   "J": -1.459,
+   "J": -1.456,
    "key": "rashid shaheed",
    "name": "Rashid Shaheed",
-   "reason": "J -1.46 < 3.0 at its best spot (Ryan Flournoy) \u2014 J -1.46 = 1.0x+0.00 (wk W) + 0.8x+0.67 (W+1) + 0.8x-0.54 (rest, mean of wks 9-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+1.31 (bench boom) + 0.2x-5.98 (depth) - 0.00 acq - 0.00 FAB($0) - 0.50 churn",
+   "reason": "J -1.46 < 3.0 at its best spot (Ryan Flournoy) \u2014 J -1.46 = 1.0x+0.00 (wk W) + 0.8x+0.67 (W+1) + 0.8x-0.54 (rest, mean of wks 9-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+1.34 (bench boom) + 0.2x-5.98 (depth) - 0.00 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
     "depth: Rashid Shaheed 8.3/wk rest-of-season vs your weakest bench WR 3.9 (season blend / 17)"
    ]
   },
   {
-   "J": 1.047,
+   "J": null,
+   "key": "terry mclaurin",
+   "name": "Terry McLaurin",
+   "reason": "G15: dropped by WINdianapolis on 2026-10-24 \u2014 a manager let a 204-point role go after his last game; find out why before claiming (a verified role is a registry add_yes)",
+   "reasons": [
+    "depth: Terry McLaurin 12.0/wk rest-of-season vs your weakest bench WR 3.9 (season blend / 17)"
+   ]
+  },
+  {
+   "J": 1.059,
    "key": "zonovan knight",
    "name": "Zonovan Knight",
-   "reason": "J +1.05 < 3.0 at its best spot (Ryan Flournoy) \u2014 J +1.05 = 1.0x+2.79 (wk W) + 0.8x+0.03 (W+1) + 0.8x-0.25 (rest, mean of wks 9-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+1.31 (bench boom) + 0.2x-5.98 (depth) - 0.00 acq - 0.00 FAB($0) - 0.50 churn",
+   "reason": "J +1.06 < 3.0 at its best spot (Ryan Flournoy) \u2014 J +1.06 = 1.0x+2.80 (wk W) + 0.8x+0.03 (W+1) + 0.8x-0.25 (rest, mean of wks 9-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+1.34 (bench boom) + 0.2x-5.98 (depth) - 0.00 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
     "breakout tier B: 44% snaps, 46% of RB touches; no market line yet (Sleeper rushing yds 35)",
     "depth: Zonovan Knight 7.6/wk rest-of-season vs your weakest bench RB 3.9 (W projection 7.6 (usage says starter; the preseason number is stale))"
@@ -469,7 +382,7 @@
    "id": "drop:ryan flournoy",
    "kind": "drop",
    "label": "Ryan Flournoy",
-   "taken_by": "Terry McLaurin",
+   "taken_by": null,
    "tier": 3
   }
  ],
@@ -486,12 +399,12 @@
   "W_NOW": 1.0,
   "W_PLAY": 0.6,
   "W_REST": 0.8,
-  "p_playoffs": 0.993
+  "p_playoffs": 0.9935
  },
  "winprob": {
-  "mean": 131.85845485608772,
+  "mean": 131.8966977641335,
   "note": "sampled on the planner's final lineup",
-  "p_med": 0.5196666666666667,
-  "p_opp": 0.3925
+  "p_med": 0.5088333333333334,
+  "p_opp": 0.38766666666666666
  }
 }
