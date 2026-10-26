@@ -11,7 +11,7 @@
  "excluded": [
   {
    "player": "Dak Prescott",
-   "reason": "gate: G6-magnitude 37.87101384216827 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex: 3 QBs for 2 QB-eligible slots \u2014 QB3 is by"
+   "reason": "gate: G6-magnitude 38.0513197635704 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex: 3 QBs for 2 QB-eligible slots \u2014 QB3 is bye"
   },
   {
    "player": "Jaylen Warren",
@@ -121,7 +121,7 @@
    "W/R/T": "braelon allen",
    "WR": "jamarr chase"
   },
-  "optimal_before_moves": 308.96,
+  "optimal_before_moves": 309.14,
   "slots": {
    "CB": "Cooper DeJean",
    "D": "Quay Walker",
@@ -139,9 +139,9 @@
    "W/R/T": "Braelon Allen",
    "WR": "Ja'Marr Chase"
   },
-  "total": 308.96
+  "total": 309.14
  },
- "made": "2026-10-25T19:10-04:00",
+ "made": "2026-10-25T21:35-04:00",
  "mechanics": [
   {
    "rule": "Free agents are immediate unless his game is in progress",
@@ -278,9 +278,9 @@
    "J": null,
    "key": "cooper kupp",
    "name": "Cooper Kupp",
-   "reason": "sits behind everyone: you carry 5 WRs for 1 slot(s) and he projects 6.4 under your weakest 10.7",
+   "reason": "sits behind everyone: you carry 5 WRs for 1 slot(s) and he projects 6.6 under your weakest 10.7",
    "reasons": [
-    "breakout tier B: 85% snaps, 20% targets, 18% air yds; Kalshi receiving yds 30 vs Sleeper 32 (-6%) \u2014 a part-time line, under the 35 starter floor"
+    "breakout tier B: 85% snaps, 20% targets, 18% air yds; no market line yet (Sleeper receiving yds 32)"
    ]
   },
   {
@@ -314,9 +314,18 @@
    "J": null,
    "key": "emanuel wilson",
    "name": "Emanuel Wilson",
-   "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 10.4 under your weakest 16.1",
+   "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 10.0 under your weakest 16.1",
    "reasons": [
-    "breakout tier A: 32% snaps, 60% of RB touches; Kalshi rushing yds 53 vs Sleeper 42 (+28%); held (wk5: 59% snaps, 73% of RB touches)"
+    "breakout tier B: 32% snaps, 60% of RB touches; no market line yet (Sleeper rushing yds 42); held (wk5: 59% snaps, 73% of RB touches)"
+   ]
+  },
+  {
+   "J": null,
+   "key": "george holani",
+   "name": "George Holani",
+   "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 6.9 under your weakest 16.1",
+   "reasons": [
+    "breakout tier B: 58% snaps, 20% of RB touches; no market line yet (Sleeper rushing yds 20)"
    ]
   },
   {
@@ -481,7 +490,7 @@
   "p_playoffs": 1.0
  },
  "winprob": {
-  "mean": 308.93142235301474,
+  "mean": 309.2700384737529,
   "note": "final lineup = current lineup (the engine's own number)",
   "p_med": null,
   "p_opp": null
