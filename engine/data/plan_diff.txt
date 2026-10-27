@@ -1,12 +1,12 @@
-PLAN DIFF — week 7 — Tue Oct 27, 1:30 am ET  (shadow mode: the card still shows the live calls; FF_PLANNER=1 renders the plan)
+PLAN DIFF — week 7 — Tue Oct 27, 6:55 am ET  (shadow mode: the card still shows the live calls; FF_PLANNER=1 renders the plan)
 objective: J = 1.0*dS_W + 0.8*dS_W1 + 0.8*dS_rest(mean of weeks W+2..17) + 0.1*d_bench_boom - acq ({'HH': 1.0, 'BSB': 0.0}) - 0.1*bid - 0.5*txns; ship at J >= 3.0
 
 == BSB ================================================================================
   card Decide calls vs the plan:
-    CARD ONLY stream: add Dallas Cowboys (DEF), drop San Francisco
+    CARD ONLY stream: add Dallas Cowboys (DEF), drop 49ers
               planner: no roster spot exists
   budgets: {"acq_used": 1, "acq_left": null, "acq_reset": null, "acq_reset_verified": null, "fab_left": 91, "ir_free": 0, "open_spots": 0}
-  final lineup week 7: 134.4 pts (optimal before moves 134.4) · P(beat opp) 100% · P(beat median) 69%
+  final lineup week 7: 134.4 pts (optimal before moves 134.4) · P(beat opp) 100% · P(beat median) 80%
   considered and rejected (17):
     - Dallas Cowboys: no roster spot exists
     - Los Angeles Chargers: no roster spot exists
@@ -25,7 +25,7 @@ objective: J = 1.0*dS_W + 0.8*dS_W1 + 0.8*dS_rest(mean of weeks W+2..17) + 0.1*d
     - Terry McLaurin: G15: dropped by WINdianapolis on 2026-10-24 — a manager let a 204-point role go after his last game; find out why before claiming (a verified role is a registry add_yes)
     - Tyrone Tracy Jr.: no roster spot exists
     - Zonovan Knight: no roster spot exists
-  not a clean drop: Matthew Stafford (his game is final / live — finished and live players never move); MarShawn Lloyd (his game is final / live — finished and live players never move); Josh Jacobs (registry HOLD — HOLD, and START when active: a top-10 RB in the #9 Dec); Jaxon Smith-Njigba (his game is final / live — finished and live players never move); Malik Washington (his game is final / live — finished and live players never move); Drake London (his game is final / live — finished and live players never move); Sam LaPorta (his game is final / live — finished and live players never move); Isaiah Likely (his game is final / live — finished and live players never move); DeMario Douglas (his game is final / live — finished and live players never move); Ryan Flournoy (his game is final / live — finished and live players never move); James Cook III (starter-level usage in his own right (66% snaps, 83% of RB touches)); Ray Davis (registry HOLD — HOLD, downgraded. James Cook is the single best asset ); Makai Lemon (his game is final / live — finished and live players never move); Pierre Strong Jr. (his game is final / live — finished and live players never move); Baker Mayfield (you added him 2026-10-24 (<= 7 days) — your decision, not the spot); Jason Myers (his game is final / live — finished and live players never move); Minnesota (his game is final / live — finished and live players never move); San Francisco (his game is final / live — finished and live players never move)
+  not a clean drop: Matthew Stafford (his game is final / live — finished and live players never move); MarShawn Lloyd (his game is final / live — finished and live players never move); Josh Jacobs (registry HOLD — HOLD, and START when active: a top-10 RB in the #9 Dec); Jaxon Smith-Njigba (his game is final / live — finished and live players never move); Malik Washington (his game is final / live — finished and live players never move); Drake London (his game is final / live — finished and live players never move); Sam LaPorta (his game is final / live — finished and live players never move); Isaiah Likely (his game is final / live — finished and live players never move); DeMario Douglas (his game is final / live — finished and live players never move); Ryan Flournoy (his game is final / live — finished and live players never move); James Cook III (starter-level usage in his own right (66% snaps, 83% of RB touches)); Ray Davis (registry HOLD — HOLD, downgraded. James Cook is the single best asset ); Makai Lemon (his game is final / live — finished and live players never move); Pierre Strong Jr. (his game is final / live — finished and live players never move); Baker Mayfield (you added him 2026-10-24 (<= 7 days) — your decision, not the spot); Jason Myers (his game is final / live — finished and live players never move); Vikings (his game is final / live — finished and live players never move); 49ers (his game is final / live — finished and live players never move)
   UNVERIFIED mechanics: A benched player whose game is over cannot be dropped before the week rolls
 
 == HH ================================================================================
@@ -33,7 +33,7 @@ objective: J = 1.0*dS_W + 0.8*dS_W1 + 0.8*dS_rest(mean of weeks W+2..17) + 0.1*d
     CARD ONLY bye cover: add Dallas Cowboys (DEF), drop Rome Odunze
               planner: no roster spot exists
   budgets: {"acq_used": 2, "acq_left": 5, "acq_reset": "2026-10-20T07:00-04:00", "acq_reset_verified": false, "fab_left": null, "ir_free": 1, "open_spots": 0}
-  final lineup week 7: 316.0 pts (optimal before moves 316.0)
+  final lineup week 7: 316.0 pts (optimal before moves 316.0) · P(beat opp) 100%
   considered and rejected (32):
     - Chicago Bears: no roster spot exists
     - Cincinnati Bengals: no roster spot exists
