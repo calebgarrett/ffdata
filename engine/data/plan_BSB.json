@@ -3,7 +3,7 @@
   "acq_left": null,
   "acq_reset": null,
   "acq_reset_verified": null,
-  "acq_used": 1,
+  "acq_used": 0,
   "fab_left": 91,
   "ir_free": 0,
   "open_spots": 0
@@ -11,47 +11,47 @@
  "excluded": [
   {
    "player": "Matthew Stafford",
-   "reason": "his game is final / live \u2014 finished and live players never move"
-  },
-  {
-   "player": "MarShawn Lloyd",
-   "reason": "his game is final / live \u2014 finished and live players never move"
+   "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 32: no player/team"
   },
   {
    "player": "Josh Jacobs",
    "reason": "registry HOLD \u2014 HOLD, and START when active: a top-10 RB in the #9 December environment for the "
   },
   {
+   "player": "James Cook III",
+   "reason": "gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper']); G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 3"
+  },
+  {
    "player": "Jaxon Smith-Njigba",
-   "reason": "his game is final / live \u2014 finished and live players never move"
+   "reason": "starter-level usage in his own right (77% snaps, 43% targets, 79% air yds)"
   },
   {
    "player": "Malik Washington",
-   "reason": "his game is final / live \u2014 finished and live players never move"
+   "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 32: no player/team"
   },
   {
    "player": "Drake London",
-   "reason": "his game is final / live \u2014 finished and live players never move"
+   "reason": "starter-level usage in his own right (80% snaps, 29% targets, 56% air yds)"
   },
   {
    "player": "Sam LaPorta",
-   "reason": "his game is final / live \u2014 finished and live players never move"
-  },
-  {
-   "player": "Isaiah Likely",
-   "reason": "his game is final / live \u2014 finished and live players never move"
+   "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 32: no player/team"
   },
   {
    "player": "DeMario Douglas",
-   "reason": "his game is final / live \u2014 finished and live players never move"
+   "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 32: no player/team"
+  },
+  {
+   "player": "Isaiah Likely",
+   "reason": "starter-level usage in his own right (86% snaps, 14% targets, 6% air yds)"
+  },
+  {
+   "player": "MarShawn Lloyd",
+   "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 32: no player/team"
   },
   {
    "player": "Ryan Flournoy",
-   "reason": "his game is final / live \u2014 finished and live players never move"
-  },
-  {
-   "player": "James Cook III",
-   "reason": "starter-level usage in his own right (66% snaps, 83% of RB touches)"
+   "reason": "starter-level usage in his own right (78% snaps, 15% targets, 27% air yds)"
   },
   {
    "player": "Ray Davis",
@@ -59,11 +59,11 @@
   },
   {
    "player": "Makai Lemon",
-   "reason": "his game is final / live \u2014 finished and live players never move"
+   "reason": "starter-level usage in his own right (91% snaps, 23% targets, 33% air yds)"
   },
   {
    "player": "Pierre Strong Jr.",
-   "reason": "his game is final / live \u2014 finished and live players never move"
+   "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 32: no player/team"
   },
   {
    "player": "Baker Mayfield",
@@ -71,15 +71,15 @@
   },
   {
    "player": "Jason Myers",
-   "reason": "his game is final / live \u2014 finished and live players never move"
+   "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 32: no player/team"
   },
   {
    "player": "Vikings",
-   "reason": "his game is final / live \u2014 finished and live players never move"
+   "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 32: no player/team"
   },
   {
    "player": "49ers",
-   "reason": "his game is final / live \u2014 finished and live players never move"
+   "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 32: no player/team"
   }
  ],
  "league": "BSB",
@@ -88,30 +88,30 @@
    "DEF": "DST:MIN",
    "K": "jason myers",
    "QB": "matt stafford",
-   "RB1": "marshawn lloyd",
+   "RB1": "james cook",
    "RB2": "josh jacobs",
    "TE": "sam laporta",
-   "W/R/T": "isaiah likely",
+   "W/R/T": "ryan flournoy",
    "WR1": "jaxon smith njigba",
-   "WR2": "malik washington",
-   "WR3": "drake london"
+   "WR2": "drake london",
+   "WR3": "malik washington"
   },
-  "optimal_before_moves": 134.45,
+  "optimal_before_moves": 137.77,
   "slots": {
    "DEF": "Vikings",
    "K": "Jason Myers",
    "QB": "Matthew Stafford",
-   "RB1": "MarShawn Lloyd",
+   "RB1": "James Cook III",
    "RB2": "Josh Jacobs",
    "TE": "Sam LaPorta",
-   "W/R/T": "Isaiah Likely",
+   "W/R/T": "Ryan Flournoy",
    "WR1": "Jaxon Smith-Njigba",
-   "WR2": "Malik Washington",
-   "WR3": "Drake London"
+   "WR2": "Drake London",
+   "WR3": "Malik Washington"
   },
-  "total": 134.45
+  "total": 137.77
  },
- "made": "2026-10-27T06:56-04:00",
+ "made": "2026-10-27T12:26-04:00",
  "mechanics": [
   {
    "rule": "A never-rostered free agent is free until his game kicks off",
@@ -149,88 +149,154 @@
    "verified": true
   }
  ],
- "moves": [],
+ "moves": [
+  {
+   "J": 0.034,
+   "add_key": null,
+   "add_name": null,
+   "at": null,
+   "deadline": "2026-11-01T13:00-05:00",
+   "drop_name": null,
+   "eff": "W",
+   "fam": "WR",
+   "gain": 0.03,
+   "gates": {
+    "add": null,
+    "drop": null
+   },
+   "id": "BSB:lineup:W/R/T",
+   "kind": "lineup",
+   "league": "BSB",
+   "phase": "early",
+   "provisional": true,
+   "reasons": [
+    "+0.03 this week",
+    "inside the 1.5-pt noise band",
+    "no player market posted yet for his game"
+   ],
+   "sit": "DeMario Douglas",
+   "slot": "W/R/T",
+   "spot_id": null,
+   "spot_kind": null,
+   "spot_label": null,
+   "srcs": [
+    "lineup"
+   ],
+   "start": "Ryan Flournoy",
+   "tier": null,
+   "timing_why": "",
+   "tm": "DAL",
+   "txns": [
+    {
+     "key": "ryan flournoy",
+     "op": "start",
+     "player": "Ryan Flournoy",
+     "slot": "W/R/T"
+    },
+    {
+     "key": "demario douglas",
+     "op": "bench",
+     "player": "DeMario Douglas"
+    }
+   ],
+   "value_terms": {
+    "J": 0.034,
+    "dS_W": 0.034
+   },
+   "when": "before kickoff Sun Nov 1, 1:00 pm ET"
+  }
+ ],
  "notes": [],
  "rejected": [
   {
    "J": null,
-   "key": "DST:DAL",
-   "name": "Dallas Cowboys",
-   "reason": "no roster spot exists",
+   "key": "DST:CIN",
+   "name": "Cincinnati Bengals",
+   "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 32: no player/team",
    "reasons": [
-    "week-8 DEF stream: Dallas Cowboys 7.6 vs your best 5.8 (W line re-scored on the week-8 opponent implied total 18.5)"
+    "DEF weekly upgrade: Cincinnati Bengals 9.6 vs starter Vikings 5.0",
+    "week-9 DEF stream: Cincinnati Bengals 8.4 vs your best 5.0 (W line re-scored on the week-9 opponent implied total 22.0)"
    ]
   },
   {
    "J": null,
-   "key": "DST:LAC",
-   "name": "Los Angeles Chargers",
-   "reason": "no roster spot exists",
+   "key": "DST:JAX",
+   "name": "Jacksonville Jaguars",
+   "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 32: no player/team",
    "reasons": [
-    "week-8 DEF stream: Los Angeles Chargers 6.7 vs your best 5.8 (rest-of-season per-week (no week-8 projection on disk \u2014 approximation))"
+    "DEF weekly upgrade: Jacksonville Jaguars 8.4 vs starter Vikings 5.0"
+   ]
+  },
+  {
+   "J": null,
+   "key": "DST:PHI",
+   "name": "Philadelphia Eagles",
+   "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 32: no player/team",
+   "reasons": [
+    "week-9 DEF stream: Philadelphia Eagles 6.7 vs your best 5.0 (W line re-scored on the week-9 opponent implied total 19.5)"
+   ]
+  },
+  {
+   "J": null,
+   "key": "DST:WAS",
+   "name": "Washington Commanders",
+   "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 32: no player/team",
+   "reasons": [
+    "DEF weekly upgrade: Washington Commanders 8.4 vs starter Vikings 5.0"
    ]
   },
   {
    "J": null,
    "key": "dalton schultz",
    "name": "Dalton Schultz",
-   "reason": "no roster spot exists",
+   "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 32: no player/team",
    "reasons": [
-    "depth: Dalton Schultz 8.8/wk rest-of-season vs your weakest bench player 3.8 (season blend / 17)"
+    "depth: Dalton Schultz 8.8/wk rest-of-season vs your weakest bench TE 0.9 (season blend / 17)"
    ]
   },
   {
    "J": null,
-   "key": "darius cooper",
-   "name": "Darius Cooper",
-   "reason": "gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])",
+   "key": "dylan sampson",
+   "name": "Dylan Sampson",
+   "reason": "G15: dropped by FWU on 2026-10-21 \u2014 a manager let a 102-point role go after his last game; find out why before claiming (a verified role is a registry add_yes)",
    "reasons": [
-    "depth: Darius Cooper 9.5/wk rest-of-season vs your weakest bench WR 3.8 (W projection (no season number))"
+    "depth: Dylan Sampson 6.0/wk rest-of-season vs your weakest bench RB 0.9 (season blend / 17)"
    ]
   },
   {
    "J": null,
-   "key": "darnell washington",
-   "name": "Darnell Washington",
-   "reason": "no roster spot exists",
+   "key": "elic ayomanor",
+   "name": "Elic Ayomanor",
+   "reason": "sits behind everyone: you carry 6 WRs for 3 slot(s) and he projects 6.2 under your weakest 7.7",
    "reasons": [
-    "breakout tier B: 71% snaps, 12% targets, 18% air yds; no market line yet (Sleeper receiving yds 29)"
-   ]
-  },
-  {
-   "J": null,
-   "key": "jahan dotson",
-   "name": "Jahan Dotson",
-   "reason": "no roster spot exists",
-   "reasons": [
-    "breakout tier B: 85% snaps, 15% targets, 46% air yds; no market line yet (Sleeper receiving yds 28)"
+    "breakout tier B: 89% snaps, 23% targets, 44% air yds; no market line yet (Sleeper receiving yds 31)"
    ]
   },
   {
    "J": null,
    "key": "jake ferguson",
    "name": "Jake Ferguson",
-   "reason": "no roster spot exists",
+   "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 32: no player/team",
    "reasons": [
-    "depth: Jake Ferguson 9.4/wk rest-of-season vs your weakest bench player 3.8 (season blend / 17)"
+    "depth: Jake Ferguson 9.4/wk rest-of-season vs your weakest bench TE 0.9 (season blend / 17)"
    ]
   },
   {
    "J": null,
-   "key": "jaleel mclaughlin",
-   "name": "Jaleel McLaughlin",
-   "reason": "no roster spot exists",
+   "key": "jerry jeudy",
+   "name": "Jerry Jeudy",
+   "reason": "G15: dropped by Rayland on 2026-10-21 \u2014 a manager let a 134-point role go after his last game; find out why before claiming (a verified role is a registry add_yes)",
    "reasons": [
-    "breakout tier B: 63% snaps, 54% of RB touches; no market line yet (Sleeper rushing yds 6)"
+    "depth: Jerry Jeudy 7.9/wk rest-of-season vs your weakest bench WR 0.9 (season blend / 17)"
    ]
   },
   {
    "J": null,
-   "key": "keandre lambert smith",
-   "name": "KeAndre Lambert-Smith",
-   "reason": "sits behind everyone: you carry 6 WRs for 3 slot(s) and he projects 0.0 under your weakest 5.3",
+   "key": "jordan watkins",
+   "name": "Jordan Watkins",
+   "reason": "sits behind everyone: you carry 6 WRs for 3 slot(s) and he projects 0.0 under your weakest 7.7",
    "reasons": [
-    "breakout tier B: 87% snaps, 24% targets, 19% air yds; no market line yet, and no Sleeper line either"
+    "breakout tier B: 76% snaps, 15% targets, 28% air yds; no market line yet, and no Sleeper line either"
    ]
   },
   {
@@ -239,7 +305,25 @@
    "name": "Kenny Gainwell",
    "reason": "G15: dropped by 65 SOUTH on 2026-10-23 \u2014 a manager let a 151-point role go after his last game; find out why before claiming (a verified role is a registry add_yes)",
    "reasons": [
-    "depth: Kenny Gainwell 8.9/wk rest-of-season vs your weakest bench RB 3.8 (season blend / 17)"
+    "depth: Kenny Gainwell 8.9/wk rest-of-season vs your weakest bench RB 0.9 (season blend / 17)"
+   ]
+  },
+  {
+   "J": null,
+   "key": "laquon treadwell",
+   "name": "Laquon Treadwell",
+   "reason": "sits behind everyone: you carry 6 WRs for 3 slot(s) and he projects 3.6 under your weakest 7.7",
+   "reasons": [
+    "breakout tier B: 78% snaps, 9% targets, 25% air yds; no market line yet (Sleeper receiving yds 19)"
+   ]
+  },
+  {
+   "J": null,
+   "key": "malachi fields",
+   "name": "Malachi Fields",
+   "reason": "sits behind everyone: you carry 6 WRs for 3 slot(s) and he projects 0.0 under your weakest 7.7",
+   "reasons": [
+    "breakout tier B: 74% snaps, 18% targets, 28% air yds; no market line yet, and no Sleeper line either"
    ]
   },
   {
@@ -248,16 +332,16 @@
    "name": "Mark Andrews",
    "reason": "G15: dropped by FWU on 2026-10-21 \u2014 a manager let a 162-point role go after his last game; find out why before claiming (a verified role is a registry add_yes)",
    "reasons": [
-    "depth: Mark Andrews 9.5/wk rest-of-season vs your weakest bench player 3.8 (season blend / 17)"
+    "depth: Mark Andrews 9.5/wk rest-of-season vs your weakest bench TE 0.9 (season blend / 17)"
    ]
   },
   {
    "J": null,
    "key": "mike mayer",
    "name": "Michael Mayer",
-   "reason": "no roster spot exists",
+   "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 32: no player/team",
    "reasons": [
-    "breakout tier B: 79% snaps, 22% targets, 15% air yds; no market line yet (Sleeper receiving yds 29)"
+    "breakout tier B: 82% snaps, 7% targets, 19% air yds; no market line yet (Sleeper receiving yds 30); held (wk6: 79% snaps, 22% targets, 15% air yds)"
    ]
   },
   {
@@ -273,9 +357,18 @@
    "J": null,
    "key": "rashid shaheed",
    "name": "Rashid Shaheed",
-   "reason": "no roster spot exists",
+   "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 32: no player/team",
    "reasons": [
-    "depth: Rashid Shaheed 8.3/wk rest-of-season vs your weakest bench WR 3.8 (season blend / 17)"
+    "depth: Rashid Shaheed 8.3/wk rest-of-season vs your weakest bench WR 0.9 (season blend / 17)"
+   ]
+  },
+  {
+   "J": null,
+   "key": "rashod bateman",
+   "name": "Rashod Bateman",
+   "reason": "G15: dropped by Rayland on 2026-10-21 \u2014 a manager let a 125-point role go after his last game; find out why before claiming (a verified role is a registry add_yes)",
+   "reasons": [
+    "breakout tier B: 73% snaps, 12% targets, 26% air yds; no market line yet (Sleeper receiving yds 28)"
    ]
   },
   {
@@ -284,31 +377,22 @@
    "name": "Terry McLaurin",
    "reason": "G15: dropped by WINdianapolis on 2026-10-24 \u2014 a manager let a 204-point role go after his last game; find out why before claiming (a verified role is a registry add_yes)",
    "reasons": [
-    "depth: Terry McLaurin 12.0/wk rest-of-season vs your weakest bench WR 3.8 (season blend / 17)"
-   ]
-  },
-  {
-   "J": null,
-   "key": "ty tracy",
-   "name": "Tyrone Tracy Jr.",
-   "reason": "no roster spot exists",
-   "reasons": [
-    "breakout tier B: 38% snaps, 50% of RB touches; no market line yet (Sleeper rushing yds 16)"
+    "depth: Terry McLaurin 12.0/wk rest-of-season vs your weakest bench WR 0.9 (season blend / 17)"
    ]
   },
   {
    "J": null,
    "key": "zonovan knight",
    "name": "Zonovan Knight",
-   "reason": "no roster spot exists",
+   "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 32: no player/team",
    "reasons": [
-    "breakout tier B: 44% snaps, 46% of RB touches; no market line yet (Sleeper rushing yds 35)",
-    "depth: Zonovan Knight 7.6/wk rest-of-season vs your weakest bench RB 3.8 (W projection 7.6 (usage says starter; the preseason number is stale))"
+    "breakout tier B: 53% snaps, 52% of RB touches; no market line yet (Sleeper rushing yds 25); held (wk6: 44% snaps, 46% of RB touches)",
+    "depth: Zonovan Knight 7.4/wk rest-of-season vs your weakest bench RB 0.9 (W projection 7.4 (usage says starter; the preseason number is stale))"
    ]
   }
  ],
  "spots": [],
- "week": 7,
+ "week": 8,
  "weights": {
   "K_ACQ": 0.0,
   "K_CHURN": 0.5,
@@ -321,12 +405,12 @@
   "W_NOW": 1.0,
   "W_PLAY": 0.6,
   "W_REST": 0.8,
-  "p_playoffs": 0.99625
+  "p_playoffs": 0.98725
  },
  "winprob": {
-  "mean": 134.45000000000005,
-  "note": "final lineup = current lineup (the engine's own number)",
-  "p_med": 0.797,
-  "p_opp": 1.0
+  "mean": 138.37118509164898,
+  "note": "sampled on the planner's final lineup",
+  "p_med": 0.7703333333333333,
+  "p_opp": 0.7885
  }
 }
