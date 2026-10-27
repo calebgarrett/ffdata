@@ -1,7 +1,7 @@
-# ffdata pull loaded Tue Oct 27, 12:25 pm ET — repo head: 2026-10-27T10:56:45Z pull 2026-10-27T10:56Z (in-action, no pull)
+# ffdata pull loaded Tue Oct 27, 4:56 pm ET — repo head: 2026-10-27T16:27:12Z pull 2026-10-27T16:27Z (in-action, no pull)
 week 8
-kalshi.csv: 1038 markets, 66 events, pulled 2026-10-27T16:24:35+00:00
-kalshi_archive: 1 new pull(s) copied, 173 on disk
+kalshi.csv: 1230 markets, 79 events, pulled 2026-10-27T20:54:48+00:00
+kalshi_archive: 1 new pull(s) copied, 174 on disk
 espn_games.csv: 14 games for week 8 — 0 with ESPN lines from the pump, 14 schedule-only from lines_wk3_9.csv; Kalshi spread/total ladders supply the lines inside the engine
 sleeper_off_wk8.csv: 3302 rows
 sleeper_idp_wk8.csv: 4604 rows
@@ -10,9 +10,9 @@ usage_wk7_QB.csv: 74 rows
 usage_wk7_RB.csv: 152 rows
 usage_wk7_WR.csv: 252 rows
 usage_wk7_TE.csv: 149 rows
-BSB rosters: 216 players on 12 teams, pulled 2026-10-27T16:25:17+00:00 -> new snapshot
+BSB rosters: 216 players on 12 teams, pulled 2026-10-27T20:55:39+00:00 -> new snapshot
 BSB matchup wk8: vs Ex-Presidents; 0 final rows, 0 in progress; totals me 0.00 opp 0.00
-BSB transactions: 1 new of 48 on the page; log now 266 rows
-HH rosters: 239 players on 10 teams, pulled 2026-10-27T16:25:17+00:00 -> new snapshot
+BSB transactions: 0 new of 48 on the page; log now 266 rows
+HH rosters: 238 players on 10 teams, pulled 2026-10-27T20:55:39+00:00 -> new snapshot
 HH matchup wk8: vs The STRIB Club; 0 final rows, 0 in progress; totals me 0.00 opp 0.00
-HH transactions: 0 new of 40 on the page; log now 214 rows
+HH transactions: 11 new of 42 on the page; log now 225 rows

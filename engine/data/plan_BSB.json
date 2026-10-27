@@ -19,7 +19,7 @@
   },
   {
    "player": "James Cook III",
-   "reason": "gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper']); G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 3"
+   "reason": "gate: G3-role NFL depth-chart role not checked; G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 32: no player/team"
   },
   {
    "player": "Jaxon Smith-Njigba",
@@ -88,30 +88,30 @@
    "DEF": "DST:MIN",
    "K": "jason myers",
    "QB": "matt stafford",
-   "RB1": "james cook",
-   "RB2": "josh jacobs",
+   "RB1": "josh jacobs",
+   "RB2": "james cook",
    "TE": "sam laporta",
-   "W/R/T": "ryan flournoy",
-   "WR1": "jaxon smith njigba",
-   "WR2": "drake london",
-   "WR3": "malik washington"
+   "W/R/T": "malik washington",
+   "WR1": "drake london",
+   "WR2": "ryan flournoy",
+   "WR3": "jaxon smith njigba"
   },
-  "optimal_before_moves": 137.77,
+  "optimal_before_moves": 137.17,
   "slots": {
    "DEF": "Vikings",
    "K": "Jason Myers",
    "QB": "Matthew Stafford",
-   "RB1": "James Cook III",
-   "RB2": "Josh Jacobs",
+   "RB1": "Josh Jacobs",
+   "RB2": "James Cook III",
    "TE": "Sam LaPorta",
-   "W/R/T": "Ryan Flournoy",
-   "WR1": "Jaxon Smith-Njigba",
-   "WR2": "Drake London",
-   "WR3": "Malik Washington"
+   "W/R/T": "Malik Washington",
+   "WR1": "Drake London",
+   "WR2": "Ryan Flournoy",
+   "WR3": "Jaxon Smith-Njigba"
   },
-  "total": 137.77
+  "total": 137.17
  },
- "made": "2026-10-27T12:26-04:00",
+ "made": "2026-10-27T16:56-04:00",
  "mechanics": [
   {
    "rule": "A never-rostered free agent is free until his game kicks off",
@@ -151,7 +151,7 @@
  ],
  "moves": [
   {
-   "J": 0.034,
+   "J": 0.247,
    "add_key": null,
    "add_name": null,
    "at": null,
@@ -159,23 +159,23 @@
    "drop_name": null,
    "eff": "W",
    "fam": "WR",
-   "gain": 0.03,
+   "gain": 0.25,
    "gates": {
     "add": null,
     "drop": null
    },
-   "id": "BSB:lineup:W/R/T",
+   "id": "BSB:lineup:WR2",
    "kind": "lineup",
    "league": "BSB",
    "phase": "early",
    "provisional": true,
    "reasons": [
-    "+0.03 this week",
+    "+0.25 this week (Malik Washington slides to W/R/T)",
     "inside the 1.5-pt noise band",
     "no player market posted yet for his game"
    ],
    "sit": "DeMario Douglas",
-   "slot": "W/R/T",
+   "slot": "WR2",
    "spot_id": null,
    "spot_kind": null,
    "spot_label": null,
@@ -191,7 +191,7 @@
      "key": "ryan flournoy",
      "op": "start",
      "player": "Ryan Flournoy",
-     "slot": "W/R/T"
+     "slot": "WR2"
     },
     {
      "key": "demario douglas",
@@ -200,8 +200,8 @@
     }
    ],
    "value_terms": {
-    "J": 0.034,
-    "dS_W": 0.034
+    "J": 0.247,
+    "dS_W": 0.247
    },
    "when": "before kickoff Sun Nov 1, 1:00 pm ET"
   }
@@ -214,8 +214,8 @@
    "name": "Cincinnati Bengals",
    "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 32: no player/team",
    "reasons": [
-    "DEF weekly upgrade: Cincinnati Bengals 9.6 vs starter Vikings 5.0",
-    "week-9 DEF stream: Cincinnati Bengals 8.4 vs your best 5.0 (W line re-scored on the week-9 opponent implied total 22.0)"
+    "DEF weekly upgrade: Cincinnati Bengals 9.7 vs starter Vikings 5.0",
+    "week-9 DEF stream: Cincinnati Bengals 8.5 vs your best 5.0 (W line re-scored on the week-9 opponent implied total 22.0)"
    ]
   },
   {
@@ -224,7 +224,7 @@
    "name": "Jacksonville Jaguars",
    "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 32: no player/team",
    "reasons": [
-    "DEF weekly upgrade: Jacksonville Jaguars 8.4 vs starter Vikings 5.0"
+    "DEF weekly upgrade: Jacksonville Jaguars 8.8 vs starter Vikings 5.0"
    ]
   },
   {
@@ -242,7 +242,7 @@
    "name": "Washington Commanders",
    "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 32: no player/team",
    "reasons": [
-    "DEF weekly upgrade: Washington Commanders 8.4 vs starter Vikings 5.0"
+    "DEF weekly upgrade: Washington Commanders 8.7 vs starter Vikings 5.0"
    ]
   },
   {
@@ -408,9 +408,9 @@
   "p_playoffs": 0.98725
  },
  "winprob": {
-  "mean": 138.37118509164898,
+  "mean": 137.60977799228993,
   "note": "sampled on the planner's final lineup",
-  "p_med": 0.7703333333333333,
-  "p_opp": 0.7885
+  "p_med": 0.7838333333333334,
+  "p_opp": 0.7973333333333333
  }
 }
