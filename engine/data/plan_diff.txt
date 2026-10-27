@@ -1,4 +1,4 @@
-PLAN DIFF — week 7 — Mon Oct 26, 4:44 pm ET  (shadow mode: the card still shows the live calls; FF_PLANNER=1 renders the plan)
+PLAN DIFF — week 7 — Mon Oct 26, 8:22 pm ET  (shadow mode: the card still shows the live calls; FF_PLANNER=1 renders the plan)
 objective: J = 1.0*dS_W + 0.8*dS_W1 + 0.8*dS_rest(mean of weeks W+2..17) + 0.1*d_bench_boom - acq ({'HH': 1.0, 'BSB': 0.0}) - 0.1*bid - 0.5*txns; ship at J >= 3.0
 
 == BSB ================================================================================
@@ -6,20 +6,20 @@ objective: J = 1.0*dS_W + 0.8*dS_W1 + 0.8*dS_rest(mean of weeks W+2..17) + 0.1*d
     CARD ONLY stream: add Dallas Cowboys (DEF), drop 49ers
               planner: best spot Ryan Flournoy: a DEF stream that is not a hole never costs a real bench player (Ryan Flournoy)
   budgets: {"acq_used": 1, "acq_left": null, "acq_reset": null, "acq_reset_verified": null, "fab_left": 91, "ir_free": 0, "open_spots": 0}
-  final lineup week 7: 134.4 pts (optimal before moves 134.4) · P(beat opp) 98% · P(beat median) 68%
+  final lineup week 7: 134.4 pts (optimal before moves 134.4) · P(beat opp) 100% · P(beat median) 69%
   considered and rejected (17):
-    - Darius Cooper: J +0.47 < 3.0 at its best spot (Ryan Flournoy) — J +0.47 = 1.0x+0.00 (wk W) + 0.8x+1.87 (W+1) + 0.8x+0.53 (rest, mean of wks 9-17) + 0.60x+0.18 (wks 15-17, P(playoffs) 100%) + 0.1x+1.35 (bench boom) + 0.2x-5.98 (depth) - 0.00 acq 
-    - Jake Ferguson: J -0.67 < 3.0 at its best spot (Ryan Flournoy) — J -0.67 = 1.0x+0.00 (wk W) + 0.8x+1.78 (W+1) + 0.8x-0.67 (rest, mean of wks 9-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+1.35 (bench boom) + 0.2x-5.98 (depth) - 0.00 acq 
+    - Jake Ferguson: J -0.66 < 3.0 at its best spot (Ryan Flournoy) — J -0.66 = 1.0x+0.00 (wk W) + 0.8x+1.78 (W+1) + 0.8x-0.67 (rest, mean of wks 9-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+1.51 (bench boom) + 0.2x-5.98 (depth) - 0.00 acq 
     - Dallas Cowboys: best spot Ryan Flournoy: a DEF stream that is not a hole never costs a real bench player (Ryan Flournoy)
-    - Rashid Shaheed: J -1.46 < 3.0 at its best spot (Ryan Flournoy) — J -1.46 = 1.0x+0.00 (wk W) + 0.8x+0.67 (W+1) + 0.8x-0.54 (rest, mean of wks 9-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+1.35 (bench boom) + 0.2x-5.98 (depth) - 0.00 acq 
+    - Rashid Shaheed: J -1.45 < 3.0 at its best spot (Ryan Flournoy) — J -1.45 = 1.0x+0.00 (wk W) + 0.8x+0.67 (W+1) + 0.8x-0.54 (rest, mean of wks 9-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+1.51 (bench boom) + 0.2x-5.98 (depth) - 0.00 acq 
     - Los Angeles Chargers: best spot Ryan Flournoy: a DEF stream that is not a hole never costs a real bench player (Ryan Flournoy)
-    - Zonovan Knight: J -1.75 < 3.0 at its best spot (Ryan Flournoy) — J -1.75 = 1.0x+0.00 (wk W) + 0.8x+0.02 (W+1) + 0.8x-0.25 (rest, mean of wks 9-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+1.35 (bench boom) + 0.2x-5.98 (depth) - 0.00 acq 
+    - Zonovan Knight: J -1.74 < 3.0 at its best spot (Ryan Flournoy) — J -1.74 = 1.0x+0.00 (wk W) + 0.8x+0.02 (W+1) + 0.8x-0.25 (rest, mean of wks 9-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+1.51 (bench boom) + 0.2x-5.98 (depth) - 0.00 acq 
     - Tyrone Tracy Jr.: best spot Ryan Flournoy: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
     - Jahan Dotson: best spot Ryan Flournoy: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
-    - Dalton Schultz: J -2.21 < 3.0 at its best spot (Ryan Flournoy) — J -2.21 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x-0.67 (rest, mean of wks 9-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.32 (bench boom) + 0.2x-5.98 (depth) - 0.00 acq 
+    - Dalton Schultz: J -2.19 < 3.0 at its best spot (Ryan Flournoy) — J -2.19 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x-0.67 (rest, mean of wks 9-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.48 (bench boom) + 0.2x-5.98 (depth) - 0.00 acq 
     - Darnell Washington: best spot Ryan Flournoy: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
     - Michael Mayer: best spot Ryan Flournoy: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
     - Jaleel McLaughlin: best spot Ryan Flournoy: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
+    - Darius Cooper: gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])
     - KeAndre Lambert-Smith: sits behind everyone: you carry 6 WRs for 3 slot(s) and he projects 0.0 under your weakest 5.3
     - Kenny Gainwell: G15: dropped by 65 SOUTH on 2026-10-23 — a manager let a 151-point role go after his last game; find out why before claiming (a verified role is a registry add_yes)
     - Mark Andrews: G15: dropped by FWU on 2026-10-21 — a manager let a 162-point role go after his last game; find out why before claiming (a verified role is a registry add_yes)
@@ -33,8 +33,8 @@ objective: J = 1.0*dS_W + 0.8*dS_W1 + 0.8*dS_rest(mean of weeks W+2..17) + 0.1*d
     CARD ONLY bye cover: add Dallas Cowboys (DEF), drop Rome Odunze
               planner: no roster spot exists
   budgets: {"acq_used": 2, "acq_left": 5, "acq_reset": "2026-10-20T07:00-04:00", "acq_reset_verified": false, "fab_left": null, "ir_free": 1, "open_spots": 0}
-  final lineup week 7: 312.8 pts (optimal before moves 312.8)
-  considered and rejected (31):
+  final lineup week 7: 308.8 pts (optimal before moves 308.8)
+  considered and rejected (32):
     - Chicago Bears: no roster spot exists
     - Cincinnati Bengals: no roster spot exists
     - Dallas Cowboys: no roster spot exists
@@ -47,6 +47,7 @@ objective: J = 1.0*dS_W + 0.8*dS_W1 + 0.8*dS_rest(mean of weeks W+2..17) + 0.1*d
     - Chig Okonkwo: no roster spot exists
     - Cooper Kupp: sits behind everyone: you carry 5 WRs for 1 slot(s) and he projects 6.6 under your weakest 8.3
     - Courtland Sutton: no roster spot exists
+    - Dameon Pierce: sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 5.6 under your weakest 18.1
     - Darnell Washington: no roster spot exists
     - Emanuel Wilson: sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 10.0 under your weakest 18.1
     - George Holani: sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 6.9 under your weakest 18.1
@@ -59,8 +60,7 @@ objective: J = 1.0*dS_W + 0.8*dS_W1 + 0.8*dS_rest(mean of weeks W+2..17) + 0.1*d
     - Kendre Miller: sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 8.8 under your weakest 18.1
     - Keon Coleman: sits behind everyone: you carry 5 WRs for 1 slot(s) and he projects 0.0 under your weakest 8.3
     - Kyle Pitts Sr.: no roster spot exists
-    - Michael Mayer: no roster spot exists
-  not a clean drop: Dak Prescott (gate: G6-magnitude 37.928825367666455 below QB season bounds [60,600] ); Jaylen Warren (his game is final / live — finished and live players never move); Ja'Marr Chase (his game is final / live — finished and live players never move); Trey McBride (his game is final / live — finished and live players never move); Drake London (his game is final / live — finished and live players never move); Braelon Allen (his game is final / live — finished and live players never move); Jared Goff (his game is final / live — finished and live players never move); Jameson Williams (his game is final / live — finished and live players never move); Rashee Rice (his game is final / live — finished and live players never move); Matthew Stafford (his game is final / live — finished and live players never move); Rome Odunze (his game is final / live — finished and live players never move); Denzel Boston (his game is final / live — finished and live players never move); Brandon Aubrey (you added him 2026-10-22 (<= 7 days) — your decision, not the spot); Texans (registry HOLD — HOLD in Heritage House. A 7-acquisition league rations); Quay Walker (you added him 2026-10-23 (<= 7 days) — your decision, not the spot); Budda Baker (his game is final / live — finished and live players never move); T.J. Watt (his game is final / live — finished and live players never move); Carson Schwesinger (his game is final / live — finished and live players never move); Cooper DeJean (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Kam Curl (his game is final / live — finished and live players never move); Foyesade Oluokun (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Nick Cross (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Alontae Taylor (his game is final / live — finished and live players never move)
+  not a clean drop: Dak Prescott (gate: G6-magnitude 34.16065800841931 below QB season bounds [60,600] —); Jaylen Warren (his game is final / live — finished and live players never move); Ja'Marr Chase (his game is final / live — finished and live players never move); Trey McBride (his game is final / live — finished and live players never move); Drake London (his game is final / live — finished and live players never move); Braelon Allen (his game is final / live — finished and live players never move); Jared Goff (his game is final / live — finished and live players never move); Jameson Williams (his game is final / live — finished and live players never move); Rashee Rice (his game is final / live — finished and live players never move); Matthew Stafford (his game is final / live — finished and live players never move); Rome Odunze (his game is final / live — finished and live players never move); Denzel Boston (his game is final / live — finished and live players never move); Brandon Aubrey (you added him 2026-10-22 (<= 7 days) — your decision, not the spot); Texans (registry HOLD — HOLD in Heritage House. A 7-acquisition league rations); Quay Walker (you added him 2026-10-23 (<= 7 days) — your decision, not the spot); Budda Baker (his game is final / live — finished and live players never move); T.J. Watt (his game is final / live — finished and live players never move); Carson Schwesinger (his game is final / live — finished and live players never move); Cooper DeJean (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Kam Curl (his game is final / live — finished and live players never move); Foyesade Oluokun (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Nick Cross (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Alontae Taylor (his game is final / live — finished and live players never move)
   UNVERIFIED mechanics: 7 acquisitions per week, counted from the most recent Tuesday 07:00 ET | A player dropped To Waivers sits on waivers 1 day | An O tag is IR-eligible | A benched player whose game is over cannot be dropped before the week rolls
 
 plan simulation (sanity check 11): clean — legal at every step, each spot once, budgets held
