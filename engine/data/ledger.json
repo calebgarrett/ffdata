@@ -12243,10 +12243,11 @@
   ],
   "verdict": "WARN",
   "week": 8,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": true,
   "resolves_at": "2026-11-01T13:00-05:00",
-  "reverses": "db280f18"
+  "reverses": "db280f18",
+  "superseded_by": "7a34ada5"
  },
  {
   "id": "acd180b8",
@@ -12262,10 +12263,11 @@
   ],
   "verdict": "BLOCK",
   "week": 8,
-  "status": "blocked",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": null,
-  "reverses": "f17fffbc"
+  "reverses": "f17fffbc",
+  "superseded_by": "9b4aef46"
  },
  {
   "id": "c1839a28",
@@ -12281,10 +12283,11 @@
   ],
   "verdict": "BLOCK",
   "week": 8,
-  "status": "blocked",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": null,
-  "reverses": "22493695"
+  "reverses": "22493695",
+  "superseded_by": "18c2d05f"
  },
  {
   "id": "70a7aa7a",
@@ -12300,9 +12303,85 @@
   ],
   "verdict": "BLOCK",
   "week": 8,
+  "status": "superseded",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "e8878e41",
+  "superseded_by": "f1c86e1e"
+ },
+ {
+  "id": "7a34ada5",
+  "ts": "2026-10-28T02:13-04:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Ryan Flournoy",
+  "call": "start Ryan Flournoy at W/R/T",
+  "detail": "over DeMario Douglas +1.15",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 8,
+  "status": "proposed",
+  "provisional": true,
+  "resolves_at": "2026-11-01T13:00-05:00",
+  "reverses": "07dc5e2e"
+ },
+ {
+  "id": "9b4aef46",
+  "ts": "2026-10-28T02:13-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Cincinnati Bengals",
+  "call": "add Cincinnati Bengals (DEF) over Vikings",
+  "detail": "+4.65/wk",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "BLOCK",
+  "week": 8,
   "status": "blocked",
   "provisional": false,
   "resolves_at": null,
-  "reverses": "e8878e41"
+  "reverses": "acd180b8"
+ },
+ {
+  "id": "18c2d05f",
+  "ts": "2026-10-28T02:13-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Jacksonville Jaguars",
+  "call": "add Jacksonville Jaguars (DEF) over Vikings",
+  "detail": "+3.79/wk",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "BLOCK",
+  "week": 8,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "c1839a28"
+ },
+ {
+  "id": "f1c86e1e",
+  "ts": "2026-10-28T02:13-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Washington Commanders",
+  "call": "add Washington Commanders (DEF) over Vikings",
+  "detail": "+3.74/wk",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "BLOCK",
+  "week": 8,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "70a7aa7a"
  }
 ]
