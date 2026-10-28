@@ -12171,10 +12171,11 @@
   ],
   "verdict": "WARN",
   "week": 8,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": true,
   "resolves_at": "2026-11-01T13:00-05:00",
-  "reverses": "1a511f1a"
+  "reverses": "1a511f1a",
+  "superseded_by": "c6252466"
  },
  {
   "id": "85ae58b3",
@@ -12189,10 +12190,11 @@
   ],
   "verdict": "WARN",
   "week": 8,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": true,
   "resolves_at": "2026-11-01T20:20-05:00",
-  "reverses": null
+  "reverses": null,
+  "superseded_by": "9eb99ff2"
  },
  {
   "id": "5a61c871",
@@ -12402,5 +12404,61 @@
   "provisional": false,
   "resolves_at": null,
   "reverses": null
+ },
+ {
+  "id": "44573b73",
+  "ts": "2026-10-28T15:05-04:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Baker Mayfield",
+  "call": "start Baker Mayfield at QB",
+  "detail": "over Matthew Stafford +0.58",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "PASS",
+  "week": 8,
+  "status": "proposed",
+  "provisional": true,
+  "resolves_at": "2026-11-01T13:00-05:00",
+  "reverses": null
+ },
+ {
+  "id": "c6252466",
+  "ts": "2026-10-28T15:05-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Jared Goff",
+  "call": "start Jared Goff at QB",
+  "detail": "over Matthew Stafford +3.60",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 8,
+  "status": "proposed",
+  "provisional": true,
+  "resolves_at": "2026-11-01T13:00-05:00",
+  "reverses": "5cae2158"
+ },
+ {
+  "id": "9eb99ff2",
+  "ts": "2026-10-28T15:05-04:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Nick Cross",
+  "call": "start Nick Cross at DB",
+  "detail": "over Kam Curl +4.28",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 8,
+  "status": "proposed",
+  "provisional": true,
+  "resolves_at": "2026-11-01T20:20-05:00",
+  "reverses": "85ae58b3"
  }
 ]
