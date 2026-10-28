@@ -379,7 +379,10 @@ def build(week=None):
                 if spare: drop = spare[0]; gd = w.gate_drop(drop, horizon='weekly')
                 else:
                     # the breakout scan's cheapest clean drop, with the gate it already passed
-                    dc = next((d for d in (R['breakout'] or {}).get('drops', []) if d['tier'] >= 1 and not str(d['row']['key']).startswith('__')), None)
+                    # a kicker or defense never costs a skill player or an IDP (doctrine, 10-06): only
+                    # a dead/registry spot (tier <= 1) or another DEF/K; otherwise the swap is the bye man himself
+                    dc = next((d for d in (R['breakout'] or {}).get('drops', []) if not str(d['row']['key']).startswith('__')
+                               and (d['tier'] <= 1 or W._fam(d['row']['pos']) in ('DEF', 'K'))), None)
                     if dc is not None: drop = dc['row']; gd = dc.get('gate')
                     # no clean drop on the bench: the move is the bye player HIMSELF, once
                     # his game this week is over (a K/DEF is a one-for-one swap)

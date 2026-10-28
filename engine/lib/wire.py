@@ -213,7 +213,14 @@ class Wire:
         if role is None and usage: role = f'week pull: {usage}'
         dead = self.dead_spot(row)
         if dead: role = role or 'not on an NFL depth chart (IR/exempt), verified in the registry'
+        # a DEF/K on BYE has no weekly line at all (no market, no game), so a weekly-horizon
+        # drop fails G5 by construction and the spare vanishes from the drop list the one
+        # week it is most clearly the spot (10-28: the 49ers, SF bye, runner refused).
+        # His number that week is his season value, from the multi-source blend.
+        bye_dk = horizon == 'weekly' and _fam(row['pos']) in ('DEF', 'K') and row.get('kick') is None and not (row.get('pts') or 0)
+        if bye_dk: extra_sources = list(extra_sources) + ['season-blend']
         v = (row.get('pts') or 0) if horizon == 'weekly' else self.season.get(k, {}).get('pts', row.get('pts') or 0)
+        if bye_dk: v = (self.season.get(k, {}).get('pts') or 0) / 17.0        # his per-week number from the blend, not the bye's zero
         if dead: v = 0.0
         # sources: whatever actually priced him (the weekly line names its own
         # families -- vegas+sleeper for a DEF), plus the registry if it speaks

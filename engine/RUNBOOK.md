@@ -152,6 +152,16 @@ cannot be traced to P(win) is wrong.
   roster loses — a spare DEF/K is worth its stream optionality (~1/wk), a bench skill
   player his rest-of-season value — and the planner already does that arithmetic.
   Tests: test_plan 8h (the spot is the weakest bench skill player, never the spare DEF).
+- **An IDP can be dropped, and a DEF/K hole fills from a replacement-level body** (10-28).
+  The Texans' bye left HH's DEF slot empty and the planner said 'no roster spot exists':
+  every IDP drop failed G3 (no defensive snap feed, so no role is ever 'checked') and G5
+  (one source, forever), and 'a DEF never costs a skill player or an IDP' barred the rest.
+  Now: an IDP drop takes G3/G5 as WARNs (a relative-value call among players who all
+  carry the same single source); a HOLE at DEF/K may take a bench player at or below
+  `HOLE_VOR_MAX` (1.0/wk) over the free replacement at his position — the 5th DB, never
+  the real WR; streams keep the old rule. A DEF/K on bye is a legal weekly drop (the blend
+  is its second family and its per-week number). The legacy bye-cover path never takes
+  a skill/IDP drop (scenarios s04/s05). Tests: test_plan 8a3, test_system (bye DEF drop).
 - **A rival's drop of a real role is a fact the feeds may not carry yet** (10-25). McLaurin
   (season 204) tore up a knee on Monday night, out for the year; Washington's bye hid it
   from the free-agent pulse (he was projected in his last played game) and the planner

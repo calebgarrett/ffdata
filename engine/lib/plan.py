@@ -88,6 +88,7 @@ SHIP_J = 3.0
 INS_P_MISS = 0.06        # a QB misses roughly one game in 17; an assumption, not a measurement
 INS_DEC_WEEK = 13        # from here the free replacement is discounted
 INS_DEC_REPL = 0.5
+HOLE_VOR_MAX = 1.0                # a DEF/K hole may take a bench player this far (or less) above replacement at his position (10-28)
 RIVAL_DROP_MIN_SEASON = 100.0     # a real role: a manager who let one go after his last game knows something (10-25)
 DEPTH_MARGIN = 3.0                # a depth add must clear the weakest bench player by this much per week (rest of season)
 STICKY_J = 0.5                    # a (add, spot) pair already on the published plan keeps it unless another beats it by this much (10-13: Jennings <-> Hutchinson flip between pulls)
@@ -568,8 +569,13 @@ class Objective:
         dIns = self.insurance(changes)
         # a bench player cut is depth lost: his rest-of-season per-week value never shows in
         # the optimal-lineup terms (he was not starting), so it is charged here (10-18)
+        # 'bench' means not a starter on the baseline W+1 lineup — a starter displaced by a
+        # lineup call this week (Curl behind Cross, 10-28) is depth too, whatever slot he
+        # holds on Yahoo today; a W+1 starter's loss is already in the lineup terms
+        _, base_asg = self._S([], W1)
+        base_start = {k for k in base_asg.values() if k}
         dDepth = -sum((d.ros_pw or 0.0) if d.fam not in ('DEF', 'K') else max(0.0, (d.ros_pw or 0.0) - (_stream_value(f, d.fam, f.rest_weeks[0] if f.rest_weeks else W1) or 0.0))
-                      for a, d, _ in changes if a is not None and d is not None and d.slot == 'BN')      # a spare DEF/K is depth only above the best free one
+                      for a, d, _ in changes if a is not None and d is not None and d.key not in base_start)      # a spare DEF/K is depth only above the best free one
         acq = costs.get('acq', 0); bid = costs.get('bid', 0) or 0; txn = costs.get('txn', 0)
         pen_fab = self.mech.fab_cost(bid) if getattr(self, 'mech', None) is not None else K_FAB * bid
         pen_acq = K_ACQ.get(f.league, 0.0) * acq * RU.acq_price(f.now, getattr(f, 'acq_left', None))
@@ -656,6 +662,14 @@ def pair_block(f, c, s, repl):
     # dead/registry spot (10-06: 'add Boswell, drop Travis Kelce' at J +11 because the
     # rest-of-season term made Kelce look cheap)
     if x.fam in ('DEF', 'K') and s.kind == 'drop' and s.fact is not None and s.fact.fam not in ('DEF', 'K') and s.tier >= 2:
+        # ...except a HOLE (the slot is empty this week or next) filled from a bench spot
+        # that is replacement level or worse at its own position (10-28: the Texans' bye
+        # left HH's DEF slot empty, the only DEF was a hold, and the 5th DB sat on the
+        # bench below the free agents at his position — 'no roster spot exists' was wrong)
+        if c.hole:
+            dv = (s.fact.ros_pw or 0.0) - repl.get(s.fact.fam, 0.0)
+            if dv <= HOLE_VOR_MAX: return None
+            return f'a {x.fam} hole never costs a real player: {s.label} is {dv:+.1f}/wk over the free replacement at {s.fact.fam}'
         return f'a {x.fam} never costs a {s.fact.fam} ({s.label}) — kickers and defenses swap one-for-one'
     return None
 
@@ -768,7 +782,7 @@ def plan_facts(facts, ev=None):
         elif not b['feasible']:
             rejected[c.key] = dict(cand=c, reason=f"best spot {b['spot_label']}: {b['reason']}", J=b['J'])
         elif b['J'] < SHIP_J:
-            rejected[c.key] = dict(cand=c, reason=f"J {b['J']:+.2f} < {SHIP_J} at its best spot ({b['spot_label']}) — {fmt_terms(b['terms'])}", J=b['J'])
+            rejected[c.key] = dict(cand=c, reason=f"J {b['J']:+.2f} < {SHIP_J} at its best spot ({b['spot_label']}) — {fmt_terms(b['terms'])}", J=b['J'], terms=b['terms'])
         else:
             who = next((m for m in moves if m.get('spot_id') == b['spot_id']), None)
             rejected[c.key] = dict(cand=c, reason=f"its best spot ({b['spot_label']}) went to {who['add_name'] if who else 'another move'} at higher value", J=b['J'])

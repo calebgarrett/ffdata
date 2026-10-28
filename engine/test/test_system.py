@@ -226,6 +226,15 @@ if len(_defs) >= 2:
     case('two DEFs: the drop candidate is the lower season value, never simply the benched one',
          [d['row']['key'] for d in _dc if d['row']['pos'] == 'DEF'] == [_lo['key']], str([(d['row']['player']) for d in _dc if d['row']['pos'] == 'DEF']))
 
+# 10-28: a DEF/K on BYE has no weekly line, so a weekly-horizon drop failed G5 by
+# construction and the spare vanished from the drop list in the one week it is most clearly
+# the spot (the 49ers, SF bye week 8; the runner refused). On a bye the number is the
+# blend's per-week value and the blend is the second family.
+_wbye = WR.Wire(b, P, season=_j.load(open('/home/claude/bsb2/data/season_blend.json')))
+_rbye = dict(next(r for r in b.mine if r['pos'] == 'DEF'), kick=None, pts=0.0, line={'sources': ['sleeper']})
+_gbye = _wbye.gate_drop(_rbye, horizon='weekly')
+case('a DEF on bye is a legal weekly drop: G5 is satisfied by the season blend, not refused for a missing game line', _gbye.verdict != 'BLOCK' and not any(c[0] == 'G5-sources' and c[1] == 'BLOCK' for c in _gbye.checks), str([c for c in _gbye.checks if c[1] != 'PASS']))
+
 # 09-24, Caleb: "Are we sure 2 DEF spots isn't warranted given how much they can score
 # or earn negative points?" Measured: the second DEF adds ~1.2/wk over one, ~0.5 over
 # streaming. So a spare DEF is a drop for a Tier-A add only, never for a Tier-B one.

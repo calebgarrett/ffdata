@@ -132,6 +132,10 @@ def check(kind, subject, *, player=None, designation='__UNREAD__', sources=(),
             r.add('G3-role', OK, f'{pos} — a depth-chart role does not apply; judged on matchup (G4)')
         elif handcuff_for:
             r.add('G3-role', BLOCK, f'HANDCUFF to {handcuff_for} — a low projection on a handcuff is the point of one')
+        elif role is None and kind == 'drop' and str(pos).upper() in ('DL', 'LB', 'DB', 'CB', 'S', 'DE', 'DT', 'IDP'):
+            # the usage pull carries no defensive snaps yet, so an IDP's role is never
+            # 'checked' and no IDP could ever be dropped (10-28); said out loud instead
+            r.add('G3-role', WARN, 'IDP role not in the usage pull (no defensive snap feed) — judged on projection rank among your IDPs')
         elif role is None:
             r.add('G3-role', BLOCK, 'NFL depth-chart role not checked')
         else:
@@ -166,8 +170,15 @@ def check(kind, subject, *, player=None, designation='__UNREAD__', sources=(),
         # the downside of a single-source add is bounded at zero. Requiring two
         # sources there would enforce keeping a player worth nothing. The status
         # still has to be said out loud, which is what WARN means here.
-        sev = WARN if (kind in ('start','sit') or floor_is_zero) else BLOCK
-        extra = ' — allowed only because it replaces a verified dead spot worth 0' if floor_is_zero else ''
+        # IDP has exactly one projection source and no market, ever; a DROP of an IDP
+        # is a relative-value call among players who all carry the same single source,
+        # so BLOCK there means no IDP can ever be dropped (10-28: an empty HH DEF slot
+        # on the Texans' bye with five DBs for three slots and 'no roster spot exists').
+        # WARN says it out loud; the add side keeps its rule (a verified role is the second source).
+        idp_drop = kind == 'drop' and str(pos).upper() in ('DL', 'LB', 'DB', 'CB', 'S', 'DE', 'DT', 'IDP')
+        sev = WARN if (kind in ('start','sit') or floor_is_zero or idp_drop) else BLOCK
+        extra = (' — allowed only because it replaces a verified dead spot worth 0' if floor_is_zero else
+                 ' — IDP never has a second source; a drop among IDPs is judged on relative value' if idp_drop else '')
         r.add('G5-sources', sev,
               f'SINGLE SOURCE: {real or fams} ({sorted(set(sources))}){extra}')
     else:

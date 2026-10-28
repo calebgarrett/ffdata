@@ -346,16 +346,41 @@ case('...he is listed as not a clean drop, with G14', any(e['player'] == qb3 and
 # -18 and the depth term does not charge the spare's whole season. The move ships.
 r8a2 = hh_roster(extra_bench=[('BN', 'Kansas City', 'DEF', 'KC', 18.0, 'none'), ('BN', nm(), 'CB', 'TEN', 13.0, 'none')])
 _lb_bye = [r for r in r8a2 if r[0] == 'D'][0]
+# IDP drops are legal now (10-28): both linebackers are registry holds here so the case
+# keeps testing the spare-DEF spot, not an LB-for-LB upgrade
+_lb_hold = {NK(r[1]): dict(why='hold (test)', call='HOLD') for r in r8a2 if r[2] not in ('DEF', 'K')}     # every skill player and IDP held: the case is about the spare DEF's valuation
+_lb_hold['DST:BUF'] = dict(why='the December DEF (test)', call='HOLD')                                                                    # so the spare is the only DEF spot
 walker = 'Quayshawn Ironmonger'
 f, st, pr = league('HH', r8a2, fas=[(walker, 'LB', 'LV', 19.5), ('Dallas Cowboys', 'DEF', 'DAL', 17.5)],
                    kicks={_lb_bye[3]: None}, byes={WEEK: {_lb_bye[3]}, W1: {"BUF"}},
-                   registry=dict(verified={NK(walker): dict(priority=1, why='every-down LB (test)', team='LV', pos='LB', as_of=NOW.date().isoformat())}))
+                   registry=dict(verified={NK(walker): dict(priority=1, why='every-down LB (test)', team='LV', pos='LB', as_of=NOW.date().isoformat())}, hold=_lb_hold))
 p = PL.plan_facts(f, dict())
 m8a2 = next((m for m in p.moves if m.get('add_key') == NK(walker)), None)
 case('fungible DEF: a verified LB takes the spare DEF for the IDP flex', m8a2 is not None, p.summary())
-case('...the drop is the spare DEF, not a skill player', m8a2 is not None and m8a2.get('spot_kind') == 'spare', m8a2 and (m8a2.get('spot_kind'), m8a2.get('spot_id')))
+_junk8a2 = {r[1] for r in r8a2 if r[0] == 'BN' and r[2] not in ('DEF', 'K') and r[4] <= 3.0}        # a 3-point body ties the spare on J; either is 'not a real player'
+case('...the drop is the spare DEF (or a 3-point body that ties it), never a real player', m8a2 is not None and (m8a2.get('spot_kind') == 'spare' or m8a2.get('drop_name') in _junk8a2), m8a2 and (m8a2.get('spot_kind'), m8a2.get('drop_name'), m8a2.get('value_terms'), sorted(_junk8a2)))
 case('...next week is valued with the best free DEF in the slot, not an empty slot', m8a2 is not None and m8a2['value_terms']['dS_W1'] > -5.0, m8a2 and m8a2['value_terms'])
 case('...and the spare DEF is not charged as depth beyond the free replacement', m8a2 is not None and m8a2['value_terms']['d_depth'] > -2.0, m8a2 and m8a2['value_terms'])
+
+# ---------------------------------------------------------------- 8a3. a DEF/K HOLE may take a replacement-level bench spot (10-28)
+# HH, the only DEF on bye THIS week and a registry hold (the Texans), no spare, no open
+# spot: the slot is empty on Sunday. The bench holds a 5th DB below the free agents at
+# his position and a real WR. 'A DEF never costs a skill player or an IDP' is a rule
+# about streams; a HOLE fills from the replacement-level body — never from the real one.
+r8a3 = hh_roster(extra_bench=[('BN', nm(), 'CB', 'TEN', 9.0, 'none'), ('BN', nm(), 'WR', 'PHI', 15.0, 'none')])
+r8a3 = [(r[0], r[1], r[2], r[3], 0.0, r[5]) if r[0] == 'DEF' else r for r in r8a3]          # on bye this week: no game, no points
+_def8a3 = [r for r in r8a3 if r[0] == 'DEF'][0]
+_cb8a3 = [r for r in r8a3 if r[0] == 'BN' and r[2] == 'CB'][0]
+_wr8a3 = [r for r in r8a3 if r[0] == 'BN' and r[2] == 'WR' and r[4] == 15.0][0]
+_hold8a3 = {NK(r[1]): dict(why='hold (test)', call='HOLD') for r in r8a3 if r[0] not in ('DEF',) and r[1] not in (_cb8a3[1], _wr8a3[1])}
+_hold8a3['DST:' + _def8a3[3]] = dict(why='the December DEF (test)', call='HOLD')
+f, st, pr = league('HH', r8a3, fas=[('Washington Commanders', 'DEF', 'WAS', 21.0), ('Derwin James', 'DB', 'LAC', 16.0), ('Talanoa Hufanga', 'DB', 'DEN', 15.5), ('Quandre Diggs', 'DB', 'TEN', 15.0)],
+                   kicks={_def8a3[3]: None}, byes={WEEK: {_def8a3[3]}, W1: set()}, registry=dict(hold=_hold8a3))
+p = PL.plan_facts(f, dict())
+m8a3 = next((m for m in moves_of(p) if m['add_key'] == NK('Washington Commanders')), None)
+case('DEF hole: the empty slot is filled from the wire even with no spare and no open spot', m8a3 is not None, p.summary())
+case('...the spot is the replacement-level 5th DB, not the real WR', m8a3 is not None and m8a3.get('drop_name') == _cb8a3[1], m8a3 and m8a3.get('drop_name'))
+case('...and the move is firm (a hole, not an edge)', m8a3 is not None and not m8a3.get('provisional'), m8a3 and m8a3.get('provisional'))
 
 # ---------------------------------------------------------------- 8b. FAB policy (Caleb, 10-13: every policy decision maximizes P(win the league))
 # A firm claim (hole cover) bids to WIN it — the league's 75th-pct winning bid — from
@@ -480,14 +505,22 @@ r8h = bsb_roster(extra=[('BN', 'Kansas City', 'DEF', 'KC', 6.5, 'none')])
 r8h = [r for r in r8h if not (r[0] == 'BN' and r[3] == 'LV')]          # keep 18: drop the 1.0 WR, keep the 2.5 and 3.0 WRs as the junk
 junk = [r for r in r8h if r[0] == 'BN' and r[2] not in ('DEF', 'K')]          # any bench skill player; never the spare DEF
 qb2 = 'Thackeray Bellweather'
+# the starter's bye sits two weeks out while byes still exist (as Stafford's week 11 did);
+# the insurance term alone is a near-miss by design (~3 J late in the year) — it is the
+# bye cover PLUS insurance that ships, never insurance over a real player
+_qb_bye = WEEK + 2 if WEEK + 2 <= 14 else None
+_byes8h = {W1: set()}
+if _qb_bye: _byes8h[_qb_bye] = {'DAL'}
 f, st, pr = league('BSB', r8h, fas=[(qb2, 'QB', 'TB', 17.0), ('Dallas Cowboys', 'DEF', 'DAL', 7.5), ('Ambrose Fennimore', 'QB', 'NYJ', 14.0)],
-                   byes={W1: set()},
+                   byes=_byes8h,
                    registry=dict(verified={NK(qb2): dict(priority=2, why='QB2 insurance (test)', team='TB', pos='QB', as_of=NOW.date().isoformat())}))
 p = PL.plan_facts(f, dict(p_playoffs=1.0))
 m8h = next((m for m in moves_of(p) if m['add_key'] == NK(qb2)), None)
-case('QB2 insurance: a one-QB roster adds the best free QB as a backup', m8h is not None, p.summary())
-case('...the term is explicit and positive', m8h is not None and m8h['value_terms'].get('d_ins', 0) > 0, m8h and m8h['value_terms'])
-case('...the spot is the weakest bench skill player, never the spare DEF', m8h is not None and m8h.get('spot_kind') == 'drop' and m8h.get('drop_name') in {r[1] for r in junk}, m8h and (m8h.get('spot_kind'), m8h.get('drop_name')))
+_ins_terms = m8h['value_terms'] if m8h else next((r.get('terms') or {} for r in p.rejected if r['key'] == NK(qb2)), {})
+case('QB2 insurance: the term is explicit and positive for a one-QB roster', (_ins_terms.get('d_ins') or 0) > 0, _ins_terms)
+if _qb_bye:
+    case('QB2 insurance: with the starter\'s bye ahead, a one-QB roster adds the best free QB as a backup', m8h is not None, p.summary())
+    case('...the spot is the weakest bench skill player, never the spare DEF', m8h is not None and m8h.get('spot_kind') == 'drop' and m8h.get('drop_name') in {r[1] for r in junk}, m8h and (m8h.get('spot_kind'), m8h.get('drop_name')))
 # control: a roster that already carries two QBs earns no insurance credit for a third
 r8h2 = bsb_roster(extra=[('BN', 'Ignatius Pemberton', 'QB', 'SEA', 15.0, 'none')])
 r8h2 = [r for r in r8h2 if not (r[0] == 'BN' and r[3] == 'LV')]
