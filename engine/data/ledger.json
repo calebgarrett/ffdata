@@ -12171,10 +12171,11 @@
   ],
   "verdict": "WARN",
   "week": 8,
-  "status": "proposed",
+  "status": "executed",
   "provisional": true,
   "resolves_at": "2026-11-01T13:00-05:00",
-  "reverses": "1a511f1a"
+  "reverses": "1a511f1a",
+  "status_ts": "2026-10-28T19:30-04:00"
  },
  {
   "id": "85ae58b3",
@@ -12377,10 +12378,11 @@
   ],
   "verdict": "WARN",
   "week": 8,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": true,
   "resolves_at": "2026-11-01T13:00-05:00",
-  "reverses": "07dc5e2e"
+  "reverses": "07dc5e2e",
+  "superseded_by": "39a063ca"
  },
  {
   "id": "136545c5",
@@ -12396,10 +12398,11 @@
   ],
   "verdict": "WARN",
   "week": 8,
-  "status": "proposed",
+  "status": "executed",
   "provisional": false,
   "resolves_at": null,
-  "reverses": "41196bee"
+  "reverses": "41196bee",
+  "status_ts": "2026-10-28T19:30-04:00"
  },
  {
   "id": "3132bfc7",
@@ -12437,5 +12440,24 @@
   "provisional": false,
   "resolves_at": null,
   "reverses": null
+ },
+ {
+  "id": "39a063ca",
+  "ts": "2026-10-28T19:30-04:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Ryan Flournoy",
+  "call": "start Ryan Flournoy at WR1",
+  "detail": "over DeMario Douglas +0.60",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 8,
+  "status": "proposed",
+  "provisional": true,
+  "resolves_at": "2026-11-01T13:00-05:00",
+  "reverses": "2c3087df"
  }
 ]

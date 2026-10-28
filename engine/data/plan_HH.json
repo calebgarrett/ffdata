@@ -11,7 +11,7 @@
  "excluded": [
   {
    "player": "Dak Prescott",
-   "reason": "gate: G6-magnitude 41.411858582765824 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex: 3 QBs for 2 QB-eligible slots \u2014 QB3 is b"
+   "reason": "gate: G6-magnitude 41.627324029436615 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex: 3 QBs for 2 QB-eligible slots \u2014 QB3 is b"
   },
   {
    "player": "Jaylen Warren",
@@ -34,12 +34,12 @@
    "reason": "starter-level usage in his own right (78% snaps, 83% of RB touches)"
   },
   {
-   "player": "Matthew Stafford",
-   "reason": "gate: G6-magnitude 34.24920874248991 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex: 3 QBs for 2 QB-eligible slots \u2014 QB3 is by"
+   "player": "Jared Goff",
+   "reason": "gate: G6-magnitude 36.121911852344475 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex: 3 QBs for 2 QB-eligible slots \u2014 QB3 is b"
   },
   {
-   "player": "Jared Goff",
-   "reason": "gate: G6-magnitude 36.06691541810218 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex: 3 QBs for 2 QB-eligible slots \u2014 QB3 is by"
+   "player": "Matthew Stafford",
+   "reason": "gate: G6-magnitude 34.360051529246036 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex: 3 QBs for 2 QB-eligible slots \u2014 QB3 is b"
   },
   {
    "player": "Jameson Williams",
@@ -93,7 +93,7 @@
    "W/R/T": "rashee rice",
    "WR": "jamarr chase"
   },
-  "optimal_before_moves": 314.56,
+  "optimal_before_moves": 314.51,
   "slots": {
    "CB": "Cooper DeJean",
    "D": "Foyesade Oluokun",
@@ -111,9 +111,9 @@
    "W/R/T": "Rashee Rice",
    "WR": "Ja'Marr Chase"
   },
-  "total": 314.56
+  "total": 314.51
  },
- "made": "2026-10-28T19:06-04:00",
+ "made": "2026-10-28T19:31-04:00",
  "mechanics": [
   {
    "rule": "Free agents are immediate unless his game is in progress",
@@ -170,10 +170,9 @@
    "kind": "lineup",
    "league": "HH",
    "phase": "early",
-   "provisional": true,
+   "provisional": false,
    "reasons": [
-    "+3.40 this week",
-    "no player market posted yet for his game"
+    "+3.40 this week"
    ],
    "sit": "Braelon Allen",
    "slot": "W/R/T",
@@ -207,59 +206,6 @@
    "when": "before kickoff Sun Nov 1, 4:25 pm ET"
   },
   {
-   "J": 1.818,
-   "add_key": null,
-   "add_name": null,
-   "at": null,
-   "deadline": "2026-11-01T13:00-05:00",
-   "drop_name": null,
-   "eff": "W",
-   "fam": "QB",
-   "gain": 1.82,
-   "gates": {
-    "add": null,
-    "drop": null
-   },
-   "id": "HH:lineup:Q/W/R/T",
-   "kind": "lineup",
-   "league": "HH",
-   "phase": "early",
-   "provisional": false,
-   "reasons": [
-    "+1.82 this week"
-   ],
-   "sit": "Matthew Stafford",
-   "slot": "Q/W/R/T",
-   "spot_id": null,
-   "spot_kind": null,
-   "spot_label": null,
-   "srcs": [
-    "lineup"
-   ],
-   "start": "Jared Goff",
-   "tier": null,
-   "timing_why": "",
-   "tm": "DET",
-   "txns": [
-    {
-     "key": "jared goff",
-     "op": "start",
-     "player": "Jared Goff",
-     "slot": "Q/W/R/T"
-    },
-    {
-     "key": "matt stafford",
-     "op": "bench",
-     "player": "Matthew Stafford"
-    }
-   ],
-   "value_terms": {
-    "J": 1.818,
-    "dS_W": 1.818
-   },
-   "when": "before kickoff Sun Nov 1, 1:00 pm ET"
-  },
-  {
    "J": 4.38,
    "add_key": null,
    "add_name": null,
@@ -277,10 +223,9 @@
    "kind": "lineup",
    "league": "HH",
    "phase": "early",
-   "provisional": true,
+   "provisional": false,
    "reasons": [
-    "+4.38 this week",
-    "no player market posted yet for his game"
+    "+4.38 this week"
    ],
    "sit": "Kam Curl",
    "slot": "S",
@@ -349,7 +294,7 @@
    "name": "Blake Corum",
    "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 7.8 under your weakest 9.3",
    "reasons": [
-    "breakout tier B: 44% snaps, 50% of RB touches; Kalshi rushing yds 43 vs Sleeper 43 (+0%)"
+    "breakout tier B: 44% snaps, 50% of RB touches; Kalshi rushing yds 43 vs Sleeper 43 (-1%)"
    ]
   },
   {
@@ -365,7 +310,7 @@
    "J": null,
    "key": "courtland sutton",
    "name": "Courtland Sutton",
-   "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 7.5 under your weakest 8.6",
+   "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 7.5 under your weakest 8.5",
    "reasons": [
     "breakout tier B: 70% snaps, 17% targets, 27% air yds; no market line yet (Sleeper receiving yds 34); held (wk6: 77% snaps, 11% targets, 35% air yds)"
    ]
@@ -392,7 +337,7 @@
    "J": null,
    "key": "elic ayomanor",
    "name": "Elic Ayomanor",
-   "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 5.2 under your weakest 8.6",
+   "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 5.2 under your weakest 8.5",
    "reasons": [
     "breakout tier B: 89% snaps, 23% targets, 44% air yds; no market line yet (Sleeper receiving yds 31)"
    ]
@@ -437,7 +382,7 @@
    "J": null,
    "key": "jordan watkins",
    "name": "Jordan Watkins",
-   "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 0.0 under your weakest 8.6",
+   "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 0.0 under your weakest 8.5",
    "reasons": [
     "breakout tier B: 76% snaps, 15% targets, 28% air yds; no market line yet, and no Sleeper line either"
    ]
@@ -482,7 +427,7 @@
    "J": null,
    "key": "laquon treadwell",
    "name": "Laquon Treadwell",
-   "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 3.3 under your weakest 8.6",
+   "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 3.3 under your weakest 8.5",
    "reasons": [
     "breakout tier B: 78% snaps, 9% targets, 25% air yds; no market line yet (Sleeper receiving yds 19)"
    ]
@@ -500,7 +445,7 @@
    "J": null,
    "key": "makai lemon",
    "name": "Makai Lemon",
-   "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 7.2 under your weakest 8.6",
+   "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 7.3 under your weakest 8.5",
    "reasons": [
     "breakout tier B: 91% snaps, 23% targets, 33% air yds; no market line yet (Sleeper receiving yds 32)"
    ]
@@ -509,7 +454,7 @@
    "J": null,
    "key": "malachi fields",
    "name": "Malachi Fields",
-   "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 0.0 under your weakest 8.6",
+   "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 0.0 under your weakest 8.5",
    "reasons": [
     "breakout tier B: 74% snaps, 18% targets, 28% air yds; no market line yet, and no Sleeper line either"
    ]
@@ -527,16 +472,16 @@
    "J": null,
    "key": "rashod bateman",
    "name": "Rashod Bateman",
-   "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 5.7 under your weakest 8.6",
+   "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 5.7 under your weakest 8.5",
    "reasons": [
-    "breakout tier B: 73% snaps, 12% targets, 26% air yds; Kalshi receiving yds 30 vs Sleeper 28 (+8%) \u2014 a part-time line, under the 35 starter floor"
+    "breakout tier B: 73% snaps, 12% targets, 26% air yds; Kalshi receiving yds 31 vs Sleeper 28 (+9%) \u2014 a part-time line, under the 35 starter floor"
    ]
   },
   {
    "J": null,
    "key": "ryan flournoy",
    "name": "Ryan Flournoy",
-   "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 8.2 under your weakest 8.6",
+   "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 8.2 under your weakest 8.5",
    "reasons": [
     "breakout tier B: 78% snaps, 15% targets, 27% air yds; no market line yet (Sleeper receiving yds 40)"
    ]
@@ -654,9 +599,9 @@
   "p_playoffs": 1.0
  },
  "winprob": {
-  "mean": 314.1195266548656,
+  "mean": 313.886715721749,
   "note": "sampled on the planner's final lineup",
   "p_med": null,
-  "p_opp": 0.6885
+  "p_opp": 0.6808333333333333
  }
 }
