@@ -17,11 +17,10 @@
      "add": null,
      "bid": null,
      "drop": null,
-     "gain": 1.15,
+     "gain": 0.7,
      "gates": [
       "G5-sources:WARN",
-      "G7-ready:WARN",
-      "G9-reversal:WARN"
+      "G7-ready:WARN"
      ],
      "kind": "start",
      "provisional": true,
@@ -33,44 +32,6 @@
      "subject": "Ryan Flournoy",
      "verdict": "WARN",
      "when": "early"
-    },
-    {
-     "add": "Cincinnati Bengals",
-     "bid": null,
-     "drop": null,
-     "fam": "DEF",
-     "gain": 4.65,
-     "gates": [
-      "G8-fresh:BLOCK"
-     ],
-     "kind": "upgrade",
-     "provisional": false,
-     "sit": "Vikings",
-     "slot": null,
-     "start": null,
-     "status": "blocked",
-     "subject": "Cincinnati Bengals",
-     "verdict": "BLOCK",
-     "when": null
-    },
-    {
-     "add": "Jacksonville Jaguars",
-     "bid": null,
-     "drop": null,
-     "fam": "DEF",
-     "gain": 3.79,
-     "gates": [
-      "G8-fresh:BLOCK"
-     ],
-     "kind": "upgrade",
-     "provisional": false,
-     "sit": "Vikings",
-     "slot": null,
-     "start": null,
-     "status": "blocked",
-     "subject": "Jacksonville Jaguars",
-     "verdict": "BLOCK",
-     "when": null
     },
     {
      "add": "Washington Commanders",
@@ -93,6 +54,25 @@
      "when": null
     },
     {
+     "add": "Tampa Bay Buccaneers",
+     "bid": null,
+     "drop": null,
+     "fam": "DEF",
+     "gain": 1.76,
+     "gates": [
+      "G8-fresh:BLOCK"
+     ],
+     "kind": "upgrade",
+     "provisional": false,
+     "sit": "Vikings",
+     "slot": null,
+     "start": null,
+     "status": "blocked",
+     "subject": "Tampa Bay Buccaneers",
+     "verdict": "BLOCK",
+     "when": null
+    },
+    {
      "add": "Elic Ayomanor",
      "bid": null,
      "drop": null,
@@ -110,7 +90,7 @@
      "verb": "BLOCKED",
      "verdict": "BLOCK",
      "when": "no move",
-     "why": "gate: add/drop inputs DEGRADED \u2014 BSB transactions log: line 32: no player/team"
+     "why": "gate: add/drop inputs DEGRADED \u2014 BSB transactions log: line 42: no player/team"
     },
     {
      "add": "Malachi Fields",
@@ -130,7 +110,7 @@
      "verb": "BLOCKED",
      "verdict": "BLOCK",
      "when": "no move",
-     "why": "gate: add/drop inputs DEGRADED \u2014 BSB transactions log: line 32: no player/team"
+     "why": "gate: add/drop inputs DEGRADED \u2014 BSB transactions log: line 42: no player/team"
     },
     {
      "add": "Jordan Watkins",
@@ -150,7 +130,7 @@
      "verb": "BLOCKED",
      "verdict": "BLOCK",
      "when": "no move",
-     "why": "gate: add/drop inputs DEGRADED \u2014 BSB transactions log: line 32: no player/team"
+     "why": "gate: add/drop inputs DEGRADED \u2014 BSB transactions log: line 42: no player/team"
     },
     {
      "add": "Zonovan Knight",
@@ -170,7 +150,7 @@
      "verb": "BLOCKED",
      "verdict": "BLOCK",
      "when": "no move",
-     "why": "gate: add/drop inputs DEGRADED \u2014 BSB transactions log: line 32: no player/team"
+     "why": "gate: add/drop inputs DEGRADED \u2014 BSB transactions log: line 42: no player/team"
     },
     {
      "add": "Laquon Treadwell",
@@ -190,7 +170,7 @@
      "verb": "BLOCKED",
      "verdict": "BLOCK",
      "when": "no move",
-     "why": "gate: add/drop inputs DEGRADED \u2014 BSB transactions log: line 32: no player/team"
+     "why": "gate: add/drop inputs DEGRADED \u2014 BSB transactions log: line 42: no player/team"
     },
     {
      "add": "Rashod Bateman",
@@ -210,7 +190,7 @@
      "verb": "BLOCKED",
      "verdict": "BLOCK",
      "when": "no move",
-     "why": "gate: add/drop inputs DEGRADED \u2014 BSB transactions log: line 32: no player/team"
+     "why": "gate: add/drop inputs DEGRADED \u2014 BSB transactions log: line 42: no player/team"
     },
     {
      "add": "Michael Mayer",
@@ -230,7 +210,27 @@
      "verb": "BLOCKED",
      "verdict": "BLOCK",
      "when": "no move",
-     "why": "gate: add/drop inputs DEGRADED \u2014 BSB transactions log: line 32: no player/team"
+     "why": "gate: add/drop inputs DEGRADED \u2014 BSB transactions log: line 42: no player/team"
+    },
+    {
+     "add": "Courtland Sutton",
+     "bid": null,
+     "drop": null,
+     "gates": [
+      "G8-fresh:BLOCK"
+     ],
+     "kind": "breakout",
+     "provisional": false,
+     "sit": null,
+     "slot": null,
+     "start": null,
+     "status": null,
+     "subject": "Courtland Sutton",
+     "tier": "B",
+     "verb": "BLOCKED",
+     "verdict": "BLOCK",
+     "when": "no move",
+     "why": "gate: add/drop inputs DEGRADED \u2014 BSB transactions log: line 42: no player/team"
     },
     {
      "add": "Mason Taylor",
@@ -250,7 +250,7 @@
      "verb": "BLOCKED",
      "verdict": "BLOCK",
      "when": "no move",
-     "why": "gate: add/drop inputs DEGRADED \u2014 BSB transactions log: line 32: no player/team"
+     "why": "gate: add/drop inputs DEGRADED \u2014 BSB transactions log: line 42: no player/team"
     },
     {
      "add": "Dylan Sampson",
@@ -270,7 +270,7 @@
      "verb": "BLOCKED",
      "verdict": "BLOCK",
      "when": "no move",
-     "why": "gate: add/drop inputs DEGRADED \u2014 BSB transactions log: line 32: no player/team"
+     "why": "gate: add/drop inputs DEGRADED \u2014 BSB transactions log: line 42: no player/team"
     },
     {
      "add": "Savion Williams",
@@ -290,27 +290,7 @@
      "verb": "BLOCKED",
      "verdict": "BLOCK",
      "when": "no move",
-     "why": "gate: add/drop inputs DEGRADED \u2014 BSB transactions log: line 32: no player/team"
-    },
-    {
-     "add": "Seth McGowan",
-     "bid": null,
-     "drop": null,
-     "gates": [
-      "G8-fresh:BLOCK"
-     ],
-     "kind": "breakout",
-     "provisional": false,
-     "sit": null,
-     "slot": null,
-     "start": null,
-     "status": null,
-     "subject": "Seth McGowan",
-     "tier": "C",
-     "verb": "BLOCKED",
-     "verdict": "BLOCK",
-     "when": "no move",
-     "why": "gate: add/drop inputs DEGRADED \u2014 BSB transactions log: line 32: no player/team"
+     "why": "gate: add/drop inputs DEGRADED \u2014 BSB transactions log: line 42: no player/team"
     },
     {
      "add": "Tez Johnson",
@@ -330,7 +310,7 @@
      "verb": "BLOCKED",
      "verdict": "BLOCK",
      "when": "no move",
-     "why": "gate: add/drop inputs DEGRADED \u2014 BSB transactions log: line 32: no player/team"
+     "why": "gate: add/drop inputs DEGRADED \u2014 BSB transactions log: line 42: no player/team"
     },
     {
      "add": "Greg Dulcich",
@@ -350,7 +330,7 @@
      "verb": "BLOCKED",
      "verdict": "BLOCK",
      "when": "no move",
-     "why": "gate: add/drop inputs DEGRADED \u2014 BSB transactions log: line 32: no player/team"
+     "why": "gate: add/drop inputs DEGRADED \u2014 BSB transactions log: line 42: no player/team"
     },
     {
      "add": "Davis Allen",
@@ -370,7 +350,7 @@
      "verb": "BLOCKED",
      "verdict": "BLOCK",
      "when": "no move",
-     "why": "gate: add/drop inputs DEGRADED \u2014 BSB transactions log: line 32: no player/team"
+     "why": "gate: add/drop inputs DEGRADED \u2014 BSB transactions log: line 42: no player/team"
     },
     {
      "add": "Gunnar Helm",
@@ -390,7 +370,7 @@
      "verb": "BLOCKED",
      "verdict": "BLOCK",
      "when": "no move",
-     "why": "gate: add/drop inputs DEGRADED \u2014 BSB transactions log: line 32: no player/team"
+     "why": "gate: add/drop inputs DEGRADED \u2014 BSB transactions log: line 42: no player/team"
     },
     {
      "add": "Jalen Brooks",
@@ -410,7 +390,7 @@
      "verb": "BLOCKED",
      "verdict": "BLOCK",
      "when": "no move",
-     "why": "gate: add/drop inputs DEGRADED \u2014 BSB transactions log: line 32: no player/team"
+     "why": "gate: add/drop inputs DEGRADED \u2014 BSB transactions log: line 42: no player/team"
     },
     {
      "add": "Jauan Jennings",
@@ -430,7 +410,7 @@
      "verb": "BLOCKED",
      "verdict": "BLOCK",
      "when": "no move",
-     "why": "gate: add/drop inputs DEGRADED \u2014 BSB transactions log: line 32: no player/team"
+     "why": "gate: add/drop inputs DEGRADED \u2014 BSB transactions log: line 42: no player/team"
     },
     {
      "add": "Trevor Etienne",
@@ -450,28 +430,10 @@
      "verb": "BLOCKED",
      "verdict": "BLOCK",
      "when": "no move",
-     "why": "gate: add/drop inputs DEGRADED \u2014 BSB transactions log: line 32: no player/team"
+     "why": "gate: add/drop inputs DEGRADED \u2014 BSB transactions log: line 42: no player/team"
     }
    ],
    "blocked": [
-    {
-     "add": "Cincinnati Bengals",
-     "drop": null,
-     "gates": [
-      "G8-fresh:BLOCK"
-     ],
-     "kind": "upgrade",
-     "subject": "Cincinnati Bengals"
-    },
-    {
-     "add": "Jacksonville Jaguars",
-     "drop": null,
-     "gates": [
-      "G8-fresh:BLOCK"
-     ],
-     "kind": "upgrade",
-     "subject": "Jacksonville Jaguars"
-    },
     {
      "add": "Washington Commanders",
      "drop": null,
@@ -480,6 +442,15 @@
      ],
      "kind": "upgrade",
      "subject": "Washington Commanders"
+    },
+    {
+     "add": "Tampa Bay Buccaneers",
+     "drop": null,
+     "gates": [
+      "G8-fresh:BLOCK"
+     ],
+     "kind": "upgrade",
+     "subject": "Tampa Bay Buccaneers"
     },
     {
      "add": "Elic Ayomanor",
@@ -545,6 +516,15 @@
      "subject": "Michael Mayer"
     },
     {
+     "add": "Courtland Sutton",
+     "drop": null,
+     "gates": [
+      "G8-fresh:BLOCK"
+     ],
+     "kind": "breakout",
+     "subject": "Courtland Sutton"
+    },
+    {
      "add": "Mason Taylor",
      "drop": null,
      "gates": [
@@ -570,15 +550,6 @@
      ],
      "kind": "breakout",
      "subject": "Savion Williams"
-    },
-    {
-     "add": "Seth McGowan",
-     "drop": null,
-     "gates": [
-      "G8-fresh:BLOCK"
-     ],
-     "kind": "breakout",
-     "subject": "Seth McGowan"
     },
     {
      "add": "Tez Johnson",
@@ -663,32 +634,32 @@
     "DEF": "Vikings",
     "K": "Jason Myers",
     "QB": "Matthew Stafford",
-    "RB1": "Josh Jacobs",
-    "RB2": "James Cook III",
+    "RB1": "James Cook III",
+    "RB2": "Josh Jacobs",
     "TE": "Sam LaPorta",
     "W/R/T": "Ryan Flournoy",
     "WR1": "Jaxon Smith-Njigba",
-    "WR2": "Drake London",
-    "WR3": "Malik Washington"
+    "WR2": "Malik Washington",
+    "WR3": "Drake London"
    },
    "me": "OVERKILL",
-   "others_pulled": "2026-10-28T06:12:12+00:00",
+   "others_pulled": "2026-10-28T13:28:10+00:00",
    "planner": {
     "lineup_after": {
      "DEF": "Vikings",
      "K": "Jason Myers",
      "QB": "Matthew Stafford",
-     "RB1": "Josh Jacobs",
-     "RB2": "James Cook III",
+     "RB1": "James Cook III",
+     "RB2": "Josh Jacobs",
      "TE": "Sam LaPorta",
      "W/R/T": "Ryan Flournoy",
-     "WR1": "Jaxon Smith-Njigba",
+     "WR1": "Malik Washington",
      "WR2": "Drake London",
-     "WR3": "Malik Washington"
+     "WR3": "Jaxon Smith-Njigba"
     },
     "moves": [
      {
-      "J": 1.151,
+      "J": 0.701,
       "add": null,
       "drop": null,
       "gates": [],
@@ -707,24 +678,28 @@
     ],
     "rejected": [
      {
-      "name": "Cincinnati Bengals",
-      "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 32: no player/team"
-     },
-     {
-      "name": "Jacksonville Jaguars",
-      "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 32: no player/team"
+      "name": "Detroit Lions",
+      "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 42: no player/team"
      },
      {
       "name": "Philadelphia Eagles",
-      "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 32: no player/team"
+      "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 42: no player/team"
+     },
+     {
+      "name": "Tampa Bay Buccaneers",
+      "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 42: no player/team"
      },
      {
       "name": "Washington Commanders",
-      "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 32: no player/team"
+      "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 42: no player/team"
+     },
+     {
+      "name": "Courtland Sutton",
+      "reason": "G15: dropped by Sycawhores on 2026-10-28 \u2014 a manager let a 182-point role go after his last game; find out why before claiming (a verified role is a registry add_yes)"
      },
      {
       "name": "Dalton Schultz",
-      "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 32: no player/team"
+      "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 42: no player/team"
      },
      {
       "name": "Dylan Sampson",
@@ -732,19 +707,15 @@
      },
      {
       "name": "Elic Ayomanor",
-      "reason": "sits behind everyone: you carry 6 WRs for 3 slot(s) and he projects 6.2 under your weakest 7.3"
+      "reason": "sits behind everyone: you carry 6 WRs for 3 slot(s) and he projects 6.2 under your weakest 7.7"
      },
      {
       "name": "Jake Ferguson",
-      "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 32: no player/team"
-     },
-     {
-      "name": "Jerry Jeudy",
-      "reason": "G15: dropped by Rayland on 2026-10-21 \u2014 a manager let a 134-point role go after his last game; find out why before claiming (a verified role is a registry add_yes)"
+      "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 42: no player/team"
      },
      {
       "name": "Jordan Watkins",
-      "reason": "sits behind everyone: you carry 6 WRs for 3 slot(s) and he projects 0.0 under your weakest 7.3"
+      "reason": "sits behind everyone: you carry 6 WRs for 3 slot(s) and he projects 0.0 under your weakest 7.7"
      },
      {
       "name": "Kenny Gainwell",
@@ -752,19 +723,19 @@
      },
      {
       "name": "Laquon Treadwell",
-      "reason": "sits behind everyone: you carry 6 WRs for 3 slot(s) and he projects 3.6 under your weakest 7.3"
+      "reason": "sits behind everyone: you carry 6 WRs for 3 slot(s) and he projects 3.7 under your weakest 7.7"
      },
      {
       "name": "Malachi Fields",
-      "reason": "sits behind everyone: you carry 6 WRs for 3 slot(s) and he projects 0.0 under your weakest 7.3"
+      "reason": "sits behind everyone: you carry 6 WRs for 3 slot(s) and he projects 0.0 under your weakest 7.7"
      },
      {
       "name": "Mark Andrews",
-      "reason": "G15: dropped by FWU on 2026-10-21 \u2014 a manager let a 162-point role go after his last game; find out why before claiming (a verified role is a registry add_yes)"
+      "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 42: no player/team"
      },
      {
       "name": "Michael Mayer",
-      "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 32: no player/team"
+      "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 42: no player/team"
      },
      {
       "name": "quay walker",
@@ -772,11 +743,11 @@
      },
      {
       "name": "Rashid Shaheed",
-      "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 32: no player/team"
+      "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 42: no player/team"
      },
      {
       "name": "Rashod Bateman",
-      "reason": "G15: dropped by Rayland on 2026-10-21 \u2014 a manager let a 125-point role go after his last game; find out why before claiming (a verified role is a registry add_yes)"
+      "reason": "sits behind everyone: you carry 6 WRs for 3 slot(s) and he projects 6.0 under your weakest 7.7"
      },
      {
       "name": "Terry McLaurin",
@@ -784,11 +755,11 @@
      },
      {
       "name": "Zonovan Knight",
-      "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 32: no player/team"
+      "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 42: no player/team"
      }
     ]
    },
-   "pulled": "2026-10-28T06:12:12+00:00"
+   "pulled": "2026-10-28T13:28:10+00:00"
   },
   "HH": {
    "actions": [
@@ -796,7 +767,7 @@
      "add": null,
      "bid": null,
      "drop": null,
-     "gain": 3.32,
+     "gain": 3.39,
      "gates": [
       "G2-desig:WARN",
       "G5-sources:WARN"
@@ -816,7 +787,7 @@
      "add": null,
      "bid": null,
      "drop": null,
-     "gain": 2.43,
+     "gain": 2.33,
      "gates": [],
      "kind": "start",
      "provisional": true,
@@ -874,7 +845,7 @@
      "bid": null,
      "drop": null,
      "fam": "DB",
-     "gain": 1.57,
+     "gain": 1.65,
      "gates": [
       "G5-sources:BLOCK",
       "G11-role-registry:WARN"
@@ -905,7 +876,7 @@
      "verb": "NONE",
      "verdict": "PASS",
      "when": "no move for this roster",
-     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Jameson Williams 10.1 vs 5.8). Only a trade chip."
+     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Rome Odunze 10.2 vs 5.8). Only a trade chip."
     },
     {
      "add": "KC Concepcion Jr.",
@@ -923,7 +894,7 @@
      "verb": "NONE",
      "verdict": "PASS",
      "when": "no move for this roster",
-     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Jameson Williams 10.1 vs 9.5). Only a trade chip."
+     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Rome Odunze 10.2 vs 9.9). Only a trade chip."
     },
     {
      "add": "Makai Lemon",
@@ -941,7 +912,7 @@
      "verb": "NONE",
      "verdict": "PASS",
      "when": "no move for this roster",
-     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Jameson Williams 10.1 vs 7.2). Only a trade chip."
+     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Rome Odunze 10.2 vs 7.3). Only a trade chip."
     },
     {
      "add": "Jordan Mason",
@@ -1031,7 +1002,7 @@
      "verb": "NONE",
      "verdict": "PASS",
      "when": "no move for this roster",
-     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Jameson Williams 10.1 vs 0.0). Only a trade chip."
+     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Rome Odunze 10.2 vs 0.0). Only a trade chip."
     },
     {
      "add": "Ryan Flournoy",
@@ -1049,7 +1020,7 @@
      "verb": "NONE",
      "verdict": "PASS",
      "when": "no move for this roster",
-     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Jameson Williams 10.1 vs 8.1). Only a trade chip."
+     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Rome Odunze 10.2 vs 8.1). Only a trade chip."
     },
     {
      "add": "Jordan Watkins",
@@ -1067,7 +1038,7 @@
      "verb": "NONE",
      "verdict": "PASS",
      "when": "no move for this roster",
-     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Jameson Williams 10.1 vs 0.0). Only a trade chip."
+     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Rome Odunze 10.2 vs 0.0). Only a trade chip."
     },
     {
      "add": "Zonovan Knight",
@@ -1121,7 +1092,7 @@
      "verb": "NONE",
      "verdict": "PASS",
      "when": "no move for this roster",
-     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Jameson Williams 10.1 vs 3.3). Only a trade chip."
+     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Rome Odunze 10.2 vs 3.4). Only a trade chip."
     },
     {
      "add": "Rashod Bateman",
@@ -1139,7 +1110,7 @@
      "verb": "NONE",
      "verdict": "PASS",
      "when": "no move for this roster",
-     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Jameson Williams 10.1 vs 5.2). Only a trade chip."
+     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Rome Odunze 10.2 vs 5.5). Only a trade chip."
     },
     {
      "add": "Jonah Coleman",
@@ -1265,7 +1236,7 @@
      "verb": "NONE",
      "verdict": "PASS",
      "when": "no move for this roster",
-     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Jameson Williams 10.1 vs 6.9). Only a trade chip."
+     "why": "you already carry 6 WRs for 2 slot(s) and he projects below your weakest (Rome Odunze 10.2 vs 7.4). Only a trade chip."
     }
    ],
    "blocked": [
@@ -1324,7 +1295,7 @@
     "WR": "Ja'Marr Chase"
    },
    "me": "Tecmo Bowlers",
-   "others_pulled": "2026-10-28T06:12:12+00:00",
+   "others_pulled": "2026-10-28T13:28:10+00:00",
    "planner": {
     "lineup_after": {
      "CB": "Cooper DeJean",
@@ -1345,7 +1316,7 @@
     },
     "moves": [
      {
-      "J": 3.317,
+      "J": 3.394,
       "add": null,
       "drop": null,
       "gates": [],
@@ -1362,7 +1333,7 @@
       "when": "before kickoff Sun Nov 1, 4:25 pm ET"
      },
      {
-      "J": 2.434,
+      "J": 2.331,
       "add": null,
       "drop": null,
       "gates": [],
@@ -1439,7 +1410,7 @@
      },
      {
       "name": "Blake Corum",
-      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 7.6 under your weakest 9.3"
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 7.9 under your weakest 9.3"
      },
      {
       "name": "Boye Mafe",
@@ -1447,7 +1418,7 @@
      },
      {
       "name": "Courtland Sutton",
-      "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 6.9 under your weakest 10.1"
+      "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 7.4 under your weakest 10.2"
      },
      {
       "name": "Dameon Pierce",
@@ -1463,7 +1434,7 @@
      },
      {
       "name": "Elic Ayomanor",
-      "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 5.8 under your weakest 10.1"
+      "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 5.8 under your weakest 10.2"
      },
      {
       "name": "Emanuel Wilson",
@@ -1475,7 +1446,7 @@
      },
      {
       "name": "Jonah Coleman",
-      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 8.1 under your weakest 9.3"
+      "reason": "sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 8.3 under your weakest 9.3"
      },
      {
       "name": "Jordan Mason",
@@ -1483,7 +1454,7 @@
      },
      {
       "name": "Jordan Watkins",
-      "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 0.0 under your weakest 10.1"
+      "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 0.0 under your weakest 10.2"
      },
      {
       "name": "Josh Hines-Allen",
@@ -1491,7 +1462,7 @@
      },
      {
       "name": "KC Concepcion Jr.",
-      "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 9.5 under your weakest 10.1"
+      "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 9.9 under your weakest 10.2"
      },
      {
       "name": "Kendre Miller",
@@ -1499,7 +1470,7 @@
      },
      {
       "name": "Laquon Treadwell",
-      "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 3.3 under your weakest 10.1"
+      "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 3.4 under your weakest 10.2"
      },
      {
       "name": "Lukas Van Ness",
@@ -1507,11 +1478,11 @@
      },
      {
       "name": "Makai Lemon",
-      "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 7.2 under your weakest 10.1"
+      "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 7.3 under your weakest 10.2"
      },
      {
       "name": "Malachi Fields",
-      "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 0.0 under your weakest 10.1"
+      "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 0.0 under your weakest 10.2"
      },
      {
       "name": "Michael Mayer",
@@ -1519,11 +1490,11 @@
      },
      {
       "name": "Rashod Bateman",
-      "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 5.2 under your weakest 10.1"
+      "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 5.5 under your weakest 10.2"
      },
      {
       "name": "Ryan Flournoy",
-      "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 8.1 under your weakest 10.1"
+      "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 8.1 under your weakest 10.2"
      },
      {
       "name": "Talanoa Hufanga",
@@ -1551,9 +1522,9 @@
      }
     ]
    },
-   "pulled": "2026-10-28T06:12:12+00:00"
+   "pulled": "2026-10-28T13:28:10+00:00"
   }
  },
- "now": "2026-10-28T02:13-04:00",
+ "now": "2026-10-28T09:29-04:00",
  "week": 8
 }
