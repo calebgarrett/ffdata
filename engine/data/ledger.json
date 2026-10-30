@@ -12153,10 +12153,11 @@
   ],
   "verdict": "WARN",
   "week": 8,
-  "status": "proposed",
+  "status": "executed",
   "provisional": true,
   "resolves_at": "2026-11-01T16:25-05:00",
-  "reverses": null
+  "reverses": null,
+  "status_ts": "2026-10-29T21:52-04:00"
  },
  {
   "id": "5cae2158",
@@ -12190,10 +12191,11 @@
   ],
   "verdict": "WARN",
   "week": 8,
-  "status": "proposed",
+  "status": "executed",
   "provisional": true,
   "resolves_at": "2026-11-01T20:20-05:00",
-  "reverses": null
+  "reverses": null,
+  "status_ts": "2026-10-29T21:52-04:00"
  },
  {
   "id": "5a61c871",
@@ -12436,10 +12438,11 @@
   ],
   "verdict": "BLOCK",
   "week": 8,
-  "status": "blocked",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": null,
-  "reverses": null
+  "reverses": null,
+  "superseded_by": "f19c8406"
  },
  {
   "id": "39a063ca",
@@ -12479,5 +12482,23 @@
   "provisional": true,
   "resolves_at": "2026-11-01T13:00-05:00",
   "reverses": "39a063ca"
+ },
+ {
+  "id": "f19c8406",
+  "ts": "2026-10-29T21:52-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Kevin Byard III",
+  "call": "add Kevin Byard III (DB) over Cooper DeJean",
+  "detail": "+2.31/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 8,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "9d8a8322"
  }
 ]
