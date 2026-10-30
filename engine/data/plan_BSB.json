@@ -47,7 +47,7 @@
   },
   {
    "player": "MarShawn Lloyd",
-   "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 62: no player/team"
+   "reason": "his game is final / live \u2014 finished and live players never move"
   },
   {
    "player": "Ryan Flournoy",
@@ -91,12 +91,12 @@
    "RB1": "josh jacobs",
    "RB2": "james cook",
    "TE": "sam laporta",
-   "W/R/T": "demario douglas",
-   "WR1": "jaxon smith njigba",
-   "WR2": "drake london",
+   "W/R/T": "ryan flournoy",
+   "WR1": "drake london",
+   "WR2": "jaxon smith njigba",
    "WR3": "malik washington"
   },
-  "optimal_before_moves": 142.66,
+  "optimal_before_moves": 150.27,
   "slots": {
    "DEF": "Commanders",
    "K": "Jason Myers",
@@ -104,14 +104,14 @@
    "RB1": "Josh Jacobs",
    "RB2": "James Cook III",
    "TE": "Sam LaPorta",
-   "W/R/T": "DeMario Douglas",
-   "WR1": "Jaxon Smith-Njigba",
-   "WR2": "Drake London",
+   "W/R/T": "Ryan Flournoy",
+   "WR1": "Drake London",
+   "WR2": "Jaxon Smith-Njigba",
    "WR3": "Malik Washington"
   },
-  "total": 142.66
+  "total": 150.27
  },
- "made": "2026-10-29T21:52-04:00",
+ "made": "2026-10-30T04:31-04:00",
  "mechanics": [
   {
    "rule": "A never-rostered free agent is free until his game kicks off",
@@ -149,7 +149,62 @@
    "verified": true
   }
  ],
- "moves": [],
+ "moves": [
+  {
+   "J": 0.018,
+   "add_key": null,
+   "add_name": null,
+   "at": null,
+   "deadline": "2026-11-01T13:00-05:00",
+   "drop_name": null,
+   "eff": "W",
+   "fam": "WR",
+   "gain": 0.02,
+   "gates": {
+    "add": null,
+    "drop": null
+   },
+   "id": "BSB:lineup:W/R/T",
+   "kind": "lineup",
+   "league": "BSB",
+   "phase": "early",
+   "provisional": true,
+   "reasons": [
+    "+0.02 this week",
+    "inside the 1.5-pt noise band"
+   ],
+   "sit": "DeMario Douglas",
+   "slot": "W/R/T",
+   "spot_id": null,
+   "spot_kind": null,
+   "spot_label": null,
+   "srcs": [
+    "lineup"
+   ],
+   "start": "Ryan Flournoy",
+   "tier": null,
+   "timing_why": "",
+   "tm": "DAL",
+   "txns": [
+    {
+     "key": "ryan flournoy",
+     "op": "start",
+     "player": "Ryan Flournoy",
+     "slot": "W/R/T"
+    },
+    {
+     "key": "demario douglas",
+     "op": "bench",
+     "player": "DeMario Douglas"
+    }
+   ],
+   "value_terms": {
+    "J": 0.018,
+    "dS_W": 0.018
+   },
+   "when": "before kickoff Sun Nov 1, 1:00 pm ET"
+  }
+ ],
  "notes": [],
  "rejected": [
   {
@@ -193,7 +248,7 @@
    "J": null,
    "key": "dameon pierce",
    "name": "Dameon Pierce",
-   "reason": "sits behind everyone: you carry 4 RBs for 2 slot(s) and he projects 0.0 under your weakest 1.6",
+   "reason": "sits behind everyone: you carry 4 RBs for 2 slot(s) and he projects 0.0 under your weakest 1.5",
    "reasons": [
     "breakout tier B: 64% snaps, 48% of RB touches; no market line yet, and no Sleeper line either; held (wk6: 95% snaps, 89% of RB touches)"
    ]
@@ -204,7 +259,7 @@
    "name": "Elic Ayomanor",
    "reason": "sits behind everyone: you carry 6 WRs for 3 slot(s) and he projects 5.4 under your weakest 8.4",
    "reasons": [
-    "breakout tier B: 89% snaps, 23% targets, 44% air yds; Kalshi receiving yds 29 vs Sleeper 32 (-10%) \u2014 a part-time line, under the 35 starter floor"
+    "breakout tier B: 89% snaps, 23% targets, 44% air yds; Kalshi receiving yds 29 vs Sleeper 32 (-9%) \u2014 a part-time line, under the 35 starter floor"
    ]
   },
   {
@@ -238,7 +293,7 @@
    "J": null,
    "key": "laquon treadwell",
    "name": "Laquon Treadwell",
-   "reason": "sits behind everyone: you carry 6 WRs for 3 slot(s) and he projects 4.3 under your weakest 8.4",
+   "reason": "sits behind everyone: you carry 6 WRs for 3 slot(s) and he projects 4.2 under your weakest 8.4",
    "reasons": [
     "breakout tier B: 78% snaps, 9% targets, 25% air yds; no market line yet (Sleeper receiving yds 19)"
    ]
@@ -276,7 +331,7 @@
    "name": "Rashod Bateman",
    "reason": "sits behind everyone: you carry 6 WRs for 3 slot(s) and he projects 6.6 under your weakest 8.4",
    "reasons": [
-    "breakout tier B: 73% snaps, 12% targets, 26% air yds; Kalshi receiving yds 29 vs Sleeper 28 (+4%) \u2014 a part-time line, under the 35 starter floor"
+    "breakout tier B: 73% snaps, 12% targets, 26% air yds; Kalshi receiving yds 30 vs Sleeper 28 (+8%) \u2014 a part-time line, under the 35 starter floor"
    ]
   },
   {
@@ -316,9 +371,9 @@
   "p_playoffs": 0.98275
  },
  "winprob": {
-  "mean": 142.49244723318094,
+  "mean": 150.4063131872241,
   "note": "sampled on the planner's final lineup",
-  "p_med": 0.7035,
-  "p_opp": 0.7733333333333333
+  "p_med": 0.8315,
+  "p_opp": 0.89
  }
 }
