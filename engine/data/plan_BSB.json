@@ -91,12 +91,12 @@
    "RB1": "josh jacobs",
    "RB2": "james cook",
    "TE": "sam laporta",
-   "W/R/T": "malik washington",
+   "W/R/T": "makai lemon",
    "WR1": "jaxon smith njigba",
    "WR2": "drake london",
-   "WR3": "makai lemon"
+   "WR3": "malik washington"
   },
-  "optimal_before_moves": 153.51,
+  "optimal_before_moves": 153.41,
   "slots": {
    "DEF": "Commanders",
    "K": "Jason Myers",
@@ -104,14 +104,14 @@
    "RB1": "Josh Jacobs",
    "RB2": "James Cook III",
    "TE": "Sam LaPorta",
-   "W/R/T": "Malik Washington",
+   "W/R/T": "Makai Lemon",
    "WR1": "Jaxon Smith-Njigba",
    "WR2": "Drake London",
-   "WR3": "Makai Lemon"
+   "WR3": "Malik Washington"
   },
-  "total": 153.51
+  "total": 153.41
  },
- "made": "2026-10-31T07:11-04:00",
+ "made": "2026-10-31T12:19-04:00",
  "mechanics": [
   {
    "rule": "A never-rostered free agent is free until his game kicks off",
@@ -151,7 +151,7 @@
  ],
  "moves": [
   {
-   "J": 0.72,
+   "J": 0.687,
    "add_key": null,
    "add_name": null,
    "at": null,
@@ -159,22 +159,22 @@
    "drop_name": null,
    "eff": "W",
    "fam": "WR",
-   "gain": 0.72,
+   "gain": 0.69,
    "gates": {
     "add": null,
     "drop": null
    },
-   "id": "BSB:lineup:WR3",
+   "id": "BSB:lineup:W/R/T",
    "kind": "lineup",
    "league": "BSB",
-   "phase": "early",
+   "phase": "decide",
    "provisional": true,
    "reasons": [
-    "+0.72 this week (Drake London slides to WR2)",
+    "+0.69 this week",
     "inside the 1.5-pt noise band"
    ],
    "sit": "DeMario Douglas",
-   "slot": "WR3",
+   "slot": "W/R/T",
    "spot_id": null,
    "spot_kind": null,
    "spot_label": null,
@@ -190,7 +190,7 @@
      "key": "makai lemon",
      "op": "start",
      "player": "Makai Lemon",
-     "slot": "WR3"
+     "slot": "W/R/T"
     },
     {
      "key": "demario douglas",
@@ -199,8 +199,8 @@
     }
    ],
    "value_terms": {
-    "J": 0.72,
-    "dS_W": 0.72
+    "J": 0.687,
+    "dS_W": 0.687
    },
    "when": "before kickoff Sun Nov 1, 8:20 pm ET"
   }
@@ -249,7 +249,7 @@
    "name": "Elic Ayomanor",
    "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 66: no player/team",
    "reasons": [
-    "depth: Elic Ayomanor 7.8/wk rest-of-season vs your weakest bench WR 3.9 (W projection 7.8 (usage says starter; the preseason number is stale))"
+    "depth: Elic Ayomanor 7.6/wk rest-of-season vs your weakest bench WR 3.9 (W projection 7.6 (usage says starter; the preseason number is stale))"
    ]
   },
   {
@@ -274,7 +274,7 @@
    "J": null,
    "key": "jordan watkins",
    "name": "Jordan Watkins",
-   "reason": "sits behind everyone: you carry 6 WRs for 3 slot(s) and he projects 0.0 under your weakest 9.1",
+   "reason": "sits behind everyone: you carry 6 WRs for 3 slot(s) and he projects 0.0 under your weakest 9.2",
    "reasons": [
     "breakout tier B: 76% snaps, 15% targets, 28% air yds; no market line yet, and no Sleeper line either"
    ]
@@ -283,16 +283,16 @@
    "J": null,
    "key": "laquon treadwell",
    "name": "Laquon Treadwell",
-   "reason": "sits behind everyone: you carry 6 WRs for 3 slot(s) and he projects 5.8 under your weakest 9.1",
+   "reason": "sits behind everyone: you carry 6 WRs for 3 slot(s) and he projects 5.7 under your weakest 9.2",
    "reasons": [
-    "breakout tier B: 78% snaps, 9% targets, 25% air yds; Kalshi receiving yds 29 vs Sleeper 19 (+55%) \u2014 a part-time line, under the 35 starter floor"
+    "breakout tier B: 78% snaps, 9% targets, 25% air yds; Kalshi receiving yds 28 vs Sleeper 19 (+49%) \u2014 a part-time line, under the 35 starter floor"
    ]
   },
   {
    "J": null,
    "key": "malachi fields",
    "name": "Malachi Fields",
-   "reason": "sits behind everyone: you carry 6 WRs for 3 slot(s) and he projects 0.0 under your weakest 9.1",
+   "reason": "sits behind everyone: you carry 6 WRs for 3 slot(s) and he projects 0.0 under your weakest 9.2",
    "reasons": [
     "breakout tier B: 74% snaps, 18% targets, 28% air yds; no market line yet, and no Sleeper line either"
    ]
@@ -319,7 +319,7 @@
    "J": null,
    "key": "rashod bateman",
    "name": "Rashod Bateman",
-   "reason": "sits behind everyone: you carry 6 WRs for 3 slot(s) and he projects 6.6 under your weakest 9.1",
+   "reason": "sits behind everyone: you carry 6 WRs for 3 slot(s) and he projects 6.5 under your weakest 9.2",
    "reasons": [
     "breakout tier B: 73% snaps, 12% targets, 26% air yds; Kalshi receiving yds 31 vs Sleeper 28 (+10%) \u2014 a part-time line, under the 35 starter floor"
    ]
@@ -360,9 +360,9 @@
   "p_playoffs": 0.985
  },
  "winprob": {
-  "mean": 153.70139283106954,
+  "mean": 153.67143120653463,
   "note": "sampled on the planner's final lineup",
-  "p_med": 0.875,
-  "p_opp": 0.9058333333333334
+  "p_med": 0.8721666666666666,
+  "p_opp": 0.9036666666666666
  }
 }
