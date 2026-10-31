@@ -150,7 +150,9 @@ def reconcile(league, rows, log_rows=None, now=None):
         p = _log_path(league)
         log_rows = [r for r in csv.DictReader(open(p))] if os.path.exists(p) else []
     since = (C.week_start(max(1, C.nfl_week(now) - 1))).strftime('%Y-%m-%d %H:%M')   # now=None: the real clock
-    log = sorted((r for r in log_rows if (r.get('datetime') or '') >= since and r.get('action') in ('Add', 'Drop')), key=lambda r: r['datetime'])
+    log = sorted((r for r in log_rows if (r.get('datetime') or '') >= since and r.get('action') in ('Add', 'Drop')
+                  and (r.get('player') or '').strip()),                   # a blank-name row (a page glitch, 10-29: 'Rayland,Add,,') is nobody
+                 key=lambda r: r['datetime'])
     orig = [dict(r) for r in rows]
     rows = [dict(r) for r in rows]
     changes = []

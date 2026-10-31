@@ -656,7 +656,14 @@ def pair_block(f, c, s, repl):
     if s.kind == 'swap' and x.fam != s.fam:
         return f'{s.label} is your only {s.fam}: a one-for-one {s.fam} swap only'
     if x.fam in ('DEF', 'K') and not c.hole and s.kind == 'drop' and s.tier >= 3:
-        return f'a {x.fam} stream that is not a hole never costs a real bench player ({s.label})'
+        # ...unless that bench player is replacement level or worse at his own position
+        # (10-28, Caleb: dropped Pierre Strong, GB's third RB at 0.75/wk, for the week-8
+        # Commanders and kept the 49ers for their week-9 matchup — the engine had named the
+        # 49ers because this rule made the dead RB spot illegal. A 1-pt stream never costs
+        # a REAL player; a body below the free agents at his position is not one.)
+        dv = (s.fact.ros_pw or 0.0) - repl.get(s.fact.fam, 0.0) if s.fact is not None else 0.0
+        if dv > HOLE_VOR_MAX:
+            return f'a {x.fam} stream that is not a hole never costs a real bench player ({s.label}, {dv:+.1f}/wk over the free replacement at {s.fact.fam})'
     # a kicker or defense is fungible: it NEVER costs a skill player or an IDP, hole or
     # not — the spot is an open spot, the spare/only DEF-K (a one-for-one swap), or a
     # dead/registry spot (10-06: 'add Boswell, drop Travis Kelce' at J +11 because the
@@ -666,11 +673,11 @@ def pair_block(f, c, s, repl):
         # that is replacement level or worse at its own position (10-28: the Texans' bye
         # left HH's DEF slot empty, the only DEF was a hold, and the 5th DB sat on the
         # bench below the free agents at his position — 'no roster spot exists' was wrong)
+        dv = (s.fact.ros_pw or 0.0) - repl.get(s.fact.fam, 0.0)
+        if dv <= HOLE_VOR_MAX: return None                       # a replacement-level body, hole or stream (10-28)
         if c.hole:
-            dv = (s.fact.ros_pw or 0.0) - repl.get(s.fact.fam, 0.0)
-            if dv <= HOLE_VOR_MAX: return None
             return f'a {x.fam} hole never costs a real player: {s.label} is {dv:+.1f}/wk over the free replacement at {s.fact.fam}'
-        return f'a {x.fam} never costs a {s.fact.fam} ({s.label}) — kickers and defenses swap one-for-one'
+        return f'a {x.fam} never costs a {s.fact.fam} ({s.label}, {dv:+.1f}/wk over the free replacement) — kickers and defenses swap one-for-one'
     return None
 
 

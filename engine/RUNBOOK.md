@@ -162,6 +162,15 @@ cannot be traced to P(win) is wrong.
   the real WR; streams keep the old rule. A DEF/K on bye is a legal weekly drop (the blend
   is its second family and its per-week number). The legacy bye-cover path never takes
   a skill/IDP drop (scenarios s04/s05). Tests: test_plan 8a3, test_system (bye DEF drop).
+- **A DEF/K stream may cost a dead bench body, never a real player** (10-28, Caleb: dropped
+  Pierre Strong — Green Bay's third RB at 0.75/wk — for the week-8 Commanders and kept the
+  49ers for their week-9 matchup; the engine had named the 49ers because 'a stream never
+  costs a skill player' made the dead RB spot illegal). The rule is about REAL players:
+  a bench player at or below `HOLE_VOR_MAX` (1.0/wk) over the free replacement at his
+  position is a legal spot for a stream as for a hole. Caleb's other reason — the 49ers
+  traded for DeForest Buckner and are loading up on defense — is read through the market:
+  if it matters, San Francisco's opponents' implied totals fall and the December table
+  moves on its own; the registry never pre-empts the lines. Tests: test_plan 8a4.
 - **A rival's drop of a real role is a fact the feeds may not carry yet** (10-25). McLaurin
   (season 204) tore up a knee on Monday night, out for the year; Washington's bye hid it
   from the free-agent pulse (he was projected in his last played game) and the planner

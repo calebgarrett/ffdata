@@ -382,6 +382,32 @@ case('DEF hole: the empty slot is filled from the wire even with no spare and no
 case('...the spot is the replacement-level 5th DB, not the real WR', m8a3 is not None and m8a3.get('drop_name') == _cb8a3[1], m8a3 and m8a3.get('drop_name'))
 case('...and the move is firm (a hole, not an edge)', m8a3 is not None and not m8a3.get('provisional'), m8a3 and m8a3.get('provisional'))
 
+# ---------------------------------------------------------------- 8a4. a DEF stream may take a dead bench body (10-28, Caleb's Strong-for-Commanders)
+# BSB: two DEFs (the spare has the better matchup NEXT week than any free DEF), a bench RB
+# at 0.75/wk below the free agents at RB, and a free DEF that beats both of mine THIS week.
+# The engine named the spare; Caleb dropped the dead RB and kept the spare for its week-9
+# game. The rule 'a stream never costs a skill player' is about REAL players.
+r8a4 = bsb_roster(def_tm='MIN', extra=[('BN', 'San Francisco', 'DEF', 'SF', 5.0, 'none')])
+r8a4 = [r for r in r8a4 if not (r[0] == 'BN' and r[3] == 'LV')]
+_dead = next(r for r in r8a4 if r[0] == 'BN' and r[2] == 'RB' and r[4] == 1.5)
+f, st, pr = league('BSB', r8a4, fas=[('Washington Commanders', 'DEF', 'WAS', 12.0), ('Kenny Gainwell', 'RB', 'TB', 7.0), ('Zonovan Knight', 'RB', 'NYJ', 6.0)], byes={W1: set()})
+# next week: the spare 49ers 19 on the look-ahead, the best free DEF 9 — no free unit replaces him
+for k, d in f.mine.items():
+    if k == 'DST:SF': d['pts_w1'] = 19.0
+p = PL.plan_facts(f, dict(upgrades=[dict(fam='DEF', add=dict(key='DST:WAS', name='Washington Commanders', week=12.0), over=dict(player='Minnesota Vikings', pts=7.0))]))
+m8a4 = next((m for m in moves_of(p) if m['add_key'] == 'DST:WAS'), None)
+case('DEF stream: a free DEF that beats both of mine this week ships', m8a4 is not None, p.summary())
+case('...and the spot is never the spare DEF that holds next week\'s matchup (the dead RB or the worse DEF one-for-one)', m8a4 is not None and m8a4.get('drop_name') in (_dead[1], 'Buffalo Bills') and m8a4.get('drop_name') != 'San Francisco', m8a4 and (m8a4.get('spot_kind'), m8a4.get('drop_name')))
+case('...the dead RB is a LEGAL spot for the stream (not blocked as a real player)', not any(r['key'] == 'DST:WAS' and 'never costs a real bench player' in r['reason'] for r in p.rejected))
+# a real bench RB (above replacement) is still never the spot for a stream
+r8a4b = [(r[0], r[1], r[2], r[3], 12.0, r[5]) if r[1] == _dead[1] else r for r in r8a4]
+f2, st2, pr2 = league('BSB', r8a4b, fas=[('Washington Commanders', 'DEF', 'WAS', 12.0), ('Kenny Gainwell', 'RB', 'TB', 7.0)], byes={W1: set()})
+for k, d in f2.mine.items():
+    if k == 'DST:SF': d['pts_w1'] = 19.0
+p2 = PL.plan_facts(f2, dict(upgrades=[dict(fam='DEF', add=dict(key='DST:WAS', name='Washington Commanders', week=12.0), over=dict(player='Minnesota Vikings', pts=7.0))]))
+m8a4b = next((m for m in moves_of(p2) if m['add_key'] == 'DST:WAS'), None)
+case('...a real bench RB (12/wk, above replacement) is never a stream\'s spot', m8a4b is None or m8a4b.get('drop_name') != _dead[1], m8a4b and m8a4b.get('drop_name'))
+
 # ---------------------------------------------------------------- 8b. FAB policy (Caleb, 10-13: every policy decision maximizes P(win the league))
 # A firm claim (hole cover) bids to WIN it — the league's 75th-pct winning bid — from
 # the money above the reserve; the reserve is for a Tier-A player and steps down.

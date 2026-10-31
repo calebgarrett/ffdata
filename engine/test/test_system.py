@@ -564,6 +564,14 @@ _r40b, _c40b = S.reconcile('BSB', _rows40b, _log40b)
 _own40b = {N.key(r['player']): r['owner'] for r in _r40b}
 case('renamed team: a logged add under the old name lands on the current owner via team id', _own40b.get('renamed add') == 'WINdianapolis', str(_own40b))
 case('renamed team: an owner the page does not know never creates a phantom roster', set(r['owner'] for r in _r40b) == {'WINdianapolis', 'OVERKILL'}, str(set(r['owner'] for r in _r40b)))
+# 40d. A log row with no player name (a page glitch: 'Rayland,Add,,,,' 10-29) is nobody —
+#      the replay added a blank 19th man and the runner refused.
+_rows40d = [dict(owner='A', manager='A', slot='BN', player='Some Guy', pos='WR', nfl='CAR', designation='none', team_id='9')]
+_log40d = [dict(datetime=_d40, team='A', action='Add', player='', pos='', nfl='', team_id='9')]
+_r40d, _c40d = S.reconcile('BSB', _rows40d, _log40d)
+case('a logged add with no player name never creates a roster row', len(_r40d) == 1 and not _c40d, str((_r40d, _c40d)))
+case('live BSB log: no row without a player', not [t for t in __import__('csv').DictReader(open('/home/claude/bsb2/data/bsb_transactions.csv')) if not (t.get('player') or '').strip()])
+
 # 40c. A defense is one unit under every name Yahoo prints (10-20): the page said 'New
 #      York' (NYJ) and the log said 'Jets' — the replay added a phantom 19th man; and
 #      T-rex's '49ers' add / 'San Francisco' drop never met, so the check refused the runner.

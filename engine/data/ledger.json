@@ -12157,7 +12157,7 @@
   "provisional": true,
   "resolves_at": "2026-11-01T16:25-05:00",
   "reverses": null,
-  "status_ts": "2026-10-29T21:52-04:00"
+  "status_ts": "2026-10-31T12:58-04:00"
  },
  {
   "id": "5cae2158",
@@ -12195,7 +12195,7 @@
   "provisional": true,
   "resolves_at": "2026-11-01T20:20-05:00",
   "reverses": null,
-  "status_ts": "2026-10-29T21:52-04:00"
+  "status_ts": "2026-10-31T12:58-04:00"
  },
  {
   "id": "5a61c871",
@@ -12442,7 +12442,7 @@
   "provisional": false,
   "resolves_at": null,
   "reverses": null,
-  "superseded_by": "f19c8406"
+  "superseded_by": "828fe146"
  },
  {
   "id": "39a063ca",
@@ -12478,20 +12478,38 @@
   ],
   "verdict": "WARN",
   "week": 8,
-  "status": "superseded",
+  "status": "proposed",
   "provisional": true,
   "resolves_at": "2026-11-01T13:00-05:00",
-  "reverses": "39a063ca",
-  "superseded_by": "bf638fe5"
+  "reverses": "39a063ca"
  },
  {
-  "id": "f19c8406",
-  "ts": "2026-10-29T21:52-04:00",
+  "id": "5f0b3b8b",
+  "ts": "2026-10-31T12:58-04:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Makai Lemon",
+  "call": "start Makai Lemon at WR1",
+  "detail": "over DeMario Douglas +0.68",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "PASS",
+  "week": 8,
+  "status": "proposed",
+  "provisional": true,
+  "resolves_at": "2026-11-01T20:20-05:00",
+  "reverses": null
+ },
+ {
+  "id": "828fe146",
+  "ts": "2026-10-31T12:58-04:00",
   "league": "HH",
   "kind": "add",
   "subject": "Kevin Byard III",
   "call": "add Kevin Byard III (DB) over Cooper DeJean",
-  "detail": "+2.31/wk",
+  "detail": "+2.20/wk",
   "evidence": [
    "sleeper"
   ],
@@ -12501,83 +12519,5 @@
   "provisional": false,
   "resolves_at": null,
   "reverses": "9d8a8322"
- },
- {
-  "id": "bf638fe5",
-  "ts": "2026-10-30T11:20-04:00",
-  "league": "BSB",
-  "kind": "start",
-  "subject": "Ryan Flournoy",
-  "call": "start Ryan Flournoy at WR3",
-  "detail": "over DeMario Douglas +0.14",
-  "evidence": [
-   "kalshi",
-   "sleeper"
-  ],
-  "verdict": "WARN",
-  "week": 8,
-  "status": "proposed",
-  "provisional": true,
-  "resolves_at": "2026-11-01T13:00-05:00",
-  "reverses": "ffa30a6b"
- },
- {
-  "id": "a3839050",
-  "ts": "2026-10-30T20:02-04:00",
-  "league": "BSB",
-  "kind": "start",
-  "subject": "Makai Lemon",
-  "call": "start Makai Lemon at W/R/T",
-  "detail": "over DeMario Douglas +0.31",
-  "evidence": [
-   "kalshi",
-   "sleeper"
-  ],
-  "verdict": "PASS",
-  "week": 8,
-  "status": "superseded",
-  "provisional": true,
-  "resolves_at": "2026-11-01T20:20-05:00",
-  "reverses": null,
-  "superseded_by": "8097f955"
- },
- {
-  "id": "8097f955",
-  "ts": "2026-10-31T07:11-04:00",
-  "league": "BSB",
-  "kind": "start",
-  "subject": "Makai Lemon",
-  "call": "start Makai Lemon at WR2",
-  "detail": "over DeMario Douglas +0.72",
-  "evidence": [
-   "kalshi",
-   "sleeper"
-  ],
-  "verdict": "WARN",
-  "week": 8,
-  "status": "superseded",
-  "provisional": true,
-  "resolves_at": "2026-11-01T20:20-05:00",
-  "reverses": "a3839050",
-  "superseded_by": "57e0ae98"
- },
- {
-  "id": "57e0ae98",
-  "ts": "2026-10-31T12:19-04:00",
-  "league": "BSB",
-  "kind": "start",
-  "subject": "Makai Lemon",
-  "call": "start Makai Lemon at W/R/T",
-  "detail": "over DeMario Douglas +0.69",
-  "evidence": [
-   "kalshi",
-   "sleeper"
-  ],
-  "verdict": "WARN",
-  "week": 8,
-  "status": "proposed",
-  "provisional": true,
-  "resolves_at": "2026-11-01T20:20-05:00",
-  "reverses": "8097f955"
  }
 ]

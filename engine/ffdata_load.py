@@ -310,7 +310,7 @@ def main():
             def _canon(r):
                 if (r.get('pos') or '').upper() == 'DEF' and _dn(r.get('nfl')): r['player'] = _dn(r.get('nfl'))
                 return r
-            old = [_canon(r) for r in old]
+            old = [_canon(r) for r in old if (r.get('player') or '').strip()]          # a row with no player is a page glitch, not a transaction (10-29)
             _k = lambda r: (r['datetime'], r['team'], r['player'], r['action'])
             _u = {}
             for r in old: _u.setdefault(_k(r), r)
@@ -327,6 +327,7 @@ def main():
                            pos=r['pos'], nfl=r['nfl'], bid=(m.group(1) if m else ''), note=('Waiver' if m else r['kind']),
                            team_id=r.get('team_id') or '')         # a team can rename mid-season (10-15: Bad News Bears -> WINdianapolis); the id does not
                 rec = _canon(rec)
+                if not (rec.get('player') or '').strip(): continue
                 k = (rec['datetime'], rec['team'], rec['player'], rec['action'])
                 if k not in seen: seen.add(k); new_rows.append(rec)
             allr = sorted(old + new_rows, key=lambda r: r['datetime'], reverse=True)
