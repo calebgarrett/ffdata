@@ -11,7 +11,7 @@
  "excluded": [
   {
    "player": "Matthew Stafford",
-   "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 62: no player/team"
+   "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 66: no player/team"
   },
   {
    "player": "Josh Jacobs",
@@ -19,7 +19,7 @@
   },
   {
    "player": "James Cook III",
-   "reason": "gate: G3-role NFL depth-chart role not checked; G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 62: no player/team"
+   "reason": "gate: G3-role NFL depth-chart role not checked; G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 66: no player/team"
   },
   {
    "player": "Jaxon Smith-Njigba",
@@ -27,7 +27,7 @@
   },
   {
    "player": "Malik Washington",
-   "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 62: no player/team"
+   "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 66: no player/team"
   },
   {
    "player": "Drake London",
@@ -35,11 +35,11 @@
   },
   {
    "player": "Sam LaPorta",
-   "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 62: no player/team"
+   "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 66: no player/team"
   },
   {
    "player": "DeMario Douglas",
-   "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 62: no player/team"
+   "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 66: no player/team"
   },
   {
    "player": "Isaiah Likely",
@@ -63,11 +63,11 @@
   },
   {
    "player": "Baker Mayfield",
-   "reason": "you added him 2026-10-24 (<= 7 days) \u2014 your decision, not the spot"
+   "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 66: no player/team"
   },
   {
    "player": "Jason Myers",
-   "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 62: no player/team"
+   "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 66: no player/team"
   },
   {
    "player": "Commanders",
@@ -75,11 +75,11 @@
   },
   {
    "player": "Vikings",
-   "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 62: no player/team"
+   "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 66: no player/team"
   },
   {
    "player": "49ers",
-   "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 62: no player/team"
+   "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 66: no player/team"
   }
  ],
  "league": "BSB",
@@ -91,12 +91,12 @@
    "RB1": "josh jacobs",
    "RB2": "james cook",
    "TE": "sam laporta",
-   "W/R/T": "makai lemon",
+   "W/R/T": "malik washington",
    "WR1": "jaxon smith njigba",
    "WR2": "drake london",
-   "WR3": "malik washington"
+   "WR3": "makai lemon"
   },
-  "optimal_before_moves": 153.28,
+  "optimal_before_moves": 153.51,
   "slots": {
    "DEF": "Commanders",
    "K": "Jason Myers",
@@ -104,14 +104,14 @@
    "RB1": "Josh Jacobs",
    "RB2": "James Cook III",
    "TE": "Sam LaPorta",
-   "W/R/T": "Makai Lemon",
+   "W/R/T": "Malik Washington",
    "WR1": "Jaxon Smith-Njigba",
    "WR2": "Drake London",
-   "WR3": "Malik Washington"
+   "WR3": "Makai Lemon"
   },
-  "total": 153.28
+  "total": 153.51
  },
- "made": "2026-10-31T01:30-04:00",
+ "made": "2026-10-31T07:11-04:00",
  "mechanics": [
   {
    "rule": "A never-rostered free agent is free until his game kicks off",
@@ -151,7 +151,7 @@
  ],
  "moves": [
   {
-   "J": 0.725,
+   "J": 0.72,
    "add_key": null,
    "add_name": null,
    "at": null,
@@ -164,17 +164,17 @@
     "add": null,
     "drop": null
    },
-   "id": "BSB:lineup:W/R/T",
+   "id": "BSB:lineup:WR3",
    "kind": "lineup",
    "league": "BSB",
    "phase": "early",
    "provisional": true,
    "reasons": [
-    "+0.72 this week",
+    "+0.72 this week (Drake London slides to WR2)",
     "inside the 1.5-pt noise band"
    ],
    "sit": "DeMario Douglas",
-   "slot": "W/R/T",
+   "slot": "WR3",
    "spot_id": null,
    "spot_kind": null,
    "spot_label": null,
@@ -190,7 +190,7 @@
      "key": "makai lemon",
      "op": "start",
      "player": "Makai Lemon",
-     "slot": "W/R/T"
+     "slot": "WR3"
     },
     {
      "key": "demario douglas",
@@ -199,8 +199,8 @@
     }
    ],
    "value_terms": {
-    "J": 0.725,
-    "dS_W": 0.725
+    "J": 0.72,
+    "dS_W": 0.72
    },
    "when": "before kickoff Sun Nov 1, 8:20 pm ET"
   }
@@ -211,7 +211,7 @@
    "J": null,
    "key": "DST:BUF",
    "name": "Buffalo Bills",
-   "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 62: no player/team",
+   "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 66: no player/team",
    "reasons": [
     "week-9 DEF stream: Buffalo Bills 5.6 vs your best 5.2 (W line re-scored on the week-9 opponent implied total 22.8)"
    ]
@@ -220,26 +220,16 @@
    "J": null,
    "key": "DST:PHI",
    "name": "Philadelphia Eagles",
-   "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 62: no player/team",
+   "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 66: no player/team",
    "reasons": [
     "week-9 DEF stream: Philadelphia Eagles 6.7 vs your best 5.2 (W line re-scored on the week-9 opponent implied total 19.5)"
    ]
   },
   {
    "J": null,
-   "key": "courtland sutton",
-   "name": "Courtland Sutton",
-   "reason": "G15: dropped by Sycawhores on 2026-10-28 \u2014 a manager let a 182-point role go after his last game; find out why before claiming (a verified role is a registry add_yes)",
-   "reasons": [
-    "breakout tier B: 70% snaps, 17% targets, 27% air yds; no market line yet (Sleeper receiving yds 36); held (wk6: 77% snaps, 11% targets, 35% air yds)",
-    "depth: Courtland Sutton 10.7/wk rest-of-season vs your weakest bench WR 3.9 (season blend / 17)"
-   ]
-  },
-  {
-   "J": null,
    "key": "dalton schultz",
    "name": "Dalton Schultz",
-   "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 62: no player/team",
+   "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 66: no player/team",
    "reasons": [
     "depth: Dalton Schultz 8.8/wk rest-of-season vs your weakest bench TE 3.9 (season blend / 17)"
    ]
@@ -248,16 +238,25 @@
    "J": null,
    "key": "dameon pierce",
    "name": "Dameon Pierce",
-   "reason": "sits behind everyone: you carry 4 RBs for 2 slot(s) and he projects 0.0 under your weakest 1.5",
+   "reason": "sits behind everyone: you carry 4 RBs for 2 slot(s) and he projects 0.0 under your weakest 1.4",
    "reasons": [
     "breakout tier B: 64% snaps, 48% of RB touches; no market line yet, and no Sleeper line either; held (wk6: 95% snaps, 89% of RB touches)"
    ]
   },
   {
    "J": null,
+   "key": "elic ayomanor",
+   "name": "Elic Ayomanor",
+   "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 66: no player/team",
+   "reasons": [
+    "depth: Elic Ayomanor 7.8/wk rest-of-season vs your weakest bench WR 3.9 (W projection 7.8 (usage says starter; the preseason number is stale))"
+   ]
+  },
+  {
+   "J": null,
    "key": "jake ferguson",
    "name": "Jake Ferguson",
-   "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 62: no player/team",
+   "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 66: no player/team",
    "reasons": [
     "depth: Jake Ferguson 9.4/wk rest-of-season vs your weakest bench TE 3.9 (season blend / 17)"
    ]
@@ -266,7 +265,7 @@
    "J": null,
    "key": "jerry jeudy",
    "name": "Jerry Jeudy",
-   "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 62: no player/team",
+   "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 66: no player/team",
    "reasons": [
     "depth: Jerry Jeudy 7.9/wk rest-of-season vs your weakest bench WR 3.9 (season blend / 17)"
    ]
@@ -284,9 +283,9 @@
    "J": null,
    "key": "laquon treadwell",
    "name": "Laquon Treadwell",
-   "reason": "sits behind everyone: you carry 6 WRs for 3 slot(s) and he projects 5.5 under your weakest 9.1",
+   "reason": "sits behind everyone: you carry 6 WRs for 3 slot(s) and he projects 5.8 under your weakest 9.1",
    "reasons": [
-    "breakout tier B: 78% snaps, 9% targets, 25% air yds; Kalshi receiving yds 26 vs Sleeper 19 (+34%) \u2014 a part-time line, under the 35 starter floor"
+    "breakout tier B: 78% snaps, 9% targets, 25% air yds; Kalshi receiving yds 29 vs Sleeper 19 (+55%) \u2014 a part-time line, under the 35 starter floor"
    ]
   },
   {
@@ -302,7 +301,7 @@
    "J": null,
    "key": "mark andrews",
    "name": "Mark Andrews",
-   "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 62: no player/team",
+   "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 66: no player/team",
    "reasons": [
     "depth: Mark Andrews 9.5/wk rest-of-season vs your weakest bench TE 3.9 (season blend / 17)"
    ]
@@ -338,7 +337,7 @@
    "J": null,
    "key": "zonovan knight",
    "name": "Zonovan Knight",
-   "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 62: no player/team",
+   "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 66: no player/team",
    "reasons": [
     "breakout tier B: 53% snaps, 52% of RB touches; no market line yet (Sleeper rushing yds 16); held (wk6: 44% snaps, 46% of RB touches)"
    ]
@@ -358,12 +357,12 @@
   "W_NOW": 1.0,
   "W_PLAY": 0.6,
   "W_REST": 0.8,
-  "p_playoffs": 0.9855
+  "p_playoffs": 0.985
  },
  "winprob": {
-  "mean": 153.38030580937777,
+  "mean": 153.70139283106954,
   "note": "sampled on the planner's final lineup",
-  "p_med": 0.8691666666666666,
-  "p_opp": 0.8995
+  "p_med": 0.875,
+  "p_opp": 0.9058333333333334
  }
 }
