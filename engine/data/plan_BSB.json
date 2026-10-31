@@ -91,12 +91,12 @@
    "RB1": "josh jacobs",
    "RB2": "james cook",
    "TE": "sam laporta",
-   "W/R/T": "malik washington",
-   "WR1": "drake london",
-   "WR2": "jaxon smith njigba",
-   "WR3": "demario douglas"
+   "W/R/T": "makai lemon",
+   "WR1": "malik washington",
+   "WR2": "drake london",
+   "WR3": "jaxon smith njigba"
   },
-  "optimal_before_moves": 151.31,
+  "optimal_before_moves": 152.79,
   "slots": {
    "DEF": "Commanders",
    "K": "Jason Myers",
@@ -104,14 +104,14 @@
    "RB1": "Josh Jacobs",
    "RB2": "James Cook III",
    "TE": "Sam LaPorta",
-   "W/R/T": "Malik Washington",
-   "WR1": "Drake London",
-   "WR2": "Jaxon Smith-Njigba",
-   "WR3": "DeMario Douglas"
+   "W/R/T": "Makai Lemon",
+   "WR1": "Malik Washington",
+   "WR2": "Drake London",
+   "WR3": "Jaxon Smith-Njigba"
   },
-  "total": 151.31
+  "total": 152.79
  },
- "made": "2026-10-30T16:08-04:00",
+ "made": "2026-10-30T20:02-04:00",
  "mechanics": [
   {
    "rule": "A never-rostered free agent is free until his game kicks off",
@@ -149,7 +149,62 @@
    "verified": true
   }
  ],
- "moves": [],
+ "moves": [
+  {
+   "J": 0.307,
+   "add_key": null,
+   "add_name": null,
+   "at": null,
+   "deadline": "2026-11-01T20:20-05:00",
+   "drop_name": null,
+   "eff": "W",
+   "fam": "WR",
+   "gain": 0.31,
+   "gates": {
+    "add": null,
+    "drop": null
+   },
+   "id": "BSB:lineup:W/R/T",
+   "kind": "lineup",
+   "league": "BSB",
+   "phase": "early",
+   "provisional": true,
+   "reasons": [
+    "+0.31 this week",
+    "inside the 1.5-pt noise band"
+   ],
+   "sit": "DeMario Douglas",
+   "slot": "W/R/T",
+   "spot_id": null,
+   "spot_kind": null,
+   "spot_label": null,
+   "srcs": [
+    "lineup"
+   ],
+   "start": "Makai Lemon",
+   "tier": null,
+   "timing_why": "",
+   "tm": "PHI",
+   "txns": [
+    {
+     "key": "makai lemon",
+     "op": "start",
+     "player": "Makai Lemon",
+     "slot": "W/R/T"
+    },
+    {
+     "key": "demario douglas",
+     "op": "bench",
+     "player": "DeMario Douglas"
+    }
+   ],
+   "value_terms": {
+    "J": 0.307,
+    "dS_W": 0.307
+   },
+   "when": "before kickoff Sun Nov 1, 8:20 pm ET"
+  }
+ ],
  "notes": [],
  "rejected": [
   {
@@ -176,7 +231,7 @@
    "name": "Courtland Sutton",
    "reason": "G15: dropped by Sycawhores on 2026-10-28 \u2014 a manager let a 182-point role go after his last game; find out why before claiming (a verified role is a registry add_yes)",
    "reasons": [
-    "breakout tier B: 70% snaps, 17% targets, 27% air yds; no market line yet (Sleeper receiving yds 35); held (wk6: 77% snaps, 11% targets, 35% air yds)",
+    "breakout tier B: 70% snaps, 17% targets, 27% air yds; no market line yet (Sleeper receiving yds 37); held (wk6: 77% snaps, 11% targets, 35% air yds)",
     "depth: Courtland Sutton 10.7/wk rest-of-season vs your weakest bench WR 3.9 (season blend / 17)"
    ]
   },
@@ -196,15 +251,6 @@
    "reason": "sits behind everyone: you carry 4 RBs for 2 slot(s) and he projects 0.0 under your weakest 1.5",
    "reasons": [
     "breakout tier B: 64% snaps, 48% of RB touches; no market line yet, and no Sleeper line either; held (wk6: 95% snaps, 89% of RB touches)"
-   ]
-  },
-  {
-   "J": null,
-   "key": "elic ayomanor",
-   "name": "Elic Ayomanor",
-   "reason": "sits behind everyone: you carry 6 WRs for 3 slot(s) and he projects 7.7 under your weakest 9.3",
-   "reasons": [
-    "breakout tier B: 89% snaps, 23% targets, 44% air yds; Kalshi receiving yds 39 vs Sleeper 45 (-14%)"
    ]
   },
   {
@@ -229,7 +275,7 @@
    "J": null,
    "key": "jordan watkins",
    "name": "Jordan Watkins",
-   "reason": "sits behind everyone: you carry 6 WRs for 3 slot(s) and he projects 0.0 under your weakest 9.3",
+   "reason": "sits behind everyone: you carry 6 WRs for 3 slot(s) and he projects 0.0 under your weakest 9.0",
    "reasons": [
     "breakout tier B: 76% snaps, 15% targets, 28% air yds; no market line yet, and no Sleeper line either"
    ]
@@ -238,7 +284,7 @@
    "J": null,
    "key": "laquon treadwell",
    "name": "Laquon Treadwell",
-   "reason": "sits behind everyone: you carry 6 WRs for 3 slot(s) and he projects 5.5 under your weakest 9.3",
+   "reason": "sits behind everyone: you carry 6 WRs for 3 slot(s) and he projects 5.5 under your weakest 9.0",
    "reasons": [
     "breakout tier B: 78% snaps, 9% targets, 25% air yds; Kalshi receiving yds 26 vs Sleeper 19 (+34%) \u2014 a part-time line, under the 35 starter floor"
    ]
@@ -247,7 +293,7 @@
    "J": null,
    "key": "malachi fields",
    "name": "Malachi Fields",
-   "reason": "sits behind everyone: you carry 6 WRs for 3 slot(s) and he projects 0.0 under your weakest 9.3",
+   "reason": "sits behind everyone: you carry 6 WRs for 3 slot(s) and he projects 0.0 under your weakest 9.0",
    "reasons": [
     "breakout tier B: 74% snaps, 18% targets, 28% air yds; no market line yet, and no Sleeper line either"
    ]
@@ -274,9 +320,9 @@
    "J": null,
    "key": "rashod bateman",
    "name": "Rashod Bateman",
-   "reason": "sits behind everyone: you carry 6 WRs for 3 slot(s) and he projects 6.6 under your weakest 9.3",
+   "reason": "sits behind everyone: you carry 6 WRs for 3 slot(s) and he projects 6.6 under your weakest 9.0",
    "reasons": [
-    "breakout tier B: 73% snaps, 12% targets, 26% air yds; Kalshi receiving yds 31 vs Sleeper 29 (+9%) \u2014 a part-time line, under the 35 starter floor"
+    "breakout tier B: 73% snaps, 12% targets, 26% air yds; Kalshi receiving yds 31 vs Sleeper 28 (+9%) \u2014 a part-time line, under the 35 starter floor"
    ]
   },
   {
@@ -294,8 +340,7 @@
    "name": "Zonovan Knight",
    "reason": "gate: G8-fresh add/drop inputs DEGRADED \u2014 BSB transactions log: line 62: no player/team",
    "reasons": [
-    "breakout tier B: 53% snaps, 52% of RB touches; no market line yet (Sleeper rushing yds 25); held (wk6: 44% snaps, 46% of RB touches)",
-    "depth: Zonovan Knight 7.5/wk rest-of-season vs your weakest bench RB 3.9 (W projection 7.5 (usage says starter; the preseason number is stale))"
+    "breakout tier B: 53% snaps, 52% of RB touches; no market line yet (Sleeper rushing yds 16); held (wk6: 44% snaps, 46% of RB touches)"
    ]
   }
  ],
@@ -313,12 +358,12 @@
   "W_NOW": 1.0,
   "W_PLAY": 0.6,
   "W_REST": 0.8,
-  "p_playoffs": 0.9855
+  "p_playoffs": 0.98575
  },
  "winprob": {
-  "mean": 151.53961377873878,
+  "mean": 153.04031462960066,
   "note": "sampled on the planner's final lineup",
-  "p_med": 0.864,
-  "p_opp": 0.8971666666666667
+  "p_med": 0.8683333333333333,
+  "p_opp": 0.8866666666666667
  }
 }
