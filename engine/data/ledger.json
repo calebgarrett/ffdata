@@ -12516,10 +12516,11 @@
   ],
   "verdict": "BLOCK",
   "week": 8,
-  "status": "blocked",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": null,
-  "reverses": "9d8a8322"
+  "reverses": "9d8a8322",
+  "superseded_by": "5817bec5"
  },
  {
   "id": "ec4f3a35",
@@ -12555,9 +12556,65 @@
   ],
   "verdict": "WARN",
   "week": 8,
+  "status": "superseded",
+  "provisional": true,
+  "resolves_at": "2026-11-01T20:20-05:00",
+  "reverses": "ec4f3a35",
+  "superseded_by": "0d6edee5"
+ },
+ {
+  "id": "0d6edee5",
+  "ts": "2026-11-01T13:34-05:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Makai Lemon",
+  "call": "start Makai Lemon at WR1",
+  "detail": "over DeMario Douglas +0.98",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 8,
   "status": "proposed",
   "provisional": true,
   "resolves_at": "2026-11-01T20:20-05:00",
-  "reverses": "ec4f3a35"
+  "reverses": "de358bdc"
+ },
+ {
+  "id": "5a3a49c7",
+  "ts": "2026-11-01T13:34-05:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Nick Cross",
+  "call": "start Nick Cross at S",
+  "detail": "over Kam Curl +4.30",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 8,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": "2026-11-01T20:20-05:00",
+  "reverses": null
+ },
+ {
+  "id": "5817bec5",
+  "ts": "2026-11-01T13:34-05:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Kevin Byard III",
+  "call": "add Kevin Byard III (DB) over Kam Curl",
+  "detail": "+3.56/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 8,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "828fe146"
  }
 ]
