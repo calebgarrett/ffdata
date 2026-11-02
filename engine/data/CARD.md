@@ -1,6 +1,6 @@
 # Lineup Card — week 8
 
-_Mon Nov 2, 4:54 am ET. Decisions first; detail folded below. A PROVISIONAL call waits for the market or a game-status answer._
+_Mon Nov 2, 3:14 pm ET. Decisions first; detail folded below. A PROVISIONAL call waits for the market or a game-status answer._
 
 ## Decide (next 36 hours)
 
@@ -9,11 +9,11 @@ _Mon Nov 2, 4:54 am ET. Decisions first; detail folded below. A PROVISIONAL call
 ## BSB — OVERKILL
 
 12-2-0, 1st, PF — · projected 140 · 93% to beat Ex-Presidents · 78% vs the league median
-- Next lock: Mon Nov 2, 8:15 pm ET — Jaxon Smith-Njigba, Jason Myers
+- Next lock: Mon Nov 2, 8:15 pm ET — Jason Myers, Jaxon Smith-Njigba
 
 <details><summary>Lineup after the moves</summary>
 
-- DEF: Commanders
+- DEF: Washington
 - K: Jason Myers
 - QB: Matthew Stafford
 - RB1: Josh Jacobs
@@ -52,8 +52,8 @@ _Mon Nov 2, 4:54 am ET. Decisions first; detail folded below. A PROVISIONAL call
 
 <details><summary>BSB: considered, not moves (15)</summary>
 
-- Buffalo Bills: J -0.34 < 3.0 at its best spot (49ers) — J -0.34 = 1.0x+0.00 (wk W) + 0.8x+1.47 (W+1) + 0.8x+0.00 (rest, mean of wks 10-17) + 0.59x+0.00 (wks 15-17, P(playoffs)
-- Philadelphia Eagles: J +0.16 < 3.0 at its best spot (49ers) — J +0.16 = 1.0x+0.00 (wk W) + 0.8x+1.47 (W+1) + 0.8x+0.33 (rest, mean of wks 10-17) + 0.59x+0.38 (wks 15-17, P(playoffs)
+- Buffalo Bills: J -0.34 < 3.0 at its best spot (San Francisco) — J -0.34 = 1.0x+0.00 (wk W) + 0.8x+1.47 (W+1) + 0.8x+0.00 (rest, mean of wks 10-17) + 0.59x+0.00 (wks 15-17, P(p
+- Philadelphia Eagles: J +0.16 < 3.0 at its best spot (San Francisco) — J +0.16 = 1.0x+0.00 (wk W) + 0.8x+1.47 (W+1) + 0.8x+0.33 (rest, mean of wks 10-17) + 0.59x+0.38 (wks 15-17, P(p
 - Dalton Schultz: best spot Jason Myers: Jason Myers is your only K: a one-for-one K swap only
 - Dameon Pierce: sits behind everyone: you carry 4 RBs for 2 slot(s) and he projects 0.0 under your weakest 2.6
 - Elic Ayomanor: best spot Jason Myers: Jason Myers is your only K: a one-for-one K swap only
@@ -86,9 +86,9 @@ _Mon Nov 2, 4:54 am ET. Decisions first; detail folded below. A PROVISIONAL call
 
 <details><summary>Flags</summary>
 
-- 3 DEFs rostered (Commanders, Vikings, 49ers) for one DEF slot — the spare is Commanders (73 season vs Vikings 122); Vikings is on the bench this week only on the matchup (8.0 vs 15.0), not on quality
+- 3 DEFs rostered (Washington, Minnesota, San Francisco) for one DEF slot — the spare is Washington (73 season vs Minnesota 122); Minnesota is on the bench this week only on the matchup (8.0 vs 15.0), not on quality
 - 2 DEFs rostered — second one is a HOLD in a capped league: Texans (registry hold)
 
 </details>
 
-_Engine stamp Mon Nov 2, 4:54 am ET. The HTML card is the full record; this page is the private, phone-readable twin._
+_Engine stamp Mon Nov 2, 3:14 pm ET. The HTML card is the full record; this page is the private, phone-readable twin._
