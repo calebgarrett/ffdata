@@ -1,6 +1,6 @@
 # Lineup Card — week 8
 
-_Sun Nov 1, 5:44 pm ET. Decisions first; detail folded below. A PROVISIONAL call waits for the market or a game-status answer._
+_Sun Nov 1, 9:21 pm ET. Decisions first; detail folded below. A PROVISIONAL call waits for the market or a game-status answer._
 
 ## Decide (next 36 hours)
 
@@ -8,12 +8,12 @@ _Sun Nov 1, 5:44 pm ET. Decisions first; detail folded below. A PROVISIONAL call
 
 ## BSB — OVERKILL
 
-12-2-0, 1st, PF — · projected 148 · 88% to beat Ex-Presidents · 78% vs the league median
-- Next lock: Sun Nov 1, 8:20 pm ET — Commanders
+12-2-0, 1st, PF — · projected 147 · 86% to beat Ex-Presidents · 76% vs the league median
+- Next lock: Mon Nov 2, 8:15 pm ET — Jason Myers, Jaxon Smith-Njigba
 
 <details><summary>Lineup after the moves</summary>
 
-- DEF: Commanders
+- DEF: Washington
 - K: Jason Myers
 - QB: Matthew Stafford
 - RB1: Josh Jacobs
@@ -28,8 +28,7 @@ _Sun Nov 1, 5:44 pm ET. Decisions first; detail folded below. A PROVISIONAL call
 
 ## HH — Tecmo Bowlers
 
-6-1-0, 1st, PF — · projected 313 · 58% to beat The STRIB Club
-- Next lock: Sun Nov 1, 8:20 pm ET — Cooper DeJean, Commanders
+6-1-0, 1st, PF — · projected 312 · 59% to beat The STRIB Club
 
 <details><summary>Lineup after the moves</summary>
 
@@ -53,8 +52,8 @@ _Sun Nov 1, 5:44 pm ET. Decisions first; detail folded below. A PROVISIONAL call
 
 <details><summary>BSB: considered, not moves (14)</summary>
 
-- Buffalo Bills: J -0.34 < 3.0 at its best spot (49ers) — J -0.34 = 1.0x+0.00 (wk W) + 0.8x+1.46 (W+1) + 0.8x+0.00 (rest, mean of wks 10-17) + 0.59x+0.00 (wks 15-17, P(playoffs)
-- Philadelphia Eagles: J +0.17 < 3.0 at its best spot (DeMario Douglas) — J +0.17 = 1.0x+0.00 (wk W) + 0.8x+1.46 (W+1) + 0.8x+0.33 (rest, mean of wks 10-17) + 0.59x+0.38 (wks 15-17, P
+- Buffalo Bills: J -0.34 < 3.0 at its best spot (San Francisco) — J -0.34 = 1.0x+0.00 (wk W) + 0.8x+1.47 (W+1) + 0.8x+0.00 (rest, mean of wks 10-17) + 0.59x+0.00 (wks 15-17, P(p
+- Philadelphia Eagles: J +0.18 < 3.0 at its best spot (DeMario Douglas) — J +0.18 = 1.0x+0.00 (wk W) + 0.8x+1.47 (W+1) + 0.8x+0.33 (rest, mean of wks 10-17) + 0.59x+0.38 (wks 15-17, P
 - Dalton Schultz: J -1.49 < 3.0 at its best spot (DeMario Douglas) — J -1.49 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 10-17) + 0.59x+0.00 (wks 15-17, P
 - Dameon Pierce: sits behind everyone: you carry 4 RBs for 2 slot(s) and he projects 0.0 under your weakest 0.9
 - Elic Ayomanor: J -1.18 < 3.0 at its best spot (DeMario Douglas) — J -1.18 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.20 (rest, mean of wks 10-17) + 0.59x+0.00 (wks 15-17, P
@@ -68,18 +67,18 @@ _Sun Nov 1, 5:44 pm ET. Decisions first; detail folded below. A PROVISIONAL call
 
 </details>
 
-<details><summary>HH: considered, not moves (32)</summary>
+<details><summary>HH: considered, not moves (31)</summary>
 
 - AJ Barner: best spot Brandon Aubrey: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
 - Alvin Kamara: sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 0.0 under your weakest 14.4
 - Austin Booker: gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])
 - Blake Corum: sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 7.2 under your weakest 14.4
 - Boye Mafe: gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])
-- Courtland Sutton: sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 7.5 under your weakest 9.4
+- Courtland Sutton: sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 7.5 under your weakest 9.3
 - Dameon Pierce: sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 0.0 under your weakest 14.4
 - Dexter Lawrence II: gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])
-- Elic Ayomanor: sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 8.4 under your weakest 9.4
-- Emanuel Wilson: sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 5.8 under your weakest 14.4
+- Elic Ayomanor: sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 8.4 under your weakest 9.3
+- Emanuel Wilson: sits behind everyone: you carry 2 RBs for 1 slot(s) and he projects 5.7 under your weakest 14.4
 - George Karlaftis: gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])
 - Harrison Butker: J -0.04 < 3.0 at its best spot (Brandon Aubrey) — J -0.04 = 1.0x+0.00 (wk W) + 0.8x+0.12 (W+1) + 0.8x+1.19 (rest, mean of wks 10-17) + 0.60x-0.64 (wks 15-17, P(
 
@@ -87,9 +86,9 @@ _Sun Nov 1, 5:44 pm ET. Decisions first; detail folded below. A PROVISIONAL call
 
 <details><summary>Flags</summary>
 
-- 3 DEFs rostered (Commanders, Vikings, 49ers) for one DEF slot — the spare is Commanders (73 season vs Vikings 122); Vikings is on the bench this week only on the matchup (4.8 vs 8.8), not on quality
+- 3 DEFs rostered (Washington, Minnesota, San Francisco) for one DEF slot — the spare is Washington (73 season vs Minnesota 122); Minnesota is on the bench this week only on the matchup (4.8 vs 7.7), not on quality
 - 2 DEFs rostered — second one is a HOLD in a capped league: Texans (registry hold)
 
 </details>
 
-_Engine stamp Sun Nov 1, 5:44 pm ET. The HTML card is the full record; this page is the private, phone-readable twin._
+_Engine stamp Sun Nov 1, 9:21 pm ET. The HTML card is the full record; this page is the private, phone-readable twin._
