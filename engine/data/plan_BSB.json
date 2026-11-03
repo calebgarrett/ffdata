@@ -66,11 +66,11 @@
    "reason": "his game is final / live \u2014 finished and live players never move"
   },
   {
-   "player": "Washington",
+   "player": "Commanders",
    "reason": "you added him 2026-10-28 (<= 7 days) \u2014 your decision, not the spot"
   },
   {
-   "player": "Minnesota",
+   "player": "Vikings",
    "reason": "his game is final / live \u2014 finished and live players never move"
   }
  ],
@@ -88,9 +88,9 @@
    "WR2": "malik washington",
    "WR3": "drake london"
   },
-  "optimal_before_moves": 140.17,
+  "optimal_before_moves": 143.14,
   "slots": {
-   "DEF": "Washington",
+   "DEF": "Commanders",
    "K": "Jason Myers",
    "QB": "Matthew Stafford",
    "RB1": "Josh Jacobs",
@@ -101,9 +101,9 @@
    "WR2": "Malik Washington",
    "WR3": "Drake London"
   },
-  "total": 140.17
+  "total": 143.14
  },
- "made": "2026-11-02T15:14-05:00",
+ "made": "2026-11-02T21:38-05:00",
  "mechanics": [
   {
    "rule": "A never-rostered free agent is free until his game kicks off",
@@ -148,7 +148,7 @@
    "J": -0.337,
    "key": "DST:BUF",
    "name": "Buffalo Bills",
-   "reason": "J -0.34 < 3.0 at its best spot (San Francisco) \u2014 J -0.34 = 1.0x+0.00 (wk W) + 0.8x+1.47 (W+1) + 0.8x+0.00 (rest, mean of wks 10-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+0.00 (bench boom) + 0.2x-5.03 (depth) - 0.00 acq - 0.01 FAB($1) - 0.50 churn",
+   "reason": "J -0.34 < 3.0 at its best spot (49ers) \u2014 J -0.34 = 1.0x+0.00 (wk W) + 0.8x+1.47 (W+1) + 0.8x+0.00 (rest, mean of wks 10-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+0.00 (bench boom) + 0.2x-5.03 (depth) - 0.00 acq - 0.01 FAB($1) - 0.50 churn",
    "reasons": [
     "week-9 DEF stream: Buffalo Bills 5.6 vs your best 5.2 (W line re-scored on the week-9 opponent implied total 22.8)"
    ]
@@ -157,7 +157,7 @@
    "J": 0.156,
    "key": "DST:PHI",
    "name": "Philadelphia Eagles",
-   "reason": "J +0.16 < 3.0 at its best spot (San Francisco) \u2014 J +0.16 = 1.0x+0.00 (wk W) + 0.8x+1.47 (W+1) + 0.8x+0.33 (rest, mean of wks 10-17) + 0.59x+0.38 (wks 15-17, P(playoffs) 99%) + 0.1x+0.00 (bench boom) + 0.2x-5.03 (depth) - 0.00 acq - 0.01 FAB($1) - 0.50 churn",
+   "reason": "J +0.16 < 3.0 at its best spot (49ers) \u2014 J +0.16 = 1.0x+0.00 (wk W) + 0.8x+1.47 (W+1) + 0.8x+0.33 (rest, mean of wks 10-17) + 0.59x+0.38 (wks 15-17, P(playoffs) 99%) + 0.1x+0.00 (bench boom) + 0.2x-5.03 (depth) - 0.00 acq - 0.01 FAB($1) - 0.50 churn",
    "reasons": [
     "week-9 DEF stream: Philadelphia Eagles 6.7 vs your best 5.2 (W line re-scored on the week-9 opponent implied total 19.5)"
    ]
@@ -263,7 +263,7 @@
    ]
   },
   {
-   "J": 6.398,
+   "J": 6.396,
    "key": "terry mclaurin",
    "name": "Terry McLaurin",
    "reason": "best spot Jason Myers: Jason Myers is your only K: a one-for-one K swap only",
@@ -285,7 +285,7 @@
   {
    "id": "drop:DST:SF",
    "kind": "swap",
-   "label": "San Francisco",
+   "label": "49ers",
    "taken_by": null,
    "tier": 2
   },
@@ -310,12 +310,12 @@
   "W_NOW": 1.0,
   "W_PLAY": 0.6,
   "W_REST": 0.8,
-  "p_playoffs": 0.992
+  "p_playoffs": 0.99125
  },
  "winprob": {
-  "mean": 140.28781673119852,
+  "mean": 143.243004353384,
   "note": "final lineup = current lineup (the engine's own number)",
-  "p_med": 0.782,
-  "p_opp": 0.9288333333333333
+  "p_med": 0.8276666666666667,
+  "p_opp": 0.9463333333333334
  }
 }
