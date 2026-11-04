@@ -58,28 +58,28 @@
    "QB": "matt stafford",
    "RB1": "james cook",
    "RB2": "josh jacobs",
-   "TE": "sam laporta",
-   "W/R/T": "isaiah likely",
-   "WR1": "malik washington",
+   "TE": "isaiah likely",
+   "W/R/T": "sam laporta",
+   "WR1": "jaxon smith njigba",
    "WR2": "drake london",
-   "WR3": "jaxon smith njigba"
+   "WR3": "malik washington"
   },
-  "optimal_before_moves": 142.84,
+  "optimal_before_moves": 142.85,
   "slots": {
    "DEF": "49ers",
    "K": "Jason Myers",
    "QB": "Matthew Stafford",
    "RB1": "James Cook III",
    "RB2": "Josh Jacobs",
-   "TE": "Sam LaPorta",
-   "W/R/T": "Isaiah Likely",
-   "WR1": "Malik Washington",
+   "TE": "Isaiah Likely",
+   "W/R/T": "Sam LaPorta",
+   "WR1": "Jaxon Smith-Njigba",
    "WR2": "Drake London",
-   "WR3": "Jaxon Smith-Njigba"
+   "WR3": "Malik Washington"
   },
-  "total": 142.84
+  "total": 142.85
  },
- "made": "2026-11-04T09:02-05:00",
+ "made": "2026-11-04T09:25-05:00",
  "mechanics": [
   {
    "rule": "A never-rostered free agent is free until his game kicks off",
@@ -132,17 +132,17 @@
     "add": null,
     "drop": null
    },
-   "id": "BSB:lineup:W/R/T",
+   "id": "BSB:lineup:TE",
    "kind": "lineup",
    "league": "BSB",
    "phase": "early",
    "provisional": true,
    "reasons": [
-    "+2.81 this week",
+    "+2.81 this week (Sam LaPorta slides to W/R/T)",
     "no player market posted yet for his game"
    ],
    "sit": "DeMario Douglas",
-   "slot": "W/R/T",
+   "slot": "TE",
    "spot_id": null,
    "spot_kind": null,
    "spot_label": null,
@@ -158,7 +158,7 @@
      "key": "isaiah likely",
      "op": "start",
      "player": "Isaiah Likely",
-     "slot": "W/R/T"
+     "slot": "TE"
     },
     {
      "key": "demario douglas",
@@ -173,7 +173,7 @@
    "when": "before kickoff Sun Nov 8, 1:00 pm ET"
   },
   {
-   "J": 4.354,
+   "J": 4.371,
    "add_key": null,
    "add_name": null,
    "at": null,
@@ -181,7 +181,7 @@
    "drop_name": null,
    "eff": "W",
    "fam": "DEF",
-   "gain": 4.35,
+   "gain": 4.37,
    "gates": {
     "add": null,
     "drop": null
@@ -192,7 +192,7 @@
    "phase": "early",
    "provisional": false,
    "reasons": [
-    "+4.35 this week"
+    "+4.37 this week"
    ],
    "sit": "Commanders",
    "slot": "DEF",
@@ -220,8 +220,8 @@
     }
    ],
    "value_terms": {
-    "J": 4.354,
-    "dS_W": 4.354
+    "J": 4.371,
+    "dS_W": 4.371
    },
    "when": "before kickoff Sun Nov 8, 4:25 pm ET"
   }
@@ -234,7 +234,7 @@
    "name": "Buffalo Bills",
    "reason": "J +1.07 < 3.0 at its best spot (Vikings) \u2014 J +1.07 = 1.0x+0.00 (wk W) + 0.8x+1.29 (W+1) + 0.8x+0.38 (rest, mean of wks 11-17) + 0.60x+0.38 (wks 15-17, P(playoffs) 100%) + 0.1x+0.00 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
-    "DEF weekly upgrade: Buffalo Bills 6.8 vs starter Commanders 3.5",
+    "DEF weekly upgrade: Buffalo Bills 6.8 vs starter Commanders 3.4",
     "week-10 DEF stream: Buffalo Bills 7.2 vs your best 5.9 (W line re-scored on the week-10 opponent implied total 19.8)"
    ]
   },
@@ -244,7 +244,7 @@
    "name": "New Orleans Saints",
    "reason": "J +1.07 < 3.0 at its best spot (Vikings) \u2014 J +1.07 = 1.0x+0.00 (wk W) + 0.8x+1.29 (W+1) + 0.8x+0.38 (rest, mean of wks 11-17) + 0.60x+0.38 (wks 15-17, P(playoffs) 100%) + 0.1x+0.00 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
-    "DEF weekly upgrade: New Orleans Saints 6.7 vs starter Commanders 3.5",
+    "DEF weekly upgrade: New Orleans Saints 6.7 vs starter Commanders 3.4",
     "week-10 DEF stream: New Orleans Saints 6.7 vs your best 5.9 (W line re-scored on the week-10 opponent implied total 21.0)"
    ]
   },
@@ -254,7 +254,7 @@
    "name": "New York Giants",
    "reason": "J +1.30 < 3.0 at its best spot (Vikings) \u2014 J +1.30 = 1.0x+0.23 (wk W) + 0.8x+1.29 (W+1) + 0.8x+0.38 (rest, mean of wks 11-17) + 0.60x+0.38 (wks 15-17, P(playoffs) 100%) + 0.1x+0.00 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
-    "DEF weekly upgrade: New York Giants 8.0 vs starter Commanders 3.5"
+    "DEF weekly upgrade: New York Giants 8.0 vs starter Commanders 3.4"
    ]
   },
   {
@@ -312,6 +312,15 @@
    ]
   },
   {
+   "J": 2.035,
+   "key": "jahan dotson",
+   "name": "Jahan Dotson",
+   "reason": "best spot Jason Myers: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
+   "reasons": [
+    "breakout tier B: 72% snaps, 21% targets, 68% air yds; Kalshi receiving yds 30 vs Sleeper 35 (-14%) \u2014 a part-time line, under the 35 starter floor"
+   ]
+  },
+  {
    "J": -1.105,
    "key": "jake ferguson",
    "name": "Jake Ferguson",
@@ -353,7 +362,7 @@
    "name": "Rashod Bateman",
    "reason": "J -1.28 < 3.0 at its best spot (DeMario Douglas) \u2014 J -1.28 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.20 (rest, mean of wks 11-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x-0.26 (bench boom) + 0.2x-4.56 (depth) - 0.00 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
-    "breakout tier B: 76% snaps, 12% targets, 31% air yds; Kalshi receiving yds 21 vs Sleeper 22 (-8%) \u2014 a part-time line, under the 35 starter floor; held (wk7: 73% snaps, 12% targets, 26% air yds)",
+    "breakout tier B: 76% snaps, 12% targets, 31% air yds; Kalshi receiving yds 21 vs Sleeper 22 (-7%) \u2014 a part-time line, under the 35 starter floor; held (wk7: 73% snaps, 12% targets, 26% air yds)",
     "depth: Rashod Bateman 7.4/wk rest-of-season vs your weakest bench WR 3.9 (season blend / 17)"
    ]
   },
@@ -459,9 +468,9 @@
   "p_playoffs": 0.9955
  },
  "winprob": {
-  "mean": 143.30738463425752,
+  "mean": 142.64821346159962,
   "note": "sampled on the planner's final lineup",
-  "p_med": 0.7033333333333334,
-  "p_opp": 0.5826666666666667
+  "p_med": 0.6943333333333334,
+  "p_opp": 0.5751666666666667
  }
 }

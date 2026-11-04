@@ -12655,10 +12655,11 @@
   ],
   "verdict": "WARN",
   "week": 9,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": true,
   "resolves_at": "2026-11-08T13:00-05:00",
-  "reverses": null
+  "reverses": null,
+  "superseded_by": "8eab3b34"
  },
  {
   "id": "28288b35",
@@ -12807,10 +12808,11 @@
   ],
   "verdict": "WARN",
   "week": 9,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": null,
-  "reverses": null
+  "reverses": null,
+  "superseded_by": "dbb1d1c8"
  },
  {
   "id": "a3846228",
@@ -12845,10 +12847,11 @@
   ],
   "verdict": "WARN",
   "week": 9,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": null,
-  "reverses": null
+  "reverses": null,
+  "superseded_by": "a129bb60"
  },
  {
   "id": "d45c5fa7",
@@ -12903,10 +12906,11 @@
   ],
   "verdict": "PASS",
   "week": 9,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": null,
-  "reverses": null
+  "reverses": null,
+  "superseded_by": "c8b3b509"
  },
  {
   "id": "8fa99381",
@@ -13526,9 +13530,182 @@
   ],
   "verdict": "WARN",
   "week": 9,
+  "status": "superseded",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "74a384f7",
+  "superseded_by": "4b9a708b"
+ },
+ {
+  "id": "8eab3b34",
+  "ts": "2026-11-04T09:24-05:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Isaiah Likely",
+  "call": "start Isaiah Likely at TE",
+  "detail": "over DeMario Douglas +2.81",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 9,
+  "status": "proposed",
+  "provisional": true,
+  "resolves_at": "2026-11-08T13:00-05:00",
+  "reverses": "ffa4f65a"
+ },
+ {
+  "id": "4b9a708b",
+  "ts": "2026-11-04T09:24-05:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Buffalo Bills",
+  "call": "add Buffalo Bills (DEF) over Commanders",
+  "detail": "+3.35/wk",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 9,
+  "status": "superseded",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "b0ec3500",
+  "superseded_by": "77872ec8"
+ },
+ {
+  "id": "77872ec8",
+  "ts": "2026-11-04T09:24-05:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Buffalo Bills",
+  "call": "stream Buffalo Bills for week 10, drop Commanders",
+  "detail": "DEF: BUF 19.8 vs yours Commanders 24.5 \u2014 edge 4.8 implied pts",
+  "evidence": [
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 9,
+  "status": "superseded",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "4b9a708b",
+  "superseded_by": "8fd1356b"
+ },
+ {
+  "id": "5c7ac8df",
+  "ts": "2026-11-04T09:24-05:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Houston",
+  "call": "start Houston at DEF",
+  "detail": "over Washington +4.40",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "PASS",
+  "week": 9,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": "2026-11-08T16:05-05:00",
+  "reverses": null
+ },
+ {
+  "id": "dbb1d1c8",
+  "ts": "2026-11-04T09:24-05:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Kansas City Chiefs",
+  "call": "add Kansas City Chiefs (DEF) over Washington",
+  "detail": "+5.65/wk",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 9,
   "status": "proposed",
   "provisional": false,
   "resolves_at": null,
-  "reverses": "74a384f7"
+  "reverses": "05f0aea3"
+ },
+ {
+  "id": "a129bb60",
+  "ts": "2026-11-04T09:24-05:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "New York Giants",
+  "call": "add New York Giants (DEF) over Washington",
+  "detail": "+4.37/wk",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 9,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "2f6a12f1"
+ },
+ {
+  "id": "c8b3b509",
+  "ts": "2026-11-04T09:24-05:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Chicago Bears",
+  "call": "add Chicago Bears (DEF) over Washington",
+  "detail": "+4.28/wk",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "PASS",
+  "week": 9,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "4438849a"
+ },
+ {
+  "id": "8fd1356b",
+  "ts": "2026-11-04T09:25-05:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Buffalo Bills",
+  "call": "add Buffalo Bills (DEF) over Commanders",
+  "detail": "+3.35/wk",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 9,
+  "status": "superseded",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "77872ec8",
+  "superseded_by": "cc97d750"
+ },
+ {
+  "id": "cc97d750",
+  "ts": "2026-11-04T09:25-05:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Buffalo Bills",
+  "call": "stream Buffalo Bills for week 10, drop Commanders",
+  "detail": "DEF: BUF 19.8 vs yours Commanders 24.5 \u2014 edge 4.8 implied pts",
+  "evidence": [
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 9,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "8fd1356b"
  }
 ]

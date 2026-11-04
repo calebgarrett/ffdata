@@ -11,7 +11,7 @@
  "excluded": [
   {
    "player": "Dak Prescott",
-   "reason": "gate: G6-magnitude 38.920534987357705 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex: 3 QBs for 2 QB-eligible slots \u2014 QB3 is b"
+   "reason": "gate: G6-magnitude 38.82397340186199 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex: 3 QBs for 2 QB-eligible slots \u2014 QB3 is by"
   },
   {
    "player": "Braelon Allen",
@@ -31,7 +31,7 @@
   },
   {
    "player": "Jared Goff",
-   "reason": "gate: G6-magnitude 38.05049974414292 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex: 3 QBs for 2 QB-eligible slots \u2014 QB3 is by"
+   "reason": "gate: G6-magnitude 38.099800823643236 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex: 3 QBs for 2 QB-eligible slots \u2014 QB3 is b"
   },
   {
    "player": "Jaylen Warren",
@@ -54,11 +54,11 @@
    "reason": "starter-level usage in his own right (83% snaps, 27% targets, 22% air yds)"
   },
   {
-   "player": "Commanders",
+   "player": "Washington",
    "reason": "you added him 2026-10-28 (<= 7 days) \u2014 your decision, not the spot"
   },
   {
-   "player": "Texans",
+   "player": "Houston",
    "reason": "registry HOLD \u2014 HOLD in Heritage House. A 7-acquisition league rations streaming, and Tecmo Bowl"
   }
  ],
@@ -78,15 +78,15 @@
    "S": "budda baker",
    "TE": "trey mcbride",
    "W/R": "drake london",
-   "W/R/T": "rashee rice",
-   "WR": "jamarr chase"
+   "W/R/T": "jamarr chase",
+   "WR": "rashee rice"
   },
-  "optimal_before_moves": 289.73,
+  "optimal_before_moves": 289.94,
   "slots": {
    "CB": "Cooper DeJean",
    "D": "Carson Schwesinger",
    "DB": "Nick Cross",
-   "DEF": "Texans",
+   "DEF": "Houston",
    "DL": "T.J. Watt",
    "K": "Brandon Aubrey",
    "LB": "Foyesade Oluokun",
@@ -96,12 +96,12 @@
    "S": "Budda Baker",
    "TE": "Trey McBride",
    "W/R": "Drake London",
-   "W/R/T": "Rashee Rice",
-   "WR": "Ja'Marr Chase"
+   "W/R/T": "Ja'Marr Chase",
+   "WR": "Rashee Rice"
   },
-  "total": 289.73
+  "total": 289.94
  },
- "made": "2026-11-04T09:02-05:00",
+ "made": "2026-11-04T09:25-05:00",
  "mechanics": [
   {
    "rule": "Free agents are immediate unless his game is in progress",
@@ -141,7 +141,7 @@
  ],
  "moves": [
   {
-   "J": 4.4,
+   "J": 4.399,
    "add_key": null,
    "add_name": null,
    "at": null,
@@ -162,7 +162,7 @@
    "reasons": [
     "+4.40 this week"
    ],
-   "sit": "Commanders",
+   "sit": "Washington",
    "slot": "DEF",
    "spot_id": null,
    "spot_kind": null,
@@ -170,7 +170,7 @@
    "srcs": [
     "lineup"
    ],
-   "start": "Texans",
+   "start": "Houston",
    "tier": null,
    "timing_why": "",
    "tm": "HOU",
@@ -178,18 +178,18 @@
     {
      "key": "DST:HOU",
      "op": "start",
-     "player": "Texans",
+     "player": "Houston",
      "slot": "DEF"
     },
     {
      "key": "DST:WAS",
      "op": "bench",
-     "player": "Commanders"
+     "player": "Washington"
     }
    ],
    "value_terms": {
-    "J": 4.4,
-    "dS_W": 4.4
+    "J": 4.399,
+    "dS_W": 4.399
    },
    "when": "before kickoff Sun Nov 8, 4:05 pm ET"
   },
@@ -255,7 +255,7 @@
    "name": "Chicago Bears",
    "reason": "J -3.02 < 3.0 at its best spot (Carson Schwesinger) \u2014 J -3.02 = 1.0x+0.00 (wk W) + 0.8x-0.39 (W+1) + 0.8x-0.90 (rest, mean of wks 11-17) + 0.60x-0.39 (wks 15-17, P(playoffs) 100%) + 0.1x-2.60 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
-    "DEF weekly upgrade: Chicago Bears 25.9 vs starter Commanders 21.6"
+    "DEF weekly upgrade: Chicago Bears 25.9 vs starter Washington 21.6"
    ]
   },
   {
@@ -264,7 +264,7 @@
    "name": "Kansas City Chiefs",
    "reason": "J -2.53 < 3.0 at its best spot (Carson Schwesinger) \u2014 J -2.53 = 1.0x+0.00 (wk W) + 0.8x+0.22 (W+1) + 0.8x-0.90 (rest, mean of wks 11-17) + 0.60x-0.39 (wks 15-17, P(playoffs) 100%) + 0.1x-2.60 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
-    "DEF weekly upgrade: Kansas City Chiefs 27.3 vs starter Commanders 21.6",
+    "DEF weekly upgrade: Kansas City Chiefs 27.3 vs starter Washington 21.6",
     "week-10 DEF stream: Kansas City Chiefs 26.9 vs your best 26.3 (W line re-scored on the week-10 opponent implied total 20.5)"
    ]
   },
@@ -274,7 +274,7 @@
    "name": "New York Giants",
    "reason": "J -3.02 < 3.0 at its best spot (Carson Schwesinger) \u2014 J -3.02 = 1.0x+0.00 (wk W) + 0.8x-0.39 (W+1) + 0.8x-0.90 (rest, mean of wks 11-17) + 0.60x-0.39 (wks 15-17, P(playoffs) 100%) + 0.1x-2.60 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
-    "DEF weekly upgrade: New York Giants 26.0 vs starter Commanders 21.6"
+    "DEF weekly upgrade: New York Giants 26.0 vs starter Washington 21.6"
    ]
   },
   {
@@ -311,7 +311,7 @@
    "name": "Antonio Williams",
    "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 8.1 under your weakest 10.0",
    "reasons": [
-    "breakout tier A: 83% snaps, 24% targets, 27% air yds; Kalshi receiving yds 41 vs Sleeper 32 (+29%)"
+    "breakout tier A: 83% snaps, 24% targets, 27% air yds; Kalshi receiving yds 41 vs Sleeper 32 (+30%)"
    ]
   },
   {
@@ -390,9 +390,9 @@
    "J": null,
    "key": "courtland sutton",
    "name": "Courtland Sutton",
-   "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 8.2 under your weakest 10.0",
+   "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 8.0 under your weakest 10.0",
    "reasons": [
-    "breakout tier B: 81% snaps, 12% targets, 50% air yds; Kalshi receiving yds 38 vs Sleeper 37 (+2%); held (wk7: 70% snaps, 17% targets, 27% air yds)"
+    "breakout tier B: 81% snaps, 12% targets, 50% air yds; Kalshi receiving yds 36 vs Sleeper 37 (-3%); held (wk7: 70% snaps, 17% targets, 27% air yds)"
    ]
   },
   {
@@ -478,6 +478,15 @@
   },
   {
    "J": null,
+   "key": "jahan dotson",
+   "name": "Jahan Dotson",
+   "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 5.8 under your weakest 10.0",
+   "reasons": [
+    "breakout tier B: 72% snaps, 21% targets, 68% air yds; Kalshi receiving yds 30 vs Sleeper 35 (-14%) \u2014 a part-time line, under the 35 starter floor"
+   ]
+  },
+  {
+   "J": null,
    "key": "jiayir brown",
    "name": "Ji'Ayir Brown",
    "reason": "gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])",
@@ -514,7 +523,7 @@
    ]
   },
   {
-   "J": -2.502,
+   "J": -2.505,
    "key": "kenny gainwell",
    "name": "Kenny Gainwell",
    "reason": "best spot Brandon Aubrey: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
@@ -551,12 +560,12 @@
    ]
   },
   {
-   "J": -2.477,
+   "J": -2.478,
    "key": "malik washington",
    "name": "Malik Washington",
    "reason": "best spot Brandon Aubrey: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
-    "breakout tier B: 74% snaps, 19% targets, 17% air yds; Kalshi receiving yds 42 vs Sleeper 49 (-14%)"
+    "breakout tier B: 74% snaps, 19% targets, 17% air yds; Kalshi receiving yds 41 vs Sleeper 49 (-15%)"
    ]
   },
   {
@@ -569,10 +578,10 @@
    ]
   },
   {
-   "J": -27.721,
+   "J": -27.727,
    "key": "mike mayer",
    "name": "Michael Mayer",
-   "reason": "J -27.72 < 3.0 at its best spot (T.J. Watt) \u2014 J -27.72 = 1.0x+0.00 (wk W) + 0.8x-12.38 (W+1) + 0.8x-11.23 (rest, mean of wks 11-17) + 0.60x-12.38 (wks 15-17, P(playoffs) 100%) + 0.1x+0.99 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
+   "reason": "J -27.73 < 3.0 at its best spot (T.J. Watt) \u2014 J -27.73 = 1.0x+0.00 (wk W) + 0.8x-12.38 (W+1) + 0.8x-11.24 (rest, mean of wks 11-17) + 0.60x-12.38 (wks 15-17, P(playoffs) 100%) + 0.1x+0.96 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
     "breakout tier B: 79% snaps, 23% targets, 26% air yds; no market line yet (Sleeper receiving yds 34); held (wk7: 82% snaps, 7% targets, 18% air yds)"
    ]
@@ -583,11 +592,11 @@
    "name": "Mike Washington Jr.",
    "reason": "best spot Brandon Aubrey: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
-    "breakout tier B: 60% snaps, 78% of RB touches; Kalshi rushing yds 43 vs Sleeper 40 (+7%)"
+    "breakout tier B: 60% snaps, 78% of RB touches; Kalshi rushing yds 42 vs Sleeper 40 (+4%)"
    ]
   },
   {
-   "J": -1.944,
+   "J": -2.021,
    "key": "rachaad white",
    "name": "Rachaad White",
    "reason": "best spot Brandon Aubrey: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
@@ -601,7 +610,7 @@
    "name": "Rashod Bateman",
    "reason": "sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 4.0 under your weakest 10.0",
    "reasons": [
-    "breakout tier B: 76% snaps, 12% targets, 31% air yds; Kalshi receiving yds 21 vs Sleeper 22 (-8%) \u2014 a part-time line, under the 35 starter floor; held (wk7: 73% snaps, 12% targets, 26% air yds)"
+    "breakout tier B: 76% snaps, 12% targets, 31% air yds; Kalshi receiving yds 21 vs Sleeper 22 (-7%) \u2014 a part-time line, under the 35 starter floor; held (wk7: 73% snaps, 12% targets, 26% air yds)"
    ]
   },
   {
@@ -610,11 +619,11 @@
    "name": "Talanoa Hufanga",
    "reason": "gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])",
    "reasons": [
-    "DB weekly upgrade: Talanoa Hufanga 17.6 vs starter Kam Curl 15.1"
+    "DB weekly upgrade: Talanoa Hufanga 17.5 vs starter Kam Curl 15.1"
    ]
   },
   {
-   "J": -27.086,
+   "J": -27.085,
    "key": "travis kelce",
    "name": "Travis Kelce",
    "reason": "J -27.09 < 3.0 at its best spot (T.J. Watt) \u2014 J -27.09 = 1.0x+0.00 (wk W) + 0.8x-12.38 (W+1) + 0.8x-10.55 (rest, mean of wks 11-17) + 0.60x-12.38 (wks 15-17, P(playoffs) 100%) + 0.1x+1.85 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
@@ -623,7 +632,7 @@
    ]
   },
   {
-   "J": 0.421,
+   "J": 0.422,
    "key": "tyler allgeier",
    "name": "Tyler Allgeier",
    "reason": "J +0.42 < 3.0 at its best spot (Carson Schwesinger) \u2014 J +0.42 = 1.0x+0.00 (wk W) + 0.8x+1.26 (W+1) + 0.8x+0.52 (rest, mean of wks 11-17) + 0.60x+1.26 (wks 15-17, P(playoffs) 100%) + 0.1x-2.60 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
@@ -721,9 +730,9 @@
   "p_playoffs": 1.0
  },
  "winprob": {
-  "mean": 289.71466973890836,
+  "mean": 289.62576040681125,
   "note": "sampled on the planner's final lineup",
   "p_med": null,
-  "p_opp": 0.48966666666666664
+  "p_opp": 0.47633333333333333
  }
 }
