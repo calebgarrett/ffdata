@@ -603,6 +603,13 @@ def candidate_block(f, c, ev):
         return 'not in the projection pool — usage only, no source prices him' if r and not r.get('in_pool') else 'not in this league\'s pool (owned, or no source prices him)'
     if x.owner is not None or x.key in f.state.roster_keys: return f'G1: on a roster in this league'
     if x.designation in RU.UNUSABLE: return f'G2: {x.designation} — {x.designation_src}'      # 10-13: Achane (torn ACL) off a preseason number
+    # a person verified him out for the season (registry stash verdict): never an add, whatever
+    # the pulse or the rival-drop window says (11-01: McLaurin resurfaced 8 days after the drop)
+    sv_ = (getattr(f, 'stash_verdicts', {}) or {}).get(x.key) or {}
+    if sv_.get('verdict') == 'season':
+        return f"G2: out for the season — verified {sv_.get('as_of', '')}: {str(sv_.get('why', ''))[:90]}"
+    if sv_.get('verdict') == 'skip':
+        return f"registry: not a role — verified {sv_.get('as_of', '')}: {str(sv_.get('why', ''))[:90]}"
     if x.registry.add_no: return 'G11: registry add_no / unavailable'
     # a rival's drop of a real role is a fact the feeds may not carry yet (10-25: McLaurin,
     # season-ending knee on Monday night, dropped Saturday, team on bye -> the pulse read

@@ -12153,10 +12153,11 @@
   ],
   "verdict": "WARN",
   "week": 8,
-  "status": "proposed",
+  "status": "executed",
   "provisional": true,
   "resolves_at": "2026-11-01T16:25-05:00",
-  "reverses": null
+  "reverses": null,
+  "status_ts": "2026-10-31T12:58-04:00"
  },
  {
   "id": "5cae2158",
@@ -12171,11 +12172,11 @@
   ],
   "verdict": "WARN",
   "week": 8,
-  "status": "superseded",
+  "status": "executed",
   "provisional": true,
   "resolves_at": "2026-11-01T13:00-05:00",
   "reverses": "1a511f1a",
-  "superseded_by": "c6252466"
+  "status_ts": "2026-10-28T19:30-04:00"
  },
  {
   "id": "85ae58b3",
@@ -12190,11 +12191,11 @@
   ],
   "verdict": "WARN",
   "week": 8,
-  "status": "superseded",
+  "status": "executed",
   "provisional": true,
   "resolves_at": "2026-11-01T20:20-05:00",
   "reverses": null,
-  "superseded_by": "9eb99ff2"
+  "status_ts": "2026-10-31T12:58-04:00"
  },
  {
   "id": "5a61c871",
@@ -12249,7 +12250,7 @@
   "provisional": true,
   "resolves_at": "2026-11-01T13:00-05:00",
   "reverses": "db280f18",
-  "superseded_by": "7a34ada5"
+  "superseded_by": "2c3087df"
  },
  {
   "id": "acd180b8",
@@ -12265,11 +12266,10 @@
   ],
   "verdict": "BLOCK",
   "week": 8,
-  "status": "superseded",
+  "status": "blocked",
   "provisional": false,
   "resolves_at": null,
-  "reverses": "f17fffbc",
-  "superseded_by": "9b4aef46"
+  "reverses": "f17fffbc"
  },
  {
   "id": "c1839a28",
@@ -12285,11 +12285,10 @@
   ],
   "verdict": "BLOCK",
   "week": 8,
-  "status": "superseded",
+  "status": "blocked",
   "provisional": false,
   "resolves_at": null,
-  "reverses": "22493695",
-  "superseded_by": "18c2d05f"
+  "reverses": "22493695"
  },
  {
   "id": "70a7aa7a",
@@ -12305,171 +12304,37 @@
   ],
   "verdict": "BLOCK",
   "week": 8,
-  "status": "superseded",
+  "status": "blocked",
   "provisional": false,
   "resolves_at": null,
-  "reverses": "e8878e41",
-  "superseded_by": "f1c86e1e"
+  "reverses": "e8878e41"
  },
  {
-  "id": "7a34ada5",
-  "ts": "2026-10-28T02:13-04:00",
-  "league": "BSB",
-  "kind": "start",
-  "subject": "Ryan Flournoy",
-  "call": "start Ryan Flournoy at W/R/T",
-  "detail": "over DeMario Douglas +1.15",
-  "evidence": [
-   "sleeper"
-  ],
-  "verdict": "WARN",
-  "week": 8,
-  "status": "proposed",
-  "provisional": true,
-  "resolves_at": "2026-11-01T13:00-05:00",
-  "reverses": "07dc5e2e"
- },
- {
-  "id": "9b4aef46",
-  "ts": "2026-10-28T02:13-04:00",
+  "id": "79e45304",
+  "ts": "2026-10-27T22:05-04:00",
   "league": "BSB",
   "kind": "add",
   "subject": "Cincinnati Bengals",
-  "call": "add Cincinnati Bengals (DEF) over Vikings",
-  "detail": "+4.65/wk",
+  "call": "add Cincinnati Bengals (DEF) over Minnesota",
+  "detail": "+4.72/wk",
   "evidence": [
    "sleeper",
    "vegas"
   ],
-  "verdict": "BLOCK",
+  "verdict": "WARN",
   "week": 8,
-  "status": "blocked",
+  "status": "proposed",
   "provisional": false,
   "resolves_at": null,
-  "reverses": "acd180b8"
+  "reverses": null
  },
  {
-  "id": "18c2d05f",
-  "ts": "2026-10-28T02:13-04:00",
+  "id": "67a94ec6",
+  "ts": "2026-10-27T22:05-04:00",
   "league": "BSB",
   "kind": "add",
   "subject": "Jacksonville Jaguars",
-  "call": "add Jacksonville Jaguars (DEF) over Vikings",
-  "detail": "+3.79/wk",
-  "evidence": [
-   "sleeper",
-   "vegas"
-  ],
-  "verdict": "BLOCK",
-  "week": 8,
-  "status": "blocked",
-  "provisional": false,
-  "resolves_at": null,
-  "reverses": "c1839a28"
- },
- {
-  "id": "f1c86e1e",
-  "ts": "2026-10-28T02:13-04:00",
-  "league": "BSB",
-  "kind": "add",
-  "subject": "Washington Commanders",
-  "call": "add Washington Commanders (DEF) over Vikings",
-  "detail": "+3.74/wk",
-  "evidence": [
-   "sleeper",
-   "vegas"
-  ],
-  "verdict": "BLOCK",
-  "week": 8,
-  "status": "blocked",
-  "provisional": false,
-  "resolves_at": null,
-  "reverses": "70a7aa7a"
- },
- {
-  "id": "0bf02125",
-  "ts": "2026-10-28T09:29-04:00",
-  "league": "BSB",
-  "kind": "add",
-  "subject": "Tampa Bay Buccaneers",
-  "call": "add Tampa Bay Buccaneers (DEF) over Vikings",
-  "detail": "+1.76/wk",
-  "evidence": [
-   "sleeper",
-   "vegas"
-  ],
-  "verdict": "BLOCK",
-  "week": 8,
-  "status": "blocked",
-  "provisional": false,
-  "resolves_at": null,
-  "reverses": null
- },
- {
-  "id": "44573b73",
-  "ts": "2026-10-28T15:05-04:00",
-  "league": "BSB",
-  "kind": "start",
-  "subject": "Baker Mayfield",
-  "call": "start Baker Mayfield at QB",
-  "detail": "over Matthew Stafford +0.58",
-  "evidence": [
-   "kalshi",
-   "sleeper"
-  ],
-  "verdict": "PASS",
-  "week": 8,
-  "status": "proposed",
-  "provisional": true,
-  "resolves_at": "2026-11-01T13:00-05:00",
-  "reverses": null
- },
- {
-  "id": "c6252466",
-  "ts": "2026-10-28T15:05-04:00",
-  "league": "HH",
-  "kind": "start",
-  "subject": "Jared Goff",
-  "call": "start Jared Goff at QB",
-  "detail": "over Matthew Stafford +3.60",
-  "evidence": [
-   "kalshi",
-   "sleeper"
-  ],
-  "verdict": "WARN",
-  "week": 8,
-  "status": "superseded",
-  "provisional": true,
-  "resolves_at": "2026-11-01T13:00-05:00",
-  "reverses": "5cae2158",
-  "superseded_by": "636ad117"
- },
- {
-  "id": "9eb99ff2",
-  "ts": "2026-10-28T15:05-04:00",
-  "league": "HH",
-  "kind": "start",
-  "subject": "Nick Cross",
-  "call": "start Nick Cross at DB",
-  "detail": "over Kam Curl +4.28",
-  "evidence": [
-   "sleeper"
-  ],
-  "verdict": "WARN",
-  "week": 8,
-  "status": "superseded",
-  "provisional": true,
-  "resolves_at": "2026-11-01T20:20-05:00",
-  "reverses": "85ae58b3",
-  "superseded_by": "7c8ffc8e"
- },
- {
-  "id": "7300e556",
-  "ts": "2026-10-28T19:06-04:00",
-  "league": "BSB",
-  "kind": "add",
-  "subject": "Washington Commanders",
-  "call": "add Washington Commanders (DEF) over Vikings",
+  "call": "add Jacksonville Jaguars (DEF) over Minnesota",
   "detail": "+3.73/wk",
   "evidence": [
    "sleeper",
@@ -12483,13 +12348,72 @@
   "reverses": null
  },
  {
-  "id": "8c1265a5",
+  "id": "41196bee",
+  "ts": "2026-10-27T22:05-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Washington Commanders",
+  "call": "add Washington Commanders (DEF) over Minnesota",
+  "detail": "+3.69/wk",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 8,
+  "status": "superseded",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null,
+  "superseded_by": "136545c5"
+ },
+ {
+  "id": "2c3087df",
+  "ts": "2026-10-28T19:06-04:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Ryan Flournoy",
+  "call": "start Ryan Flournoy at W/R/T",
+  "detail": "over DeMario Douglas +0.62",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 8,
+  "status": "superseded",
+  "provisional": true,
+  "resolves_at": "2026-11-01T13:00-05:00",
+  "reverses": "07dc5e2e",
+  "superseded_by": "39a063ca"
+ },
+ {
+  "id": "136545c5",
+  "ts": "2026-10-28T19:06-04:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Washington Commanders",
+  "call": "add Washington Commanders (DEF) over Vikings",
+  "detail": "+3.82/wk",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 8,
+  "status": "executed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "41196bee",
+  "status_ts": "2026-10-28T19:30-04:00"
+ },
+ {
+  "id": "3132bfc7",
   "ts": "2026-10-28T19:06-04:00",
   "league": "BSB",
   "kind": "add",
   "subject": "Tampa Bay Buccaneers",
   "call": "add Tampa Bay Buccaneers (DEF) over Vikings",
-  "detail": "+1.85/wk",
+  "detail": "+1.88/wk",
   "evidence": [
    "sleeper",
    "vegas"
@@ -12502,45 +12426,8 @@
   "reverses": null
  },
  {
-  "id": "636ad117",
-  "ts": "2026-10-28T19:09-04:00",
-  "league": "HH",
-  "kind": "start",
-  "subject": "Jared Goff",
-  "call": "start Jared Goff at Q/W/R/T",
-  "detail": "over Matthew Stafford +1.82",
-  "evidence": [
-   "kalshi",
-   "sleeper"
-  ],
-  "verdict": "WARN",
-  "week": 8,
-  "status": "proposed",
-  "provisional": false,
-  "resolves_at": "2026-11-01T13:00-05:00",
-  "reverses": "c6252466"
- },
- {
-  "id": "7c8ffc8e",
-  "ts": "2026-10-28T19:09-04:00",
-  "league": "HH",
-  "kind": "start",
-  "subject": "Nick Cross",
-  "call": "start Nick Cross at S",
-  "detail": "over Kam Curl +4.38",
-  "evidence": [
-   "sleeper"
-  ],
-  "verdict": "WARN",
-  "week": 8,
-  "status": "proposed",
-  "provisional": true,
-  "resolves_at": "2026-11-01T20:20-05:00",
-  "reverses": "9eb99ff2"
- },
- {
-  "id": "b86e453d",
-  "ts": "2026-10-28T19:09-04:00",
+  "id": "9d8a8322",
+  "ts": "2026-10-28T19:06-04:00",
   "league": "HH",
   "kind": "add",
   "subject": "Kevin Byard III",
@@ -12551,9 +12438,126 @@
   ],
   "verdict": "BLOCK",
   "week": 8,
+  "status": "superseded",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null,
+  "superseded_by": "828fe146"
+ },
+ {
+  "id": "39a063ca",
+  "ts": "2026-10-28T19:30-04:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Ryan Flournoy",
+  "call": "start Ryan Flournoy at WR1",
+  "detail": "over DeMario Douglas +0.60",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 8,
+  "status": "superseded",
+  "provisional": true,
+  "resolves_at": "2026-11-01T13:00-05:00",
+  "reverses": "2c3087df",
+  "superseded_by": "ffa30a6b"
+ },
+ {
+  "id": "ffa30a6b",
+  "ts": "2026-10-29T05:49-04:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Ryan Flournoy",
+  "call": "start Ryan Flournoy at W/R/T",
+  "detail": "over DeMario Douglas +0.60",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 8,
+  "status": "proposed",
+  "provisional": true,
+  "resolves_at": "2026-11-01T13:00-05:00",
+  "reverses": "39a063ca"
+ },
+ {
+  "id": "5f0b3b8b",
+  "ts": "2026-10-31T12:58-04:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Makai Lemon",
+  "call": "start Makai Lemon at WR1",
+  "detail": "over DeMario Douglas +0.68",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "PASS",
+  "week": 8,
+  "status": "superseded",
+  "provisional": true,
+  "resolves_at": "2026-11-01T20:20-05:00",
+  "reverses": null,
+  "superseded_by": "ec4f3a35"
+ },
+ {
+  "id": "828fe146",
+  "ts": "2026-10-31T12:58-04:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Kevin Byard III",
+  "call": "add Kevin Byard III (DB) over Cooper DeJean",
+  "detail": "+2.20/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 8,
   "status": "blocked",
   "provisional": false,
   "resolves_at": null,
-  "reverses": null
+  "reverses": "9d8a8322"
+ },
+ {
+  "id": "ec4f3a35",
+  "ts": "2026-10-31T16:17-04:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Makai Lemon",
+  "call": "start Makai Lemon at WR3",
+  "detail": "over DeMario Douglas +0.66",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 8,
+  "status": "superseded",
+  "provisional": true,
+  "resolves_at": "2026-11-01T20:20-05:00",
+  "reverses": "5f0b3b8b",
+  "superseded_by": "de358bdc"
+ },
+ {
+  "id": "de358bdc",
+  "ts": "2026-10-31T19:40-04:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Makai Lemon",
+  "call": "start Makai Lemon at W/R/T",
+  "detail": "over DeMario Douglas +0.68",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 8,
+  "status": "proposed",
+  "provisional": true,
+  "resolves_at": "2026-11-01T20:20-05:00",
+  "reverses": "ec4f3a35"
  }
 ]

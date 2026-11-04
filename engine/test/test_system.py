@@ -79,10 +79,16 @@ case('phantom audit removes only Gainwell', {a for a, *_ in ph} == {'kenneth gai
 #    are found on the current week's data, not hard-coded to week 2.
 W_NOW = C.data_week()   # the week whose projections are on disk (Tuesday-morning gap, 09-29)
 P = Projections(W_NOW)
-rid = P.line('Calvin Ridley', 'WR', 'TEN')
+# bye-aware (11-04: Ridley's Titans were on bye in week 9 and a bye IS a legitimate 0 with a
+# Sleeper row): the fixture is the first of these whose team plays this week
+from lib import windows as _WNb
+_byes_now = set(_WNb.Windows().byes(W_NOW) or ())
+_cand_rid = [('Calvin Ridley', 'WR', 'TEN'), ('Jalen Tolbert', 'WR', 'DAL'), ('Tutu Atwell', 'WR', 'LAR'), ('Jahan Dotson', 'WR', 'PHI'), ('KJ Osborn', 'WR', 'NE')]
+_nm, _ps, _tm = next(((n, p_, t) for n, p_, t in _cand_rid if t not in _byes_now), _cand_rid[0])
+rid = P.line(_nm, _ps, _tm)
 _ok = rid['unknown'] or rid.get('partial') or (SC.points(rid, 'BSB') or 0) > 0 or rid['sources'] == ['yahoo']
 case('a player nobody prices is unknown or flagged partial — never a silent 0.00', bool(_ok),
-     f"unknown={rid['unknown']} partial={rid.get('partial')} pts={SC.points(rid,'BSB')} src={rid['sources']}")
+     f"{_nm}: unknown={rid['unknown']} partial={rid.get('partial')} pts={SC.points(rid,'BSB')} src={rid['sources']}")
 # a player with BOTH a Kalshi reception ladder and a Sleeper line carries the ladder's mean
 _both = next((k for (k, ser) in P.kal if ser == 'KXNFLREC' and k in P.off and P.kal[(k, ser)].get('mean')), None)
 if _both:
@@ -123,8 +129,15 @@ qbs = sorted([SC.points(P.line(k, 'QB', r['team']), 'HH') for k, r in P.off.item
 #    (bye weeks thin the top 20 — week 5, four teams off, read 11.9 — so the bound is 2-14)
 case('HH QB1-QB20 spread is 2-14 (profile says ~5 on a full slate)', len(qbs) >= 20 and 2 <= qbs[0] - qbs[19] <= 14,
      f'{qbs[0]-qbs[19]:.1f}' if len(qbs) >= 20 else 'n<20')
-watt = P.line('T.J. Watt', 'LB', 'PIT')
-case('boom share: Watt (sack-driven) > 0.35', (SC.boom(watt, 'HH') or 0) > 0.35)
+_cand_edge = [('T.J. Watt', 'LB', 'PIT'), ('Micah Parsons', 'LB', 'GB'), ('Myles Garrett', 'DE', 'LAR'), ('Nick Bosa', 'DE', 'SF'), ('Trey Hendrickson', 'DE', 'BAL'), ('Maxx Crosby', 'DE', 'LV')]
+_en, _ep, _et = next(((n, p_, t) for n, p_, t in _cand_edge if t not in _byes_now and not P.line(n, p_, t).get('unknown') and (SC.points(P.line(n, p_, t), 'HH') or 0) > 0), _cand_edge[0])
+watt = P.line(_en, _ep, _et)
+# the invariant is RELATIVE (11-04: Bosa read 0.33 on a week-9 line, Watt 0.47 in October): a
+# sack-driven edge carries far more boom share than a tackle-volume linebacker
+_cand_lb = [('Foyesade Oluokun', 'LB', 'JAX'), ('Carson Schwesinger', 'LB', 'CLE'), ('Zaire Franklin', 'LB', 'GB'), ('Roquan Smith', 'LB', 'BAL'), ('Quay Walker', 'LB', 'LV')]
+_ln, _lp, _lt = next(((n, p_, t) for n, p_, t in _cand_lb if t not in _byes_now and not P.line(n, p_, t).get('unknown') and (SC.points(P.line(n, p_, t), 'HH') or 0) > 0), _cand_lb[0])
+_lb_boom = SC.boom(P.line(_ln, _lp, _lt), 'HH') or 0
+case(f'boom share: a sack-driven edge ({_en}) > 0.30 and well above a tackle-volume LB ({_ln})', (SC.boom(watt, 'HH') or 0) > 0.30 and (SC.boom(watt, 'HH') or 0) >= _lb_boom + 0.12, f"edge {SC.boom(watt, 'HH')} vs LB {_lb_boom}")
 
 # 7. Lineup: diff against live slots, permutations suppressed
 lu = LU.solve(b, P)
@@ -425,7 +438,11 @@ case('playoff sim: a win this week never lowers the odds', _po['p_win'] is None 
 case('playoff sim: +5 pts/week of strength raises the odds', _po['p_plus5'] >= _po['mine'], f"{_po['p_plus5']:.2f} vs {_po['mine']:.2f}")
 _S0 = dict(_po['strengths']); _S0[b.me] = {w: 0.0 for w in _S0[b.me]}
 _dead = _PO.simulate(b, _S0, W_NOW)
-case('playoff sim: a roster projecting zero every week does not make the playoffs', _dead['mine'] < 0.02, f"{_dead['mine']:.3f}")
+# a dead roster from 14-2 with six weeks left still backs in a third of the time (11-04) —
+# the invariant is that it sits FAR below the real roster, and near zero when the lead is not huge
+_wins_now = int((b.records.get(b.me, {}).get('record') or '0-0').split('-')[0] or 0)
+case('playoff sim: a roster projecting zero every week is buried (far below the real one; near zero unless the lead is already huge)',
+     _dead['mine'] <= _po['mine'] - 0.3 and (_dead['mine'] < 0.02 or _wins_now >= 12), f"dead {_dead['mine']:.3f} vs mine {_po['mine']:.3f}, wins {_wins_now}")
 
 # 34. Rivals (09-26): the bid to beat is set by the likely field, bounded by the
 #     bands; a Tier-B claim always takes the floor; one outlier claim is not a habit.

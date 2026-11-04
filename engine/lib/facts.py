@@ -117,6 +117,12 @@ class Facts:
         self.hold = dict(getattr(w, 'hold', {}) or {})
         self.drop_ok = dict(getattr(w, 'drop_ok', {}) or {})
         self.add_yes = dict(getattr(w, 'verified', {}) or {})
+        # stash verdicts a person recorded (roles.json 'stash'): 'season' = out for the year
+        try:
+            from .stash import verified as _stash_verified
+            self.stash_verdicts = {k: v for k, v in _stash_verified().items() if not k.startswith('_')}
+        except Exception:
+            self.stash_verdicts = {}
         self.blocked = set(getattr(w, 'blocked', set()) or set())
         # byes per week from the posted look-ahead lines (a team with no line that week)
         self.byes = {}
@@ -204,6 +210,16 @@ class Facts:
         if usage_now == 'start' and proj_w and (base is None or proj_w > base):
             return float(proj_w), f'W projection {proj_w:.1f} (usage says starter; the preseason number is stale)'
         if base is not None: return float(base), src
+        # on a BYE this week (no game, no line) a player with no season number is NOT worth
+        # zero for the year (11-04: T.J. Watt, PIT bye, 'no number from any source' -> the
+        # planner's drop for a Tier-B RB). His number is next week's line, else his last
+        # played week's, capped at the positional median like any one-week number.
+        if not (proj_w and proj_w > 0) and tm in self.byes.get(self.week, set()):
+            alt, how = self._offbye_proj(k, fam, tm)
+            if alt and alt > 0:
+                med = self.posmed.get(fam)
+                if med and alt > med: return float(med), f'positional median {med:.1f} — on bye this week; {how} {alt:.1f} caps at the median'
+                return float(alt), f'{how} {alt:.1f} (on bye this week; no season number)'
         if proj_w and proj_w > 0:
             # one week's number from the most volatile source is not a season: a player
             # nobody projected for the year is at best an average starter until usage
@@ -343,6 +359,40 @@ class Facts:
         if any(h for _, h in played): return True, f'projected in week {next(t for t, h in played if h)}'
         wks = ', '.join(str(t) for t, _ in played)
         return False, f'no projection in his team\'s last played week(s) on disk (wk {wks}) — inactive or injured until a tag says otherwise'
+
+    def _offbye_proj(self, k, fam, tm):
+        """A bye-week player's number: next week's projection, else the last played week's.
+        -> (points or None, how)."""
+        if self.proj_next is not None:
+            try:
+                L = self.proj_next.line(k, fam, tm)
+                if not L.get('unknown'):
+                    v = SC.points(L, self.league)
+                    if v and v > 0: return float(v), f'week-{self.week + 1} projection'
+            except Exception: pass
+        import os, csv
+        from . import paths as _paths
+        from .names import key as _key
+        D = _paths.data('')
+        for t in range(self.week - 1, max(0, self.week - 4), -1):
+            for fn in (f'sleeper_off_wk{t}.csv', f'sleeper_idp_wk{t}.csv', f'sleeper_wk{t}.csv'):
+                p = D + fn
+                if not os.path.exists(p): continue
+                for r in csv.DictReader(open(p)):
+                    if _key(r.get('player') or '') != k: continue
+                    try: v = float(r.get('pts_ppr') or r.get('pts') or 0)
+                    except ValueError: v = 0.0
+                    if v > 0:
+                        return (v, f'week-{t} projection')
+                    # IDP rows carry stat columns, not points: score them the way Projections does
+                    if fn.startswith('sleeper_idp'):
+                        try:
+                            stat = {c: float(r.get(c) or 0) for c in ('solo', 'ast', 'sack', 'int', 'pd', 'tfl', 'ff', 'fr', 'def_td')}
+                            L = dict(stat=stat, sources=['sleeper'], prov={}, unknown=False, fam=fam)
+                            v2 = SC.points(L, self.league)
+                            if v2 and v2 > 0: return (float(v2), f'week-{t} projection')
+                        except Exception: pass
+        return None, ''
 
     def _past_proj(self, t):
         """Keys with a positive Sleeper projection in week t, or None when no file."""

@@ -290,7 +290,27 @@ _log5e2 = [dict(_log5e[0], team=S.ALL['BSB'].name)]
 f3, st3, pr3 = league('BSB', r5e, fas=[(tmac, 'WR', 'WAS', 12.0)], season={NK(tmac): dict(name=tmac, tm='WAS', pos='WR', pts=204.0)}, byes={W1: set()}, log_rows=_log5e2)
 case('...my own drop is not a rival drop', f3.fa(NK(tmac)) is not None and not f3.fa(NK(tmac)).get('rival_drop'))
 
-# ---------------------------------------------------------------- 5d. one week is not a season (10-22: Foster Moreau)
+# ---------------------------------------------------------------- 5g. a bye is not a zero season (11-04: T.J. Watt, PIT bye, 'no number from any source')
+# A rostered IDP with no season number and no line THIS week (his team is on bye) is valued
+# off his neighbouring weeks, not 0 — else he is the planner's drop for any Tier-B body.
+r5g = hh_roster()
+_dl5g = [r for r in r5g if r[0] == 'DL'][0]
+r5g = [(r[0], r[1], r[2], r[3], 0.0, r[5]) if r[0] == 'DL' else r for r in r5g]
+f, st, pr = league('HH', r5g, byes={WEEK: {_dl5g[3]}, W1: set()})
+dd = f.mine[NK(_dl5g[1])]
+dd_alt = f._offbye_proj(NK(_dl5g[1]), dd.fam, dd.tm)
+case('bye week: a player with no season number and no game this week is not worth 0 for the year when a neighbouring week prices him',
+     (dd.ros_pw or 0) > 0 or dd_alt[0] is None, (dd.ros_pw, dd.ros_src, dd_alt))
+
+# ---------------------------------------------------------------- 5f. a stash verdict is permanent (11-01: McLaurin resurfaced after the 7-day rival-drop window)
+r5f = bsb_roster(open_spots=1)
+tmac2 = 'Thaddeus Mcelroy-Vance'
+f, st, pr = league('BSB', r5f, fas=[(tmac2, 'WR', 'WAS', 12.0)], season={NK(tmac2): dict(name=tmac2, tm='WAS', pos='WR', pts=204.0)}, byes={W1: set()})
+f.stash_verdicts = {NK(tmac2): dict(verdict='season', as_of='2026-10-25', why='knee, out for the season (test)')}
+p = PL.plan_facts(f, dict(breakout_rows=[dict(key=NK(tmac2), name=tmac2, pos='WR', tm='WAS', tier='A', held='wk5', usage='', market='', in_pool=True, ahead=True)]))
+case('stash verdict season: never an add, whatever the window', not any(m['add_key'] == NK(tmac2) for m in moves_of(p)) and any(r['key'] == NK(tmac2) and 'out for the season' in r['reason'] for r in p.rejected), p.summary())
+
+
 # A free agent with NO season number and a big W projection is valued rest-of-season at
 # the positional median at most — one week's number from the most volatile source
 # cannot carry the rest/playoff terms of the objective (Moreau: a 0.02/0.88 Kalshi quote
