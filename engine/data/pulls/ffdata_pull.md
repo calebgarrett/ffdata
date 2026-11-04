@@ -1,7 +1,7 @@
-# ffdata pull loaded Wed Nov 4, 9:23 am ET — repo head: 2026-11-04T14:02:23Z pull 2026-11-04T14:02Z (in-action, no pull)
+# ffdata pull loaded Wed Nov 4, 3:55 pm ET — repo head: 2026-11-04T14:25:47Z pull 2026-11-04T14:25Z (in-action, no pull)
 week 9
-kalshi.csv: 2646 markets, 119 events, pulled 2026-11-04T14:21:51+00:00
-kalshi_archive: 0 new pull(s) copied, 206 on disk
+kalshi.csv: 2885 markets, 126 events, pulled 2026-11-04T20:54:20+00:00
+kalshi_archive: 1 new pull(s) copied, 207 on disk
 espn_games.csv: 15 games for week 9 — 0 with ESPN lines from the pump, 15 schedule-only from lines_wk3_9.csv; Kalshi spread/total ladders supply the lines inside the engine
 sleeper_off_wk9.csv: 3304 rows
 sleeper_idp_wk9.csv: 4604 rows
@@ -10,9 +10,9 @@ usage_wk8_QB.csv: 78 rows
 usage_wk8_RB.csv: 148 rows
 usage_wk8_WR.csv: 244 rows
 usage_wk8_TE.csv: 149 rows
-BSB rosters: 216 players on 12 teams, pulled 2026-11-04T14:22:45+00:00 -> new snapshot
+BSB rosters: 216 players on 12 teams, pulled 2026-11-04T20:55:19+00:00 -> new snapshot
 BSB matchup wk9: vs 65 SOUTH; 0 final rows, 0 in progress; totals me 0.00 opp 0.00
 BSB transactions: 0 new of 40 on the page; log now 317 rows
-HH rosters: 237 players on 10 teams, pulled 2026-11-04T14:22:45+00:00 -> new snapshot
+HH rosters: 237 players on 10 teams, pulled 2026-11-04T20:55:19+00:00 -> new snapshot
 HH matchup wk9: vs T-rex; 0 final rows, 0 in progress; totals me 0.00 opp 0.00
-HH transactions: 0 new of 44 on the page; log now 256 rows
+HH transactions: 4 new of 45 on the page; log now 260 rows

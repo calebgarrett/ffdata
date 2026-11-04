@@ -13627,10 +13627,11 @@
   ],
   "verdict": "WARN",
   "week": 9,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": null,
-  "reverses": "05f0aea3"
+  "reverses": "05f0aea3",
+  "superseded_by": "691c28d2"
  },
  {
   "id": "a129bb60",
@@ -13703,9 +13704,105 @@
   ],
   "verdict": "WARN",
   "week": 9,
+  "status": "superseded",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "8fd1356b",
+  "superseded_by": "e9dbb43c"
+ },
+ {
+  "id": "e9dbb43c",
+  "ts": "2026-11-04T15:56-05:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Buffalo Bills",
+  "call": "add Buffalo Bills (DEF) over Commanders",
+  "detail": "+3.37/wk",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 9,
+  "status": "superseded",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "cc97d750",
+  "superseded_by": "a5e0babf"
+ },
+ {
+  "id": "a5e0babf",
+  "ts": "2026-11-04T15:56-05:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Buffalo Bills",
+  "call": "stream Buffalo Bills for week 10, drop Commanders",
+  "detail": "DEF: BUF 19.8 vs yours Commanders 24.5 \u2014 edge 4.8 implied pts",
+  "evidence": [
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 9,
   "status": "proposed",
   "provisional": false,
   "resolves_at": null,
-  "reverses": "8fd1356b"
+  "reverses": "e9dbb43c"
+ },
+ {
+  "id": "714e552f",
+  "ts": "2026-11-04T15:56-05:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Sam Darnold",
+  "call": "add Sam Darnold (QB) over Jared Goff",
+  "detail": "+421.50/wk",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 9,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "6088936b",
+  "ts": "2026-11-04T15:56-05:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "AJ Barner",
+  "call": "add AJ Barner (TE) over Trey McBride",
+  "detail": "+24.47/wk",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 9,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "691c28d2",
+  "ts": "2026-11-04T15:56-05:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Kansas City Chiefs",
+  "call": "add Kansas City Chiefs (DEF) over Commanders",
+  "detail": "+5.72/wk",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 9,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "dbb1d1c8"
  }
 ]
