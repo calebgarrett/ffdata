@@ -328,6 +328,10 @@ _rows5d = [dict(ticker=f'KXNFLRECYDS-26OCT25NYGHOU-HOUX-{s}', yes_bid='0.0200', 
 case('market: a ladder quoted 2c/88c at every strike yields no points', MK._clean_ladder(_rows5d) == [], MK._clean_ladder(_rows5d))
 _rows5d2 = [dict(ticker=f'KXNFLRECYDS-26OCT25NYGHOU-HOUX-{s}', yes_bid=f'{p-0.04:.4f}', yes_ask=f'{p+0.04:.4f}') for s, p in ((10, 0.90), (20, 0.70), (25, 0.55), (30, 0.40), (40, 0.20))]
 case('market: a real 8c-wide ladder is kept whole', len(MK._clean_ladder(_rows5d2)) == 5)
+_rows5d3 = [dict(ticker=f'KXNFLPASSTDS-26NOV08ARISEA-SEASDARNOLD14-{s}', yes_bid='0.0000', yes_ask='0.9500', volume='0.00', last_price='0.0000') for s in (2, 3, 4, 5)]
+case('market: an ask-only placeholder ladder (0.00/0.95, nothing traded) yields no points (11-04: 90 pass TDs)', MK._clean_ladder(_rows5d3) == [], MK._clean_ladder(_rows5d3))
+_rows5d4 = [dict(ticker=f'KXNFLREC-26NOV08ARISEA-SEAX-{s}', yes_bid='0.0000', yes_ask='0.6000', volume='120.00', last_price='0.5800') for s in (3, 4, 5)]
+case('market: a one-sided quote that HAS traded is kept', len(MK._clean_ladder(_rows5d4)) == 3)
 
 # ---------------------------------------------------------------- 6. owned player never a candidate
 r6 = bsb_roster(open_spots=1)

@@ -127,7 +127,7 @@ def _mid(r):
     if b<=0: return a
     return (a+b)/2
 
-FITS_VER = 2          # bump when _clean_ladder / the fits change
+FITS_VER = 3          # bump when _clean_ladder / the fits change
 MAX_SPREAD = 0.30     # a 2c bid / 88c ask is a placeholder, not a price (10-22: Foster Moreau's
                       # receiving-yards ladder quoted 0.02/0.88 at EVERY strike; the midpoint 0.45
                       # at 40+ yards made him a 20-point TE and the planner shipped him over McBride)
@@ -147,6 +147,10 @@ def _clean_ladder(rows):
         try:
             b,a=float(r['yes_bid']),float(r['yes_ask'])
             if a>0 and b>0 and a-b>MAX_SPREAD: continue
+            # a one-sided quote (no bid, or no ask) with nothing traded is a placeholder, not a
+            # price (11-04: Darnold's pass-TD ladder quoted 0.00/0.95 at 2+..5+ -> 90 TDs -> a
+            # 452-point QB; the week's QB spread read 419)
+            if (b<=0 or a<=0) and not (float(r.get('volume') or 0)>0 or float(r.get('last_price') or 0)>0): continue
         except (KeyError,ValueError): pass
         m=_mid(r)
         if m is None or not (0.0<m<1.0): continue
