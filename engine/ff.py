@@ -60,11 +60,14 @@ def cmd_check(quiet=False):
         if not ok3 and not last3: last3 = (r3.stdout + r3.stderr).splitlines()[-8:]
         if not quiet:
             for l in last3[-12:]: print('  ' + l)
-    elif not (ok and ok2 and ok3):
+    if quiet and not (ok and ok2 and ok3):
         # quiet mode (ff.py run): still name what failed, so a refused run in the
-        # pump's log says why (09-27: the Action refused with no detail on file)
+        # pump's log says why (09-27: the Action refused with no detail on file; 11-10:
+        # this branch hung off the scenarios `if` and printed nothing when they ran)
         for l in [x for x in r.stdout.splitlines() + r2.stdout.splitlines() if x.startswith('[FAIL]') or 'Traceback' in x or 'Error' in x][:12]: print('  ' + l)
         for l in last + last2[-1:] + [x for x in last3 if not x.startswith('[XFAIL]') and 'known failure' not in x][-6:]: print('  ' + l)
+        if not ok3:
+            for l in (r3.stdout + r3.stderr).splitlines()[-25:]: print('  ' + l)
     return ok and ok2 and ok3
 
 # ----------------------------------------------------------------- status

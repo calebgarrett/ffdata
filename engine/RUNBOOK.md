@@ -12,6 +12,27 @@ Code lives at `/home/claude/bsb2` in the session and is mirrored to the project 
 
 ---
 
+## Shipping the engine to the runner (11-10: Caleb: "build a way to upload these changes to github yourself")
+
+The runner only ever sees `engine.tar.gz` at the repo root. Since 11-10 the thread ships it
+through Caleb's own Chrome (he is signed in to GitHub there; no token is ever handled):
+
+1. Build the SLIM archive (under the 10 MB upload cap — the Kalshi archive and old state
+   snapshots are rebuilt on the runner from the repo's own data/archive and runner dir):
+   `cd /home/claude/bsb2 && { ls -t data/state/BSB/*.json | tail -n +3; ls -t data/state/HH/*.json | tail -n +3; } | sed 's#^#./#' > /tmp/state_excl.txt && tar -czf /mnt/user-data/outputs/engine.tar.gz --exclude='__pycache__' --exclude='.git' --exclude='*.pkl' --exclude='./data/kalshi_pages' --exclude='./data/kalshi_archive' --exclude='./data/out_*.txt' --exclude='*_new.csv' --exclude='./lineup-card.html' --anchored --exclude-from=/tmp/state_excl.txt .`
+   (`--anchored` LAST: an unanchored snapshot name also matches the scenario fixtures'
+   snapshots and the harness dies on an empty state dir — the 11-10 03:59Z refusal.)
+   Then unpack it somewhere else and run `FF_FAST=1 python3 ff.py check` through a
+   /home/claude/bsb2 symlink swap before uploading.
+2. Claude in Chrome: open https://github.com/calebgarrett/ffdata/upload/main, `find` the
+   "Choose your files" input, `file_upload` the archive from /mnt/user-data/outputs, type a
+   commit title, click Commit changes (screenshot first — a ProTip line shifts the button).
+3. Open https://github.com/calebgarrett/ffdata/actions/workflows/pull.yml → Run workflow →
+   Run workflow (main). ~2.5 min. Then `git -C /home/claude/ffdata_repo pull` and read
+   docs/run.txt / docs/card_stamp.txt for the new engine's stamp.
+
+Fallback when Chrome is not up: send the archive with SendUserFile and Caleb uploads it.
+
 ## The one command
 
 ```
