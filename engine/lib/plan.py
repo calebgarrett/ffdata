@@ -812,26 +812,33 @@ def plan_facts(facts, ev=None):
                 best = e
         c['best'] = best
     live = [c for c in cands if c.key not in rejected]
-    # ---- assignment with a no-move column per candidate; budgets enforced by removal
+    # ---- assignment with a no-move column per candidate; budgets enforced by removal;
+    #      then the joint re-evaluation (each move on its marginal value given the others).
+    #      A move the joint pass removes frees its spot, so the assignment is re-solved
+    #      without that candidate until the set is stable (11-10: Dicker, a second K cover,
+    #      was handed the spare DEF over Estime, then died jointly next to Zvada — and the
+    #      spot stayed empty: Estime read 'went to another move' that never shipped)
     excluded = set()
     while True:
-        rows_ = [c for c in live if c.key not in excluded]
-        chosen = _assign(rows_, pool.spots, pairs)
-        over = _budget_violation(f, mech, chosen, pairs)
-        if not over: break
-        ck, why = over
-        excluded.add(ck)
-        rejected[ck] = dict(cand=next(c for c in live if c.key == ck), reason=why, J=pairs[(ck, chosen[ck])]['J'])
-    # ---- joint re-evaluation: the set as a whole, each move on its marginal value
-    sel = dict(chosen)
-    while sel:
-        marg = _marginals(f, obj, sel, pairs, live)
-        worst = min(sel, key=lambda k: (marg[k]['J'], k))
-        if marg[worst]['J'] >= SHIP_J: break
-        rejected[worst] = dict(cand=next(c for c in live if c.key == worst),
-                               reason=f"jointly with the rest of the plan it adds only J {marg[worst]['J']:+.2f} (< {SHIP_J}) — {fmt_terms(marg[worst])}",
-                               J=marg[worst]['J'])
-        del sel[worst]
+        while True:
+            rows_ = [c for c in live if c.key not in excluded]
+            chosen = _assign(rows_, pool.spots, pairs)
+            over = _budget_violation(f, mech, chosen, pairs)
+            if not over: break
+            ck, why = over
+            excluded.add(ck)
+            rejected[ck] = dict(cand=next(c for c in live if c.key == ck), reason=why, J=pairs[(ck, chosen[ck])]['J'])
+        sel = dict(chosen)
+        removed = False
+        while sel:
+            marg = _marginals(f, obj, sel, pairs, live)
+            worst = min(sel, key=lambda k: (marg[k]['J'], k))
+            if marg[worst]['J'] >= SHIP_J: break
+            rejected[worst] = dict(cand=next(c for c in live if c.key == worst),
+                                   reason=f"jointly with the rest of the plan it adds only J {marg[worst]['J']:+.2f} (< {SHIP_J}) — {fmt_terms(marg[worst])}",
+                                   J=marg[worst]['J'])
+            del sel[worst]; excluded.add(worst); removed = True
+        if not removed: break
     marg = _marginals(f, obj, sel, pairs, live) if sel else {}
     # ---- the moves, in a deterministic order (by spot timing then J)
     moves = []

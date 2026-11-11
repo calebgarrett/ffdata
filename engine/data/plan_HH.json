@@ -11,7 +11,7 @@
  "excluded": [
   {
    "player": "Dak Prescott",
-   "reason": "gate: G6-magnitude 40.86117065382996 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex: 3 QBs for 2 QB-eligible slots \u2014 QB3 is by"
+   "reason": "gate: G6-magnitude 41.27048184713496 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex: 3 QBs for 2 QB-eligible slots \u2014 QB3 is by"
   },
   {
    "player": "Devin Singletary",
@@ -50,11 +50,11 @@
    "reason": "starter-level usage in his own right (84% snaps, 19% targets, 31% air yds)"
   },
   {
-   "player": "Texans",
+   "player": "Houston",
    "reason": "registry HOLD \u2014 HOLD in Heritage House. A 7-acquisition league rations streaming, and Tecmo Bowl"
   },
   {
-   "player": "Steelers",
+   "player": "Pittsburgh",
    "reason": "you added him 2026-11-07 (<= 7 days) \u2014 your decision, not the spot"
   },
   {
@@ -65,9 +65,9 @@
  "league": "HH",
  "lineup_after": {
   "keys": {
-   "CB": "jalen ramsey",
+   "CB": "elijah molden",
    "D": "foyesade oluokun",
-   "DB": "amani hooker",
+   "DB": "kam curl",
    "DEF": "DST:HOU",
    "DL": "myles garrett",
    "K": "brandon aubrey",
@@ -77,16 +77,16 @@
    "RB": "jaylen warren",
    "S": "budda baker",
    "TE": "trey mcbride",
-   "W/R": "jamarr chase",
-   "W/R/T": "rashee rice",
-   "WR": "drake london"
+   "W/R": "drake london",
+   "W/R/T": "jamarr chase",
+   "WR": "rashee rice"
   },
-  "optimal_before_moves": 290.9,
+  "optimal_before_moves": 287.6,
   "slots": {
-   "CB": "Jalen Ramsey",
+   "CB": "Elijah Molden",
    "D": "Foyesade Oluokun",
-   "DB": "Amani Hooker",
-   "DEF": "Texans",
+   "DB": "Kam Curl",
+   "DEF": "Houston",
    "DL": "Myles Garrett",
    "K": "Brandon Aubrey",
    "LB": "Carson Schwesinger",
@@ -95,13 +95,13 @@
    "RB": "Jaylen Warren",
    "S": "Budda Baker",
    "TE": "Trey McBride",
-   "W/R": "Ja'Marr Chase",
-   "W/R/T": "Rashee Rice",
-   "WR": "Drake London"
+   "W/R": "Drake London",
+   "W/R/T": "Ja'Marr Chase",
+   "WR": "Rashee Rice"
   },
-  "total": 315.46
+  "total": 304.11
  },
- "made": "2026-11-10T23:11-05:00",
+ "made": "2026-11-10T23:35-05:00",
  "mechanics": [
   {
    "rule": "Free agents are immediate unless his game is in progress",
@@ -141,9 +141,9 @@
  ],
  "moves": [
   {
-   "J": 25.669,
-   "add_key": "jalen ramsey",
-   "add_name": "Jalen Ramsey",
+   "J": 28.062,
+   "add_key": "elijah molden",
+   "add_name": "Elijah Molden",
    "at": null,
    "deadline": "2026-11-15T09:30-05:00",
    "drop_name": "Jameson Williams",
@@ -176,19 +176,18 @@
      "verdict": "WARN"
     }
    },
-   "id": "HH:jalen ramsey",
+   "id": "HH:elijah molden",
    "kind": "add",
    "league": "HH",
    "lineup": {
-    "gain": 16.41,
-    "over": "empty",
+    "gain": 16.51,
+    "over": "Cooper DeJean",
     "slot": "CB"
    },
    "provisional": false,
    "reasons": [
-    "DB weekly upgrade: Jalen Ramsey 16.4 vs starter Cooper DeJean 0.0",
-    "week-10 hole at CB (Cooper DeJean on bye); Jalen Ramsey 16.4 is the best free DB on week-10 values",
-    "week-11 hole at S (Kam Curl on bye); Jalen Ramsey 16.2 is the best free DB on week-11 values",
+    "DB weekly upgrade: Elijah Molden 16.5 vs starter Cooper DeJean 0.0",
+    "week-10 hole at CB (Cooper DeJean on bye); Elijah Molden 16.5 is the best free DB on week-10 values",
     "the spot: Jameson Williams \u2014 rest-of-season 13.1/wk (7-game realized 13.5/g blended with preseason 12.7/wk (6-game prior))"
    ],
    "spot_id": "drop:jameson williams",
@@ -200,12 +199,12 @@
    ],
    "tier": null,
    "timing_why": "free agent, immediate",
-   "tm": "PIT",
+   "tm": "LAC",
    "txns": [
     {
-     "key": "jalen ramsey",
+     "key": "elijah molden",
      "op": "add",
-     "player": "Jalen Ramsey"
+     "player": "Elijah Molden"
     },
     {
      "key": "jameson williams",
@@ -213,135 +212,10 @@
      "player": "Jameson Williams"
     },
     {
-     "key": "jalen ramsey",
+     "key": "elijah molden",
      "op": "start",
-     "player": "Jalen Ramsey",
+     "player": "Elijah Molden",
      "slot": "CB"
-    }
-   ],
-   "value_terms": {
-    "J": 25.669,
-    "acq": 1,
-    "bid": 0,
-    "dS_W": 16.41,
-    "dS_W1": 14.222,
-    "dS_play": -0.639,
-    "dS_rest": -0.639,
-    "d_boom": 2.754,
-    "d_depth": 0,
-    "d_ins": 0.0,
-    "p_playoffs": 1.0,
-    "pen_acq": 1.0,
-    "pen_churn": 0.5,
-    "pen_fab": 0.0,
-    "rest_weeks": "12-17",
-    "txn": 1
-   },
-   "values": {
-    "add": {
-     "boom": 0.22181596587446678,
-     "ros": 16.240000000000002,
-     "ros_src": "positional median 16.2 \u2014 no season number; the W projection 16.4 alone does not carry a season",
-     "w": 16.41,
-     "w1": 16.240000000000002,
-     "w1_src": "rest-of-season per-week (no week-11 projection on disk \u2014 approximation)"
-    },
-    "drop": {
-     "ros": 13.143587086252209,
-     "ros_src": "7-game realized 13.5/g blended with preseason 12.7/wk (6-game prior)",
-     "w": 12.189221871117581,
-     "w1": 13.143587086252209
-    }
-   },
-   "when": "before kickoff Sun Nov 15, 9:30 am ET"
-  },
-  {
-   "J": 10.01,
-   "add_key": "amani hooker",
-   "add_name": "Amani Hooker",
-   "at": null,
-   "deadline": "2026-11-12T20:15-05:00",
-   "drop_name": "Nick Cross",
-   "eff": "W",
-   "fam": "DB",
-   "gates": {
-    "add": {
-     "checks": [
-      {
-       "gate": "G5-sources",
-       "msg": "SINGLE SOURCE: ['rotowire'] (['sleeper']) \u2014 allowed only because it replaces a verified dead spot worth 0",
-       "status": "WARN"
-      },
-      {
-       "gate": "G11-role-registry",
-       "msg": "no verified snap count on record \u2014 projection is the only evidence he plays",
-       "status": "WARN"
-      }
-     ],
-     "verdict": "WARN"
-    },
-    "drop": {
-     "checks": [
-      {
-       "gate": "G3-role",
-       "msg": "IDP role not in the usage pull (no defensive snap feed) \u2014 judged on projection rank among your IDPs",
-       "status": "WARN"
-      },
-      {
-       "gate": "G5-sources",
-       "msg": "SINGLE SOURCE: ['rotowire'] (['sleeper']) \u2014 IDP never has a second source; a drop among IDPs is judged on relative value",
-       "status": "WARN"
-      },
-      {
-       "gate": "G11-role-registry",
-       "msg": "no verified snap count on record \u2014 projection is the only evidence he plays",
-       "status": "WARN"
-      }
-     ],
-     "verdict": "WARN"
-    }
-   },
-   "id": "HH:amani hooker",
-   "kind": "add",
-   "league": "HH",
-   "lineup": {
-    "gain": 23.02,
-    "over": "Cooper DeJean (Budda Baker slides to S)",
-    "slot": "DB"
-   },
-   "provisional": false,
-   "reasons": [
-    "DB weekly upgrade: Amani Hooker 23.0 vs starter Cooper DeJean 0.0",
-    "week-10 hole at CB (Cooper DeJean on bye); Amani Hooker 23.0 is the best free DB on week-10 values",
-    "week-11 hole at S (Kam Curl on bye); Amani Hooker 16.2 is the best free DB on week-11 values",
-    "the spot: Nick Cross \u2014 rest-of-season 12.0/wk (W projection (no season number))"
-   ],
-   "spot_id": "drop:nick cross",
-   "spot_kind": "drop",
-   "spot_label": "Nick Cross",
-   "srcs": [
-    "hole",
-    "upgrade"
-   ],
-   "tier": null,
-   "timing_why": "free agent, immediate",
-   "tm": "BUF",
-   "txns": [
-    {
-     "key": "amani hooker",
-     "op": "add",
-     "player": "Amani Hooker"
-    },
-    {
-     "key": "nick cross",
-     "op": "drop",
-     "player": "Nick Cross"
-    },
-    {
-     "key": "amani hooker",
-     "op": "start",
-     "player": "Amani Hooker",
-     "slot": "DB"
     },
     {
      "key": "cooper dejean",
@@ -350,14 +224,14 @@
     }
    ],
    "value_terms": {
-    "J": 10.01,
+    "J": 28.062,
     "acq": 1,
     "bid": 0,
-    "dS_W": 8.15,
-    "dS_W1": 4.2,
-    "dS_play": 0.0,
-    "dS_rest": 0.0,
-    "d_boom": 0.0,
+    "dS_W": 16.51,
+    "dS_W1": 14.222,
+    "dS_play": 0.733,
+    "dS_rest": 1.205,
+    "d_boom": 2.714,
     "d_depth": 0,
     "d_ins": 0.0,
     "p_playoffs": 1.0,
@@ -369,24 +243,24 @@
    },
    "values": {
     "add": {
-     "boom": 0.14943527367506515,
+     "boom": 0.3622047244094488,
      "ros": 16.240000000000002,
-     "ros_src": "positional median 16.2 \u2014 no season number; the W projection 23.0 alone does not carry a season",
-     "w": 23.02,
+     "ros_src": "positional median 16.2 \u2014 no season number; the W projection 16.5 alone does not carry a season",
+     "w": 16.51,
      "w1": 16.240000000000002,
      "w1_src": "rest-of-season per-week (no week-11 projection on disk \u2014 approximation)"
     },
     "drop": {
-     "ros": 12.039999999999997,
-     "ros_src": "W projection (no season number)",
-     "w": 12.039999999999997,
-     "w1": 12.039999999999997
+     "ros": 13.148939335509672,
+     "ros_src": "7-game realized 13.5/g blended with preseason 12.7/wk (6-game prior)",
+     "w": 12.152858074472185,
+     "w1": 13.148939335509672
     }
    },
-   "when": "before kickoff Thu Nov 12, 8:15 pm ET"
+   "when": "before kickoff Sun Nov 15, 9:30 am ET"
   },
   {
-   "J": 7.756,
+   "J": 7.561,
    "add_key": null,
    "add_name": null,
    "at": null,
@@ -394,7 +268,7 @@
    "drop_name": null,
    "eff": "W",
    "fam": "RB",
-   "gain": 7.76,
+   "gain": 7.56,
    "gates": {
     "add": null,
     "drop": null
@@ -405,7 +279,7 @@
    "phase": "early",
    "provisional": false,
    "reasons": [
-    "+7.76 this week"
+    "+7.56 this week"
    ],
    "sit": "Devin Singletary",
    "slot": "RB",
@@ -433,25 +307,79 @@
     }
    ],
    "value_terms": {
-    "J": 7.756,
-    "dS_W": 7.756
+    "J": 7.561,
+    "dS_W": 7.561
    },
    "when": "before kickoff Sun Nov 15, 8:20 pm ET"
+  },
+  {
+   "J": 2.83,
+   "add_key": null,
+   "add_name": null,
+   "at": null,
+   "deadline": "2026-11-15T16:05-05:00",
+   "drop_name": null,
+   "eff": "W",
+   "fam": "DB",
+   "gain": 2.83,
+   "gates": {
+    "add": null,
+    "drop": null
+   },
+   "id": "HH:lineup:DB",
+   "kind": "lineup",
+   "league": "HH",
+   "phase": "early",
+   "provisional": true,
+   "reasons": [
+    "+2.83 this week (Budda Baker slides to S)",
+    "no player market posted yet for his game"
+   ],
+   "sit": "Nick Cross",
+   "slot": "DB",
+   "spot_id": null,
+   "spot_kind": null,
+   "spot_label": null,
+   "srcs": [
+    "lineup"
+   ],
+   "start": "Kam Curl",
+   "tier": null,
+   "timing_why": "",
+   "tm": "LAR",
+   "txns": [
+    {
+     "key": "kam curl",
+     "op": "start",
+     "player": "Kam Curl",
+     "slot": "DB"
+    },
+    {
+     "key": "nick cross",
+     "op": "bench",
+     "player": "Nick Cross"
+    }
+   ],
+   "value_terms": {
+    "J": 2.83,
+    "dS_W": 2.83
+   },
+   "when": "before kickoff Sun Nov 15, 4:05 pm ET"
   }
  ],
  "notes": [],
  "rejected": [
   {
-   "J": -9.823,
+   "J": -9.788,
    "key": "DST:LAC",
    "name": "Los Angeles Chargers",
-   "reason": "J -9.82 < 3.0 at its best spot (Kam Curl) \u2014 J -9.82 = 1.0x+0.00 (wk W) + 0.8x+0.62 (W+1) + 0.8x-4.84 (rest, mean of wks 12-17) + 0.60x-2.83 (wks 15-17, P(playoffs) 100%) + 0.1x-2.75 (bench boom) + 0.2x-14.87 (depth) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
+   "reason": "J -9.79 < 3.0 at its best spot (Kam Curl) \u2014 J -9.79 = 1.0x+0.00 (wk W) + 0.8x+0.62 (W+1) + 0.8x-4.84 (rest, mean of wks 12-17) + 0.60x-2.83 (wks 15-17, P(playoffs) 100%) + 0.1x-2.40 (bench boom) + 0.2x-14.87 (depth) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
     "week-11 DEF stream: Los Angeles Chargers 25.6 vs your best 25.0 (W line re-scored on the week-11 opponent implied total 16.0)"
    ]
   },
   {
-   "J": -2.48,
+   "J": -2.482,
    "key": "adonai mitchell",
    "name": "Adonai Mitchell",
    "reason": "best spot Rashee Rice: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
@@ -460,26 +388,35 @@
    ]
   },
   {
-   "J": -36.098,
+   "J": -36.105,
    "key": "aj barner",
    "name": "AJ Barner",
-   "reason": "J -36.10 < 3.0 at its best spot (Cooper DeJean) \u2014 J -36.10 = 1.0x+0.00 (wk W) + 0.8x-16.24 (W+1) + 0.8x-15.01 (rest, mean of wks 12-17) + 0.60x-16.24 (wks 15-17, P(playoffs) 100%) + 0.1x+1.47 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
+   "reason": "J -36.10 < 3.0 at its best spot (Cooper DeJean) \u2014 J -36.10 = 1.0x+0.00 (wk W) + 0.8x-16.24 (W+1) + 0.8x-15.01 (rest, mean of wks 12-17) + 0.60x-16.24 (wks 15-17, P(playoffs) 100%) + 0.1x+1.39 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
-    "breakout tier B: 72% snaps, 14% targets, 9% air yds; Kalshi receiving yds 26 vs Sleeper 30 (-13%) \u2014 a part-time line, under the 35 starter floor; held (wk8: 95% snaps, 15% targets, 10% air yds)"
+    "breakout tier B: 72% snaps, 14% targets, 9% air yds; Kalshi receiving yds 26 vs Sleeper 30 (-14%) \u2014 a part-time line, under the 35 starter floor; held (wk8: 95% snaps, 15% targets, 10% air yds)"
    ]
   },
   {
-   "J": -5.958,
+   "J": -5.696,
    "key": "alohi gilman",
    "name": "Alohi Gilman",
-   "reason": "jointly with the rest of the plan it adds only J -5.96 (< 3.0) \u2014 J -5.96 = 1.0x+0.00 (wk W) + 0.8x-3.27 (W+1) + 0.8x-1.38 (rest, mean of wks 12-17) + 0.60x-1.38 (wks 15-17, P(playoffs) 100%) + 0.1x+0.85 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
+   "reason": "jointly with the rest of the plan it adds only J -5.70 (< 3.0) \u2014 J -5.70 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x-0.30 (rest, mean of wks 12-17) + 0.60x-0.30 (wks 15-17, P(playoffs) 100%) + 0.1x+0.38 (bench boom) + 0.2x-19.07 (depth) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
-    "week-10 hole at CB (Cooper DeJean on bye); Alohi Gilman 15.9 is the best free DB on week-10 values",
-    "week-11 hole at S (Kam Curl on bye); Alohi Gilman 15.9 is the best free DB on week-11 values"
+    "week-10 hole at CB (Cooper DeJean on bye); Alohi Gilman 15.9 is the best free DB on week-10 values"
    ]
   },
   {
-   "J": -2.339,
+   "J": -4.446,
+   "key": "amani hooker",
+   "name": "Amani Hooker",
+   "reason": "jointly with the rest of the plan it adds only J -4.45 (< 3.0) \u2014 J -4.45 = 1.0x+7.14 (wk W) + 0.8x-12.70 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.74 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
+   "reasons": [
+    "DB weekly upgrade: Amani Hooker 23.0 vs starter Cooper DeJean 0.0",
+    "week-10 hole at CB (Cooper DeJean on bye); Amani Hooker 23.0 is the best free DB on week-10 values"
+   ]
+  },
+  {
+   "J": -2.341,
    "key": "audric estime",
    "name": "Audric Estime",
    "reason": "best spot Rashee Rice: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
@@ -488,16 +425,25 @@
    ]
   },
   {
-   "J": -2.385,
+   "J": -4.039,
+   "key": "barrett carter",
+   "name": "Barrett Carter",
+   "reason": "jointly with the rest of the plan it adds only J -4.04 (< 3.0) \u2014 J -4.04 = 1.0x+0.00 (wk W) + 0.8x-0.81 (W+1) + 0.8x-1.38 (rest, mean of wks 12-17) + 0.60x-1.38 (wks 15-17, P(playoffs) 100%) + 0.1x+0.46 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
+   "reasons": [
+    "week-11 hole at D (Myles Garrett on bye); Barrett Carter 17.9 is the best free LB on week-11 values"
+   ]
+  },
+  {
+   "J": -2.386,
    "key": "blake corum",
    "name": "Blake Corum",
-   "reason": "J -2.38 < 3.0 at its best spot (Rashee Rice) \u2014 J -2.38 = 1.0x+0.00 (wk W) + 0.8x-1.38 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+2.19 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
+   "reason": "J -2.39 < 3.0 at its best spot (Rashee Rice) \u2014 J -2.39 = 1.0x+0.00 (wk W) + 0.8x-1.38 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+2.19 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
     "RB weekly upgrade: Blake Corum 11.6 vs starter Devin Singletary 7.6"
    ]
   },
   {
-   "J": -1.852,
+   "J": -1.853,
    "key": "cade otton",
    "name": "Cade Otton",
    "reason": "best spot Rashee Rice: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
@@ -515,35 +461,34 @@
    ]
   },
   {
-   "J": 11.997,
+   "J": 2.582,
    "key": "cam bynum",
    "name": "Cam Bynum",
-   "reason": "its best spot (Rashee Rice) went to another move at higher value",
+   "reason": "jointly with the rest of the plan it adds only J +2.58 (< 3.0) \u2014 J +2.58 = 1.0x+1.01 (wk W) + 0.8x+3.84 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.00 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
-    "week-10 hole at CB (Cooper DeJean on bye); Cam Bynum 15.9 is the best free DB on week-10 values",
-    "week-11 hole at S (Kam Curl on bye); Cam Bynum 15.9 is the best free DB on week-11 values"
+    "week-10 hole at CB (Cooper DeJean on bye); Cam Bynum 15.9 is the best free DB on week-10 values"
    ]
   },
   {
-   "J": -9.017,
+   "J": -8.982,
    "key": "chig okonkwo",
    "name": "Chig Okonkwo",
-   "reason": "J -9.02 < 3.0 at its best spot (Kam Curl) \u2014 J -9.02 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x-3.38 (rest, mean of wks 12-17) + 0.60x-2.83 (wks 15-17, P(playoffs) 100%) + 0.1x-1.41 (bench boom) + 0.2x-14.87 (depth) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
+   "reason": "J -8.98 < 3.0 at its best spot (Kam Curl) \u2014 J -8.98 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x-3.38 (rest, mean of wks 12-17) + 0.60x-2.83 (wks 15-17, P(playoffs) 100%) + 0.1x-1.06 (bench boom) + 0.2x-14.87 (depth) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
     "breakout tier A: 74% snaps, 20% targets, 23% air yds; Kalshi receiving yds 40 vs Sleeper 32 (+24%); held (wk8: 77% snaps, 14% targets, 18% air yds)"
    ]
   },
   {
-   "J": -2.603,
+   "J": -2.605,
    "key": "courtland sutton",
    "name": "Courtland Sutton",
-   "reason": "best spot Rashee Rice: Tier B held, but Rashee Rice (15.0) projects at or above him (0.0) this week",
+   "reason": "best spot Rashee Rice: Tier B held, but Rashee Rice (14.9) projects at or above him (0.0) this week",
    "reasons": [
     "breakout tier B: 85% snaps, 24% targets, 32% air yds; no market line yet, and no Sleeper line either; held (wk8: 81% snaps, 12% targets, 50% air yds)"
    ]
   },
   {
-   "J": -2.603,
+   "J": -2.605,
    "key": "darius cooper",
    "name": "Darius Cooper",
    "reason": "best spot Rashee Rice: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
@@ -561,7 +506,7 @@
    ]
   },
   {
-   "J": -2.015,
+   "J": -2.017,
    "key": "dawson knox",
    "name": "Dawson Knox",
    "reason": "best spot Rashee Rice: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
@@ -570,13 +515,21 @@
    ]
   },
   {
-   "J": 11.208,
+   "J": 1.826,
    "key": "dax hill",
    "name": "Dax Hill",
-   "reason": "its best spot (Rashee Rice) went to another move at higher value",
+   "reason": "jointly with the rest of the plan it adds only J +1.83 (< 3.0) \u2014 J +1.83 = 1.0x+0.59 (wk W) + 0.8x+3.42 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.00 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
-    "week-10 hole at CB (Cooper DeJean on bye); Dax Hill 15.5 is the best free DB on week-10 values",
-    "week-11 hole at S (Kam Curl on bye); Dax Hill 15.5 is the best free DB on week-11 values"
+    "week-10 hole at CB (Cooper DeJean on bye); Dax Hill 15.5 is the best free DB on week-10 values"
+   ]
+  },
+  {
+   "J": -6.492,
+   "key": "demario davis",
+   "name": "Demario Davis",
+   "reason": "jointly with the rest of the plan it adds only J -6.49 (< 3.0) \u2014 J -6.49 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x-2.48 (rest, mean of wks 12-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x-0.36 (bench boom) + 0.2x-14.87 (depth) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
+   "reasons": [
+    "week-11 hole at D (Myles Garrett on bye); Demario Davis 17.6 is the best free LB on week-11 values"
    ]
   },
   {
@@ -589,12 +542,22 @@
    ]
   },
   {
-   "J": null,
+   "J": -10.237,
    "key": "devin lloyd",
    "name": "Devin Lloyd",
-   "reason": "gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])",
+   "reason": "jointly with the rest of the plan it adds only J -10.24 (< 3.0) \u2014 J -10.24 = 1.0x+1.70 (wk W) + 0.8x-12.70 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x-2.77 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
-    "LB weekly upgrade: Devin Lloyd 22.4 vs starter Carson Schwesinger 20.7"
+    "LB weekly upgrade: Devin Lloyd 22.4 vs starter Carson Schwesinger 20.7",
+    "week-11 hole at D (Myles Garrett on bye); Devin Lloyd 19.1 is the best free LB on week-11 values"
+   ]
+  },
+  {
+   "J": -6.559,
+   "key": "dre greenlaw",
+   "name": "Dre Greenlaw",
+   "reason": "jointly with the rest of the plan it adds only J -6.56 (< 3.0) \u2014 J -6.56 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x-2.48 (rest, mean of wks 12-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x-1.02 (bench boom) + 0.2x-14.87 (depth) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
+   "reasons": [
+    "week-11 hole at D (Myles Garrett on bye); Dre Greenlaw 18.3 is the best free LB on week-11 values"
    ]
   },
   {
@@ -607,14 +570,13 @@
    ]
   },
   {
-   "J": -11.714,
-   "key": "elijah molden",
-   "name": "Elijah Molden",
-   "reason": "jointly with the rest of the plan it adds only J -11.71 (< 3.0) \u2014 J -11.71 = 1.0x+0.10 (wk W) + 0.8x-12.70 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x-1.54 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
+   "J": -27.628,
+   "key": "jalen ramsey",
+   "name": "Jalen Ramsey",
+   "reason": "jointly with the rest of the plan it adds only J -27.63 (< 3.0) \u2014 J -27.63 = 1.0x+0.00 (wk W) + 0.8x-12.04 (W+1) + 0.8x-12.04 (rest, mean of wks 12-17) + 0.60x-12.04 (wks 15-17, P(playoffs) 100%) + 0.1x+3.60 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
-    "DB weekly upgrade: Elijah Molden 16.5 vs starter Cooper DeJean 0.0",
-    "week-10 hole at CB (Cooper DeJean on bye); Elijah Molden 16.5 is the best free DB on week-10 values",
-    "week-11 hole at S (Kam Curl on bye); Elijah Molden 16.2 is the best free DB on week-11 values"
+    "DB weekly upgrade: Jalen Ramsey 16.4 vs starter Cooper DeJean 0.0",
+    "week-10 hole at CB (Cooper DeJean on bye); Jalen Ramsey 16.4 is the best free DB on week-10 values"
    ]
   },
   {
@@ -627,7 +589,7 @@
    ]
   },
   {
-   "J": -2.543,
+   "J": -2.545,
    "key": "jordan watkins",
    "name": "Jordan Watkins",
    "reason": "best spot Rashee Rice: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
@@ -645,13 +607,21 @@
    ]
   },
   {
-   "J": -9.764,
+   "J": -5.35,
    "key": "justin reid",
    "name": "Justin Reid",
-   "reason": "jointly with the rest of the plan it adds only J -9.76 (< 3.0) \u2014 J -9.76 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x-3.11 (rest, mean of wks 12-17) + 0.60x-3.11 (wks 15-17, P(playoffs) 100%) + 0.1x-0.39 (bench boom) + 0.2x-19.35 (depth) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
+   "reason": "jointly with the rest of the plan it adds only J -5.35 (< 3.0) \u2014 J -5.35 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x-0.35 (bench boom) + 0.2x-19.07 (depth) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
-    "week-10 hole at CB (Cooper DeJean on bye); Justin Reid 16.2 is the best free DB on week-10 values",
-    "week-11 hole at S (Kam Curl on bye); Justin Reid 16.2 is the best free DB on week-11 values"
+    "week-10 hole at CB (Cooper DeJean on bye); Justin Reid 16.2 is the best free DB on week-10 values"
+   ]
+  },
+  {
+   "J": -3.686,
+   "key": "kaden elliss",
+   "name": "Kaden Elliss",
+   "reason": "jointly with the rest of the plan it adds only J -3.69 (< 3.0) \u2014 J -3.69 = 1.0x+0.00 (wk W) + 0.8x-0.39 (W+1) + 0.8x-1.38 (rest, mean of wks 12-17) + 0.60x-1.38 (wks 15-17, P(playoffs) 100%) + 0.1x+0.55 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
+   "reasons": [
+    "week-11 hole at D (Myles Garrett on bye); Kaden Elliss 18.8 is the best free LB on week-11 values"
    ]
   },
   {
@@ -660,11 +630,11 @@
    "name": "Kaleb Johnson",
    "reason": "sits behind everyone: you carry 3 RBs for 1 slot(s) and he projects 6.8 under your weakest 7.6",
    "reasons": [
-    "breakout tier B: 39% snaps, 50% of RB touches; Kalshi rushing yds 34 vs Sleeper 36 (-6%) \u2014 a part-time line, under the 40 starter floor"
+    "breakout tier B: 39% snaps, 50% of RB touches; Kalshi rushing yds 34 vs Sleeper 36 (-7%) \u2014 a part-time line, under the 40 starter floor"
    ]
   },
   {
-   "J": -2.603,
+   "J": -2.605,
    "key": "kalif raymond",
    "name": "Kalif Raymond",
    "reason": "best spot Rashee Rice: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
@@ -673,7 +643,7 @@
    ]
   },
   {
-   "J": -2.518,
+   "J": -2.52,
    "key": "kc concepcion",
    "name": "KC Concepcion Jr.",
    "reason": "best spot Rashee Rice: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
@@ -682,16 +652,16 @@
    ]
   },
   {
-   "J": -2.603,
+   "J": -2.605,
    "key": "makai lemon",
    "name": "Makai Lemon",
-   "reason": "best spot Rashee Rice: Tier B held, but Rashee Rice (15.0) projects at or above him (0.0) this week",
+   "reason": "best spot Rashee Rice: Tier B held, but Rashee Rice (14.9) projects at or above him (0.0) this week",
    "reasons": [
     "breakout tier B: 93% snaps, 26% targets, 42% air yds; no market line yet, and no Sleeper line either; held (wk8: 94% snaps, 26% targets, 34% air yds)"
    ]
   },
   {
-   "J": -2.513,
+   "J": -2.515,
    "key": "malachi fields",
    "name": "Malachi Fields",
    "reason": "best spot Rashee Rice: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
@@ -700,17 +670,25 @@
    ]
   },
   {
-   "J": 12.0,
+   "J": -11.652,
    "key": "marques sigle",
    "name": "Marques Sigle",
-   "reason": "its best spot (Rashee Rice) went to another move at higher value",
+   "reason": "jointly with the rest of the plan it adds only J -11.65 (< 3.0) \u2014 J -11.65 = 1.0x+0.36 (wk W) + 0.8x-12.70 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x-3.52 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
-    "week-10 hole at CB (Cooper DeJean on bye); Marques Sigle 15.8 is the best free DB on week-10 values",
-    "week-11 hole at S (Kam Curl on bye); Marques Sigle 15.8 is the best free DB on week-11 values"
+    "week-10 hole at CB (Cooper DeJean on bye); Marques Sigle 15.8 is the best free DB on week-10 values"
    ]
   },
   {
-   "J": -2.399,
+   "J": -3.425,
+   "key": "payton wilson",
+   "name": "Payton Wilson",
+   "reason": "jointly with the rest of the plan it adds only J -3.42 (< 3.0) \u2014 J -3.42 = 1.0x+0.00 (wk W) + 0.8x-0.45 (W+1) + 0.8x-1.38 (rest, mean of wks 12-17) + 0.60x-1.38 (wks 15-17, P(playoffs) 100%) + 0.1x+3.65 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
+   "reasons": [
+    "week-11 hole at D (Myles Garrett on bye); Payton Wilson 19.1 is the best free LB on week-11 values"
+   ]
+  },
+  {
+   "J": -2.401,
    "key": "rachaad white",
    "name": "Rachaad White",
    "reason": "J -2.40 < 3.0 at its best spot (Rashee Rice) \u2014 J -2.40 = 1.0x+0.00 (wk W) + 0.8x-1.38 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+2.04 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
@@ -724,11 +702,11 @@
    "name": "Samaje Perine",
    "reason": "sits behind everyone: you carry 3 RBs for 1 slot(s) and he projects 6.7 under your weakest 7.6",
    "reasons": [
-    "breakout tier B: 40% snaps, 48% of RB touches; Kalshi rushing yds 26 vs Sleeper 21 (+24%) \u2014 a part-time line, under the 40 starter floor"
+    "breakout tier B: 40% snaps, 48% of RB touches; Kalshi rushing yds 26 vs Sleeper 21 (+23%) \u2014 a part-time line, under the 40 starter floor"
    ]
   },
   {
-   "J": -2.603,
+   "J": -2.605,
    "key": "tez johnson",
    "name": "Tez Johnson",
    "reason": "best spot Rashee Rice: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
@@ -737,12 +715,30 @@
    ]
   },
   {
-   "J": -2.564,
+   "J": -1.719,
+   "key": "tony hill",
+   "name": "Anthony Hill Jr.",
+   "reason": "jointly with the rest of the plan it adds only J -1.72 (< 3.0) \u2014 J -1.72 = 1.0x+0.00 (wk W) + 0.8x+2.10 (W+1) + 0.8x-1.38 (rest, mean of wks 12-17) + 0.60x-1.38 (wks 15-17, P(playoffs) 100%) + 0.1x+0.30 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
+   "reasons": [
+    "week-11 hole at D (Myles Garrett on bye); Anthony Hill Jr. 17.4 is the best free LB on week-11 values"
+   ]
+  },
+  {
+   "J": -2.566,
    "key": "tre harris",
    "name": "Tre' Harris",
    "reason": "best spot Rashee Rice: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
     "breakout tier B: 83% snaps, 23% targets, 0% air yds; no market line yet (Sleeper receiving yds 26)"
+   ]
+  },
+  {
+   "J": -8.385,
+   "key": "ventrell miller",
+   "name": "Ventrell Miller",
+   "reason": "jointly with the rest of the plan it adds only J -8.38 (< 3.0) \u2014 J -8.38 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x-2.83 (rest, mean of wks 12-17) + 0.60x-2.83 (wks 15-17, P(playoffs) 100%) + 0.1x+0.50 (bench boom) + 0.2x-14.87 (depth) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
+   "reasons": [
+    "week-11 hole at D (Myles Garrett on bye); Ventrell Miller 19.1 is the best free LB on week-11 values"
    ]
   }
  ],
@@ -758,7 +754,7 @@
    "id": "drop:nick cross",
    "kind": "drop",
    "label": "Nick Cross",
-   "taken_by": "Amani Hooker",
+   "taken_by": null,
    "tier": 3
   },
   {
@@ -779,7 +775,7 @@
    "id": "drop:jameson williams",
    "kind": "drop",
    "label": "Jameson Williams",
-   "taken_by": "Jalen Ramsey",
+   "taken_by": "Elijah Molden",
    "tier": 3
   },
   {
@@ -834,9 +830,9 @@
   "p_playoffs": 1.0
  },
  "winprob": {
-  "mean": 315.41665021929833,
+  "mean": 303.1671789277576,
   "note": "sampled on the planner's final lineup",
   "p_med": null,
-  "p_opp": 0.942
+  "p_opp": 0.8973333333333333
  }
 }

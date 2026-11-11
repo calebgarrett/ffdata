@@ -458,6 +458,9 @@ _hold8a5 = {NK(r[1]): dict(why='hold (test)', call='HOLD') for r in r8a5 if r[0]
 _hold8a5['DST:BUF'] = dict(why='the December DEF (test)', call='HOLD')
 f, st, pr = league('HH', r8a5, fas=[('Boye Mafe', 'DE', 'CIN', 13.2), ('Austin Booker', 'DE', 'CHI', 14.8)],
                    kicks={_dl8a5[3]: None}, byes={WEEK: {_dl8a5[3]}, W1: set()}, registry=dict(hold=_hold8a5))
+# the bye man is a real starter (Watt: 12/wk from his last played weeks, facts._offbye_proj);
+# a fixture body worth 0 for the year is legally the spot for a 14-pt cover (11-10)
+f.mine[NK(_dl8a5[1])]['ros_pw'] = 12.0; f.mine[NK(_dl8a5[1])]['ros_src'] = 'test: off-bye projection'
 p = PL.plan_facts(f, dict())
 m8a5 = next((m for m in moves_of(p) if m['add_key'] in (NK('Austin Booker'), NK('Boye Mafe'))), None)
 case('bye hole at DL: the best free DL ships into the empty slot despite one source (the slot is a verified zero)', m8a5 is not None, p.summary())
@@ -793,6 +796,34 @@ _bid_tr = _m14c.bid(_fa_bal, 'B')
 _m14c._trend = set()
 _bid_quiet = _m14c.bid(_fa_bal, 'B')
 case('bid: a trending Tier-B clears the ladder\'s top decile (>= the firm bid), a quiet one pays the band-B dollar', _bid_tr >= max(_bid_quiet, 1) and (_bid_tr > _bid_quiet or _bid_quiet > 1), (_bid_tr, _bid_quiet))
+
+
+# ---------------------------------------------------------------- 15. a spot freed by the joint pass is re-offered (11-10: Dicker took the spare DEF over Estime, then died next to Zvada)
+# BSB, week-11 K bye: two free kickers both cover it (the second is worthless next to the
+# first), three DEFs (the spare is a dead spot), and a free RB who is a real two-week
+# upgrade at the spare. The Hungarian pass seats K1 on the kicker and K2 on the spare DEF
+# (a higher total than the RB); the joint pass removes K2. The RB must then get the spare.
+r15 = bsb_roster(def_tm='MIN', k_tm='SEA', extra=[('BN', 'San Francisco', 'DEF', 'SF', 4.6, 'none'), ('BN', 'Washington Commanders', 'DEF', 'WAS', 6.3, 'none')])
+r15 = [r for r in r15 if not (r[0] == 'BN' and r[3] in ('LV', 'LAC'))]
+r15 = [(r[0], r[1], r[2], r[3], 6.0, r[5]) if r[0] == 'DEF' else r for r in r15]
+_k15 = next(r for r in r15 if r[0] == 'K')
+_rb15 = 'Audric Estime'
+f, st, pr = league('BSB', r15, fas=[('Dominic Zvada', 'K', 'DET', 9.0), ('Cameron Dicker', 'K', 'LAC', 8.8), (_rb15, 'RB', 'NO', 9.0)],
+                   byes={WEEK: set(), W1: {_k15[3]}})
+for k, d in f.mine.items():
+    if k in ('DST:MIN', 'DST:SF', 'DST:WAS'): d['ros_pw'] = {'DST:MIN': 10.0, 'DST:SF': 6.6, 'DST:WAS': 5.5}[k]; d['ros_src'] = 'test'; d['pts_w1'] = d['ros_pw'] * 0.7
+for r in r15:
+    if r[2] == 'RB': f.mine[NK(r[1])]['pts_w1'] = 0.0                                      # every RB sits next week (bye): the free RB starts
+    if r[0] == 'BN' and r[2] != 'DEF': f.mine[NK(r[1])]['ros_pw'] = 20.0                   # the bench is real players: the spare DEF is the only spot worth J >= 3
+for nmk, kk in ((NK('Dominic Zvada'), 12.8), (NK('Cameron Dicker'), 12.5)):      # both K covers outscore the RB on their own; only one survives jointly
+    x = f.fa(nmk); x['pts_w1'] = kk; x['ros_pw'] = kk; f._pool_cache[nmk] = x
+x = f.fa(NK(_rb15)); x['pts_w1'] = 8.0; x['ros_pw'] = 8.0; x['usage_now'] = 'start'; f._pool_cache[NK(_rb15)] = x
+_ev15 = dict(upgrades=[dict(fam='RB', add=dict(key=NK(_rb15), name=_rb15, week=9.0), over=dict(player='x', pts=1.5))])
+p = PL.plan_facts(f, _ev15)
+_mv15 = {m['add_key']: m for m in moves_of(p)}
+case('re-solve: one K cover ships for the week-11 bye, not two', sum(1 for k in _mv15 if k in (NK('Dominic Zvada'), NK('Cameron Dicker'))) == 1, str([(k, m.get('drop_name')) for k, m in _mv15.items()]))
+case('...and the RB displaced by the doomed second K ships once the assignment is re-solved', NK(_rb15) in _mv15 and _mv15[NK(_rb15)]['J'] >= PL.SHIP_J, str([(k, m.get('drop_name'), m.get('spot_id'), m['J']) for k, m in _mv15.items()] + [(r['name'], r['reason'][:140]) for r in p.rejected if r['key'] == NK(_rb15)]))
+case('...nobody is told his spot "went to another move" that never shipped', not any('went to another move' in r['reason'] for r in p.rejected), str([(r['name'], r['reason'][:100]) for r in p.rejected if 'went to' in r['reason']]))
 
 print('=' * 88)
 print(f'{total - bad}/{total} behaved as required.' + ('  PLANNER IS SOUND.' if not bad else '  PLANNER FAILED.'))
