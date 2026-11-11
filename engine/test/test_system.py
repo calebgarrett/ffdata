@@ -127,7 +127,9 @@ case('market readiness is per game (ready teams all have in-week ladders; not ev
 qbs = sorted([SC.points(P.line(k, 'QB', r['team']), 'HH') for k, r in P.off.items()
               if (r.get('pos') or '').upper() == 'QB' and SC.points(P.line(k, 'QB', r['team']), 'HH')], reverse=True)
 #    (bye weeks thin the top 20 — week 5, four teams off, read 11.9 — so the bound is 2-14)
-case('HH QB1-QB20 spread is 2-14 (profile says ~5 on a full slate)', len(qbs) >= 20 and 2 <= qbs[0] - qbs[19] <= 14,
+_nbye = len(_byes_now)
+_qb_hi = 14 + 2 * max(0, _nbye - 2)                 # four teams off (week 10, 11-10) read 14.2: each bye team past two widens the bound by 2
+case(f'HH QB1-QB20 spread is 2-{_qb_hi} (profile says ~5 on a full slate; {_nbye} teams on bye)', len(qbs) >= 20 and 2 <= qbs[0] - qbs[19] <= _qb_hi,
      f'{qbs[0]-qbs[19]:.1f}' if len(qbs) >= 20 else 'n<20')
 _cand_edge = [('T.J. Watt', 'LB', 'PIT'), ('Micah Parsons', 'LB', 'GB'), ('Myles Garrett', 'DE', 'LAR'), ('Nick Bosa', 'DE', 'SF'), ('Trey Hendrickson', 'DE', 'BAL'), ('Maxx Crosby', 'DE', 'LV')]
 _en, _ep, _et = next(((n, p_, t) for n, p_, t in _cand_edge if t not in _byes_now and not P.line(n, p_, t).get('unknown') and (SC.points(P.line(n, p_, t), 'HH') or 0) > 0), _cand_edge[0])

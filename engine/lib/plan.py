@@ -88,6 +88,7 @@ SHIP_J = 3.0
 INS_P_MISS = 0.06        # a QB misses roughly one game in 17; an assumption, not a measurement
 INS_DEC_WEEK = 13        # from here the free replacement is discounted
 INS_DEC_REPL = 0.5
+HOLE_BYE_UPGRADE = 3.0            # a bye man is cut for his own cover only when the cover beats him by this much per week (11-05)
 HOLE_VOR_MAX = 1.0                # a DEF/K hole may take a bench player this far (or less) above replacement at his position (10-28)
 RIVAL_DROP_MIN_SEASON = 100.0     # a real role: a manager who let one go after his last game knows something (10-25)
 DEPTH_MARGIN = 3.0                # a depth add must clear the weakest bench player by this much per week (rest of season)
@@ -658,8 +659,17 @@ def pair_block(f, c, s, repl):
         # (10-23: Quay Walker, every-down LB, the D flex; IDP never has a market, so the
         # breakout tiers cannot see him)
         verified = (getattr(x.registry, 'add_yes', None) == 1)
-        if not (c.tier == 'A' or verified or (x.fam == s.fam and ({'stream', 'hole', 'upgrade'} & c.srcs))):
+        # ...and a HOLE cover: an empty slot this week outranks a spare defense that is fungible
+        # anyway (11-05: Watt's bye left DL empty while the spare Commanders sat on the bench)
+        if not (c.tier == 'A' or verified or c.hole or (x.fam == s.fam and ({'stream', 'hole', 'upgrade'} & c.srcs))):
             return f'{s.label} is the spare {s.fam}: a spot for a Tier-A add or a same-family stream only (~1 pt/wk on its own, 09-24)'
+    # a HOLE is the bye man's empty slot for one week: he is not the spot for his own cover
+    # unless the cover is clearly the better player for the rest of the year (11-05: 'add
+    # Mafe, drop T.J. Watt' for Watt's bye week; 'add Molden, drop DeJean' for DeJean's)
+    if c.hole and s.kind == 'drop' and s.fact is not None and (s.fact.fam == x.fam or (s.fact.elig & x.elig)):   # Watt is LB-listed in the DL slot
+        on_bye = s.fact.tm in f.byes.get(f.week, set()) or s.fact.tm in f.byes.get(f.week + 1, set())
+        if on_bye and (x.ros_pw or 0.0) < (s.fact.ros_pw or 0.0) + HOLE_BYE_UPGRADE:
+            return f'{s.label} is on bye — the hole is HIS slot for one week; the cover comes from a bench body, not from cutting him ({x.ros_pw or 0:.1f} vs {s.fact.ros_pw or 0:.1f}/wk rest-of-season)'
     if s.kind == 'swap' and x.fam != s.fam:
         return f'{s.label} is your only {s.fam}: a one-for-one {s.fam} swap only'
     if x.fam in ('DEF', 'K') and not c.hole and s.kind == 'drop' and s.tier >= 3:
@@ -733,7 +743,11 @@ def plan_facts(facts, ev=None):
             # a DEF/K stream or hole cover is priced on next week's posted lines: that is
             # the 'vegas' family the old stream calls named (ff.build stream_calls)
             extra = ['vegas'] if (c.fact.fam in ('DEF', 'K') and ({'stream', 'hole'} & c.srcs) and f.posted_lines_next()) else []
-            c['gate'] = f.gate_add(c.fact, horizon=hz, usage=usage, extra_sources=extra)
+            # a HOLE cover replaces a slot that scores nothing this week (bye / empty / OUT): the
+            # downside of a single-source add is bounded at zero, so G5 is a WARN there — the
+            # gate's own exception (11-05: Watt on bye in the HH DL slot, every free DL blocked
+            # by G5 because IDP has one source, and the card said 'lineup optimal')
+            c['gate'] = f.gate_add(c.fact, horizon=hz, usage=usage, extra_sources=extra, floor_is_zero=bool(c.hole))
         why = candidate_block(f, c, ev)
         if why:
             rejected[c.key] = dict(cand=c, reason=why, J=None); continue

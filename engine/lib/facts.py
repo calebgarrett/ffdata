@@ -229,6 +229,11 @@ class Facts:
             return float(proj_w), 'W projection (no season number)'
         if designation in RU.TAGGED and fam in self.posmed:
             return self.posmed[fam], f'positional median {self.posmed[fam]:.1f} — tagged {designation}, valued as if healthy'
+        # a registry HOLD with no number anywhere (11-07: Garrett, back from IR before Sleeper
+        # re-listed him) is a person's verified role: the positional median, not zero
+        if k in self.hold and (fam in self.posmed or self.posmed):
+            med = self.posmed.get(fam) or min(self.posmed.values())      # the only DL on the roster has no family median: the floor of the others
+            return med, f'positional median {med:.1f} — registry hold, no feed prices him yet'
         return 0.0, 'no number from any source'
 
     def _w1(self, k, fam, tm, line_w, proj_w, ros, designation, dead, pos=None):
@@ -461,6 +466,12 @@ class Facts:
         W+1, or a rest week (per-week value, 0 on a bye)."""
         if t == self.week:
             if f.designation in RU.UNUSABLE and not (f.locked and f.slot not in (None, 'BN', 'IR')): return None
+            # a rostered STARTER nobody prices this week, with a game and no OUT tag, is unknown —
+            # not zero and not 'cannot start' (11-07: Garrett, back from IR, DL slot; the planner
+            # read None, called the slot empty and slid a bye-week player in). His number is the
+            # positional median so a real zero never displaces him; the card still says unknown.
+            if f.pts_w is None and f.owner is not None and f.slot not in (None, 'BN', 'IR') and f.kick is not None and self.posmed:
+                return float(self.posmed.get(f.fam) or min(self.posmed.values()))
             return f.pts_w
         if t == self.week + 1: return f.pts_w1
         if f.tm in self.byes.get(t, set()): return 0.0
@@ -475,11 +486,11 @@ class Facts:
         """Week W+1 look-ahead lines are on disk (the DEF/K matchup evidence: 'vegas')."""
         return self.windows is not None and self.windows.have(self.week + 1)
 
-    def gate_add(self, f, horizon=None, usage=None, extra_sources=()):
+    def gate_add(self, f, horizon=None, usage=None, extra_sources=(), floor_is_zero=False):
         w = self.wire
         if w is None or not hasattr(w, 'gate_add') or f.get('entry') is None: return None
         horizon = horizon or ('weekly' if f.fam in ('DEF', 'K') else 'season')
-        return w.gate_add(f['entry'], horizon=horizon, usage=usage, extra_sources=extra_sources)
+        return w.gate_add(f['entry'], horizon=horizon, usage=usage, extra_sources=extra_sources, floor_is_zero=floor_is_zero)
 
     def gate_drop(self, f):
         w = self.wire

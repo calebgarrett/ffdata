@@ -453,6 +453,7 @@ def scan(state, proj, season=None, week_usage=None, lineup=None, reserve_open=0)
         elif crowd:                             tier = 'C'
         else:                                   tier = 'W'
         cand = w.pool.get(k)
+        if cand is not None and 'line' not in cand: cand = None          # a pool entry the league never scores (an IDP in BSB, 11-07) is not a candidate
         gate = w.gate_add(cand, usage=f"wk{wk} {rule}") if cand else None
         pr = prev.get(k)
         held = ''

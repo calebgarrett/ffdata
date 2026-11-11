@@ -302,6 +302,18 @@ dd_alt = f._offbye_proj(NK(_dl5g[1]), dd.fam, dd.tm)
 case('bye week: a player with no season number and no game this week is not worth 0 for the year when a neighbouring week prices him',
      (dd.ros_pw or 0) > 0 or dd_alt[0] is None, (dd.ros_pw, dd.ros_src, dd_alt))
 
+# ---------------------------------------------------------------- 5h. an unpriced STARTER is unknown, not zero (11-07: Garrett back from IR, no Sleeper row yet)
+r5h = hh_roster()
+_dl5h = [r for r in r5h if r[0] == 'DL'][0]
+r5h = [(r[0], r[1], r[2], r[3], None, r[5]) if r[0] == 'DL' else r for r in r5h]
+f, st, pr = league('HH', r5h, byes={W1: set()}, registry=dict(hold={NK(_dl5h[1]): dict(why='back from IR, verified (test)', call='HOLD')}))
+dd = f.mine[NK(_dl5h[1])]
+case('unpriced starter: his week-W value is the positional median (never None, never 0) when he has a game and no OUT tag',
+     dd.pts_w is None and (f.value(dd, WEEK) or 0) > 0, (dd.pts_w, f.value(dd, WEEK), dd.kick))
+case('...and a registry hold with no feed is valued rest-of-season at the median, not zero', (dd.ros_pw or 0) > 0 and 'registry hold' in (dd.ros_src or ''), (dd.ros_pw, dd.ros_src))
+p = PL.plan_facts(f, dict())
+case('...so the planner never calls his slot empty nor names him the drop', not any(m.get('kind') == 'lineup' and m.get('slot') == 'DL' for m in p.moves) and not any(m.get('drop_name') == _dl5h[1] for m in p.moves), p.summary())
+
 # ---------------------------------------------------------------- 5f. a stash verdict is permanent (11-01: McLaurin resurfaced after the 7-day rival-drop window)
 r5f = bsb_roster(open_spots=1)
 tmac2 = 'Thaddeus Mcelroy-Vance'
@@ -431,6 +443,22 @@ for k, d in f2.mine.items():
 p2 = PL.plan_facts(f2, dict(upgrades=[dict(fam='DEF', add=dict(key='DST:WAS', name='Washington Commanders', week=12.0), over=dict(player='Minnesota Vikings', pts=7.0))]))
 m8a4b = next((m for m in moves_of(p2) if m['add_key'] == 'DST:WAS'), None)
 case('...a real bench RB (12/wk, above replacement) is never a stream\'s spot', m8a4b is None or m8a4b.get('drop_name') != _dead[1], m8a4b and m8a4b.get('drop_name'))
+
+# ---------------------------------------------------------------- 8a5. a bye-week hole fills from the spare DEF, never by cutting the bye man (11-05: Watt)
+# HH: Watt (LB listed, in the DL slot) on bye, no bench DL; the spare DEF on the bench; the
+# best free DL has one source (IDP always does). Expected: the free DL ships into the DL
+# slot, G5 is a WARN (the slot is a verified zero), the spot is the spare DEF, and Watt stays.
+r8a5 = hh_roster(extra_bench=[('BN', 'Kansas City', 'DEF', 'KC', 18.0, 'none')])
+_dl8a5 = [r for r in r8a5 if r[0] == 'DL'][0]
+r8a5 = [(r[0], r[1], r[2], r[3], 0.0, r[5]) if r[0] == 'DL' else r for r in r8a5]
+_hold8a5 = {NK(r[1]): dict(why='hold (test)', call='HOLD') for r in r8a5 if r[0] not in ('DL',) and r[2] not in ('DEF',)}
+_hold8a5['DST:BUF'] = dict(why='the December DEF (test)', call='HOLD')
+f, st, pr = league('HH', r8a5, fas=[('Boye Mafe', 'DE', 'CIN', 13.2), ('Austin Booker', 'DE', 'CHI', 14.8)],
+                   kicks={_dl8a5[3]: None}, byes={WEEK: {_dl8a5[3]}, W1: set()}, registry=dict(hold=_hold8a5))
+p = PL.plan_facts(f, dict())
+m8a5 = next((m for m in moves_of(p) if m['add_key'] in (NK('Austin Booker'), NK('Boye Mafe'))), None)
+case('bye hole at DL: the best free DL ships into the empty slot despite one source (the slot is a verified zero)', m8a5 is not None, p.summary())
+case('...the spot is the spare DEF, and the bye man is never cut for his own one-week hole', m8a5 is not None and m8a5.get('spot_kind') == 'spare' and m8a5.get('drop_name') != _dl8a5[1], m8a5 and (m8a5.get('spot_kind'), m8a5.get('drop_name')))
 
 # ---------------------------------------------------------------- 8b. FAB policy (Caleb, 10-13: every policy decision maximizes P(win the league))
 # A firm claim (hole cover) bids to WIN it — the league's 75th-pct winning bid — from

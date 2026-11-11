@@ -171,6 +171,13 @@ cannot be traced to P(win) is wrong.
   traded for DeForest Buckner and are loading up on defense — is read through the market:
   if it matters, San Francisco's opponents' implied totals fall and the December table
   moves on its own; the registry never pre-empts the lines. Tests: test_plan 8a4.
+- **A bye-week hole is filled, and never by cutting the bye man** (11-05, Caleb: "why am I
+  starting Watt" — PIT on bye, the HH DL slot empty, the card said 'lineup optimal' because
+  no bench DL existed and every free DL failed G5). Three rules: a HOLE cover passes G5 as
+  a WARN (the slot is a verified zero, the gate's own exception, `floor_is_zero`); a hole
+  cover may take the spare DEF (fungible); the bye man is not the spot for his own
+  one-week hole unless the cover beats him by `HOLE_BYE_UPGRADE` (3/wk) rest-of-season.
+  Tests: test_plan 8a5.
 - **A rival's drop of a real role is a fact the feeds may not carry yet** (10-25). McLaurin
   (season 204) tore up a knee on Monday night, out for the year; Washington's bye hid it
   from the free-agent pulse (he was projected in his last played game) and the planner

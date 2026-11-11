@@ -175,12 +175,12 @@ class Wire:
         return out
 
     # ------------------------------------------------------------ gate
-    def gate_add(self, cand, horizon='season', usage=None, extra_sources=()):
+    def gate_add(self, cand, horizon='season', usage=None, extra_sources=(), floor_is_zero=False):
         # value is judged against the horizon's bounds. A player with no season
         # number is NOT a weekly number stretched to a season (Wentz 09-17: 15.65
         # weekly read against [60,600] season bounds -> false G6 block); G6 is
         # simply skipped and G5 still speaks to how many sources priced him.
-        v = cand['season'] if horizon == 'season' else cand['week']
+        v = cand.get('season') if horizon == 'season' else cand.get('week')
         # sources = everything that produced a number for him: the weekly line,
         # the season blend's named feeds, and verified usage. A player below
         # Sleeper's weekly cut but on FFToday's season table is not "no source".
@@ -201,7 +201,7 @@ class Wire:
                        market_ready=cand['ready'], roster_keys=self.state.roster_keys,
                        pool_keys=set(self.pool), pool_meta=self.meta,
                        pulled=C.today().isoformat(), league=self.league, state=self.state,
-                       usage=usage)
+                       usage=usage, floor_is_zero=floor_is_zero)
 
     def gate_drop(self, row, horizon='season', usage=None, extra_sources=()):
         k = row['key']

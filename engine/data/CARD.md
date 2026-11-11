@@ -1,99 +1,104 @@
-# Lineup Card — week 9
+# Lineup Card — week 10
 
-_Thu Nov 5, 11:46 am ET. Decisions first; detail folded below. A PROVISIONAL call waits for the market or a game-status answer._
+_Tue Nov 10, 9:43 pm ET. Decisions first; detail folded below. A PROVISIONAL call waits for the market or a game-status answer._
 
 ## Decide (next 36 hours)
 
-- Nothing needs a decision right now.
+- BSB: **Add Dominic Zvada** · drop Jason Myers — Tuesday (week-lock) — claim by Tue night ($7)
+- BSB: **Add Baltimore Ravens** · drop Vikings — claim by Tue night ($1)
+- BSB: **Start MarShawn Lloyd at RB2** over Josh Jacobs — before kickoff Sun Nov 15, 1:00 pm ET
+- BSB: **Start Ryan Flournoy at WR3** over Malik Washington _(provisional)_ — before kickoff Sun Nov 15, 4:25 pm ET
+- HH: **Add Jalen Ramsey** · drop Jameson Williams — before kickoff Sun Nov 15, 9:30 am ET
+- HH: **Add Amani Hooker** · drop Nick Cross — before kickoff Thu Nov 12, 8:15 pm ET
+- HH: **Start Jaylen Warren at RB** over Devin Singletary — before kickoff Sun Nov 15, 8:20 pm ET
 
 ## BSB — OVERKILL
 
-14-2-0, 1st, PF — · projected 141 · 58% to beat 65 SOUTH · 67% vs the league median
-- Next lock: Sun Nov 8, 9:30 am ET — Drake London
+14-4-0, 2nd, PF — · projected 132 · 44% to beat WINdianapolis · 53% vs the league median
+- **OUT in the lineup:** Josh Jacobs
+- Next lock: Thu Nov 12, 8:15 pm ET — Isaiah Likely
 
 <details><summary>Lineup after the moves</summary>
 
-- DEF: 49ers
+- DEF: Baltimore Ravens
 - K: Jason Myers
 - QB: Matthew Stafford
 - RB1: James Cook III
-- RB2: Josh Jacobs
+- RB2: MarShawn Lloyd
 - TE: Sam LaPorta
 - W/R/T: Isaiah Likely
-- WR1: Jaxon Smith-Njigba
-- WR2: Drake London
-- WR3: Malik Washington
+- WR1: Drake London
+- WR2: Jaxon Smith-Njigba
+- WR3: Ryan Flournoy
 
 </details>
 
 ## HH — Tecmo Bowlers
 
-6-2-0, 1st, PF — · projected 292 · 47% to beat T-rex
-- Q/D: Rashee Rice, Carson Schwesinger, Kam Curl
-- Next lock: Thu Nov 5, 8:15 pm ET — Foyesade Oluokun
+7-2-0, 1st, PF — · projected 290 · 78% to beat Pound the Rock
+- Next lock: Thu Nov 12, 8:15 pm ET — Nick Cross, Devin Singletary
 
 <details><summary>Lineup after the moves</summary>
 
-- CB: Cooper DeJean
+- CB: Jalen Ramsey
 - D: Foyesade Oluokun
-- DB: Kam Curl
+- DB: Amani Hooker
 - DEF: Texans
-- DL: T.J. Watt
+- DL: Myles Garrett
 - K: Brandon Aubrey
 - LB: Carson Schwesinger
 - Q/W/R/T: Jared Goff
 - QB: Dak Prescott
-- RB: Braelon Allen
+- RB: Jaylen Warren
 - S: Budda Baker
 - TE: Trey McBride
 - W/R: Drake London
-- W/R/T: Ja'Marr Chase
-- WR: Rashee Rice
+- W/R/T: Rashee Rice
+- WR: Ja'Marr Chase
 
 </details>
 
-<details><summary>BSB: considered, not moves (17)</summary>
+<details><summary>BSB: considered, not moves (25)</summary>
 
-- Buffalo Bills: J +1.07 < 3.0 at its best spot (Vikings) — J +1.07 = 1.0x+0.00 (wk W) + 0.8x+1.29 (W+1) + 0.8x+0.38 (rest, mean of wks 11-17) + 0.60x+0.38 (wks 15-17, P(playoff
-- New Orleans Saints: J +1.07 < 3.0 at its best spot (Vikings) — J +1.07 = 1.0x+0.00 (wk W) + 0.8x+1.29 (W+1) + 0.8x+0.38 (rest, mean of wks 11-17) + 0.60x+0.38 (wks 15-17, P(playoff
-- Austin Ekeler: J -1.05 < 3.0 at its best spot (DeMario Douglas) — J -1.05 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.43 (rest, mean of wks 11-17) + 0.60x+0.00 (wks 15-17, P
-- Brevyn Spann-Ford: sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 2.5 under your weakest 10.8
-- Chimere Dike: sits behind everyone: you carry 6 WRs for 3 slot(s) and he projects 0.0 under your weakest 7.5
-- Dalton Schultz: J -1.37 < 3.0 at its best spot (DeMario Douglas) — J -1.37 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 11-17) + 0.60x+0.00 (wks 15-17, P
-- Dominic Zvada: J +2.27 < 3.0 at its best spot (Jason Myers) — J +2.27 = 1.0x+0.00 (wk W) + 0.8x+1.43 (W+1) + 0.8x+1.76 (rest, mean of wks 11-17) + 0.60x+0.39 (wks 15-17, P(pla
-- Eli Raridon: J -1.32 < 3.0 at its best spot (DeMario Douglas) — J -1.32 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 11-17) + 0.60x+0.00 (wks 15-17, P
-- Jahan Dotson: sits behind everyone: you carry 6 WRs for 3 slot(s) and he projects 6.8 under your weakest 7.5
-- Jake Ferguson: J -1.10 < 3.0 at its best spot (MarShawn Lloyd) — J -1.10 = 1.0x+0.00 (wk W) + 0.8x-0.31 (W+1) + 0.8x-0.21 (rest, mean of wks 11-17) + 0.60x-0.31 (wks 15-17, P(
-- Jerry Jeudy: J -1.36 < 3.0 at its best spot (DeMario Douglas) — J -1.36 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 11-17) + 0.60x+0.00 (wks 15-17, P
-- Kyle Williams: sits behind everyone: you carry 6 WRs for 3 slot(s) and he projects 3.8 under your weakest 7.5
+- Buffalo Bills: J +2.05 < 3.0 at its best spot (Vikings) — J +2.05 = 1.0x+0.51 (wk W) + 0.8x+1.89 (W+1) + 0.8x+0.38 (rest, mean of wks 12-17) + 0.59x+0.38 (wks 15-17, P(playoff
+- Green Bay Packers: G15: dropped by Short Bus on 2026-11-08 — a manager let a 105-point role go after his last game; find out why before claiming (a verified role is a registry add
+- Indianapolis Colts: jointly with the rest of the plan it adds only J -0.51 (< 3.0) — J -0.51 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00
+- Los Angeles Chargers: J +1.54 < 3.0 at its best spot (Vikings) — J +1.54 = 1.0x+0.00 (wk W) + 0.8x+1.89 (W+1) + 0.8x+0.38 (rest, mean of wks 12-17) + 0.59x+0.38 (wks 15-17, P(playoff
+- Audric Estime: its best spot (DeMario Douglas) went to another move at higher value
+- Brevyn Spann-Ford: J -1.41 < 3.0 at its best spot (DeMario Douglas) — J -1.41 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P
+- Cade Otton: sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 0.0 under your weakest 11.8
+- Cameron Dicker: jointly with the rest of the plan it adds only J -0.57 (< 3.0) — J -0.57 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00
+- Charlie Smyth: its best spot (Commanders) went to another move at higher value
+- Corey Kiner: its best spot (DeMario Douglas) went to another move at higher value
+- Dalton Schultz: J -1.45 < 3.0 at its best spot (DeMario Douglas) — J -1.45 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P
+- Darius Cooper: J +1.72 < 3.0 at its best spot (Ryan Flournoy) — J +1.72 = 1.0x+0.00 (wk W) + 0.8x+2.79 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(p
 
 </details>
 
-<details><summary>HH: considered, not moves (42)</summary>
+<details><summary>HH: considered, not moves (33)</summary>
 
-- Kansas City Chiefs: J +0.33 < 3.0 at its best spot (Commanders) — J +0.33 = 1.0x+1.32 (wk W) + 0.8x+0.63 (W+1) + 0.8x+0.00 (rest, mean of wks 11-17) + 0.60x+0.00 (wks 15-17, P(play
-- AJ Barner: J -27.69 < 3.0 at its best spot (T.J. Watt) — J -27.69 = 1.0x+0.00 (wk W) + 0.8x-12.38 (W+1) + 0.8x-11.27 (rest, mean of wks 11-17) + 0.60x-12.38 (wks 15-17, P(
-- Alohi Gilman: gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])
-- Antonio Williams: sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 8.8 under your weakest 10.0
-- Austin Booker: gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])
-- Boye Mafe: gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])
-- Brevyn Spann-Ford: best spot Commanders: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
-- Caleb Douglas: sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 8.8 under your weakest 10.0
-- Cam Bynum: gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])
-- Carl Granderson: gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])
-- Chig Okonkwo: best spot Commanders: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
-- Chimere Dike: sits behind everyone: you carry 6 WRs for 1 slot(s) and he projects 0.0 under your weakest 10.0
+- Los Angeles Chargers: J -6.85 < 3.0 at its best spot (Kam Curl) — J -6.85 = 1.0x+0.00 (wk W) + 0.8x+0.62 (W+1) + 0.8x-4.84 (rest, mean of wks 12-17) + 0.60x-2.83 (wks 15-17, P(playof
+- Adonai Mitchell: best spot Brandon Aubrey: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
+- AJ Barner: J -36.04 < 3.0 at its best spot (Cooper DeJean) — J -36.04 = 1.0x+0.00 (wk W) + 0.8x-16.24 (W+1) + 0.8x-14.95 (rest, mean of wks 12-17) + 0.60x-16.24 (wks 15-17
+- Alohi Gilman: jointly with the rest of the plan it adds only J -6.75 (< 3.0) — J -6.75 = 1.0x+0.00 (wk W) + 0.8x-3.54 (W+1) + 0.8x-1.80 (rest, mean of wks 12-17) + 0.60x-1.80
+- Audric Estime: best spot Brandon Aubrey: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
+- Blake Corum: J -1.73 < 3.0 at its best spot (Jameson Williams) — J -1.73 = 1.0x+0.00 (wk W) + 0.8x-0.53 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.60x+0.00 (wks 15-17, 
+- Cade Otton: best spot Brandon Aubrey: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
+- Caleb Douglas: J -37.15 < 3.0 at its best spot (Cooper DeJean) — J -37.15 = 1.0x+0.00 (wk W) + 0.8x-16.24 (W+1) + 0.8x-16.24 (rest, mean of wks 12-17) + 0.60x-16.24 (wks 15-17
+- Cam Bynum: its best spot (Jameson Williams) went to Jalen Ramsey at higher value
+- Chig Okonkwo: J -10.88 < 3.0 at its best spot (T.J. Watt) — J -10.88 = 1.0x+0.00 (wk W) + 0.8x-12.70 (W+1) + 0.8x+1.46 (rest, mean of wks 12-17) + 0.60x+0.00 (wks 15-17, P(pl
+- Courtland Sutton: best spot Brandon Aubrey: Brandon Aubrey is your only K: a one-for-one K swap only
+- Darius Cooper: best spot Brandon Aubrey: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
 
 </details>
 
 <details><summary>Flags</summary>
 
-- 3 DEFs rostered (49ers, Commanders, Vikings) for one DEF slot — the spare is Commanders (73 season vs Vikings 122); Vikings is on the bench this week only on the matchup (5.2 vs 3.5), not on quality
+- 3 DEFs rostered (49ers, Commanders, Vikings) for one DEF slot — the spare is Commanders (73 season vs Vikings 122); Vikings is on the bench this week only on the matchup (6.0 vs 6.3), not on quality
+- Josh Jacobs [O] holds a roster spot — HOLD: HOLD, and START when active: a top-10 RB in the #9 December environment for the 
+- Josh Jacobs at RB1 is O — NEXT MAN UP Kaleb Johnson is a free agent (5.4 this week); free agent until kickoff (never-rostered players do not sit on waivers) — his game locks Sun 1:00 PM ET; the clean drop is Commanders
 - 2 DEFs rostered — second one is a HOLD in a capped league: Texans (registry hold)
-- Rashee Rice is Q at W/R/T — if he is out, Jameson Williams (12.0) takes the slot; decide before Sun Nov 8, 1:00 pm ET
-- Carson Schwesinger is Q at LB — if he is out, Quay Walker (17.6) takes the slot; decide before Sun Nov 8, 1:00 pm ET
-- Kam Curl is Q at S — if he is out, Nick Cross (12.6) takes the slot; decide before Sun Nov 8, 1:00 pm ET
 
 </details>
 
-_Engine stamp Thu Nov 5, 11:46 am ET. The HTML card is the full record; this page is the private, phone-readable twin._
+_Engine stamp Tue Nov 10, 9:43 pm ET. The HTML card is the full record; this page is the private, phone-readable twin._
