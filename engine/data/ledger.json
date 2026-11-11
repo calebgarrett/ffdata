@@ -14318,10 +14318,11 @@
   ],
   "verdict": "WARN",
   "week": 10,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": null,
-  "reverses": null
+  "reverses": null,
+  "superseded_by": "4ae6f889"
  },
  {
   "id": "9458ec91",
@@ -14337,10 +14338,11 @@
   ],
   "verdict": "WARN",
   "week": 10,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": null,
-  "reverses": null
+  "reverses": null,
+  "superseded_by": "5cd81379"
  },
  {
   "id": "aa5c5bb5",
@@ -14356,10 +14358,11 @@
   ],
   "verdict": "PASS",
   "week": 10,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": null,
-  "reverses": null
+  "reverses": null,
+  "superseded_by": "c05e10f4"
  },
  {
   "id": "a4331746",
@@ -14374,10 +14377,11 @@
   ],
   "verdict": "WARN",
   "week": 10,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": null,
-  "reverses": null
+  "reverses": null,
+  "superseded_by": "8007b9d2"
  },
  {
   "id": "811f2948",
@@ -14392,10 +14396,11 @@
   ],
   "verdict": "WARN",
   "week": 10,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": null,
-  "reverses": null
+  "reverses": null,
+  "superseded_by": "78dbc5d5"
  },
  {
   "id": "86ad690b",
@@ -14410,10 +14415,11 @@
   ],
   "verdict": "WARN",
   "week": 10,
-  "status": "proposed",
+  "status": "executed",
   "provisional": true,
   "resolves_at": "2026-11-15T20:20-05:00",
-  "reverses": null
+  "reverses": null,
+  "status_ts": "2026-11-10T23:54-05:00"
  },
  {
   "id": "03d276df",
@@ -14504,5 +14510,153 @@
   "provisional": false,
   "resolves_at": "2026-11-15T13:00-05:00",
   "reverses": "61e1f422"
+ },
+ {
+  "id": "1184f3c3",
+  "ts": "2026-11-10T23:54-05:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Washington",
+  "call": "start Washington at DEF",
+  "detail": "over San Francisco +1.64",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "PASS",
+  "week": 10,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": "2026-11-12T20:15-05:00",
+  "reverses": null
+ },
+ {
+  "id": "4ae6f889",
+  "ts": "2026-11-10T23:54-05:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Baltimore Ravens",
+  "call": "add Baltimore Ravens (DEF) over San Francisco",
+  "detail": "+4.06/wk",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 10,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "e07daab9"
+ },
+ {
+  "id": "5cd81379",
+  "ts": "2026-11-10T23:54-05:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Indianapolis Colts",
+  "call": "add Indianapolis Colts (DEF) over San Francisco",
+  "detail": "+3.64/wk",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 10,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "9458ec91"
+ },
+ {
+  "id": "c05e10f4",
+  "ts": "2026-11-10T23:54-05:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Green Bay Packers",
+  "call": "add Green Bay Packers (DEF) over San Francisco",
+  "detail": "+2.99/wk",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "PASS",
+  "week": 10,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "aa5c5bb5"
+ },
+ {
+  "id": "8007b9d2",
+  "ts": "2026-11-10T23:54-05:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Los Angeles Chargers",
+  "call": "stream Los Angeles Chargers for week 11, drop Washington",
+  "detail": "DEF: LAC 16.0 vs yours San Francisco 21.5 \u2014 edge 5.5 implied pts",
+  "evidence": [
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 10,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "a4331746"
+ },
+ {
+  "id": "78dbc5d5",
+  "ts": "2026-11-10T23:54-05:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Harrison Butker",
+  "call": "bye cover: Harrison Butker for week 11, drop Washington",
+  "detail": "K: Jason Myers on bye week 11; KC 28.0 is the best free K on posted lines",
+  "evidence": [
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 10,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "811f2948"
+ },
+ {
+  "id": "d44500d2",
+  "ts": "2026-11-10T23:54-05:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Jalen Ramsey",
+  "call": "start Jalen Ramsey at CB",
+  "detail": "over Cooper DeJean +16.41",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 10,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": "2026-11-15T20:20-05:00",
+  "reverses": null
+ },
+ {
+  "id": "0b2a502f",
+  "ts": "2026-11-10T23:54-05:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Justin Reid",
+  "call": "add Justin Reid (DB) over Cooper DeJean",
+  "detail": "+16.16/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 10,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
  }
 ]
