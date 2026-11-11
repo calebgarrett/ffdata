@@ -1,65 +1,65 @@
-PLAN DIFF — week 10 — Tue Nov 10, 11:54 pm ET  (shadow mode: the card still shows the live calls; FF_PLANNER=1 renders the plan)
+PLAN DIFF — week 10 — Wed Nov 11, 2:43 am ET  (shadow mode: the card still shows the live calls; FF_PLANNER=1 renders the plan)
 objective: J = 1.0*dS_W + 0.8*dS_W1 + 0.8*dS_rest(mean of weeks W+2..17) + 0.1*d_bench_boom - acq ({'HH': 1.0, 'BSB': 0.0}) - 0.1*bid - 0.5*txns; ship at J >= 3.0
 
 == BSB ================================================================================
   card Decide calls vs the plan:
     CARD ONLY lineup: RB2 start MarShawn Lloyd over Josh Jacobs (+5.77)
               planner: not a planner candidate (no producer raised him)
-    CARD ONLY lineup: DEF start Washington over San Francisco (+1.64)
+    CARD ONLY lineup: DEF start Commanders over 49ers (+1.60)
               planner: not a planner candidate (no producer raised him)
-    CARD ONLY stream: add Los Angeles Chargers (DEF), drop Washington
-              planner: J +1.00 < 3.0 at its best spot (Washington) — J +1.00 = 1.0x+0.00 (wk W) + 0.8x+1.89 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+0.00 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0.01 FAB($1) - 0.50 churn
-    CARD ONLY bye cover: add Harrison Butker (K), drop Washington
-              planner: jointly with the rest of the plan it adds only J -1.63 (< 3.0) — J -1.63 = 1.0x+0.00 (wk W) + 0.8x+0.98 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x-1.78 (bench boom) + 0.2x-8.34 (depth) - 0.00 acq - 0.07 FAB($7) - 0.50 churn
-    CARD ONLY this week's DEF: add Baltimore Ravens drop Washington, start over San Francisco
-              planner: J +2.81 < 3.0 at its best spot (Washington) — J +2.81 = 1.0x+2.42 (wk W) + 0.8x+1.31 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+0.00 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0.16 FAB($16) - 0.50 churn
-    CARD ONLY next man up: add Kaleb Johnson for Josh Jacobs, drop Washington
-              planner: J +0.66 < 3.0 at its best spot (Washington) — J +0.66 = 1.0x+1.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+2.31 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0.07 FAB($7) - 0.50 churn
+    CARD ONLY stream: add Los Angeles Chargers (DEF), drop Commanders
+              planner: J +1.00 < 3.0 at its best spot (Commanders) — J +1.00 = 1.0x+0.00 (wk W) + 0.8x+1.89 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+0.00 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0.01 FAB($1) - 0.50 churn
+    CARD ONLY bye cover: add Harrison Butker (K), drop Commanders
+              planner: jointly with the rest of the plan it adds only J -1.63 (< 3.0) — J -1.63 = 1.0x+0.00 (wk W) + 0.8x+0.98 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x-1.75 (bench boom) + 0.2x-8.34 (depth) - 0.00 acq - 0.07 FAB($7) - 0.50 churn
+    CARD ONLY this week's DEF: add Baltimore Ravens drop Commanders, start over 49ers
+              planner: J +2.83 < 3.0 at its best spot (Commanders) — J +2.83 = 1.0x+2.44 (wk W) + 0.8x+1.31 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+0.00 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0.16 FAB($16) - 0.50 churn
+    CARD ONLY next man up: add Kaleb Johnson for Josh Jacobs, drop Commanders
+              planner: J +0.85 < 3.0 at its best spot (Commanders) — J +0.85 = 1.0x+1.17 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+2.45 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0.07 FAB($7) - 0.50 churn
     PLAN ONLY [add] claim Dominic Zvada ($7) ; drop Jason Myers  [Tuesday (week-lock) — claim by Tue night ($7)]
               J +7.89 = 1.0x+0.00 (wk W) + 0.8x+8.33 (W+1) + 0.8x+1.29 (rest, mean of wks 12-17) + 0.59x+1.29 (wks 15-17, P(playoffs) 99%) + 0.1x+0.00 (bench boom) + 0.2x+0.00 (depth) - 0.00 acq - 0.07 FAB($7) - 0.50 churn
               - week-11 hole at K (Jason Myers on bye); Dominic Zvada 8.3 is the best free K on week-11 values
               - the spot: Jason Myers — the only K
-    PLAN ONLY [add] claim Audric Estime ($16) ; drop Washington ; start Audric Estime at RB2 ; bench Josh Jacobs  [claim by Tue night ($16)]
-              J +6.48 = 1.0x+2.40 (wk W) + 0.8x+5.86 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+0.54 (bench boom) + 0.2x+0.00 (depth) - 0.00 acq - 0.16 FAB($16) - 0.50 churn
+    PLAN ONLY [add] claim Audric Estime ($16) ; drop Commanders ; start Audric Estime at RB2 ; bench Josh Jacobs  [claim by Tue night ($16)]
+              J +6.53 = 1.0x+2.45 (wk W) + 0.8x+5.86 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+0.54 (bench boom) + 0.2x+0.00 (depth) - 0.00 acq - 0.16 FAB($16) - 0.50 churn
               - breakout tier B: 47% snaps, 59% of RB touches; no market line yet (Sleeper rushing yds 34)
               - depth: Audric Estime 8.5/wk rest-of-season vs your weakest bench RB 2.7 (W projection 8.5 (usage says starter; the preseason number is stale))
-              - the spot: Washington — the third DEF on the roster — the spare unit is a dead spot (5.5/wk; 7-game realized 6.0/g blended with preseason 4.3/wk (3-game prior))
-    PLAN ONLY PROVISIONAL [lineup] start Ryan Flournoy at WR3 ; bench Malik Washington  [before kickoff Sun Nov 15, 4:25 pm ET]
-              - +0.47 this week (Drake London slides to WR2)
+              - the spot: Commanders — the third DEF on the roster — the spare unit is a dead spot (5.5/wk; 7-game realized 6.0/g blended with preseason 4.3/wk (3-game prior))
+    PLAN ONLY PROVISIONAL [lineup] start Ryan Flournoy at WR1 ; bench Malik Washington  [before kickoff Sun Nov 15, 4:25 pm ET]
+              - +0.47 this week (Jaxon Smith-Njigba slides to WR3)
               - inside the 1.5-pt noise band
               - no player market posted yet for his game
-    PLAN ONLY PROVISIONAL [lineup] start Minnesota at DEF ; bench San Francisco  [before kickoff Sun Nov 15, 1:00 pm ET]
-              - +1.30 this week
+    PLAN ONLY PROVISIONAL [lineup] start Vikings at DEF ; bench 49ers  [before kickoff Sun Nov 15, 1:00 pm ET]
+              - +1.31 this week
               - inside the 1.5-pt noise band
   budgets: {"acq_used": 0, "acq_left": null, "acq_reset": null, "acq_reset_verified": null, "fab_left": 91, "ir_free": 0, "open_spots": 0}
-  final lineup week 10: 133.2 pts (optimal before moves 130.8) · P(beat opp) 54% · P(beat median) 66%
+  final lineup week 10: 133.1 pts (optimal before moves 130.7) · P(beat opp) 53% · P(beat median) 67%
   considered and rejected (25):
-    - Baltimore Ravens: J +2.81 < 3.0 at its best spot (Washington) — J +2.81 = 1.0x+2.42 (wk W) + 0.8x+1.31 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+0.00 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0
-    - Tampa Bay Buccaneers: J +1.63 < 3.0 at its best spot (Washington) — J +1.63 = 1.0x+0.00 (wk W) + 0.8x+2.68 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+0.00 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0
-    - Indianapolis Colts: J +1.33 < 3.0 at its best spot (Washington) — J +1.33 = 1.0x+1.99 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+0.00 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0
-    - Los Angeles Chargers: J +1.00 < 3.0 at its best spot (Washington) — J +1.00 = 1.0x+0.00 (wk W) + 0.8x+1.89 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+0.00 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0
-    - Kaleb Johnson: J +0.66 < 3.0 at its best spot (Washington) — J +0.66 = 1.0x+1.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+2.31 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0
-    - Cameron Dicker: jointly with the rest of the plan it adds only J +0.21 (< 3.0) — J +0.21 = 1.0x+0.00 (wk W) + 0.8x+0.97 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+0.00 (bench boom) + 0.2x+0.00 (de
-    - Darius Cooper: J +0.11 < 3.0 at its best spot (Washington) — J +0.11 = 1.0x+0.00 (wk W) + 0.8x+0.52 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+2.02 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0
-    - Corey Kiner: jointly with the rest of the plan it adds only J -0.17 (< 3.0) — J -0.17 = 1.0x+2.81 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.02 (rest, mean of wks 12-17) + 0.59x+0.02 (wks 15-17, P(playoffs) 99%) + 0.1x+1.23 (bench boom) + 0.2x-8.34 (de
-    - Kayshon Boutte: J -0.40 < 3.0 at its best spot (Washington) — J -0.40 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+1.07 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0
-    - Dalton Schultz: J -0.43 < 3.0 at its best spot (Washington) — J -0.43 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+0.77 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0
-    - Tre' Harris: J -0.47 < 3.0 at its best spot (Washington) — J -0.47 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+0.45 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0
-    - Jake Ferguson: J -0.51 < 3.0 at its best spot (Washington) — J -0.51 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+0.00 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0
-    - Tez Johnson: J -0.51 < 3.0 at its best spot (Washington) — J -0.51 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+0.00 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0
-    - Harrison Butker: jointly with the rest of the plan it adds only J -1.63 (< 3.0) — J -1.63 = 1.0x+0.00 (wk W) + 0.8x+0.98 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x-1.78 (bench boom) + 0.2x-8.34 (de
-    - Ryan Fitzgerald: jointly with the rest of the plan it adds only J -1.66 (< 3.0) — J -1.66 = 1.0x+0.00 (wk W) + 0.8x+0.95 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x-1.78 (bench boom) + 0.2x-8.34 (de
-    - Wil Lutz: jointly with the rest of the plan it adds only J -1.74 (< 3.0) — J -1.74 = 1.0x+0.00 (wk W) + 0.8x+0.85 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x-1.78 (bench boom) + 0.2x-8.34 (de
-    - Drew Stevens: jointly with the rest of the plan it adds only J -1.84 (< 3.0) — J -1.84 = 1.0x+0.00 (wk W) + 0.8x+0.72 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x-1.78 (bench boom) + 0.2x-8.34 (de
-    - Charlie Smyth: jointly with the rest of the plan it adds only J -2.29 (< 3.0) — J -2.29 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.09 (rest, mean of wks 12-17) + 0.59x+0.09 (wks 15-17, P(playoffs) 99%) + 0.1x-1.78 (bench boom) + 0.2x-8.34 (de
+    - Baltimore Ravens: J +2.83 < 3.0 at its best spot (Commanders) — J +2.83 = 1.0x+2.44 (wk W) + 0.8x+1.31 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+0.00 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0
+    - Tampa Bay Buccaneers: J +1.63 < 3.0 at its best spot (Commanders) — J +1.63 = 1.0x+0.00 (wk W) + 0.8x+2.68 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+0.00 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0
+    - Indianapolis Colts: J +1.35 < 3.0 at its best spot (Commanders) — J +1.35 = 1.0x+2.02 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+0.00 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0
+    - Los Angeles Chargers: J +1.00 < 3.0 at its best spot (Commanders) — J +1.00 = 1.0x+0.00 (wk W) + 0.8x+1.89 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+0.00 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0
+    - Kaleb Johnson: J +0.85 < 3.0 at its best spot (Commanders) — J +0.85 = 1.0x+1.17 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+2.45 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0
+    - Darius Cooper: J +0.11 < 3.0 at its best spot (Commanders) — J +0.11 = 1.0x+0.00 (wk W) + 0.8x+0.52 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+2.02 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0
+    - Corey Kiner: jointly with the rest of the plan it adds only J -0.20 (< 3.0) — J -0.20 = 1.0x+2.82 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+1.10 (bench boom) + 0.2x-8.34 (de
+    - Dalton Schultz: J -0.39 < 3.0 at its best spot (Commanders) — J -0.39 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+1.22 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0
+    - Kayshon Boutte: J -0.40 < 3.0 at its best spot (Commanders) — J -0.40 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+1.07 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0
+    - Charlie Smyth: jointly with the rest of the plan it adds only J -0.44 (< 3.0) — J -0.44 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.09 (rest, mean of wks 12-17) + 0.59x+0.09 (wks 15-17, P(playoffs) 99%) + 0.1x+0.00 (bench boom) + 0.2x+0.00 (de
+    - Tre' Harris: J -0.47 < 3.0 at its best spot (Commanders) — J -0.47 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+0.45 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0
+    - Jake Ferguson: J -0.51 < 3.0 at its best spot (Commanders) — J -0.51 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+0.00 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0
+    - Tez Johnson: J -0.51 < 3.0 at its best spot (Commanders) — J -0.51 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+0.00 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0
+    - Harrison Butker: jointly with the rest of the plan it adds only J -1.63 (< 3.0) — J -1.63 = 1.0x+0.00 (wk W) + 0.8x+0.98 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x-1.75 (bench boom) + 0.2x-8.34 (de
+    - Cameron Dicker: jointly with the rest of the plan it adds only J -1.64 (< 3.0) — J -1.64 = 1.0x+0.00 (wk W) + 0.8x+0.97 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x-1.75 (bench boom) + 0.2x-8.34 (de
+    - Ryan Fitzgerald: jointly with the rest of the plan it adds only J -1.66 (< 3.0) — J -1.66 = 1.0x+0.00 (wk W) + 0.8x+0.95 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x-1.75 (bench boom) + 0.2x-8.34 (de
+    - Wil Lutz: jointly with the rest of the plan it adds only J -1.73 (< 3.0) — J -1.73 = 1.0x+0.00 (wk W) + 0.8x+0.85 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x-1.75 (bench boom) + 0.2x-8.34 (de
+    - Drew Stevens: jointly with the rest of the plan it adds only J -1.84 (< 3.0) — J -1.84 = 1.0x+0.00 (wk W) + 0.8x+0.72 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x-1.75 (bench boom) + 0.2x-8.34 (de
     - Green Bay Packers: G15: dropped by Short Bus on 2026-11-08 — a manager let a 105-point role go after his last game; find out why before claiming (a verified role is a registry add_yes)
-    - Cade Otton: sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 0.0 under your weakest 11.8
+    - Cade Otton: sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 0.0 under your weakest 11.9
     - Chris Boswell: G15: dropped by FWU on 2026-11-04 — a manager let a 142-point role go after his last game; find out why before claiming (a verified role is a registry add_yes)
-    - Dawson Knox: sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 3.8 under your weakest 11.8
+    - Dawson Knox: sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 3.8 under your weakest 11.9
     - Mike Gesicki: G15: dropped by Phish Phanatics on 2026-11-07 — a manager let a 108-point role go after his last game; find out why before claiming (a verified role is a registry add_yes)
     - Tutu Atwell: gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])
     - Zonovan Knight: gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])
-  not a clean drop: Josh Jacobs (registry HOLD — HOLD, and START when active: a top-10 RB in the #9 Dec); James Cook III (starter-level usage in his own right (64% snaps, 84% of RB touches)); Jaxon Smith-Njigba (starter-level usage in his own right (76% snaps, 36% targets, 37% air ); Drake London (starter-level usage in his own right (97% snaps, 16% targets, 54% air ); Sam LaPorta (starter-level usage in his own right (90% snaps, 20% targets, 11% air ); Isaiah Likely (starter-level usage in his own right (75% snaps, 22% targets, 16% air ); MarShawn Lloyd (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Ray Davis (registry HOLD — HOLD, downgraded. James Cook is the single best asset ); Makai Lemon (starter-level usage in his own right (93% snaps, 26% targets, 42% air ); Minnesota (registry HOLD — HOLD in Blood Sweat & Beers: the DEF1 through the play)
+  not a clean drop: Josh Jacobs (registry HOLD — HOLD, and START when active: a top-10 RB in the #9 Dec); James Cook III (starter-level usage in his own right (64% snaps, 84% of RB touches)); Jaxon Smith-Njigba (starter-level usage in his own right (76% snaps, 36% targets, 37% air ); Drake London (starter-level usage in his own right (97% snaps, 16% targets, 54% air ); Sam LaPorta (starter-level usage in his own right (90% snaps, 20% targets, 11% air ); Isaiah Likely (starter-level usage in his own right (75% snaps, 22% targets, 16% air ); MarShawn Lloyd (gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOUR); Ray Davis (registry HOLD — HOLD, downgraded. James Cook is the single best asset ); Makai Lemon (starter-level usage in his own right (93% snaps, 26% targets, 42% air ); Vikings (registry HOLD — HOLD in Blood Sweat & Beers: the DEF1 through the play)
   UNVERIFIED mechanics: A benched player whose game is over cannot be dropped before the week rolls
 
 == HH ================================================================================
@@ -70,7 +70,7 @@ objective: J = 1.0*dS_W + 0.8*dS_W1 + 0.8*dS_rest(mean of weeks W+2..17) + 0.1*d
               - +2.83 this week (Budda Baker slides to S)
               - no player market posted yet for his game
   budgets: {"acq_used": 1, "acq_left": 6, "acq_reset": "2026-11-10T07:00-05:00", "acq_reset_verified": false, "fab_left": null, "ir_free": 2, "open_spots": 0}
-  final lineup week 10: 304.6 pts (optimal before moves 304.6) · P(beat opp) 90%
+  final lineup week 10: 303.3 pts (optimal before moves 303.3) · P(beat opp) 90%
   considered and rejected (29):
     - Cade Otton: best spot Brandon Aubrey: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
     - Dawson Knox: best spot Brandon Aubrey: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
@@ -86,18 +86,18 @@ objective: J = 1.0*dS_W + 0.8*dS_W1 + 0.8*dS_rest(mean of weeks W+2..17) + 0.1*d
     - Makai Lemon: best spot Brandon Aubrey: Brandon Aubrey is your only K: a one-for-one K swap only
     - Tez Johnson: best spot Brandon Aubrey: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
     - Chig Okonkwo: J -3.79 < 3.0 at its best spot (Kam Curl) — J -3.79 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.99 (rest, mean of wks 12-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x-1.06 (bench boom) + 0.2x-14.87 (depth) - 1.00 acq - 0
-    - Omarion Hampton: J -4.02 < 3.0 at its best spot (Rashee Rice) — J -4.02 = 1.0x+0.00 (wk W) + 0.8x-1.15 (W+1) + 0.8x-1.15 (rest, mean of wks 12-17) + 0.60x-1.15 (wks 15-17, P(playoffs) 100%) + 0.1x+0.00 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq -
+    - Omarion Hampton: J -3.82 < 3.0 at its best spot (Rashee Rice) — J -3.82 = 1.0x+0.00 (wk W) + 0.8x-1.05 (W+1) + 0.8x-1.05 (rest, mean of wks 12-17) + 0.60x-1.05 (wks 15-17, P(playoffs) 100%) + 0.1x+0.00 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq -
     - Los Angeles Chargers: J -4.60 < 3.0 at its best spot (Kam Curl) — J -4.60 = 1.0x+0.00 (wk W) + 0.8x+0.62 (W+1) + 0.8x-0.47 (rest, mean of wks 12-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x-2.40 (bench boom) + 0.2x-14.87 (depth) - 1.00 acq - 0
-    - AJ Barner: J -16.18 < 3.0 at its best spot (Cooper DeJean) — J -16.18 = 1.0x+0.00 (wk W) + 0.8x-16.36 (W+1) + 0.8x-0.73 (rest, mean of wks 12-17) + 0.60x-1.49 (wks 15-17, P(playoffs) 100%) + 0.1x-1.16 (bench boom) + 0.2x+0.00 (depth) - 1.00 
+    - AJ Barner: J -16.19 < 3.0 at its best spot (Cooper DeJean) — J -16.19 = 1.0x+0.00 (wk W) + 0.8x-16.36 (W+1) + 0.8x-0.73 (rest, mean of wks 12-17) + 0.60x-1.49 (wks 15-17, P(playoffs) 100%) + 0.1x-1.19 (bench boom) + 0.2x+0.00 (depth) - 1.00 
+    - Jordan Mason: J -17.17 < 3.0 at its best spot (Cooper DeJean) — J -17.17 = 1.0x+0.00 (wk W) + 0.8x-16.36 (W+1) + 0.8x-1.96 (rest, mean of wks 12-17) + 0.60x-1.49 (wks 15-17, P(playoffs) 100%) + 0.1x-1.17 (bench boom) + 0.2x+0.00 (depth) - 1.00 
     - Caleb Douglas: J -17.24 < 3.0 at its best spot (Cooper DeJean) — J -17.24 = 1.0x+0.00 (wk W) + 0.8x-16.36 (W+1) + 0.8x-1.96 (rest, mean of wks 12-17) + 0.60x-1.49 (wks 15-17, P(playoffs) 100%) + 0.1x-1.88 (bench boom) + 0.2x+0.00 (depth) - 1.00 
     - Amani Hooker: gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])
     - Denzel Boston: you dropped him in HH on 2026-11-06 (<= 7 days, either league)
     - Devin Lloyd: gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])
-    - Dylan Sampson: sits behind everyone: you carry 3 RBs for 1 slot(s) and he projects 7.0 under your weakest 7.6
+    - Dylan Sampson: sits behind everyone: you carry 3 RBs for 1 slot(s) and he projects 7.5 under your weakest 7.6
     - Elijah Molden: gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])
     - Jameson Williams: you dropped him in HH on 2026-11-10 (<= 7 days, either league)
-    - Jordan Mason: sits behind everyone: you carry 3 RBs for 1 slot(s) and he projects 7.6 under your weakest 7.6
-  not a clean drop: Dak Prescott (gate: G6-magnitude 41.09215453092303 below QB season bounds [60,600] —); Jaylen Warren (gate: G3-role NFL depth-chart role not checked); Ja'Marr Chase (starter-level usage in his own right (84% snaps, 41% targets, 56% air ); Trey McBride (starter-level usage in his own right (83% snaps, 27% targets, 38% air ); Drake London (starter-level usage in his own right (97% snaps, 16% targets, 54% air ); Jared Goff (gate: G6-magnitude 40.05461349201737 below QB season bounds [60,600] —); Devin Singletary (you added him 2026-11-08 (<= 7 days) — your decision, not the spot); Braelon Allen (starter-level usage in his own right (59% snaps, 34% of RB touches)); Matthew Stafford (gate: G6-magnitude 33.99732137291362 below QB season bounds [60,600] —); Rome Odunze (starter-level usage in his own right (84% snaps, 19% targets, 31% air ); Texans (registry HOLD — HOLD in Heritage House. A 7-acquisition league rations); Steelers (you added him 2026-11-07 (<= 7 days) — your decision, not the spot); Myles Garrett (registry HOLD — HOLD, START when active); Jalen Ramsey (you added him 2026-11-10 (<= 7 days) — your decision, not the spot)
+  not a clean drop: Dak Prescott (gate: G6-magnitude 40.92493966349684 below QB season bounds [60,600] —); Jaylen Warren (gate: G3-role NFL depth-chart role not checked); Ja'Marr Chase (starter-level usage in his own right (84% snaps, 41% targets, 56% air ); Trey McBride (starter-level usage in his own right (83% snaps, 27% targets, 38% air ); Drake London (starter-level usage in his own right (97% snaps, 16% targets, 54% air ); Jared Goff (gate: G6-magnitude 40.05461349201737 below QB season bounds [60,600] —); Devin Singletary (you added him 2026-11-08 (<= 7 days) — your decision, not the spot); Braelon Allen (starter-level usage in his own right (59% snaps, 34% of RB touches)); Matthew Stafford (gate: G6-magnitude 33.99732137291362 below QB season bounds [60,600] —); Rome Odunze (starter-level usage in his own right (84% snaps, 19% targets, 31% air ); Texans (registry HOLD — HOLD in Heritage House. A 7-acquisition league rations); Steelers (you added him 2026-11-07 (<= 7 days) — your decision, not the spot); Myles Garrett (registry HOLD — HOLD, START when active); Jalen Ramsey (you added him 2026-11-10 (<= 7 days) — your decision, not the spot)
   UNVERIFIED mechanics: 7 acquisitions per week, counted from the most recent Tuesday 07:00 ET | A player dropped To Waivers sits on waivers 1 day | An O tag is IR-eligible | A benched player whose game is over cannot be dropped before the week rolls
 
 plan simulation (sanity check 11): clean — legal at every step, each spot once, budgets held

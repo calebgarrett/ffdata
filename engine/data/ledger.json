@@ -14280,10 +14280,11 @@
   ],
   "verdict": "PASS",
   "week": 10,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": true,
   "resolves_at": "2026-11-15T16:25-05:00",
-  "reverses": null
+  "reverses": null,
+  "superseded_by": "6e63d57b"
  },
  {
   "id": "bc05f3ad",
@@ -14544,10 +14545,11 @@
   ],
   "verdict": "WARN",
   "week": 10,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": null,
-  "reverses": "e07daab9"
+  "reverses": "e07daab9",
+  "superseded_by": "63e04e88"
  },
  {
   "id": "5cd81379",
@@ -14563,10 +14565,11 @@
   ],
   "verdict": "WARN",
   "week": 10,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": null,
-  "reverses": "9458ec91"
+  "reverses": "9458ec91",
+  "superseded_by": "c2cbe936"
  },
  {
   "id": "c05e10f4",
@@ -14582,10 +14585,11 @@
   ],
   "verdict": "PASS",
   "week": 10,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": null,
-  "reverses": "aa5c5bb5"
+  "reverses": "aa5c5bb5",
+  "superseded_by": "6b90a34f"
  },
  {
   "id": "8007b9d2",
@@ -14600,10 +14604,11 @@
   ],
   "verdict": "WARN",
   "week": 10,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": null,
-  "reverses": "a4331746"
+  "reverses": "a4331746",
+  "superseded_by": "e390afa4"
  },
  {
   "id": "78dbc5d5",
@@ -14618,10 +14623,11 @@
   ],
   "verdict": "WARN",
   "week": 10,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": null,
-  "reverses": "811f2948"
+  "reverses": "811f2948",
+  "superseded_by": "1a0c8807"
  },
  {
   "id": "d44500d2",
@@ -14658,5 +14664,117 @@
   "provisional": false,
   "resolves_at": null,
   "reverses": null
+ },
+ {
+  "id": "6e63d57b",
+  "ts": "2026-11-11T02:42-05:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Ryan Flournoy",
+  "call": "start Ryan Flournoy at WR2",
+  "detail": "over Malik Washington +0.47",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 10,
+  "status": "proposed",
+  "provisional": true,
+  "resolves_at": "2026-11-15T16:25-05:00",
+  "reverses": "b624aef1"
+ },
+ {
+  "id": "63e04e88",
+  "ts": "2026-11-11T02:42-05:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Baltimore Ravens",
+  "call": "add Baltimore Ravens (DEF) over 49ers",
+  "detail": "+4.04/wk",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 10,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "4ae6f889"
+ },
+ {
+  "id": "c2cbe936",
+  "ts": "2026-11-11T02:42-05:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Indianapolis Colts",
+  "call": "add Indianapolis Colts (DEF) over 49ers",
+  "detail": "+3.62/wk",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 10,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "5cd81379"
+ },
+ {
+  "id": "6b90a34f",
+  "ts": "2026-11-11T02:42-05:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Green Bay Packers",
+  "call": "add Green Bay Packers (DEF) over 49ers",
+  "detail": "+3.00/wk",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "PASS",
+  "week": 10,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "c05e10f4"
+ },
+ {
+  "id": "e390afa4",
+  "ts": "2026-11-11T02:42-05:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Los Angeles Chargers",
+  "call": "stream Los Angeles Chargers for week 11, drop Commanders",
+  "detail": "DEF: LAC 16.0 vs yours 49ers 21.5 \u2014 edge 5.5 implied pts",
+  "evidence": [
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 10,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "8007b9d2"
+ },
+ {
+  "id": "1a0c8807",
+  "ts": "2026-11-11T02:42-05:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Harrison Butker",
+  "call": "bye cover: Harrison Butker for week 11, drop Commanders",
+  "detail": "K: Jason Myers on bye week 11; KC 28.0 is the best free K on posted lines",
+  "evidence": [
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 10,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "78dbc5d5"
  }
 ]

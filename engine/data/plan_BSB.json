@@ -46,7 +46,7 @@
    "reason": "starter-level usage in his own right (93% snaps, 26% targets, 42% air yds)"
   },
   {
-   "player": "Minnesota",
+   "player": "Vikings",
    "reason": "registry HOLD \u2014 HOLD in Blood Sweat & Beers: the DEF1 through the playoffs. Streams come from th"
   }
  ],
@@ -58,28 +58,28 @@
    "QB": "matt stafford",
    "RB1": "james cook",
    "RB2": "audric estime",
-   "TE": "sam laporta",
-   "W/R/T": "isaiah likely",
-   "WR1": "jaxon smith njigba",
+   "TE": "isaiah likely",
+   "W/R/T": "sam laporta",
+   "WR1": "ryan flournoy",
    "WR2": "drake london",
-   "WR3": "ryan flournoy"
+   "WR3": "jaxon smith njigba"
   },
-  "optimal_before_moves": 130.82,
+  "optimal_before_moves": 130.66,
   "slots": {
-   "DEF": "Minnesota",
+   "DEF": "Vikings",
    "K": "Jason Myers",
    "QB": "Matthew Stafford",
    "RB1": "James Cook III",
    "RB2": "Audric Estime",
-   "TE": "Sam LaPorta",
-   "W/R/T": "Isaiah Likely",
-   "WR1": "Jaxon Smith-Njigba",
+   "TE": "Isaiah Likely",
+   "W/R/T": "Sam LaPorta",
+   "WR1": "Ryan Flournoy",
    "WR2": "Drake London",
-   "WR3": "Ryan Flournoy"
+   "WR3": "Jaxon Smith-Njigba"
   },
-  "total": 133.21
+  "total": 133.11
  },
- "made": "2026-11-10T23:54-05:00",
+ "made": "2026-11-11T02:43-05:00",
  "mechanics": [
   {
    "rule": "A never-rostered free agent is free until his game kicks off",
@@ -119,7 +119,7 @@
  ],
  "moves": [
   {
-   "J": 7.894,
+   "J": 7.895,
    "add_key": "dominic zvada",
    "add_name": "Dominic Zvada",
    "at": "2026-11-18T06:00-05:00",
@@ -174,7 +174,7 @@
     }
    ],
    "value_terms": {
-    "J": 7.894,
+    "J": 7.895,
     "acq": 1,
     "bid": 7,
     "dS_W": 0.0,
@@ -210,12 +210,12 @@
    "when": "Tuesday (week-lock) \u2014 claim by Tue night ($7)"
   },
   {
-   "J": 6.476,
+   "J": 6.528,
    "add_key": "audric estime",
    "add_name": "Audric Estime",
    "at": "2026-11-11T06:00-05:00",
    "deadline": "2026-11-10T23:59-05:00",
-   "drop_name": "Washington",
+   "drop_name": "Commanders",
    "eff": "W",
    "fam": "RB",
    "gates": {
@@ -246,11 +246,11 @@
    "reasons": [
     "breakout tier B: 47% snaps, 59% of RB touches; no market line yet (Sleeper rushing yds 34)",
     "depth: Audric Estime 8.5/wk rest-of-season vs your weakest bench RB 2.7 (W projection 8.5 (usage says starter; the preseason number is stale))",
-    "the spot: Washington \u2014 the third DEF on the roster \u2014 the spare unit is a dead spot (5.5/wk; 7-game realized 6.0/g blended with preseason 4.3/wk (3-game prior))"
+    "the spot: Commanders \u2014 the third DEF on the roster \u2014 the spare unit is a dead spot (5.5/wk; 7-game realized 6.0/g blended with preseason 4.3/wk (3-game prior))"
    ],
    "spot_id": "drop:DST:WAS",
    "spot_kind": "spare",
-   "spot_label": "Washington",
+   "spot_label": "Commanders",
    "srcs": [
     "breakout",
     "depth"
@@ -268,7 +268,7 @@
     {
      "key": "DST:WAS",
      "op": "drop",
-     "player": "Washington"
+     "player": "Commanders"
     },
     {
      "key": "audric estime",
@@ -283,10 +283,10 @@
     }
    ],
    "value_terms": {
-    "J": 6.476,
+    "J": 6.528,
     "acq": 1,
     "bid": 16,
-    "dS_W": 2.397,
+    "dS_W": 2.448,
     "dS_W1": 5.857,
     "dS_play": 0.0,
     "dS_rest": 0.0,
@@ -312,7 +312,7 @@
     "drop": {
      "ros": 5.491575241667796,
      "ros_src": "7-game realized 6.0/g blended with preseason 4.3/wk (3-game prior)",
-     "w": 6.319561125700007,
+     "w": 6.299182141597239,
      "w1": 4.51399085961626
     }
    },
@@ -332,18 +332,18 @@
     "add": null,
     "drop": null
    },
-   "id": "BSB:lineup:WR3",
+   "id": "BSB:lineup:WR1",
    "kind": "lineup",
    "league": "BSB",
    "phase": "early",
    "provisional": true,
    "reasons": [
-    "+0.47 this week (Drake London slides to WR2)",
+    "+0.47 this week (Jaxon Smith-Njigba slides to WR3)",
     "inside the 1.5-pt noise band",
     "no player market posted yet for his game"
    ],
    "sit": "Malik Washington",
-   "slot": "WR3",
+   "slot": "WR1",
    "spot_id": null,
    "spot_kind": null,
    "spot_label": null,
@@ -359,7 +359,7 @@
      "key": "ryan flournoy",
      "op": "start",
      "player": "Ryan Flournoy",
-     "slot": "WR3"
+     "slot": "WR1"
     },
     {
      "key": "malik washington",
@@ -374,7 +374,7 @@
    "when": "before kickoff Sun Nov 15, 4:25 pm ET"
   },
   {
-   "J": 1.3,
+   "J": 1.308,
    "add_key": null,
    "add_name": null,
    "at": null,
@@ -382,7 +382,7 @@
    "drop_name": null,
    "eff": "W",
    "fam": "DEF",
-   "gain": 1.3,
+   "gain": 1.31,
    "gates": {
     "add": null,
     "drop": null
@@ -393,10 +393,10 @@
    "phase": "early",
    "provisional": true,
    "reasons": [
-    "+1.30 this week",
+    "+1.31 this week",
     "inside the 1.5-pt noise band"
    ],
-   "sit": "San Francisco",
+   "sit": "49ers",
    "slot": "DEF",
    "spot_id": null,
    "spot_kind": null,
@@ -404,7 +404,7 @@
    "srcs": [
     "lineup"
    ],
-   "start": "Minnesota",
+   "start": "Vikings",
    "tier": null,
    "timing_why": "",
    "tm": "MIN",
@@ -412,18 +412,18 @@
     {
      "key": "DST:MIN",
      "op": "start",
-     "player": "Minnesota",
+     "player": "Vikings",
      "slot": "DEF"
     },
     {
      "key": "DST:SF",
      "op": "bench",
-     "player": "San Francisco"
+     "player": "49ers"
     }
    ],
    "value_terms": {
-    "J": 1.3,
-    "dS_W": 1.3
+    "J": 1.308,
+    "dS_W": 1.308
    },
    "when": "before kickoff Sun Nov 15, 1:00 pm ET"
   }
@@ -431,12 +431,12 @@
  "notes": [],
  "rejected": [
   {
-   "J": 2.808,
+   "J": 2.83,
    "key": "DST:BAL",
    "name": "Baltimore Ravens",
-   "reason": "J +2.81 < 3.0 at its best spot (Washington) \u2014 J +2.81 = 1.0x+2.42 (wk W) + 0.8x+1.31 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+0.00 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0.16 FAB($16) - 0.50 churn",
+   "reason": "J +2.83 < 3.0 at its best spot (Commanders) \u2014 J +2.83 = 1.0x+2.44 (wk W) + 0.8x+1.31 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+0.00 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0.16 FAB($16) - 0.50 churn",
    "reasons": [
-    "DEF weekly upgrade: Baltimore Ravens 8.7 vs starter San Francisco 4.7"
+    "DEF weekly upgrade: Baltimore Ravens 8.7 vs starter 49ers 4.7"
    ]
   },
   {
@@ -445,23 +445,23 @@
    "name": "Green Bay Packers",
    "reason": "G15: dropped by Short Bus on 2026-11-08 \u2014 a manager let a 105-point role go after his last game; find out why before claiming (a verified role is a registry add_yes)",
    "reasons": [
-    "DEF weekly upgrade: Green Bay Packers 7.7 vs starter San Francisco 4.7"
+    "DEF weekly upgrade: Green Bay Packers 7.7 vs starter 49ers 4.7"
    ]
   },
   {
-   "J": 1.333,
+   "J": 1.355,
    "key": "DST:IND",
    "name": "Indianapolis Colts",
-   "reason": "J +1.33 < 3.0 at its best spot (Washington) \u2014 J +1.33 = 1.0x+1.99 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+0.00 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0.16 FAB($16) - 0.50 churn",
+   "reason": "J +1.35 < 3.0 at its best spot (Commanders) \u2014 J +1.35 = 1.0x+2.02 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+0.00 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0.16 FAB($16) - 0.50 churn",
    "reasons": [
-    "DEF weekly upgrade: Indianapolis Colts 8.3 vs starter San Francisco 4.7"
+    "DEF weekly upgrade: Indianapolis Colts 8.3 vs starter 49ers 4.7"
    ]
   },
   {
    "J": 1.005,
    "key": "DST:LAC",
    "name": "Los Angeles Chargers",
-   "reason": "J +1.00 < 3.0 at its best spot (Washington) \u2014 J +1.00 = 1.0x+0.00 (wk W) + 0.8x+1.89 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+0.00 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0.01 FAB($1) - 0.50 churn",
+   "reason": "J +1.00 < 3.0 at its best spot (Commanders) \u2014 J +1.00 = 1.0x+0.00 (wk W) + 0.8x+1.89 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+0.00 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0.01 FAB($1) - 0.50 churn",
    "reasons": [
     "week-11 DEF stream: Los Angeles Chargers 8.0 vs your best 6.2 (W line re-scored on the week-11 opponent implied total 16.0)"
    ]
@@ -470,7 +470,7 @@
    "J": 1.633,
    "key": "DST:TB",
    "name": "Tampa Bay Buccaneers",
-   "reason": "J +1.63 < 3.0 at its best spot (Washington) \u2014 J +1.63 = 1.0x+0.00 (wk W) + 0.8x+2.68 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+0.00 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0.01 FAB($1) - 0.50 churn",
+   "reason": "J +1.63 < 3.0 at its best spot (Commanders) \u2014 J +1.63 = 1.0x+0.00 (wk W) + 0.8x+2.68 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+0.00 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0.01 FAB($1) - 0.50 churn",
    "reasons": [
     "week-11 DEF stream: Tampa Bay Buccaneers 8.8 vs your best 6.2 (rest-of-season per-week (no week-11 projection on disk \u2014 approximation))"
    ]
@@ -479,26 +479,26 @@
    "J": null,
    "key": "cade otton",
    "name": "Cade Otton",
-   "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 0.0 under your weakest 11.8",
+   "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 0.0 under your weakest 11.9",
    "reasons": [
     "breakout tier B: 100% snaps, 25% targets, 13% air yds; no market line yet, and no Sleeper line either"
    ]
   },
   {
-   "J": 0.208,
+   "J": -1.635,
    "key": "cam dicker",
    "name": "Cameron Dicker",
-   "reason": "jointly with the rest of the plan it adds only J +0.21 (< 3.0) \u2014 J +0.21 = 1.0x+0.00 (wk W) + 0.8x+0.97 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+0.00 (bench boom) + 0.2x+0.00 (depth) - 0.00 acq - 0.07 FAB($7) - 0.50 churn",
+   "reason": "jointly with the rest of the plan it adds only J -1.64 (< 3.0) \u2014 J -1.64 = 1.0x+0.00 (wk W) + 0.8x+0.97 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x-1.75 (bench boom) + 0.2x-8.34 (depth) - 0.00 acq - 0.07 FAB($7) - 0.50 churn",
    "reasons": [
     "week-11 hole at K (Jason Myers on bye); Cameron Dicker 9.3 is the best free K on week-11 values",
     "week-11 K stream: Cameron Dicker 9.3 vs your best 0.0 (W projection x own implied total 25.5/22.0)"
    ]
   },
   {
-   "J": -2.289,
+   "J": -0.443,
    "key": "charlie smyth",
    "name": "Charlie Smyth",
-   "reason": "jointly with the rest of the plan it adds only J -2.29 (< 3.0) \u2014 J -2.29 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.09 (rest, mean of wks 12-17) + 0.59x+0.09 (wks 15-17, P(playoffs) 99%) + 0.1x-1.78 (bench boom) + 0.2x-8.34 (depth) - 0.00 acq - 0.07 FAB($7) - 0.50 churn",
+   "reason": "jointly with the rest of the plan it adds only J -0.44 (< 3.0) \u2014 J -0.44 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.09 (rest, mean of wks 12-17) + 0.59x+0.09 (wks 15-17, P(playoffs) 99%) + 0.1x+0.00 (bench boom) + 0.2x+0.00 (depth) - 0.00 acq - 0.07 FAB($7) - 0.50 churn",
    "reasons": [
     "week-11 hole at K (Jason Myers on bye); Charlie Smyth 8.1 is the best free K on week-11 values"
    ]
@@ -513,19 +513,19 @@
    ]
   },
   {
-   "J": -0.171,
+   "J": -0.2,
    "key": "corey kiner",
    "name": "Corey Kiner",
-   "reason": "jointly with the rest of the plan it adds only J -0.17 (< 3.0) \u2014 J -0.17 = 1.0x+2.81 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.02 (rest, mean of wks 12-17) + 0.59x+0.02 (wks 15-17, P(playoffs) 99%) + 0.1x+1.23 (bench boom) + 0.2x-8.34 (depth) - 0.00 acq - 0.96 FAB($16) - 0.50 churn",
+   "reason": "jointly with the rest of the plan it adds only J -0.20 (< 3.0) \u2014 J -0.20 = 1.0x+2.82 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+1.10 (bench boom) + 0.2x-8.34 (depth) - 0.00 acq - 0.96 FAB($16) - 0.50 churn",
    "reasons": [
-    "depth: Corey Kiner 10.0/wk rest-of-season vs your weakest bench RB 2.7 (positional median 10.0 \u2014 no season number; the W projection 11.3 alone does not carry a season)"
+    "depth: Corey Kiner 9.7/wk rest-of-season vs your weakest bench RB 2.7 (positional median 9.7 \u2014 no season number; the W projection 11.3 alone does not carry a season)"
    ]
   },
   {
-   "J": -0.433,
+   "J": -0.388,
    "key": "dalton schultz",
    "name": "Dalton Schultz",
-   "reason": "J -0.43 < 3.0 at its best spot (Washington) \u2014 J -0.43 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+0.77 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0.01 FAB($1) - 0.50 churn",
+   "reason": "J -0.39 < 3.0 at its best spot (Commanders) \u2014 J -0.39 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+1.22 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0.01 FAB($1) - 0.50 churn",
    "reasons": [
     "depth: Dalton Schultz 9.0/wk rest-of-season vs your weakest bench player 2.7 (7-game realized 9.1/g blended with preseason 8.8/wk (6-game prior))"
    ]
@@ -534,7 +534,7 @@
    "J": 0.109,
    "key": "darius cooper",
    "name": "Darius Cooper",
-   "reason": "J +0.11 < 3.0 at its best spot (Washington) \u2014 J +0.11 = 1.0x+0.00 (wk W) + 0.8x+0.52 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+2.02 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0.01 FAB($1) - 0.50 churn",
+   "reason": "J +0.11 < 3.0 at its best spot (Commanders) \u2014 J +0.11 = 1.0x+0.00 (wk W) + 0.8x+0.52 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+2.02 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0.01 FAB($1) - 0.50 churn",
    "reasons": [
     "breakout tier B: 93% snaps, 24% targets, 18% air yds; no market line yet, and no Sleeper line either",
     "depth: Darius Cooper 8.8/wk rest-of-season vs your weakest bench WR 2.7 (week-9 projection 8.8 (on bye this week; no season number))"
@@ -544,25 +544,25 @@
    "J": null,
    "key": "dawson knox",
    "name": "Dawson Knox",
-   "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 3.8 under your weakest 11.8",
+   "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 3.8 under your weakest 11.9",
    "reasons": [
     "breakout tier B: 72% snaps, 16% targets, 13% air yds; no market line yet (Sleeper receiving yds 14)"
    ]
   },
   {
-   "J": -1.842,
+   "J": -1.84,
    "key": "drew stevens",
    "name": "Drew Stevens",
-   "reason": "jointly with the rest of the plan it adds only J -1.84 (< 3.0) \u2014 J -1.84 = 1.0x+0.00 (wk W) + 0.8x+0.72 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x-1.78 (bench boom) + 0.2x-8.34 (depth) - 0.00 acq - 0.07 FAB($7) - 0.50 churn",
+   "reason": "jointly with the rest of the plan it adds only J -1.84 (< 3.0) \u2014 J -1.84 = 1.0x+0.00 (wk W) + 0.8x+0.72 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x-1.75 (bench boom) + 0.2x-8.34 (depth) - 0.00 acq - 0.07 FAB($7) - 0.50 churn",
    "reasons": [
     "week-11 hole at K (Jason Myers on bye); Drew Stevens 9.0 is the best free K on week-11 values"
    ]
   },
   {
-   "J": -1.632,
+   "J": -1.63,
    "key": "harrison butker",
    "name": "Harrison Butker",
-   "reason": "jointly with the rest of the plan it adds only J -1.63 (< 3.0) \u2014 J -1.63 = 1.0x+0.00 (wk W) + 0.8x+0.98 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x-1.78 (bench boom) + 0.2x-8.34 (depth) - 0.00 acq - 0.07 FAB($7) - 0.50 churn",
+   "reason": "jointly with the rest of the plan it adds only J -1.63 (< 3.0) \u2014 J -1.63 = 1.0x+0.00 (wk W) + 0.8x+0.98 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x-1.75 (bench boom) + 0.2x-8.34 (depth) - 0.00 acq - 0.07 FAB($7) - 0.50 churn",
    "reasons": [
     "week-11 hole at K (Jason Myers on bye); Harrison Butker 9.3 is the best free K on week-11 values",
     "week-11 K stream: Harrison Butker 9.3 vs your best 0.0 (W projection x own implied total 28.0/25.0)"
@@ -572,18 +572,18 @@
    "J": -0.51,
    "key": "jake ferguson",
    "name": "Jake Ferguson",
-   "reason": "J -0.51 < 3.0 at its best spot (Washington) \u2014 J -0.51 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+0.00 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0.01 FAB($1) - 0.50 churn",
+   "reason": "J -0.51 < 3.0 at its best spot (Commanders) \u2014 J -0.51 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+0.00 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0.01 FAB($1) - 0.50 churn",
    "reasons": [
     "depth: Jake Ferguson 7.7/wk rest-of-season vs your weakest bench player 2.7 (8-game realized 6.5/g blended with preseason 9.4/wk (6-game prior))"
    ]
   },
   {
-   "J": 0.663,
+   "J": 0.848,
    "key": "kaleb johnson",
    "name": "Kaleb Johnson",
-   "reason": "J +0.66 < 3.0 at its best spot (Washington) \u2014 J +0.66 = 1.0x+1.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+2.31 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0.07 FAB($7) - 0.50 churn",
+   "reason": "J +0.85 < 3.0 at its best spot (Commanders) \u2014 J +0.85 = 1.0x+1.17 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+2.45 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0.07 FAB($7) - 0.50 churn",
    "reasons": [
-    "breakout tier B: 39% snaps, 50% of RB touches; Kalshi rushing yds 34 vs Sleeper 36 (-5%) \u2014 a part-time line, under the 40 starter floor",
+    "breakout tier B: 39% snaps, 50% of RB touches; Kalshi rushing yds 34 vs Sleeper 36 (-6%) \u2014 a part-time line, under the 40 starter floor",
     "next man up: Josh Jacobs (RB1) is O \u2014 Kaleb Johnson inherits the role"
    ]
   },
@@ -591,7 +591,7 @@
    "J": -0.402,
    "key": "kayshon boutte",
    "name": "Kayshon Boutte",
-   "reason": "J -0.40 < 3.0 at its best spot (Washington) \u2014 J -0.40 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+1.07 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0.01 FAB($1) - 0.50 churn",
+   "reason": "J -0.40 < 3.0 at its best spot (Commanders) \u2014 J -0.40 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+1.07 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0.01 FAB($1) - 0.50 churn",
    "reasons": [
     "depth: Kayshon Boutte 7.5/wk rest-of-season vs your weakest bench WR 2.7 (7-game realized 8.5/g blended with preseason 6.3/wk (6-game prior))"
    ]
@@ -606,10 +606,10 @@
    ]
   },
   {
-   "J": -1.657,
+   "J": -1.655,
    "key": "ryan fitzgerald",
    "name": "Ryan Fitzgerald",
-   "reason": "jointly with the rest of the plan it adds only J -1.66 (< 3.0) \u2014 J -1.66 = 1.0x+0.00 (wk W) + 0.8x+0.95 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x-1.78 (bench boom) + 0.2x-8.34 (depth) - 0.00 acq - 0.07 FAB($7) - 0.50 churn",
+   "reason": "jointly with the rest of the plan it adds only J -1.66 (< 3.0) \u2014 J -1.66 = 1.0x+0.00 (wk W) + 0.8x+0.95 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x-1.75 (bench boom) + 0.2x-8.34 (depth) - 0.00 acq - 0.07 FAB($7) - 0.50 churn",
    "reasons": [
     "week-11 hole at K (Jason Myers on bye); Ryan Fitzgerald 9.3 is the best free K on week-11 values"
    ]
@@ -618,7 +618,7 @@
    "J": -0.51,
    "key": "tez johnson",
    "name": "Tez Johnson",
-   "reason": "J -0.51 < 3.0 at its best spot (Washington) \u2014 J -0.51 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+0.00 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0.01 FAB($1) - 0.50 churn",
+   "reason": "J -0.51 < 3.0 at its best spot (Commanders) \u2014 J -0.51 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+0.00 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0.01 FAB($1) - 0.50 churn",
    "reasons": [
     "breakout tier B: 79% snaps, 16% targets, 56% air yds; no market line yet, and no Sleeper line either"
    ]
@@ -627,7 +627,7 @@
    "J": -0.465,
    "key": "tre harris",
    "name": "Tre' Harris",
-   "reason": "J -0.47 < 3.0 at its best spot (Washington) \u2014 J -0.47 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+0.45 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0.01 FAB($1) - 0.50 churn",
+   "reason": "J -0.47 < 3.0 at its best spot (Commanders) \u2014 J -0.47 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+0.45 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0.01 FAB($1) - 0.50 churn",
    "reasons": [
     "breakout tier B: 83% snaps, 23% targets, 0% air yds; no market line yet (Sleeper receiving yds 26)"
    ]
@@ -642,10 +642,10 @@
    ]
   },
   {
-   "J": -1.736,
+   "J": -1.734,
    "key": "wil lutz",
    "name": "Wil Lutz",
-   "reason": "jointly with the rest of the plan it adds only J -1.74 (< 3.0) \u2014 J -1.74 = 1.0x+0.00 (wk W) + 0.8x+0.85 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x-1.78 (bench boom) + 0.2x-8.34 (depth) - 0.00 acq - 0.07 FAB($7) - 0.50 churn",
+   "reason": "jointly with the rest of the plan it adds only J -1.73 (< 3.0) \u2014 J -1.73 = 1.0x+0.00 (wk W) + 0.8x+0.85 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x-1.75 (bench boom) + 0.2x-8.34 (depth) - 0.00 acq - 0.07 FAB($7) - 0.50 churn",
    "reasons": [
     "week-11 hole at K (Jason Myers on bye); Wil Lutz 9.2 is the best free K on week-11 values"
    ]
@@ -664,14 +664,14 @@
   {
    "id": "drop:DST:WAS",
    "kind": "spare",
-   "label": "Washington",
+   "label": "Commanders",
    "taken_by": "Audric Estime",
    "tier": 0
   },
   {
    "id": "drop:DST:SF",
    "kind": "swap",
-   "label": "San Francisco",
+   "label": "49ers",
    "taken_by": null,
    "tier": 2
   },
@@ -734,9 +734,9 @@
   "p_playoffs": 0.99225
  },
  "winprob": {
-  "mean": 133.2007634002973,
+  "mean": 132.90932987448858,
   "note": "sampled on the planner's final lineup",
-  "p_med": 0.6645,
-  "p_opp": 0.5376666666666666
+  "p_med": 0.6703333333333333,
+  "p_opp": 0.5303333333333333
  }
 }
