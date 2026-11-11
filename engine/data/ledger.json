@@ -12404,11 +12404,12 @@
   ],
   "verdict": "WARN",
   "week": 8,
-  "status": "executed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": null,
   "reverses": "41196bee",
-  "status_ts": "2026-10-28T19:30-04:00"
+  "status_ts": "2026-10-28T19:30-04:00",
+  "superseded_by": "15d7cade"
  },
  {
   "id": "3132bfc7",
@@ -14679,10 +14680,11 @@
   ],
   "verdict": "WARN",
   "week": 10,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": true,
   "resolves_at": "2026-11-15T16:25-05:00",
-  "reverses": "b624aef1"
+  "reverses": "b624aef1",
+  "superseded_by": "984d5d6b"
  },
  {
   "id": "63e04e88",
@@ -14776,5 +14778,118 @@
   "provisional": false,
   "resolves_at": null,
   "reverses": "78dbc5d5"
+ },
+ {
+  "id": "928aa9c5",
+  "ts": "2026-11-11T11:04-05:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Audric Estime",
+  "call": "start Audric Estime at RB2",
+  "detail": "over Josh Jacobs +8.56",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "PASS",
+  "week": 10,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": "2026-11-15T13:00-05:00",
+  "reverses": null
+ },
+ {
+  "id": "984d5d6b",
+  "ts": "2026-11-11T11:04-05:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Ryan Flournoy",
+  "call": "start Ryan Flournoy at WR3",
+  "detail": "over Malik Washington +0.75",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 10,
+  "status": "proposed",
+  "provisional": true,
+  "resolves_at": "2026-11-15T16:25-05:00",
+  "reverses": "6e63d57b"
+ },
+ {
+  "id": "1cc76995",
+  "ts": "2026-11-11T11:04-05:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Dominic Zvada",
+  "call": "start Dominic Zvada at K",
+  "detail": "over empty +9.07",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 10,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": "2026-11-12T20:15-05:00",
+  "reverses": null
+ },
+ {
+  "id": "89a4d517",
+  "ts": "2026-11-11T11:04-05:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Vikings",
+  "call": "start Vikings at DEF",
+  "detail": "over 49ers +1.31",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "PASS",
+  "week": 10,
+  "status": "proposed",
+  "provisional": true,
+  "resolves_at": "2026-11-15T13:00-05:00",
+  "reverses": null
+ },
+ {
+  "id": "caa19a23",
+  "ts": "2026-11-11T11:04-05:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "New York Giants",
+  "call": "add New York Giants (DEF) over 49ers",
+  "detail": "+2.73/wk",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "PASS",
+  "week": 10,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "15d7cade",
+  "ts": "2026-11-11T11:04-05:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Washington Commanders",
+  "call": "add Washington Commanders (DEF) over 49ers",
+  "detail": "+1.63/wk",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "PASS",
+  "week": 10,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "136545c5"
  }
 ]
