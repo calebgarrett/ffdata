@@ -217,10 +217,15 @@ def main():
 
     # ---- last week's usage (realized stats); the pump writes stats for the week it ran in,
     #      so these appear once the pump pulls W-1 (workflow v2). Install only when non-empty.
-    for pos in ('QB', 'RB', 'WR', 'TE'):
-        for wk in (week - 1, week):
+    # every played week on disk, every scorable position (11-10: the realized season, lib/ytd.py,
+    # needs K and DEF and the whole year, not just W-1; a file is installed once and never
+    # re-copied when the local copy is already the same size)
+    for pos in ('QB', 'RB', 'WR', 'TE', 'K', 'DEF'):
+        for wk in range(1, week + 1):
             p = os.path.join(src, 'sleeper', f'stats_wk{wk}_{pos}.csv'); n = len(rows(p))
-            if n >= 20:
+            if n >= (20 if pos not in ('K', 'DEF') else 12):
+                dst = D + f'usage_wk{wk}_{pos}.csv'
+                if wk < week - 1 and os.path.exists(dst) and os.path.getsize(dst) == os.path.getsize(p): continue
                 shutil.copy(p, D + f'usage_wk{wk}_{pos}.csv'); log.append(f'usage_wk{wk}_{pos}.csv: {n} rows')
                 ASOF[f'usage_wk{wk}_{pos}.csv'] = dict(as_of=git_time(f'sleeper/stats_wk{wk}_{pos}.csv') or head_t, src='pump git: last change')
     if not any(l.startswith('usage_wk') for l in log):

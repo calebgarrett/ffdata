@@ -178,6 +178,25 @@ cannot be traced to P(win) is wrong.
   cover may take the spare DEF (fungible); the bye man is not the spot for his own
   one-week hole unless the cover beats him by `HOLE_BYE_UPGRADE` (3/wk) rest-of-season.
   Tests: test_plan 8a5.
+- **The best DEF in the league is never the stream's spot; played games outrank the
+  preseason** (11-10, Caleb: "dropping the vikings is crazy ... that's the best def in the
+  league"). V144 named the Vikings as the drop for a week-10 Ravens stream. Three failures,
+  each now a rule. (1) Every rest-of-season number was the PRESEASON blend ÷ 17 — the
+  Vikings 7.2/wk, a free Eagles unit 7.5; on the field the Vikings were first in the league
+  at 11.1 a game in BSB scoring and the Eagles 2.9. `lib/ytd.py` scores the pump's realized
+  stat lines (data/usage_wk{t}_{POS}.csv, now K and DEF and every week) with the outcome
+  ledger's scorer and `facts._ros` blends them with the preseason by games played
+  (`YTD_K`: 3 games of prior for DEF/K, 6 for skill players). (2) The stream phantom — the
+  free unit credited to a cut DEF/K's slot in later weeks — could be worth MORE than the
+  cut man, so cutting the best DEF read as a gain; it now restores the slot to at most his
+  own value. (3) With three units the planner was indifferent between them and cut the
+  first key alphabetically; now the spare is the weakest by rest-of-season value, a
+  non-spare DEF/K is a one-for-one only for a unit `DK_SWAP_MARGIN` (1/wk) better, ties in
+  the assignment fall on the cheaper man, and a THIRD unit makes the spare a dead spot any
+  add may take (Estime for the Commanders, the RB1 out two weeks). A Tier B's 'depth'
+  source that is itself one week of usage is not a second source. A Tier B on Sleeper's
+  trending adds bids the ladder's top decile, not the band-B dollar (Estime at $1 would
+  never process). The Vikings are a registry hold. Tests: test_plan 14, 14b, 14c.
 - **A rival's drop of a real role is a fact the feeds may not carry yet** (10-25). McLaurin
   (season 204) tore up a knee on Monday night, out for the year; Washington's bye hid it
   from the free-agent pulse (he was projected in his last played game) and the planner

@@ -87,8 +87,11 @@ class Facts:
             m = F.model()
             fab_left = F.BUDGET - (m.get('spent') or {}).get(st.me, 0)
         gone = {g['key'] for g in (run.get('steam') or {}).get('gone', [])}
+        from . import ytd as YTD
+        try: ytd = YTD.load(league, run['week'])
+        except Exception: ytd = {}
         return cls.from_parts(league, st, P, run['week'], C.now(), w, lu, windows=run.get('windows'),
-                              season=season, usage_now=use_now, usage_prev=use_prev,
+                              season=season, usage_now=use_now, usage_prev=use_prev, ytd=ytd,
                               recently_added=ST.recently_added(league),
                               recently_dropped=ST.recently_dropped_anywhere(),
                               waived=BK._on_waivers(league) if league == 'BSB' else None,
@@ -99,9 +102,9 @@ class Facts:
     def from_parts(cls, league, state, proj, week, now, wire, lineup, windows=None, season=None,
                    usage_now=None, usage_prev=None, recently_added=None, recently_dropped=None,
                    waived=None, log_rows=None, fab_left=None, proj_next=None, steam_gone=(),
-                   rivals=None, usage_week=None):
+                   rivals=None, usage_week=None, ytd=None):
         f = cls(league=league, state=state, cfg=state.cfg, proj=proj, week=week, now=now, wire=wire,
-                lineup=lineup, windows=windows, season=season or {}, usage_now=usage_now or {},
+                lineup=lineup, windows=windows, season=season or {}, usage_now=usage_now or {}, ytd=dict(ytd or {}),
                 usage_prev=usage_prev or {}, recently_added_map=dict(recently_added or {}),
                 recently_dropped_map=dict(recently_dropped or {}), waived=dict(waived or {}),
                 log_rows=list(log_rows or []), fab_left=fab_left, proj_next=proj_next,
@@ -207,6 +210,18 @@ class Facts:
                 r = self.hh_ratio.get(fam)
                 if r: base *= r; src += f' x HH/BSB {fam} ratio {r:.2f} (approximation)'
                 else: src += ' (BSB-scored; no HH ratio for the position — approximation)'
+        # the realized season (11-10: the Vikings, first in the league at 11.1 a game, read
+        # 7.2/wk off the preseason blend and the planner cut them for a stream). Played games
+        # are evidence; the preseason number is the prior, worth YTD_K games (lib/ytd.py).
+        y = (self.ytd or {}).get(k)
+        if y and y.get('gp'):
+            from . import ytd as YTD
+            if base is not None:
+                b = YTD.blend(base, y, fam)
+                if b: base, src = b
+            elif fam in ('DEF', 'K') and self.posmed.get(fam):
+                b = YTD.blend(self.posmed[fam], y, fam)
+                if b: base, src = b[0], b[1].replace('preseason', 'the positional median (no preseason number)')
         if usage_now == 'start' and proj_w and (base is None or proj_w > base):
             return float(proj_w), f'W projection {proj_w:.1f} (usage says starter; the preseason number is stale)'
         if base is not None: return float(base), src

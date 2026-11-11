@@ -105,6 +105,9 @@ def league(lg, roster, fas=(), others=(), kicks=None, byes=None, ready=True, usa
     st = S.State(lg, rows, stamp, source='test', others_pulled=stamp)
     sea = season or {}
     w = WR.Wire(st, proj, season=sea if lg == 'BSB' else None)
+    # hermetic: the live registry (data/roles.json) never leaks into a fixture (11-10: the
+    # Vikings hold turned case 8a4's 'MIN' defense into an excluded spot)
+    w.hold, w.drop_ok, w.verified, w.blocked = {}, {}, {}, set()
     for kind, entries in (registry or {}).items():
         getattr(w, kind).update(entries)
     lu = LU.solve(st, proj)
@@ -721,6 +724,75 @@ try:
     _r = PL._spot_rule if hasattr(PL, '_spot_rule') else None
 except Exception: _r = None
 case('rule text exists: a K/DEF never costs a non-K/DEF player', 'kickers and defenses swap one-for-one' in open('/home/claude/bsb2/lib/plan.py').read())
+
+
+# ---------------------------------------------------------------- 14. the best DEF in the league is never the stream's spot (11-10, Caleb: "dropping the vikings is crazy")
+# BSB, three defenses: the Vikings (first in the league on the field, 10/wk rest-of-season,
+# an ordinary matchup this week), the 49ers (6.6), the Commanders (5.5, the Thursday stream).
+# A free Ravens unit beats all three THIS week (8.7) and is worth 4/wk after; a free Eagles
+# unit carries a HIGHER rest-of-season number than the Vikings but sits on bye. The engine
+# (V144) named the Vikings: their key sorted first, every DEF looked fungible against the
+# Eagles' stream value, and the spare was chosen on the preseason blend.
+_byes14 = {WEEK: {'PHI'}, W1: set()}
+r14 = bsb_roster(def_tm='MIN', extra=[('BN', 'San Francisco', 'DEF', 'SF', 4.6, 'none'), ('BN', 'Washington Commanders', 'DEF', 'WAS', 6.3, 'none')])
+r14 = [r for r in r14 if not (r[0] == 'BN' and r[3] in ('LV', 'LAC'))]
+r14 = [(r[0], r[1], r[2], r[3], 6.0, r[5]) if r[0] == 'DEF' else r for r in r14]
+_vik14 = next(r[1] for r in r14 if r[0] == 'DEF')                       # the roster's name for DST:MIN
+f, st, pr = league('BSB', r14, fas=[('Baltimore Ravens', 'DEF', 'BAL', 8.7), ('Philadelphia Eagles', 'DEF', 'PHI', None)], byes=_byes14)
+_ros14 = {'DST:MIN': 10.0, 'DST:SF': 6.6, 'DST:WAS': 5.5}
+for k, d in f.mine.items():
+    if k in _ros14: d['ros_pw'] = _ros14[k]; d['ros_src'] = 'test'; d['pts_w1'] = _ros14[k] * 0.7
+_fa_bal = f.fa('DST:BAL'); _fa_bal['ros_pw'] = 4.0; _fa_bal['pts_w1'] = 7.5
+_fa_phi = f.fa('DST:PHI'); _fa_phi['ros_pw'] = 7.5; _fa_phi['pts_w1'] = 7.5; _fa_phi['pts_w'] = None
+f._pool_cache['DST:BAL'] = _fa_bal; f._pool_cache['DST:PHI'] = _fa_phi
+_ev14 = dict(upgrades=[dict(fam='DEF', add=dict(key='DST:BAL', name='Baltimore Ravens', week=8.7), over=dict(player='Washington Commanders', pts=6.3))])
+p = PL.plan_facts(f, _ev14)
+_sp14 = {s_['id']: s_ for s_ in p.spots}
+case('three DEFs: the spare is the weakest rest-of-season (the Commanders), not the alphabet', _sp14.get('drop:DST:WAS', {}).get('kind') == 'spare' and _sp14.get('drop:DST:MIN', {}).get('kind') != 'spare', str([(k, v['kind'], v['tier']) for k, v in _sp14.items() if 'DST' in k]))
+case('...a third defense makes the spare a dead spot (tier 0)', _sp14.get('drop:DST:WAS', {}).get('tier') == 0, str(_sp14.get('drop:DST:WAS')))
+m14 = next((m for m in moves_of(p) if m['add_key'] == 'DST:BAL'), None)
+case('...the Ravens never cost the Vikings: the spot is the spare or nothing', m14 is None or (m14.get('drop_name') != _vik14 and m14.get('spot_id') != 'drop:DST:MIN'), m14 and (m14.get('drop_name'), m14.get('spot_id'), m14.get('value_terms')))
+_bal_best = (m14.get('spot_id') if m14 else None) or next((('drop:DST:WAS' if 'Washington Commanders' in r['reason'] else r['reason']) for r in p.rejected if r['key'] == 'DST:BAL'), None)
+case('...the Ravens\' best spot is the spare Commanders (ship or not)', _bal_best == 'drop:DST:WAS', str(_bal_best))
+_rej14 = next((r for r in p.rejected if r['key'] == 'DST:BAL'), None)
+case('...and a one-for-one on the Vikings is refused by rule, not by arithmetic', any('not the spare DEF' in str(v.get('reason')) for v in [PL._eval_pair(f, PL.Mechanics(f), PL.Objective(f), c_, _sp14 and PL.Spot(id='drop:DST:MIN', kind='swap', tier=2, fact=f.mine['DST:MIN'], fam='DEF', label='Minnesota Vikings', n_fam=3), {'DEF': 7.5}) for c_ in PL.produce(f, _ev14) if c_.key == 'DST:BAL']), str([v.get('reason') for v in [PL._eval_pair(f, PL.Mechanics(f), PL.Objective(f), c_, PL.Spot(id='drop:DST:MIN', kind='swap', tier=2, fact=f.mine['DST:MIN'], fam='DEF', label='Minnesota Vikings', n_fam=3), {'DEF': 7.5}) for c_ in PL.produce(f, _ev14) if c_.key == 'DST:BAL']]))
+# the stream phantom restores the slot, it never upgrades it: cutting the Vikings must read
+# as a loss in the rest weeks even with the Eagles' higher number on the wire
+_obj14 = PL.Objective(f, PL.Mechanics(f))
+_t14 = _obj14.terms([(_fa_bal, f.mine['DST:MIN'], 'W')], dict(acq=1, bid=1, txn=1))
+case('...cutting the best DEF is a rest-of-season loss, whatever free unit has a bigger preseason number', _t14['dS_rest'] < -1.0, str(_t14))
+_t14b = _obj14.terms([(_fa_bal, f.mine['DST:WAS'], 'W')], dict(acq=1, bid=1, txn=1))
+case('...cutting the spare costs nothing after this week', _t14b['dS_rest'] > -0.01 and _t14b['dS_W'] > 2.0, str(_t14b))
+# a registry HOLD on the Vikings removes them from the spots entirely
+f2, st2, pr2 = league('BSB', r14, fas=[('Baltimore Ravens', 'DEF', 'BAL', 8.7)], byes=_byes14, registry=dict(hold={'DST:MIN': dict(why='first in the league on the field', call='HOLD')}))
+p2 = PL.plan_facts(f2, _ev14)
+case('...a held DEF is not a spot at all', not any(s_['id'] == 'drop:DST:MIN' for s_ in p2.spots) and any(e['player'] == _vik14 and 'HOLD' in e['reason'] for e in p2.excluded), str(p2.excluded))
+
+# ---------------------------------------------------------------- 14b. the realized season blends into rest-of-season value (lib/ytd.py)
+from lib import ytd as YTD
+_v, _why = YTD.blend(121.6 / 17, dict(pts=78.0, gp=7), 'DEF')
+case('ytd: 7 games at 11.1/g pull a 7.2/wk preseason DEF to ~10/wk (3-game prior)', 9.8 < _v < 10.1, f'{_v:.2f} {_why}')
+_v2, _ = YTD.blend(128.0 / 17, dict(pts=23.0, gp=8), 'DEF')
+case('ytd: 8 games at 2.9/g pull a 7.5/wk preseason DEF under 4.5/wk', _v2 < 4.5, f'{_v2:.2f}')
+_v3, _ = YTD.blend(10.0, dict(pts=80.0, gp=8), 'WR')
+case('ytd: a skill player keeps 6 games of prior (8 games at 10/g on a 10/wk prior stays 10)', abs(_v3 - 10.0) < 1e-9, f'{_v3:.2f}')
+case('ytd: no games, no blend', YTD.blend(10.0, dict(pts=0.0, gp=0), 'WR') is None and YTD.blend(10.0, None, 'WR') is None)
+r14b = bsb_roster(def_tm='MIN')
+f3, st3, pr3 = league('BSB', r14b, season={'DST:MIN': dict(pts=121.6, pos='DEF', name='Minnesota Vikings', tm='MIN')})
+f4 = Facts.from_parts('BSB', st3, pr3, WEEK, NOW, f3.wire, LU.solve(st3, pr3), windows=FakeWindows(None), season={'DST:MIN': dict(pts=121.6, pos='DEF', name='Minnesota Vikings', tm='MIN')},
+                      ytd={'DST:MIN': dict(pts=78.0, gp=7, ppg=78 / 7, weeks=list(range(2, 10)), pos='DEF')}, usage_week=WEEK - 1)
+case('facts: a DEF with a realized record is valued on it (9.9/wk, not the 7.2 preseason)', 9.8 < (f4.mine['DST:MIN'].ros_pw or 0) < 10.1 and 'realized' in f4.mine['DST:MIN'].ros_src, (f4.mine['DST:MIN'].ros_pw, f4.mine['DST:MIN'].ros_src))
+case('facts: without a record the preseason number stands', abs((f3.mine['DST:MIN'].ros_pw or 0) - 121.6 / 17) < 1e-6, f3.mine['DST:MIN'].ros_pw)
+
+# ---------------------------------------------------------------- 14c. a Tier-B the crowd is adding is bid to clear the ladder, not $1 (11-10: Estime)
+_m14c = PL.Mechanics(f)
+_m14c._trend = {'DST:BAL'}
+_cB = next(c_ for c_ in PL.produce(f, _ev14) if c_.key == 'DST:BAL')
+_m14c._cand = _cB
+_bid_tr = _m14c.bid(_fa_bal, 'B')
+_m14c._trend = set()
+_bid_quiet = _m14c.bid(_fa_bal, 'B')
+case('bid: a trending Tier-B clears the ladder\'s top decile (>= the firm bid), a quiet one pays the band-B dollar', _bid_tr >= max(_bid_quiet, 1) and (_bid_tr > _bid_quiet or _bid_quiet > 1), (_bid_tr, _bid_quiet))
 
 print('=' * 88)
 print(f'{total - bad}/{total} behaved as required.' + ('  PLANNER IS SOUND.' if not bad else '  PLANNER FAILED.'))

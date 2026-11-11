@@ -72,6 +72,7 @@ def locked(row, now=None):
 # $1 floor that loses the coin flip whenever a second manager wants the same man.
 FAB_RESERVE = ((10, 60), (12, 30), (99, 0))     # through week w -> dollars held back
 FAB_FIRM_PCT = 0.75                             # a firm Tier-B claim clears this share of the ladder
+FAB_TREND_PCT = 0.90                            # a Tier-B the crowd is already adding (Sleeper trending) clears this share (11-10: Estime at $1 would never process)
 
 # ---- HH acquisitions: 7 a week, reset Tuesday, unused ones expire. Early in the week
 # an acquisition is worth a full point of J (it might be needed for a Sunday injury

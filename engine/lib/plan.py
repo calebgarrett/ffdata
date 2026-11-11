@@ -93,6 +93,7 @@ HOLE_VOR_MAX = 1.0                # a DEF/K hole may take a bench player this fa
 RIVAL_DROP_MIN_SEASON = 100.0     # a real role: a manager who let one go after his last game knows something (10-25)
 DEPTH_MARGIN = 3.0                # a depth add must clear the weakest bench player by this much per week (rest of season)
 STICKY_J = 0.5                    # a (add, spot) pair already on the published plan keeps it unless another beats it by this much (10-13: Jennings <-> Hutchinson flip between pulls)
+DK_SWAP_MARGIN = 1.0              # a non-spare DEF/K is cut one-for-one only for a unit this much better rest-of-season (/wk) (11-10: the Vikings)
 REST_NORM = 'mean'                # dS_REST = sum over weeks W+2..17 / number of those weeks
 NOISE = LU.NOISE
 GAME_H = 4.0
@@ -206,12 +207,26 @@ class Mechanics:
             return max(1, min(b, left)) if left is not None else b
         cd = getattr(self, '_cand', None)
         firm = bool(cd is not None and (cd.firm or ('hole' in (cd.srcs or set())) or ('nextup' in (cd.srcs or set()))))
-        if not firm:
+        # the band-B dollar is for usage NOBODY else has priced; a name on Sleeper's 48-hour
+        # trending adds is one the room is bidding on tonight (11-10: Estime, the week's
+        # consensus RB add, at $1 would never process) — clear the ladder's top decile
+        trending = cd is not None and c.key in self._trending_adds()
+        if not firm and not trending:
             return int((bands.get('B') or {}).get('bid', 1))
-        want = RU.fab_bid_firm(fab.get('bids'))
+        want = RU.fab_bid_firm(fab.get('bids'), pct=(RU.FAB_TREND_PCT if trending else RU.FAB_FIRM_PCT))
+        if trending: want = max(want, RU.fab_bid_firm(fab.get('bids')))
         if left is None: return want
         spendable = max(1, left - RU.fab_reserve(self.f.week))
         return max(1, min(want, spendable))
+
+    def _trending_adds(self):
+        if '_trend' not in self.__dict__:
+            try:
+                from .breakout import _trending
+                self._trend = set(_trending()[0])
+            except Exception:
+                self._trend = set()
+        return self._trend
 
     def fab_cost(self, bid):
         """J cost of a bid: dollars that eat into the reserve cost K_FAB each; dollars
@@ -275,13 +290,18 @@ class SpotPool:
                 self.ir_moves.append(dict(fact=d, status='ask'))
             else:
                 self.ir_moves.append(dict(fact=d, status='not_tagged'))
-        # spare DEF/K: the lower season value of two, not a hold
+        # spare DEF/K: the lowest rest-of-season value of two or more, not a hold (11-10: by
+        # the realized season, not the preseason number — the Vikings were the spare's
+        # alphabetical neighbour, never the spare). The others are 'swap' spots: a
+        # one-for-one for a BETTER unit only (pair_block).
         spare = {}
+        self.n_dk = {}
         for fam in ('DEF', 'K'):
             pair = [f.mine[k] for k in f.mine_keys if f.mine[k].fam == fam and f.mine[k].slot != 'IR' and not f.mine[k].registry.hold]
             allfam = [f.mine[k] for k in f.mine_keys if f.mine[k].fam == fam and f.mine[k].slot != 'IR']
+            self.n_dk[fam] = len(allfam)
             if len(allfam) >= 2 and pair:
-                pair.sort(key=lambda x: ((f.season.get(x.key) or {}).get('pts') or 0.0, x.pts_w or 0.0, x.key))
+                pair.sort(key=lambda x: (x.ros_pw or 0.0, (f.season.get(x.key) or {}).get('pts') or 0.0, x.pts_w or 0.0, x.key))
                 spare[fam] = pair[0].key
         for k in f.mine_keys:
             d = f.mine[k]
@@ -291,13 +311,16 @@ class SpotPool:
                 self.excluded.append((d, why)); continue
             if d.fam in ('DEF', 'K'):
                 kind = 'spare' if spare.get(d.fam) == k else 'swap'
-                tier = 2
+                # one slot, two units is insurance; a THIRD is a dead roster spot (11-10: three
+                # BSB defenses while the RB1 sat O for two weeks) — any add may take the spare
+                tier = 0 if (kind == 'spare' and self.n_dk.get(d.fam, 0) >= 3) else 2
             else:
                 kind = 'drop'
                 tier = 0 if d.registry.dead else 1 if d.registry.drop_ok else 3
             self.spots.append(Spot(id=f'drop:{k}', kind=kind, tier=tier, fact=d, fam=d.fam,
-                                   label=d.name, gate=d.get('_gate')))
-        self.spots.sort(key=lambda s: (s.tier, s.id))
+                                   label=d.name, gate=d.get('_gate'), n_fam=self.n_dk.get(d.fam)))
+        # ties fall on the cheaper man, never on the alphabet (11-10: DST:MIN sorted first)
+        self.spots.sort(key=lambda s: (s.tier, (s.fact.ros_pw or 0.0) if s.fact is not None else -1.0, s.id))
 
     def _why_not(self, d):
         """Why my player is not a clean drop (None if he is)."""
@@ -469,11 +492,18 @@ def _week_inputs(f, changes, t):
     # weeks after W value the cut DEF/K at the stream the engine will make (10-23: the
     # Chiefs for Walker read as -18.7 next week — an empty DEF slot the week the Texans
     # sat — while the stream board already preferred the free Cowboys)
+    # ...and the stream RESTORES the slot, it never upgrades it: the phantom body is worth
+    # at most what the cut man was worth that week (11-10: a free Eagles unit at a higher
+    # PRESEASON number made cutting the Vikings — first in the league on the field — read
+    # as a gain in every later week; a better free DEF is its own add, priced on its own)
     if t != W:
         for add, drop, eff in changes:
             if drop is None or drop.fam not in ('DEF', 'K') or drop.key not in gone: continue
             repl = _stream_value(f, drop.fam, t)
             if repl is None: continue
+            own = f.value(drop, t)
+            if own is not None: repl = min(repl, own)
+            if repl <= 0: continue
             rk = f'__stream:{drop.fam}:{t}'
             if rk in vals: continue
             rows.append(dict(key=rk, elig=drop.elig)); vals[rk] = repl
@@ -573,10 +603,16 @@ class Objective:
         # 'bench' means not a starter on the baseline W+1 lineup — a starter displaced by a
         # lineup call this week (Curl behind Cross, 10-28) is depth too, whatever slot he
         # holds on Yahoo today; a W+1 starter's loss is already in the lineup terms
-        _, base_asg = self._S([], W1)
+        base_tot, base_asg = self._S([], W1)
         base_start = {k for k in base_asg.values() if k}
+        def _is_depth(d):
+            if d.key not in base_start: return True
+            # a W+1 'starter' whose removal costs the lineup nothing was a tie with the bench
+            # (11-10: three 3.5-pt RBs; the one the optimizer happened to seat read as free
+            # to cut while the 1.5-pt dead body was charged) — he is depth like the others
+            return self._S([(None, d, 'W')], W1)[0] >= base_tot - 1e-9
         dDepth = -sum((d.ros_pw or 0.0) if d.fam not in ('DEF', 'K') else max(0.0, (d.ros_pw or 0.0) - (_stream_value(f, d.fam, f.rest_weeks[0] if f.rest_weeks else W1) or 0.0))
-                      for a, d, _ in changes if a is not None and d is not None and d.key not in base_start)      # a spare DEF/K is depth only above the best free one
+                      for a, d, _ in changes if a is not None and d is not None and _is_depth(d))      # a spare DEF/K is depth only above the best free one
         acq = costs.get('acq', 0); bid = costs.get('bid', 0) or 0; txn = costs.get('txn', 0)
         pen_fab = self.mech.fab_cost(bid) if getattr(self, 'mech', None) is not None else K_FAB * bid
         pen_acq = K_ACQ.get(f.league, 0.0) * acq * RU.acq_price(f.now, getattr(f, 'acq_left', None))
@@ -641,7 +677,11 @@ def pair_block(f, c, s, repl):
     """Rules for this (candidate, spot) -> reason or None. The candidate's own doctrine
     (breakout tiers) is checked before the spot's, so the binding reason names it."""
     x = c.fact
-    only_bk = not (c.srcs - {'breakout'})
+    # 'depth' on a rest-of-season number that is itself ONE week of usage ('usage says
+    # starter') is the same one week, not a second source (11-10: Estime, one Saints game,
+    # read 9.0/wk and the depth producer handed him DeMario Douglas, 11 a game on the field)
+    one_week = 'usage says starter' in (x.ros_src or '') and x.usage_prev != 'start'
+    only_bk = not (c.srcs - {'breakout'} - ({'depth'} if one_week else set()))
     if c.tier == 'B' and only_bk:
         if not c.held and not (s.kind in ('open', 'ir') or s.tier == 0):
             return 'Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week'
@@ -654,7 +694,7 @@ def pair_block(f, c, s, repl):
         xv = (x.ros_pw or 0) - repl.get(x.fam, 0.0)
         if dv > xv:
             return f'{s.label} is worth more over replacement at his position ({dv:+.1f}/wk) than the add at his ({xv:+.1f}/wk)'
-    if s.kind == 'spare':
+    if s.kind == 'spare' and s.tier != 0:                                   # a THIRD unit (tier 0) is a dead spot: anyone may take it
         # a priority-1 registry add_yes is a role a PERSON verified — as strong as Tier A
         # (10-23: Quay Walker, every-down LB, the D flex; IDP never has a market, so the
         # breakout tiers cannot see him)
@@ -671,7 +711,15 @@ def pair_block(f, c, s, repl):
         if on_bye and (x.ros_pw or 0.0) < (s.fact.ros_pw or 0.0) + HOLE_BYE_UPGRADE:
             return f'{s.label} is on bye — the hole is HIS slot for one week; the cover comes from a bench body, not from cutting him ({x.ros_pw or 0:.1f} vs {s.fact.ros_pw or 0:.1f}/wk rest-of-season)'
     if s.kind == 'swap' and x.fam != s.fam:
-        return f'{s.label} is your only {s.fam}: a one-for-one {s.fam} swap only'
+        return (f'{s.label} is your only {s.fam}: a one-for-one {s.fam} swap only' if (s.n_fam or 1) <= 1
+                else f'{s.label} is not the spare {s.fam}: a one-for-one {s.fam} swap only')
+    if s.kind == 'swap' and x.fam == s.fam and (s.n_fam or 1) >= 2:
+        # two or more of the family: the stream's spot is the SPARE (the weakest). A better
+        # unit may take another one-for-one only as a rest-of-season upgrade (11-10: the
+        # Ravens, a week-10 matchup, named the Vikings — first in the league on the field)
+        if (x.ros_pw or 0.0) < (s.fact.ros_pw or 0.0) + DK_SWAP_MARGIN:
+            return (f'{s.label} is not the spare {s.fam} — a one-for-one for a better {s.fam} rest-of-season only '
+                    f'({x.ros_pw or 0:.1f} vs {s.fact.ros_pw or 0:.1f}/wk; the stream\'s spot is the spare)')
     if x.fam in ('DEF', 'K') and not c.hole and s.kind == 'drop' and s.tier >= 3:
         # ...unless that bench player is replacement level or worse at his own position
         # (10-28, Caleb: dropped Pierre Strong, GB's third RB at 0.75/wk, for the week-8
@@ -906,7 +954,8 @@ def _assign(rows_, spots, pairs):
                 # tie-break only (1e-3 per spot tier): on equal value an open / IR / dead
                 # spot is used before a real player is cut, and a move made NOW takes the
                 # open spot before a claim that only processes after the week rolls
-                Cm[i, j] = -e['J'] + 1e-3 * (s.tier + 1) * (1.0 if e.get('eff') == 'W' else 0.5)
+                Cm[i, j] = -e['J'] + 1e-3 * (s.tier + 1) * (1.0 if e.get('eff') == 'W' else 0.5) \
+                    + 1e-5 * ((s.fact.ros_pw or 0.0) if s.fact is not None else 0.0)      # equal J: the cheaper man is the spot
     ri, ci = linear_sum_assignment(Cm)
     out = {}
     for i, j in zip(ri, ci):
@@ -989,9 +1038,10 @@ def _add_move(f, c, s, e, terms):
     if s.kind == 'open': reasons.append('the spot: an open roster spot — no drop needed')
     elif s.kind == 'ir': reasons.append(f'the spot: {d.name} moves to IR ({d.registry.why[:80]}) — his spot takes the add')
     else:
-        dwhy = ('dead spot — verified in the registry' if s.tier == 0 else
+        dwhy = (f'the third {s.fam} on the roster — the spare unit is a dead spot ({d.ros_pw or 0:.1f}/wk; {d.ros_src})' if (s.tier == 0 and s.kind == 'spare') else
+                'dead spot — verified in the registry' if s.tier == 0 else
                 (d.registry.call or 'registry drop_ok')[:80] if s.tier == 1 else
-                f'the {"spare" if s.kind == "spare" else "only"} {s.fam}' if s.kind in ('spare', 'swap') else
+                (f'the spare {s.fam}' if s.kind == 'spare' else f'the only {s.fam}' if (s.n_fam or 1) <= 1 else f'a one-for-one {s.fam} upgrade ({x.ros_pw or 0:.1f} vs {d.ros_pw or 0:.1f}/wk rest-of-season)') if s.kind in ('spare', 'swap') else
                 f'rest-of-season {d.ros_pw or 0:.1f}/wk ({d.ros_src})' + (f'; tagged {d.designation} — the tag is not counted' if d.designation in RU.TAGGED else ''))
         reasons.append(f'the spot: {d.name} — {dwhy}')
     return dict(id=f'{f.league}:{x.key}', league=f.league, kind='add', add_name=x.name, add_key=x.key, fam=x.fam, tm=x.tm,

@@ -250,13 +250,28 @@ def build(week=None):
                     if keep or held:
                         R['flags'].append(f'{len(fams[f])} DEFs rostered — second one is a HOLD in a capped league: ' + '; '.join(keep + [f'{h} (registry hold)' for h in held]))
                         continue
-                pair = sorted([r for r in st.mine if W._fam(r['pos']) == f and r['slot'] != 'IR'],
-                              key=lambda r: sea_blend.get(r['key'], {}).get('pts') or 0)
+                # ranked on the REALIZED season (lib/ytd.py), not the preseason blend (11-10: the
+                # Vikings, first in the league on the field, were 'the spare's neighbour' on
+                # preseason points); a registry hold is never the spare
+                try:
+                    from lib import ytd as _YTD
+                    _y = _YTD.load(lg, week)
+                except Exception:
+                    _y = {}
+                def _dv(r):
+                    e = _y.get(r['key'])
+                    if e and e.get('gp'): return e['pts'] / e['gp'], f"{e['pts'] / e['gp']:.1f}/g over {e['gp']} games"
+                    sb = (sea_blend.get(r['key'], {}).get('pts') or 0) / 17.0
+                    return sb, f'{sb:.1f}/wk preseason'
+                pair = sorted([r for r in st.mine if W._fam(r['pos']) == f and r['slot'] != 'IR' and r['key'] not in w.hold], key=lambda r: _dv(r)[0])
                 if len(pair) >= 2 and f == 'DEF':
                     lo, hi = pair[0], pair[-1]
-                    lo_s, hi_s = (sea_blend.get(lo['key'], {}).get('pts') or 0), (sea_blend.get(hi['key'], {}).get('pts') or 0)
-                    R['flags'].append(f'{len(fams[f])} DEFs rostered ({", ".join(fams[f])}) for one DEF slot — the spare is {lo["player"]} ({lo_s:.0f} season vs {hi["player"]} {hi_s:.0f})'
-                                      + (f'; {hi["player"]} is on the bench this week only on the matchup ({hi["pts"]:.1f} vs {lo["pts"]:.1f}), not on quality' if hi['slot'] == 'BN' and hi.get('pts') is not None and lo.get('pts') is not None else ''))
+                    hv = sorted([r for r in st.mine if W._fam(r['pos']) == f and r['slot'] != 'IR'], key=lambda r: -_dv(r)[0])[0]
+                    R['flags'].append(f'{len(fams[f])} DEFs rostered ({", ".join(fams[f])}) for one DEF slot — the spare is {lo["player"]} ({_dv(lo)[1]}); the DEF1 is {hv["player"]} ({_dv(hv)[1]}' + (', registry hold)' if hv['key'] in w.hold else ')')
+                                      + (f'; {hv["player"]} sits this week only on the matchup ({hv["pts"]:.1f} vs {lo["pts"]:.1f}), not on quality' if hv['slot'] == 'BN' and hv.get('pts') is not None and lo.get('pts') is not None else '')
+                                      + ('; a third unit is a dead roster spot — any add may take the spare' if len(fams[f]) >= 3 else ''))
+                elif len(pair) == 1 and f == 'DEF' and len(fams[f]) >= 2:
+                    R['flags'].append(f'{len(fams[f])} DEFs rostered ({", ".join(fams[f])}) for one DEF slot — the spare is {pair[0]["player"]} ({_dv(pair[0])[1]}); the other is a registry hold')
                 else:
                     R['flags'].append(f'{len(fams[f])} {f}s rostered ({", ".join(fams[f])}) for one {f} slot')
         # a questionable STARTER needs a named contingency before his game locks
