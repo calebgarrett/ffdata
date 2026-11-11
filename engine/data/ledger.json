@@ -3562,10 +3562,11 @@
   ],
   "verdict": "BLOCK",
   "week": 3,
-  "status": "blocked",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": null,
-  "reverses": null
+  "reverses": null,
+  "superseded_by": "c9243385"
  },
  {
   "id": "e85e2bd7",
@@ -14793,10 +14794,11 @@
   ],
   "verdict": "PASS",
   "week": 10,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": "2026-11-15T13:00-05:00",
-  "reverses": null
+  "reverses": null,
+  "superseded_by": "d617dc78"
  },
  {
   "id": "984d5d6b",
@@ -14891,5 +14893,42 @@
   "provisional": false,
   "resolves_at": null,
   "reverses": "136545c5"
+ },
+ {
+  "id": "d617dc78",
+  "ts": "2026-11-11T17:59-05:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Audric Estime",
+  "call": "start Audric Estime at RB1",
+  "detail": "over Josh Jacobs +7.98",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 10,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": "2026-11-15T13:00-05:00",
+  "reverses": "928aa9c5"
+ },
+ {
+  "id": "c9243385",
+  "ts": "2026-11-11T17:59-05:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Alohi Gilman",
+  "call": "add Alohi Gilman (DB) over Cooper DeJean",
+  "detail": "+16.25/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 10,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "86b73966"
  }
 ]
