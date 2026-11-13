@@ -1,7 +1,7 @@
-# ffdata pull loaded Fri Nov 13, 4:26 am ET — repo head: 2026-11-13T01:48:04Z pull 2026-11-13T01:48Z (in-action, no pull)
+# ffdata pull loaded Fri Nov 13, 12:21 pm ET — repo head: 2026-11-13T09:28:50Z pull 2026-11-13T09:28Z (in-action, no pull)
 week 10
-kalshi.csv: 4362 markets, 144 events, pulled 2026-11-13T09:24:48+00:00
-kalshi_archive: 1 new pull(s) copied, 105 on disk
+kalshi.csv: 4401 markets, 144 events, pulled 2026-11-13T17:20:23+00:00
+kalshi_archive: 1 new pull(s) copied, 106 on disk
 espn_games.csv: 14 games for week 10 — 0 with ESPN lines from the pump, 14 schedule-only from lines_wk10_18.csv; Kalshi spread/total ladders supply the lines inside the engine
 sleeper_off_wk10.csv: 3302 rows
 sleeper_idp_wk10.csv: 4604 rows
@@ -13,9 +13,9 @@ usage_wk10_WR.csv: 20 rows
 usage_wk9_TE.csv: 159 rows
 usage_wk9_K.csv: 36 rows
 usage_wk9_DEF.csv: 30 rows
-BSB rosters: 216 players on 12 teams, pulled 2026-11-13T09:25:45+00:00 -> new snapshot
+BSB rosters: 216 players on 12 teams, pulled 2026-11-13T17:21:26+00:00 -> new snapshot
 BSB matchup wk10: vs WINdianapolis; 3 final rows, 0 in progress; totals me 30.70 opp 22.05
 BSB transactions: 0 new of 48 on the page; log now 359 rows
-HH rosters: 238 players on 10 teams, pulled 2026-11-13T09:25:45+00:00 -> new snapshot
+HH rosters: 239 players on 10 teams, pulled 2026-11-13T17:21:26+00:00 -> new snapshot
 HH matchup wk10: vs Pound the Rock; 4 final rows, 0 in progress; totals me 0.00 opp 10.37
-HH transactions: 2 new of 45 on the page; log now 315 rows
+HH transactions: 1 new of 44 on the page; log now 316 rows
