@@ -14818,10 +14818,11 @@
   ],
   "verdict": "WARN",
   "week": 10,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": true,
   "resolves_at": "2026-11-15T16:25-05:00",
-  "reverses": "6e63d57b"
+  "reverses": "6e63d57b",
+  "superseded_by": "2d4b266b"
  },
  {
   "id": "1cc76995",
@@ -15009,6 +15010,44 @@
   "verdict": "BLOCK",
   "week": 10,
   "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "2d4b266b",
+  "ts": "2026-11-13T22:04-05:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Ryan Flournoy",
+  "call": "start Ryan Flournoy at WR2",
+  "detail": "over Malik Washington +0.40",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 10,
+  "status": "proposed",
+  "provisional": true,
+  "resolves_at": "2026-11-15T16:25-05:00",
+  "reverses": "984d5d6b"
+ },
+ {
+  "id": "88f2bcf4",
+  "ts": "2026-11-13T22:04-05:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Emmett Johnson",
+  "call": "add Emmett Johnson (RB) over Jaylen Warren",
+  "detail": "+5.86/wk",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 10,
+  "status": "proposed",
   "provisional": false,
   "resolves_at": null,
   "reverses": null
