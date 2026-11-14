@@ -68,11 +68,11 @@
    "RB2": "audric estime",
    "TE": "sam laporta",
    "W/R/T": "isaiah likely",
-   "WR1": "ryan flournoy",
+   "WR1": "jaxon smith njigba",
    "WR2": "drake london",
-   "WR3": "jaxon smith njigba"
+   "WR3": "ryan flournoy"
   },
-  "optimal_before_moves": 137.98,
+  "optimal_before_moves": 137.94,
   "slots": {
    "DEF": "Vikings",
    "K": "Dominic Zvada",
@@ -81,13 +81,13 @@
    "RB2": "Audric Estime",
    "TE": "Sam LaPorta",
    "W/R/T": "Isaiah Likely",
-   "WR1": "Ryan Flournoy",
+   "WR1": "Jaxon Smith-Njigba",
    "WR2": "Drake London",
-   "WR3": "Jaxon Smith-Njigba"
+   "WR3": "Ryan Flournoy"
   },
-  "total": 137.98
+  "total": 137.94
  },
- "made": "2026-11-13T22:05-05:00",
+ "made": "2026-11-14T05:53-05:00",
  "mechanics": [
   {
    "rule": "A never-rostered free agent is free until his game kicks off",
@@ -127,7 +127,7 @@
  ],
  "moves": [
   {
-   "J": 0.399,
+   "J": 0.214,
    "add_key": null,
    "add_name": null,
    "at": null,
@@ -135,22 +135,22 @@
    "drop_name": null,
    "eff": "W",
    "fam": "WR",
-   "gain": 0.4,
+   "gain": 0.21,
    "gates": {
     "add": null,
     "drop": null
    },
-   "id": "BSB:lineup:WR1",
+   "id": "BSB:lineup:WR3",
    "kind": "lineup",
    "league": "BSB",
-   "phase": "early",
+   "phase": "decide",
    "provisional": true,
    "reasons": [
-    "+0.40 this week (Jaxon Smith-Njigba slides to WR3)",
+    "+0.21 this week (Drake London slides to WR2)",
     "inside the 1.5-pt noise band"
    ],
    "sit": "Malik Washington",
-   "slot": "WR1",
+   "slot": "WR3",
    "spot_id": null,
    "spot_kind": null,
    "spot_label": null,
@@ -166,7 +166,7 @@
      "key": "ryan flournoy",
      "op": "start",
      "player": "Ryan Flournoy",
-     "slot": "WR1"
+     "slot": "WR3"
     },
     {
      "key": "malik washington",
@@ -175,8 +175,8 @@
     }
    ],
    "value_terms": {
-    "J": 0.399,
-    "dS_W": 0.399
+    "J": 0.214,
+    "dS_W": 0.214
    },
    "when": "before kickoff Sun Nov 15, 4:25 pm ET"
   }
@@ -184,16 +184,16 @@
  "notes": [],
  "rejected": [
   {
-   "J": 1.81,
+   "J": 1.8,
    "key": "DST:IND",
    "name": "Indianapolis Colts",
-   "reason": "J +1.81 < 3.0 at its best spot (49ers) \u2014 J +1.81 = 1.0x+2.50 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+0.00 (bench boom) + 0.2x-0.97 (depth) - 0.00 acq - 0.00 FAB($0) - 0.50 churn",
+   "reason": "J +1.80 < 3.0 at its best spot (49ers) \u2014 J +1.80 = 1.0x+2.49 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+0.00 (bench boom) + 0.2x-0.97 (depth) - 0.00 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
-    "DEF weekly upgrade: Indianapolis Colts 8.6 vs starter Vikings 6.0"
+    "DEF weekly upgrade: Indianapolis Colts 8.6 vs starter Vikings 6.1"
    ]
   },
   {
-   "J": 0.941,
+   "J": 0.937,
    "key": "DST:LAC",
    "name": "Los Angeles Chargers",
    "reason": "J +0.94 < 3.0 at its best spot (49ers) \u2014 J +0.94 = 1.0x+0.26 (wk W) + 0.8x+1.71 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+0.00 (bench boom) + 0.2x-0.97 (depth) - 0.00 acq - 0.00 FAB($0) - 0.50 churn",
@@ -202,7 +202,7 @@
    ]
   },
   {
-   "J": 0.172,
+   "J": 0.11,
    "key": "austin ekeler",
    "name": "Austin Ekeler",
    "reason": "best spot 49ers: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
@@ -215,7 +215,7 @@
    "J": null,
    "key": "cade otton",
    "name": "Cade Otton",
-   "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 0.0 under your weakest 11.0",
+   "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 0.0 under your weakest 10.9",
    "reasons": [
     "breakout tier B: 100% snaps, 25% targets, 13% air yds; no market line yet, and no Sleeper line either"
    ]
@@ -230,10 +230,10 @@
    ]
   },
   {
-   "J": -2.159,
+   "J": -2.158,
    "key": "dalton schultz",
    "name": "Dalton Schultz",
-   "reason": "J -2.16 < 3.0 at its best spot (DeMario Douglas) \u2014 J -2.16 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+0.08 (bench boom) + 0.2x-8.34 (depth) - 0.00 acq - 0.00 FAB($0) - 0.50 churn",
+   "reason": "J -2.16 < 3.0 at its best spot (DeMario Douglas) \u2014 J -2.16 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+0.09 (bench boom) + 0.2x-8.34 (depth) - 0.00 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
     "depth: Dalton Schultz 9.0/wk rest-of-season vs your weakest bench player 2.7 (7-game realized 9.1/g blended with preseason 8.8/wk (6-game prior))"
    ]
@@ -252,13 +252,13 @@
    "J": null,
    "key": "dawson knox",
    "name": "Dawson Knox",
-   "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 4.2 under your weakest 11.0",
+   "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 4.2 under your weakest 10.9",
    "reasons": [
-    "breakout tier B: 72% snaps, 16% targets, 13% air yds; Kalshi receiving yds 17 vs Sleeper 13 (+27%) \u2014 a part-time line, under the 35 starter floor"
+    "breakout tier B: 72% snaps, 16% targets, 13% air yds; Kalshi receiving yds 17 vs Sleeper 13 (+25%) \u2014 a part-time line, under the 35 starter floor"
    ]
   },
   {
-   "J": -0.189,
+   "J": -0.251,
    "key": "devin singletary",
    "name": "Devin Singletary",
    "reason": "best spot 49ers: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
@@ -340,7 +340,7 @@
    ]
   },
   {
-   "J": -0.553,
+   "J": -0.562,
    "key": "tre harris",
    "name": "Tre' Harris",
    "reason": "best spot 49ers: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
@@ -415,12 +415,12 @@
   "W_NOW": 1.0,
   "W_PLAY": 0.6,
   "W_REST": 0.8,
-  "p_playoffs": 0.9945
+  "p_playoffs": 0.99425
  },
  "winprob": {
-  "mean": 137.8176138643534,
+  "mean": 137.86684244910379,
   "note": "sampled on the planner's final lineup",
-  "p_med": 0.6513333333333333,
-  "p_opp": 0.5423333333333333
+  "p_med": 0.6456666666666667,
+  "p_opp": 0.5385
  }
 }
