@@ -68,11 +68,11 @@
    "RB2": "james cook",
    "TE": "sam laporta",
    "W/R/T": "isaiah likely",
-   "WR1": "drake london",
-   "WR2": "jaxon smith njigba",
+   "WR1": "jaxon smith njigba",
+   "WR2": "drake london",
    "WR3": "malik washington"
   },
-  "optimal_before_moves": 137.15,
+  "optimal_before_moves": 136.69,
   "slots": {
    "DEF": "Vikings",
    "K": "Dominic Zvada",
@@ -81,13 +81,13 @@
    "RB2": "James Cook III",
    "TE": "Sam LaPorta",
    "W/R/T": "Isaiah Likely",
-   "WR1": "Drake London",
-   "WR2": "Jaxon Smith-Njigba",
+   "WR1": "Jaxon Smith-Njigba",
+   "WR2": "Drake London",
    "WR3": "Malik Washington"
   },
-  "total": 137.15
+  "total": 136.69
  },
- "made": "2026-11-14T12:01-05:00",
+ "made": "2026-11-14T16:23-05:00",
  "mechanics": [
   {
    "rule": "A never-rostered free agent is free until his game kicks off",
@@ -129,25 +129,25 @@
  "notes": [],
  "rejected": [
   {
-   "J": 1.807,
+   "J": 1.831,
    "key": "DST:IND",
    "name": "Indianapolis Colts",
-   "reason": "J +1.81 < 3.0 at its best spot (49ers) \u2014 J +1.81 = 1.0x+2.50 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+0.00 (bench boom) + 0.2x-0.97 (depth) - 0.00 acq - 0.00 FAB($0) - 0.50 churn",
+   "reason": "J +1.83 < 3.0 at its best spot (49ers) \u2014 J +1.83 = 1.0x+2.52 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+0.00 (bench boom) + 0.2x-0.97 (depth) - 0.00 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
     "DEF weekly upgrade: Indianapolis Colts 8.6 vs starter Vikings 6.1"
    ]
   },
   {
-   "J": 0.952,
+   "J": 0.9,
    "key": "DST:LAC",
    "name": "Los Angeles Chargers",
-   "reason": "J +0.95 < 3.0 at its best spot (49ers) \u2014 J +0.95 = 1.0x+0.28 (wk W) + 0.8x+1.71 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+0.00 (bench boom) + 0.2x-0.97 (depth) - 0.00 acq - 0.00 FAB($0) - 0.50 churn",
+   "reason": "J +0.90 < 3.0 at its best spot (49ers) \u2014 J +0.90 = 1.0x+0.22 (wk W) + 0.8x+1.71 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+0.00 (bench boom) + 0.2x-0.97 (depth) - 0.00 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
     "week-11 DEF stream: Los Angeles Chargers 8.1 vs your best 6.4 (W line re-scored on the week-11 opponent implied total 16.0)"
    ]
   },
   {
-   "J": 0.58,
+   "J": 1.0,
    "key": "austin ekeler",
    "name": "Austin Ekeler",
    "reason": "best spot 49ers: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
@@ -175,10 +175,10 @@
    ]
   },
   {
-   "J": -2.156,
+   "J": -2.155,
    "key": "dalton schultz",
    "name": "Dalton Schultz",
-   "reason": "J -2.16 < 3.0 at its best spot (DeMario Douglas) \u2014 J -2.16 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+0.12 (bench boom) + 0.2x-8.34 (depth) - 0.00 acq - 0.00 FAB($0) - 0.50 churn",
+   "reason": "J -2.15 < 3.0 at its best spot (DeMario Douglas) \u2014 J -2.15 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x+0.12 (bench boom) + 0.2x-8.34 (depth) - 0.00 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
     "depth: Dalton Schultz 9.0/wk rest-of-season vs your weakest bench player 2.7 (7-game realized 9.1/g blended with preseason 8.8/wk (6-game prior))"
    ]
@@ -197,18 +197,19 @@
    "J": null,
    "key": "dawson knox",
    "name": "Dawson Knox",
-   "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 4.1 under your weakest 10.8",
+   "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 4.2 under your weakest 10.8",
    "reasons": [
-    "breakout tier B: 72% snaps, 16% targets, 13% air yds; Kalshi receiving yds 16 vs Sleeper 13 (+20%) \u2014 a part-time line, under the 35 starter floor"
+    "breakout tier B: 72% snaps, 16% targets, 13% air yds; Kalshi receiving yds 16 vs Sleeper 13 (+24%) \u2014 a part-time line, under the 35 starter floor"
    ]
   },
   {
-   "J": 0.22,
+   "J": 0.629,
    "key": "devin singletary",
    "name": "Devin Singletary",
    "reason": "best spot 49ers: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
-    "breakout tier B: 93% snaps, 89% of RB touches; no market line yet (Sleeper rushing yds 35)"
+    "breakout tier B: 93% snaps, 89% of RB touches; no market line yet (Sleeper rushing yds 35)",
+    "depth: Devin Singletary 8.0/wk rest-of-season vs your weakest bench RB 2.7 (W projection 8.0 (usage says starter; the preseason number is stale))"
    ]
   },
   {
@@ -227,15 +228,6 @@
    "reason": "J -2.34 < 3.0 at its best spot (DeMario Douglas) \u2014 J -2.34 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.59x+0.00 (wks 15-17, P(playoffs) 99%) + 0.1x-1.68 (bench boom) + 0.2x-8.34 (depth) - 0.00 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
     "depth: Jake Ferguson 7.7/wk rest-of-season vs your weakest bench player 2.7 (8-game realized 6.5/g blended with preseason 9.4/wk (6-game prior))"
-   ]
-  },
-  {
-   "J": null,
-   "key": "jonathon brooks",
-   "name": "Jonathon Brooks",
-   "reason": "registry: not a role \u2014 verified 2026-10-18: Groin, surgery, IR 9-23 for ~6 weeks (earliest ~week 10) and he was the backup to Hubbard ",
-   "reasons": [
-    "depth: Jonathon Brooks 8.0/wk rest-of-season vs your weakest bench RB 2.7 (1-game realized 2.1/g blended with preseason 9.0/wk (6-game prior))"
    ]
   },
   {
@@ -363,9 +355,9 @@
   "p_playoffs": 0.99375
  },
  "winprob": {
-  "mean": 137.35062686920153,
+  "mean": 136.6133446368711,
   "note": "sampled on the planner's final lineup",
-  "p_med": 0.6498333333333334,
-  "p_opp": 0.5318333333333334
+  "p_med": 0.6201666666666666,
+  "p_opp": 0.5211666666666667
  }
 }
