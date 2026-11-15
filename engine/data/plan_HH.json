@@ -11,7 +11,7 @@
  "excluded": [
   {
    "player": "Dak Prescott",
-   "reason": "gate: G6-magnitude 42.041720469069375 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex: 3 QBs for 2 QB-eligible slots \u2014 QB3 is b"
+   "reason": "gate: G6-magnitude 42.17666093063965 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex: 3 QBs for 2 QB-eligible slots \u2014 QB3 is by"
   },
   {
    "player": "Jaylen Warren",
@@ -35,7 +35,7 @@
   },
   {
    "player": "Matthew Stafford",
-   "reason": "gate: G6-magnitude 31.17554092823065 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex: 3 QBs for 2 QB-eligible slots \u2014 QB3 is by"
+   "reason": "gate: G6-magnitude 31.347108547484943 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex: 3 QBs for 2 QB-eligible slots \u2014 QB3 is b"
   },
   {
    "player": "Devin Singletary",
@@ -85,7 +85,7 @@
    "W/R/T": "rashee rice",
    "WR": "jamarr chase"
   },
-  "optimal_before_moves": 307.77,
+  "optimal_before_moves": 310.2,
   "slots": {
    "CB": "Jalen Ramsey",
    "D": "Foyesade Oluokun",
@@ -103,9 +103,9 @@
    "W/R/T": "Rashee Rice",
    "WR": "Ja'Marr Chase"
   },
-  "total": 307.77
+  "total": 310.2
  },
- "made": "2026-11-15T10:53-05:00",
+ "made": "2026-11-15T16:02-05:00",
  "mechanics": [
   {
    "rule": "Free agents are immediate unless his game is in progress",
@@ -147,21 +147,21 @@
  "notes": [],
  "rejected": [
   {
-   "J": -0.653,
+   "J": -0.565,
    "key": "DST:LAC",
    "name": "Los Angeles Chargers",
-   "reason": "J -0.65 < 3.0 at its best spot (Steelers) \u2014 J -0.65 = 1.0x+0.00 (wk W) + 0.8x+0.58 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.00 (bench boom) + 0.2x-2.07 (depth) - 0.20 acq - 0.00 FAB($0) - 0.50 churn",
+   "reason": "J -0.56 < 3.0 at its best spot (Steelers) \u2014 J -0.56 = 1.0x+0.00 (wk W) + 0.8x+0.68 (W+1) + 0.8x+0.00 (rest, mean of wks 12-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.00 (bench boom) + 0.2x-2.03 (depth) - 0.20 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
-    "week-11 DEF stream: Los Angeles Chargers 25.7 vs your best 25.1 (W line re-scored on the week-11 opponent implied total 16.0)"
+    "week-11 DEF stream: Los Angeles Chargers 25.7 vs your best 25.0 (W line re-scored on the week-11 opponent implied total 16.0)"
    ]
   },
   {
-   "J": -1.014,
+   "J": -0.984,
    "key": "adonai mitchell",
    "name": "Adonai Mitchell",
    "reason": "best spot Steelers: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
-    "breakout tier B: 89% snaps, 22% targets, 0% air yds; Kalshi receiving yds 41 vs Sleeper 39 (+5%)"
+    "breakout tier B: 89% snaps, 22% targets, 0% air yds; no market line yet (Sleeper receiving yds 39)"
    ]
   },
   {
@@ -170,20 +170,20 @@
    "name": "Alohi Gilman",
    "reason": "gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])",
    "reasons": [
-    "DB weekly upgrade: Alohi Gilman 16.3 vs starter Kam Curl 14.7"
+    "DB weekly upgrade: Alohi Gilman 16.4 vs starter Kam Curl 14.8"
    ]
   },
   {
-   "J": -0.967,
+   "J": -0.891,
    "key": "audric estime",
    "name": "Audric Estime",
    "reason": "best spot Steelers: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
-    "breakout tier B: 47% snaps, 59% of RB touches; Kalshi rushing yds 31 vs Sleeper 32 (-5%) \u2014 a part-time line, under the 40 starter floor"
+    "breakout tier B: 47% snaps, 59% of RB touches; no market line yet (Sleeper rushing yds 32)"
    ]
   },
   {
-   "J": -0.969,
+   "J": -0.961,
    "key": "austin ekeler",
    "name": "Austin Ekeler",
    "reason": "best spot Steelers: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
@@ -192,7 +192,7 @@
    ]
   },
   {
-   "J": -0.363,
+   "J": -0.353,
    "key": "cade otton",
    "name": "Cade Otton",
    "reason": "best spot Steelers: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
@@ -201,25 +201,25 @@
    ]
   },
   {
-   "J": -16.282,
+   "J": -15.778,
    "key": "caleb douglas",
    "name": "Caleb Douglas",
-   "reason": "J -16.28 < 3.0 at its best spot (Cooper DeJean) \u2014 J -16.28 = 1.0x+0.00 (wk W) + 0.8x-16.21 (W+1) + 0.8x-1.93 (rest, mean of wks 12-17) + 0.60x-1.50 (wks 15-17, P(playoffs) 100%) + 0.1x-1.69 (bench boom) + 0.2x+0.00 (depth) - 0.20 acq - 0.00 FAB($0) - 0.50 churn",
+   "reason": "J -15.78 < 3.0 at its best spot (Cooper DeJean) \u2014 J -15.78 = 1.0x+0.00 (wk W) + 0.8x-16.03 (W+1) + 0.8x-1.66 (rest, mean of wks 12-17) + 0.60x-1.21 (wks 15-17, P(playoffs) 100%) + 0.1x-1.99 (bench boom) + 0.2x+0.00 (depth) - 0.20 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
-    "breakout tier B: 74% snaps, 32% targets, 57% air yds; Kalshi receiving yds 46 vs Sleeper 49 (-5%); held (wk8: 86% snaps, 19% targets, 19% air yds)"
+    "breakout tier B: 74% snaps, 32% targets, 57% air yds; no market line yet (Sleeper receiving yds 49); held (wk8: 86% snaps, 19% targets, 19% air yds)"
    ]
   },
   {
-   "J": -15.18,
+   "J": -14.646,
    "key": "chig okonkwo",
    "name": "Chig Okonkwo",
-   "reason": "J -15.18 < 3.0 at its best spot (Cooper DeJean) \u2014 J -15.18 = 1.0x+0.00 (wk W) + 0.8x-16.21 (W+1) + 0.8x-0.56 (rest, mean of wks 12-17) + 0.60x-1.50 (wks 15-17, P(playoffs) 100%) + 0.1x-1.64 (bench boom) + 0.2x+0.00 (depth) - 0.20 acq - 0.00 FAB($0) - 0.50 churn",
+   "reason": "J -14.65 < 3.0 at its best spot (Cooper DeJean) \u2014 J -14.65 = 1.0x+0.00 (wk W) + 0.8x-16.03 (W+1) + 0.8x-0.29 (rest, mean of wks 12-17) + 0.60x-1.21 (wks 15-17, P(playoffs) 100%) + 0.1x-1.64 (bench boom) + 0.2x+0.00 (depth) - 0.20 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
     "breakout tier B: 74% snaps, 20% targets, 23% air yds; no market line yet (Sleeper receiving yds 35); held (wk8: 77% snaps, 14% targets, 18% air yds)"
    ]
   },
   {
-   "J": -1.114,
+   "J": -1.106,
    "key": "courtland sutton",
    "name": "Courtland Sutton",
    "reason": "best spot Steelers: Tier B (unpriced) never takes the spare DEF \u2014 Tier A only",
@@ -228,7 +228,7 @@
    ]
   },
   {
-   "J": -1.114,
+   "J": -1.106,
    "key": "darius cooper",
    "name": "Darius Cooper",
    "reason": "best spot Steelers: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
@@ -237,39 +237,30 @@
    ]
   },
   {
-   "J": -0.521,
+   "J": -0.513,
    "key": "dawson knox",
    "name": "Dawson Knox",
    "reason": "best spot Steelers: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
-    "breakout tier B: 72% snaps, 16% targets, 13% air yds; Kalshi receiving yds 16 vs Sleeper 13 (+23%) \u2014 a part-time line, under the 35 starter floor"
+    "breakout tier B: 72% snaps, 16% targets, 13% air yds; no market line yet (Sleeper receiving yds 13)"
    ]
   },
   {
-   "J": -16.236,
+   "J": -15.673,
    "key": "denzel boston",
    "name": "Denzel Boston",
-   "reason": "J -16.24 < 3.0 at its best spot (Cooper DeJean) \u2014 J -16.24 = 1.0x+0.00 (wk W) + 0.8x-16.21 (W+1) + 0.8x-1.93 (rest, mean of wks 12-17) + 0.60x-1.50 (wks 15-17, P(playoffs) 100%) + 0.1x-1.23 (bench boom) + 0.2x+0.00 (depth) - 0.20 acq - 0.00 FAB($0) - 0.50 churn",
+   "reason": "J -15.67 < 3.0 at its best spot (Cooper DeJean) \u2014 J -15.67 = 1.0x+0.00 (wk W) + 0.8x-16.03 (W+1) + 0.8x-1.66 (rest, mean of wks 12-17) + 0.60x-1.21 (wks 15-17, P(playoffs) 100%) + 0.1x-0.94 (bench boom) + 0.2x+0.00 (depth) - 0.20 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
-    "breakout tier B: 93% snaps, 23% targets, 46% air yds; Kalshi receiving yds 50 vs Sleeper 53 (-6%); held (wk8: 83% snaps, 29% targets, 22% air yds)"
+    "breakout tier B: 93% snaps, 23% targets, 46% air yds; no market line yet (Sleeper receiving yds 53); held (wk8: 83% snaps, 29% targets, 22% air yds)"
    ]
   },
   {
-   "J": null,
-   "key": "devin lloyd",
-   "name": "Devin Lloyd",
-   "reason": "gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])",
-   "reasons": [
-    "LB weekly upgrade: Devin Lloyd 22.6 vs starter Carson Schwesinger 20.9"
-   ]
-  },
-  {
-   "J": -16.312,
+   "J": -15.733,
    "key": "dylan sampson",
    "name": "Dylan Sampson",
-   "reason": "J -16.31 < 3.0 at its best spot (Cooper DeJean) \u2014 J -16.31 = 1.0x+0.00 (wk W) + 0.8x-16.21 (W+1) + 0.8x-1.93 (rest, mean of wks 12-17) + 0.60x-1.50 (wks 15-17, P(playoffs) 100%) + 0.1x-2.00 (bench boom) + 0.2x+0.00 (depth) - 0.20 acq - 0.00 FAB($0) - 0.50 churn",
+   "reason": "J -15.73 < 3.0 at its best spot (Cooper DeJean) \u2014 J -15.73 = 1.0x+0.00 (wk W) + 0.8x-16.03 (W+1) + 0.8x-1.66 (rest, mean of wks 12-17) + 0.60x-1.21 (wks 15-17, P(playoffs) 100%) + 0.1x-1.53 (bench boom) + 0.2x+0.00 (depth) - 0.20 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
-    "breakout tier B: 64% snaps, 47% of RB touches; Kalshi rushing yds 22 vs Sleeper 18 (+20%) \u2014 a part-time line, under the 40 starter floor; held (wk8: 56% snaps, 38% of RB touches)"
+    "breakout tier B: 64% snaps, 47% of RB touches; no market line yet (Sleeper rushing yds 18); held (wk8: 56% snaps, 38% of RB touches)"
    ]
   },
   {
@@ -282,34 +273,34 @@
    ]
   },
   {
-   "J": -16.215,
+   "J": -15.638,
    "key": "jordan mason",
    "name": "Jordan Mason",
-   "reason": "J -16.21 < 3.0 at its best spot (Cooper DeJean) \u2014 J -16.21 = 1.0x+0.00 (wk W) + 0.8x-16.21 (W+1) + 0.8x-1.93 (rest, mean of wks 12-17) + 0.60x-1.50 (wks 15-17, P(playoffs) 100%) + 0.1x-1.02 (bench boom) + 0.2x+0.00 (depth) - 0.20 acq - 0.00 FAB($0) - 0.50 churn",
+   "reason": "J -15.64 < 3.0 at its best spot (Cooper DeJean) \u2014 J -15.64 = 1.0x+0.00 (wk W) + 0.8x-16.03 (W+1) + 0.8x-1.66 (rest, mean of wks 12-17) + 0.60x-1.21 (wks 15-17, P(playoffs) 100%) + 0.1x-0.58 (bench boom) + 0.2x+0.00 (depth) - 0.20 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
-    "breakout tier B: 48% snaps, 56% of RB touches; Kalshi rushing yds 50 vs Sleeper 51 (-3%); held (wk8: 28% snaps, 50% of RB touches)"
+    "breakout tier B: 48% snaps, 56% of RB touches; no market line yet (Sleeper rushing yds 51); held (wk8: 28% snaps, 50% of RB touches)"
    ]
   },
   {
-   "J": -1.024,
+   "J": -1.016,
    "key": "jordan watkins",
    "name": "Jordan Watkins",
    "reason": "best spot Steelers: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
-    "breakout tier B: 77% snaps, 16% targets, 44% air yds; Kalshi receiving yds 32 vs Sleeper 27 (+19%) \u2014 a part-time line, under the 35 starter floor"
+    "breakout tier B: 77% snaps, 16% targets, 44% air yds; Kalshi receiving yds 33 vs Sleeper 27 (+21%) \u2014 a part-time line, under the 35 starter floor"
    ]
   },
   {
-   "J": -0.932,
+   "J": -0.966,
    "key": "kaleb johnson",
    "name": "Kaleb Johnson",
    "reason": "best spot Steelers: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
-    "breakout tier B: 39% snaps, 50% of RB touches; Kalshi rushing yds 34 vs Sleeper 32 (+6%) \u2014 a part-time line, under the 40 starter floor"
+    "breakout tier B: 39% snaps, 50% of RB touches; no market line yet (Sleeper rushing yds 35)"
    ]
   },
   {
-   "J": -1.114,
+   "J": -1.106,
    "key": "kalif raymond",
    "name": "Kalif Raymond",
    "reason": "best spot Steelers: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
@@ -318,17 +309,16 @@
    ]
   },
   {
-   "J": -0.987,
+   "J": -1.016,
    "key": "kc concepcion",
    "name": "KC Concepcion Jr.",
    "reason": "best spot Steelers: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
-    "breakout tier B: 93% snaps, 19% targets, 24% air yds; Kalshi receiving yds 52 vs Sleeper 49 (+6%)",
-    "depth: KC Concepcion Jr. 11.5/wk rest-of-season vs your weakest bench WR 7.7 (W projection 11.5 (usage says starter; the preseason number is stale))"
+    "breakout tier B: 93% snaps, 19% targets, 24% air yds; no market line yet (Sleeper receiving yds 49)"
    ]
   },
   {
-   "J": -1.114,
+   "J": -1.106,
    "key": "makai lemon",
    "name": "Makai Lemon",
    "reason": "best spot Steelers: Tier B (unpriced) never takes the spare DEF \u2014 Tier A only",
@@ -337,7 +327,7 @@
    ]
   },
   {
-   "J": -1.009,
+   "J": -1.001,
    "key": "malachi fields",
    "name": "Malachi Fields",
    "reason": "best spot Steelers: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
@@ -346,44 +336,44 @@
    ]
   },
   {
-   "J": -1.052,
+   "J": -1.082,
    "key": "mike wilson",
    "name": "Michael Wilson",
-   "reason": "J -1.05 < 3.0 at its best spot (Rashee Rice) \u2014 J -1.05 = 1.0x+0.00 (wk W) + 0.8x-0.08 (W+1) + 0.8x-0.30 (rest, mean of wks 12-17) + 0.60x-0.08 (wks 15-17, P(playoffs) 100%) + 0.1x+0.00 (bench boom) + 0.2x+0.00 (depth) - 0.20 acq - 0.00 FAB($0) - 0.50 churn",
+   "reason": "J -1.08 < 3.0 at its best spot (Rashee Rice) \u2014 J -1.08 = 1.0x+0.00 (wk W) + 0.8x-0.10 (W+1) + 0.8x-0.31 (rest, mean of wks 12-17) + 0.60x-0.10 (wks 15-17, P(playoffs) 100%) + 0.1x+0.00 (bench boom) + 0.2x+0.00 (depth) - 0.20 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
     "breakout tier B: 83% snaps, 23% targets, 23% air yds; no market line yet, and no Sleeper line either; held (wk8: 79% snaps, 33% targets, 55% air yds)",
-    "depth: Michael Wilson 12.4/wk rest-of-season vs your weakest bench WR 7.7 (8-game realized 14.2/g blended with preseason 10.0/wk (6-game prior))"
+    "depth: Michael Wilson 12.4/wk rest-of-season vs your weakest bench WR 7.7 (8-game realized 14.2/g blended with preseason 10.1/wk (6-game prior))"
    ]
   },
   {
-   "J": -3.152,
+   "J": -3.167,
    "key": "omarion hampton",
    "name": "Omarion Hampton",
-   "reason": "J -3.15 < 3.0 at its best spot (Rashee Rice) \u2014 J -3.15 = 1.0x+0.00 (wk W) + 0.8x-1.11 (W+1) + 0.8x-1.11 (rest, mean of wks 12-17) + 0.60x-1.11 (wks 15-17, P(playoffs) 100%) + 0.1x+0.00 (bench boom) + 0.2x+0.00 (depth) - 0.20 acq - 0.00 FAB($0) - 0.50 churn",
+   "reason": "J -3.17 < 3.0 at its best spot (Rashee Rice) \u2014 J -3.17 = 1.0x+0.00 (wk W) + 0.8x-1.12 (W+1) + 0.8x-1.12 (rest, mean of wks 12-17) + 0.60x-1.12 (wks 15-17, P(playoffs) 100%) + 0.1x+0.00 (bench boom) + 0.2x+0.00 (depth) - 0.20 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
-    "depth: Omarion Hampton 11.4/wk rest-of-season vs your weakest bench RB 7.7 (7-game realized 8.4/g blended with preseason 14.8/wk (6-game prior))"
+    "depth: Omarion Hampton 11.4/wk rest-of-season vs your weakest bench RB 7.7 (7-game realized 8.4/g blended with preseason 14.9/wk (6-game prior))"
    ]
   },
   {
-   "J": -16.232,
+   "J": -15.698,
    "key": "rachaad white",
    "name": "Rachaad White",
-   "reason": "J -16.23 < 3.0 at its best spot (Cooper DeJean) \u2014 J -16.23 = 1.0x+0.00 (wk W) + 0.8x-16.21 (W+1) + 0.8x-1.93 (rest, mean of wks 12-17) + 0.60x-1.50 (wks 15-17, P(playoffs) 100%) + 0.1x-1.19 (bench boom) + 0.2x+0.00 (depth) - 0.20 acq - 0.00 FAB($0) - 0.50 churn",
+   "reason": "J -15.70 < 3.0 at its best spot (Cooper DeJean) \u2014 J -15.70 = 1.0x+0.00 (wk W) + 0.8x-16.03 (W+1) + 0.8x-1.66 (rest, mean of wks 12-17) + 0.60x-1.21 (wks 15-17, P(playoffs) 100%) + 0.1x-1.19 (bench boom) + 0.2x+0.00 (depth) - 0.20 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
     "breakout tier B: 56% snaps, 48% of RB touches; no market line yet (Sleeper rushing yds 54); held (wk8: 47% snaps, 50% of RB touches)"
    ]
   },
   {
-   "J": -0.967,
+   "J": -0.959,
    "key": "samaje perine",
    "name": "Samaje Perine",
    "reason": "best spot Steelers: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
-    "breakout tier B: 40% snaps, 48% of RB touches; Kalshi rushing yds 23 vs Sleeper 19 (+21%) \u2014 a part-time line, under the 40 starter floor"
+    "breakout tier B: 40% snaps, 48% of RB touches; Kalshi rushing yds 22 vs Sleeper 19 (+18%) \u2014 a part-time line, under the 40 starter floor"
    ]
   },
   {
-   "J": -1.114,
+   "J": -1.106,
    "key": "tez johnson",
    "name": "Tez Johnson",
    "reason": "best spot Steelers: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
@@ -392,12 +382,21 @@
    ]
   },
   {
-   "J": -0.993,
+   "J": -0.985,
    "key": "tre harris",
    "name": "Tre' Harris",
    "reason": "best spot Steelers: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
-    "breakout tier B: 83% snaps, 23% targets, 0% air yds; no market line yet (Sleeper receiving yds 25)"
+    "breakout tier B: 83% snaps, 23% targets, 0% air yds; no market line yet (Sleeper receiving yds 26)"
+   ]
+  },
+  {
+   "J": -3.82,
+   "key": "tre tucker",
+   "name": "Tre Tucker",
+   "reason": "J -3.82 < 3.0 at its best spot (Rashee Rice) \u2014 J -3.82 = 1.0x+0.00 (wk W) + 0.8x-1.48 (W+1) + 0.8x-1.38 (rest, mean of wks 12-17) + 0.60x-1.38 (wks 15-17, P(playoffs) 100%) + 0.1x+0.00 (bench boom) + 0.2x+0.00 (depth) - 0.20 acq - 0.00 FAB($0) - 0.50 churn",
+   "reasons": [
+    "depth: Tre Tucker 11.0/wk rest-of-season vs your weakest bench WR 7.7 (8-game realized 13.5/g blended with preseason 7.8/wk (6-game prior))"
    ]
   }
  ],
@@ -482,9 +481,9 @@
   "p_playoffs": 1.0
  },
  "winprob": {
-  "mean": 307.5249072056376,
+  "mean": 311.3899175368964,
   "note": "final lineup = current lineup (the engine's own number)",
   "p_med": null,
-  "p_opp": 0.9775
+  "p_opp": 0.9896666666666667
  }
 }
