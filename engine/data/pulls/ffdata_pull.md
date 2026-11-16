@@ -1,26 +1,26 @@
-# ffdata pull loaded Sun Nov 15, 4:00 pm ET — repo head: 2026-11-15T15:54:17Z pull 2026-11-15T15:54Z (in-action, no pull)
+# ffdata pull loaded Sun Nov 15, 7:56 pm ET — repo head: 2026-11-15T21:02:25Z pull 2026-11-15T21:02Z (in-action, no pull)
 week 10
-kalshi.csv: 5110 markets, 138 events, pulled 2026-11-15T20:58:26+00:00
-kalshi_archive: 1 new pull(s) copied, 115 on disk
-espn_games.csv: 14 games for week 10 — 4 with ESPN lines from the pump, 10 schedule-only from lines_wk10_18.csv; Kalshi spread/total ladders supply the lines inside the engine
+kalshi.csv: 1810 markets, 65 events, pulled 2026-11-16T00:55:49+00:00
+kalshi_archive: 1 new pull(s) copied, 116 on disk
+espn_games.csv: 14 games for week 10 — 1 with ESPN lines from the pump, 13 schedule-only from lines_wk10_18.csv; Kalshi spread/total ladders supply the lines inside the engine
 sleeper_off_wk10.csv: 3303 rows
 sleeper_idp_wk10.csv: 4603 rows
 trending_adds.csv: 40 adds / 40 drops (48h)
 usage_wk9_QB.csv: 86 rows
-usage_wk10_QB.csv: 46 rows
+usage_wk10_QB.csv: 62 rows
 usage_wk9_RB.csv: 168 rows
-usage_wk10_RB.csv: 98 rows
+usage_wk10_RB.csv: 137 rows
 usage_wk9_WR.csv: 264 rows
-usage_wk10_WR.csv: 162 rows
+usage_wk10_WR.csv: 217 rows
 usage_wk9_TE.csv: 159 rows
-usage_wk10_TE.csv: 91 rows
+usage_wk10_TE.csv: 125 rows
 usage_wk9_K.csv: 36 rows
-usage_wk10_K.csv: 20 rows
+usage_wk10_K.csv: 29 rows
 usage_wk9_DEF.csv: 30 rows
-usage_wk10_DEF.csv: 18 rows
-BSB rosters: 216 players on 12 teams, pulled 2026-11-15T20:59:27+00:00 -> new snapshot
+usage_wk10_DEF.csv: 24 rows
+BSB rosters: 216 players on 12 teams, pulled 2026-11-16T00:56:31+00:00 -> new snapshot
 BSB matchup wk10: vs WINdianapolis; 3 final rows, 0 in progress; totals me 30.70 opp 22.05
-BSB transactions: 2 new of 50 on the page; log now 367 rows
-HH rosters: 238 players on 10 teams, pulled 2026-11-15T20:59:27+00:00 -> new snapshot
+BSB transactions: 4 new of 50 on the page; log now 371 rows
+HH rosters: 238 players on 10 teams, pulled 2026-11-16T00:56:31+00:00 -> new snapshot
 HH matchup wk10: vs Pound the Rock; 4 final rows, 0 in progress; totals me 0.00 opp 10.37
-HH transactions: 4 new of 45 on the page; log now 329 rows
+HH transactions: 0 new of 45 on the page; log now 329 rows
