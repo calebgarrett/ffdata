@@ -1,9 +1,9 @@
-  [FAIL] game lines on disk for the current week
   [FAIL] two DEFs: the drop candidate is the lower season value, never simply the benched one  — []
   [FAIL] a DEF on bye is a legal weekly drop: G5 is satisfied by the season blend, not refused for a missing game line  — [('G7-ready', 'WARN', 'market coverage for this game not established'), ('G11-role-registry', 'BLOCK', "HOLD ON RECORD — HOLD in Blood Sweat & Beers: the DEF1 through the playoffs. Streams come from the spare (the weakest unit), never from this one. Caleb 11-10: 'dropping the vikings is crazy ... that's the best def in the league.'")]
+  [FAIL] playoff sim: a roster projecting zero every week is buried (far below the real one; near zero unless the lead is already huge)  — dead 0.823 vs mine 0.997, wins 16
   17/17 behaved as required.  GATE IS SOUND.
-  [FAIL] a DEF on bye is a legal weekly drop: G5 is satisfied by the season blend, not refused for a missing game line  — [('G7-ready', 'WARN', 'market coverage for this game not established'), ('G11-role-registry', 'BLOCK', "HOLD ON RECORD — HOLD in Blood Sweat & Beers: the DEF1 through the playoffs. Streams come from the spare (the weakest unit), never from this one. Caleb 11-10: 'dropping the vikings is crazy ... that's the best def in the league.'")]
+  155/158 behaved as required.  3 FAILURES — do not ship.
           first mismatch: actions_include not found: {'league': 'BSB', 'kind_in': ['stream', 'bye_cover'], 'fam': 'QB'} — have: start: add=None drop=None start=Jauan Jennings sit=Malik Washington when=alert WARN
-  16/16 scenarios behaved as required (20s).  SCENARIOS SOUND.
+  16/16 scenarios behaved as required (25s).  SCENARIOS SOUND.
 CHECK FAILED — refusing to run. `python3 ff.py check` for detail.
 run exit 1
