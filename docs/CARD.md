@@ -1,10 +1,10 @@
 # Lineup Card — week 11
 
-_Wed Nov 18, 10:48 am ET. Decisions first; detail folded below. A PROVISIONAL call waits for the market or a game-status answer._
+_Wed Nov 18, 11:06 am ET. Decisions first; detail folded below. A PROVISIONAL call waits for the market or a game-status answer._
 
 ## Decide (next 36 hours)
 
-- BSB: **Add Justin Herbert** · drop DeMario Douglas — before kickoff Sun Nov 22, 4:05 pm ET
+- BSB: **Add Justin Herbert** · drop Baker Mayfield — before kickoff Sun Nov 22, 1:00 pm ET
 - BSB: **Start Ryan Flournoy at WR1** over Jaxon Smith-Njigba — before kickoff Sun Nov 22, 1:00 pm ET
 - BSB: **Start Makai Lemon at WR3** over Drake London — before kickoff Sun Nov 22, 1:00 pm ET
 - BSB: **Start 49ers at DEF** over Vikings — before kickoff Sun Nov 22, 8:20 pm ET
@@ -12,7 +12,7 @@ _Wed Nov 18, 10:48 am ET. Decisions first; detail folded below. A PROVISIONAL ca
 
 ## BSB — OVERKILL
 
-16-4-0, 1st, PF — · projected 88 · 33% to beat Short Bus · 0% vs the league median
+16-4-0, 1st, PF — · projected 88 · 31% to beat Short Bus · 0% vs the league median
 - Next lock: Sun Nov 22, 1:00 pm ET — 5 starters
 
 <details><summary>Lineup after the moves</summary>
@@ -22,8 +22,8 @@ _Wed Nov 18, 10:48 am ET. Decisions first; detail folded below. A PROVISIONAL ca
 - QB: Justin Herbert
 - RB1: James Cook III
 - RB2: Audric Estime
-- TE: Isaiah Likely
-- W/R/T: Sam LaPorta
+- TE: Sam LaPorta
+- W/R/T: Isaiah Likely
 - WR1: Ryan Flournoy
 - WR2: Malik Washington
 - WR3: Makai Lemon
@@ -74,15 +74,15 @@ _Wed Nov 18, 10:48 am ET. Decisions first; detail folded below. A PROVISIONAL ca
 
 <details><summary>HH: considered, not moves (39)</summary>
 
-- Adonai Mitchell: J -2.27 < 3.0 at its best spot (Devin Singletary) — J -2.27 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, 
+- Adonai Mitchell: J -2.25 < 3.0 at its best spot (Devin Singletary) — J -2.25 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, 
 - AJ Barner: best spot Steelers: Tier B (unpriced) never takes the spare DEF — Tier A only
 - Alohi Gilman: gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])
-- Austin Ekeler: J -2.26 < 3.0 at its best spot (Devin Singletary) — J -2.26 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, 
-- Baker Mayfield: J -2.35 < 3.0 at its best spot (Devin Singletary) — J -2.35 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, 
+- Austin Ekeler: J -2.25 < 3.0 at its best spot (Devin Singletary) — J -2.25 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, 
+- Baker Mayfield: J -2.34 < 3.0 at its best spot (Devin Singletary) — J -2.34 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, 
 - Barrett Carter: gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])
-- Blake Corum: J -2.35 < 3.0 at its best spot (Devin Singletary) — J -2.35 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, 
+- Blake Corum: J -2.34 < 3.0 at its best spot (Devin Singletary) — J -2.34 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, 
 - Bryan Cook: gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])
-- Caleb Douglas: J -1.80 < 3.0 at its best spot (Steelers) — J -1.80 = 1.0x+0.00 (wk W) + 0.8x-0.50 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playof
+- Caleb Douglas: J -1.79 < 3.0 at its best spot (Steelers) — J -1.79 = 1.0x+0.00 (wk W) + 0.8x-0.50 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playof
 - Carnell Tate: gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])
 - Charlie Kolar: best spot Steelers: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
 - Corey Kiner: sits behind everyone: you carry 3 RBs for 1 slot(s) and he projects 0.0 under your weakest 3.8
@@ -97,4 +97,4 @@ _Wed Nov 18, 10:48 am ET. Decisions first; detail folded below. A PROVISIONAL ca
 
 </details>
 
-_Engine stamp Wed Nov 18, 10:48 am ET. The HTML card is the full record; this page is the private, phone-readable twin._
+_Engine stamp Wed Nov 18, 11:06 am ET. The HTML card is the full record; this page is the private, phone-readable twin._

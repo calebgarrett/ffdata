@@ -867,6 +867,43 @@ p = PL.plan_facts(f, dict())
 _lm16 = next((m for m in moves_of(p, 'lineup') if m.get('start') == _bn16[1]), None)
 case('lineup deadline: a Sunday starter over a Thursday sitter is due before the Thursday lock', _lm16 is not None and _lm16.get('deadline') == C.iso(THU), _lm16 and (_lm16.get('sit'), _lm16.get('deadline'), C.iso(THU)))
 
+
+# ---------------------------------------------------------------- 17. QB for QB (11-18, Caleb: "douglas has been a really good wr, are we sure he is the drop?")
+# BSB, one QB slot: the starter on bye, the QB2 hurt (no number this week, blocked by the
+# drop gate on thin data), a real bench WR at 7.9/wk, a free QB at 20.9. V154 named the WR.
+r17 = bsb_roster(qb_tm='LAR', extra=[('BN', 'Bakari Mayfold', 'QB', 'TB', 0.0, 'Q')])
+r17 = [r for r in r17 if not (r[0] == 'BN' and r[3] == 'LV')]
+_qb17 = next(r for r in r17 if r[0] == 'QB')
+r17 = [(r[0], r[1], r[2], r[3], 0.0, r[5]) if r[0] == 'QB' else r for r in r17]             # the starter is on bye
+_wr17 = next(r for r in r17 if r[0] == 'BN' and r[2] == 'WR')
+jh = 'Justus Herbwright'
+_sea17 = {NK('Bakari Mayfold'): dict(name='Bakari Mayfold', tm='TB', pos='QB', pts=272.0), NK(_qb17[1]): dict(name=_qb17[1], tm='LAR', pos='QB', pts=404.0)}
+f, st, pr = league('BSB', r17, fas=[(jh, 'QB', 'LAC', 20.9)], kicks={'LAR': None}, byes={WEEK: {'LAR'}, W1: set()}, season=_sea17)
+f.mine[NK(_qb17[1])]['ros_pw'] = 23.8; f.mine[NK(_qb17[1])]['pts_w1'] = 23.8
+f.mine[NK('Bakari Mayfold')]['ros_pw'] = 16.0; f.mine[NK('Bakari Mayfold')]['pts_w1'] = 16.0
+f.mine[NK(_wr17[1])]['ros_pw'] = 7.9
+x = f.fa(NK(jh)); x['ros_pw'] = 17.3; x['pts_w1'] = 17.3; f._pool_cache[NK(jh)] = x
+_ev17 = dict(upgrades=[dict(fam='QB', add=dict(key=NK(jh), name=jh, week=20.9), over=dict(player=_qb17[1], pts=0.0))])
+p = PL.plan_facts(f, _ev17)
+m17 = next((m for m in moves_of(p) if m['add_key'] == NK(jh)), None)
+case('QB for QB: the bye/injury cover ships', m17 is not None, p.summary())
+case('...and the drop is the QB2 he replaces, never a real bench WR', m17 is not None and m17.get('drop_name') == 'Bakari Mayfold', m17 and (m17.get('drop_name'), m17.get('spot_kind'), m17.get('value_terms')))
+case('...and the move carries no BLOCK on its drop gate (the card refuses a blocked action)', m17 is not None and (m17['gates']['drop'] or {}).get('verdict') != 'BLOCK', m17 and m17['gates'])
+case('...the bench QB is replaced, not lost: no depth charge when the new QB2 is the better one', m17 is not None and m17['value_terms']['d_depth'] > -0.01, m17 and m17['value_terms'])
+_sp17 = PL.Spot(id='drop:' + NK(_wr17[1]), kind='drop', tier=3, fact=f.mine[NK(_wr17[1])], fam='WR', label=_wr17[1])
+_c17 = next(c for c in PL.produce(f, _ev17) if c.key == NK(jh))
+_e17 = PL._eval_pair(f, PL.Mechanics(f), PL.Objective(f), _c17, _sp17, {})
+case('...a third QB is refused the WR by rule', not _e17['feasible'] and 'third QB' in (_e17['reason'] or ''), _e17['reason'])
+# a non-QB add never takes the QB2
+_spq = next(s_ for s_ in PL.SpotPool(f, PL.Mechanics(f)).spots if s_.id == 'drop:' + NK('Bakari Mayfold'))
+f2, st2, pr2 = league('BSB', r17, fas=[('Wendel Tierayson', 'WR', 'DEN', 15.0)], kicks={'LAR': None}, byes={WEEK: {'LAR'}, W1: set()}, season=_sea17)
+# when the QB2 is not a spot at all (held), the hole may still take a bench body: no dead end
+f3, st3, pr3 = league('BSB', r17, fas=[(jh, 'QB', 'LAC', 20.9)], kicks={'LAR': None}, byes={WEEK: {'LAR'}, W1: set()}, season=_sea17, registry=dict(hold={NK('Bakari Mayfold'): dict(why='hold (test)', call='HOLD')}))
+p3 = PL.plan_facts(f3, _ev17)
+case('...a held QB2 is no spot, and the cover is not dead-ended by the third-QB rule', f3.spare_qb is None and not any('third QB' in r['reason'] for r in p3.rejected), str([(r['name'], r['reason'][:120]) for r in p3.rejected]))
+_cw = PL.Candidate(key=NK('Wendel Tierayson'), name='Wendel Tierayson', fact=f2.fa(NK('Wendel Tierayson')), srcs={'breakout'}, tier='A', reasons=[], hole=None, held=False, firm=False)
+case('...and the QB2 is never the spot for a non-QB add', 'QB-for-QB' in (PL.pair_block(f, _cw, _spq, {}) or ''), PL.pair_block(f, _cw, _spq, {}))
+
 print('=' * 88)
 print(f'{total - bad}/{total} behaved as required.' + ('  PLANNER IS SOUND.' if not bad else '  PLANNER FAILED.'))
 sys.exit(1 if bad else 0)

@@ -30,10 +30,6 @@
    "reason": "starter-level usage in his own right (88% snaps, 31% targets, 36% air yds)"
   },
   {
-   "player": "Baker Mayfield",
-   "reason": "gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])"
-  },
-  {
    "player": "Josh Jacobs",
    "reason": "registry HOLD \u2014 HOLD, and START when active: a top-10 RB in the #9 December environment for the "
   },
@@ -62,28 +58,28 @@
    "QB": "justin herbert",
    "RB1": "james cook",
    "RB2": "audric estime",
-   "TE": "isaiah likely",
-   "W/R/T": "sam laporta",
+   "TE": "sam laporta",
+   "W/R/T": "isaiah likely",
    "WR1": "ryan flournoy",
    "WR2": "malik washington",
    "WR3": "makai lemon"
   },
-  "optimal_before_moves": 87.91,
+  "optimal_before_moves": 87.77,
   "slots": {
    "DEF": "49ers",
    "K": "Cairo Santos",
    "QB": "Justin Herbert",
    "RB1": "James Cook III",
    "RB2": "Audric Estime",
-   "TE": "Isaiah Likely",
-   "W/R/T": "Sam LaPorta",
+   "TE": "Sam LaPorta",
+   "W/R/T": "Isaiah Likely",
    "WR1": "Ryan Flournoy",
    "WR2": "Malik Washington",
    "WR3": "Makai Lemon"
   },
-  "total": 108.78
+  "total": 108.64
  },
- "made": "2026-11-18T10:48-05:00",
+ "made": "2026-11-18T11:06-05:00",
  "mechanics": [
   {
    "rule": "A never-rostered free agent is free until his game kicks off",
@@ -123,12 +119,12 @@
  ],
  "moves": [
   {
-   "J": 19.592,
+   "J": 21.167,
    "add_key": "justin herbert",
    "add_name": "Justin Herbert",
    "at": null,
-   "deadline": "2026-11-22T16:05-05:00",
-   "drop_name": "DeMario Douglas",
+   "deadline": "2026-11-22T13:00-05:00",
+   "drop_name": "Baker Mayfield",
    "eff": "W",
    "fam": "QB",
    "gates": {
@@ -139,8 +135,18 @@
     "drop": {
      "checks": [
       {
-       "gate": "G11-role-registry",
-       "msg": "registry usage verified 2026-09-15 (33d old) \u2014 DEMOTED after 14 days; re-verify before counting it",
+       "gate": "G3-role",
+       "msg": "NFL depth-chart role not checked \u2014 a QB-for-QB swap: judged against the QB who replaces him",
+       "status": "WARN"
+      },
+      {
+       "gate": "G5-sources",
+       "msg": "SINGLE SOURCE: ['rotowire'] (['sleeper']) \u2014 a QB-for-QB swap: judged against the QB who replaces him",
+       "status": "WARN"
+      },
+      {
+       "gate": "G13-injury",
+       "msg": "tagged Q \u2014 why and for how long is NOT on record; the tag counts for nothing here, the drop stands on his season value alone",
        "status": "WARN"
       }
      ],
@@ -158,11 +164,11 @@
    "provisional": false,
    "reasons": [
     "QB weekly upgrade: Justin Herbert 20.9 vs starter Matthew Stafford 0.0",
-    "the spot: DeMario Douglas \u2014 rest-of-season 7.9/wk (9-game realized 10.1/g blended with preseason 4.6/wk (6-game prior))"
+    "the spot: Baker Mayfield \u2014 the QB2 \u2014 a QB-for-QB swap (17.3 vs 16.0/wk rest-of-season; tagged Q)"
    ],
-   "spot_id": "drop:demario douglas",
-   "spot_kind": "drop",
-   "spot_label": "DeMario Douglas",
+   "spot_id": "drop:baker mayfield",
+   "spot_kind": "spare",
+   "spot_label": "Baker Mayfield",
    "srcs": [
     "upgrade"
    ],
@@ -176,9 +182,9 @@
      "player": "Justin Herbert"
     },
     {
-     "key": "demario douglas",
+     "key": "baker mayfield",
      "op": "drop",
-     "player": "DeMario Douglas"
+     "player": "Baker Mayfield"
     },
     {
      "key": "justin herbert",
@@ -193,7 +199,7 @@
     }
    ],
    "value_terms": {
-    "J": 19.592,
+    "J": 21.167,
     "acq": 1,
     "bid": 0,
     "dS_W": 20.871,
@@ -201,7 +207,7 @@
     "dS_play": 0.0,
     "dS_rest": 0.0,
     "d_boom": 7.957,
-    "d_depth": -7.876,
+    "d_depth": -0.0,
     "d_ins": 0.0,
     "p_playoffs": 1.0,
     "pen_acq": 0.0,
@@ -220,16 +226,16 @@
      "w1_src": "rest-of-season per-week (no week-12 projection on disk \u2014 approximation)"
     },
     "drop": {
-     "ros": 7.875686274509805,
-     "ros_src": "9-game realized 10.1/g blended with preseason 4.6/wk (6-game prior)",
+     "ros": 15.997326203208559,
+     "ros_src": "5-game realized 10.5/g blended with preseason 20.6/wk (6-game prior)",
      "w": 0.0,
-     "w1": 7.875686274509805
+     "w1": 15.997326203208559
     }
    },
-   "when": "before kickoff Sun Nov 22, 4:05 pm ET"
+   "when": "before kickoff Sun Nov 22, 1:00 pm ET"
   },
   {
-   "J": 10.977,
+   "J": 10.983,
    "add_key": null,
    "add_name": null,
    "at": null,
@@ -276,8 +282,8 @@
     }
    ],
    "value_terms": {
-    "J": 10.977,
-    "dS_W": 10.977
+    "J": 10.983,
+    "dS_W": 10.983
    },
    "when": "before kickoff Sun Nov 22, 1:00 pm ET"
   },
@@ -400,7 +406,7 @@
    ]
   },
   {
-   "J": 0.235,
+   "J": 0.232,
    "key": "DST:DET",
    "name": "Detroit Lions",
    "reason": "J +0.23 < 3.0 at its best spot (49ers) \u2014 J +0.23 = 1.0x+0.73 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.00 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0.00 FAB($0) - 0.50 churn",
@@ -546,12 +552,12 @@
    ]
   },
   {
-   "J": -1.374,
+   "J": -1.544,
    "key": "malachi fields",
    "name": "Malachi Fields",
-   "reason": "J -1.37 < 3.0 at its best spot (DeMario Douglas) \u2014 J -1.37 = 1.0x+0.61 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.91 (bench boom) + 0.2x-7.88 (depth) - 0.00 acq - 0.00 FAB($0) - 0.50 churn",
+   "reason": "J -1.54 < 3.0 at its best spot (Audric Estime) \u2014 J -1.54 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x-0.18 (bench boom) + 0.2x-5.08 (depth) - 0.00 acq - 0.01 FAB($1) - 0.50 churn",
    "reasons": [
-    "breakout tier B: 89% snaps, 11% targets, 38% air yds; Kalshi receiving yds 34 vs Sleeper 34 (+0%) \u2014 a part-time line, under the 35 starter floor; held (wk9: 84% snaps, 19% targets, 25% air yds)"
+    "breakout tier B: 89% snaps, 11% targets, 38% air yds; Kalshi receiving yds 31 vs Sleeper 34 (-6%) \u2014 a part-time line, under the 35 starter floor; held (wk9: 84% snaps, 19% targets, 25% air yds)"
    ]
   },
   {
@@ -593,6 +599,13 @@
    "tier": 2
   },
   {
+   "id": "drop:baker mayfield",
+   "kind": "spare",
+   "label": "Baker Mayfield",
+   "taken_by": "Justin Herbert",
+   "tier": 2
+  },
+  {
    "id": "drop:audric estime",
    "kind": "drop",
    "label": "Audric Estime",
@@ -603,7 +616,7 @@
    "id": "drop:demario douglas",
    "kind": "drop",
    "label": "DeMario Douglas",
-   "taken_by": "Justin Herbert",
+   "taken_by": null,
    "tier": 3
   },
   {
@@ -651,9 +664,9 @@
   "p_playoffs": 0.997
  },
  "winprob": {
-  "mean": 108.67933556458722,
+  "mean": 108.56419603318845,
   "note": "sampled on the planner's final lineup",
-  "p_med": 0.26266666666666666,
-  "p_opp": 0.8566666666666667
+  "p_med": 0.2265,
+  "p_opp": 0.8588333333333333
  }
 }

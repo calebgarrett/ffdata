@@ -15452,10 +15452,11 @@
   ],
   "verdict": "WARN",
   "week": 11,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": "2026-11-22T13:00-05:00",
-  "reverses": "db521be4"
+  "reverses": "db521be4",
+  "superseded_by": "ecb35a52"
  },
  {
   "id": "b4c378d8",
@@ -15474,5 +15475,44 @@
   "provisional": false,
   "resolves_at": "2026-11-22T13:00-05:00",
   "reverses": "b94e6d48"
+ },
+ {
+  "id": "ecb35a52",
+  "ts": "2026-11-18T10:53-05:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Ryan Flournoy",
+  "call": "start Ryan Flournoy at WR2",
+  "detail": "over Jaxon Smith-Njigba +10.98",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 11,
+  "status": "superseded",
+  "provisional": false,
+  "resolves_at": "2026-11-22T13:00-05:00",
+  "reverses": "7c59b909",
+  "superseded_by": "3695246f"
+ },
+ {
+  "id": "3695246f",
+  "ts": "2026-11-18T11:05-05:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Ryan Flournoy",
+  "call": "start Ryan Flournoy at WR1",
+  "detail": "over Jaxon Smith-Njigba +10.98",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 11,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": "2026-11-22T13:00-05:00",
+  "reverses": "ecb35a52"
  }
 ]

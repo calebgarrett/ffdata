@@ -303,12 +303,39 @@ class SpotPool:
             if len(allfam) >= 2 and pair:
                 pair.sort(key=lambda x: (x.ros_pw or 0.0, (f.season.get(x.key) or {}).get('pts') or 0.0, x.pts_w or 0.0, x.key))
                 spare[fam] = pair[0].key
+        # the QB2 in a one-QB league (11-18, Caleb: "douglas has been a really good wr, are we
+        # sure he is the drop?" — Herbert for the Stafford bye named DeMario Douglas, 15+ in
+        # four of his last six, while Mayfield, the hurt QB2 Herbert replaces, was not a spot:
+        # the drop gate blocked him on one source). Two QBs for one slot: the lower one is the
+        # spare — a QB-for-QB swap spot, and the only spot a third QB may take.
+        self.spare_qb = None
+        if sum(1 for sl in f.cfg.slots if 'QB' in f.cfg.accepts[sl]) == 1:
+            qbs = [f.mine[k] for k in f.mine_keys if f.mine[k].fam == 'QB' and f.mine[k].slot != 'IR']
+            free = [q for q in qbs if not q.registry.hold and not q.recently_added and not (q.final or q.live)]
+            if len(qbs) >= 2 and free:
+                top = max(qbs, key=lambda q: (q.ros_pw or 0.0, q.key))
+                cand = [q for q in free if q.key != top.key]
+                if cand: self.spare_qb = min(cand, key=lambda q: (q.ros_pw or 0.0, q.key)).key
+        f.spare_qb = None
         for k in f.mine_keys:
             d = f.mine[k]
             if d.slot == 'IR' or k in ir_bound: continue
             why = self._why_not(d)
+            if why and k == self.spare_qb and why.startswith('gate: '):
+                g = d.get('_gate')
+                if g is not None and all(gg.startswith(('G3', 'G5')) for gg, s_, m in g.checks if s_ == 'BLOCK'):
+                    why = None                                # thin data on a QB2 does not protect him from a better QB2
+                    # ...and the gate on record says so: G3/G5 are WARNs for a QB-for-QB swap (the
+                    # card's sanity read refuses an action tile that carries a BLOCK)
+                    g.checks = [(gg, ('WARN' if (s_ == 'BLOCK' and gg.startswith(('G3', 'G5'))) else s_),
+                                 (m + ' — a QB-for-QB swap: judged against the QB who replaces him' if (s_ == 'BLOCK' and gg.startswith(('G3', 'G5'))) else m))
+                                for gg, s_, m in g.checks]
             if why:
                 self.excluded.append((d, why)); continue
+            if k == self.spare_qb:
+                self.spots.append(Spot(id=f'drop:{k}', kind='spare', tier=2, fact=d, fam='QB', label=d.name, gate=d.get('_gate'), n_fam=2))
+                f.spare_qb = k                                # the rule 'a third QB takes the QB2's spot' holds only when that spot exists
+                continue
             if d.fam in ('DEF', 'K'):
                 kind = 'spare' if spare.get(d.fam) == k else 'swap'
                 # one slot, two units is insurance; a THIRD is a dead roster spot (11-10: three
@@ -611,8 +638,14 @@ class Objective:
             # (11-10: three 3.5-pt RBs; the one the optimizer happened to seat read as free
             # to cut while the 1.5-pt dead body was charged) — he is depth like the others
             return self._S([(None, d, 'W')], W1)[0] >= base_tot - 1e-9
-        dDepth = -sum((d.ros_pw or 0.0) if d.fam not in ('DEF', 'K') else max(0.0, (d.ros_pw or 0.0) - (_stream_value(f, d.fam, f.rest_weeks[0] if f.rest_weeks else W1) or 0.0))
-                      for a, d, _ in changes if a is not None and d is not None and _is_depth(d))      # a spare DEF/K is depth only above the best free one
+        one_qb = self.one_qb()
+        def _depth_loss(a, d):
+            if d.fam in ('DEF', 'K'):                                      # a spare DEF/K is depth only above the best free one
+                return max(0.0, (d.ros_pw or 0.0) - (_stream_value(f, d.fam, f.rest_weeks[0] if f.rest_weeks else W1) or 0.0))
+            if one_qb and d.fam == 'QB' and a.fam == 'QB':                 # QB2 for QB2: the bench QB is replaced, not lost (11-18)
+                return max(0.0, (d.ros_pw or 0.0) - (a.ros_pw or 0.0))
+            return d.ros_pw or 0.0
+        dDepth = -sum(_depth_loss(a, d) for a, d, _ in changes if a is not None and d is not None and _is_depth(d))
         acq = costs.get('acq', 0); bid = costs.get('bid', 0) or 0; txn = costs.get('txn', 0)
         pen_fab = self.mech.fab_cost(bid) if getattr(self, 'mech', None) is not None else K_FAB * bid
         pen_acq = K_ACQ.get(f.league, 0.0) * acq * RU.acq_price(f.now, getattr(f, 'acq_left', None))
@@ -694,6 +727,13 @@ def pair_block(f, c, s, repl):
         xv = (x.ros_pw or 0) - repl.get(x.fam, 0.0)
         if dv > xv:
             return f'{s.label} is worth more over replacement at his position ({dv:+.1f}/wk) than the add at his ({xv:+.1f}/wk)'
+    if s.kind == 'spare' and s.fam == 'QB':
+        if x.fam != 'QB':
+            return f'{s.label} is the QB2 — insurance on the highest-scoring slot: a QB-for-QB swap only'
+        return None                                                         # QB for QB: the objective prices it (net depth)
+    if x.fam == 'QB' and getattr(f, 'spare_qb', None) and s.kind == 'drop' and s.fact is not None and s.fact.fam != 'QB' and s.tier >= 2:
+        return (f'a third QB never costs a {s.fact.fam}: you carry two for one slot — the swap is for the QB2 '
+                f'({f.mine[f.spare_qb].name}), not {s.label}')
     if s.kind == 'spare' and s.tier != 0:                                   # a THIRD unit (tier 0) is a dead spot: anyone may take it
         # a priority-1 registry add_yes is a role a PERSON verified — as strong as Tier A
         # (10-23: Quay Walker, every-down LB, the D flex; IDP never has a market, so the
@@ -1048,6 +1088,7 @@ def _add_move(f, c, s, e, terms):
         dwhy = (f'the third {s.fam} on the roster — the spare unit is a dead spot ({d.ros_pw or 0:.1f}/wk; {d.ros_src})' if (s.tier == 0 and s.kind == 'spare') else
                 'dead spot — verified in the registry' if s.tier == 0 else
                 (d.registry.call or 'registry drop_ok')[:80] if s.tier == 1 else
+                (f'the QB2 — a QB-for-QB swap ({x.ros_pw or 0:.1f} vs {d.ros_pw or 0:.1f}/wk rest-of-season' + (f'; tagged {d.designation}' if d.designation in RU.TAGGED else '') + ')') if (s.kind == 'spare' and s.fam == 'QB') else
                 (f'the spare {s.fam}' if s.kind == 'spare' else f'the only {s.fam}' if (s.n_fam or 1) <= 1 else f'a one-for-one {s.fam} upgrade ({x.ros_pw or 0:.1f} vs {d.ros_pw or 0:.1f}/wk rest-of-season)') if s.kind in ('spare', 'swap') else
                 f'rest-of-season {d.ros_pw or 0:.1f}/wk ({d.ros_src})' + (f'; tagged {d.designation} — the tag is not counted' if d.designation in RU.TAGGED else ''))
         reasons.append(f'the spot: {d.name} — {dwhy}')

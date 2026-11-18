@@ -218,6 +218,16 @@ cannot be traced to P(win) is wrong.
   source that is itself one week of usage is not a second source. A Tier B on Sleeper's
   trending adds bids the ladder's top decile, not the band-B dollar (Estime at $1 would
   never process). The Vikings are a registry hold. Tests: test_plan 14, 14b, 14c.
+- **QB for QB: the hurt QB2 is the spot for the QB who replaces him** (11-18, Caleb:
+  "douglas has been a really good wr, are we sure he is the drop?"). Herbert, the cover for
+  the Stafford bye with Mayfield (foot) not expected to play, named DeMario Douglas — 15+
+  in four of his last six on a rising snap share. Mayfield was not a spot: the drop gate
+  blocked him on thin data (G3/G5, no Sleeper line), and the depth term charged a dropped
+  bench QB in full while crediting nothing for the better QB who took his place. Now, in a
+  one-QB league carrying two, the lower QB is the 'spare' — a QB-for-QB swap spot that
+  G3/G5 do not protect, that no non-QB add may take, and whose depth is charged NET of the
+  QB replacing him; and a third QB never costs a skill player while that spot exists.
+  Tests: test_plan 17.
 - **A feed that has gone silent twice is no pulse, this week included** (11-18). Michael
   Wilson (ARI WR, neck fracture 11-08, out for the season) was projected in week 9 and
   blank in weeks 10 and 11; the pulse judged only PAST weeks, read 'projected in week 9',
