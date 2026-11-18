@@ -3,7 +3,7 @@
   "acq_left": null,
   "acq_reset": null,
   "acq_reset_verified": null,
-  "acq_used": 1,
+  "acq_used": 2,
   "fab_left": 62,
   "ir_free": 0,
   "open_spots": 0
@@ -42,6 +42,10 @@
    "reason": "gate: G3-role NFL depth-chart role not checked"
   },
   {
+   "player": "Justin Herbert",
+   "reason": "you added him 2026-11-18 (<= 7 days) \u2014 your decision, not the spot"
+  },
+  {
    "player": "Cairo Santos",
    "reason": "you added him 2026-11-18 (<= 7 days) \u2014 your decision, not the spot"
   },
@@ -56,30 +60,30 @@
    "DEF": "DST:SF",
    "K": "cairo santos",
    "QB": "justin herbert",
-   "RB1": "james cook",
-   "RB2": "audric estime",
-   "TE": "sam laporta",
-   "W/R/T": "isaiah likely",
+   "RB1": "audric estime",
+   "RB2": "james cook",
+   "TE": "isaiah likely",
+   "W/R/T": "sam laporta",
    "WR1": "ryan flournoy",
    "WR2": "malik washington",
    "WR3": "makai lemon"
   },
-  "optimal_before_moves": 87.77,
+  "optimal_before_moves": 108.8,
   "slots": {
    "DEF": "49ers",
    "K": "Cairo Santos",
    "QB": "Justin Herbert",
-   "RB1": "James Cook III",
-   "RB2": "Audric Estime",
-   "TE": "Sam LaPorta",
-   "W/R/T": "Isaiah Likely",
+   "RB1": "Audric Estime",
+   "RB2": "James Cook III",
+   "TE": "Isaiah Likely",
+   "W/R/T": "Sam LaPorta",
    "WR1": "Ryan Flournoy",
    "WR2": "Malik Washington",
    "WR3": "Makai Lemon"
   },
-  "total": 108.64
+  "total": 108.8
  },
- "made": "2026-11-18T11:06-05:00",
+ "made": "2026-11-18T11:12-05:00",
  "mechanics": [
   {
    "rule": "A never-rostered free agent is free until his game kicks off",
@@ -119,73 +123,40 @@
  ],
  "moves": [
   {
-   "J": 21.167,
-   "add_key": "justin herbert",
-   "add_name": "Justin Herbert",
+   "J": 20.871,
+   "add_key": null,
+   "add_name": null,
    "at": null,
-   "deadline": "2026-11-22T13:00-05:00",
-   "drop_name": "Baker Mayfield",
+   "deadline": "2026-11-22T16:05-05:00",
+   "drop_name": null,
    "eff": "W",
    "fam": "QB",
+   "gain": 20.87,
    "gates": {
-    "add": {
-     "checks": [],
-     "verdict": "PASS"
-    },
-    "drop": {
-     "checks": [
-      {
-       "gate": "G3-role",
-       "msg": "NFL depth-chart role not checked \u2014 a QB-for-QB swap: judged against the QB who replaces him",
-       "status": "WARN"
-      },
-      {
-       "gate": "G5-sources",
-       "msg": "SINGLE SOURCE: ['rotowire'] (['sleeper']) \u2014 a QB-for-QB swap: judged against the QB who replaces him",
-       "status": "WARN"
-      },
-      {
-       "gate": "G13-injury",
-       "msg": "tagged Q \u2014 why and for how long is NOT on record; the tag counts for nothing here, the drop stands on his season value alone",
-       "status": "WARN"
-      }
-     ],
-     "verdict": "WARN"
-    }
+    "add": null,
+    "drop": null
    },
-   "id": "BSB:justin herbert",
-   "kind": "add",
+   "id": "BSB:lineup:QB",
+   "kind": "lineup",
    "league": "BSB",
-   "lineup": {
-    "gain": 20.87,
-    "over": "Matthew Stafford",
-    "slot": "QB"
-   },
+   "phase": "early",
    "provisional": false,
    "reasons": [
-    "QB weekly upgrade: Justin Herbert 20.9 vs starter Matthew Stafford 0.0",
-    "the spot: Baker Mayfield \u2014 the QB2 \u2014 a QB-for-QB swap (17.3 vs 16.0/wk rest-of-season; tagged Q)"
+    "Matthew Stafford has no game this week (bye) \u2014 the slot scores nothing until he is replaced"
    ],
-   "spot_id": "drop:baker mayfield",
-   "spot_kind": "spare",
-   "spot_label": "Baker Mayfield",
+   "sit": "Matthew Stafford",
+   "slot": "QB",
+   "spot_id": null,
+   "spot_kind": null,
+   "spot_label": null,
    "srcs": [
-    "upgrade"
+    "lineup"
    ],
+   "start": "Justin Herbert",
    "tier": null,
-   "timing_why": "never-rostered free agent: free until his kickoff",
+   "timing_why": "",
    "tm": "LAC",
    "txns": [
-    {
-     "key": "justin herbert",
-     "op": "add",
-     "player": "Justin Herbert"
-    },
-    {
-     "key": "baker mayfield",
-     "op": "drop",
-     "player": "Baker Mayfield"
-    },
     {
      "key": "justin herbert",
      "op": "start",
@@ -199,43 +170,13 @@
     }
    ],
    "value_terms": {
-    "J": 21.167,
-    "acq": 1,
-    "bid": 0,
-    "dS_W": 20.871,
-    "dS_W1": 0.0,
-    "dS_play": 0.0,
-    "dS_rest": 0.0,
-    "d_boom": 7.957,
-    "d_depth": -0.0,
-    "d_ins": 0.0,
-    "p_playoffs": 1.0,
-    "pen_acq": 0.0,
-    "pen_churn": 0.5,
-    "pen_fab": 0.0,
-    "rest_weeks": "13-17",
-    "txn": 1
+    "J": 20.871,
+    "dS_W": 20.871
    },
-   "values": {
-    "add": {
-     "boom": 0.45995735811992444,
-     "ros": 17.299789915966386,
-     "ros_src": "8-game realized 13.6/g blended with preseason 22.2/wk (6-game prior)",
-     "w": 20.871499999999997,
-     "w1": 17.299789915966386,
-     "w1_src": "rest-of-season per-week (no week-12 projection on disk \u2014 approximation)"
-    },
-    "drop": {
-     "ros": 15.997326203208559,
-     "ros_src": "5-game realized 10.5/g blended with preseason 20.6/wk (6-game prior)",
-     "w": 0.0,
-     "w1": 15.997326203208559
-    }
-   },
-   "when": "before kickoff Sun Nov 22, 1:00 pm ET"
+   "when": "before kickoff Sun Nov 22, 4:05 pm ET"
   },
   {
-   "J": 10.983,
+   "J": 10.974,
    "add_key": null,
    "add_name": null,
    "at": null,
@@ -243,7 +184,7 @@
    "drop_name": null,
    "eff": "W",
    "fam": "WR",
-   "gain": 10.98,
+   "gain": 10.97,
    "gates": {
     "add": null,
     "drop": null
@@ -282,13 +223,13 @@
     }
    ],
    "value_terms": {
-    "J": 10.983,
-    "dS_W": 10.983
+    "J": 10.974,
+    "dS_W": 10.974
    },
    "when": "before kickoff Sun Nov 22, 1:00 pm ET"
   },
   {
-   "J": 5.716,
+   "J": 5.819,
    "add_key": null,
    "add_name": null,
    "at": null,
@@ -296,7 +237,7 @@
    "drop_name": null,
    "eff": "W",
    "fam": "WR",
-   "gain": 5.72,
+   "gain": 5.82,
    "gates": {
     "add": null,
     "drop": null
@@ -335,8 +276,8 @@
     }
    ],
    "value_terms": {
-    "J": 5.716,
-    "dS_W": 5.716
+    "J": 5.819,
+    "dS_W": 5.819
    },
    "when": "before kickoff Sun Nov 22, 1:00 pm ET"
   },
@@ -442,6 +383,15 @@
    ]
   },
   {
+   "J": null,
+   "key": "baker mayfield",
+   "name": "Baker Mayfield",
+   "reason": "you dropped him in BSB on 2026-11-18 (<= 7 days, either league)",
+   "reasons": [
+    "registry add_yes (priority 2): BSB QB2 (Caleb 10-24: \"given how important QB is, is it not worth keeping a backup?\"). Ins"
+   ]
+  },
+  {
    "J": -1.466,
    "key": "brevyn spann ford",
    "name": "Brevyn Spann-Ford",
@@ -454,7 +404,7 @@
    "J": null,
    "key": "charlie kolar",
    "name": "Charlie Kolar",
-   "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 3.9 under your weakest 10.1",
+   "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 3.9 under your weakest 10.2",
    "reasons": [
     "breakout tier B: 72% snaps, 17% targets, 0% air yds; no market line yet (Sleeper receiving yds 16)"
    ]
@@ -490,7 +440,7 @@
    "J": null,
    "key": "dawson knox",
    "name": "Dawson Knox",
-   "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 3.8 under your weakest 10.1",
+   "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 3.8 under your weakest 10.2",
    "reasons": [
     "breakout tier B: 72% snaps, 14% targets, 6% air yds; no market line yet (Sleeper receiving yds 14); held (wk9: 72% snaps, 16% targets, 13% air yds)"
    ]
@@ -499,7 +449,7 @@
    "J": null,
    "key": "gunnar helm",
    "name": "Gunnar Helm",
-   "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 6.8 under your weakest 10.1",
+   "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 6.8 under your weakest 10.2",
    "reasons": [
     "breakout tier B: 82% snaps, 10% targets, 16% air yds; no market line yet (Sleeper receiving yds 25)"
    ]
@@ -557,7 +507,7 @@
    "name": "Malachi Fields",
    "reason": "J -1.54 < 3.0 at its best spot (Audric Estime) \u2014 J -1.54 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x-0.18 (bench boom) + 0.2x-5.08 (depth) - 0.00 acq - 0.01 FAB($1) - 0.50 churn",
    "reasons": [
-    "breakout tier B: 89% snaps, 11% targets, 38% air yds; Kalshi receiving yds 31 vs Sleeper 34 (-6%) \u2014 a part-time line, under the 35 starter floor; held (wk9: 84% snaps, 19% targets, 25% air yds)"
+    "breakout tier B: 89% snaps, 11% targets, 38% air yds; Kalshi receiving yds 32 vs Sleeper 34 (-4%) \u2014 a part-time line, under the 35 starter floor; held (wk9: 84% snaps, 19% targets, 25% air yds)"
    ]
   },
   {
@@ -576,7 +526,7 @@
    "name": "Simi Fehoko",
    "reason": "best spot 49ers: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
-    "breakout tier B: 74% snaps, 11% targets, 26% air yds; Kalshi receiving yds 21 vs Sleeper 18 (+16%) \u2014 a part-time line, under the 35 starter floor"
+    "breakout tier B: 74% snaps, 11% targets, 26% air yds; Kalshi receiving yds 21 vs Sleeper 18 (+17%) \u2014 a part-time line, under the 35 starter floor"
    ]
   },
   {
@@ -596,13 +546,6 @@
    "kind": "spare",
    "label": "49ers",
    "taken_by": null,
-   "tier": 2
-  },
-  {
-   "id": "drop:baker mayfield",
-   "kind": "spare",
-   "label": "Baker Mayfield",
-   "taken_by": "Justin Herbert",
    "tier": 2
   },
   {
@@ -661,12 +604,12 @@
   "W_NOW": 1.0,
   "W_PLAY": 0.6,
   "W_REST": 0.8,
-  "p_playoffs": 0.997
+  "p_playoffs": 0.99725
  },
  "winprob": {
-  "mean": 108.56419603318845,
+  "mean": 108.45765671477862,
   "note": "sampled on the planner's final lineup",
-  "p_med": 0.2265,
-  "p_opp": 0.8588333333333333
+  "p_med": 0.2295,
+  "p_opp": 0.8573333333333333
  }
 }
