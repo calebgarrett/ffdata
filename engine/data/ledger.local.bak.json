@@ -3562,10 +3562,11 @@
   ],
   "verdict": "BLOCK",
   "week": 3,
-  "status": "blocked",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": null,
-  "reverses": null
+  "reverses": null,
+  "superseded_by": "c9243385"
  },
  {
   "id": "e85e2bd7",
@@ -12404,11 +12405,12 @@
   ],
   "verdict": "WARN",
   "week": 8,
-  "status": "executed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": null,
   "reverses": "41196bee",
-  "status_ts": "2026-10-28T19:30-04:00"
+  "status_ts": "2026-10-28T19:30-04:00",
+  "superseded_by": "15d7cade"
  },
  {
   "id": "3132bfc7",
@@ -14260,10 +14262,11 @@
   ],
   "verdict": "WARN",
   "week": 10,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": "2026-11-15T13:00-05:00",
-  "reverses": null
+  "reverses": null,
+  "superseded_by": "7869d550"
  },
  {
   "id": "b624aef1",
@@ -14279,10 +14282,11 @@
   ],
   "verdict": "PASS",
   "week": 10,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": true,
   "resolves_at": "2026-11-15T16:25-05:00",
-  "reverses": null
+  "reverses": null,
+  "superseded_by": "6e63d57b"
  },
  {
   "id": "bc05f3ad",
@@ -14298,10 +14302,11 @@
   ],
   "verdict": "PASS",
   "week": 10,
-  "status": "proposed",
+  "status": "expired",
   "provisional": false,
   "resolves_at": "2026-11-12T20:15-05:00",
-  "reverses": null
+  "reverses": null,
+  "status_ts": "2026-11-17T15:00-05:00"
  },
  {
   "id": "e07daab9",
@@ -14317,10 +14322,11 @@
   ],
   "verdict": "WARN",
   "week": 10,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": null,
-  "reverses": null
+  "reverses": null,
+  "superseded_by": "4ae6f889"
  },
  {
   "id": "9458ec91",
@@ -14336,10 +14342,11 @@
   ],
   "verdict": "WARN",
   "week": 10,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": null,
-  "reverses": null
+  "reverses": null,
+  "superseded_by": "5cd81379"
  },
  {
   "id": "aa5c5bb5",
@@ -14355,10 +14362,11 @@
   ],
   "verdict": "PASS",
   "week": 10,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": null,
-  "reverses": null
+  "reverses": null,
+  "superseded_by": "c05e10f4"
  },
  {
   "id": "a4331746",
@@ -14373,10 +14381,11 @@
   ],
   "verdict": "WARN",
   "week": 10,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": null,
-  "reverses": null
+  "reverses": null,
+  "superseded_by": "8007b9d2"
  },
  {
   "id": "811f2948",
@@ -14391,10 +14400,11 @@
   ],
   "verdict": "WARN",
   "week": 10,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": null,
-  "reverses": null
+  "reverses": null,
+  "superseded_by": "78dbc5d5"
  },
  {
   "id": "86ad690b",
@@ -14409,10 +14419,11 @@
   ],
   "verdict": "WARN",
   "week": 10,
-  "status": "proposed",
+  "status": "executed",
   "provisional": true,
   "resolves_at": "2026-11-15T20:20-05:00",
-  "reverses": null
+  "reverses": null,
+  "status_ts": "2026-11-10T23:54-05:00"
  },
  {
   "id": "03d276df",
@@ -14427,10 +14438,11 @@
   ],
   "verdict": "WARN",
   "week": 10,
-  "status": "proposed",
+  "status": "executed",
   "provisional": true,
   "resolves_at": "2026-11-15T16:05-05:00",
-  "reverses": "f90a33f3"
+  "reverses": "f90a33f3",
+  "status_ts": "2026-11-11T22:47-05:00"
  },
  {
   "id": "d91161cb",
@@ -14463,10 +14475,11 @@
   ],
   "verdict": "BLOCK",
   "week": 10,
-  "status": "blocked",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": null,
-  "reverses": null
+  "reverses": null,
+  "superseded_by": "ab11bc53"
  },
  {
   "id": "14c59f37",
@@ -14481,6 +14494,864 @@
   ],
   "verdict": "BLOCK",
   "week": 10,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "7869d550",
+  "ts": "2026-11-10T21:43-05:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "MarShawn Lloyd",
+  "call": "start MarShawn Lloyd at RB2",
+  "detail": "over Josh Jacobs +5.80",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 10,
+  "status": "expired",
+  "provisional": false,
+  "resolves_at": "2026-11-15T13:00-05:00",
+  "reverses": "61e1f422",
+  "status_ts": "2026-11-17T15:00-05:00"
+ },
+ {
+  "id": "1184f3c3",
+  "ts": "2026-11-10T23:54-05:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Washington",
+  "call": "start Washington at DEF",
+  "detail": "over San Francisco +1.64",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "PASS",
+  "week": 10,
+  "status": "expired",
+  "provisional": false,
+  "resolves_at": "2026-11-12T20:15-05:00",
+  "reverses": null,
+  "status_ts": "2026-11-17T15:00-05:00"
+ },
+ {
+  "id": "4ae6f889",
+  "ts": "2026-11-10T23:54-05:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Baltimore Ravens",
+  "call": "add Baltimore Ravens (DEF) over San Francisco",
+  "detail": "+4.06/wk",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 10,
+  "status": "superseded",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "e07daab9",
+  "superseded_by": "63e04e88"
+ },
+ {
+  "id": "5cd81379",
+  "ts": "2026-11-10T23:54-05:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Indianapolis Colts",
+  "call": "add Indianapolis Colts (DEF) over San Francisco",
+  "detail": "+3.64/wk",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 10,
+  "status": "superseded",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "9458ec91",
+  "superseded_by": "c2cbe936"
+ },
+ {
+  "id": "c05e10f4",
+  "ts": "2026-11-10T23:54-05:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Green Bay Packers",
+  "call": "add Green Bay Packers (DEF) over San Francisco",
+  "detail": "+2.99/wk",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "PASS",
+  "week": 10,
+  "status": "superseded",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "aa5c5bb5",
+  "superseded_by": "6b90a34f"
+ },
+ {
+  "id": "8007b9d2",
+  "ts": "2026-11-10T23:54-05:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Los Angeles Chargers",
+  "call": "stream Los Angeles Chargers for week 11, drop Washington",
+  "detail": "DEF: LAC 16.0 vs yours San Francisco 21.5 \u2014 edge 5.5 implied pts",
+  "evidence": [
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 10,
+  "status": "superseded",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "a4331746",
+  "superseded_by": "e390afa4"
+ },
+ {
+  "id": "78dbc5d5",
+  "ts": "2026-11-10T23:54-05:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Harrison Butker",
+  "call": "bye cover: Harrison Butker for week 11, drop Washington",
+  "detail": "K: Jason Myers on bye week 11; KC 28.0 is the best free K on posted lines",
+  "evidence": [
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 10,
+  "status": "superseded",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "811f2948",
+  "superseded_by": "1a0c8807"
+ },
+ {
+  "id": "d44500d2",
+  "ts": "2026-11-10T23:54-05:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Jalen Ramsey",
+  "call": "start Jalen Ramsey at CB",
+  "detail": "over Cooper DeJean +16.41",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 10,
+  "status": "executed",
+  "provisional": false,
+  "resolves_at": "2026-11-15T20:20-05:00",
+  "reverses": null,
+  "status_ts": "2026-11-11T22:47-05:00"
+ },
+ {
+  "id": "0b2a502f",
+  "ts": "2026-11-10T23:54-05:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Justin Reid",
+  "call": "add Justin Reid (DB) over Cooper DeJean",
+  "detail": "+16.16/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 10,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "6e63d57b",
+  "ts": "2026-11-11T02:42-05:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Ryan Flournoy",
+  "call": "start Ryan Flournoy at WR2",
+  "detail": "over Malik Washington +0.47",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 10,
+  "status": "superseded",
+  "provisional": true,
+  "resolves_at": "2026-11-15T16:25-05:00",
+  "reverses": "b624aef1",
+  "superseded_by": "984d5d6b"
+ },
+ {
+  "id": "63e04e88",
+  "ts": "2026-11-11T02:42-05:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Baltimore Ravens",
+  "call": "add Baltimore Ravens (DEF) over 49ers",
+  "detail": "+4.04/wk",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 10,
+  "status": "expired",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "4ae6f889",
+  "status_ts": "2026-11-17T15:00-05:00"
+ },
+ {
+  "id": "c2cbe936",
+  "ts": "2026-11-11T02:42-05:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Indianapolis Colts",
+  "call": "add Indianapolis Colts (DEF) over 49ers",
+  "detail": "+3.62/wk",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 10,
+  "status": "superseded",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "5cd81379",
+  "superseded_by": "d4143776"
+ },
+ {
+  "id": "6b90a34f",
+  "ts": "2026-11-11T02:42-05:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Green Bay Packers",
+  "call": "add Green Bay Packers (DEF) over 49ers",
+  "detail": "+3.00/wk",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "PASS",
+  "week": 10,
+  "status": "expired",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "c05e10f4",
+  "status_ts": "2026-11-17T15:00-05:00"
+ },
+ {
+  "id": "e390afa4",
+  "ts": "2026-11-11T02:42-05:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Los Angeles Chargers",
+  "call": "stream Los Angeles Chargers for week 11, drop Commanders",
+  "detail": "DEF: LAC 16.0 vs yours 49ers 21.5 \u2014 edge 5.5 implied pts",
+  "evidence": [
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 10,
+  "status": "expired",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "8007b9d2",
+  "status_ts": "2026-11-17T15:00-05:00"
+ },
+ {
+  "id": "1a0c8807",
+  "ts": "2026-11-11T02:42-05:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Harrison Butker",
+  "call": "bye cover: Harrison Butker for week 11, drop Commanders",
+  "detail": "K: Jason Myers on bye week 11; KC 28.0 is the best free K on posted lines",
+  "evidence": [
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 10,
+  "status": "expired",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "78dbc5d5",
+  "status_ts": "2026-11-17T15:00-05:00"
+ },
+ {
+  "id": "928aa9c5",
+  "ts": "2026-11-11T11:04-05:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Audric Estime",
+  "call": "start Audric Estime at RB2",
+  "detail": "over Josh Jacobs +8.56",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "PASS",
+  "week": 10,
+  "status": "superseded",
+  "provisional": false,
+  "resolves_at": "2026-11-15T13:00-05:00",
+  "reverses": null,
+  "superseded_by": "d617dc78"
+ },
+ {
+  "id": "984d5d6b",
+  "ts": "2026-11-11T11:04-05:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Ryan Flournoy",
+  "call": "start Ryan Flournoy at WR3",
+  "detail": "over Malik Washington +0.75",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 10,
+  "status": "superseded",
+  "provisional": true,
+  "resolves_at": "2026-11-15T16:25-05:00",
+  "reverses": "6e63d57b",
+  "superseded_by": "2d4b266b"
+ },
+ {
+  "id": "1cc76995",
+  "ts": "2026-11-11T11:04-05:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Dominic Zvada",
+  "call": "start Dominic Zvada at K",
+  "detail": "over empty +9.07",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 10,
+  "status": "executed",
+  "provisional": false,
+  "resolves_at": "2026-11-12T20:15-05:00",
+  "reverses": null,
+  "status_ts": "2026-11-11T22:47-05:00"
+ },
+ {
+  "id": "89a4d517",
+  "ts": "2026-11-11T11:04-05:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Vikings",
+  "call": "start Vikings at DEF",
+  "detail": "over 49ers +1.31",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "PASS",
+  "week": 10,
+  "status": "executed",
+  "provisional": true,
+  "resolves_at": "2026-11-15T13:00-05:00",
+  "reverses": null,
+  "status_ts": "2026-11-11T22:47-05:00"
+ },
+ {
+  "id": "caa19a23",
+  "ts": "2026-11-11T11:04-05:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "New York Giants",
+  "call": "add New York Giants (DEF) over 49ers",
+  "detail": "+2.73/wk",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "PASS",
+  "week": 10,
+  "status": "expired",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null,
+  "status_ts": "2026-11-17T15:00-05:00"
+ },
+ {
+  "id": "15d7cade",
+  "ts": "2026-11-11T11:04-05:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Washington Commanders",
+  "call": "add Washington Commanders (DEF) over 49ers",
+  "detail": "+1.63/wk",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "PASS",
+  "week": 10,
+  "status": "expired",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "136545c5",
+  "status_ts": "2026-11-17T15:00-05:00"
+ },
+ {
+  "id": "d617dc78",
+  "ts": "2026-11-11T17:59-05:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Audric Estime",
+  "call": "start Audric Estime at RB1",
+  "detail": "over Josh Jacobs +7.98",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 10,
+  "status": "executed",
+  "provisional": false,
+  "resolves_at": "2026-11-15T13:00-05:00",
+  "reverses": "928aa9c5",
+  "status_ts": "2026-11-11T22:47-05:00"
+ },
+ {
+  "id": "c9243385",
+  "ts": "2026-11-11T17:59-05:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Alohi Gilman",
+  "call": "add Alohi Gilman (DB) over Cooper DeJean",
+  "detail": "+16.25/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 10,
+  "status": "superseded",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "86b73966",
+  "superseded_by": "2ae772e2"
+ },
+ {
+  "id": "d4143776",
+  "ts": "2026-11-11T22:47-05:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Indianapolis Colts",
+  "call": "add Indianapolis Colts (DEF) over Vikings",
+  "detail": "+2.39/wk",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "PASS",
+  "week": 10,
+  "status": "expired",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "c2cbe936",
+  "status_ts": "2026-11-17T15:00-05:00"
+ },
+ {
+  "id": "eaa22888",
+  "ts": "2026-11-11T22:47-05:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Jared Goff",
+  "call": "start Jared Goff at Q/W/R/T",
+  "detail": "over Matthew Stafford +6.84",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 10,
+  "status": "executed",
+  "provisional": false,
+  "resolves_at": "2026-11-15T09:30-05:00",
+  "reverses": null,
+  "status_ts": "2026-11-12T15:46-05:00"
+ },
+ {
+  "id": "ab11bc53",
+  "ts": "2026-11-11T22:47-05:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Elijah Molden",
+  "call": "add Elijah Molden (DB) over Kam Curl",
+  "detail": "+1.64/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 10,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "836d9bb5"
+ },
+ {
+  "id": "3969b4e6",
+  "ts": "2026-11-12T15:46-05:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Devin Lloyd",
+  "call": "add Devin Lloyd (LB) over Carson Schwesinger",
+  "detail": "+1.55/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 10,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "2d4b266b",
+  "ts": "2026-11-13T22:04-05:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Ryan Flournoy",
+  "call": "start Ryan Flournoy at WR2",
+  "detail": "over Malik Washington +0.40",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 10,
+  "status": "superseded",
+  "provisional": true,
+  "resolves_at": "2026-11-15T16:25-05:00",
+  "reverses": "984d5d6b",
+  "superseded_by": "0675e288"
+ },
+ {
+  "id": "88f2bcf4",
+  "ts": "2026-11-13T22:04-05:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Emmett Johnson",
+  "call": "add Emmett Johnson (RB) over Jaylen Warren",
+  "detail": "+5.86/wk",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 10,
+  "status": "expired",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null,
+  "status_ts": "2026-11-17T15:00-05:00"
+ },
+ {
+  "id": "0675e288",
+  "ts": "2026-11-14T05:53-05:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Ryan Flournoy",
+  "call": "start Ryan Flournoy at WR3",
+  "detail": "over Malik Washington +0.21",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 10,
+  "status": "expired",
+  "provisional": true,
+  "resolves_at": "2026-11-15T16:25-05:00",
+  "reverses": "2d4b266b",
+  "status_ts": "2026-11-17T15:00-05:00"
+ },
+ {
+  "id": "2ae772e2",
+  "ts": "2026-11-15T03:26-05:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Alohi Gilman",
+  "call": "add Alohi Gilman (DB) over Kam Curl",
+  "detail": "+1.53/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 10,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": "c9243385"
+ },
+ {
+  "id": "d494385c",
+  "ts": "2026-11-17T15:00-05:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Baker Mayfield",
+  "call": "start Baker Mayfield at QB",
+  "detail": "over Matthew Stafford +18.92",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 11,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": "2026-11-22T13:00-05:00",
+  "reverses": null
+ },
+ {
+  "id": "bdfb40ff",
+  "ts": "2026-11-17T15:00-05:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Ryan Flournoy",
+  "call": "start Ryan Flournoy at WR1",
+  "detail": "over Jaxon Smith-Njigba +10.55",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 11,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": "2026-11-22T13:00-05:00",
+  "reverses": null
+ },
+ {
+  "id": "ac19506f",
+  "ts": "2026-11-17T15:00-05:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Makai Lemon",
+  "call": "start Makai Lemon at WR3",
+  "detail": "over Drake London +5.52",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 11,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": "2026-11-22T13:00-05:00",
+  "reverses": null
+ },
+ {
+  "id": "0af01159",
+  "ts": "2026-11-17T15:00-05:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "49ers",
+  "call": "start 49ers at DEF",
+  "detail": "over Vikings +1.83",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 11,
+  "status": "proposed",
+  "provisional": true,
+  "resolves_at": "2026-11-22T20:20-05:00",
+  "reverses": null
+ },
+ {
+  "id": "161dffd2",
+  "ts": "2026-11-17T15:00-05:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Justin Herbert",
+  "call": "add Justin Herbert (QB) over Matthew Stafford",
+  "detail": "+20.69/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 11,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "9a069129",
+  "ts": "2026-11-17T15:00-05:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Michael Pittman Jr.",
+  "call": "add Michael Pittman Jr. (WR) over Jaxon Smith-Njigba",
+  "detail": "+6.33/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 11,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "aa458f2a",
+  "ts": "2026-11-17T15:00-05:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Los Angeles Chargers",
+  "call": "add Los Angeles Chargers (DEF) over Vikings",
+  "detail": "+2.66/wk",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "WARN",
+  "week": 11,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "1250a115",
+  "ts": "2026-11-17T15:00-05:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Rome Odunze",
+  "call": "start Rome Odunze at W/R",
+  "detail": "over Drake London +12.01",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 11,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": "2026-11-22T13:00-05:00",
+  "reverses": null
+ },
+ {
+  "id": "90fdab9a",
+  "ts": "2026-11-17T15:00-05:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Nick Cross",
+  "call": "start Nick Cross at D",
+  "detail": "over Carson Schwesinger +12.88",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 11,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": "2026-11-23T20:15-05:00",
+  "reverses": null
+ },
+ {
+  "id": "d6a3f732",
+  "ts": "2026-11-17T15:00-05:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Cooper DeJean",
+  "call": "start Cooper DeJean at DB",
+  "detail": "over Kam Curl +17.40",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 11,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": "2026-11-22T13:00-05:00",
+  "reverses": null
+ },
+ {
+  "id": "a5149c79",
+  "ts": "2026-11-17T15:00-05:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "T.J. Watt",
+  "call": "start T.J. Watt at DL",
+  "detail": "over Myles Garrett +12.45",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 11,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": "2026-11-22T13:00-05:00",
+  "reverses": null
+ },
+ {
+  "id": "bd5529da",
+  "ts": "2026-11-17T15:00-05:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Payton Wilson",
+  "call": "add Payton Wilson (LB) over Carson Schwesinger",
+  "detail": "+19.51/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 11,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "2aa79083",
+  "ts": "2026-11-17T15:00-05:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Ventrell Miller",
+  "call": "add Ventrell Miller (LB) over Carson Schwesinger",
+  "detail": "+19.37/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 11,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "9c825dfb",
+  "ts": "2026-11-17T15:00-05:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Anthony Hill Jr.",
+  "call": "add Anthony Hill Jr. (LB) over Carson Schwesinger",
+  "detail": "+19.30/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 11,
   "status": "blocked",
   "provisional": false,
   "resolves_at": null,

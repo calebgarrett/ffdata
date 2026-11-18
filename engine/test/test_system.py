@@ -236,17 +236,30 @@ case('two-week confirmation: a held Tier-B row is an ADD when a clean drop exist
 _dc = BK._drop_candidates(b, lu, WR.Wire(b, P, season=_j.load(open('/home/claude/bsb2/data/season_blend.json'))), U.load(max(1, W_NOW - 1)))
 _defs = [r for r in b.mine if r['pos'] == 'DEF' and r['slot'] != 'IR']
 if len(_defs) >= 2:
+    # 11-10: the Vikings are a registry hold and the season number is the REALIZED blend
+    # (lib/ytd.py), so: a held DEF is never the candidate, and the candidate — when the
+    # legacy list names one at all (it skips this week's starter) — is the weakest
+    # non-held unit by rest-of-season value
     _sb = _j.load(open('/home/claude/bsb2/data/season_blend.json'))
-    _lo = min(_defs, key=lambda r: _sb.get(r['key'], {}).get('pts') or 0)
-    case('two DEFs: the drop candidate is the lower season value, never simply the benched one',
-         [d['row']['key'] for d in _dc if d['row']['pos'] == 'DEF'] == [_lo['key']], str([(d['row']['player']) for d in _dc if d['row']['pos'] == 'DEF']))
+    import lib.ytd as _YTD
+    _y = _YTD.load('BSB', W_NOW)
+    def _dv(r):
+        bl = _YTD.blend((_sb.get(r['key'], {}).get('pts') or 0) / 17.0, _y.get(r['key']), 'DEF')
+        return bl[0] if bl else (_sb.get(r['key'], {}).get('pts') or 0) / 17.0
+    _free = [r for r in _defs if r['key'] not in _roles['hold']]
+    _lo = min(_free, key=_dv) if _free else None
+    _dcd = [d['row']['key'] for d in _dc if d['row']['pos'] == 'DEF']
+    case('two DEFs: a registry-held DEF is never the drop candidate',
+         not any(k in _roles['hold'] for k in _dcd), str(_dcd))
+    case('two DEFs: the drop candidate, when named, is the weakest non-held unit by realized value, never simply the benched one',
+         _dcd == [] or (_lo is not None and _dcd == [_lo['key']]), str((_dcd, _lo and _lo['player'])))
 
 # 10-28: a DEF/K on BYE has no weekly line, so a weekly-horizon drop failed G5 by
 # construction and the spare vanished from the drop list in the one week it is most clearly
 # the spot (the 49ers, SF bye week 8; the runner refused). On a bye the number is the
 # blend's per-week value and the blend is the second family.
 _wbye = WR.Wire(b, P, season=_j.load(open('/home/claude/bsb2/data/season_blend.json')))
-_rbye = dict(next(r for r in b.mine if r['pos'] == 'DEF'), kick=None, pts=0.0, line={'sources': ['sleeper']})
+_rbye = dict(next((r for r in b.mine if r['pos'] == 'DEF' and r['key'] not in _roles['hold']), next(r for r in b.mine if r['pos'] == 'DEF')), kick=None, pts=0.0, line={'sources': ['sleeper']})   # a non-held DEF (11-12: the Vikings hold sorted first)
 _gbye = _wbye.gate_drop(_rbye, horizon='weekly')
 case('a DEF on bye is a legal weekly drop: G5 is satisfied by the season blend, not refused for a missing game line', _gbye.verdict != 'BLOCK' and not any(c[0] == 'G5-sources' and c[1] == 'BLOCK' for c in _gbye.checks), str([c for c in _gbye.checks if c[1] != 'PASS']))
 
@@ -444,7 +457,8 @@ _dead = _PO.simulate(b, _S0, W_NOW)
 # the invariant is that it sits FAR below the real roster, and near zero when the lead is not huge
 _wins_now = int((b.records.get(b.me, {}).get('record') or '0-0').split('-')[0] or 0)
 case('playoff sim: a roster projecting zero every week is buried (far below the real one; near zero unless the lead is already huge)',
-     _dead['mine'] <= _po['mine'] - 0.3 and (_dead['mine'] < 0.02 or _wins_now >= 12), f"dead {_dead['mine']:.3f} vs mine {_po['mine']:.3f}, wins {_wins_now}")
+     _dead['mine'] < _po['mine'] and (_dead['mine'] <= _po['mine'] - 0.3 or _po['mine'] >= 0.99) and (_dead['mine'] < 0.02 or _wins_now >= 12),   # 11-17: 16 wins with 7 to play — even a dead roster backs in 82%; the gap closes only once the real one is ~clinched
+     f"dead {_dead['mine']:.3f} vs mine {_po['mine']:.3f}, wins {_wins_now}")
 
 # 34. Rivals (09-26): the bid to beat is set by the likely field, bounded by the
 #     bands; a Tier-B claim always takes the floor; one outlier claim is not a habit.

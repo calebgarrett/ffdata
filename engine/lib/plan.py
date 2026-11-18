@@ -1178,7 +1178,12 @@ def _lineup_after(f, moves, ev):
             by_add[o]['txns'] += txns
             by_add[o]['lineup'] = dict(slot=s, over=(((xf.name + ' (dropped)') if dropped_here else xf.name) if xf else 'empty') + slide, gain=round(gain, 2))
             continue
+        # the move must happen before EITHER man locks: a Sunday starter over a Thursday
+        # sitter is a Thursday decision (11-11: 'Curl over Cross by Sun 4:05' while Cross,
+        # WAS, locked Thursday night with the week's first game)
         kick = of.kick
+        xk = getattr(xf, 'kick', None) if xf is not None else None
+        if xk and xk > f.now and (not kick or xk < kick): kick = xk
         lmoves.append(dict(id=f'{f.league}:lineup:{s}', league=f.league, kind='lineup', add_name=None, add_key=None,
                            fam=of.fam, tm=of.tm, drop_name=None, spot_id=None, spot_kind=None, spot_label=None,
                            txns=txns, value_terms=dict(J=round(gain, 3), dS_W=round(gain, 3)), J=round(gain, 3),

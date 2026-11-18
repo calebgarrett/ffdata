@@ -268,6 +268,33 @@ p = PL.plan_facts(f, ev)
 case('...and he is never an add, even into an open spot with Tier-A evidence', not any(m['add_key'] == NK(ghost) for m in p.moves), p.summary())
 case('...rejected with G2 and the reason', any(r['key'] == NK(ghost) and r['reason'].startswith('G2') for r in p.rejected), [r for r in p.rejected if r['key'] == NK(ghost)])
 
+# ---------------------------------------------------------------- 5c2. the feed went silent twice, this week included (11-18: Michael Wilson, neck fracture)
+# Projected two weeks ago, blank last week and blank THIS week with a game on the schedule:
+# dead, whatever week 9 said — and never a depth claim. One blank week (this one) with a
+# projection last week is still alive (Mayfield, foot, uncertain: a tag's job, not the pulse's).
+r5c2 = bsb_roster()
+mw, bm = 'Mikhail Wilsonby', 'Bakari Mayfold'
+f, st, pr = league('BSB', r5c2, fas=[(mw, 'WR', 'ARI', None), (bm, 'WR', 'TB', None)],
+                   season={NK(mw): dict(name=mw, tm='ARI', pos='WR', pts=169.0), NK(bm): dict(name=bm, tm='TB', pos='WR', pts=180.0)}, byes={W1: set()})
+f._past_proj_cache = {WEEK: set(), WEEK - 1: {NK(bm)}, WEEK - 2: {NK(mw), NK(bm)}, WEEK - 3: {NK(mw), NK(bm)}}
+f._pool_cache.pop(NK(mw), None); f._pool_cache.pop(NK(bm), None)
+gw, gb = f.fa(NK(mw)), f.fa(NK(bm))
+case('pulse: blank this week AND last week (team playing both) is dead, even though week W-2 projected him', gw is not None and gw.designation == 'O' and (gw.ros_pw or 0) == 0.0, gw and (gw.designation, gw.designation_src, gw.ros_pw))
+case('pulse: one blank week with a projection last week is still alive', gb is not None and gb.designation == 'none', gb and (gb.designation, gb.designation_src))
+p = PL.plan_facts(f, dict())
+case('...and the dead one is never a depth claim', not any(m.get('add_key') == NK(mw) for m in p.moves), p.summary())
+# on bye THIS week the current week is not a played week: last two played weeks decide
+f, st, pr = league('BSB', r5c2, fas=[(mw, 'WR', 'ARI', None)], season={NK(mw): dict(name=mw, tm='ARI', pos='WR', pts=169.0)}, byes={WEEK: {'ARI'}, W1: set()})
+f._past_proj_cache = {WEEK: set(), WEEK - 1: {NK(mw)}, WEEK - 2: {NK(mw)}, WEEK - 3: {NK(mw)}}
+f._pool_cache.pop(NK(mw), None)
+case('pulse: a bye this week is not a silent week', f.fa(NK(mw)).designation == 'none', f.fa(NK(mw)).designation_src)
+
+from lib import stash as _STv
+import tempfile as _tf, os as _osv, json as _jsv
+_rt = _tf.mkdtemp(); _osv.makedirs(_osv.path.join(_rt, 'data'))
+_jsv.dump(dict(stash={'Michael Wilson': dict(verdict='season'), '_why': 'x'}), open(_osv.path.join(_rt, 'data', 'roles.json'), 'w'))
+case('stash verdicts are keyed canonically (a verdict typed "Michael Wilson" hits the blend\'s key)', NK('Michael Wilson') in _STv.verified(_rt) and '_why' in _STv.verified(_rt), str(list(_STv.verified(_rt))))
+
 # ---------------------------------------------------------------- 5e. a rival's drop of a real role is a fact (10-25: Terry McLaurin)
 # McLaurin, season 204, projected in his last played game (week 6), knee on Monday night,
 # out for the season; WAS on bye in week 7 so no projection exists to go missing, and the
@@ -484,11 +511,12 @@ try:
     km = [m for m in moves_of(p) if m['add_key'] == NK(kb)]
     bid = km and next((t.get('bid') for t in km[0]['txns'] if t['op'] == 'claim'), None)
     case('a firm hole-cover claim bids the 75th-pct winning bid ($10), not the $1 floor', bid == 10, (bid, p.summary()))
-    f, st, pr = league('BSB', r8b, fas=[(kb, 'K', 'NE', 9.0)], kicks={'SEA': PAST}, byes={W1: {'SEA'}}, usage=_u4, fab_left=63)
+    _res8b = _RU.fab_reserve(WEEK)                                     # the reserve steps down by week ($60 through 10, $30 through 12, then 0)
+    f, st, pr = league('BSB', r8b, fas=[(kb, 'K', 'NE', 9.0)], kicks={'SEA': PAST}, byes={W1: {'SEA'}}, usage=_u4, fab_left=_res8b + 3)
     p = PL.plan_facts(f, {})
     km = [m for m in moves_of(p) if m['add_key'] == NK(kb)]
     bid = km and next((t.get('bid') for t in km[0]['txns'] if t['op'] == 'claim'), None)
-    case('...capped by the reserve: $63 left in week <= 10 leaves $3 above the $60 reserve', bid == 3, (bid, p.summary()))
+    case(f'...capped by the reserve: ${_res8b + 3} left in week {WEEK} leaves $3 above the ${_res8b} reserve', bid == 3, (bid, p.summary()))
     case('...and the claim still ships (money above the reserve is nearly free)', len(km) == 1, p.summary())
     f, st, pr = league('BSB', r8b, fas=[(kb, 'K', 'NE', 9.0)], kicks={'SEA': PAST}, byes={W1: {'SEA'}}, usage=_u4, fab_left=5)
     p = PL.plan_facts(f, {})
@@ -824,6 +852,20 @@ _mv15 = {m['add_key']: m for m in moves_of(p)}
 case('re-solve: one K cover ships for the week-11 bye, not two', sum(1 for k in _mv15 if k in (NK('Dominic Zvada'), NK('Cameron Dicker'))) == 1, str([(k, m.get('drop_name')) for k, m in _mv15.items()]))
 case('...and the RB displaced by the doomed second K ships once the assignment is re-solved', NK(_rb15) in _mv15 and _mv15[NK(_rb15)]['J'] >= PL.SHIP_J, str([(k, m.get('drop_name'), m.get('spot_id'), m['J']) for k, m in _mv15.items()] + [(r['name'], r['reason'][:140]) for r in p.rejected if r['key'] == NK(_rb15)]))
 case('...nobody is told his spot "went to another move" that never shipped', not any('went to another move' in r['reason'] for r in p.rejected), str([(r['name'], r['reason'][:100]) for r in p.rejected if 'went to' in r['reason']]))
+
+
+# ---------------------------------------------------------------- 16. a lineup call's deadline is the EARLIER lock of the two men (11-11: Curl over Cross)
+THU = NOW + C.dt.timedelta(hours=8)            # tonight
+SUN = NOW + C.dt.timedelta(days=3)
+r16 = bsb_roster()
+_wr16 = [r for r in r16 if r[0] == 'WR']
+_bn16 = next(r for r in r16 if r[0] == 'BN' and r[2] == 'WR')
+r16 = [(r[0], r[1], r[2], r[3], 20.0, r[5]) if r[1] == _bn16[1] else r for r in r16]        # the bench WR outscores a starter
+_sit16 = _wr16[-1]                                                                        # the weakest starting WR (9.0)
+f, st, pr = league('BSB', r16, kicks={_sit16[3]: THU, _bn16[3]: SUN})
+p = PL.plan_facts(f, dict())
+_lm16 = next((m for m in moves_of(p, 'lineup') if m.get('start') == _bn16[1]), None)
+case('lineup deadline: a Sunday starter over a Thursday sitter is due before the Thursday lock', _lm16 is not None and _lm16.get('deadline') == C.iso(THU), _lm16 and (_lm16.get('sit'), _lm16.get('deadline'), C.iso(THU)))
 
 print('=' * 88)
 print(f'{total - bad}/{total} behaved as required.' + ('  PLANNER IS SOUND.' if not bad else '  PLANNER FAILED.'))

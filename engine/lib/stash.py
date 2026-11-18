@@ -25,8 +25,11 @@ N = 6
 CLOSED = ('season', 'skip')
 
 def verified(root=None):
-    try: return (json.load(open(roles_path(root))).get('stash') or {})
+    # keys are canonicalised (names.key): a verdict typed as 'michael wilson' must hit the
+    # season blend's 'mike wilson' (11-18 — the verdict was on file and the list ignored it)
+    try: d = (json.load(open(roles_path(root))).get('stash') or {})
     except (OSError, ValueError): return {}
+    return {(k if k.startswith('_') else key(k)): v for k, v in d.items()}
 
 def _week_proj(t):
     """{key: pts_ppr} for week t from the Sleeper files on disk, or None when no file."""

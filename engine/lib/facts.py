@@ -368,8 +368,14 @@ class Facts:
         if proj_w and proj_w > 0: return True, f'projected this week ({proj_w:.1f})'
         if fam == 'DEF': return True, 'team defense'
         played = []
-        for t in range(self.week - 1, max(0, self.week - 4), -1):
+        # THIS week counts as a played week when his team has a game and the week's file is
+        # on disk: 'projected two weeks ago' is not a pulse when the feed has since gone
+        # silent twice (11-18: Michael Wilson, neck fracture 11-08, out for the season —
+        # projected in week 9, blank in 10 and 11, read alive on week 9 the day the
+        # rival-drop window lapsed, and the depth producer priced a $1 claim)
+        for t in range(self.week, max(0, self.week - 4), -1):
             if t < 1: break
+            if t == self.week and (not tm or tm in self.byes.get(t, set()) or tm in self._past_byes(t)): continue
             if tm and tm in self._past_byes(t): continue
             had = self._past_proj(t)
             if had is None: continue                                       # no file for that week

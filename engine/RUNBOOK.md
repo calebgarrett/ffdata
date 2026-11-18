@@ -218,6 +218,15 @@ cannot be traced to P(win) is wrong.
   source that is itself one week of usage is not a second source. A Tier B on Sleeper's
   trending adds bids the ladder's top decile, not the band-B dollar (Estime at $1 would
   never process). The Vikings are a registry hold. Tests: test_plan 14, 14b, 14c.
+- **A feed that has gone silent twice is no pulse, this week included** (11-18). Michael
+  Wilson (ARI WR, neck fracture 11-08, out for the season) was projected in week 9 and
+  blank in weeks 10 and 11; the pulse judged only PAST weeks, read 'projected in week 9',
+  and the morning the 7-day rival-drop window lapsed the depth producer priced a $1 claim
+  on his realized 13.8 a game (dropping Estime). Now the current week counts as a played
+  week when his team has a game and the week's file is on disk — blank now and blank last
+  week is dead; one blank week is still a tag's job (Mayfield, foot, uncertain). Stash
+  verdict keys are canonicalised so a verdict typed 'michael wilson' hits the blend's
+  'mike wilson'. Tests: test_plan 5c2.
 - **A rival's drop of a real role is a fact the feeds may not carry yet** (10-25). McLaurin
   (season 204) tore up a knee on Monday night, out for the year; Washington's bye hid it
   from the free-agent pulse (he was projected in his last played game) and the planner
