@@ -15134,10 +15134,11 @@
   ],
   "verdict": "WARN",
   "week": 11,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": "2026-11-22T13:00-05:00",
-  "reverses": null
+  "reverses": null,
+  "superseded_by": "db521be4"
  },
  {
   "id": "ac19506f",
@@ -15244,10 +15245,11 @@
   ],
   "verdict": "WARN",
   "week": 11,
-  "status": "proposed",
+  "status": "executed",
   "provisional": false,
   "resolves_at": "2026-11-22T13:00-05:00",
-  "reverses": null
+  "reverses": null,
+  "status_ts": "2026-11-17T21:22-05:00"
  },
  {
   "id": "90fdab9a",
@@ -15262,10 +15264,11 @@
   ],
   "verdict": "WARN",
   "week": 11,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": "2026-11-23T20:15-05:00",
-  "reverses": null
+  "reverses": null,
+  "superseded_by": "c2041bba"
  },
  {
   "id": "d6a3f732",
@@ -15280,10 +15283,11 @@
   ],
   "verdict": "WARN",
   "week": 11,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": "2026-11-22T13:00-05:00",
-  "reverses": null
+  "reverses": null,
+  "superseded_by": "b94e6d48"
  },
  {
   "id": "a5149c79",
@@ -15347,6 +15351,79 @@
   "subject": "Anthony Hill Jr.",
   "call": "add Anthony Hill Jr. (LB) over Carson Schwesinger",
   "detail": "+19.30/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 11,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "db521be4",
+  "ts": "2026-11-17T21:22-05:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Ryan Flournoy",
+  "call": "start Ryan Flournoy at WR2",
+  "detail": "over Jaxon Smith-Njigba +11.61",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 11,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": "2026-11-22T13:00-05:00",
+  "reverses": "bdfb40ff"
+ },
+ {
+  "id": "b94e6d48",
+  "ts": "2026-11-17T21:22-05:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Cooper DeJean",
+  "call": "start Cooper DeJean at D",
+  "detail": "over Carson Schwesinger +17.40",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 11,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": "2026-11-22T13:00-05:00",
+  "reverses": "d6a3f732"
+ },
+ {
+  "id": "c2041bba",
+  "ts": "2026-11-17T21:22-05:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Nick Cross",
+  "call": "start Nick Cross at S",
+  "detail": "over Kam Curl +12.97",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 11,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": "2026-11-23T20:15-05:00",
+  "reverses": "90fdab9a"
+ },
+ {
+  "id": "0226620e",
+  "ts": "2026-11-17T21:22-05:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Barrett Carter",
+  "call": "add Barrett Carter (LB) over Carson Schwesinger",
+  "detail": "+21.86/wk",
   "evidence": [
    "sleeper"
   ],
