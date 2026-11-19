@@ -8,11 +8,11 @@
   "refused": []
  },
  "decide": [
-  "BSB QB lineup Start Justin Herbert over Matthew Stafford +20.8 points locks Sun Nov 22, 4:05 pm set it in Yahoo before then",
-  "BSB WR1 lineup Start Ryan Flournoy over Jaxon Smith-Njigba +11.0 points locks Sun Nov 22, 1:00 pm set it in Yahoo before then",
-  "BSB WR3 lineup Start Makai Lemon over Drake London +5.9 points locks Sun Nov 22, 1:00 pm set it in Yahoo before then",
+  "BSB QB lineup Start Justin Herbert over Matthew Stafford +21.0 points locks Sun Nov 22, 4:05 pm set it in Yahoo before then",
+  "BSB WR2 lineup Start Makai Lemon over Jaxon Smith-Njigba +6.0 points locks Sun Nov 22, 1:00 pm set it in Yahoo before then",
+  "BSB WR3 lineup Start Ryan Flournoy over Drake London +10.6 points locks Sun Nov 22, 1:00 pm set it in Yahoo before then",
   "BSB DEF lineup Start 49ers over Vikings +1.8 points locks Sun Nov 22, 8:20 pm set it in Yahoo before then",
-  "HH D lineup Start Cooper DeJean over Carson Schwesinger +17.4 points locks Sun Nov 22, 1:00 pm set it in Yahoo before then"
+  "HH D lineup Start Cooper DeJean over Carson Schwesinger +17.2 points locks Sun Nov 22, 1:00 pm set it in Yahoo before then"
  ],
  "fast": false,
  "leagues": {
@@ -22,9 +22,8 @@
      "add": null,
      "bid": null,
      "drop": null,
-     "gain": 20.76,
+     "gain": 21.03,
      "gates": [
-      "G5-sources:WARN",
       "G7-ready:WARN"
      ],
      "kind": "start",
@@ -42,30 +41,13 @@
      "add": null,
      "bid": null,
      "drop": null,
-     "gain": 10.98,
+     "gain": 5.96,
      "gates": [],
      "kind": "start",
      "provisional": false,
-     "reason": "Jaxon Smith-Njigba has no game this week (bye) \u2014 the slot scores nothing until he is replaced",
+     "reason": "Jaxon Smith-Njigba has no game this week (bye) \u2014 the slot scores nothing until he is replaced (Malik Washington slides to WR1)",
      "sit": "Jaxon Smith-Njigba",
-     "slot": "WR1",
-     "start": "Ryan Flournoy",
-     "status": "proposed",
-     "subject": "Ryan Flournoy",
-     "verdict": "PASS",
-     "when": "early"
-    },
-    {
-     "add": null,
-     "bid": null,
-     "drop": null,
-     "gain": 5.91,
-     "gates": [],
-     "kind": "start",
-     "provisional": false,
-     "reason": "Drake London has no game this week (bye) \u2014 the slot scores nothing until he is replaced",
-     "sit": "Drake London",
-     "slot": "WR3",
+     "slot": "WR2",
      "start": "Makai Lemon",
      "status": "proposed",
      "subject": "Makai Lemon",
@@ -76,7 +58,24 @@
      "add": null,
      "bid": null,
      "drop": null,
-     "gain": 1.83,
+     "gain": 10.59,
+     "gates": [],
+     "kind": "start",
+     "provisional": false,
+     "reason": "Drake London has no game this week (bye) \u2014 the slot scores nothing until he is replaced",
+     "sit": "Drake London",
+     "slot": "WR3",
+     "start": "Ryan Flournoy",
+     "status": "proposed",
+     "subject": "Ryan Flournoy",
+     "verdict": "PASS",
+     "when": "early"
+    },
+    {
+     "add": null,
+     "bid": null,
+     "drop": null,
+     "gain": 1.82,
      "gates": [],
      "kind": "start",
      "provisional": false,
@@ -94,7 +93,7 @@
      "bid": null,
      "drop": null,
      "fam": "WR",
-     "gain": 4.03,
+     "gain": 4.02,
      "gates": [
       "G11-role-registry:WARN"
      ],
@@ -109,28 +108,11 @@
      "when": null
     },
     {
-     "add": "Detroit Lions",
-     "bid": null,
-     "drop": null,
-     "fam": "DEF",
-     "gain": 2.56,
-     "gates": [],
-     "kind": "upgrade",
-     "provisional": false,
-     "sit": "Vikings",
-     "slot": null,
-     "start": null,
-     "status": "proposed",
-     "subject": "Detroit Lions",
-     "verdict": "PASS",
-     "when": null
-    },
-    {
      "add": "Los Angeles Chargers",
      "bid": null,
      "drop": null,
      "fam": "DEF",
-     "gain": 2.48,
+     "gain": 2.46,
      "gates": [
       "G7-ready:WARN"
      ],
@@ -142,6 +124,23 @@
      "status": "proposed",
      "subject": "Los Angeles Chargers",
      "verdict": "WARN",
+     "when": null
+    },
+    {
+     "add": "Carolina Panthers",
+     "bid": null,
+     "drop": null,
+     "fam": "DEF",
+     "gain": 1.64,
+     "gates": [],
+     "kind": "upgrade",
+     "provisional": false,
+     "sit": "Vikings",
+     "slot": null,
+     "start": null,
+     "status": "proposed",
+     "subject": "Carolina Panthers",
+     "verdict": "PASS",
      "when": null
     },
     {
@@ -232,25 +231,7 @@
      "verb": "WAIT",
      "verdict": "PASS",
      "when": "no drop worth less than him",
-     "why": "two straight weeks of starter usage (wk9: 45% snaps, 52% of RB touches), but the cheapest clean drop (Ryan Flournoy, 11.0 this week) projects at or above him (4.6)"
-    },
-    {
-     "add": "Gunnar Helm",
-     "bid": null,
-     "drop": null,
-     "gates": [],
-     "kind": "breakout",
-     "provisional": false,
-     "sit": null,
-     "slot": null,
-     "start": null,
-     "status": null,
-     "subject": "Gunnar Helm",
-     "tier": "B",
-     "verb": "NONE",
-     "verdict": "PASS",
-     "when": "no move for this roster",
-     "why": "you already carry 2 TEs for 1 slot(s) and he projects below your weakest (Sam LaPorta 10.1 vs 6.7). Only a trade chip."
+     "why": "two straight weeks of starter usage (wk9: 45% snaps, 52% of RB touches), but the cheapest clean drop (Ryan Flournoy, 10.6 this week) projects at or above him (4.6)"
     },
     {
      "add": "Dawson Knox",
@@ -268,7 +249,7 @@
      "verb": "NONE",
      "verdict": "PASS",
      "when": "no move for this roster",
-     "why": "you already carry 2 TEs for 1 slot(s) and he projects below your weakest (Sam LaPorta 10.1 vs 3.9). Only a trade chip."
+     "why": "you already carry 2 TEs for 1 slot(s) and he projects below your weakest (Sam LaPorta 10.6 vs 3.7). Only a trade chip."
     },
     {
      "add": "Charlie Kolar",
@@ -286,7 +267,7 @@
      "verb": "NONE",
      "verdict": "PASS",
      "when": "no move for this roster",
-     "why": "you already carry 2 TEs for 1 slot(s) and he projects below your weakest (Sam LaPorta 10.1 vs 3.9). Only a trade chip."
+     "why": "you already carry 2 TEs for 1 slot(s) and he projects below your weakest (Sam LaPorta 10.6 vs 3.9). Only a trade chip."
     },
     {
      "add": "Corey Kiner",
@@ -322,7 +303,7 @@
      "verb": "WAIT",
      "verdict": "PASS",
      "when": "no drop worth less than him",
-     "why": "two straight weeks of starter usage (wk9: 39% snaps, 50% of RB touches), but the cheapest clean drop (Ryan Flournoy, 11.0 this week) projects at or above him (0.0)"
+     "why": "two straight weeks of starter usage (wk9: 39% snaps, 50% of RB touches), but the cheapest clean drop (Ryan Flournoy, 10.6 this week) projects at or above him (0.0)"
     }
    ],
    "blocked": [],
@@ -350,12 +331,12 @@
     "RB2": "Audric Estime",
     "TE": "Isaiah Likely",
     "W/R/T": "Sam LaPorta",
-    "WR1": "Ryan Flournoy",
-    "WR2": "Malik Washington",
-    "WR3": "Makai Lemon"
+    "WR1": "Malik Washington",
+    "WR2": "Makai Lemon",
+    "WR3": "Ryan Flournoy"
    },
    "me": "OVERKILL",
-   "others_pulled": "2026-11-18T19:22:08+00:00",
+   "others_pulled": "2026-11-19T01:26:46+00:00",
    "planner": {
     "lineup_after": {
      "DEF": "49ers",
@@ -365,13 +346,13 @@
      "RB2": "Audric Estime",
      "TE": "Isaiah Likely",
      "W/R/T": "Sam LaPorta",
-     "WR1": "Ryan Flournoy",
-     "WR2": "Malik Washington",
-     "WR3": "Makai Lemon"
+     "WR1": "Malik Washington",
+     "WR2": "Makai Lemon",
+     "WR3": "Ryan Flournoy"
     },
     "moves": [
      {
-      "J": 20.761,
+      "J": 21.033,
       "add": null,
       "drop": null,
       "gates": [],
@@ -388,7 +369,7 @@
       "when": "before kickoff Sun Nov 22, 4:05 pm ET"
      },
      {
-      "J": 10.984,
+      "J": 5.958,
       "add": null,
       "drop": null,
       "gates": [],
@@ -396,16 +377,16 @@
       "kind": "lineup",
       "provisional": false,
       "sit": "Jaxon Smith-Njigba",
-      "slot": "WR1",
-      "start": "Ryan Flournoy",
+      "slot": "WR2",
+      "start": "Makai Lemon",
       "txns": [
-       "start Ryan Flournoy at WR1",
+       "start Makai Lemon at WR2",
        "bench Jaxon Smith-Njigba"
       ],
       "when": "before kickoff Sun Nov 22, 1:00 pm ET"
      },
      {
-      "J": 5.907,
+      "J": 10.59,
       "add": null,
       "drop": null,
       "gates": [],
@@ -414,15 +395,15 @@
       "provisional": false,
       "sit": "Drake London",
       "slot": "WR3",
-      "start": "Makai Lemon",
+      "start": "Ryan Flournoy",
       "txns": [
-       "start Makai Lemon at WR3",
+       "start Ryan Flournoy at WR3",
        "bench Drake London"
       ],
       "when": "before kickoff Sun Nov 22, 1:00 pm ET"
      },
      {
-      "J": 1.826,
+      "J": 1.825,
       "add": null,
       "drop": null,
       "gates": [],
@@ -442,19 +423,15 @@
     "rejected": [
      {
       "name": "Carolina Panthers",
-      "reason": "J -0.51 < 3.0 at its best spot (49ers) \u2014 J -0.51 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.00 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0.01 FAB($1) - "
-     },
-     {
-      "name": "Detroit Lions",
-      "reason": "J +0.24 < 3.0 at its best spot (49ers) \u2014 J +0.24 = 1.0x+0.74 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.00 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0.00 FAB($0) - "
+      "reason": "J -0.60 < 3.0 at its best spot (49ers) \u2014 J -0.60 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.00 (bench boom) + 0.2x-0.47 (depth) - 0.00 acq - 0.01 FAB($1) - "
      },
      {
       "name": "Los Angeles Chargers",
-      "reason": "J +0.16 < 3.0 at its best spot (49ers) \u2014 J +0.16 = 1.0x+0.66 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.00 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0.00 FAB($0) - "
+      "reason": "J +0.04 < 3.0 at its best spot (49ers) \u2014 J +0.04 = 1.0x+0.63 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.00 (bench boom) + 0.2x-0.47 (depth) - 0.00 acq - 0.00 FAB($0) - "
      },
      {
       "name": "Andre Szmyt",
-      "reason": "J -0.40 < 3.0 at its best spot (Audric Estime) \u2014 J -0.40 = 1.0x+0.00 (wk W) + 0.8x+0.80 (W+1) + 0.8x+0.43 (rest, mean of wks 13-17) + 0.60x+0.43 (wks 15-17, P(playoffs) 100%) + 0.1x-1.08 (bench boom) + 0.2x-5.06 (depth) - 0.00 acq - 0.01 FA"
+      "reason": "J -0.39 < 3.0 at its best spot (Audric Estime) \u2014 J -0.39 = 1.0x+0.00 (wk W) + 0.8x+0.75 (W+1) + 0.8x+0.43 (rest, mean of wks 13-17) + 0.60x+0.43 (wks 15-17, P(playoffs) 100%) + 0.1x-1.05 (bench boom) + 0.2x-4.86 (depth) - 0.00 acq - 0.01 FA"
      },
      {
       "name": "Austin Ekeler",
@@ -466,11 +443,11 @@
      },
      {
       "name": "Brevyn Spann-Ford",
-      "reason": "J -1.46 < 3.0 at its best spot (Audric Estime) \u2014 J -1.46 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.60 (bench boom) + 0.2x-5.06 (depth) - 0.00 acq - 0.01 FA"
+      "reason": "J -1.42 < 3.0 at its best spot (Audric Estime) \u2014 J -1.42 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.64 (bench boom) + 0.2x-4.86 (depth) - 0.00 acq - 0.01 FA"
      },
      {
       "name": "Charlie Kolar",
-      "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 3.9 under your weakest 10.1"
+      "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 3.9 under your weakest 10.6"
      },
      {
       "name": "Chris Godwin Jr.",
@@ -482,15 +459,11 @@
      },
      {
       "name": "Dalton Schultz",
-      "reason": "J -1.41 < 3.0 at its best spot (Audric Estime) \u2014 J -1.41 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+1.14 (bench boom) + 0.2x-5.06 (depth) - 0.00 acq - 0.01 FA"
+      "reason": "J -1.36 < 3.0 at its best spot (Audric Estime) \u2014 J -1.36 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+1.21 (bench boom) + 0.2x-4.86 (depth) - 0.00 acq - 0.01 FA"
      },
      {
       "name": "Dawson Knox",
-      "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 3.9 under your weakest 10.1"
-     },
-     {
-      "name": "Gunnar Helm",
-      "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 6.7 under your weakest 10.1"
+      "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 3.7 under your weakest 10.6"
      },
      {
       "name": "Hunter Henry",
@@ -498,7 +471,7 @@
      },
      {
       "name": "Jason Sanders",
-      "reason": "J +0.55 < 3.0 at its best spot (Audric Estime) \u2014 J +0.55 = 1.0x+0.00 (wk W) + 0.8x+1.16 (W+1) + 0.8x+0.91 (rest, mean of wks 13-17) + 0.60x+1.14 (wks 15-17, P(playoffs) 100%) + 0.1x-1.08 (bench boom) + 0.2x-5.06 (depth) - 0.00 acq - 0.17 FA"
+      "reason": "J +0.60 < 3.0 at its best spot (Audric Estime) \u2014 J +0.60 = 1.0x+0.00 (wk W) + 0.8x+1.18 (W+1) + 0.8x+0.91 (rest, mean of wks 13-17) + 0.60x+1.14 (wks 15-17, P(playoffs) 100%) + 0.1x-1.05 (bench boom) + 0.2x-4.86 (depth) - 0.00 acq - 0.17 FA"
      },
      {
       "name": "Jonathon Brooks",
@@ -506,7 +479,7 @@
      },
      {
       "name": "Kaleb Johnson",
-      "reason": "J -1.63 < 3.0 at its best spot (Audric Estime) \u2014 J -1.63 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x-1.08 (bench boom) + 0.2x-5.06 (depth) - 0.00 acq - 0.01 FA"
+      "reason": "J -1.59 < 3.0 at its best spot (Audric Estime) \u2014 J -1.59 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x-1.05 (bench boom) + 0.2x-4.86 (depth) - 0.00 acq - 0.01 FA"
      },
      {
       "name": "Laquon Treadwell",
@@ -514,19 +487,19 @@
      },
      {
       "name": "Malachi Fields",
-      "reason": "J -1.54 < 3.0 at its best spot (Audric Estime) \u2014 J -1.54 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x-0.21 (bench boom) + 0.2x-5.06 (depth) - 0.00 acq - 0.01 FA"
+      "reason": "J -1.49 < 3.0 at its best spot (Audric Estime) \u2014 J -1.49 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x-0.11 (bench boom) + 0.2x-4.86 (depth) - 0.00 acq - 0.01 FA"
      },
      {
       "name": "Michael Pittman Jr.",
-      "reason": "J -1.47 < 3.0 at its best spot (Audric Estime) \u2014 J -1.47 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.51 (bench boom) + 0.2x-5.06 (depth) - 0.00 acq - 0.01 FA"
-     },
-     {
-      "name": "Rashod Bateman",
-      "reason": "J -1.52 < 3.0 at its best spot (Audric Estime) \u2014 J -1.52 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.02 (bench boom) + 0.2x-5.06 (depth) - 0.00 acq - 0.01 FA"
+      "reason": "J -1.43 < 3.0 at its best spot (Audric Estime) \u2014 J -1.43 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.55 (bench boom) + 0.2x-4.86 (depth) - 0.00 acq - 0.01 FA"
      },
      {
       "name": "Simi Fehoko",
       "reason": "best spot 49ers: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
+     },
+     {
+      "name": "Tutu Atwell",
+      "reason": "gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])"
      },
      {
       "name": "Zonovan Knight",
@@ -534,7 +507,7 @@
      }
     ]
    },
-   "pulled": "2026-11-18T19:22:08+00:00"
+   "pulled": "2026-11-19T01:26:46+00:00"
   },
   "HH": {
    "actions": [
@@ -542,7 +515,7 @@
      "add": null,
      "bid": null,
      "drop": null,
-     "gain": 17.4,
+     "gain": 17.2,
      "gates": [
       "G5-sources:WARN"
      ],
@@ -578,26 +551,6 @@
      "when": null
     },
     {
-     "add": "Payton Wilson",
-     "bid": null,
-     "drop": null,
-     "fam": "LB",
-     "gain": 19.51,
-     "gates": [
-      "G5-sources:BLOCK",
-      "G11-role-registry:WARN"
-     ],
-     "kind": "upgrade",
-     "provisional": false,
-     "sit": "Carson Schwesinger",
-     "slot": null,
-     "start": null,
-     "status": "blocked",
-     "subject": "Payton Wilson",
-     "verdict": "BLOCK",
-     "when": null
-    },
-    {
      "add": "Anthony Hill Jr.",
      "bid": null,
      "drop": null,
@@ -618,6 +571,26 @@
      "when": null
     },
     {
+     "add": "Payton Wilson",
+     "bid": null,
+     "drop": null,
+     "fam": "LB",
+     "gain": 19.29,
+     "gates": [
+      "G5-sources:BLOCK",
+      "G11-role-registry:WARN"
+     ],
+     "kind": "upgrade",
+     "provisional": false,
+     "sit": "Carson Schwesinger",
+     "slot": null,
+     "start": null,
+     "status": "blocked",
+     "subject": "Payton Wilson",
+     "verdict": "BLOCK",
+     "when": null
+    },
+    {
      "add": "Tre' Harris",
      "bid": null,
      "drop": null,
@@ -633,25 +606,7 @@
      "verb": "WAIT",
      "verdict": "PASS",
      "when": "no drop worth less than him",
-     "why": "two straight weeks of starter usage (wk9: 83% snaps, 23% targets, 0% air yds), but the cheapest clean drop (Cooper DeJean, 17.4 this week) projects at or above him (4.7)"
-    },
-    {
-     "add": "Mack Hollins",
-     "bid": null,
-     "drop": null,
-     "gates": [],
-     "kind": "breakout",
-     "provisional": false,
-     "sit": null,
-     "slot": null,
-     "start": null,
-     "status": null,
-     "subject": "Mack Hollins",
-     "tier": "B",
-     "verb": "WAIT",
-     "verdict": "PASS",
-     "when": "next usage pull (Tuesday) \u2014 add then if the snaps hold or the market moves toward him",
-     "why": "one game of starter usage; no market confirmation yet and the spot would cost a real player"
+     "why": "two straight weeks of starter usage (wk9: 83% snaps, 23% targets, 0% air yds), but the cheapest clean drop (Cooper DeJean, 17.2 this week) projects at or above him (5.3)"
     },
     {
      "add": "Elic Ayomanor",
@@ -665,6 +620,24 @@
      "start": null,
      "status": null,
      "subject": "Elic Ayomanor",
+     "tier": "B",
+     "verb": "WAIT",
+     "verdict": "PASS",
+     "when": "next usage pull (Tuesday) \u2014 add then if the snaps hold or the market moves toward him",
+     "why": "one game of starter usage; no market confirmation yet and the spot would cost a real player"
+    },
+    {
+     "add": "Mack Hollins",
+     "bid": null,
+     "drop": null,
+     "gates": [],
+     "kind": "breakout",
+     "provisional": false,
+     "sit": null,
+     "slot": null,
+     "start": null,
+     "status": null,
+     "subject": "Mack Hollins",
      "tier": "B",
      "verb": "WAIT",
      "verdict": "PASS",
@@ -705,12 +678,12 @@
      "verb": "WAIT",
      "verdict": "PASS",
      "when": "no drop worth less than him",
-     "why": "two straight weeks of starter usage (wk9: 84% snaps, 19% targets, 25% air yds), but the cheapest clean drop (Cooper DeJean, 17.4 this week) projects at or above him (5.9)"
+     "why": "two straight weeks of starter usage (wk9: 84% snaps, 19% targets, 25% air yds), but the cheapest clean drop (Cooper DeJean, 17.2 this week) projects at or above him (6.0)"
     },
     {
      "add": "Adonai Mitchell",
      "bid": null,
-     "drop": null,
+     "drop": "Devin Singletary",
      "gates": [],
      "kind": "breakout",
      "provisional": false,
@@ -720,10 +693,10 @@
      "status": null,
      "subject": "Adonai Mitchell",
      "tier": "B",
-     "verb": "WAIT",
+     "verb": "ADD",
      "verdict": "PASS",
-     "when": "no drop worth less than him",
-     "why": "two straight weeks of starter usage (wk9: 89% snaps, 22% targets, 0% air yds), but the cheapest clean drop (Cooper DeJean, 17.4 this week) projects at or above him (8.2)"
+     "when": "free agent \u2014 immediate, counts 1 of 7 weekly acquisitions \u2014 locks Sun 4:05 PM ET",
+     "why": "starter usage two weeks running (wk9: 89% snaps, 22% targets, 0% air yds) and the market has not priced him yet \u2014 the cheap window. Devin Singletary is the spot: lowest-valued bench player (bench-leve"
     },
     {
      "add": "Laquon Treadwell",
@@ -818,7 +791,7 @@
     {
      "add": "Jordan Mason",
      "bid": null,
-     "drop": "Devin Singletary",
+     "drop": null,
      "gates": [],
      "kind": "breakout",
      "provisional": false,
@@ -828,10 +801,10 @@
      "status": null,
      "subject": "Jordan Mason",
      "tier": "B",
-     "verb": "ADD",
+     "verb": "WAIT",
      "verdict": "PASS",
-     "when": "free agent \u2014 immediate, counts 1 of 7 weekly acquisitions \u2014 locks Sun 8:20 PM ET",
-     "why": "starter usage two weeks running (wk9: 48% snaps, 56% of RB touches) and the market has not priced him yet \u2014 the cheap window. Devin Singletary is the spot: lowest-valued bench player (bench-level usag"
+     "when": "no drop worth less than him",
+     "why": "two straight weeks of starter usage (wk9: 48% snaps, 56% of RB touches), but the cheapest clean drop (Cooper DeJean, 17.2 this week) projects at or above him (8.4)"
     },
     {
      "add": "Simi Fehoko",
@@ -867,25 +840,7 @@
      "verb": "WAIT",
      "verdict": "PASS",
      "when": "no drop worth less than him",
-     "why": "two straight weeks of starter usage (wk9: 45% snaps, 52% of RB touches), but the cheapest clean drop (Cooper DeJean, 17.4 this week) projects at or above him (4.2)"
-    },
-    {
-     "add": "Gunnar Helm",
-     "bid": null,
-     "drop": null,
-     "gates": [],
-     "kind": "breakout",
-     "provisional": false,
-     "sit": null,
-     "slot": null,
-     "start": null,
-     "status": null,
-     "subject": "Gunnar Helm",
-     "tier": "B",
-     "verb": "WAIT",
-     "verdict": "PASS",
-     "when": "next usage pull (Tuesday) \u2014 add then if the snaps hold or the market moves toward him",
-     "why": "one game of starter usage; no market confirmation yet and the spot would cost a real player"
+     "why": "two straight weeks of starter usage (wk9: 45% snaps, 52% of RB touches), but the cheapest clean drop (Cooper DeJean, 17.2 this week) projects at or above him (4.2)"
     },
     {
      "add": "KC Concepcion Jr.",
@@ -903,7 +858,7 @@
      "verb": "WAIT",
      "verdict": "PASS",
      "when": "no drop worth less than him",
-     "why": "two straight weeks of starter usage (wk9: 93% snaps, 19% targets, 24% air yds), but the cheapest clean drop (Cooper DeJean, 17.4 this week) projects at or above him (0.0)"
+     "why": "two straight weeks of starter usage (wk9: 93% snaps, 19% targets, 24% air yds), but the cheapest clean drop (Cooper DeJean, 17.2 this week) projects at or above him (0.0)"
     },
     {
      "add": "Blake Corum",
@@ -939,7 +894,7 @@
      "verb": "WAIT",
      "verdict": "PASS",
      "when": "no drop worth less than him",
-     "why": "two straight weeks of starter usage (wk9: 72% snaps, 14% targets, 9% air yds), but the cheapest clean drop (Cooper DeJean, 17.4 this week) projects at or above him (0.0)"
+     "why": "two straight weeks of starter usage (wk9: 72% snaps, 14% targets, 9% air yds), but the cheapest clean drop (Cooper DeJean, 17.2 this week) projects at or above him (0.0)"
     },
     {
      "add": "Tyler Allgeier",
@@ -957,7 +912,7 @@
      "verb": "WAIT",
      "verdict": "PASS",
      "when": "no drop worth less than him",
-     "why": "two straight weeks of starter usage (wk9: 96% snaps, 95% of RB touches), but the cheapest clean drop (Cooper DeJean, 17.4 this week) projects at or above him (7.8)"
+     "why": "two straight weeks of starter usage (wk9: 96% snaps, 95% of RB touches), but the cheapest clean drop (Cooper DeJean, 17.2 this week) projects at or above him (7.7)"
     },
     {
      "add": "Dawson Knox",
@@ -975,7 +930,7 @@
      "verb": "WAIT",
      "verdict": "PASS",
      "when": "no drop worth less than him",
-     "why": "two straight weeks of starter usage (wk9: 72% snaps, 16% targets, 13% air yds), but the cheapest clean drop (Cooper DeJean, 17.4 this week) projects at or above him (3.5)"
+     "why": "two straight weeks of starter usage (wk9: 72% snaps, 16% targets, 13% air yds), but the cheapest clean drop (Cooper DeJean, 17.2 this week) projects at or above him (3.3)"
     },
     {
      "add": "Charlie Kolar",
@@ -1101,7 +1056,7 @@
      "verb": "WAIT",
      "verdict": "PASS",
      "when": "no drop worth less than him",
-     "why": "two straight weeks of starter usage (wk9: 56% snaps, 48% of RB touches), but the cheapest clean drop (Cooper DeJean, 17.4 this week) projects at or above him (7.8)"
+     "why": "two straight weeks of starter usage (wk9: 56% snaps, 48% of RB touches), but the cheapest clean drop (Cooper DeJean, 17.2 this week) projects at or above him (7.8)"
     },
     {
      "add": "Travis Etienne Jr.",
@@ -1133,15 +1088,6 @@
      "subject": "Barrett Carter"
     },
     {
-     "add": "Payton Wilson",
-     "drop": null,
-     "gates": [
-      "G5-sources:BLOCK"
-     ],
-     "kind": "upgrade",
-     "subject": "Payton Wilson"
-    },
-    {
      "add": "Anthony Hill Jr.",
      "drop": null,
      "gates": [
@@ -1149,6 +1095,15 @@
      ],
      "kind": "upgrade",
      "subject": "Anthony Hill Jr."
+    },
+    {
+     "add": "Payton Wilson",
+     "drop": null,
+     "gates": [
+      "G5-sources:BLOCK"
+     ],
+     "kind": "upgrade",
+     "subject": "Payton Wilson"
     }
    ],
    "current": {
@@ -1174,7 +1129,7 @@
    "lineup": {
     "CB": "Jalen Ramsey",
     "D": "Cooper DeJean",
-    "DB": "Nick Cross",
+    "DB": "Budda Baker",
     "DEF": "Texans",
     "DL": "T.J. Watt",
     "K": "Brandon Aubrey",
@@ -1182,19 +1137,19 @@
     "Q/W/R/T": "Jared Goff",
     "QB": "Dak Prescott",
     "RB": "Jaylen Warren",
-    "S": "Budda Baker",
+    "S": "Nick Cross",
     "TE": "Trey McBride",
-    "W/R": "Rome Odunze",
-    "W/R/T": "Ja'Marr Chase",
+    "W/R": "Ja'Marr Chase",
+    "W/R/T": "Rome Odunze",
     "WR": "Rashee Rice"
    },
    "me": "Tecmo Bowlers",
-   "others_pulled": "2026-11-18T19:22:08+00:00",
+   "others_pulled": "2026-11-19T01:26:46+00:00",
    "planner": {
     "lineup_after": {
      "CB": "Jalen Ramsey",
      "D": "Cooper DeJean",
-     "DB": "Nick Cross",
+     "DB": "Budda Baker",
      "DEF": "Texans",
      "DL": "T.J. Watt",
      "K": "Brandon Aubrey",
@@ -1202,15 +1157,15 @@
      "Q/W/R/T": "Jared Goff",
      "QB": "Dak Prescott",
      "RB": "Jaylen Warren",
-     "S": "Budda Baker",
+     "S": "Nick Cross",
      "TE": "Trey McBride",
-     "W/R": "Rome Odunze",
-     "W/R/T": "Ja'Marr Chase",
+     "W/R": "Ja'Marr Chase",
+     "W/R/T": "Rome Odunze",
      "WR": "Rashee Rice"
     },
     "moves": [
      {
-      "J": 17.4,
+      "J": 17.2,
       "add": null,
       "drop": null,
       "gates": [],
@@ -1230,7 +1185,7 @@
     "rejected": [
      {
       "name": "Adonai Mitchell",
-      "reason": "J -2.25 < 3.0 at its best spot (Devin Singletary) \u2014 J -2.25 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.10 (bench boom) + 0.2x-3.79 (depth) - 1.00 acq - 0.00"
+      "reason": "J -2.20 < 3.0 at its best spot (Devin Singletary) \u2014 J -2.20 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.55 (bench boom) + 0.2x-3.79 (depth) - 1.00 acq - 0.00"
      },
      {
       "name": "AJ Barner",
@@ -1262,7 +1217,7 @@
      },
      {
       "name": "Caleb Douglas",
-      "reason": "J -2.22 < 3.0 at its best spot (Devin Singletary) \u2014 J -2.22 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.36 (bench boom) + 0.2x-3.79 (depth) - 1.00 acq - 0.00"
+      "reason": "J -2.23 < 3.0 at its best spot (Devin Singletary) \u2014 J -2.23 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.24 (bench boom) + 0.2x-3.79 (depth) - 1.00 acq - 0.00"
      },
      {
       "name": "Carnell Tate",
@@ -1278,11 +1233,11 @@
      },
      {
       "name": "Dalton Schultz",
-      "reason": "J -0.72 < 3.0 at its best spot (Devin Singletary) \u2014 J -0.72 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+1.77 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+1.21 (bench boom) + 0.2x-3.79 (depth) - 1.00 acq - 0.00"
+      "reason": "J -0.72 < 3.0 at its best spot (Devin Singletary) \u2014 J -0.72 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+1.77 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+1.23 (bench boom) + 0.2x-3.79 (depth) - 1.00 acq - 0.00"
      },
      {
       "name": "Dawson Knox",
-      "reason": "J -4.08 < 3.0 at its best spot (Kam Curl) \u2014 J -4.08 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.37 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.86 (bench boom) + 0.2x-14.82 (depth) - 1.00 acq - 0.00 FAB($0"
+      "reason": "J -4.08 < 3.0 at its best spot (Kam Curl) \u2014 J -4.08 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.37 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.84 (bench boom) + 0.2x-14.82 (depth) - 1.00 acq - 0.00 FAB($0"
      },
      {
       "name": "Dylan Sampson",
@@ -1293,20 +1248,16 @@
       "reason": "best spot Steelers: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
      },
      {
-      "name": "Gunnar Helm",
-      "reason": "best spot Steelers: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week"
-     },
-     {
       "name": "Jameson Williams",
-      "reason": "J -0.93 < 3.0 at its best spot (Rashee Rice) \u2014 J -0.93 = 1.0x+0.00 (wk W) + 0.8x+0.26 (W+1) + 0.8x+0.26 (rest, mean of wks 13-17) + 0.60x+0.26 (wks 15-17, P(playoffs) 100%) + 0.1x+0.00 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 0.00 FAB("
+      "reason": "J -0.90 < 3.0 at its best spot (Rashee Rice) \u2014 J -0.90 = 1.0x+0.00 (wk W) + 0.8x+0.27 (W+1) + 0.8x+0.27 (rest, mean of wks 13-17) + 0.60x+0.27 (wks 15-17, P(playoffs) 100%) + 0.1x+0.00 (bench boom) + 0.2x+0.00 (depth) - 1.00 acq - 0.00 FAB("
      },
      {
       "name": "Jordan Mason",
-      "reason": "J -2.16 < 3.0 at its best spot (Devin Singletary) \u2014 J -2.16 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.99 (bench boom) + 0.2x-3.79 (depth) - 1.00 acq - 0.00"
+      "reason": "J -2.16 < 3.0 at its best spot (Devin Singletary) \u2014 J -2.16 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.96 (bench boom) + 0.2x-3.79 (depth) - 1.00 acq - 0.00"
      },
      {
       "name": "Juwan Johnson",
-      "reason": "J -0.92 < 3.0 at its best spot (Devin Singletary) \u2014 J -0.92 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+1.63 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.34 (bench boom) + 0.2x-3.79 (depth) - 1.00 acq - 0.00"
+      "reason": "J -0.93 < 3.0 at its best spot (Devin Singletary) \u2014 J -0.93 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+1.63 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.31 (bench boom) + 0.2x-3.79 (depth) - 1.00 acq - 0.00"
      },
      {
       "name": "Kaleb Johnson",
@@ -1330,7 +1281,7 @@
      },
      {
       "name": "Malachi Fields",
-      "reason": "J -2.26 < 3.0 at its best spot (Devin Singletary) \u2014 J -2.26 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x-0.03 (bench boom) + 0.2x-3.79 (depth) - 1.00 acq - 0.00"
+      "reason": "J -2.25 < 3.0 at its best spot (Devin Singletary) \u2014 J -2.25 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.03 (bench boom) + 0.2x-3.79 (depth) - 1.00 acq - 0.00"
      },
      {
       "name": "Malik Washington",
@@ -1338,7 +1289,7 @@
      },
      {
       "name": "Omarion Hampton",
-      "reason": "J -2.04 < 3.0 at its best spot (Devin Singletary) \u2014 J -2.04 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+2.15 (bench boom) + 0.2x-3.79 (depth) - 1.00 acq - 0.00"
+      "reason": "J -2.08 < 3.0 at its best spot (Devin Singletary) \u2014 J -2.08 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+1.75 (bench boom) + 0.2x-3.79 (depth) - 1.00 acq - 0.00"
      },
      {
       "name": "Payton Wilson",
@@ -1362,7 +1313,7 @@
      },
      {
       "name": "Tre' Harris",
-      "reason": "J -2.26 < 3.0 at its best spot (Devin Singletary) \u2014 J -2.26 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.01 (bench boom) + 0.2x-3.79 (depth) - 1.00 acq - 0.00"
+      "reason": "J -2.19 < 3.0 at its best spot (Devin Singletary) \u2014 J -2.19 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.68 (bench boom) + 0.2x-3.79 (depth) - 1.00 acq - 0.00"
      },
      {
       "name": "Tre Tucker",
@@ -1374,7 +1325,7 @@
      },
      {
       "name": "Tyler Allgeier",
-      "reason": "J -2.24 < 3.0 at its best spot (Devin Singletary) \u2014 J -2.24 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.18 (bench boom) + 0.2x-3.79 (depth) - 1.00 acq - 0.00"
+      "reason": "J -2.24 < 3.0 at its best spot (Devin Singletary) \u2014 J -2.24 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.21 (bench boom) + 0.2x-3.79 (depth) - 1.00 acq - 0.00"
      },
      {
       "name": "Xavier Hutchinson",
@@ -1386,9 +1337,9 @@
      }
     ]
    },
-   "pulled": "2026-11-18T19:22:08+00:00"
+   "pulled": "2026-11-19T01:26:46+00:00"
   }
  },
- "now": "2026-11-18T14:23-05:00",
+ "now": "2026-11-18T20:29-05:00",
  "week": 11
 }

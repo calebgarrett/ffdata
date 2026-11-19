@@ -15153,10 +15153,11 @@
   ],
   "verdict": "WARN",
   "week": 11,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": "2026-11-22T13:00-05:00",
-  "reverses": null
+  "reverses": null,
+  "superseded_by": "84a911ab"
  },
  {
   "id": "0af01159",
@@ -15512,10 +15513,11 @@
   ],
   "verdict": "WARN",
   "week": 11,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": "2026-11-22T13:00-05:00",
-  "reverses": "ecb35a52"
+  "reverses": "ecb35a52",
+  "superseded_by": "f02a39d8"
  },
  {
   "id": "c3edf9d0",
@@ -15571,5 +15573,62 @@
   "provisional": false,
   "resolves_at": "2026-11-22T13:00-05:00",
   "reverses": "b4c378d8"
+ },
+ {
+  "id": "84a911ab",
+  "ts": "2026-11-18T20:28-05:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Makai Lemon",
+  "call": "start Makai Lemon at WR2",
+  "detail": "over Jaxon Smith-Njigba +5.96",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 11,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": "2026-11-22T13:00-05:00",
+  "reverses": "ac19506f"
+ },
+ {
+  "id": "f02a39d8",
+  "ts": "2026-11-18T20:28-05:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Ryan Flournoy",
+  "call": "start Ryan Flournoy at WR3",
+  "detail": "over Drake London +10.59",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 11,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": "2026-11-22T13:00-05:00",
+  "reverses": "3695246f"
+ },
+ {
+  "id": "7b1bf6ba",
+  "ts": "2026-11-18T20:28-05:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Carolina Panthers",
+  "call": "add Carolina Panthers (DEF) over Vikings",
+  "detail": "+1.64/wk",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "PASS",
+  "week": 11,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
  }
 ]
