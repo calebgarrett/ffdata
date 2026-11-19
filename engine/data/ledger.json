@@ -15569,10 +15569,11 @@
   ],
   "verdict": "WARN",
   "week": 11,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": "2026-11-22T13:00-05:00",
-  "reverses": "b4c378d8"
+  "reverses": "b4c378d8",
+  "superseded_by": "d52feed4"
  },
  {
   "id": "84a911ab",
@@ -15588,10 +15589,11 @@
   ],
   "verdict": "WARN",
   "week": 11,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": "2026-11-22T13:00-05:00",
-  "reverses": "ac19506f"
+  "reverses": "ac19506f",
+  "superseded_by": "4c001dfa"
  },
  {
   "id": "f02a39d8",
@@ -15607,10 +15609,11 @@
   ],
   "verdict": "WARN",
   "week": 11,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": "2026-11-22T13:00-05:00",
-  "reverses": "3695246f"
+  "reverses": "3695246f",
+  "superseded_by": "2103c1b3"
  },
  {
   "id": "7b1bf6ba",
@@ -15630,5 +15633,61 @@
   "provisional": false,
   "resolves_at": null,
   "reverses": null
+ },
+ {
+  "id": "2103c1b3",
+  "ts": "2026-11-19T04:26-05:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Ryan Flournoy",
+  "call": "start Ryan Flournoy at WR1",
+  "detail": "over Jaxon Smith-Njigba +10.90",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 11,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": "2026-11-22T13:00-05:00",
+  "reverses": "f02a39d8"
+ },
+ {
+  "id": "4c001dfa",
+  "ts": "2026-11-19T04:26-05:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Makai Lemon",
+  "call": "start Makai Lemon at WR3",
+  "detail": "over Drake London +6.03",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 11,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": "2026-11-22T13:00-05:00",
+  "reverses": "84a911ab"
+ },
+ {
+  "id": "d52feed4",
+  "ts": "2026-11-19T04:26-05:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Cooper DeJean",
+  "call": "start Cooper DeJean at DB",
+  "detail": "over Carson Schwesinger +16.40",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 11,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": "2026-11-22T13:00-05:00",
+  "reverses": "083476f1"
  }
 ]
