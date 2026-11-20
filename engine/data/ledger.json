@@ -15762,10 +15762,11 @@
   ],
   "verdict": "WARN",
   "week": 11,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": "2026-11-22T13:00-05:00",
-  "reverses": "2103c1b3"
+  "reverses": "2103c1b3",
+  "superseded_by": "ed0a8281"
  },
  {
   "id": "3b8f7eb9",
@@ -15796,6 +15797,43 @@
   "evidence": [
    "sleeper",
    "usage"
+  ],
+  "verdict": "BLOCK",
+  "week": 11,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "ed0a8281",
+  "ts": "2026-11-19T20:13-05:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Ryan Flournoy",
+  "call": "start Ryan Flournoy at WR1",
+  "detail": "over Jaxon Smith-Njigba +10.70",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 11,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": "2026-11-22T13:00-05:00",
+  "reverses": "7ee3059a"
+ },
+ {
+  "id": "ea5cffc0",
+  "ts": "2026-11-19T20:13-05:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Dorian Williams",
+  "call": "add Dorian Williams (LB) over Carson Schwesinger",
+  "detail": "+19.08/wk",
+  "evidence": [
+   "sleeper"
   ],
   "verdict": "BLOCK",
   "week": 11,
