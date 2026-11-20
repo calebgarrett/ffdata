@@ -1,42 +1,43 @@
-PLAN DIFF — week 11 — Fri Nov 20, 4:08 am ET  (shadow mode: the card still shows the live calls; FF_PLANNER=1 renders the plan)
+PLAN DIFF — week 11 — Fri Nov 20, 1:01 pm ET  (shadow mode: the card still shows the live calls; FF_PLANNER=1 renders the plan)
 objective: J = 1.0*dS_W + 0.8*dS_W1 + 0.8*dS_rest(mean of weeks W+2..17) + 0.1*d_bench_boom - acq ({'HH': 1.0, 'BSB': 0.0}) - 0.1*bid - 0.5*txns; ship at J >= 3.0
 
 == BSB ================================================================================
   card Decide calls vs the plan:
-    BOTH      lineup: QB start Justin Herbert over Matthew Stafford (+20.52)
+    BOTH      lineup: QB start Justin Herbert over Matthew Stafford (+20.54)
               plan: start Justin Herbert at QB ; bench Matthew Stafford  [before kickoff Sun Nov 22, 4:05 pm ET]
-    BOTH      lineup: RB2 start Audric Estime over MarShawn Lloyd (+4.97)
+    BOTH      lineup: RB2 start Audric Estime over MarShawn Lloyd (+4.84)
               plan: start Audric Estime at RB2 ; bench MarShawn Lloyd  [before kickoff Sun Nov 22, 1:00 pm ET]
-    BOTH      lineup: WR1 start Ryan Flournoy over Jaxon Smith-Njigba (+10.54)
+    BOTH      lineup: WR1 start Ryan Flournoy over Jaxon Smith-Njigba (+10.47)
               plan: start Ryan Flournoy at WR1 ; bench Jaxon Smith-Njigba  [before kickoff Sun Nov 22, 1:00 pm ET]
-    BOTH      lineup: WR3 start Makai Lemon over Drake London (+5.87)
+    BOTH      lineup: WR3 start Makai Lemon over Drake London (+5.83)
               plan: start Makai Lemon at WR3 ; bench Drake London  [before kickoff Sun Nov 22, 1:00 pm ET]
     BOTH      lineup: DEF start 49ers over Vikings (+1.97)
               plan: start 49ers at DEF ; bench Vikings  [before kickoff Sun Nov 22, 8:20 pm ET]
     CARD ONLY breakout B: add Malachi Fields drop Audric Estime
-              planner: J -1.02 < 3.0 at its best spot (DeMario Douglas) — J -1.02 = 1.0x+0.95 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.97 (bench boom) + 0.2x-7.88 (depth) - 0.00 acq - 0.00 FAB($0) - 0.50 churn
+              planner: J -0.88 < 3.0 at its best spot (DeMario Douglas) — J -0.88 = 1.0x+1.10 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.94 (bench boom) + 0.2x-7.88 (depth) - 0.00 acq - 0.00 FAB($0) - 0.50 churn
     CARD ONLY breakout B: add Austin Ekeler drop DeMario Douglas
-              planner: J -1.20 < 3.0 at its best spot (Audric Estime) — J -1.20 = 1.0x+0.23 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.60 (bench boom) + 0.2x-4.97 (depth) - 0.00 acq - 0.00 FAB($0) - 0.50 churn
+              planner: J -1.00 < 3.0 at its best spot (Audric Estime) — J -1.00 = 1.0x+0.40 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.68 (bench boom) + 0.2x-4.84 (depth) - 0.00 acq - 0.00 FAB($0) - 0.50 churn
   budgets: {"acq_used": 2, "acq_left": null, "acq_reset": null, "acq_reset_verified": null, "fab_left": 62, "ir_free": 0, "open_spots": 0}
-  final lineup week 11: 107.8 pts (optimal before moves 107.8) · P(beat opp) 83% · P(beat median) 19%
-  considered and rejected (21):
-    - Jason Sanders: J +0.63 < 3.0 at its best spot (Audric Estime) — J +0.63 = 1.0x+0.00 (wk W) + 0.8x+1.22 (W+1) + 0.8x+0.92 (rest, mean of wks 13-17) + 0.60x+1.15 (wks 15-17, P(playoffs) 100%) + 0.1x-1.05 (bench boom) + 0.2x-4.97 (depth) - 0.00 acq
+  final lineup week 11: 106.9 pts (optimal before moves 106.9) · P(beat opp) 80% · P(beat median) 19%
+  considered and rejected (22):
     - Zonovan Knight: best spot Audric Estime: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
-    - Los Angeles Chargers: J +0.03 < 3.0 at its best spot (49ers) — J +0.03 = 1.0x+0.62 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.00 (bench boom) + 0.2x-0.47 (depth) - 0.00 acq - 0.00 
-    - Andre Szmyt: J -0.37 < 3.0 at its best spot (Audric Estime) — J -0.37 = 1.0x+0.00 (wk W) + 0.8x+0.80 (W+1) + 0.8x+0.43 (rest, mean of wks 13-17) + 0.60x+0.43 (wks 15-17, P(playoffs) 100%) + 0.1x-1.05 (bench boom) + 0.2x-4.97 (depth) - 0.00 acq
+    - Jason Sanders: J +0.64 < 3.0 at its best spot (Audric Estime) — J +0.64 = 1.0x+0.00 (wk W) + 0.8x+1.22 (W+1) + 0.8x+0.91 (rest, mean of wks 13-17) + 0.60x+1.14 (wks 15-17, P(playoffs) 100%) + 0.1x-1.01 (bench boom) + 0.2x-4.84 (depth) - 0.00 acq
+    - Los Angeles Chargers: J +0.02 < 3.0 at its best spot (49ers) — J +0.02 = 1.0x+0.62 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.00 (bench boom) + 0.2x-0.47 (depth) - 0.00 acq - 0.00 
+    - Andre Szmyt: J -0.34 < 3.0 at its best spot (Audric Estime) — J -0.34 = 1.0x+0.00 (wk W) + 0.8x+0.80 (W+1) + 0.8x+0.43 (rest, mean of wks 13-17) + 0.60x+0.43 (wks 15-17, P(playoffs) 100%) + 0.1x-1.01 (bench boom) + 0.2x-4.84 (depth) - 0.00 acq
     - Simi Fehoko: best spot 49ers: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
     - Laquon Treadwell: best spot 49ers: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
     - Carolina Panthers: J -0.60 < 3.0 at its best spot (49ers) — J -0.60 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.00 (bench boom) + 0.2x-0.47 (depth) - 0.00 acq - 0.01 
+    - Philadelphia Eagles: J -0.60 < 3.0 at its best spot (49ers) — J -0.60 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.00 (bench boom) + 0.2x-0.47 (depth) - 0.00 acq - 0.01 
     - Corey Kiner: best spot 49ers: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
-    - Malachi Fields: J -1.02 < 3.0 at its best spot (DeMario Douglas) — J -1.02 = 1.0x+0.95 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.97 (bench boom) + 0.2x-7.88 (depth) - 0.00 a
-    - Austin Ekeler: J -1.20 < 3.0 at its best spot (Audric Estime) — J -1.20 = 1.0x+0.23 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.60 (bench boom) + 0.2x-4.97 (depth) - 0.00 acq
-    - Michael Pittman Jr.: J -1.45 < 3.0 at its best spot (Audric Estime) — J -1.45 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.56 (bench boom) + 0.2x-4.97 (depth) - 0.00 acq
-    - Dalton Schultz: J -1.52 < 3.0 at its best spot (Audric Estime) — J -1.52 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x-0.19 (bench boom) + 0.2x-4.97 (depth) - 0.00 acq
-    - Kaleb Johnson: J -1.61 < 3.0 at its best spot (Audric Estime) — J -1.61 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x-1.05 (bench boom) + 0.2x-4.97 (depth) - 0.00 acq
+    - Malachi Fields: J -0.88 < 3.0 at its best spot (DeMario Douglas) — J -0.88 = 1.0x+1.10 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.94 (bench boom) + 0.2x-7.88 (depth) - 0.00 a
+    - Austin Ekeler: J -1.00 < 3.0 at its best spot (Audric Estime) — J -1.00 = 1.0x+0.40 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.68 (bench boom) + 0.2x-4.84 (depth) - 0.00 acq
+    - Michael Pittman Jr.: J -1.42 < 3.0 at its best spot (Audric Estime) — J -1.42 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.59 (bench boom) + 0.2x-4.84 (depth) - 0.00 acq
+    - Dalton Schultz: J -1.49 < 3.0 at its best spot (Audric Estime) — J -1.49 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x-0.16 (bench boom) + 0.2x-4.84 (depth) - 0.00 acq
+    - Kaleb Johnson: J -1.58 < 3.0 at its best spot (Audric Estime) — J -1.58 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x-1.01 (bench boom) + 0.2x-4.84 (depth) - 0.00 acq
     - Baker Mayfield: you dropped him in BSB on 2026-11-18 (<= 7 days, either league)
     - Charlie Kolar: sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 3.9 under your weakest 9.8
     - Chris Godwin Jr.: G15: dropped by Phish Phanatics on 2026-11-18 — a manager let a 175-point role go after his last game; find out why before claiming (a verified role is a registry add_yes)
-    - Dawson Knox: sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 4.1 under your weakest 9.8
+    - Dawson Knox: sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 5.9 under your weakest 9.8
     - Hunter Henry: G15: dropped by Sycawhores on 2026-11-18 — a manager let a 150-point role go after his last game; find out why before claiming (a verified role is a registry add_yes)
     - Jonathon Brooks: registry: not a role — verified 2026-10-18: Groin, surgery, IR 9-23 for ~6 weeks (earliest ~week 10) and he was the backup to Hubbard 
     - Mike Gesicki: G15: dropped by Phish Phanatics on 2026-11-16 — a manager let a 108-point role go after his last game; find out why before claiming (a verified role is a registry add_yes)
@@ -46,41 +47,41 @@ objective: J = 1.0*dS_W + 0.8*dS_W1 + 0.8*dS_rest(mean of weeks W+2..17) + 0.1*d
 
 == HH ================================================================================
   card Decide calls vs the plan:
-    BOTH      lineup: DB start Cooper DeJean over Carson Schwesinger (+16.59)
+    BOTH      lineup: CB start Cooper DeJean over Carson Schwesinger (+16.48)
               plan: start Cooper DeJean at DB ; bench Carson Schwesinger  [before kickoff Sun Nov 22, 1:00 pm ET]
-    CARD ONLY breakout A: add Caleb Douglas drop Devin Singletary
-              planner: J -0.99 < 3.0 at its best spot (Steelers) — J -0.99 = 1.0x+0.00 (wk W) + 0.8x-0.50 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+1.02 (bench boom) + 0.2x+0.00 (depth) - 0.20 acq - 0.00 FAB($0) - 0.50 churn
     CARD ONLY breakout A: add Omarion Hampton drop Kam Curl
-              planner: J +0.51 < 3.0 at its best spot (Steelers) — J +0.51 = 1.0x+1.33 (wk W) + 0.8x-0.50 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+2.79 (bench boom) + 0.2x+0.00 (depth) - 0.20 acq - 0.00 FAB($0) - 0.50 churn
+              planner: J +0.58 < 3.0 at its best spot (Steelers) — J +0.58 = 1.0x+1.32 (wk W) + 0.8x-0.40 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+2.78 (bench boom) + 0.2x+0.00 (depth) - 0.20 acq - 0.00 FAB($0) - 0.50 churn
+    CARD ONLY breakout B: add Adonai Mitchell drop Devin Singletary
+              planner: J -1.38 < 3.0 at its best spot (Devin Singletary) — J -1.38 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.81 (bench boom) + 0.2x-3.79 (depth) - 0.20 acq - 0.00 FAB($0) - 0.50 churn
   budgets: {"acq_used": 0, "acq_left": 7, "acq_reset": "2026-11-17T07:00-05:00", "acq_reset_verified": false, "fab_left": null, "ir_free": 2, "open_spots": 0}
-  final lineup week 11: 312.1 pts (optimal before moves 312.1) · P(beat opp) 93%
+  final lineup week 11: 311.8 pts (optimal before moves 311.8) · P(beat opp) 94%
   considered and rejected (38):
-    - Jameson Williams: J +0.68 < 3.0 at its best spot (Devin Singletary) — J +0.68 = 1.0x+1.42 (wk W) + 0.8x+0.27 (W+1) + 0.8x+0.27 (rest, mean of wks 13-17) + 0.60x+0.27 (wks 15-17, P(playoffs) 100%) + 0.1x+1.30 (bench boom) + 0.2x-3.76 (depth) - 0.20 
-    - Omarion Hampton: J +0.51 < 3.0 at its best spot (Steelers) — J +0.51 = 1.0x+1.33 (wk W) + 0.8x-0.50 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+2.79 (bench boom) + 0.2x+0.00 (depth) - 0.20 acq - 0.
+    - Omarion Hampton: J +0.58 < 3.0 at its best spot (Steelers) — J +0.58 = 1.0x+1.32 (wk W) + 0.8x-0.40 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+2.78 (bench boom) + 0.2x+0.00 (depth) - 0.20 acq - 0.
+    - Jameson Williams: J +0.49 < 3.0 at its best spot (Devin Singletary) — J +0.49 = 1.0x+1.25 (wk W) + 0.8x+0.26 (W+1) + 0.8x+0.26 (rest, mean of wks 13-17) + 0.60x+0.26 (wks 15-17, P(playoffs) 100%) + 0.1x+1.24 (bench boom) + 0.2x-3.79 (depth) - 0.20 
     - AJ Barner: best spot Steelers: Tier B (unpriced) never takes the spare DEF — Tier A only
-    - Juwan Johnson: J -0.09 < 3.0 at its best spot (Devin Singletary) — J -0.09 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+1.62 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.65 (bench boom) + 0.2x-3.76 (depth) - 0.20 
-    - Kyle Pitts Sr.: J -0.12 < 3.0 at its best spot (Devin Singletary) — J -0.12 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+1.75 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x-0.67 (bench boom) + 0.2x-3.76 (depth) - 0.20 
+    - Juwan Johnson: J -0.10 < 3.0 at its best spot (Devin Singletary) — J -0.10 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+1.63 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.62 (bench boom) + 0.2x-3.79 (depth) - 0.20 
+    - Kyle Pitts Sr.: J -0.13 < 3.0 at its best spot (Devin Singletary) — J -0.13 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+1.75 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x-0.72 (bench boom) + 0.2x-3.79 (depth) - 0.20 
     - Charlie Kolar: best spot Steelers: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
+    - Dawson Knox: J -0.55 < 3.0 at its best spot (Devin Singletary) — J -0.55 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+1.07 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.48 (bench boom) + 0.2x-3.79 (depth) - 0.20 
     - Elic Ayomanor: best spot Steelers: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
     - Zonovan Knight: best spot Steelers: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
-    - Caleb Douglas: J -0.99 < 3.0 at its best spot (Steelers) — J -0.99 = 1.0x+0.00 (wk W) + 0.8x-0.50 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+1.02 (bench boom) + 0.2x+0.00 (depth) - 0.20 acq - 0.
     - Malik Washington: best spot Steelers: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
     - Xavier Hutchinson: best spot Steelers: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
     - Simi Fehoko: best spot Steelers: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
     - Laquon Treadwell: best spot Steelers: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
     - KC Concepcion Jr.: best spot Steelers: Tier B (unpriced) never takes the spare DEF — Tier A only
     - Mack Hollins: best spot Steelers: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
-    - Rachaad White: J -1.29 < 3.0 at its best spot (Devin Singletary) — J -1.29 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+1.58 (bench boom) + 0.2x-3.76 (depth) - 0.20 
-    - Jordan Mason: J -1.34 < 3.0 at its best spot (Devin Singletary) — J -1.34 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+1.08 (bench boom) + 0.2x-3.76 (depth) - 0.20 
-    - Tre' Harris: J -1.35 < 3.0 at its best spot (Devin Singletary) — J -1.35 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+1.04 (bench boom) + 0.2x-3.76 (depth) - 0.20 
-    - Travis Etienne Jr.: J -1.35 < 3.0 at its best spot (Devin Singletary) — J -1.35 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.96 (bench boom) + 0.2x-3.76 (depth) - 0.20 
-    - Adonai Mitchell: J -1.37 < 3.0 at its best spot (Devin Singletary) — J -1.37 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.80 (bench boom) + 0.2x-3.76 (depth) - 0.20 
-    - Austin Ekeler: J -1.38 < 3.0 at its best spot (Devin Singletary) — J -1.38 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.70 (bench boom) + 0.2x-3.76 (depth) - 0.20 
-    - Tyler Allgeier: J -1.40 < 3.0 at its best spot (Devin Singletary) — J -1.40 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.47 (bench boom) + 0.2x-3.76 (depth) - 0.20 
-    - Tre Tucker: J -1.42 < 3.0 at its best spot (Devin Singletary) — J -1.42 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.35 (bench boom) + 0.2x-3.76 (depth) - 0.20 
-    - Malachi Fields: J -1.44 < 3.0 at its best spot (Devin Singletary) — J -1.44 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.14 (bench boom) + 0.2x-3.76 (depth) - 0.20 
-    - Blake Corum: J -1.52 < 3.0 at its best spot (Devin Singletary) — J -1.52 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x-0.67 (bench boom) + 0.2x-3.76 (depth) - 0.20 
-  not a clean drop: Dak Prescott (gate: G6-magnitude 44.296297404562175 below QB season bounds [60,600] ); Jaylen Warren (starter-level usage in his own right (38% snaps, 46% of RB touches)); Ja'Marr Chase (starter-level usage in his own right (89% snaps, 32% targets, 60% air ); Trey McBride (starter-level usage in his own right (83% snaps, 28% targets, 34% air ); Rome Odunze (gate: G3-role NFL depth-chart role not checked); Jared Goff (gate: G6-magnitude 36.05222389170005 below QB season bounds [60,600] —); Drake London (starter-level usage in his own right (82% snaps, 28% targets, 39% air ); Matthew Stafford (gate: G6-magnitude 0 below QB season bounds [60,600] — bad read, not a); Texans (registry HOLD — HOLD in Heritage House. A 7-acquisition league rations); Myles Garrett (registry HOLD — HOLD, START when active)
+    - Rachaad White: J -1.30 < 3.0 at its best spot (Devin Singletary) — J -1.30 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+1.62 (bench boom) + 0.2x-3.79 (depth) - 0.20 
+    - Tre' Harris: J -1.35 < 3.0 at its best spot (Devin Singletary) — J -1.35 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+1.07 (bench boom) + 0.2x-3.79 (depth) - 0.20 
+    - Jordan Mason: J -1.36 < 3.0 at its best spot (Devin Singletary) — J -1.36 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+1.02 (bench boom) + 0.2x-3.79 (depth) - 0.20 
+    - Travis Etienne Jr.: J -1.37 < 3.0 at its best spot (Devin Singletary) — J -1.37 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.90 (bench boom) + 0.2x-3.79 (depth) - 0.20 
+    - Adonai Mitchell: J -1.38 < 3.0 at its best spot (Devin Singletary) — J -1.38 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.81 (bench boom) + 0.2x-3.79 (depth) - 0.20 
+    - Austin Ekeler: J -1.39 < 3.0 at its best spot (Devin Singletary) — J -1.39 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.68 (bench boom) + 0.2x-3.79 (depth) - 0.20 
+    - Tyler Allgeier: J -1.41 < 3.0 at its best spot (Devin Singletary) — J -1.41 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.46 (bench boom) + 0.2x-3.79 (depth) - 0.20 
+    - Tre Tucker: J -1.42 < 3.0 at its best spot (Devin Singletary) — J -1.42 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.40 (bench boom) + 0.2x-3.79 (depth) - 0.20 
+    - Caleb Douglas: J -1.43 < 3.0 at its best spot (Devin Singletary) — J -1.43 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.30 (bench boom) + 0.2x-3.79 (depth) - 0.20 
+    - Malachi Fields: J -1.45 < 3.0 at its best spot (Devin Singletary) — J -1.45 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.06 (bench boom) + 0.2x-3.79 (depth) - 0.20 
+  not a clean drop: Dak Prescott (gate: G6-magnitude 44.386017359133554 below QB season bounds [60,600] ); Jaylen Warren (starter-level usage in his own right (38% snaps, 46% of RB touches)); Ja'Marr Chase (starter-level usage in his own right (89% snaps, 32% targets, 60% air ); Trey McBride (starter-level usage in his own right (83% snaps, 28% targets, 34% air ); Rome Odunze (gate: G3-role NFL depth-chart role not checked); Jared Goff (gate: G6-magnitude 36.19378510531672 below QB season bounds [60,600] —); Drake London (starter-level usage in his own right (82% snaps, 28% targets, 39% air ); Matthew Stafford (gate: G6-magnitude 0 below QB season bounds [60,600] — bad read, not a); Texans (registry HOLD — HOLD in Heritage House. A 7-acquisition league rations); Myles Garrett (registry HOLD — HOLD, START when active)
   UNVERIFIED mechanics: 7 acquisitions per week, counted from the most recent Tuesday 07:00 ET | A player dropped To Waivers sits on waivers 1 day | An O tag is IR-eligible | A benched player whose game is over cannot be dropped before the week rolls
 
 plan simulation (sanity check 11): clean — legal at every step, each spot once, budgets held
