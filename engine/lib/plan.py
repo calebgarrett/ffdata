@@ -1315,7 +1315,7 @@ def _winprob(run, lg, after):
             r = dict(key=k, player=e.get('name', k), pos=e.get('pos'), tm=e.get('tm'), line=L, pts=SC.points(L, lg), designation='none')
         lu_rows.append(r)
     fake = dict(current={i: r for i, r in enumerate(lu_rows)}, optimal={i: r for i, r in enumerate(lu_rows)}, rows=[])
-    res = WP.evaluate(R['state'], P, fake, lg, actuals=R.get('actuals'))
+    res = WP.evaluate(R['state'], P, fake, lg, actuals=R.get('actuals'), fill=R.get('win_fill'))
     c = res['current']
     return dict(p_opp=c.get('p_opp'), p_med=c.get('p_med'), mean=c.get('mean'), note='sampled on the planner\'s final lineup')
 

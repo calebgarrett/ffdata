@@ -15153,10 +15153,11 @@
   ],
   "verdict": "WARN",
   "week": 11,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": "2026-11-22T13:00-05:00",
-  "reverses": null
+  "reverses": null,
+  "superseded_by": "84a911ab"
  },
  {
   "id": "0af01159",
@@ -15190,10 +15191,11 @@
   ],
   "verdict": "WARN",
   "week": 11,
-  "status": "proposed",
+  "status": "executed",
   "provisional": false,
   "resolves_at": null,
-  "reverses": null
+  "reverses": null,
+  "status_ts": "2026-11-18T11:11-05:00"
  },
  {
   "id": "9a069129",
@@ -15395,10 +15397,11 @@
   ],
   "verdict": "WARN",
   "week": 11,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": false,
   "resolves_at": "2026-11-22T13:00-05:00",
-  "reverses": "d6a3f732"
+  "reverses": "d6a3f732",
+  "superseded_by": "b4c378d8"
  },
  {
   "id": "c2041bba",
@@ -15451,9 +15454,411 @@
   ],
   "verdict": "WARN",
   "week": 11,
+  "status": "superseded",
+  "provisional": false,
+  "resolves_at": "2026-11-22T13:00-05:00",
+  "reverses": "db521be4",
+  "superseded_by": "ecb35a52"
+ },
+ {
+  "id": "b4c378d8",
+  "ts": "2026-11-18T10:46-05:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Cooper DeJean",
+  "call": "start Cooper DeJean at DB",
+  "detail": "over Carson Schwesinger +17.40",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 11,
+  "status": "superseded",
+  "provisional": false,
+  "resolves_at": "2026-11-22T13:00-05:00",
+  "reverses": "b94e6d48",
+  "superseded_by": "083476f1"
+ },
+ {
+  "id": "ecb35a52",
+  "ts": "2026-11-18T10:53-05:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Ryan Flournoy",
+  "call": "start Ryan Flournoy at WR2",
+  "detail": "over Jaxon Smith-Njigba +10.98",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 11,
+  "status": "superseded",
+  "provisional": false,
+  "resolves_at": "2026-11-22T13:00-05:00",
+  "reverses": "7c59b909",
+  "superseded_by": "3695246f"
+ },
+ {
+  "id": "3695246f",
+  "ts": "2026-11-18T11:05-05:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Ryan Flournoy",
+  "call": "start Ryan Flournoy at WR1",
+  "detail": "over Jaxon Smith-Njigba +10.98",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 11,
+  "status": "superseded",
+  "provisional": false,
+  "resolves_at": "2026-11-22T13:00-05:00",
+  "reverses": "ecb35a52",
+  "superseded_by": "f02a39d8"
+ },
+ {
+  "id": "c3edf9d0",
+  "ts": "2026-11-18T11:11-05:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Justin Herbert",
+  "call": "start Justin Herbert at QB",
+  "detail": "over Matthew Stafford +20.87",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 11,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": "2026-11-22T16:05-05:00",
+  "reverses": null
+ },
+ {
+  "id": "f991423b",
+  "ts": "2026-11-18T11:11-05:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Detroit Lions",
+  "call": "add Detroit Lions (DEF) over Vikings",
+  "detail": "+2.56/wk",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "PASS",
+  "week": 11,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "083476f1",
+  "ts": "2026-11-18T14:23-05:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Cooper DeJean",
+  "call": "start Cooper DeJean at D",
+  "detail": "over Carson Schwesinger +17.40",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 11,
+  "status": "superseded",
+  "provisional": false,
+  "resolves_at": "2026-11-22T13:00-05:00",
+  "reverses": "b4c378d8",
+  "superseded_by": "d52feed4"
+ },
+ {
+  "id": "84a911ab",
+  "ts": "2026-11-18T20:28-05:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Makai Lemon",
+  "call": "start Makai Lemon at WR2",
+  "detail": "over Jaxon Smith-Njigba +5.96",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 11,
+  "status": "superseded",
+  "provisional": false,
+  "resolves_at": "2026-11-22T13:00-05:00",
+  "reverses": "ac19506f",
+  "superseded_by": "4c001dfa"
+ },
+ {
+  "id": "f02a39d8",
+  "ts": "2026-11-18T20:28-05:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Ryan Flournoy",
+  "call": "start Ryan Flournoy at WR3",
+  "detail": "over Drake London +10.59",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 11,
+  "status": "superseded",
+  "provisional": false,
+  "resolves_at": "2026-11-22T13:00-05:00",
+  "reverses": "3695246f",
+  "superseded_by": "2103c1b3"
+ },
+ {
+  "id": "7b1bf6ba",
+  "ts": "2026-11-18T20:28-05:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Carolina Panthers",
+  "call": "add Carolina Panthers (DEF) over Vikings",
+  "detail": "+1.64/wk",
+  "evidence": [
+   "sleeper",
+   "vegas"
+  ],
+  "verdict": "PASS",
+  "week": 11,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "2103c1b3",
+  "ts": "2026-11-19T04:26-05:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Ryan Flournoy",
+  "call": "start Ryan Flournoy at WR1",
+  "detail": "over Jaxon Smith-Njigba +10.90",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 11,
+  "status": "superseded",
+  "provisional": false,
+  "resolves_at": "2026-11-22T13:00-05:00",
+  "reverses": "f02a39d8",
+  "superseded_by": "7ee3059a"
+ },
+ {
+  "id": "4c001dfa",
+  "ts": "2026-11-19T04:26-05:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Makai Lemon",
+  "call": "start Makai Lemon at WR3",
+  "detail": "over Drake London +6.03",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 11,
   "status": "proposed",
   "provisional": false,
   "resolves_at": "2026-11-22T13:00-05:00",
-  "reverses": "db521be4"
+  "reverses": "84a911ab"
+ },
+ {
+  "id": "d52feed4",
+  "ts": "2026-11-19T04:26-05:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Cooper DeJean",
+  "call": "start Cooper DeJean at DB",
+  "detail": "over Carson Schwesinger +16.40",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 11,
+  "status": "superseded",
+  "provisional": false,
+  "resolves_at": "2026-11-22T13:00-05:00",
+  "reverses": "083476f1",
+  "superseded_by": "f262b70a"
+ },
+ {
+  "id": "00d19c12",
+  "ts": "2026-11-19T10:11-05:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Audric Estime",
+  "call": "start Audric Estime at RB1",
+  "detail": "over MarShawn Lloyd +4.97",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "PASS",
+  "week": 11,
+  "status": "superseded",
+  "provisional": false,
+  "resolves_at": "2026-11-22T13:00-05:00",
+  "reverses": null,
+  "superseded_by": "caf66cd5"
+ },
+ {
+  "id": "85ecf95d",
+  "ts": "2026-11-19T10:11-05:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Jonathon Brooks",
+  "call": "add Jonathon Brooks (RB) over MarShawn Lloyd",
+  "detail": "+4.34/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 11,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "caf66cd5",
+  "ts": "2026-11-19T13:37-05:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Audric Estime",
+  "call": "start Audric Estime at RB2",
+  "detail": "over MarShawn Lloyd +4.75",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 11,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": "2026-11-22T13:00-05:00",
+  "reverses": "00d19c12"
+ },
+ {
+  "id": "7ee3059a",
+  "ts": "2026-11-19T13:37-05:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Ryan Flournoy",
+  "call": "start Ryan Flournoy at WR2",
+  "detail": "over Jaxon Smith-Njigba +10.51",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 11,
+  "status": "superseded",
+  "provisional": false,
+  "resolves_at": "2026-11-22T13:00-05:00",
+  "reverses": "2103c1b3",
+  "superseded_by": "ed0a8281"
+ },
+ {
+  "id": "3b8f7eb9",
+  "ts": "2026-11-19T13:37-05:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Baker Mayfield",
+  "call": "add Baker Mayfield (QB) over Matthew Stafford",
+  "detail": "+17.84/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "PASS",
+  "week": 11,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "12db642e",
+  "ts": "2026-11-19T13:37-05:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Baker Mayfield",
+  "call": "drop Matthew Stafford -> add Baker Mayfield",
+  "detail": "+29.3 week",
+  "evidence": [
+   "sleeper",
+   "usage"
+  ],
+  "verdict": "BLOCK",
+  "week": 11,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "ed0a8281",
+  "ts": "2026-11-19T20:13-05:00",
+  "league": "BSB",
+  "kind": "start",
+  "subject": "Ryan Flournoy",
+  "call": "start Ryan Flournoy at WR1",
+  "detail": "over Jaxon Smith-Njigba +10.70",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 11,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": "2026-11-22T13:00-05:00",
+  "reverses": "7ee3059a"
+ },
+ {
+  "id": "ea5cffc0",
+  "ts": "2026-11-19T20:13-05:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Dorian Williams",
+  "call": "add Dorian Williams (LB) over Carson Schwesinger",
+  "detail": "+19.08/wk",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "BLOCK",
+  "week": 11,
+  "status": "blocked",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "f262b70a",
+  "ts": "2026-11-20T13:00-05:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Cooper DeJean",
+  "call": "start Cooper DeJean at CB",
+  "detail": "over Carson Schwesinger +16.48",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 11,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": "2026-11-22T13:00-05:00",
+  "reverses": "d52feed4"
  }
 ]

@@ -218,6 +218,21 @@ cannot be traced to P(win) is wrong.
   source that is itself one week of usage is not a second source. A Tier B on Sleeper's
   trending adds bids the ladder's top decile, not the band-B dollar (Estime at $1 would
   never process). The Vikings are a registry hold. Tests: test_plan 14, 14b, 14c.
+- **P(beat opponent) is against the lineup he will FIELD, not the page as set** (11-21,
+  Caleb: "anything else I can do to get the win in BSB this week? i really want that one").
+  The card had read 80-86% all week against Short Bus. Their page still held Bijan Robinson,
+  Rashid Shaheed and Brandon McManus, all on bye: 83 points as set, 107 with the bench in,
+  116 with a free kicker — and the honest number was 37%. `winprob.evaluate` now re-solves
+  every other roster's unlocked slots for its best legal lineup (started players keep their
+  slot), streams the best free K/DEF into a slot the roster cannot fill (`fill`), keeps the
+  as-set figure as `p_opp_as_set`, and prints both when they differ by 3+ points. The
+  league median is computed on the same fielded lineups. Tests: test_plan 19.
+- **A flat ladder is not a price** (11-21). Jalon Daniels, Tampa Bay's backup QB: four
+  tradable rushing-yard rungs from 15+ to 30+, all quoted near 0.47. A flat line fits any
+  fat tail with zero error and the mean came back 193 yards — a 30.7-point quarterback on
+  top of the free-agent board. `market.fit_yards` now refuses a ladder whose rungs do not
+  slope (`LADDER_MIN_SLOPE` 0.15) or whose fitted mean sits beyond `LADDER_MAX_REACH` (2.5x)
+  the highest strike; `FITS_VER` 4. Tests: test_plan 18.
 - **QB for QB: the hurt QB2 is the spot for the QB who replaces him** (11-18, Caleb:
   "douglas has been a really good wr, are we sure he is the drop?"). Herbert, the cover for
   the Stafford bye with Mayfield (foot) not expected to play, named DeMario Douglas — 15+

@@ -904,6 +904,35 @@ case('...a held QB2 is no spot, and the cover is not dead-ended by the third-QB 
 _cw = PL.Candidate(key=NK('Wendel Tierayson'), name='Wendel Tierayson', fact=f2.fa(NK('Wendel Tierayson')), srcs={'breakout'}, tier='A', reasons=[], hole=None, held=False, firm=False)
 case('...and the QB2 is never the spot for a non-QB add', 'QB-for-QB' in (PL.pair_block(f, _cw, _spq, {}) or ''), PL.pair_block(f, _cw, _spq, {}))
 
+
+# ---------------------------------------------------------------- 18. a flat ladder is not a price (11-21: Jalon Daniels, 193 rushing yards off four rungs at ~0.47)
+import warnings as _w18
+with _w18.catch_warnings():
+    _w18.simplefilter('ignore')
+    _flat = MK.fit_yards([(15, 0.495), (20, 0.485), (25, 0.475), (30, 0.475)])
+    _real = MK.fit_yards([(10, 0.90), (20, 0.72), (30, 0.50), (40, 0.31), (50, 0.18), (60, 0.09)])
+case('market: a flat ladder (no slope across the rungs) yields no fit', _flat is None, str(_flat))
+case('market: a real ladder still fits, with its mean inside its strikes', _real is not None and 20 < _real['mean'] < 45, str(_real))
+
+# ---------------------------------------------------------------- 19. other teams are scored on the lineup they will FIELD (11-21: 80% vs a Short Bus page with three bye starters; 37% once set)
+from lib import winprob as WP19
+r19 = bsb_roster()
+_opp19 = [('Short Bus', 'Opp QB', 'QB', 'DAL', 22.0), ('Short Bus', 'Opp RB A', 'RB', 'ATL', 0.0), ('Short Bus', 'Opp RB B', 'RB', 'BAL', 12.0), ('Short Bus', 'Opp RB C', 'RB', 'HOU', 11.0)]
+f, st, pr = league('BSB', r19, others=_opp19)
+for r_ in st.rows:
+    if r_['owner'] == 'Short Bus':
+        r_['slot'] = {'Opp QB': 'QB', 'Opp RB A': 'RB1', 'Opp RB B': 'RB2', 'Opp RB C': 'BN'}[r_['player']]     # the zero is in the lineup, 11 points sit on the bench
+_real_matchup = WP19.matchup
+WP19.matchup = lambda lg, wk: 'Short Bus'
+try:
+    _lu19 = LU.solve(st, pr)
+    _w19 = WP19.evaluate(st, pr, _lu19, 'BSB', now=NOW)
+finally:
+    WP19.matchup = _real_matchup
+case('winprob: the opponent is scored with his bench RB in for the zero (fielded > as set by ~11)', _w19['opp_mean'] is not None and 9.0 < _w19['opp_mean'] - _w19['opp_mean_as_set'] < 13.0, (_w19.get('opp_mean'), _w19.get('opp_mean_as_set')))
+case('...and P(beat opp) is the fielded-lineup number, never above the as-set one', _w19['current']['p_opp'] is not None and _w19['current']['p_opp'] <= _w19['current']['p_opp_as_set'] + 1e-9, (_w19['current'].get('p_opp'), _w19['current'].get('p_opp_as_set')))
+case('...with a note that says so', any('as set projects' in n for n in _w19['notes']), str(_w19['notes']))
+
 print('=' * 88)
 print(f'{total - bad}/{total} behaved as required.' + ('  PLANNER IS SOUND.' if not bad else '  PLANNER FAILED.'))
 sys.exit(1 if bad else 0)

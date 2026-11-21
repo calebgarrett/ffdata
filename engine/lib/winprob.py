@@ -107,12 +107,23 @@ def sample_player(proj, row, league, n, rng):
         tot += c * (s - m); src.append(f'{field}:{how[0]}')
     return tot, ' '.join(src)
 
+def pct_(x): return f'{x:.0%}' if x is not None else 'n/a'
+
 def matchup(league, week):
     try: return json.load(open(MATCHUPS)).get(str(week), {}).get(league)
     except Exception: return None
 
-def evaluate(state, proj, lineup, league, seed=7, actuals=None):
-    """-> dict(opp, p_opp, p_med, mean, options=[...], teams={owner: mean}, notes)"""
+def evaluate(state, proj, lineup, league, seed=7, actuals=None, fill=None, now=None):
+    """-> dict(opp, p_opp, p_med, mean, options=[...], teams={owner: mean}, notes)
+
+    Other teams are scored on the lineup a manager WILL field, not the one on the page
+    (11-21, Caleb: "anything else I can do to get the win in BSB this week?" — the card
+    had said 80-86% all week against a Short Bus lineup still holding Bijan Robinson,
+    Shaheed and a kicker on bye: 83 points as set, 107 once set, and the honest number
+    was a coin flip). Every other roster's unlocked slots are re-solved for its best legal
+    lineup; players whose games have started keep the slot they are in. `fill` =
+    {fam: free-agent row} is the replacement a manager streams into a K/DEF slot his
+    roster cannot fill (a kicker on bye). The as-set number is kept as `p_opp_as_set`."""
     rng = np.random.default_rng(seed)
     cache, prov = {}, {}
     actuals = actuals or {}
@@ -144,8 +155,38 @@ def evaluate(state, proj, lineup, league, seed=7, actuals=None):
             s, why = sample_player(proj, r, league, N, rng)
             cache[r['key']] = correlated(r, s); prov[r['key']] = why
         return cache[r['key']]
-    # other teams: current starters
-    totals, unpriced = {}, {}
+    # other teams: the lineup as set (kept for the record) and the lineup they will field
+    from . import lineup as _LU, clock as _C
+    now_ = now or _C.now()
+    fill = fill or {}
+    cfg_ = state.cfg
+    def _started(r):
+        if r['key'] in actuals: return True
+        try: k = proj.kickoff(r['tm'])
+        except Exception: k = None
+        return bool(k and k <= now_)
+    def _best_rows(rows):
+        cand, vals, locks, by = [], {}, {}, {}
+        for r in rows:
+            if r['slot'] == 'IR': continue
+            by[r['key']] = r
+            st_ = _started(r)
+            if st_: locks[r['key']] = r['slot'] if r['slot'] not in ('BN', 'IR') else 'BN'
+            sm = S(r) if (r['designation'] not in UNUSABLE or st_) else None
+            vals[r['key']] = float(sm.mean()) if sm is not None else (0.0 if st_ else None)
+            cand.append(dict(key=r['key'], elig=r.get('elig') or set()))
+        try: _, asg = _LU.optimal_points(cand, cfg_, vals, locks)
+        except Exception: return None
+        out = []
+        for slot, k in asg.items():
+            r = by.get(k) if k else None
+            dead = r is None or ((vals.get(k) or 0.0) < 0.5 and k not in locks)        # a bye kicker samples at a 0.1 floor, not 0
+            if dead:
+                f_ = next((fill[fm] for fm in fill if fm in cfg_.accepts[slot] and len(cfg_.accepts[slot]) == 1), None)
+                if f_ is not None: out.append(dict(f_, _fill=True)); continue
+            if r is not None: out.append(r)
+        return out
+    totals, unpriced, totals_set, filled = {}, {}, {}, {}
     for owner, rows in state.by_owner.items():
         if owner == state.me: continue
         t = np.zeros(N); miss = []
@@ -154,7 +195,19 @@ def evaluate(state, proj, lineup, league, seed=7, actuals=None):
             s = S(r)
             if s is not None: t += s
             else: miss.append(r['player'])
-        totals[owner] = t; unpriced[owner] = miss
+        totals_set[owner] = t
+        best = _best_rows(rows)
+        if best is None:
+            totals[owner] = t; unpriced[owner] = miss; continue
+        tb = np.zeros(N); missb = []
+        for r in best:
+            s = S(r)
+            if s is not None: tb += s
+            elif r['slot'] not in ('BN', 'IR') and r['designation'] not in UNUSABLE: missb.append(r['player'])
+        # a set lineup is never worse than the one on the page (the solver sees the same players)
+        if float(tb.mean()) + 1e-9 < float(t.mean()): tb, missb = t, miss
+        totals[owner] = tb; unpriced[owner] = missb
+        filled[owner] = [r['player'] for r in best if r.get('_fill')]
     opp = matchup(league, proj.week)
     vs_median = bool(getattr(state.cfg, 'vs_median', False))
     others = np.stack(list(totals.values()))     # (teams-1, N)
@@ -167,6 +220,7 @@ def evaluate(state, proj, lineup, league, seed=7, actuals=None):
             t += s
         out = dict(label=label, mean=float(t.mean()), sd=float(t.std()), miss=miss, players=[r['player'] for r in lu_rows])
         out['p_opp'] = float((t > totals[opp]).mean()) if opp in totals and totals[opp].mean() > 0 and not unpriced.get(opp) else None
+        out['p_opp_as_set'] = float((t > totals_set[opp]).mean()) if opp in totals_set and totals_set[opp].mean() > 0 else None
         if vs_median and all(o.mean() > 0 for o in totals.values()):
             allt = np.vstack([others, t[None, :]])
             med = np.median(allt, axis=0)
@@ -200,13 +254,19 @@ def evaluate(state, proj, lineup, league, seed=7, actuals=None):
     notes = [f'same-game correlation modelled for QB/RB/WR/TE (game sd {SG:.2f}, team sd {ST:.2f}); DEF, K and IDP independent; treat a 2-3 point probability edge as noise']
     if q_zero: notes.append('not scored here: ' + ', '.join(r['player'] for r in cur if r['key'] in q_zero) + ' (Q/D, projected 0.00 — a game-status question, handled by the contingency flag, not a lineup edge)')
     if actuals: notes.append(f'{len(actuals)} finished players carry their actual score; other teams\' finished players still use projections in the median')
+    if opp in totals and opp in totals_set and float(totals[opp].mean()) - float(totals_set[opp].mean()) >= 3.0:
+        notes.append(f"{opp}'s lineup as set projects {float(totals_set[opp].mean()):.1f}; the lineup they can field projects {float(totals[opp].mean()):.1f}"
+                     + (f" (with a free {' and '.join(filled.get(opp) or [])} streamed in)" if filled.get(opp) else '')
+                     + f" — P(beat opp) is against the fielded lineup; against the page as set it would read {pct_(options[0].get('p_opp_as_set'))}")
     if opp is None: notes.append(f'no opponent on file for week {proj.week} (data/matchups.json) — P(beat opponent) not computed')
     elif opp in totals and totals[opp].mean() <= 0: notes.append(f'{opp} has no priced players this week — P(beat opponent) not computed')
     elif unpriced.get(opp): notes.append(f'{opp} has {len(unpriced[opp])} starter(s) no source prices ({", ".join(unpriced[opp][:4])}{"…" if len(unpriced[opp]) > 4 else ""}) — P(beat opponent) not computed rather than overstated')
     if vs_median and sum(1 for t in totals.values() if t.mean() > 0) < len(totals): notes.append('some league rosters have no priced players this week — the median is not computed from a full field')
     assumed = sorted({k for k, v in prov.items() if v and ':l' not in v})
     return dict(opp=opp, vs_median=vs_median, current=base, best=best, options=sorted(options, key=lambda o: -o['score']),
-                teams={o: float(t.mean()) for o, t in totals.items()}, notes=notes, n=N,
+                teams={o: float(t.mean()) for o, t in totals.items()}, teams_as_set={o: float(t.mean()) for o, t in totals_set.items()},
+                opp_mean=(float(totals[opp].mean()) if opp in totals else None), opp_mean_as_set=(float(totals_set[opp].mean()) if opp in totals_set else None),
+                notes=notes, n=N,
                 assumed=len(assumed), priced=len([k for k, v in prov.items() if v and ':l' in v]),
                 samples={r['key']: cache[r['key']] for r in cur if r['key'] in cache and cache[r['key']] is not None})
 

@@ -127,7 +127,9 @@ def _mid(r):
     if b<=0: return a
     return (a+b)/2
 
-FITS_VER = 3          # bump when _clean_ladder / the fits change
+FITS_VER = 4          # bump when _clean_ladder / the fits change
+LADDER_MIN_SLOPE = 0.15   # the rungs' probabilities must differ by at least this, top to bottom
+LADDER_MAX_REACH = 2.5    # ...and the fitted mean may not sit beyond this multiple of the highest strike
 MAX_SPREAD = 0.30     # a 2c bid / 88c ask is a placeholder, not a price (10-22: Foster Moreau's
                       # receiving-yards ladder quoted 0.02/0.88 at EVERY strike; the midpoint 0.45
                       # at 40+ yards made him a 20-point TE and the planner shipped him over McBride)
@@ -202,7 +204,13 @@ def fit_yards(ladder):
             if best is None or sse<best[1]: best=(pr,sse)
     if best is None: return None
     z,sh,sc=best[0]
-    return dict(mean=float((1-z)*sh*sc), sse=best[1], n=len(ladder),
+    mean=float((1-z)*sh*sc)
+    # a ladder must actually slope and must bracket its own answer (11-21: Jalon Daniels,
+    # TB's backup QB — four tradable rungs, 15+ to 30+ rushing yards, all quoted ~0.47; a
+    # flat line fits any fat tail perfectly (sse 0.0000) and the mean came back 193 yards,
+    # a 30.7-point quarterback at the top of the free-agent board)
+    if float(y.max()-y.min())<LADDER_MIN_SLOPE or mean>LADDER_MAX_REACH*float(x.max()): return None
+    return dict(mean=mean, sse=best[1], n=len(ladder),
                 p_zero=float(z), model='zi-gamma')
 
 SERIES_KIND={'KXNFLREC':'count','KXNFLPASSTDS':'count','KXNFLINT':'count',

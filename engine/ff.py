@@ -435,7 +435,15 @@ def build(week=None):
                                      why=f"{drop['player']} is the spot, and it goes to next week's {'bye cover' if c.get('hole') else c['fam'] + ' stream'} ({c['add']['name']}) first; re-check after the game")
         # ---- win probability: the lineup that wins two results, not the highest mean
         from lib import winprob as WP
-        R['win'] = None if FAST else WP.evaluate(st, P, lu, lg, actuals=act)
+        # the replacement a rival streams into a K/DEF slot his roster cannot fill this week
+        _fill = {}
+        for _fm in ('K', 'DEF'):
+            _es = [e for e in (getattr(w, 'by_fam', {}) or {}).get(_fm, []) if (e.get('week') or 0) > 0]
+            if _es:
+                _e = max(_es, key=lambda e: (e['week'], e['key']))
+                _fill[_fm] = dict(key=_e['key'], player=_e.get('name') or _e['key'], pos=_e.get('pos') or _fm, tm=_e.get('tm') or '', slot=_fm, designation='none', elig={_fm})
+        R['win_fill'] = _fill
+        R['win'] = None if FAST else WP.evaluate(st, P, lu, lg, actuals=act, fill=_fill)
         run['leagues'][lg] = R
     from lib import fab as F, steam as STM
     run['fab'] = F.model()
