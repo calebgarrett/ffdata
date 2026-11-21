@@ -1,7 +1,7 @@
-# ffdata pull loaded Fri Nov 20, 12:59 pm ET — repo head: 2026-11-20T09:08:53Z pull 2026-11-20T09:08Z (in-action, no pull)
+# ffdata pull loaded Fri Nov 20, 6:58 pm ET — repo head: 2026-11-20T18:01:26Z pull 2026-11-20T18:01Z (in-action, no pull)
 week 11
-kalshi.csv: 4285 markets, 144 events, pulled 2026-11-20T17:58:14+00:00
-kalshi_archive: 1 new pull(s) copied, 91 on disk
+kalshi.csv: 4543 markets, 146 events, pulled 2026-11-20T23:57:00+00:00
+kalshi_archive: 1 new pull(s) copied, 92 on disk
 espn_games.csv: 13 games for week 11 — 0 with ESPN lines from the pump, 13 schedule-only from lines_wk10_18.csv; Kalshi spread/total ladders supply the lines inside the engine
 sleeper_off_wk11.csv: 3301 rows
 sleeper_idp_wk11.csv: 4603 rows
@@ -13,9 +13,9 @@ usage_wk11_WR.csv: 20 rows
 usage_wk10_TE.csv: 147 rows
 usage_wk10_K.csv: 35 rows
 usage_wk10_DEF.csv: 28 rows
-BSB rosters: 216 players on 12 teams, pulled 2026-11-20T17:59:11+00:00 -> new snapshot
+BSB rosters: 216 players on 12 teams, pulled 2026-11-20T23:58:03+00:00 -> new snapshot
 BSB matchup wk11: vs Short Bus; 0 final rows, 0 in progress; totals me 0.00 opp 0.00
 BSB transactions: 0 new of 50 on the page; log now 389 rows
-HH rosters: 237 players on 10 teams, pulled 2026-11-20T17:59:11+00:00 -> new snapshot
+HH rosters: 239 players on 10 teams, pulled 2026-11-20T23:58:03+00:00 -> new snapshot
 HH matchup wk11: vs Eatin Pigskins; 4 final rows, 0 in progress; totals me 43.93 opp 50.13
-HH transactions: 0 new of 38 on the page; log now 358 rows
+HH transactions: 2 new of 37 on the page; log now 360 rows

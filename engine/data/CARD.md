@@ -1,19 +1,18 @@
 # Lineup Card — week 11
 
-_Fri Nov 20, 1:01 pm ET. Decisions first; detail folded below. A PROVISIONAL call waits for the market or a game-status answer._
+_Fri Nov 20, 7:00 pm ET. Decisions first; detail folded below. A PROVISIONAL call waits for the market or a game-status answer._
 
 ## Decide (next 36 hours)
 
 - BSB: **Start Justin Herbert at QB** over Matthew Stafford — before kickoff Sun Nov 22, 4:05 pm ET
-- BSB: **Start Audric Estime at RB2** over MarShawn Lloyd — before kickoff Sun Nov 22, 1:00 pm ET
+- BSB: **Start Audric Estime at RB1** over MarShawn Lloyd — before kickoff Sun Nov 22, 1:00 pm ET
 - BSB: **Start Ryan Flournoy at WR1** over Jaxon Smith-Njigba — before kickoff Sun Nov 22, 1:00 pm ET
 - BSB: **Start Makai Lemon at WR3** over Drake London — before kickoff Sun Nov 22, 1:00 pm ET
 - BSB: **Start 49ers at DEF** over Vikings — before kickoff Sun Nov 22, 8:20 pm ET
-- HH: **Start Cooper DeJean at DB** over Carson Schwesinger — before kickoff Sun Nov 22, 1:00 pm ET
 
 ## BSB — OVERKILL
 
-16-4-0, 1st, PF — · projected 107 · 19% to beat Short Bus · 0% vs the league median
+16-4-0, 1st, PF — · projected 107 · 18% to beat Short Bus · 0% vs the league median
 - Next lock: Sun Nov 22, 1:00 pm ET — 4 starters
 
 <details><summary>Lineup after the moves</summary>
@@ -21,8 +20,8 @@ _Fri Nov 20, 1:01 pm ET. Decisions first; detail folded below. A PROVISIONAL cal
 - DEF: 49ers
 - K: Cairo Santos
 - QB: Justin Herbert
-- RB1: James Cook III
-- RB2: Audric Estime
+- RB1: Audric Estime
+- RB2: James Cook III
 - TE: Isaiah Likely
 - W/R/T: Sam LaPorta
 - WR1: Ryan Flournoy
@@ -33,14 +32,14 @@ _Fri Nov 20, 1:01 pm ET. Decisions first; detail folded below. A PROVISIONAL cal
 
 ## HH — Tecmo Bowlers
 
-8-2-0, 1st, PF — · projected 312 · 85% to beat Eatin Pigskins
-- Next lock: Sun Nov 22, 1:00 pm ET — 10 starters
+8-2-0, 1st, PF — · projected 312 · 97% to beat Eatin Pigskins
+- Next lock: Sun Nov 22, 1:00 pm ET — 11 starters
 
 <details><summary>Lineup after the moves</summary>
 
 - CB: Jalen Ramsey
-- D: Budda Baker
-- DB: Cooper DeJean
+- D: Cooper DeJean
+- DB: Nick Cross
 - DEF: Texans
 - DL: T.J. Watt
 - K: Brandon Aubrey
@@ -48,7 +47,7 @@ _Fri Nov 20, 1:01 pm ET. Decisions first; detail folded below. A PROVISIONAL cal
 - Q/W/R/T: Jared Goff
 - QB: Dak Prescott
 - RB: Jaylen Warren
-- S: Nick Cross
+- S: Budda Baker
 - TE: Trey McBride
 - W/R: Rashee Rice
 - W/R/T: Rome Odunze
@@ -59,34 +58,34 @@ _Fri Nov 20, 1:01 pm ET. Decisions first; detail folded below. A PROVISIONAL cal
 <details><summary>BSB: considered, not moves (22)</summary>
 
 - Carolina Panthers: J -0.60 < 3.0 at its best spot (49ers) — J -0.60 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs)
-- Los Angeles Chargers: J +0.02 < 3.0 at its best spot (49ers) — J +0.02 = 1.0x+0.62 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs)
+- Los Angeles Chargers: J +0.01 < 3.0 at its best spot (49ers) — J +0.01 = 1.0x+0.60 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs)
 - Philadelphia Eagles: J -0.60 < 3.0 at its best spot (49ers) — J -0.60 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs)
-- Andre Szmyt: J -0.34 < 3.0 at its best spot (Audric Estime) — J -0.34 = 1.0x+0.00 (wk W) + 0.8x+0.80 (W+1) + 0.8x+0.43 (rest, mean of wks 13-17) + 0.60x+0.43 (wks 15-17, P(p
-- Austin Ekeler: J -1.00 < 3.0 at its best spot (Audric Estime) — J -1.00 = 1.0x+0.40 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(p
+- Andre Szmyt: J -0.31 < 3.0 at its best spot (Audric Estime) — J -0.31 = 1.0x+0.00 (wk W) + 0.8x+0.80 (W+1) + 0.8x+0.43 (rest, mean of wks 13-17) + 0.60x+0.43 (wks 15-17, P(p
+- Austin Ekeler: J -1.25 < 3.0 at its best spot (Audric Estime) — J -1.25 = 1.0x+0.15 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(p
 - Baker Mayfield: you dropped him in BSB on 2026-11-18 (<= 7 days, either league)
-- Charlie Kolar: sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 3.9 under your weakest 9.8
+- Charlie Kolar: sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 3.9 under your weakest 9.4
 - Chris Godwin Jr.: G15: dropped by Phish Phanatics on 2026-11-18 — a manager let a 175-point role go after his last game; find out why before claiming (a verified role is a regist
 - Corey Kiner: best spot 49ers: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
-- Dalton Schultz: J -1.49 < 3.0 at its best spot (Audric Estime) — J -1.49 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(p
-- Dawson Knox: sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 5.9 under your weakest 9.8
+- Dalton Schultz: J -1.46 < 3.0 at its best spot (Audric Estime) — J -1.46 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(p
+- Dawson Knox: sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 6.2 under your weakest 9.4
 - Hunter Henry: G15: dropped by Sycawhores on 2026-11-18 — a manager let a 150-point role go after his last game; find out why before claiming (a verified role is a registry ad
 
 </details>
 
-<details><summary>HH: considered, not moves (38)</summary>
+<details><summary>HH: considered, not moves (33)</summary>
 
-- Adonai Mitchell: J -1.38 < 3.0 at its best spot (Devin Singletary) — J -1.38 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, 
+- Aaron Jones Sr.: J -1.29 < 3.0 at its best spot (Devin Singletary) — J -1.29 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, 
+- Adonai Mitchell: J -1.37 < 3.0 at its best spot (Devin Singletary) — J -1.37 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, 
 - AJ Barner: best spot Steelers: Tier B (unpriced) never takes the spare DEF — Tier A only
-- Austin Ekeler: J -1.39 < 3.0 at its best spot (Devin Singletary) — J -1.39 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, 
+- Austin Ekeler: J -1.41 < 3.0 at its best spot (Devin Singletary) — J -1.41 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, 
 - Baker Mayfield: you dropped him in BSB on 2026-11-18 (<= 7 days, either league)
-- Barrett Carter: gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])
-- Blake Corum: J -1.53 < 3.0 at its best spot (Devin Singletary) — J -1.53 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, 
+- Blake Corum: J -1.51 < 3.0 at its best spot (Devin Singletary) — J -1.51 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, 
 - Bryan Cook: gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])
-- Caleb Douglas: J -1.43 < 3.0 at its best spot (Devin Singletary) — J -1.43 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, 
+- Caleb Douglas: J -0.90 < 3.0 at its best spot (Steelers) — J -0.90 = 1.0x+0.00 (wk W) + 0.8x-0.38 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playof
 - Calen Bullock: gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])
 - Carnell Tate: gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])
 - Charlie Kolar: best spot Steelers: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
-- Corey Kiner: sits behind everyone: you carry 3 RBs for 1 slot(s) and he projects 0.0 under your weakest 3.8
+- Corey Kiner: sits behind everyone: you carry 3 RBs for 1 slot(s) and he projects 0.0 under your weakest 3.7
 
 </details>
 
@@ -98,4 +97,4 @@ _Fri Nov 20, 1:01 pm ET. Decisions first; detail folded below. A PROVISIONAL cal
 
 </details>
 
-_Engine stamp Fri Nov 20, 1:01 pm ET. The HTML card is the full record; this page is the private, phone-readable twin._
+_Engine stamp Fri Nov 20, 7:00 pm ET. The HTML card is the full record; this page is the private, phone-readable twin._
