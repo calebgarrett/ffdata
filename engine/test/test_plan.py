@@ -933,6 +933,21 @@ case('winprob: the opponent is scored with his bench RB in for the zero (fielded
 case('...and P(beat opp) is the fielded-lineup number, never above the as-set one', _w19['current']['p_opp'] is not None and _w19['current']['p_opp'] <= _w19['current']['p_opp_as_set'] + 1e-9, (_w19['current'].get('p_opp'), _w19['current'].get('p_opp_as_set')))
 case('...with a note that says so', any('as set projects' in n for n in _w19['notes']), str(_w19['notes']))
 
+
+# ---------------------------------------------------------------- 20. a nickname that shares nothing with the name (11-21: Yahoo's 'Bam Knight' = every feed's 'Zonovan Knight')
+from lib import names as N20
+case('names: Kalshi\'s and Yahoo\'s "Bam Knight" keys to Zonovan Knight', NK('Bam Knight') == NK('Zonovan Knight'), NK('Bam Knight'))
+_ph, _nr = N20.audit_phantoms({'zebediah knightley', 'milton williams'}, {'bim knightley', 'kyren williams'},
+                               meta={'zebediah knightley': dict(tm='ARI', pos='RB'), 'bim knightley': dict(tm='ARI', pos='RB'),
+                                     'milton williams': dict(tm='NE', pos='DT'), 'kyren williams': dict(tm='LAR', pos='RB')},
+                               known={'zebediah knightley', 'milton williams', 'kyren williams'})
+case('phantoms: same surname, team and position, roster name unknown to every feed -> the same man, not a free agent', any(a == 'zebediah knightley' and b == 'bim knightley' for a, b, _, _ in _ph), str(_ph))
+case('...and an ordinary surname collision (Milton / Kyren Williams) is still two players', not any(a == 'milton williams' for a, _, _, _ in _ph), str(_ph))
+_ph2, _ = N20.audit_phantoms({'zebediah knightley'}, {'bim knightley'},
+                             meta={'zebediah knightley': dict(tm='ARI', pos='RB'), 'bim knightley': dict(tm='ARI', pos='RB')},
+                             known={'zebediah knightley', 'bim knightley'})
+case('...two brothers the feeds both project are two players', not _ph2, str(_ph2))
+
 print('=' * 88)
 print(f'{total - bad}/{total} behaved as required.' + ('  PLANNER IS SOUND.' if not bad else '  PLANNER FAILED.'))
 sys.exit(1 if bad else 0)

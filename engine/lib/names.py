@@ -33,6 +33,9 @@ FIRST = {
 EXPLICIT = {
     'cam ward':'cameron ward',
     'gabe davis':'gabriel davis',
+    # 11-21: Kalshi titles him by his nickname; his five ladders matched nobody, he read
+    # as one source (Sleeper) and G5 kept the week's best free RB off the card
+    'bam knight':'zonovan knight',
 }
 
 TEAM_ALIAS = {'JAC':'JAX','LA':'LAR','WSH':'WAS','ARZ':'ARI','SD':'LAC','OAK':'LV'}
@@ -108,7 +111,7 @@ def _common_prefix(a,b):
     return n
 
 def audit_phantoms(pool_keys, roster_keys, roster_names=None, thresh=0.62,
-                   meta=None, strict=True):
+                   meta=None, strict=True, known=None):
     """Pool entries that are really a rostered player under another spelling.
 
     SECOND FAILURE THIS PREVENTS (2026-09-16): the first version of this function
@@ -161,6 +164,16 @@ def audit_phantoms(pool_keys, roster_keys, roster_names=None, thresh=0.62,
             nickname = cp>=3 and (a.startswith(b) or b.startswith(a) or r>thresh)
             why=f'"{a}"/"{b}" share {cp} leading chars, ratio {r:.2f}'
             if not nickname:
+                # 4. (11-21) a nickname that shares NOTHING with the formal name: Yahoo rosters
+                # 'Bam Knight', every feed projects 'Zonovan Knight'. Same surname, same team,
+                # same position, and the roster's name matches no projection row at all while
+                # the pool's does -> the same man, and he is NOT a free agent (the engine had
+                # him as the week's best free RB while Regulators started him).
+                if known is not None and meta is not None and rk not in known and pk in known:
+                    mp,mr=(meta.get(pk) or {}),(meta.get(rk) or {})
+                    pos_p=str(mp.get('pos','')).upper().split(',')[0].strip(); pos_r=str(mr.get('pos','')).upper().split(',')[0].strip()
+                    if tm(pk) and tm(pk)==tm(rk) and pos_p and pos_p==pos_r:
+                        phantoms.append((pk,rk,1.0,'same surname, team and position; the roster name matches no projection row — a nickname the feeds do not use')); break
                 # A bare surname collision (Milton Williams vs Kyren Williams) is
                 # normal and there are hundreds. Only surface the ones that are
                 # close enough to be worth a human glance.

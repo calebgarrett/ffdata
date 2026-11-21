@@ -73,6 +73,13 @@ class Projections:
                     in_week.add((key(nm), r['series'])); in_week_events.add(r['event'])
         self.kal_dropped = len([1 for kk in self.kal if kk not in in_week])
         self.kal = {kk: v for kk, v in self.kal.items() if kk in in_week}
+        # players the market prices on two or more series that NO projection row matches:
+        # a nickname or a spelling the name table does not know (11-21: 'Bam Knight')
+        _seen = {}
+        for (kk, ser) in self.kal:
+            if kk.startswith('DST:') or kk.endswith(' d/st'): continue
+            _seen.setdefault(kk, set()).add(ser)
+        self.kal_unmatched = sorted(kk for kk, v in _seen.items() if len(v) >= 2 and kk not in self.off)
         self.in_week_events = in_week_events
         # ---- game lines FROM KALSHI (spread + total ladders, 09-24): same pull as the
         # props, every game, a distribution not a number. They override the

@@ -218,6 +218,18 @@ cannot be traced to P(win) is wrong.
   source that is itself one week of usage is not a second source. A Tier B on Sleeper's
   trending adds bids the ladder's top decile, not the band-B dollar (Estime at $1 would
   never process). The Vikings are a registry hold. Tests: test_plan 14, 14b, 14c.
+- **A nickname that shares nothing with the name is still the same man** (11-21, Caleb:
+  "Connor is not available" — which sent me back to the Cardinals backfield). Yahoo rosters
+  him and Kalshi prices him as 'Bam Knight'; every projection feed calls him Zonovan
+  Knight. Two failures from one missing alias: his five market ladders matched nobody (he
+  read as one source), and Regulators' starting RB sat in the free-agent pool as the
+  week's best free back — I told Caleb so. Now `names.EXPLICIT` carries the alias; the
+  phantom audit treats a pool player and a roster player with the same surname, team and
+  position as one man when the roster's name matches no projection row at all; and the
+  status block prints any player Kalshi prices on two or more series that no projection
+  row matches (`Projections.kal_unmatched`). Also: a Tier-B add may take the spot of a
+  same-position body who is below the free replacement and below the add himself, and
+  like-for-like depth is charged net of the man who takes the spot. Tests: test_plan 20.
 - **P(beat opponent) is against the lineup he will FIELD, not the page as set** (11-21,
   Caleb: "anything else I can do to get the win in BSB this week? i really want that one").
   The card had read 80-86% all week against Short Bus. Their page still held Bijan Robinson,

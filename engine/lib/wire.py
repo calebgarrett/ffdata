@@ -58,7 +58,7 @@ class Wire:
         pool = {k: v for k, v in cands.items() if k not in state.roster_keys and k not in self.blocked}
         meta = {k: {'tm': v['tm'], 'pos': v['pos']} for k, v in cands.items()}
         meta.update({r['key']: {'tm': r['tm'], 'pos': r['pos']} for r in state.rows})
-        self.phantoms, self.near = audit_phantoms(set(pool), state.roster_keys, meta=meta)
+        self.phantoms, self.near = audit_phantoms(set(pool), state.roster_keys, meta=meta, known=set(cands))
         for a, _, _, _ in self.phantoms: pool.pop(a, None)
         self.pool = pool
         self.meta = meta

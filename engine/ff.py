@@ -96,6 +96,8 @@ def cmd_status(run=None):
         if fn == 'kalshi.csv':
             extra = f' · {len(P.kal)} fitted ladders · {len(P.ready)}/32 teams market-ready'
             if not any(s_ == 'KXNFLREC' for (_, s_) in P.kal if _ not in ()) : pass
+            if getattr(P, 'kal_unmatched', None):
+                extra += f"\n     !! Kalshi prices {len(P.kal_unmatched)} player(s) no projection row matches ({', '.join(P.kal_unmatched[:6])}) — a nickname? add it to names.EXPLICIT; until then he reads as one source"
         print(f'     {what:18s} {age:5.1f}h old{extra}')
     for lg in LEAGUES:
         st = S.load(lg); rec = L.reconcile(st)

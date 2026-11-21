@@ -644,6 +644,8 @@ class Objective:
                 return max(0.0, (d.ros_pw or 0.0) - (_stream_value(f, d.fam, f.rest_weeks[0] if f.rest_weeks else W1) or 0.0))
             if one_qb and d.fam == 'QB' and a.fam == 'QB':                 # QB2 for QB2: the bench QB is replaced, not lost (11-18)
                 return max(0.0, (d.ros_pw or 0.0) - (a.ros_pw or 0.0))
+            if a.fam == d.fam:                                             # like for like: the depth lost is net of the man who takes his place (11-21)
+                return max(0.0, (d.ros_pw or 0.0) - (a.ros_pw or 0.0))
             return d.ros_pw or 0.0
         dDepth = -sum(_depth_loss(a, d) for a, d, _ in changes if a is not None and d is not None and _is_depth(d))
         acq = costs.get('acq', 0); bid = costs.get('bid', 0) or 0; txn = costs.get('txn', 0)
@@ -716,7 +718,14 @@ def pair_block(f, c, s, repl):
     one_week = 'usage says starter' in (x.ros_src or '') and x.usage_prev != 'start'
     only_bk = not (c.srcs - {'breakout'} - ({'depth'} if one_week else set()))
     if c.tier == 'B' and only_bk:
-        if not c.held and not (s.kind in ('open', 'ir') or s.tier == 0):
+        # ...or a body at his own position who is below the free replacement and below the
+        # add himself: 'a real player waits' protects real players (11-21: Zonovan Knight,
+        # the week's best free RB at 6.9, refused Audric Estime's spot — 4.7 and falling
+        # behind a returned Etienne — while Estime started at RB2)
+        body = (s.kind == 'drop' and s.fact is not None and s.fact.fam == x.fam
+                and (s.fact.ros_pw or 0.0) - repl.get(s.fact.fam, 0.0) <= 0.0
+                and (s.fact.ros_pw or 0.0) <= (x.ros_pw or 0.0) and (s.fact.pts_w or 0.0) < (x.pts_w or 0.0))
+        if not c.held and not (s.kind in ('open', 'ir') or s.tier == 0 or body):
             return 'Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week'
         if c.held and s.kind == 'spare':
             return 'Tier B (unpriced) never takes the spare DEF — Tier A only'
