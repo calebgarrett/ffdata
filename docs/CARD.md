@@ -1,6 +1,6 @@
 # Lineup Card — week 11
 
-_Mon Nov 23, 2:21 am ET. Decisions first; detail folded below. A PROVISIONAL call waits for the market or a game-status answer._
+_Mon Nov 23, 2:29 pm ET. Decisions first; detail folded below. A PROVISIONAL call waits for the market or a game-status answer._
 
 ## Decide (next 36 hours)
 
@@ -29,8 +29,8 @@ _Mon Nov 23, 2:21 am ET. Decisions first; detail folded below. A PROVISIONAL cal
 
 ## HH — Tecmo Bowlers
 
-8-2-0, 1st, PF — · projected 308 · 100% to beat Eatin Pigskins
-- Next lock: Mon Nov 23, 8:15 pm ET — Ja'Marr Chase, Nick Cross
+8-2-0, 1st, PF — · projected 309 · 100% to beat Eatin Pigskins
+- Next lock: Mon Nov 23, 8:15 pm ET — Nick Cross, Ja'Marr Chase
 
 <details><summary>Lineup after the moves</summary>
 
@@ -74,7 +74,7 @@ _Mon Nov 23, 2:21 am ET. Decisions first; detail folded below. A PROVISIONAL cal
 - Aaron Jones Sr.: J -4.30 < 3.0 at its best spot (Nick Cross) — J -4.30 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(play
 - Adonai Mitchell: J -4.32 < 3.0 at its best spot (Nick Cross) — J -4.32 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(play
 - AJ Barner: best spot Nick Cross: Tier B held, but Nick Cross (13.2) projects at or above him (0.0) this week
-- Austin Ekeler: J -4.58 < 3.0 at its best spot (Kam Curl) — J -4.58 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x-0.32 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playof
+- Austin Ekeler: J -4.62 < 3.0 at its best spot (Kam Curl) — J -4.62 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x-0.32 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playof
 - Baker Mayfield: you dropped him in BSB on 2026-11-18 (<= 7 days, either league)
 - Blake Corum: J -4.43 < 3.0 at its best spot (Nick Cross) — J -4.43 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(play
 - Bryan Cook: gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])
@@ -94,4 +94,4 @@ _Mon Nov 23, 2:21 am ET. Decisions first; detail folded below. A PROVISIONAL cal
 
 </details>
 
-_Engine stamp Mon Nov 23, 2:21 am ET. The HTML card is the full record; this page is the private, phone-readable twin._
+_Engine stamp Mon Nov 23, 2:29 pm ET. The HTML card is the full record; this page is the private, phone-readable twin._

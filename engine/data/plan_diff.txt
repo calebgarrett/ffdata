@@ -1,4 +1,4 @@
-PLAN DIFF — week 11 — Mon Nov 23, 2:21 am ET  (shadow mode: the card still shows the live calls; FF_PLANNER=1 renders the plan)
+PLAN DIFF — week 11 — Mon Nov 23, 2:29 pm ET  (shadow mode: the card still shows the live calls; FF_PLANNER=1 renders the plan)
 objective: J = 1.0*dS_W + 0.8*dS_W1 + 0.8*dS_rest(mean of weeks W+2..17) + 0.1*d_bench_boom - acq ({'HH': 1.0, 'BSB': 0.0}) - 0.1*bid - 0.5*txns; ship at J >= 3.0
 
 == BSB ================================================================================
@@ -8,7 +8,7 @@ objective: J = 1.0*dS_W + 0.8*dS_W1 + 0.8*dS_rest(mean of weeks W+2..17) + 0.1*d
     CARD ONLY breakout B: add Dawson Knox drop DeMario Douglas
               planner: J -2.11 < 3.0 at its best spot (DeMario Douglas) — J -2.11 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+1.38 (bench boom) + 0.2x-7.88 (depth) - 0.00 acq - 0.17 FAB($17) - 0.50 churn
   budgets: {"acq_used": 4, "acq_left": null, "acq_reset": null, "acq_reset_verified": null, "fab_left": 50, "ir_free": 0, "open_spots": 0}
-  final lineup week 11: 91.8 pts (optimal before moves 91.8) · P(beat opp) 58% · P(beat median) 0%
+  final lineup week 11: 91.5 pts (optimal before moves 91.5) · P(beat opp) 58% · P(beat median) 0%
   considered and rejected (18):
     - Kayshon Boutte: J -0.58 < 3.0 at its best spot (DeMario Douglas) — J -0.58 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+1.18 (bench boom) + 0.2x-0.92 (depth) - 0.00 a
     - Rashod Bateman: J -0.58 < 3.0 at its best spot (DeMario Douglas) — J -0.58 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.80 (bench boom) + 0.2x-0.76 (depth) - 0.00 a
@@ -40,7 +40,7 @@ objective: J = 1.0*dS_W + 0.8*dS_W1 + 0.8*dS_rest(mean of weeks W+2..17) + 0.1*d
     CARD ONLY breakout B: add Jordan Mason drop Devin Singletary
               planner: J -4.55 < 3.0 at its best spot (Kam Curl) — J -4.55 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x-0.32 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+1.65 (bench boom) + 0.2x-14.82 (depth) - 1.00 acq - 0.00 FAB($0) - 0.50 churn
   budgets: {"acq_used": 0, "acq_left": 7, "acq_reset": "2026-11-17T07:00-05:00", "acq_reset_verified": false, "fab_left": null, "ir_free": 2, "open_spots": 0}
-  final lineup week 11: 308.2 pts (optimal before moves 308.2) · P(beat opp) 100%
+  final lineup week 11: 308.7 pts (optimal before moves 308.7) · P(beat opp) 100%
   considered and rejected (33):
     - Juwan Johnson: J -2.98 < 3.0 at its best spot (Nick Cross) — J -2.98 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+1.64 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x-1.40 (bench boom) + 0.2x-13.23 (depth) - 1.00 acq -
     - Kyle Pitts Sr.: J -3.02 < 3.0 at its best spot (Nick Cross) — J -3.02 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+1.76 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x-2.82 (bench boom) + 0.2x-13.23 (depth) - 1.00 acq -
@@ -59,10 +59,10 @@ objective: J = 1.0*dS_W + 0.8*dS_W1 + 0.8*dS_rest(mean of weeks W+2..17) + 0.1*d
     - Blake Corum: J -4.43 < 3.0 at its best spot (Nick Cross) — J -4.43 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x-2.82 (bench boom) + 0.2x-13.23 (depth) - 1.00 acq -
     - KC Concepcion Jr.: best spot Nick Cross: Tier B held, but Nick Cross (13.2) projects at or above him (0.0) this week
     - Mack Hollins: best spot Nick Cross: Tier B on one week of usage: an open, IR or dead spot only — a real player waits for the second week
-    - Rachaad White: J -4.51 < 3.0 at its best spot (Kam Curl) — J -4.51 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x-0.32 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+2.10 (bench boom) + 0.2x-14.82 (depth) - 1.00 acq - 0
+    - Rachaad White: J -4.52 < 3.0 at its best spot (Kam Curl) — J -4.52 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x-0.32 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+1.97 (bench boom) + 0.2x-14.82 (depth) - 1.00 acq - 0
     - Jordan Mason: J -4.55 < 3.0 at its best spot (Kam Curl) — J -4.55 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x-0.32 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+1.65 (bench boom) + 0.2x-14.82 (depth) - 1.00 acq - 0
-    - Austin Ekeler: J -4.58 < 3.0 at its best spot (Kam Curl) — J -4.58 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x-0.32 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+1.34 (bench boom) + 0.2x-14.82 (depth) - 1.00 acq - 0
     - Tyler Allgeier: J -4.60 < 3.0 at its best spot (Kam Curl) — J -4.60 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x-0.32 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+1.15 (bench boom) + 0.2x-14.82 (depth) - 1.00 acq - 0
+    - Austin Ekeler: J -4.62 < 3.0 at its best spot (Kam Curl) — J -4.62 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x-0.32 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+1.02 (bench boom) + 0.2x-14.82 (depth) - 1.00 acq - 0
     - Caleb Douglas: J -4.62 < 3.0 at its best spot (Kam Curl) — J -4.62 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x-0.32 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.95 (bench boom) + 0.2x-14.82 (depth) - 1.00 acq - 0
     - Tre' Harris: J -4.64 < 3.0 at its best spot (Kam Curl) — J -4.64 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x-0.32 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.83 (bench boom) + 0.2x-14.82 (depth) - 1.00 acq - 0
     - Malachi Fields: J -4.65 < 3.0 at its best spot (Kam Curl) — J -4.65 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x-0.32 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.72 (bench boom) + 0.2x-14.82 (depth) - 1.00 acq - 0
