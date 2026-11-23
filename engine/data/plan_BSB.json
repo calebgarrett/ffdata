@@ -15,7 +15,7 @@
   },
   {
    "player": "James Cook III",
-   "reason": "starter-level usage in his own right (61% snaps, 83% of RB touches)"
+   "reason": "his game is final / live \u2014 finished and live players never move"
   },
   {
    "player": "Austin Ekeler",
@@ -23,15 +23,23 @@
   },
   {
    "player": "Malik Washington",
-   "reason": "starter-level usage in his own right (86% snaps, 9% targets, 27% air yds)"
+   "reason": "his game is final / live \u2014 finished and live players never move"
+  },
+  {
+   "player": "Ryan Flournoy",
+   "reason": "his game is final / live \u2014 finished and live players never move"
   },
   {
    "player": "Makai Lemon",
-   "reason": "gate: G3-role NFL depth-chart role not checked; G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])"
+   "reason": "his game is final / live \u2014 finished and live players never move"
+  },
+  {
+   "player": "Sam LaPorta",
+   "reason": "his game is final / live \u2014 finished and live players never move"
   },
   {
    "player": "Isaiah Likely",
-   "reason": "starter-level usage in his own right (88% snaps, 31% targets, 36% air yds)"
+   "reason": "his game is final / live \u2014 finished and live players never move"
   },
   {
    "player": "Drake London",
@@ -56,12 +64,16 @@
   {
    "player": "Vikings",
    "reason": "registry HOLD \u2014 HOLD in Blood Sweat & Beers: the DEF1 through the playoffs. Streams come from th"
+  },
+  {
+   "player": "49ers",
+   "reason": "his game is final / live \u2014 finished and live players never move"
   }
  ],
  "league": "BSB",
  "lineup_after": {
   "keys": {
-   "DEF": "DST:SF",
+   "DEF": "DST:MIN",
    "K": "tyler bass",
    "QB": "justin herbert",
    "RB1": "james cook",
@@ -72,9 +84,9 @@
    "WR2": "ryan flournoy",
    "WR3": "makai lemon"
   },
-  "optimal_before_moves": 115.78,
+  "optimal_before_moves": 91.81,
   "slots": {
-   "DEF": "49ers",
+   "DEF": "Vikings",
    "K": "Tyler Bass",
    "QB": "Justin Herbert",
    "RB1": "James Cook III",
@@ -85,9 +97,9 @@
    "WR2": "Ryan Flournoy",
    "WR3": "Makai Lemon"
   },
-  "total": 115.78
+  "total": 91.81
  },
- "made": "2026-11-22T18:34-05:00",
+ "made": "2026-11-23T02:21-05:00",
  "mechanics": [
   {
    "rule": "A never-rostered free agent is free until his game kicks off",
@@ -125,89 +137,16 @@
    "verified": true
   }
  ],
- "moves": [
-  {
-   "J": 2.266,
-   "add_key": null,
-   "add_name": null,
-   "at": null,
-   "deadline": "2026-11-22T20:20-05:00",
-   "drop_name": null,
-   "eff": "W",
-   "fam": "DEF",
-   "gain": 2.27,
-   "gates": {
-    "add": null,
-    "drop": null
-   },
-   "id": "BSB:lineup:DEF",
-   "kind": "lineup",
-   "league": "BSB",
-   "phase": "alert",
-   "provisional": false,
-   "reasons": [
-    "+2.27 this week"
-   ],
-   "sit": "Vikings",
-   "slot": "DEF",
-   "spot_id": null,
-   "spot_kind": null,
-   "spot_label": null,
-   "srcs": [
-    "lineup"
-   ],
-   "start": "49ers",
-   "tier": null,
-   "timing_why": "",
-   "tm": "SF",
-   "txns": [
-    {
-     "key": "DST:SF",
-     "op": "start",
-     "player": "49ers",
-     "slot": "DEF"
-    },
-    {
-     "key": "DST:MIN",
-     "op": "bench",
-     "player": "Vikings"
-    }
-   ],
-   "value_terms": {
-    "J": 2.266,
-    "dS_W": 2.266
-   },
-   "when": "before kickoff Sun Nov 22, 8:20 pm ET"
-  }
- ],
+ "moves": [],
  "notes": [],
  "rejected": [
   {
-   "J": -0.51,
-   "key": "DST:DAL",
-   "name": "Dallas Cowboys",
-   "reason": "J -0.51 < 3.0 at its best spot (49ers) \u2014 J -0.51 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.00 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0.01 FAB($1) - 0.50 churn",
-   "reasons": [
-    "DEF weekly upgrade: Dallas Cowboys 6.6 vs starter Vikings 4.7"
-   ]
-  },
-  {
-   "J": -0.427,
+   "J": -1.995,
    "key": "DST:LAC",
    "name": "Los Angeles Chargers",
-   "reason": "J -0.43 < 3.0 at its best spot (49ers) \u2014 J -0.43 = 1.0x+0.00 (wk W) + 0.8x+0.10 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.00 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0.01 FAB($1) - 0.50 churn",
+   "reason": "J -2.00 < 3.0 at its best spot (DeMario Douglas) \u2014 J -2.00 = 1.0x+0.00 (wk W) + 0.8x+0.11 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.00 (bench boom) + 0.2x-7.88 (depth) - 0.00 acq - 0.01 FAB($1) - 0.50 churn",
    "reasons": [
-    "DEF weekly upgrade: Los Angeles Chargers 7.8 vs starter Vikings 4.7",
     "week-12 DEF stream: Los Angeles Chargers 6.6 vs your best 6.5 (W line re-scored on the week-12 opponent implied total 22.0)"
-   ]
-  },
-  {
-   "J": -0.51,
-   "key": "DST:PHI",
-   "name": "Philadelphia Eagles",
-   "reason": "J -0.51 < 3.0 at its best spot (49ers) \u2014 J -0.51 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.00 (bench boom) + 0.2x-0.00 (depth) - 0.00 acq - 0.01 FAB($1) - 0.50 churn",
-   "reasons": [
-    "DEF weekly upgrade: Philadelphia Eagles 6.7 vs starter Vikings 4.7"
    ]
   },
   {
@@ -241,7 +180,7 @@
    "J": null,
    "key": "charlie kolar",
    "name": "Charlie Kolar",
-   "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 4.0 under your weakest 12.3",
+   "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 4.0 under your weakest 4.5",
    "reasons": [
     "breakout tier B: 72% snaps, 17% targets, 0% air yds; no market line yet (Sleeper receiving yds 16)"
    ]
@@ -266,10 +205,10 @@
    ]
   },
   {
-   "J": null,
+   "J": -2.107,
    "key": "dawson knox",
    "name": "Dawson Knox",
-   "reason": "sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 6.2 under your weakest 12.3",
+   "reason": "J -2.11 < 3.0 at its best spot (DeMario Douglas) \u2014 J -2.11 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 13-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+1.38 (bench boom) + 0.2x-7.88 (depth) - 0.00 acq - 0.17 FAB($17) - 0.50 churn",
    "reasons": [
     "breakout tier B: 72% snaps, 14% targets, 6% air yds; no market line yet (Sleeper receiving yds 24); held (wk9: 72% snaps, 16% targets, 13% air yds)"
    ]
@@ -321,10 +260,10 @@
    ]
   },
   {
-   "J": -0.456,
+   "J": -0.755,
    "key": "laquon treadwell",
    "name": "Laquon Treadwell",
-   "reason": "best spot 49ers: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
+   "reason": "best spot DeMario Douglas: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
     "breakout tier B: 88% snaps, 14% targets, 27% air yds; no market line yet (Sleeper receiving yds 33)"
    ]
@@ -348,10 +287,10 @@
    ]
   },
   {
-   "J": -0.462,
+   "J": -1.238,
    "key": "simi fehoko",
    "name": "Simi Fehoko",
-   "reason": "best spot 49ers: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
+   "reason": "best spot DeMario Douglas: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
    "reasons": [
     "breakout tier B: 74% snaps, 11% targets, 26% air yds; no market line yet (Sleeper receiving yds 17)"
    ]
@@ -368,13 +307,6 @@
  ],
  "spots": [
   {
-   "id": "drop:DST:SF",
-   "kind": "spare",
-   "label": "49ers",
-   "taken_by": null,
-   "tier": 2
-  },
-  {
    "id": "drop:demario douglas",
    "kind": "drop",
    "label": "DeMario Douglas",
@@ -385,20 +317,6 @@
    "id": "drop:marshawn lloyd",
    "kind": "drop",
    "label": "MarShawn Lloyd",
-   "taken_by": null,
-   "tier": 3
-  },
-  {
-   "id": "drop:ryan flournoy",
-   "kind": "drop",
-   "label": "Ryan Flournoy",
-   "taken_by": null,
-   "tier": 3
-  },
-  {
-   "id": "drop:sam laporta",
-   "kind": "drop",
-   "label": "Sam LaPorta",
    "taken_by": null,
    "tier": 3
   },
@@ -423,12 +341,12 @@
   "W_NOW": 1.0,
   "W_PLAY": 0.6,
   "W_REST": 0.8,
-  "p_playoffs": 0.9985
+  "p_playoffs": 1.0
  },
  "winprob": {
-  "mean": 115.61803689423357,
-  "note": "sampled on the planner's final lineup",
-  "p_med": 0.27266666666666667,
-  "p_opp": 0.8675
+  "mean": 91.73823656886788,
+  "note": "final lineup = current lineup (the engine's own number)",
+  "p_med": 0.0005,
+  "p_opp": 0.5805
  }
 }
