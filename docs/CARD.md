@@ -1,6 +1,6 @@
 # Lineup Card — week 12
 
-_Tue Nov 24, 9:49 am ET. Decisions first; detail folded below. A PROVISIONAL call waits for the market or a game-status answer._
+_Tue Nov 24, 10:15 am ET. Decisions first; detail folded below. A PROVISIONAL call waits for the market or a game-status answer._
 
 ## Decide (next 36 hours)
 
@@ -43,8 +43,8 @@ _Tue Nov 24, 9:49 am ET. Decisions first; detail folded below. A PROVISIONAL cal
 - DL: T.J. Watt
 - K: Brandon Aubrey
 - LB: Carson Schwesinger
-- Q/W/R/T: Jared Goff
-- QB: Dak Prescott
+- Q/W/R/T: Dak Prescott
+- QB: Jared Goff
 - RB: Jaylen Warren
 - S: Budda Baker
 - TE: Trey McBride
@@ -97,4 +97,4 @@ _Tue Nov 24, 9:49 am ET. Decisions first; detail folded below. A PROVISIONAL cal
 
 </details>
 
-_Engine stamp Tue Nov 24, 9:49 am ET. The HTML card is the full record; this page is the private, phone-readable twin._
+_Engine stamp Tue Nov 24, 10:15 am ET. The HTML card is the full record; this page is the private, phone-readable twin._
