@@ -288,14 +288,16 @@ def check(kind, subject, *, player=None, designation='__UNREAD__', sources=(),
                   f'VERIFIED UNAVAILABLE — {ROLES["unavailable"][pk]}')
         elif pk in ROLES.get('hold', {}) and kind == 'drop':
             h = ROLES['hold'][pk]
-            r.add('G11-role-registry', BLOCK, f'HOLD ON RECORD — {h["call"]}')
+            r.add('G11-role-registry', BLOCK, f"HOLD ON RECORD — {h.get('call') or (h.get('why') or '')[:120]}")
         elif pk in ROLES.get('add_yes', {}):
             a = ROLES['add_yes'][pk]
-            r.add('G11-role-registry', OK, f'usage verified — {a["usage_wk1"]}')
+            # a registry entry is a person's note: a missing field is never a crash (11-24: an
+            # add_yes written without 'usage_wk1' raised KeyError in BOTH leagues' planners)
+            r.add('G11-role-registry', OK, f"usage verified — {a.get('usage_wk1') or (a.get('why') or '')[:120]}")
         elif pk in ROLES.get('drop_ok', {}):
             d = ROLES['drop_ok'][pk]
             sev = OK if kind == 'drop' else WARN
-            r.add('G11-role-registry', sev, f'{d["call"]}')
+            r.add('G11-role-registry', sev, f"{d.get('call') or (d.get('why') or '')[:120]}")
         elif pos in ('DEF', 'K'):
             # A team defense has no snap count and a kicker's is meaningless.
             # Warning here would downgrade every legitimate DEF/K call to WARN

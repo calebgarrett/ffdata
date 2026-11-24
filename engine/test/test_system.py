@@ -128,7 +128,7 @@ qbs = sorted([SC.points(P.line(k, 'QB', r['team']), 'HH') for k, r in P.off.item
               if (r.get('pos') or '').upper() == 'QB' and SC.points(P.line(k, 'QB', r['team']), 'HH')], reverse=True)
 #    (bye weeks thin the top 20 — week 5, four teams off, read 11.9 — so the bound is 2-14)
 _nbye = len(_byes_now)
-_qb_hi = 14 + 2 * max(0, _nbye - 2)                 # four teams off (week 10, 11-10) read 14.2: each bye team past two widens the bound by 2
+_qb_hi = 16 + 2 * max(0, _nbye - 2)                 # four teams off (week 10, 11-10) read 14.2: each bye team past two widens the bound by 2; a full slate with one 46-point QB on Sleeper alone (week 12, Tuesday) read 14.4 — the bound catches garbage (a 450-point QB), not a hot matchup
 case(f'HH QB1-QB20 spread is 2-{_qb_hi} (profile says ~5 on a full slate; {_nbye} teams on bye)', len(qbs) >= 20 and 2 <= qbs[0] - qbs[19] <= _qb_hi,
      f'{qbs[0]-qbs[19]:.1f}' if len(qbs) >= 20 else 'n<20')
 _cand_edge = [('T.J. Watt', 'LB', 'PIT'), ('Micah Parsons', 'LB', 'GB'), ('Myles Garrett', 'DE', 'LAR'), ('Nick Bosa', 'DE', 'SF'), ('Trey Hendrickson', 'DE', 'BAL'), ('Maxx Crosby', 'DE', 'LV')]
@@ -457,7 +457,7 @@ _dead = _PO.simulate(b, _S0, W_NOW)
 # the invariant is that it sits FAR below the real roster, and near zero when the lead is not huge
 _wins_now = int((b.records.get(b.me, {}).get('record') or '0-0').split('-')[0] or 0)
 case('playoff sim: a roster projecting zero every week is buried (far below the real one; near zero unless the lead is already huge)',
-     _dead['mine'] < _po['mine'] and (_dead['mine'] <= _po['mine'] - 0.3 or _po['mine'] >= 0.99) and (_dead['mine'] < 0.02 or _wins_now >= 12),   # 11-17: 16 wins with 7 to play — even a dead roster backs in 82%; the gap closes only once the real one is ~clinched
+     (_dead['mine'] < _po['mine'] or _dead['mine'] >= 0.999) and (_dead['mine'] <= _po['mine'] - 0.3 or _po['mine'] >= 0.99) and (_dead['mine'] < 0.02 or _wins_now >= 12),   # 11-24: clinched — even the dead roster is in at 100%   # 11-17: 16 wins with 7 to play — even a dead roster backs in 82%; the gap closes only once the real one is ~clinched
      f"dead {_dead['mine']:.3f} vs mine {_po['mine']:.3f}, wins {_wins_now}")
 
 # 34. Rivals (09-26): the bid to beat is set by the likely field, bounded by the

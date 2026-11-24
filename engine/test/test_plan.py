@@ -948,6 +948,41 @@ _ph2, _ = N20.audit_phantoms({'zebediah knightley'}, {'bim knightley'},
                              known={'zebediah knightley', 'bim knightley'})
 case('...two brothers the feeds both project are two players', not _ph2, str(_ph2))
 
+
+# ---------------------------------------------------------------- 21. three players, one name (11-22: Josh Johnson — ARI's QB with a line, a teamless RB and WR without)
+from lib import project as PJ21
+_qb = dict(player='Josh Johnson', team='ARI', pos='QB', pts_ppr='8.95')
+_wr = dict(player='Josh Johnson', team='', pos='WR', pts_ppr='')
+case('projections: of two rows with one name, the projected row with a team is the player, whichever comes last', PJ21.row_rank(_qb) > PJ21.row_rank(_wr), (PJ21.row_rank(_qb), PJ21.row_rank(_wr)))
+_live = PJ21.Projections(WEEK)
+_dups = {}
+import csv as _csv21
+_p21 = '/home/claude/bsb2/data/' + f'sleeper_off_wk{WEEK}.csv'
+if _os.path.exists(_p21):
+    for _r in _csv21.DictReader(open(_p21)): _dups.setdefault(NK(_r['player']), []).append(_r)
+    _bad21 = [k for k, v in _dups.items() if len(v) > 1 and k in _live.off and PJ21.row_rank(_live.off[k]) < max(PJ21.row_rank(x) for x in v)]
+    case('projections: on this week\'s file no same-name group is represented by its emptiest row', not _bad21, str(_bad21[:5]))
+
+
+# ---------------------------------------------------------------- 22. a registry entry with a missing field never crashes the gate (11-24: add_yes without 'usage_wk1')
+from lib import gate as G22
+_saved22 = {k: dict(G22.ROLES.get(k) or {}) for k in ('add_yes', 'hold', 'drop_ok')}
+try:
+    G22.ROLES.setdefault('add_yes', {})['zz testadd'] = dict(why='verified role (test)', priority=2)
+    G22.ROLES.setdefault('hold', {})['zz testhold'] = dict(why='hold (test)')
+    G22.ROLES.setdefault('drop_ok', {})['zz testdrop'] = dict(why='drop (test)')
+    _ok22 = True; _err22 = ''
+    for _kind, _nm in (('add', 'Zz Testadd'), ('drop', 'Zz Testhold'), ('drop', 'Zz Testdrop')):
+        try: G22.check(_kind, f'{_kind} {_nm}', player=_nm, designation='none', horizon='season', sources=['sleeper', 'market'], value=120.0, pos='WR',
+                       pulled=C.today().isoformat(), league='BSB')
+        except KeyError as _e: _ok22 = False; _err22 = repr(_e)
+        except Exception as _e: pass                                    # other argument shapes are not what this case is about
+finally:
+    for k, v in _saved22.items(): G22.ROLES[k] = v
+case('gate: a registry entry missing usage_wk1 / call is read, not a KeyError', _ok22, _err22)
+case('run: a refused card exits non-zero (the runner never stamps the last card as this pull\'s)', 'if cmd_card(run) is None: sys.exit(3)' in open('/home/claude/bsb2/ff.py').read())
+case('run: a planner failure refuses the card', 'planner failed' in open('/home/claude/bsb2/ff.py').read())
+
 print('=' * 88)
 print(f'{total - bad}/{total} behaved as required.' + ('  PLANNER IS SOUND.' if not bad else '  PLANNER FAILED.'))
 sys.exit(1 if bad else 0)

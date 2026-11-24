@@ -11,7 +11,7 @@
  "excluded": [
   {
    "player": "Dak Prescott",
-   "reason": "gate: G6-magnitude 40.55273648992205 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex: 3 QBs for 2 QB-eligible slots \u2014 QB3 is by"
+   "reason": "gate: G6-magnitude 40.50362634456268 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex: 3 QBs for 2 QB-eligible slots \u2014 QB3 is by"
   },
   {
    "player": "Jaylen Warren",
@@ -31,7 +31,7 @@
   },
   {
    "player": "Jared Goff",
-   "reason": "gate: G6-magnitude 40.17974197022059 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex: 3 QBs for 2 QB-eligible slots \u2014 QB3 is by"
+   "reason": "gate: G6-magnitude 40.16388442116581 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex: 3 QBs for 2 QB-eligible slots \u2014 QB3 is by"
   },
   {
    "player": "Rome Odunze",
@@ -39,7 +39,7 @@
   },
   {
    "player": "Matthew Stafford",
-   "reason": "gate: G3-role NFL depth-chart role not checked; G6-magnitude 32.5123149151146 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex: "
+   "reason": "gate: G3-role NFL depth-chart role not checked; G6-magnitude 32.51231490535587 below QB season bounds [60,600] \u2014 bad read, not a bold number; G14-superflex superflex:"
   },
   {
    "player": "Texans",
@@ -69,7 +69,7 @@
    "W/R/T": "rashee rice",
    "WR": "jamarr chase"
   },
-  "optimal_before_moves": 310.85,
+  "optimal_before_moves": 310.93,
   "slots": {
    "CB": "Jalen Ramsey",
    "D": "Foyesade Oluokun",
@@ -87,9 +87,9 @@
    "W/R/T": "Rashee Rice",
    "WR": "Ja'Marr Chase"
   },
-  "total": 310.85
+  "total": 310.93
  },
- "made": "2026-11-24T09:27-05:00",
+ "made": "2026-11-24T09:49-05:00",
  "mechanics": [
   {
    "rule": "Free agents are immediate unless his game is in progress",
@@ -239,16 +239,16 @@
  "notes": [],
  "rejected": [
   {
-   "J": -0.104,
+   "J": -0.103,
    "key": "DST:LAC",
    "name": "Los Angeles Chargers",
-   "reason": "J -0.10 < 3.0 at its best spot (Steelers) \u2014 J -0.10 = 1.0x+1.30 (wk W) + 0.8x+0.11 (W+1) + 0.8x+0.00 (rest, mean of wks 14-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.00 (bench boom) + 0.2x-0.00 (depth) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
+   "reason": "J -0.10 < 3.0 at its best spot (Steelers) \u2014 J -0.10 = 1.0x+1.31 (wk W) + 0.8x+0.11 (W+1) + 0.8x+0.00 (rest, mean of wks 14-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.00 (bench boom) + 0.2x-0.00 (depth) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
     "week-13 DEF stream: Los Angeles Chargers 25.3 vs your best 25.2 (W line re-scored on the week-13 opponent implied total 22.0)"
    ]
   },
   {
-   "J": 0.88,
+   "J": 0.876,
    "key": "DST:WAS",
    "name": "Washington Commanders",
    "reason": "J +0.88 < 3.0 at its best spot (Steelers) \u2014 J +0.88 = 1.0x+1.92 (wk W) + 0.8x+0.57 (W+1) + 0.8x+0.00 (rest, mean of wks 14-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.00 (bench boom) + 0.2x-0.00 (depth) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
@@ -336,7 +336,7 @@
    "name": "Dalton Schultz",
    "reason": "gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])",
    "reasons": [
-    "depth: Dalton Schultz 8.4/wk rest-of-season vs your weakest bench player 4.7 (9-game realized 8.3/g blended with preseason 8.7/wk (6-game prior))"
+    "depth: Dalton Schultz 8.4/wk rest-of-season vs your weakest bench player 4.7 (9-game realized 8.3/g blended with preseason 8.6/wk (6-game prior))"
    ]
   },
   {
@@ -361,7 +361,7 @@
    "J": null,
    "key": "jack bech",
    "name": "Jack Bech",
-   "reason": "sits behind everyone: you carry 4 WRs for 1 slot(s) and he projects 3.0 under your weakest 11.0",
+   "reason": "sits behind everyone: you carry 4 WRs for 1 slot(s) and he projects 3.1 under your weakest 11.0",
    "reasons": [
     "breakout tier B: 79% snaps, 24% targets, 55% air yds; no market line yet (Sleeper receiving yds 14)"
    ]
@@ -385,7 +385,7 @@
    ]
   },
   {
-   "J": -1.056,
+   "J": -1.06,
    "key": "jalen coker",
    "name": "Jalen Coker",
    "reason": "best spot Steelers: Tier B on one week of usage: an open, IR or dead spot only \u2014 a real player waits for the second week",
@@ -414,6 +414,15 @@
    ]
   },
   {
+   "J": -1.462,
+   "key": "kaleb johnson",
+   "name": "Kaleb Johnson",
+   "reason": "J -1.46 < 3.0 at its best spot (Devin Singletary) \u2014 J -1.46 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 14-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.38 (bench boom) + 0.2x-0.00 (depth) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
+   "reasons": [
+    "registry add_yes (priority 2): GB early-down back while Jacobs (finger) is out \u2014 not expected Wed 11-25, Dec 6 the realis"
+   ]
+  },
+  {
    "J": -2.417,
    "key": "khalil shakir",
    "name": "Khalil Shakir",
@@ -438,7 +447,7 @@
    "name": "Malik Washington",
    "reason": "sits behind everyone: you carry 4 WRs for 1 slot(s) and he projects 9.7 under your weakest 11.0",
    "reasons": [
-    "breakout tier B: 88% snaps, 18% targets, 34% air yds; no market line yet (Sleeper receiving yds 42); held (wk10: 86% snaps, 9% targets, 27% air yds)"
+    "breakout tier B: 88% snaps, 18% targets, 34% air yds; no market line yet (Sleeper receiving yds 43); held (wk10: 86% snaps, 9% targets, 27% air yds)"
    ]
   },
   {
@@ -457,7 +466,7 @@
    "reason": "J -1.34 < 3.0 at its best spot (Devin Singletary) \u2014 J -1.34 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 14-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+1.61 (bench boom) + 0.2x-0.00 (depth) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
     "breakout tier B: 55% snaps, 60% of RB touches; no market line yet (Sleeper rushing yds 47); held (wk10: 63% snaps, 75% of RB touches)",
-    "depth: Omarion Hampton 11.8/wk rest-of-season vs your weakest bench RB 4.7 (9-game realized 9.7/g blended with preseason 15.0/wk (6-game prior))"
+    "depth: Omarion Hampton 11.8/wk rest-of-season vs your weakest bench RB 4.7 (9-game realized 9.7/g blended with preseason 14.9/wk (6-game prior))"
    ]
   },
   {
@@ -488,12 +497,12 @@
    ]
   },
   {
-   "J": -2.398,
+   "J": -2.402,
    "key": "tre tucker",
    "name": "Tre Tucker",
-   "reason": "J -2.40 < 3.0 at its best spot (Devin Singletary) \u2014 J -2.40 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 14-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.34 (bench boom) + 0.2x-4.66 (depth) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
+   "reason": "J -2.40 < 3.0 at its best spot (Devin Singletary) \u2014 J -2.40 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 14-17) + 0.60x+0.00 (wks 15-17, P(playoffs) 100%) + 0.1x+0.30 (bench boom) + 0.2x-4.66 (depth) - 1.00 acq - 0.00 FAB($0) - 0.50 churn",
    "reasons": [
-    "breakout tier B: 80% snaps, 27% targets, 17% air yds; no market line yet (Sleeper receiving yds 44)",
+    "breakout tier B: 80% snaps, 27% targets, 17% air yds; no market line yet (Sleeper receiving yds 45)",
     "depth: Tre Tucker 10.2/wk rest-of-season vs your weakest bench WR 4.7 (10-game realized 11.6/g blended with preseason 7.8/wk (6-game prior))"
    ]
   },
@@ -644,9 +653,9 @@
   "p_playoffs": 1.0
  },
  "winprob": {
-  "mean": 310.8754258803238,
+  "mean": 311.066169234549,
   "note": "sampled on the planner's final lineup",
   "p_med": null,
-  "p_opp": 0.43933333333333335
+  "p_opp": 0.43883333333333335
  }
 }

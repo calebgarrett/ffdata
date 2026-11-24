@@ -953,6 +953,12 @@ def cmd_card(run, publish=False):
     # refuses the card (the last one stands) and prints why (09-29, Burns)
     from lib import sanity as SAN
     bad = SAN.check(run, html)
+    # a planner that crashed has decided nothing: the card must not read 'nothing needs a
+    # decision' (11-24: a KeyError in the registry gate killed both planners and the card
+    # went out empty). The last good card stands and the run says why.
+    for _lg, _p in (run.get('plans') or {}).items():
+        if isinstance(_p, str):
+            bad = list(bad) + [f'the {_lg} planner failed — {_p.splitlines()[0][:160]}']
     if bad:
         print('\n  CARD REFUSED — sanity read failed:')
         for b_ in bad: print(f'    [FAIL] {b_}')
@@ -1009,4 +1015,7 @@ if __name__ == '__main__':
     if cmd in ('breakout', 'run'): print_breakout(run)
     if cmd in ('win', 'run'): print_win(run)
     if cmd in ('plan', 'run'): print_plan(run)
-    if cmd in ('card', 'run'):   cmd_card(run)
+    if cmd in ('card', 'run'):
+        # a refused card is a failed run: exit non-zero so the runner never stamps the LAST
+        # card as this pull's (11-24: the Action copies the card on exit 0)
+        if cmd_card(run) is None: sys.exit(3)

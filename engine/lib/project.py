@@ -30,6 +30,14 @@ def _f(v):
     try: return float(v)
     except (TypeError, ValueError): return 0.0
 
+def row_rank(r):
+    """Which of two feed rows with the SAME name is the player: the one with a projection,
+    then the one with a team (11-22: Sleeper lists three Josh Johnsons — Arizona's starting
+    QB with a line, and a teamless RB and WR with none; the last row won, the QB's Kalshi
+    passing ladder landed on a 'WR', and the card said 'add Josh Johnson, start him at
+    WR1')."""
+    return (1 if _f(r.get('pts_ppr') or r.get('pts')) > 0 else 0, 1 if (r.get('team') or '').strip() else 0)
+
 class Projections:
     def __init__(self, week):
         self.week = week
@@ -42,12 +50,16 @@ class Projections:
             for r in csv.DictReader(open(p)):
                 k = key(r['player'])
                 if k in self.off and fn.startswith('sleeper_wk'): continue   # richer file wins
+                if k in self.off and row_rank(self.off[k]) >= row_rank(r): continue   # same name: the projected, rostered-by-a-team row is the player
                 self.off[k] = r
         # ---- IDP
         self.idp = {}
         p = D + f'sleeper_idp_wk{W}.csv'
         if os.path.exists(p):
-            for r in csv.DictReader(open(p)): self.idp[key(r['player'])] = r
+            for r in csv.DictReader(open(p)):
+                k = key(r['player'])
+                if k in self.idp and ((self.idp[k].get('team') or '').strip() and not (r.get('team') or '').strip()): continue
+                self.idp[k] = r
         # ---- markets
         self.games = M.load_games(D + 'espn_games.csv') if os.path.exists(D + 'espn_games.csv') else []
         self.ctx = M.team_context(self.games) if self.games else {}

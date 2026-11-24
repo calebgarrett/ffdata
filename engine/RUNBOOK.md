@@ -218,6 +218,18 @@ cannot be traced to P(win) is wrong.
   source that is itself one week of usage is not a second source. A Tier B on Sleeper's
   trending adds bids the ladder's top decile, not the band-B dollar (Estime at $1 would
   never process). The Vikings are a registry hold. Tests: test_plan 14, 14b, 14c.
+- **A planner that crashed has decided nothing, and a refused card is a failed run** (11-24).
+  An add_yes entry written without `usage_wk1` raised KeyError in the registry gate; both
+  leagues' planners died and the card went out reading "Nothing needs a decision". Now the
+  gate reads registry fields with fallbacks, a planner failure refuses the card, and
+  `ff.py run` exits 3 on a refused card so the Action never stamps the last card as this
+  pull's. Tests: test_plan 22.
+- **Three players, one name: the projected row with a team is the player** (11-22). Sleeper
+  lists three Josh Johnsons — Arizona's starting QB with a line, and a teamless RB and WR
+  with none. The last row read won the key, the QB's Kalshi passing ladder landed on a
+  'WR', and the 7 am card said "add Josh Johnson, drop DeMario Douglas, start him at WR1".
+  `project.row_rank` now keeps the row with a projection, then the row with a team.
+  Tests: test_plan 21.
 - **A nickname that shares nothing with the name is still the same man** (11-21, Caleb:
   "Connor is not available" — which sent me back to the Cardinals backfield). Yahoo rosters
   him and Kalshi prices him as 'Bam Knight'; every projection feed calls him Zonovan
