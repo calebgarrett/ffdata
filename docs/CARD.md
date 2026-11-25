@@ -1,6 +1,6 @@
 # Lineup Card — week 12
 
-_Wed Nov 25, 4:05 am ET. Decisions first; detail folded below. A PROVISIONAL call waits for the market or a game-status answer._
+_Wed Nov 25, 2:35 pm ET. Decisions first; detail folded below. A PROVISIONAL call waits for the market or a game-status answer._
 
 ## Decide (next 36 hours)
 
@@ -9,8 +9,8 @@ _Wed Nov 25, 4:05 am ET. Decisions first; detail folded below. A PROVISIONAL cal
 
 ## BSB — OVERKILL
 
-17-5-0, 1st, PF — · projected 128 · 49% to beat Regulators · 34% vs the league median
-- Next lock: Wed Nov 25, 8:00 pm ET — MarShawn Lloyd, Matthew Stafford
+17-5-0, 1st, PF — · projected 126 · 51% to beat Regulators · 31% vs the league median
+- Next lock: Wed Nov 25, 8:00 pm ET — Matthew Stafford, MarShawn Lloyd
 
 <details><summary>Lineup after the moves</summary>
 
@@ -19,8 +19,8 @@ _Wed Nov 25, 4:05 am ET. Decisions first; detail folded below. A PROVISIONAL cal
 - QB: Matthew Stafford
 - RB1: Austin Ekeler
 - RB2: James Cook III
-- TE: Sam LaPorta
-- W/R/T: Isaiah Likely
+- TE: Isaiah Likely
+- W/R/T: Sam LaPorta
 - WR1: Drake London
 - WR2: Jaxon Smith-Njigba
 - WR3: Malik Washington
@@ -29,7 +29,7 @@ _Wed Nov 25, 4:05 am ET. Decisions first; detail folded below. A PROVISIONAL cal
 
 ## HH — Tecmo Bowlers
 
-9-2-0, 1st, PF — · projected 311 · 43% to beat Grey Poop On Bijan Mustard
+9-2-0, 1st, PF — · projected 310 · 42% to beat Grey Poop On Bijan Mustard
 - Next lock: Thu Nov 26, 1:00 pm ET — Jared Goff
 
 <details><summary>Lineup after the moves</summary>
@@ -46,43 +46,43 @@ _Wed Nov 25, 4:05 am ET. Decisions first; detail folded below. A PROVISIONAL cal
 - RB: Jaylen Warren
 - S: Budda Baker
 - TE: Trey McBride
-- W/R: Ja'Marr Chase
+- W/R: Drake London
 - W/R/T: Rashee Rice
-- WR: Drake London
+- WR: Ja'Marr Chase
 
 </details>
 
 <details><summary>BSB: considered, not moves (14)</summary>
 
-- Baker Mayfield: you dropped him in BSB on 2026-11-18 (<= 7 days, either league)
-- Chimere Dike: J -0.65 < 3.0 at its best spot (Makai Lemon) — J -0.65 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 14-17) + 0.60x+0.00 (wks 15-17, P(pla
+- Baker Mayfield: J -0.61 < 3.0 at its best spot (Justin Herbert) — J -0.61 = 1.0x+0.06 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 14-17) + 0.60x+0.00 (wks 15-17, P(
 - Corey Kiner: gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])
-- Dalton Schultz: J -2.19 < 3.0 at its best spot (MarShawn Lloyd) — J -2.19 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 14-17) + 0.60x+0.00 (wks 15-17, P(
-- Darius Cooper: sits behind everyone: you carry 6 WRs for 3 slot(s) and he projects 6.7 under your weakest 7.5
-- Eddy Pineiro: J -0.19 < 3.0 at its best spot (MarShawn Lloyd) — J -0.19 = 1.0x+0.23 (wk W) + 0.8x+2.33 (W+1) + 0.8x+0.00 (rest, mean of wks 14-17) + 0.60x+0.00 (wks 15-17, P(
-- Hunter Henry: G15: dropped by Sycawhores on 2026-11-18 — a manager let a 150-point role go after his last game; find out why before claiming (a verified role is a registry ad
-- Jack Bech: sits behind everyone: you carry 6 WRs for 3 slot(s) and he projects 6.6 under your weakest 7.5
+- Dalton Schultz: J -2.12 < 3.0 at its best spot (MarShawn Lloyd) — J -2.12 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 14-17) + 0.60x+0.00 (wks 15-17, P(
+- Darius Cooper: sits behind everyone: you carry 6 WRs for 3 slot(s) and he projects 6.6 under your weakest 7.5
+- DK Metcalf: G15: dropped by WINdianapolis on 2026-11-25 — a manager let a 190-point role go after his last game; find out why before claiming (a verified role is a registry
+- Eddy Pineiro: J -0.17 < 3.0 at its best spot (MarShawn Lloyd) — J -0.17 = 1.0x+0.23 (wk W) + 0.8x+2.33 (W+1) + 0.8x+0.00 (rest, mean of wks 14-17) + 0.60x+0.00 (wks 15-17, P(
+- Hunter Henry: J -2.15 < 3.0 at its best spot (MarShawn Lloyd) — J -2.15 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 14-17) + 0.60x+0.00 (wks 15-17, P(
 - Jonathon Brooks: registry: not a role — verified 2026-10-18: Groin, surgery, IR 9-23 for ~6 weeks (earliest ~week 10) and he was the backup to Hubbard 
-- Kaleb Johnson: J -0.73 < 3.0 at its best spot (MarShawn Lloyd) — J -0.73 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 14-17) + 0.60x+0.00 (wks 15-17, P(
-- Mike Gesicki: J -2.07 < 3.0 at its best spot (MarShawn Lloyd) — J -2.07 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 14-17) + 0.60x+0.00 (wks 15-17, P(
-- Michael Pittman Jr.: J -0.51 < 3.0 at its best spot (Makai Lemon) — J -0.51 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 14-17) + 0.60x+0.00 (wks 15-17, P(pla
+- Kaleb Johnson: J -0.75 < 3.0 at its best spot (MarShawn Lloyd) — J -0.75 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 14-17) + 0.60x+0.00 (wks 15-17, P(
+- Mason Taylor: sits behind everyone: you carry 2 TEs for 1 slot(s) and he projects 6.1 under your weakest 11.5
+- Mike Gesicki: J -2.04 < 3.0 at its best spot (MarShawn Lloyd) — J -2.04 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 14-17) + 0.60x+0.00 (wks 15-17, P(
+- Michael Pittman Jr.: J -0.49 < 3.0 at its best spot (Makai Lemon) — J -0.49 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 14-17) + 0.60x+0.00 (wks 15-17, P(pla
 
 </details>
 
-<details><summary>HH: considered, not moves (31)</summary>
+<details><summary>HH: considered, not moves (33)</summary>
 
-- Washington Commanders: J +0.60 < 3.0 at its best spot (Steelers) — J +0.60 = 1.0x+1.78 (wk W) + 0.8x+0.39 (W+1) + 0.8x+0.00 (rest, mean of wks 14-17) + 0.60x+0.00 (wks 15-17, P(playof
+- Los Angeles Chargers: J -0.25 < 3.0 at its best spot (Steelers) — J -0.25 = 1.0x+1.24 (wk W) + 0.8x+0.01 (W+1) + 0.8x+0.00 (rest, mean of wks 14-17) + 0.60x+0.00 (wks 15-17, P(playof
+- Washington Commanders: J +0.72 < 3.0 at its best spot (Steelers) — J +0.72 = 1.0x+1.84 (wk W) + 0.8x+0.47 (W+1) + 0.8x+0.00 (rest, mean of wks 14-17) + 0.60x+0.00 (wks 15-17, P(playof
 - Antonio Johnson: gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])
-- Antonio Williams: sits behind everyone: you carry 4 WRs for 1 slot(s) and he projects 9.6 under your weakest 11.1
-- Baker Mayfield: you dropped him in BSB on 2026-11-18 (<= 7 days, either league)
-- Blake Corum: J -1.01 < 3.0 at its best spot (Devin Singletary) — J -1.01 = 1.0x+0.42 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 14-17) + 0.60x+0.00 (wks 15-17, 
+- Antonio Williams: sits behind everyone: you carry 4 WRs for 1 slot(s) and he projects 9.6 under your weakest 11.0
+- Baker Mayfield: J -1.77 < 3.0 at its best spot (Devin Singletary) — J -1.77 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 14-17) + 0.60x+0.00 (wks 15-17, 
+- Blake Corum: J -0.51 < 3.0 at its best spot (Devin Singletary) — J -0.51 = 1.0x+0.88 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 14-17) + 0.60x+0.00 (wks 15-17, 
 - Bryan Cook: gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])
 - Cairo Santos: you dropped him in BSB on 2026-11-21 (<= 7 days, either league)
-- Caleb Douglas: sits behind everyone: you carry 4 WRs for 1 slot(s) and he projects 9.6 under your weakest 11.1
-- Chimere Dike: sits behind everyone: you carry 4 WRs for 1 slot(s) and he projects 8.2 under your weakest 11.1
-- Dalton Schultz: gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])
-- Darius Cooper: sits behind everyone: you carry 4 WRs for 1 slot(s) and he projects 6.3 under your weakest 11.1
-- Devaughn Vele: sits behind everyone: you carry 4 WRs for 1 slot(s) and he projects 5.5 under your weakest 11.1
+- Caleb Douglas: sits behind everyone: you carry 4 WRs for 1 slot(s) and he projects 9.9 under your weakest 11.0
+- Chimere Dike: sits behind everyone: you carry 4 WRs for 1 slot(s) and he projects 7.8 under your weakest 11.0
+- Dalton Schultz: J -0.60 < 3.0 at its best spot (Devin Singletary) — J -0.60 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+2.10 (rest, mean of wks 14-17) + 0.60x+0.00 (wks 15-17, 
+- Darius Cooper: sits behind everyone: you carry 4 WRs for 1 slot(s) and he projects 6.3 under your weakest 11.0
 
 </details>
 
@@ -93,4 +93,4 @@ _Wed Nov 25, 4:05 am ET. Decisions first; detail folded below. A PROVISIONAL cal
 
 </details>
 
-_Engine stamp Wed Nov 25, 4:05 am ET. The HTML card is the full record; this page is the private, phone-readable twin._
+_Engine stamp Wed Nov 25, 2:35 pm ET. The HTML card is the full record; this page is the private, phone-readable twin._
