@@ -16059,10 +16059,11 @@
   ],
   "verdict": "WARN",
   "week": 12,
-  "status": "proposed",
+  "status": "executed",
   "provisional": false,
   "resolves_at": "2026-11-27T15:00-05:00",
-  "reverses": null
+  "reverses": null,
+  "status_ts": "2026-11-24T19:06-05:00"
  },
  {
   "id": "ff88c48e",
@@ -16077,10 +16078,11 @@
   ],
   "verdict": "WARN",
   "week": 12,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": true,
   "resolves_at": "2026-11-27T15:00-05:00",
-  "reverses": null
+  "reverses": null,
+  "superseded_by": "30c5e866"
  },
  {
   "id": "15d66ed8",
@@ -16135,5 +16137,42 @@
   "provisional": false,
   "resolves_at": null,
   "reverses": null
+ },
+ {
+  "id": "82ea4ff4",
+  "ts": "2026-11-24T19:06-05:00",
+  "league": "BSB",
+  "kind": "add",
+  "subject": "Kaleb Johnson",
+  "call": "add Kaleb Johnson (RB) over MarShawn Lloyd",
+  "detail": "+1.56/wk",
+  "evidence": [
+   "kalshi",
+   "sleeper"
+  ],
+  "verdict": "PASS",
+  "week": 12,
+  "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "30c5e866",
+  "ts": "2026-11-24T19:06-05:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Jalen Ramsey",
+  "call": "start Jalen Ramsey at DB",
+  "detail": "over Nick Cross +2.19",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 12,
+  "status": "proposed",
+  "provisional": true,
+  "resolves_at": "2026-11-27T15:00-05:00",
+  "reverses": "ff88c48e"
  }
 ]
