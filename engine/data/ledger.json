@@ -16170,10 +16170,11 @@
   ],
   "verdict": "WARN",
   "week": 12,
-  "status": "proposed",
+  "status": "superseded",
   "provisional": true,
   "resolves_at": "2026-11-27T15:00-05:00",
-  "reverses": "ff88c48e"
+  "reverses": "ff88c48e",
+  "superseded_by": "9d9b1b15"
  },
  {
   "id": "1a6e758a",
@@ -16209,6 +16210,44 @@
   "verdict": "PASS",
   "week": 12,
   "status": "proposed",
+  "provisional": false,
+  "resolves_at": null,
+  "reverses": null
+ },
+ {
+  "id": "9d9b1b15",
+  "ts": "2026-11-26T07:14-05:00",
+  "league": "HH",
+  "kind": "start",
+  "subject": "Jalen Ramsey",
+  "call": "start Jalen Ramsey at CB",
+  "detail": "over Nick Cross +0.75",
+  "evidence": [
+   "sleeper"
+  ],
+  "verdict": "WARN",
+  "week": 12,
+  "status": "proposed",
+  "provisional": true,
+  "resolves_at": "2026-11-27T15:00-05:00",
+  "reverses": "30c5e866"
+ },
+ {
+  "id": "450de174",
+  "ts": "2026-11-26T07:14-05:00",
+  "league": "HH",
+  "kind": "add",
+  "subject": "Baker Mayfield",
+  "call": "drop Matthew Stafford -> add Baker Mayfield",
+  "detail": "+15.7 week",
+  "evidence": [
+   "kalshi",
+   "sleeper",
+   "usage"
+  ],
+  "verdict": "BLOCK",
+  "week": 12,
+  "status": "blocked",
   "provisional": false,
   "resolves_at": null,
   "reverses": null
