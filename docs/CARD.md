@@ -1,6 +1,6 @@
 # Lineup Card — week 12
 
-_Thu Nov 26, 4:55 pm ET. Decisions first; detail folded below. A PROVISIONAL call waits for the market or a game-status answer._
+_Thu Nov 26, 11:06 pm ET. Decisions first; detail folded below. A PROVISIONAL call waits for the market or a game-status answer._
 
 ## Decide (next 36 hours)
 
@@ -8,9 +8,9 @@ _Thu Nov 26, 4:55 pm ET. Decisions first; detail folded below. A PROVISIONAL cal
 
 ## BSB — OVERKILL
 
-17-5-0, 1st, PF — · projected 114 · 35% to beat Regulators · 17% vs the league median
+17-5-0, 1st, PF — · projected 116 · 35% to beat Regulators · 19% vs the league median
 - Q/D: Jaxon Smith-Njigba, Isaiah Likely
-- Next lock: Thu Nov 26, 8:20 pm ET — Tyler Bass, James Cook III
+- Next lock: Sun Nov 29, 1:00 pm ET — 4 starters
 
 <details><summary>Lineup after the moves</summary>
 
@@ -21,16 +21,17 @@ _Thu Nov 26, 4:55 pm ET. Decisions first; detail folded below. A PROVISIONAL cal
 - RB2: Austin Ekeler
 - TE: Sam LaPorta
 - W/R/T: Isaiah Likely
-- WR1: Malik Washington
+- WR1: Jaxon Smith-Njigba
 - WR2: Drake London
-- WR3: Jaxon Smith-Njigba
+- WR3: Malik Washington
 
 </details>
 
 ## HH — Tecmo Bowlers
 
-9-2-0, 1st, PF — · projected 310 · 43% to beat Grey Poop On Bijan Mustard
-- Next lock: Thu Nov 26, 8:20 pm ET — Rashee Rice
+9-2-0, 1st, PF — · projected 312 · 45% to beat Grey Poop On Bijan Mustard
+- Q/D: Cooper DeJean
+- Next lock: Fri Nov 27, 3:00 pm ET — T.J. Watt, Jaylen Warren
 
 <details><summary>Lineup after the moves</summary>
 
@@ -54,35 +55,35 @@ _Thu Nov 26, 4:55 pm ET. Decisions first; detail folded below. A PROVISIONAL cal
 
 <details><summary>BSB: considered, not moves (13)</summary>
 
-- Baker Mayfield: J -0.56 < 3.0 at its best spot (Justin Herbert) — J -0.56 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 14-17) + 0.60x+0.00 (wks 15-17, P(
-- Corey Kiner: J -2.36 < 3.0 at its best spot (Makai Lemon) — J -2.36 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 14-17) + 0.60x+0.00 (wks 15-17, P(pla
+- Baker Mayfield: J -0.57 < 3.0 at its best spot (Justin Herbert) — J -0.57 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 14-17) + 0.60x+0.00 (wks 15-17, P(
+- Corey Kiner: J -2.35 < 3.0 at its best spot (Makai Lemon) — J -2.35 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 14-17) + 0.60x+0.00 (wks 15-17, P(pla
 - Dalton Schultz: J -2.15 < 3.0 at its best spot (Makai Lemon) — J -2.15 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 14-17) + 0.60x+0.00 (wks 15-17, P(pla
-- Darius Cooper: sits behind everyone: you carry 6 WRs for 3 slot(s) and he projects 2.9 under your weakest 6.7
+- Darius Cooper: sits behind everyone: you carry 6 WRs for 3 slot(s) and he projects 2.9 under your weakest 6.8
 - DK Metcalf: G15: dropped by WINdianapolis on 2026-11-25 — a manager let a 190-point role go after his last game; find out why before claiming (a verified role is a registry
 - Eddy Pineiro: J -0.57 < 3.0 at its best spot (Makai Lemon) — J -0.57 = 1.0x+0.00 (wk W) + 0.8x+2.18 (W+1) + 0.8x+0.00 (rest, mean of wks 14-17) + 0.60x+0.00 (wks 15-17, P(pla
 - Hunter Henry: J -2.18 < 3.0 at its best spot (Makai Lemon) — J -2.18 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 14-17) + 0.60x+0.00 (wks 15-17, P(pla
 - Jonathon Brooks: registry: not a role — verified 2026-10-18: Groin, surgery, IR 9-23 for ~6 weeks (earliest ~week 10) and he was the backup to Hubbard 
 - Mike Gesicki: J -2.09 < 3.0 at its best spot (Makai Lemon) — J -2.09 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 14-17) + 0.60x+0.00 (wks 15-17, P(pla
-- Michael Pittman Jr.: J -0.48 < 3.0 at its best spot (Makai Lemon) — J -0.48 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 14-17) + 0.60x+0.00 (wks 15-17, P(pla
+- Michael Pittman Jr.: J -0.47 < 3.0 at its best spot (Makai Lemon) — J -0.47 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 14-17) + 0.60x+0.00 (wks 15-17, P(pla
 - Rachaad White: G15: dropped by Short Bus on 2026-11-26 — a manager let a 150-point role go after his last game; find out why before claiming (a verified role is a registry add
-- Rashod Bateman: J -0.39 < 3.0 at its best spot (49ers) — J -0.39 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 14-17) + 0.60x+0.00 (wks 15-17, P(playoffs)
+- Rashod Bateman: J -0.40 < 3.0 at its best spot (49ers) — J -0.40 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 14-17) + 0.60x+0.00 (wks 15-17, P(playoffs)
 
 </details>
 
 <details><summary>HH: considered, not moves (29)</summary>
 
-- Washington Commanders: J +0.63 < 3.0 at its best spot (Steelers) — J +0.63 = 1.0x+1.80 (wk W) + 0.8x+0.41 (W+1) + 0.8x+0.00 (rest, mean of wks 14-17) + 0.60x+0.00 (wks 15-17, P(playof
+- Washington Commanders: J +0.64 < 3.0 at its best spot (Steelers) — J +0.64 = 1.0x+1.81 (wk W) + 0.8x+0.41 (W+1) + 0.8x+0.00 (rest, mean of wks 14-17) + 0.60x+0.00 (wks 15-17, P(playof
 - Aaron Jones Sr.: J -1.33 < 3.0 at its best spot (Devin Singletary) — J -1.33 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 14-17) + 0.60x+0.00 (wks 15-17, 
 - Antonio Johnson: gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])
 - Baker Mayfield: J -1.61 < 3.0 at its best spot (Devin Singletary) — J -1.61 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 14-17) + 0.60x+0.00 (wks 15-17, 
 - Blake Corum: gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])
 - Bryan Cook: gate: G5-sources SINGLE SOURCE: ['rotowire'] (['sleeper'])
 - Cairo Santos: you dropped him in BSB on 2026-11-21 (<= 7 days, either league)
-- Caleb Douglas: J -1.96 < 3.0 at its best spot (Rashee Rice) — J -1.96 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 14-17) + 0.60x+0.00 (wks 15-17, P(pla
-- Chimere Dike: sits behind everyone: you carry 4 WRs for 1 slot(s) and he projects 7.1 under your weakest 11.3
-- Dalton Schultz: J -0.52 < 3.0 at its best spot (Devin Singletary) — J -0.52 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+2.10 (rest, mean of wks 14-17) + 0.60x+0.00 (wks 15-17, 
-- Darius Cooper: sits behind everyone: you carry 4 WRs for 1 slot(s) and he projects 2.6 under your weakest 11.3
-- Devaughn Vele: sits behind everyone: you carry 4 WRs for 1 slot(s) and he projects 7.7 under your weakest 11.3
+- Caleb Douglas: J -2.01 < 3.0 at its best spot (Rashee Rice) — J -2.01 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+0.00 (rest, mean of wks 14-17) + 0.60x+0.00 (wks 15-17, P(pla
+- Chimere Dike: sits behind everyone: you carry 4 WRs for 1 slot(s) and he projects 7.1 under your weakest 11.8
+- Dalton Schultz: J -0.53 < 3.0 at its best spot (Devin Singletary) — J -0.53 = 1.0x+0.00 (wk W) + 0.8x+0.00 (W+1) + 0.8x+2.10 (rest, mean of wks 14-17) + 0.60x+0.00 (wks 15-17, 
+- Darius Cooper: sits behind everyone: you carry 4 WRs for 1 slot(s) and he projects 2.6 under your weakest 11.8
+- Devaughn Vele: sits behind everyone: you carry 4 WRs for 1 slot(s) and he projects 7.7 under your weakest 11.8
 
 </details>
 
@@ -96,4 +97,4 @@ _Thu Nov 26, 4:55 pm ET. Decisions first; detail folded below. A PROVISIONAL cal
 
 </details>
 
-_Engine stamp Thu Nov 26, 4:55 pm ET. The HTML card is the full record; this page is the private, phone-readable twin._
+_Engine stamp Thu Nov 26, 11:06 pm ET. The HTML card is the full record; this page is the private, phone-readable twin._
