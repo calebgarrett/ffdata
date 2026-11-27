@@ -1,8 +1,8 @@
-# ffdata pull loaded Thu Nov 26, 11:04 pm ET — repo head: 2026-11-26T21:55:52Z pull 2026-11-26T21:55Z (in-action, no pull)
+# ffdata pull loaded Fri Nov 27, 9:14 am ET — repo head: 2026-11-27T04:06:52Z pull 2026-11-27T04:06Z (in-action, no pull)
 week 12
-kalshi.csv: 4462 markets, 144 events, pulled 2026-11-27T04:03:10+00:00
-kalshi_archive: 1 new pull(s) copied, 86 on disk
-espn_games.csv: 16 games for week 12 — 0 with ESPN lines from the pump, 16 schedule-only from lines_wk10_18.csv; Kalshi spread/total ladders supply the lines inside the engine
+kalshi.csv: 4067 markets, 134 events, pulled 2026-11-27T14:12:40+00:00
+kalshi_archive: 1 new pull(s) copied, 87 on disk
+espn_games.csv: 16 games for week 12 — 1 with ESPN lines from the pump, 15 schedule-only from lines_wk10_18.csv; Kalshi spread/total ladders supply the lines inside the engine
 sleeper_off_wk12.csv: 3307 rows
 sleeper_idp_wk12.csv: 4603 rows
 trending_adds.csv: 40 adds / 40 drops (48h)
@@ -16,9 +16,9 @@ usage_wk11_TE.csv: 137 rows
 usage_wk12_TE.csv: 47 rows
 usage_wk11_K.csv: 29 rows
 usage_wk11_DEF.csv: 26 rows
-BSB rosters: 216 players on 12 teams, pulled 2026-11-27T04:04:06+00:00 -> new snapshot
-BSB matchup wk12: vs Regulators; 4 final rows, 0 in progress; totals me 5.00 opp 16.50
+BSB rosters: 216 players on 12 teams, pulled 2026-11-27T14:13:34+00:00 -> new snapshot
+BSB matchup wk12: vs Regulators; 14 final rows, 0 in progress; totals me 51.00 opp 21.70
 BSB transactions: 0 new of 48 on the page; log now 433 rows
-HH rosters: 236 players on 10 teams, pulled 2026-11-27T04:04:06+00:00 -> new snapshot
-HH matchup wk12: vs Grey Poop On Bijan Mustard; 3 final rows, 0 in progress; totals me 0.00 opp 0.00
-HH transactions: 0 new of 39 on the page; log now 387 rows
+HH rosters: 236 players on 10 teams, pulled 2026-11-27T14:13:34+00:00 -> new snapshot
+HH matchup wk12: vs Grey Poop On Bijan Mustard; 16 final rows, 0 in progress; totals me 96.77 opp 61.81
+HH transactions: 1 new of 38 on the page; log now 388 rows
